@@ -4,7 +4,7 @@
 \chapter{devices}\label{chp:example-1}
 \doublespacing
 
-\section{Introduction}
+\section{Arduino}
 Arduino is an open-source microcontroller board project used for building low cost and simple digital devices and circuits. Each microcontroller contains a microprocessor, controller, serial communication interface and is equipped with digital and analog input/output pins. The microcontrollers are controlled using C and C++ programming languages, and could be operated as standalone or connected to the computer through serial communication. 
 \par
 There are multiple Arduino board models, we would focus on Arduino Mega 2560. The Arduino Mega 2560 is based on the ATmega2560, an Atmel 8-bit AVR controller. Also the board has 54 digital input/output pins of which 15 could be used as PWM outputs and a 16 MHz crystal oscillator (clock). In reality the arduino doesn't have analog output, to modulate the output Pulse Width Modulation technique is used.
@@ -14,7 +14,7 @@ The controller is switching on/off the signal between the full Vcc of the board 
 Repeating that pattern fast enough results in analog signal as if the signal is a steady voltage. This method is able to generate signals between the full Vcc of the board and off. The signal resolution is limited by the microcontroller resolution (8-bit). Due to the fast clock the arduino PWM frequency at about 500Hz.
 \par
 Using this method with a led connected, the led brightness could be controlled in about 2ms speed. Since the clock is connected to all PWM pins, if they all are in the same duty cycle, they are in sync. All pins are having a changing voltage, but they all have the same voltage, alowing to connect them in series and increase the current, and the LED power. In conclusion this is a real-time controlled, fast-modulated, high power light source. 
-
+\section{Light guide}
 
 \color{blue}
 \par
