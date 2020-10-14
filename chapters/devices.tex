@@ -17,7 +17,7 @@ The controller is switching on/off the signal between the full Vcc of the board 
 	\caption[Another Example Image]{Another Example Image. This image is also labeled internally so we can referenc it throughout the text.}
 	\label{fig:cosine-wave1}
 \end{figure}
-\par
+
 Repeating that pattern fast enough results in analog signal as if the signal is a steady voltage. This method is able to generate signals between the full Vcc of the board and off. The signal resolution is limited by the microcontroller resolution (8-bit). Due to the fast clock the arduino PWM frequency at about 500Hz.
 \par
 Using this method with a led connected, the led brightness could be controlled in about 2ms speed. Since the clock is connected to all PWM pins, if they all are in the same duty cycle, they are in sync. All pins are having a changing voltage, but they all have the same voltage, alowing to connect them in series and increase the current, and the LED power. In conclusion this is a real-time controlled, fast-modulated, high power light source. 
