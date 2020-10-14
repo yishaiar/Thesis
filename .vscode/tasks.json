@@ -4,7 +4,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "compile_and_stage",
+            "label": "compile_upload_full",
             "type": "shell",
             "command": "lualatex master; bibtex master; ./master.pdf; lualatex master; lualatex master; git add --all; git commit --all -m 'auto';git push --all",
             "group": {
@@ -29,11 +29,21 @@
             "problemMatcher": []
         },
         {
-            "label": "compile",
+            "label": "compile current chapter",
             "type": "shell",
             "command": "lualatex chapter; bibtex chapter; ./chapter.pdf",
             "problemMatcher": []
         }
+
+        // {
+        //     "label": "git-pull_build ",
+        //     "type": "shell",
+        //     "command": "git pull --all; lualatex master; bibtex master; ./master.pdf; lualatex master; lualatex master;lualatex chapter; bibtex chapter; ./chapter.pdf",
+        //     "runOptions": {
+        //         "runOn": "folderOpen"
+        //     },
+        //     "problemMatcher": []
+        // },
     ]
 }
 
