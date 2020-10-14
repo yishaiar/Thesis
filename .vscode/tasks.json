@@ -6,7 +6,7 @@
         {
             "label": "compile_and_stage",
             "type": "shell",
-            "command": "lualatex master; bibtex master; lualatex master; lualatex master; git add --all; git commit --all -m 'auto';git push --all",
+            "command": "lualatex master; bibtex master; ./master.pdf; lualatex master; lualatex master; git add --all; git commit --all -m 'auto';git push --all",
             "group": {
                 "kind": "build",
                 "isDefault": true
