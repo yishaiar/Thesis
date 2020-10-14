@@ -31,7 +31,7 @@
         {
             "label": "compile",
             "type": "shell",
-            "command": "lualatex master; bibtex master",
+            "command": "lualatex chapter; bibtex chapter; ./chapter.pdf",
             "problemMatcher": []
         }
     ]
