@@ -1,3 +1,5 @@
+\iffalse
+
 \documentclass{book}
 \providecommand{\main}{.} 
 \usepackage{\main/UofRdissertation}
@@ -23,7 +25,7 @@
 
 
 
-\subfile{\main/chapters/arduino}
+\subfile{\main/chapters/devices}
 
 
 \iffalse
@@ -32,5 +34,46 @@
 \addcontentsline{toc}{chapter}{Bibliography}
 \bibliography{citations}
 \fi
+
+\end{document}
+
+
+\fi
+
+
+\documentclass{book}
+\providecommand{\main}{.} 
+\usepackage{\main/UofRdissertation}
+\begin{document}
+
+
+\frontmatter
+\doublespacing
+\pagestyle{uofrthesis}
+\subfile{\main/frontmatter/title}
+\subfile{\main/frontmatter/dedication}
+\tableofcontents
+\subfile{\main/frontmatter/biography}
+\subfile{\main/frontmatter/acknowledgements}
+\subfile{\main/frontmatter/abstract}
+\subfile{\main/frontmatter/contributors_and_funding}
+\cleardoublepage
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+\mainmatter
+\doublespacing
+
+
+
+
+\subfile{\main/chapters/devices}
+
+
+
+\subfile{\main/chapters/Informative_Title2}
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{citations}
+
 
 \end{document}
