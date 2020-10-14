@@ -11,6 +11,13 @@ There are multiple Arduino board models, we would focus on Arduino Mega 2560. Th
 \par
 The controller is switching on/off the signal between the full Vcc of the board and off (5-0[V]), generating a square wave. The duration of time signal on is called the pulse width. The controller is able to modulate the pulse width, and change the ratio of time signal is on compare to off. The voltage is determined by the ratio of the time voltage is on compare to time voltage off, which is called duty cycle. 100\% duty cycle means the power is always on, 0\% duty cycle power is always off and 50\% duty cycle signal is on and off in equal times. 
 \par
+\
+\begin{figure}[htbp]
+	\centering
+	\fbox{\includegraphics[scale=0.5]{\main/images/devices/duty50.png}}
+	\caption[duty cycle 90\%]{duty cycle 90\%  - 90\% of the time signal on, equivalamt to 90\% of the full Vcc signal}
+	\label{fig:sine-wave1}
+\end{figure}
 Repeating that pattern fast enough results in analog signal as if the signal is a steady voltage. This method is able to generate signals between the full Vcc of the board and off. The signal resolution is limited by the microcontroller resolution (8-bit). Due to the fast clock the arduino PWM frequency at about 500Hz.
 \par
 \begin{figure}[htbp]
