@@ -4,6 +4,32 @@
 \chapter{theoretical background}\label{chp:example-2}
 \section{devices}
 
+\subsection{Laser}
+The laser is a high power coherent light source based on stimulated emmission with narrow spectrum. Inside a cavity Electron is excited to a higher energy level, and forced by photon with the correct wavelength to be absorbed emmiting coherent photon. The coherence allows focusing to a tight spot, and the spot staying collimated over long distances. 
+\par
+Continuous wave (CW) laser are lasing constant output power over time. Usually the power output is stable but has oscillations due to having several longitudinal modes causing nano second scale ossicilations, output power is steady when averaged over longer periods. Also, over long periods of time lasers have slight power oscillations due to temperture changes in the envirement.
+%The laser diode cavity face is rectangular, because of fabrication constraints. The rectangular face is causing cylindrical aberration, which   
+
+\subsection{Acousto Optic Modulator}
+Acousto Optic Modulator (AOM), uses the acousto-optic effect to diffract and shift the frequency of light using RF waves. An oscillating electric signal drives a piezoelectric transducer to vibrate causing RF waves, the transducer attached to a material. This causes sound waves in the material, and periodic index modulation causing a Bragg grating. Incoming light scatters off the grating and due to Bragg diffraction comes at Bragg angle.
+\begin{equation}
+\theta_b = sin(\theta_b)\approx \frac{\lambda}{2n\Lambda} \label{eqn:energy-mass-equivalence-relation}
+\end{equation} 
+$\Lambda$ is the RF wavelength, $\lambda$ is the light source wavelength. 
+\par
+Since all parameters constant, modulation angle is constant, and possible modulation speed is nano seconds. Giving a stable fast modulation method for CW laser.
+
+
+
+\subsection{Light Emitting Diode (LED)}
+The light emitting diode (led) is a high power long lifetime light source semiconductor based. The led is emitting light when current flows through. Led could be modulated at up to 100MHz. The emitted light is incoherent in width meaning it's hard to focus it to a point (not diffraction limited). The emitted light is incoherent in length causing wide band spectrum, although spectrum is sufficiently narrow to appear as a pure color to the human eye.
+\par
+The working principle is a semiconductor p-n junction with direct band gap. Meaning the lowest energy state above the band gap has the same momentum as the highest under the gap. In order to change energy state electron needs only to release energy equal to the band gap, which defines the wavelength $E_g = \frac{\hslash c}{\lambda}$. All possible energy gaps defines the spectrum, aproximatly gaussian around the wavelength. Forward voltage is applied causing electron injection and recombination with holes. The recombination is releasing energy in form of spontanious emmission photons. The modulation limitation is due to the electrons life time before recombination.
+\par
+The led power is proptional to the current flows through, Shockley diode equation for p-n junction defines the current relation to the diode voltage. In high enough values the power could be aproximated by liniar aproximation of the diode voltage.
+\begin{equation}
+P\propto e^{E/cdot V_d}\label{eqn:energy-mass-equivalence-relation}
+\end{equation}
 
 \subsection{arduino}
 Arduino is an open-source microcontroller board project used for building low cost and simple digital devices and circuits. Each microcontroller contains a microprocessor, controller, serial communication interface and is equipped with digital and analog input/output pins. The microcontrollers are controlled using C and C++ programming languages, and could be operated as stand alone or connected to the computer through serial communication. 
@@ -11,8 +37,7 @@ Arduino is an open-source microcontroller board project used for building low co
 There are multiple Arduino board models, we would focus on Arduino Mega 2560. The Arduino Mega 2560 is based on the ATmega2560, an Atmel 8-bit AVR controller. Also the board has 54 digital input/output pins of which 15 could be used as PWM outputs and a 16 MHz crystal oscillator (clock). In reality the arduino doesn't have analog output, to modulate the output Pulse Width Modulation technique is used.
 \par
 The controller is switching on/off the signal between the full Vcc of the board and off (5-0[V]), generating a square wave. The duration of time signal on is called the pulse width. The controller is able to modulate the pulse width, and change the ratio of time signal is on compare to off. The voltage is determined by the ratio of the time voltage is on compare to time voltage off, which is called duty cycle. 100\% duty cycle means the power is always on, 0\% duty cycle power is always off and 50\% duty cycle signal is on and off in equal times. 
-\\
-\\
+%\\
 \par
 
 \begin{figure}[htbp]
@@ -32,35 +57,31 @@ Repeating that pattern fast enough results in an analog signal as if the signal 
 
 
 \par
-Using this method with a led connected, the led brightness could be controlled at about 2ms speed. Since the clock is connected to all PWM pins, if they all are in the same duty cycle, they are in sync. All pins are having a changing voltage, but they all have the same voltage, alowing to connect them in series and increase the output current, and the LED power. In conclusion this is a real-time controlled, fast-modulated, high power light source. 
+Using this method with a led connected, the led brightness could be modulated at about 2ms speed. Since the clock is connected to all PWM pins, if they all are in the same duty cycle, they are in sync. All pins are having a changing voltage, but they all have the same voltage, alowing to connect them in series and increase the output current, and the LED power. In conclusion this is a real-time controlled, fast-modulated, high power light source. 
 
 
 
-\subsection{light guide}
-\color{blue}
+\subsection{Light guides}
+Light guides are used to distribute light from the source to a distant area, they are made of thin filaments causing internal reflections. Light pipes are used to illuminate small areas, regardless of the spectral characteristics of the light source. They mainly depend on the cross sections of entrance and exit and the length. Making them ideal to overcoming focusing problems, such as the LED uncoherent profile.  
+
+\section{Radiation pressure}
+Radiation pressure is pressure on the surface due to momentum exchange with electromagnetic field, including momentum of light. The light is at any wavelength which is absorbed, reflected, or emitted. The pressure is causing force on the surface, although the force is usually insignificant. 
 \par
-Light guides are used to distribute light from the source to a particular area that requires illumination. They are made up of a transparent material (glass or plastic) and thin filaments and are capable of transmitting light signals though internal reflections.  
+The light from the light source   Assuming the light is perp 
 
-Light pipe technology utilizes clear plastic tubes that transmit light from a light source. There are two basic styles of LED light pipes – rigid and flexible - and both are capable of redirecting light with minimal loss of concentration.
+\color{blue}
+ 
+
+
+
+
+
+
 \color{black}
 
-
-\subsection{Light Emitting Diode (LED)}
-The light emitting diode (led) is a high power long lifetime light source semiconductor based. The led is emitting light when current flows through it, the light power is propotional to the current. Led could be modulated at up to 100MHz, fast compare to the experiment. The emitted light is incoherent in width meaning it's hard to focus it to a point (not diffraction limited). The emitted light is incoherent in length causing wide band spectrum, although spectrum is sufficiently narrow to appear as a pure color to the human eye.
-\par
-
-The working principle is a semiconductor p-n junction with forward voltage causing recombination of electrons with holes. The recombination is releasing energy in form of spontanious emmission photons. 
-\par
-\color{blue}
-\par
-\color{black}
-
-
-\subsection{laser}
-\subsection{aom}
 \section{vacuum theory}
 \section{torsion theory}
-\section{optical cooling}
+
 \section{pid}
 \section{accuracy}
 \doublespacing
