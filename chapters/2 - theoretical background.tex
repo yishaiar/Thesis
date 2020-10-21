@@ -132,14 +132,46 @@ At the medium vacuum regime $0.01<k_n<0.5$ the flow is called Knudsen flow. The 
 
 
 
+\section{torsion theory}
 
-
+Harmonic oscillator is a system that, when displaced, experiences a liniar restoring force proportional to the displacement from equilibrium. Torsion Pendulum is an oscillator made of mass hung by a string from a fixed point so it can swing free. When the mass is displaced from equilibrium angle, the pedulum is having a liniar restoring tourqe back to equilibrium position. 
+\par
+If the restoring force is the only force acting, the oscillator is not driven or damped, called a simple harmonic oscillator. The force is causing sinusoidal oscillations (simple harmonic motion) around the equilibrium position. The time period and force are determined by the physical constants of the pendulum. 
+\begin{equation}
+\tau = -\kappa\cdot\theta  = I\cdot\ddot{\theta}   \label{eqn:undamped_motion_equation}
+\end{equation}
+\begin{equation}
+\theta(t) = Acos(\omega_0 t +\phi)    \label{eqn:undamped_motion_equation}
+\end{equation}
+\begin{equation}
+\omega_0  =  \sqrt{\frac{\kappa}{I}}   \label{eqn:undamped_motion_equation}
+\end{equation}
+If the system is also having friction $F_{drag} = -b\cdot v$, proportional to the velocity, the system is called damped oscillator. 
+\begin{equation}
+\tau = -\kappa\cdot\theta - b\dot{\theta}  = I\cdot\ddot{\theta}   \label{eqn:damped_motion_equation}
+\end{equation} 
+\begin{equation}
+\ddot{\theta} + 2\xi\omega_0\dot{\theta} + \omega_0^2\theta = 0   \label{eqn:damped_motion_equation}
+\end{equation}
+\begin{equation}
+\xi = \frac{b}{2\sqrt{I\kappa}}   \label{eqn:damped_motion_equation}
+\end{equation}
+Based on the friction coefficient the sytem could either be overdamped or underdamped, $\xi$ is called the damping ratio. Overdamped ($\xi > 1$); exponential decay to equilibrium position without oscillations, underdamped ($\xi < 1$); amplitude decreases in time while oscillating with a lower frequency. 
+\par
+If the system is also having an external time-dependent force,  the system is called driven oscillator.
+\begin{equation}
+\tau(t) -\kappa\cdot\theta - b\dot{\theta}  = I\cdot\ddot{\theta}   \label{eqn:driven_motion_equation}
+\end{equation} 
+\begin{equation}
+\ddot{\theta} + 2\xi\omega_0\dot{\theta} + \omega_0^2\theta = \frac{\tau(t)}{I}   \label{eqn:damped_motion_equation}
+\end{equation}
 \color{blue}
- 
+
+
 \color{black}
   
 
-\section{torsion theory}
+
 
 \section{pid}
 \section{accuracy}
