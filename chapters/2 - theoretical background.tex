@@ -65,28 +65,69 @@ Using this method with a led connected, the led brightness could be modulated at
 Light guides are used to distribute light from the source to a distant area, they are made of thin filaments causing internal reflections. Light pipes are used to illuminate small areas, regardless of the spectral characteristics of the light source. They mainly depend on the cross sections of entrance and exit and the length. Making them ideal to overcoming focusing problems, such as the LED uncoherent profile.  
 
 \section{Radiation pressure}
-Radiation pressure is pressure on the surface due to momentum exchange with electromagnetic field, including momentum of light. The light is at any wavelength which is absorbed, reflected, or emitted. The pressure is causing force on the surface, although the force is usually insignificant. 
+Radiation pressure is pressure on the surface due to momentum exchange with electromagnetic field, including momentum of light. The light is at any wavelength which is absorbed, reflected, or emitted. The pressure is causing force on the surface, although the force is usually insignificant.
+  
 \par
-The radiation pressure force depends on the angle of surface compare to electromagnetic field, surface material, and the power of the light source.
-Light radiant flux (measured in watts) denoted $\Theta$, surfce intesity reflectance parameter denoted R, A is the surface area, $\eta$ is the coupling effitiancy, c is the spped of light.
+The radiation pressure force depends on the angle of surface compare to electromagnetic field, surface intesity reflectance and absorbance, and the power of light hitting the surface $\Theta_i$ (radiant flux, measured in watts). There is coupling effitiency $\eta$ due to the light passing through a light guide or fiber, and size difference between the light spot size and the target size. A is the surface area, c is the speed of light. 
 \begin{equation}
-P_{incident} = \frac{\frac{\Theta}{A}}{c} = \frac{\eta\cdot \Theta_e^s}{{A\cdot c}} \label{eqn:energy-mass-equivalence-relation}
+P_{incident} = \frac{\frac{\Theta_e}{A}cos^2(\alpha)}{c} = \frac{\eta\cdot \Theta_{source}\cdot cos^2(\alpha)}{{A\cdot c}} \label{eqn:energy-mass-equivalence-relation}
 \end{equation}
 
-Assuming the light Direction is is perpendicular to the surface, and the light variation over the surface is negligible.
+Assuming the light Direction is perpendicular to surface, and angle is neglected. Also, the light variation over the surface is negligible.
 
 \begin{equation}
-F = P_{total}\cdot A = (P_{incident}+P_{emitted})\cdot A = P_{incident}\cdot A\cdot(1+R)\label{eqn:energy-mass-equivalence-relation}
+F = P_{total}\cdot A = (P_{incident}+P_{emitted})\cdot A = 2\cdot P_{incident}\cdot A\label{eqn:energy-mass-equivalence-relation}
 \end{equation}
 \begin{equation}
-F = \frac{\eta\cdot\Theta_{source}}{{A\cdot c}}\cdot A\cdot(1+R) = \frac{\eta\cdot\Theta_{source}\cdot(1+R)}{{c}} \label{eqn:energy-mass-equivalence-relation}
+F = \frac{2\eta\cdot\Theta_{source}}{{A\cdot c}}\cdot A = \frac{2\eta\cdot\Theta_{source}}{{c}} \label{eqn:energy-mass-equivalence-relation}
+\end{equation}
+
+%\begin{equation}
+%\Theta_{source} = Q_e\cdot t = n\cdot\frac{\hslash c}{\lambda}\cdot t  \label%{eqn:energy-mass-equivalence-relation}
+%\end{equation}
+Assuming we have a power controlled light source with 1 watt maximum power and 40\% effietency we, we could inject forces of nano newton or less.  
+
+ 
+
+\section{vacuum theory}
+A vaccuum chamber is metalic chamber with a vacuum pump which has a pressure lower than the atmospheric pressure (the atmospheric pressure is 760 [Torr]). Quality of vacuum is divided to ranges, according to the technology required to achieve it (CF, KF). Medium vacuum ($25-10^{-3}$ [Torr]), high vacuum ($10^{-3}-10^{-7}$ [Torr]) and ultra high vacuum ($10^{-7}-10^{-9}$ [Torr]). The main limitations to vacuum quality maintenance are leakage from the outside through the chamber and outgassing inside the chamber.
+\par
+At any gas system, some gas would slowly leak over time and increase the pressure if not pumped out. The leak rate $Q_L$ is not a function of time, and resuls in a sustained increase of pressure P over time.
+\begin{equation}
+Q_L = \frac{\Delta P\cdot V}{\Delta t}  \label{eqn:energy-mass-equivalence-relation}
+\end{equation}
+The leak rate could also prevant the system from reaching initial low pressure (at some point the leakage would be equal to the pumping rate).
+There is also diffusion of gas molecules, such as helium, which is insignifant when pressure is above $10^{-9}$. 
+
+\par
+Outgassing is the desorption of gas molecules in vacuum (primarily water)  that were adsorbed or absorbed in the material. The outgassing occures over time and increases the pressure farther more. At low pressures, there are more gas molecules adsorbed on the chamber surface than floating in the chamber. The total surface area is more important than the volume for reaching low pressure. 
+\par
+The desorption rate $Q_{des}$ of the surfaces produces a gas yield that declines over time, dependent on the desorption density which is area specific. It could be assumed that after a given time $t>t_0$ the increase is liniar over time, typicaly $t_0$ assumed to be one hour.
+\begin{equation}
+Q_{des} = q_{des}\cdot A\cdot\frac{t_0}{t}  \label{eqn:energy-mass-equivalence-relation}
+\end{equation}
+Outgassing is minimized by selection of low vapor pressures materials such as stainless steel and glass. Since water is a significant source of outgassing, it is usually minimize by baking the chamber in high tempertures while the pump is running.
+\par
+In conlusion leak, and outgassing, both increases the pressure over time at a constant rate. Usually those are overcome by having the pump working, which is not possible in this experiment.
+\par
+The motivation to use as high vacuum as possible, in this experiment, is to reduce the friction caused by gasses. The viscous friction is velocity dependenant.
+\begin{equation}
+F_{drag} = -b\cdot v  \label{eqn:energy-mass-equivalence-relation}
+\end{equation}
+
+
+The pressure is  propotional to the number density of particles and inverse to the mean free pass of each particle.    
+\begin{equation}
+P = n\cdot k_B\cdot T  \label{eqn:ideal-gasses}
 \end{equation}
 \begin{equation}
-\Theta_{source} = Q_e\cdot t = n\cdot\frac{\hslash c}{\lambda}\cdot t  \label{eqn:energy-mass-equivalence-relation}
+I = \frac{k_B\cdot T}{\sqrt{2}\cdot\pi\cdot p\cdot d_m^2}     \label{eqn:mean-free-pass}
 \end{equation}
-
-
-
+Gas particle collide many times along it's way. The mean free path is the average distance the particle could pass between two collisions with other particles. Knudsen ratio could be derived from the term, ratio which is used to characterize types of gas flow compare to the pipe diameter.
+\begin{equation}
+K_n = \frac{I}{d}     \label{eqn:mean-free-pass}
+\end{equation}
+At the medium vacuum regime $0.01<k_n<0.5$ the flow is called Knudsen flow. The molecules do not interact and move in straight lines between points. Classical viscous friction of object inside the chamber could be neglected.
 
 
 
@@ -95,15 +136,9 @@ F = \frac{\eta\cdot\Theta_{source}}{{A\cdot c}}\cdot A\cdot(1+R) = \frac{\eta\cd
 
 \color{blue}
  
-
-
-
-
-
-
 \color{black}
+  
 
-\section{vacuum theory}
 \section{torsion theory}
 
 \section{pid}
