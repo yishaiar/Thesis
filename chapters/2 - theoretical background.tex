@@ -193,7 +193,7 @@ https://ocw.mit.edu/courses/mathematics/18-03sc-differential-equations-fall-2011
 
 https://www.sciencedirect.com/topics/engineering/underdamped-system#:~:text=When%20the%20damping%20ratio%20is%20between%200%20and%201%20(i.e.,is%20an%20exponential%20decay%20line.
 
-\fi
+
 \subsection{Driven Oscillator}
 If the damped oscillator system is further affected by an external time-dependent tourqe $\tau(t)$,  the system is called driven oscillator.
 \begin{equation}
@@ -202,13 +202,38 @@ If the damped oscillator system is further affected by an external time-dependen
 \begin{equation}
 \ddot{\theta} + 2\xi\omega_0\dot{\theta} + \omega_0^2\theta = \frac{\tau(t)}{I}   \label{eqn:damped_motion_equation}
 \end{equation}
+\fi
+\section{PID Controller}
+proportional–integral–derivative controller (PID controller) is a feedback based control system. The control loop is used for time continuouse control. PID controller continuously calculates error value, which is the distance of the measured process variable from a defined set point. The feedback applies an external correction to the process. The correction is based on a proportional, integral and derivative response to the error. The correction is called control variable.
+\begin{figure}[htbp]
+	\centering
+	\fbox{\includegraphics[scale=0.2]{\main/images/2 - theoretical background/PID.png}}
+	\caption[PID]{PID controller feedback loop; from wikipedia}
+	\label{fig:PID_scheme}
+\end{figure}
+
+\par
+Proper tuning of a PID enables an accurate automated correction to a controled process. The PID concept is used widely in applications requiring accurate automated control.
+\par
+The error and the error's integral and derivate are calculated continuisly. The control is having three tuning parameters; $P, I, D$, the feed back response is modulated by the tuning parameters value. Each parameter is assigned to a response (proportional, integral and derivative). The response (control variable) is a weighted sum of the control terms. Over time the controller attempts to minimize the error $e(t)$ by adjusting the control variable $u(t)$.
+\par
+P is proportional to the current error value $e(t)$. When error is large and positive, proportional output would be proportionately large and positive.
+\par
+I is proportional to past error value's integration. The response of the cumulative value could eliminate residual errors, such as signal offset.
+\par
+D is proportional to error current change rate, by calculating the derivative. value's integration. The response of the change rate could eliminate more rapid changes.
+The optimal control function is achieved by balancing the responses. The tuning constants depend on the characteristics of the specific procces. The response must be tuned for each control application.  
+
+ 
+
+
 \color{blue}
 
 
 \color{black}
 
 
-\section{pid}
+
 \section{accuracy}
 \doublespacing
 \hspace{5 mm} This another example chapter with a working reference as see in Chapter~\ref{chp:example-1}. There I also made an example of an equation, see Eqn.~\ref{eqn:energy-mass-equivalence-relation}. We also created an example image, see Fig.~\ref{fig:sine-wave}.
