@@ -205,6 +205,7 @@ If the damped oscillator system is further affected by an external time-dependen
 \fi
 \section{PID Controller}
 proportional–integral–derivative controller (PID controller) is a feedback based control system. The control loop is used for time continuouse control. PID controller continuously calculates error value, which is the distance of the measured process variable from a defined set point. The feedback applies an external correction to the process. The correction is based on a proportional, integral and derivative response to the error. The correction is called control variable.
+\par
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=0.2]{\main/images/2 - theoretical background/PID.png}}
@@ -212,7 +213,7 @@ proportional–integral–derivative controller (PID controller) is a feedback b
 	\label{fig:PID_scheme}
 \end{figure}
 
-\par
+
 Proper tuning of a PID enables an accurate automated correction to a controled process. The PID concept is used widely in applications requiring accurate automated control.
 \par
 The error and the error's integral and derivate are calculated continuisly. The control is having three tuning parameters; $P, I, D$, the feed back response is modulated by the tuning parameters value. Each parameter is assigned to a response (proportional, integral and derivative). The response (control variable) is a weighted sum of the control terms. Over time the controller attempts to minimize the error $e(t)$ by adjusting the control variable $u(t)$.
