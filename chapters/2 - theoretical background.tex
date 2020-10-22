@@ -134,17 +134,98 @@ At the medium vacuum regime $0.01<k_n<0.5$ the flow is called Knudsen flow. The 
 
 
 \section{torsion theory}
-
+\subsection{Harmonic oscillator}
 Harmonic oscillator is a system that, when displaced, experiences a liniar restoring force proportional to the displacement from equilibrium. Torsion Pendulum is an oscillator made of mass hung by a string from a fixed point so it can swing free. When the mass is displaced from equilibrium angle, the pedulum is having a liniar restoring tourqe,caused by the twisted string. The restoring tourqe is rotating the mass back to equilibrium position. The angular case is equivalent to the liniar case (instead of velosity and force,angular velosity and tourqe).
 \par
 
 
+
+If the restoring tourqe is the only tourqe acting, the oscillator is not driven or damped, called a simple harmonic oscillator. The tourqe is causing sinusoidal oscillations (simple harmonic motion) around the equilibrium angle. The time period and tourqe are determined by the physical constants of the pendulum. 
+\begin{equation}
+\tau = -\kappa\cdot\theta  = I\cdot\ddot{\theta}   \label{eqn:undamped_motion_equation}
+\end{equation}
+\begin{equation}
+\theta(t) = Acos(\omega_0 t +\phi)    \label{eqn:undamped_motion_equation}
+\end{equation}
+\begin{equation}
+\omega_0  =  \sqrt{\frac{\kappa}{I}}   \label{eqn:undamped_motion_equation}
+\end{equation}
+
+\subsection{Damped Oscillator}
+If the system is also having damping (friction) which is proportional to the velocity, the system is called damped oscillator.
+
+
+\begin{equation}
+\tau_{drag} = -b\cdot\dot{\theta}   \label{eqn:friction_tourqe}
+\end{equation} 
+\begin{equation}
+\tau = -\kappa\cdot\theta - b\dot{\theta}  = I\cdot\ddot{\theta}   \label{eqn:damped_motion_equation}
+\end{equation} 
+\begin{equation}
+\ddot{\theta} + 2\xi\omega_0\dot{\theta} + \omega_0^2\theta = 0   \label{eqn:damped_motion_equation}
+\end{equation}
+\begin{equation}
+\xi = \frac{b}{2\sqrt{I\kappa}}   \label{eqn:damped_motion_equation}
+\end{equation}
+
+Based on the friction coefficient the sytem could either be overdamped, critically damped or underdamped, $\xi$ is called the damping ratio. Overdamped ($\xi > 1$); due to high friction, the system cannot oscillate and decays exponentialy to equilibrium position.
+\begin{equation}
+\theta(t) = Ae^{-\omega_0 t(\xi+\sqrt{\xi^2-1})} + Be^{-\omega_0 t(\xi-\sqrt{\xi^2-1})}    \label{eqn:overdamped_motion_equation}
+\end{equation}
+Critically damped ($\xi = 1$); due to high friction, the system cannot oscillate and decays exponentialy to equilibrium position. For a fixed $I, \kappa$, choosing $b$ to be at the critical damping value gives
+the fastest return to equilibrium position. Although there is overshoot this is often a desirable property.
+
+\begin{equation}
+\theta(t) = e^{-\xi\omega_0 t}\cdot(A+Bt)     \label{eqn:underdamped_motion_equation}
+\end{equation}
+ underdamped ($\xi < 1$); amplitude decreases in time due to the friction while oscillating with a lower frequency.
+\begin{equation}
+\theta(t) = A\cdot e^{-\xi\omega_0 t}cos(\sqrt{1-\xi^2}\omega_0 t +\phi)    \label{eqn:underdamped_motion_equation}
+\end{equation}
+
+\iffalse
+https://ocw.mit.edu/courses/mathematics/18-03sc-differential-equations-fall-2011/unit-ii-second-order-constant-coefficient-linear-equations/damped-harmonic-oscillators/MIT18_03SCF11_s13_2text.pdf
+
+https://www.sciencedirect.com/topics/engineering/underdamped-system#:~:text=When%20the%20damping%20ratio%20is%20between%200%20and%201%20(i.e.,is%20an%20exponential%20decay%20line.
+
+\fi
+\subsection{Driven Oscillator}
+If the damped oscillator system is further affected by an external time-dependent tourqe $\tau(t)$,  the system is called driven oscillator.
+\begin{equation}
+\tau(t) -\kappa\cdot\theta - b\dot{\theta}  = I\cdot\ddot{\theta}   \label{eqn:driven_motion_equation}
+\end{equation} 
+\begin{equation}
+\ddot{\theta} + 2\xi\omega_0\dot{\theta} + \omega_0^2\theta = \frac{\tau(t)}{I}   \label{eqn:damped_motion_equation}
+\end{equation}
+\color{blue}
+
+
+\color{black}
+
+
+\section{pid}
+\section{accuracy}
+\doublespacing
+\hspace{5 mm} This another example chapter with a working reference as see in Chapter~\ref{chp:example-1}. There I also made an example of an equation, see Eqn.~\ref{eqn:energy-mass-equivalence-relation}. We also created an example image, see Fig.~\ref{fig:sine-wave}.
 \begin{figure}[htbp]
 	\centering
-	\fbox{\includegraphics[scale=0.5]{\main/images/2 - theoretical background/torsion_pendulum.jpg}}
-	\caption[duty cycle 50\%]{50\% duty cycle  - signal is on and off equal times}
-	\label{fig:duty50}
+	\fbox{\includegraphics[scale=0.75]{\main/images/chapter_2_example/img_example_2.png}}
+	\caption[Another Example Image]{Another Example Image. This image is also labeled internally so we can referenc it throughout the text.}
+	\label{fig:cosine-wave}
 \end{figure}
-
-
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
