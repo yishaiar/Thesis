@@ -138,7 +138,7 @@ At the medium vacuum regime $0.01<k_n<0.5$ the flow is called Knudsen flow. The 
 
 \section{torsion theory}
 \subsection{Harmonic oscillator}
-Harmonic oscillator is a system that, when displaced, experiences a liniar restoring force proportional to the displacement from equilibrium. Torsion Pendulum is an oscillator made of mass hung by a string from a fixed point so it can swing free. When the mass is displaced from equilibrium angle, the pedulum is having a liniar restoring tourqe,caused by the twisted string. The restoring tourqe is rotating the mass back to equilibrium position. The angular case is equivalent to the liniar case (instead of velosity and force,angular velosity and tourqe).
+Harmonic oscillator is a system that, when displaced, experiences a liniar restoring force proportional to the displacement from equilibrium. Torsion Pendulum is an oscillator made of mass hung by a string from a fixed point so it can swing free. When the mass is displaced from equilibrium angle, the pedulum is having a liniar restoring tourqe, caused by the twisted string. The restoring tourqe is rotating the mass back to equilibrium position. The angular case is equivalent to the liniar case (instead of velosity and force,angular velosity and tourqe).
 \par
 \begin{figure}[htbp]
 	\centering
@@ -206,8 +206,13 @@ If the damped oscillator system is further affected by an external time-dependen
 \ddot{\theta} + 2\xi\omega_0\dot{\theta} + \omega_0^2\theta = \frac{\tau(t)}{I}   \label{eqn:damped_motion_equation}
 \end{equation}
 \fi
+
+\section{Gravity Measurement}
+
 \section{PID Controller}
-proportional–integral–derivative controller (PID controller) is a feedback based control system. The control loop is used for time continuouse control. PID controller continuously calculates error value, which is the distance of the measured process variable from a defined set point. The feedback applies an external correction to the process. The correction is based on a proportional, integral and derivative response to the error. The correction is called control variable.
+proportional–integral–derivative controller (PID controller) is a feedback based control system. The control loop is used for time continuouse control of a process, so the process output (measured process variable) would be close to a defined set point.
+\par
+PID controller continuously calculates error value, which is the distance of the measured process variable from the defined set point. The feedback applies an external correction to the process, called control variable. The control variable is based on a proportional, integral and derivative response to the error. Proper tuning of a PID enables an accurate automated correction to a controled process. The PID concept is used widely in applications requiring accurate automated control.
 \par
 \begin{figure}[htbp]
 	\centering
@@ -217,9 +222,9 @@ proportional–integral–derivative controller (PID controller) is a feedback b
 \end{figure}
 
 
-Proper tuning of a PID enables an accurate automated correction to a controled process. The PID concept is used widely in applications requiring accurate automated control.
+
 \par
-The error and the error's integral and derivate are calculated continuisly. The control is having three tuning parameters; $P, I, D$, the feed back response is modulated by the tuning parameters value. Each parameter is assigned to a response (proportional, integral and derivative). The response (control variable) is a weighted sum of the control terms. Over time the controller attempts to minimize the error $e(t)$ by adjusting the control variable $u(t)$.
+The error and the error's integral and derivate are calculated continuously. The control is having three tuning parameters; $P, I, D$, the feed back correction is modulated by the tuning parameters value. Each parameter is assigned to a response (proportional, integral and derivative). The response (control variable) is a weighted sum of the control terms. Over time the controller attempts to minimize the error $e(t)$ by adjusting the control variable $u(t)$.
 \par
 P is proportional to the current error value $e(t)$. When error is large and positive, proportional output would be proportionately large and positive.
 \par
