@@ -22,7 +22,7 @@ Since all parameters constant, modulation angle is constant, and possible modula
 
 
 \subsection{Light Emitting Diode (LED)}
-The light emitting diode (led) is a high power long lifetime light source semiconductor based. The led is emitting light when current flows through. Led could be modulated at up to 100MHz. The emitted light is incoherent in width meaning it's hard to focus it to a point (not diffraction limited). The emitted light is incoherent in length causing wide band spectrum, although spectrum is sufficiently narrow to appear as a pure color to the human eye.
+The light emitting diode (led) is a high power long lifetime light source semiconductor based. The led is emitting light when current flows through. Led could be modulated at up to 100MHz. The initial opening angle of a led source varies between 45 to 120 degrees. The emitted light is incoherent in width meaning it's hard to focus it to a point (not diffraction limited). The emitted light is incoherent in length causing wide band spectrum, although spectrum is sufficiently narrow to appear as a pure color to the human eye.
 \par
 The working principle is a semiconductor p-n junction with direct band gap. Meaning the lowest energy state above the band gap has the same momentum as the highest under the gap. In order to change energy state electron needs only to release energy equal to the band gap, which defines the wavelength $E_g = \frac{\hslash c}{\lambda}$. All possible energy gaps defines the spectrum, aproximatly gaussian around the wavelength. Forward voltage is applied causing electron injection and recombination with holes. The recombination is releasing energy in form of spontanious emmission photons. The modulation limitation is due to the electrons life time before recombination.
 \par
@@ -62,7 +62,8 @@ Using this method with a led connected, the led brightness could be modulated at
 
 
 \subsection{Light guides}
-Light guides are used to distribute light from the source to a distant area, they are made of thin filaments causing internal reflections. Light guides are used to illuminate small areas, regardless of the spectral characteristics of the light source. They mainly depend on the cross sections of entrance and exit and the length. Making them ideal to overcoming focusing problems, such as the LED uncoherent profile.  
+Light guides are pipes used for directed transmission of luminous energy.They are used to distribute light from the source to distant areas, they are made of thin filaments causing internal reflections. Light guides are used to illuminate small areas, regardless of the spectral characteristics of the light source. They mainly depend on the cross sections of entrance and exit and the length. Making them ideal to overcoming focusing problems, such as the LED uncoherent profile and large opening angle. 
+
 
 \section{Radiation pressure}
 Radiation pressure is pressure on the surface due to momentum exchange with electromagnetic field, including momentum of light. The light is at any wavelength which is absorbed, reflected, or emitted. The pressure is causing force on the surface, although the force is usually insignificant.
@@ -90,7 +91,10 @@ Assuming we have a power controlled light source with 1 watt maximum power and 4
  
 
 \section{vacuum theory}
-A vaccuum chamber is metalic chamber with a vacuum pump which has a pressure lower than the atmospheric pressure (the atmospheric pressure is 760 [Torr]). Quality of vacuum is divided to ranges, according to the technology required to achieve it (CF, KF). Medium vacuum ($25-10^{-3}$ [Torr]), high vacuum ($10^{-3}-10^{-7}$ [Torr]) and ultra high vacuum ($10^{-7}-10^{-9}$ [Torr]). The main limitations to vacuum quality maintenance are leakage from the outside through the chamber and outgassing inside the chamber.
+A vaccuum chamber is metalic chamber with a vacuum pump which has a pressure lower than the atmospheric pressure (the atmospheric pressure is 760 [Torr]). Quality of vacuum is divided to ranges, according to the technology required to achieve it (such as CF, KF). Medium vacuum ($25-10^{-3}$ [Torr]), high vacuum ($10^{-3}-10^{-7}$ [Torr]) and ultra high vacuum ($10^{-7}-10^{-9}$ [Torr]). The main limitations to vacuum quality maintenance are leakage from the outside through the chamber and outgassing inside the chamber.
+\par
+Usually leaks and outgassing, are overcome by having the pump working constantly.Since, in this experiment, the pump is not working, due to the rotation noise. Leaks and outgassing both increases the pressure over time at a constant rate.  
+
 \subsection{Leak Rate}
 At any gas system, some gas would slowly leak over time and increase the pressure if not pumped out. The leak rate $Q_L$ is not a function of time, and resuls in a sustained increase of pressure P over time.
 \begin{equation}
@@ -107,8 +111,7 @@ The desorption rate $Q_{des}$ of the surfaces produces a gas yield that declines
 Q_{des} = q_{des}\cdot A\cdot\frac{t_0}{t}  \label{eqn:energy-mass-equivalence-relation}
 \end{equation}
 Outgassing is minimized by selection of low vapor pressures materials such as stainless steel and glass. Since water is a significant source of outgassing, it is usually minimize by baking the chamber in high tempertures while the pump is running.
-\par
-Usually leaks and outgassing, are overcome by having the pump working constantly.Since, in this experiment, the pump is not working, due to the rotation noise. Leaks and outgassing both increases the pressure over time at a constant rate.  
+
 
 \subsection{Viscous Friction}
 The friction caused by gasses is viscous friction, which is velocity dependenant. The velocity dependence is complicated, at very low speeds, gas resistance is approximately proportional to velocity. 
@@ -116,9 +119,9 @@ The friction caused by gasses is viscous friction, which is velocity dependenant
 \begin{equation}
 F_{drag} = -b\cdot v  \label{eqn:energy-mass-equivalence-relation}
 \end{equation}
-The motivation to use as high vacuum as possible, in this experiment, is to reduce the friction caused by gasses. The viscous friction is velocity dependenant.
+The motivation to use vacuum is to reduce the friction caused by gasses. The viscous friction is velocity dependenant.
 
-Gas pressure at a medium is  propotional to the number density of particles and inverse to the mean free pass of each particle.    
+Gas pressure at a the medium is  propotional to the number density of particles and inverse to the mean free pass of each particle.    
 \begin{equation}
 P = n\cdot k_B\cdot T  \label{eqn:ideal-gasses}
 \end{equation}
@@ -144,7 +147,7 @@ Harmonic oscillator is a system that, when displaced, experiences a liniar resto
 	\label{fig:torsion_pendulum}
 \end{figure}
 
-
+\subsection{Simple Harmonic Oscillator}
 If the restoring tourqe is the only tourqe acting, the oscillator is not driven or damped, called a simple harmonic oscillator. The tourqe is causing sinusoidal oscillations (simple harmonic motion) around the equilibrium angle. The time period and tourqe are determined by the physical constants of the pendulum. 
 \begin{equation}
 \tau = -\kappa\cdot\theta  = I\cdot\ddot{\theta}   \label{eqn:undamped_motion_equation}
