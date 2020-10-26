@@ -35,15 +35,15 @@
             "problemMatcher": []
         }
 
-        // {
-        //     "label": "git-pull_build ",
-        //     "type": "shell",
-        //     "command": "git pull --all; lualatex master; bibtex master; ./master.pdf; lualatex master; lualatex master;lualatex chapter; bibtex chapter; ./chapter.pdf",
-        //     "runOptions": {
-        //         "runOn": "folderOpen"
-        //     },
-        //     "problemMatcher": []
-        // },
+        {
+            "label": "git-pull_build ",
+            "type": "shell",
+            "command": "git pull --all; lualatex master; bibtex master; ./master.pdf; lualatex master; lualatex master;lualatex chapter; bibtex chapter; ./chapter.pdf",
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+            "problemMatcher": []
+        },
     ]
 }
 

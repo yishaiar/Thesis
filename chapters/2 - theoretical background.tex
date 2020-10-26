@@ -138,11 +138,11 @@ At the medium vacuum regime $0.01<k_n<0.5$ the flow is called Knudsen flow. The 
 
 \section{torsion theory}
 \subsection{Harmonic oscillator}
-Harmonic oscillator is a system that, when displaced, experiences a liniar restoring force proportional to the displacement from equilibrium. Torsion Pendulum is an oscillator made of mass hung by a string from a fixed point so it can swing free. When the mass is displaced from equilibrium angle, the pedulum is having a liniar restoring tourqe, caused by the twisted string. The restoring tourqe is rotating the mass back to equilibrium position. The angular case is equivalent to the liniar case (instead of velosity and force,angular velosity and tourqe).
+Harmonic oscillator is a second order system that, when displaced, experiences a liniar restoring force proportional to the displacement from equilibrium. Torsion Pendulum is an oscillator made of mass hung by a string from a fixed point so it can swing free. When the mass is displaced from equilibrium angle, the pedulum is having a liniar restoring tourqe, caused by the twisted string. The restoring tourqe is rotating the mass back to equilibrium position. The angular case is equivalent to the liniar case (instead of velosity and force,angular velosity and tourqe).
 \par
 \begin{figure}[htbp]
 	\centering
-	\fbox{\includegraphics[scale=0.5]{\main/images/2 - theoretical background/torsion_pendulum.JPG}}
+	\fbox{\includegraphics[scale=1]{\main/images/2 - theoretical background/torsion_pendulum.JPG}}
 	\caption[pendulum]{a torsion pendulum}
 	\label{fig:torsion_pendulum}
 \end{figure}
@@ -153,13 +153,155 @@ If the restoring tourqe is the only tourqe acting, the oscillator is not driven 
 \tau = -\kappa\cdot\theta  = I\cdot\ddot{\theta}   \label{eqn:undamped_motion_equation}
 \end{equation}
 \begin{equation}
-\theta(t) = Acos(\omega_0 t +\phi)    \label{eqn:undamped_motion_equation}
+\theta(t) = \theta_{max}cos(\omega_0 t )    \label{eqn:undamped_motion_equation}
 \end{equation}
 \begin{equation}
 \omega_0  =  \sqrt{\frac{\kappa}{I}}   \label{eqn:undamped_motion_equation}
 \end{equation}
 
 \subsection{Damped Oscillator}
+If the system is also having damping (friction) which is proportional to the velocity, the system is called damped oscillator.
+
+
+\begin{equation}
+\tau_{drag} = -b\cdot\dot{\theta}   \label{eqn:friction_tourqe}
+\end{equation} 
+\begin{equation}
+\tau = -\kappa\cdot\theta - b\dot{\theta}  = I\cdot\ddot{\theta}   \label{eqn:damped_motion_equation}
+\end{equation} 
+\begin{equation}
+\ddot{\theta} + 2\xi\omega_0\dot{\theta} + \omega_0^2\theta = 0   \label{eqn:damped_motion_equation}
+\end{equation}
+
+The system damping ratio $\xi$ is the ratio between critical damping and the actual damping. The parameter determines the type of damping the system has, and the damping time of the system $\tau$. The damping ratio is a function of the damping coefficient $b$. Sytem could either be undamped, overdamped, critically damped or underdamped.
+\begin{equation}
+\theta(t) = Ae^{-\omega_0 t(\xi+\sqrt{\xi^2-1})} + Be^{-\omega_0 t(\xi-\sqrt{\xi^2-1})}    \label{eqn:damped_motion_equation}
+\end{equation} 
+\begin{equation}
+\xi = \frac{b}{2\sqrt{I\kappa}} = \frac{actual}{critical}  \label{eqn:damped_motion_equation}
+\end{equation}
+\begin{equation}
+\tau = \frac{1}{\xi\omega_0} = \frac{1}{\frac{b}{2\sqrt{I\kappa}}\sqrt{\frac{\kappa}{I}} }= \frac{2I}{b}  \label{eqn:damping_time}
+\end{equation}
+\begin{equation}
+\theta(t) = Ae^{-\frac{t}{\tau}\cdot(1+\sqrt{1-\frac{1}{\xi^2}})} + Be^{-\frac{t}{\tau}\cdot(1-\sqrt{1-\frac{1}{\xi^2}})}    \label{eqn:damped_motion_equation}
+\end{equation}
+\begin{figure}[htbp]
+	\centering
+	\fbox{\includegraphics[scale=0.2]{\main/images/2 - theoretical background/damping.png}}
+	\caption[damped]{damped oscillators; wikipedia}
+	\label{fig:damped_oscillators}
+\end{figure}
+
+
+
+Undamped ($\xi = 0$); there is no friction and damping $b = 0$, harmonic oscillations without decay.
+\begin{equation}
+\theta(t) = \theta_{max}cos(\omega_0 t )    \label{eqn:undamped_motion_equation}
+\end{equation}
+Overdamped ($\xi > 1$); due to high friction, the system cannot oscillate and decays exponentialy to equilibrium position.
+\begin{equation}
+\theta(t) = Ae^{-\frac{t}{\tau}\cdot(1+\sqrt{1-\frac{1}{\xi^2}})} + Be^{-\frac{t}{\tau}\cdot(1-\sqrt{1-\frac{1}{\xi^2}})}    \label{eqn:overdamped_motion_equation}
+\end{equation}
+Critically damped ($\xi = 1$); due to high friction, the system cannot oscillate and decays exponentialy to equilibrium position. For a fixed $I, \kappa$, choosing $b$ to be at the critical damping value gives
+the fastest return to equilibrium position. Although there is overshoot this is often a desirable property.
+
+\begin{equation}
+\theta(t) = \theta_{max}\cdot e^{-\frac{t}{\tau}}     \label{eqn:underdamped_motion_equation}
+\end{equation}
+ underdamped ($\xi < 1$); amplitude decreases in time due to the friction while oscillating with a lower frequency due to the damping. When the damping coefficient is small enough, the frequency change is neglected.
+\begin{equation}
+\theta(t) = \theta_{max}\cdot e^{-\frac{t}{\tau}}cos(\sqrt{1-\xi^2}\omega_0 t ) =  \theta_{max}\cdot e^{-\frac{t}{\tau}}cos(\omega t )    \label{eqn:underdamped_motion_equation}
+\end{equation}
+\begin{equation}
+\omega = \omega_0\sqrt{1-\xi^2}\approx\omega_0    \label{eqn:underdamped_frequency}
+\end{equation}
+
+\subsection{Overshoot}
+Overshoot is when output signal or function exceeds the target value. Overshoot is usually measured in percentage overshoot (PO), the maximum value minus the target value value divided by target value. Percentage overshoot (PO) for second order systems, such as damped oscillators are a function of the damping ratio $\xi$. 
+\begin{equation}
+PO = 100\cdot e ^{\frac{-\xi\pi}{\sqrt{1-\xi^2}}}   \label{eqn:percentage_overshoot}
+\end{equation}
+
+
+
+\iffalse
+https://ocw.mit.edu/courses/mathematics/18-03sc-differential-equations-fall-2011/unit-ii-second-order-constant-coefficient-linear-equations/damped-harmonic-oscillators/MIT18_03SCF11_s13_2text.pdf
+
+https://www.sciencedirect.com/topics/engineering/underdamped-system#:~:text=When%20the%20damping%20ratio%20is%20between%200%20and%201%20(i.e.,is%20an%20exponential%20decay%20line.
+
+
+\subsection{Driven Oscillator}
+If the damped oscillator system is further affected by an external time-dependent tourqe $\tau(t)$,  the system is called driven oscillator.
+\begin{equation}
+\tau(t) -\kappa\cdot\theta - b\dot{\theta}  = I\cdot\ddot{\theta}   \label{eqn:driven_motion_equation}
+\end{equation} 
+\begin{equation}
+\ddot{\theta} + 2\xi\omega_0\dot{\theta} + \omega_0^2\theta = \frac{\tau(t)}{I}   \label{eqn:damped_motion_equation}
+\end{equation}
+\fi
+
+
+
+\section{PID Controller}
+\subsection{PID Controller Feedback}
+proportional–integral–derivative controller (PID controller) is a feedback based control system. The control loop is used for time continuouse control of a process, so the process output (measured process variable) would be close to a defined set point.
+\par
+PID controller continuously calculates error value, which is the distance of the measured process variable from the defined set point. The feedback applies an external correction to the process, called control variable. The control variable is based on a proportional, integral and derivative response to the error. Proper tuning of a PID enables an accurate automated correction to a controled process. The PID concept is used widely in applications requiring accurate automated control.
+\par
+\begin{figure}[htbp]
+	\centering
+	\fbox{\includegraphics[scale=0.2]{\main/images/2 - theoretical background/PID.png}}
+	\caption[PID]{PID controller feedback loop; from wikipedia}
+	\label{fig:PID_scheme}
+\end{figure}
+
+
+
+\par
+The error and the error's integral and derivate are calculated continuously. The control is having three tuning parameters; $P, I, D$, the feed back correction is modulated by the tuning parameters value. Each parameter is assigned to a response (proportional, integral and derivative). The response (control variable) is a weighted sum of the control terms. Over time the controller attempts to minimize the error $e(t)$ by adjusting the control variable $u(t)$.
+\par
+P is proportional to the current error value $e(t)$. When error is large and positive, proportional output would be proportionately large and positive.
+\par
+I is proportional to past error value's integration. The response of the cumulative value could eliminate residual errors, such as signal offset.
+\par
+D is proportional to error current change rate, by calculating the derivative. The response of the change rate could eliminate more rapid changes.
+\par
+The optimal control function is achieved by balancing the responses. The tuning constants depend on the characteristics of the specific procces. The response must be tuned for each control application.  
+
+\subsection{Damped Oscillator}
+PID controller can continuously calculates error value of an oscillator, to damp it to zero. If the defined set point is set to zero, the error is the measured process variable. The PID acts as friction, gradually working when the ossicilations are at the maximum speed to slow them down, and remove the tourqe energy.
+\begin{equation}
+e(t) = \theta(t) = \theta   \label{eqn:error}
+\end{equation}
+\begin{equation}
+\tau_{PID} = -\gamma\cdot\dot{\theta}   \label{eqn:friction_tourqe}
+\end{equation}
+The sytem is a damped oscillator, with an external force correction, which inserts tourqe to the oscillator.
+\begin{equation}
+\kappa\cdot\theta - \gamma\cdot\dot{\theta}  + I\cdot\ddot{\theta} = 0   \label{eqn:damped__pid_motion_equation}
+\end{equation}
+\begin{equation}
+\gamma\dot{\theta}  = Fr   \label{eqn:damped__pid_motion_equation}
+\end{equation}
+
+\begin{equation}
+\dot{\theta} = \omega_0\theta_{max}sin(\omega_0 t +\phi)    \label{eqn:undamped_motion_equation}
+\end{equation}
+\begin{equation}
+\dot{\theta}_{max} = \omega_0\theta_{max} = \theta_{max}\cdot\frac{2\pi}{T}    \label{eqn:undamped_motion_equation}
+\end{equation}
+\begin{equation}
+\gamma  = \frac{F_{max}r}{\dot{\theta}_{max}} =\frac{F_{max}rT}{\theta_{max}2\pi}    \label{eqn:damped_pid_motion_equation}
+\end{equation}
+\begin{equation}
+\tau =  \frac{2I}{\gamma}  \label{eqn:damping_time}
+\end{equation}
+The PID damping depends on the initial oscillations angle. If the angle is too large compare to the inserted force, the PID affect is neglected, and the damping time $\tau$ would be infinite.
+\par
+
+\color{blue}
+
 If the system is also having damping (friction) which is proportional to the velocity, the system is called damped oscillator.
 
 
@@ -191,68 +333,37 @@ the fastest return to equilibrium position. Although there is overshoot this is 
 \theta(t) = A\cdot e^{-\xi\omega_0 t}cos(\sqrt{1-\xi^2}\omega_0 t +\phi)    \label{eqn:underdamped_motion_equation}
 \end{equation}
 
-\iffalse
-https://ocw.mit.edu/courses/mathematics/18-03sc-differential-equations-fall-2011/unit-ii-second-order-constant-coefficient-linear-equations/damped-harmonic-oscillators/MIT18_03SCF11_s13_2text.pdf
-
-https://www.sciencedirect.com/topics/engineering/underdamped-system#:~:text=When%20the%20damping%20ratio%20is%20between%200%20and%201%20(i.e.,is%20an%20exponential%20decay%20line.
+\color{black}
 
 
-\subsection{Driven Oscillator}
-If the damped oscillator system is further affected by an external time-dependent tourqe $\tau(t)$,  the system is called driven oscillator.
-\begin{equation}
-\tau(t) -\kappa\cdot\theta - b\dot{\theta}  = I\cdot\ddot{\theta}   \label{eqn:driven_motion_equation}
-\end{equation} 
-\begin{equation}
-\ddot{\theta} + 2\xi\omega_0\dot{\theta} + \omega_0^2\theta = \frac{\tau(t)}{I}   \label{eqn:damped_motion_equation}
-\end{equation}
-\fi
+
 
 \section{Gravity Measurement}
+
+\subsection{Gravitational Field}
 Newton law of universal gravitation states that every point mass attracts every other point mass in the universe.
 \begin{equation}
-\overrightarrow{F}| = \frac{GMm}{r^2}   \label{eqn:universal_gravitation}
+\overrightarrow{F}(r) = \frac{GMm}{r^2}\hat{r}    \label{eqn:gravitation_force}
 \end{equation} 
-The force is proportional to the product of their masses and inversely proportional to the square of the distance between their centers. Since it is inversely proportional to the distance square means the force is very weak. For example the force between two cubes 1kg each 1m away would be $\overrightarrow{F}| = 6.67\cdot10^{-11}[N]$.
+The force is acting along the intersecting line,proportional to the product of the masses and inverse to the square of the distance between the centers. Since it is inverse to the distance square means the force is very weak. For example the force between two cubes 1 kg each 1 meter away would be $\overrightarrow{F} = 6.67\cdot10^{-11} [N]$.
 \par
-Gravitational field of a mass is a vector field consisting at every point a vector pointing directly towards the particle. The magnitude of the field at every point is calculated applying the universal law. The field represents the force per unit mass of any mass in space at that point. Measuring accurately the gravitational field of a test mass with a known mass, the test mass weight or distance could be estimated.
+Gravitational field of a mass is a vector field consisting at every point a vector pointing directly towards the particle. The magnitude of the field at every point is calculated by applying the universal law, the force per unit mass. 
+\begin{equation}
+\overrightarrow{G}(r) = \frac{\overrightarrow{F}(r)}{m} = \frac{GM}{r^2}\hat{r}    \label{eqn:gravitation_field}
+\end{equation}
+The field caused by a mass at a specific point is measured by measuring the gravitational force. The gravitational force caused by a small known mass test mass $m$ relative to the mass $M$. Test mass $m$ much smaller than mass $M$ ensures that there is a negligible influence on the behavior of $M$.  
 
-
-
-
-
-
-\section{PID Controller}
-proportional–integral–derivative controller (PID controller) is a feedback based control system. The control loop is used for time continuouse control of a process, so the process output (measured process variable) would be close to a defined set point.
+\subsection{Gravity Sensing}
+The field at a specific point is the super position of fields point value, of fields by any mass in space. Measuring accurately the gravitational field caused by a mass, with a known test mass, the mass weight or distance could be estimated. In order to filter out the other gravitational fields, caused by masses around, the measurement is measuring the difference from a baseline state.
 \par
-PID controller continuously calculates error value, which is the distance of the measured process variable from the defined set point. The feedback applies an external correction to the process, called control variable. The control variable is based on a proportional, integral and derivative response to the error. Proper tuning of a PID enables an accurate automated correction to a controled process. The PID concept is used widely in applications requiring accurate automated control.
+Usually the measurement is with a frequency. The test mass is moving in different frequencies (not moving is zero frequency). The masses around are not moving, and are filtered out.
 \par
-\begin{figure}[htbp]
-	\centering
-	\fbox{\includegraphics[scale=0.2]{\main/images/2 - theoretical background/PID.png}}
-	\caption[PID]{PID controller feedback loop; from wikipedia}
-	\label{fig:PID_scheme}
-\end{figure}
+The gravitational field is measured at each of those frequencies, measuring the energy spectral density $[\frac{rad}{\sqrt{Hz}}]$.
 
 
 
-\par
-The error and the error's integral and derivate are calculated continuously. The control is having three tuning parameters; $P, I, D$, the feed back correction is modulated by the tuning parameters value. Each parameter is assigned to a response (proportional, integral and derivative). The response (control variable) is a weighted sum of the control terms. Over time the controller attempts to minimize the error $e(t)$ by adjusting the control variable $u(t)$.
-\par
-P is proportional to the current error value $e(t)$. When error is large and positive, proportional output would be proportionately large and positive.
-\par
-I is proportional to past error value's integration. The response of the cumulative value could eliminate residual errors, such as signal offset.
-\par
-D is proportional to error current change rate, by calculating the derivative. value's integration. The response of the change rate could eliminate more rapid changes.
-\par
-The optimal control function is achieved by balancing the responses. The tuning constants depend on the characteristics of the specific procces. The response must be tuned for each control application.  
-
- 
 
 
-\color{blue}
-
-
-\color{black}
 
 
 
