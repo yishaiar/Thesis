@@ -135,11 +135,11 @@ K_n = \frac{I}{d}     \label{eqn:mean-free-pass}
 \end{equation}
 At the medium vacuum regime $0.01<k_n<0.5$ the flow is called Knudsen flow. The molecules do not interact and move in straight lines between points. If the vaccum chamber is having medium vacuum or higher, classical viscous friction of objects with gas particles inside the chamber could be neglected.
 \subsection{Faraday Cage}
-Faraday cage is a cage made by a continuous covering of a conductive material which is used to block electromagnetic fields. External electrical fields causes an electric charge distribution in the conductive cage without passing inside, which cancels the field's effect inside the cage. Faraday cage cannot prevent inside field caused by electric charges which are placed inside without touching theshield walls. Also, faraday cage blocks better high frequency magnetic field penetration, depending on the material skin depth.
+Faraday cage is a cage made by a continuous covering of a conductive material which is used to block electromagnetic fields. External electrical fields causes an electric charge distribution in the conductive cage without passing inside, which cancels the field's effect inside the cage. Faraday cage cannot prevent inside field caused by electric charges which are placed inside without touching the shield walls. Also, faraday cage blocks better high frequency magnetic field penetration, depending on the material skin depth penetration $\delta$.
 \begin{equation}
 \delta = \frac{2\rho}{(2\pi f)(\mu_0\mu_r)}     \label{eqn:mean-free-pass}
 \end{equation}
-Where $\rho$ is the material electric resistivity, and $\mu_r$ is the relative magnetic permeability. The cage cannot block stable or slowly varying magnetic fields from outside, the material skin depth determines the shield penetrating frequencies. Electric current decays exponentially with depth through the material, thicker shields attenuates lower frequency fields better. Vacuum chambers are usually made of a few mm thick stainless steel 316, making them faraday cages with a skin depth which could block magnetic frequencies of [GHz] and reduce magnetic noise from lower frequencies.
+Where $\rho$ is the material electric resistivity, and $\mu_r$ is the relative magnetic permeability. The cage cannot block stable or slowly varying magnetic fields from outside, the material skin depth determines the shield penetrating frequencies. Electric current decays exponentially with depth through the material, thicker shields attenuates lower frequency fields better. Vacuum chambers are usually made of a few mm thick stainless steel 316, making them faraday cages with a skin depth which could block magnetic frequencies higher than 10 KHz and reduce magnetic noise from lower frequencies.
 
 
 
@@ -150,19 +150,38 @@ Where $\rho$ is the material electric resistivity, and $\mu_r$ is the relative m
 
 
 \section{Torsion Pendulum Theory}
-\subsection{Torsion Pendulum}
+\subsection{Torsional Pendulum}
+Torsion Pendulum is an oscillator made of mass hung by a string from a fixed point so it could swing free. When the mass is displaced from equilibrium angle, the pedulum is having a liniar restoring tourqe, caused by the twisted string. The restoring tourqe is rotating the mass back to equilibrium position.
 
-\subsection{Harmonic oscillator}
-Harmonic oscillator is a second order system that, when displaced, experiences a liniar restoring force proportional to the displacement from equilibrium. Torsion Pendulum is an oscillator made of mass hung by a string from a fixed point so it can swing free. When the mass is displaced from equilibrium angle, the pedulum is having a liniar restoring tourqe, caused by the twisted string. The restoring tourqe is rotating the mass back to equilibrium position. The angular case is equivalent to the liniar case (instead of velosity and force,angular velosity and tourqe).
-\par
+
 \begin{figure}[htbp]
 	\centering
-	\fbox{\includegraphics[scale=1]{\main/images/2 - theoretical background/torsion_pendulum.JPG}}
+	\fbox{\includegraphics[scale=1.2]{\main/images/2 - theoretical background/torsion_pendulum.JPG}}
 	\caption[pendulum]{a torsion pendulum}
 	\label{fig:torsion_pendulum}
 \end{figure}
 
+Assuming a mass with a profile which could be estimated to a long thin rod. When displaced from equilibrium, there are two sources of torque; the displacing tourqe and a liniar restoring tourqe at opposite direction. At equilibrium, when balance stabilizes in a specific angle, the two sources of torque cancel out. With small angles the pendulum obeys Hooke’s law, when $L$ is the rod length.
+\begin{equation}
+\tau = -\kappa\theta = LF    \label{eqn:Hooke_law}
+\end{equation}
+The moment of innertia of a rod oscillating around a pivot.
+\begin{equation}
+I = \frac{ML^2}{12}     \label{eqn:moment_innertia}
+\end{equation}  
+
+
+The string torsion coefficient could be estimated, assuming homogeneousity of a circular string. Where G is the material shear modulus, j is the circular second moment of area ($Jzz$) and $h$ is the string length.
+\begin{equation}
+\kappa = \frac{GJ}{h} = \frac{G}{h} \frac{\pi D^4}{32}    \label{eqn:torsion_coefficient}
+\end{equation}
+ 
+
+
 \subsection{Simple Harmonic Oscillator}
+Harmonic oscillator is a second order system that, when displaced, experiences a liniar restoring force proportional to the displacement from equilibrium. Torsional pendulum is an angular harmonic oscillator (equivalent to the liniar case, instead of velosity and force, angular velosity and tourqe).
+\par
+
 If the restoring tourqe is the only tourqe acting, the oscillator is not driven or damped, called a simple harmonic oscillator. The tourqe is causing sinusoidal oscillations (simple harmonic motion) around the equilibrium angle. The time period and tourqe are determined by the physical constants of the pendulum. 
 \begin{equation}
 \tau = -\kappa\cdot\theta  = I\cdot\ddot{\theta}   \label{eqn:undamped_motion_equation}
@@ -171,7 +190,7 @@ If the restoring tourqe is the only tourqe acting, the oscillator is not driven 
 \theta(t) = \theta_{max}cos(\omega_0 t )    \label{eqn:undamped_motion_equation}
 \end{equation}
 \begin{equation}
-\omega_0  =  \sqrt{\frac{\kappa}{I}}   \label{eqn:undamped_motion_equation}
+\omega_0  = \frac{2\pi}{T} = \sqrt{\frac{\kappa}{I}}   \label{eqn:undamped_motion_equation}
 \end{equation}
 
 \subsection{Damped Oscillator}
@@ -233,10 +252,15 @@ the fastest return to equilibrium position. Although there is overshoot this is 
 \end{equation}
 
 \subsection{Overshoot}
-Overshoot is when output signal or function exceeds the target value. Overshoot is usually measured in percentage overshoot (PO), the maximum value minus the target value value divided by target value. Percentage overshoot (PO) for second order systems, such as damped oscillators are a function of the damping ratio $\xi$. 
+Overshoot is when output signal or function exceeds the target value. The response signal is not accurate compare to target.In controll theory there are two wanted conflicting properties; an accurate response (small overshoot), and small risetime (fast response). 
+\par
+Overshoot is usually measured in percentage overshoot (PO). For second order systems, such as damped oscillators PO is a function of the damping ratio $\xi$. 
+
+
 \begin{equation}
-PO = 100\cdot e ^{\frac{-\xi\pi}{\sqrt{1-\xi^2}}}   \label{eqn:percentage_overshoot}
+PO = 100\cdot e ^{\frac{-\xi\pi}{\sqrt{1-\xi^2}}} = \frac{output-target}{target}   \label{eqn:percentage_overshoot}
 \end{equation}
+ 
 
 
 
@@ -262,7 +286,7 @@ If the damped oscillator system is further affected by an external time-dependen
 \subsection{PID Controller Feedback}
 proportional–integral–derivative controller (PID controller) is a feedback based control system. The control loop is used for time continuouse control of a process, so the process output (measured process variable) would be close to a defined set point.
 \par
-PID controller continuously calculates error value, which is the distance of the measured process variable from the defined set point. The feedback applies an external correction to the process, called control variable. The control variable is based on a proportional, integral and derivative response to the error. Proper tuning of a PID enables an accurate automated correction to a controled process. The PID concept is used widely in applications requiring accurate automated control.
+PID controller continuously calculates error value, which is the distance of the measured process variable from the defined set point. The feedback applies an external correction to the process, called control variable. The control variable is based on a proportional, integral and derivative gain to the error. Proper tuning of a PID enables an accurate automated correction to a controled process. The PID concept is used widely in applications requiring accurate automated control.
 \par
 \begin{figure}[htbp]
 	\centering
@@ -272,10 +296,13 @@ PID controller continuously calculates error value, which is the distance of the
 \end{figure}
 
 
+\par
+The error and the error's integral and derivate are calculated continuously. The control is having three tuning parameters; $P, I, D$, the feed back correction is modulated by the tuning parameters value. Each parameter is assigned to a gain (proportional, integral and derivative). The response (control variable) is a weighted sum of the control terms. Over time the controller attempts to minimize the error $e(t)$ by adjusting the control variable $u(t)$, which is the PID output.
+\begin{equation}
+u(t) = K_Pe(t)+K_I\int_{0}^{t}e(t)+K_D\frac{de(t)}{dt}   \label{eqn:PID_eq}
+\end{equation}
 
-\par
-The error and the error's integral and derivate are calculated continuously. The control is having three tuning parameters; $P, I, D$, the feed back correction is modulated by the tuning parameters value. Each parameter is assigned to a response (proportional, integral and derivative). The response (control variable) is a weighted sum of the control terms. Over time the controller attempts to minimize the error $e(t)$ by adjusting the control variable $u(t)$.
-\par
+
 P is proportional to the current error value $e(t)$. When error is large and positive, proportional output would be proportionately large and positive.
 \par
 I is proportional to past error value's integration. The response of the cumulative value could eliminate residual errors, such as signal offset.
@@ -312,43 +339,13 @@ The sytem is a damped oscillator, with an external force correction, which inser
 \begin{equation}
 \tau =  \frac{2I}{\gamma}  \label{eqn:damping_time}
 \end{equation}
-The PID damping depends on the initial oscillations angle. If the angle is too large compare to the inserted force, the PID affect is neglected, and the damping time $\tau$ would be infinite.
+The PID damping depends on the initial oscillations angle. If the angle is too large compare to the inserted force, the system is extremly underdamped and the PID affect is neglected. The damping time $\tau$ would be infinite and the system would keep on ossicilating.
+
+\subsection{Damping}
+Using PID control does not guarantee optimal control or stability. The control system is aiming to achieve critical damping of the process. Well tuned control would a reach the desired set point fast and accurate, and also apply over time the nesseary corrections to resist external forces trying to move variable from the set point.
 \par
+The controller response is its response to error. How much does the sytem overshoots a setpoint and the system oscillations. When controller gains are too high, instead of critical damping there is overdamping causing overshoot, due to the high gain the overshoot response overshoots to the other side, causing driving of the system.
 
-\color{blue}
-
-If the system is also having damping (friction) which is proportional to the velocity, the system is called damped oscillator.
-
-
-\begin{equation}
-\tau_{drag} = -b\cdot\dot{\theta}   \label{eqn:friction_tourqe}
-\end{equation} 
-\begin{equation}
-\tau = -\kappa\cdot\theta - b\dot{\theta}  = I\cdot\ddot{\theta}   \label{eqn:damped_motion_equation}
-\end{equation} 
-\begin{equation}
-\ddot{\theta} + 2\xi\omega_0\dot{\theta} + \omega_0^2\theta = 0   \label{eqn:damped_motion_equation}
-\end{equation}
-\begin{equation}
-\xi = \frac{b}{2\sqrt{I\kappa}}   \label{eqn:damped_motion_equation}
-\end{equation}
-
-Based on the friction coefficient the sytem could either be overdamped, critically damped or underdamped, $\xi$ is called the damping ratio. Overdamped ($\xi > 1$); due to high friction, the system cannot oscillate and decays exponentialy to equilibrium position.
-\begin{equation}
-\theta(t) = Ae^{-\omega_0 t(\xi+\sqrt{\xi^2-1})} + Be^{-\omega_0 t(\xi-\sqrt{\xi^2-1})}    \label{eqn:overdamped_motion_equation}
-\end{equation}
-Critically damped ($\xi = 1$); due to high friction, the system cannot oscillate and decays exponentialy to equilibrium position. For a fixed $I, \kappa$, choosing $b$ to be at the critical damping value gives
-the fastest return to equilibrium position. Although there is overshoot this is often a desirable property.
-
-\begin{equation}
-\theta(t) = e^{-\xi\omega_0 t}\cdot(A+Bt)     \label{eqn:underdamped_motion_equation}
-\end{equation}
- underdamped ($\xi < 1$); amplitude decreases in time due to the friction while oscillating with a lower frequency.
-\begin{equation}
-\theta(t) = A\cdot e^{-\xi\omega_0 t}cos(\sqrt{1-\xi^2}\omega_0 t +\phi)    \label{eqn:underdamped_motion_equation}
-\end{equation}
-
-\color{black}
 
 
 
@@ -360,7 +357,7 @@ Newton law of universal gravitation states that every point mass attracts every 
 \begin{equation}
 \overrightarrow{F}(r) = \frac{GMm}{r^2}\hat{r}    \label{eqn:gravitation_force}
 \end{equation} 
-The force is acting along the intersecting line,proportional to the product of the masses and inverse to the square of the distance between the centers. Since it is inverse to the distance square means the force is very weak. For example the force between two cubes 1 kg each 1 meter away would be $\overrightarrow{F} = 6.67\cdot10^{-11} [N]$.
+The force is acting along the intersecting line, proportional to the product of the masses and inverse to the square of the distance between the centers. Since it is inverse to the distance square means the force is very weak. For example the force between two cubes 1 kg each 1 meter away would be $\overrightarrow{F} = 6.67\cdot10^{-11} [N]$.
 \par
 Gravitational field of a mass is a vector field consisting at every point a vector pointing directly towards the particle. The magnitude of the field at every point is calculated by applying the universal law, the force per unit mass. 
 \begin{equation}
@@ -368,12 +365,7 @@ Gravitational field of a mass is a vector field consisting at every point a vect
 \end{equation}
 The field caused by a mass at a specific point is measured by measuring the gravitational force. The gravitational force caused by a small known mass test mass $m$ relative to the mass $M$. Test mass $m$ much smaller than mass $M$ ensures that there is a negligible influence on the behavior of $M$.  
 
-\subsection{Gravity Sensing}
-The field at a specific point is the super position of fields point value, of fields by any mass in space. Measuring accurately the gravitational field caused by a mass, with a known test mass, the mass weight or distance could be estimated. In order to filter out the other gravitational fields, caused by masses around, the measurement is measuring the difference from a baseline state.
-\par
-Usually the measurement is with a frequency. The test mass is moving in different frequencies (not moving is zero frequency). The masses around are not moving, and are filtered out.
-\par
-The gravitational field is measured at each of those frequencies, measuring the energy spectral density $[\frac{rad}{\sqrt{Hz}}]$.
+
 
 \subsection{Cavendish Experiment}
 The Cavendish experiment, performed in the 17th century, was the first experiment to measure the gravitational force between masses. The apparatus which is constructed by a torsional pendulum is still used to measure accurately gravitational forces. Assuming no friction or other damping force (simple harmonic oscillator) when a mass is interduced, there are two sources of torque in the system; tourqe by the mass gravitational force, and restoring tourqe caused by the wire torsion. Since gravity is a weak force the torsional pendulum obeys Hooke’s law (small angles). At equilibrium, when balance has been stabilized at an angle $\theta$, these two tourqes are canceled out.
@@ -382,6 +374,14 @@ The Cavendish experiment, performed in the 17th century, was the first experimen
 \end{equation}
 
 
+\subsection{Gravity Sensing}
+The field at a specific point is the super position of fields point value, of fields caused by any mass in space. Measuring accurately the gravitational field caused by a mass, with a known test mass, the mass weight or distance could be estimated. In order to filter out the other gravitational fields, caused by masses around, the measurement is measuring the difference from a baseline state.
+\par
+Usually the measurement is with a frequency. The test mass is moving in different frequencies (not moving is zero frequency). The masses around are not moving, and are filtered out.
+\par
+The angle caused by thr gravitational field is measured at each of those frequencies, measuring the energy spectral density $[\frac{rad}{\sqrt{Hz}}]$.
+In the measurement system different noises have different frequencies. By integrating over long time measurement noises are reduced. The signal to noise ratio (SNR) is the limiting factor for the sensetivity of a measuring system. In higher frequencies integration is faster, causing less noises and higher SNR.
+The SNR dependency on frequency cause difficuties measuring gravitational fields at low frequencies.
 
 
 
