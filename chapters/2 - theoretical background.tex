@@ -123,14 +123,16 @@ Where $\rho$ is the material electric resistivity, and $\mu_r$ is the relative m
 
 
 \subsection{Viscous Flow}
-The motivation to use vacuum is to reduce brownian motion and viscous friction caused by gas particles in the medium. Gas pressure at the medium is propotional to the number density of particles and inverse to the mean free pass of each particle.    
+The motivation to use vacuum is to reduce brownian motion and viscous friction caused by gas particles in the medium. Gas particles fluctuating and colliding with an average free pass. 
+\par
+Gas pressure at the medium is propotional to the number density of particles and inverse to the mean free pass of each particle.    
 \begin{equation}
-P = n\cdot k_B\cdot T  \label{eqn:ideal-gasses}
+P = \frac{N}{V}\cdot k_B\cdot T  \label{eqn:ideal-gasses}
 \end{equation}
 \begin{equation}
 I = \frac{k_B\cdot T}{\sqrt{2}\cdot\pi\cdot p\cdot d_m^2}     \label{eqn:mean-free-pass}
 \end{equation}
-Gas particle collide many times along it's way. The mean free path is the average distance the particle could pass between two collisions with other particles. Knudsen ratio could be derived from the term, ratio which is used to characterize types of gas flow compare to the pipe diameter.
+Gas particle collide many times, the mean free path is the average distance the particle could pass between two collisions with other particles. Knudsen ratio could be derived from the term, ratio which is used to characterize types of gas flow compare to the pipe diameter.
 \begin{equation}
 K_n = \frac{I}{d}     \label{eqn:mean-free-pass}
 \end{equation}
