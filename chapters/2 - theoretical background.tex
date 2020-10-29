@@ -146,9 +146,11 @@ Brownian motion is a pattern of random particles fluctuations inside a fluid, a 
 \par
 Maxwell-Boltzmann distribution of molecular speed can extract the expression of average kinetic energy for a gas particle.
 \begin{equation}
-f(v) = 4\pi(\frac{m}{2\pi kT})^{3/2}v^2e^{\frac{-mv^2}{2kT}}     \label{eqn:Maxwell_Boltzmann}
+f(v) = 4\pi(\frac{m}{2\pi kT})^{3/2}v^2exp(\frac{-mv^2}{2kT})     \label{eqn:Maxwell_Boltzmann}
 \end{equation}  
-
+\begin{equation}
+<\frac{mv^2}{2}> = \int_{0}^{\inf}\frac{mv^2}{2}f(v)dv =  \frac{3kT}{2}    \label{eqn:avrage_kinetic}
+\end{equation}
 The Brownian motion of a particle is due to thermal energy. 
 
 The Brownian motion kinetic energie is proptional to the number of particles. Vacuum reduces the pressure and number of particles, which reduces the energie.
