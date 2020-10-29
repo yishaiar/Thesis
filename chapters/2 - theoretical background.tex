@@ -114,6 +114,7 @@ Q_{des} = q_{des}\cdot A\cdot\frac{t_0}{t}  \label{eqn:energy-mass-equivalence-r
 Outgassing is minimized by selection of low vapor pressures materials such as stainless steel and glass. Since water is a significant source of outgassing, it is usually minimize by baking the chamber in high tempertures while the pump is running.
 
 
+
 \subsection{Viscous Friction}
 The friction caused by gasses is viscous friction, which is velocity dependenant. The velocity dependence is complicated, at very low speeds, gas resistance is approximately proportional to velocity. 
 
@@ -134,6 +135,33 @@ Gas particle collide many times along it's way. The mean free path is the averag
 K_n = \frac{I}{d}     \label{eqn:mean-free-pass}
 \end{equation}
 At the medium vacuum regime $0.01<k_n<0.5$ the flow is called Knudsen flow. The molecules do not interact and move in straight lines between points. If the vaccum chamber is having medium vacuum or higher, classical viscous friction of objects with gas particles inside the chamber could be neglected.
+
+
+
+
+\subsection{Viscous Friction}
+The friction caused by gasses is viscous friction, which is velocity dependenant. The velocity dependence is complicated, at very low speeds, gas resistance is approximately proportional to velocity. 
+
+\begin{equation}
+F_{drag} = -b\cdot v  \label{eqn:energy-mass-equivalence-relation}
+\end{equation}
+The motivation to use vacuum is to reduce the friction caused by gasses. The viscous friction is velocity dependenant.
+
+Gas pressure at a the medium is  propotional to the number density of particles and inverse to the mean free pass of each particle.    
+\begin{equation}
+P = n\cdot k_B\cdot T  \label{eqn:ideal-gasses}
+\end{equation}
+\begin{equation}
+I = \frac{k_B\cdot T}{\sqrt{2}\cdot\pi\cdot p\cdot d_m^2}     \label{eqn:mean-free-pass}
+\end{equation}
+Gas particle collide many times along it's way. The mean free path is the average distance the particle could pass between two collisions with other particles. Knudsen ratio could be derived from the term, ratio which is used to characterize types of gas flow compare to the pipe diameter.
+\begin{equation}
+K_n = \frac{I}{d}     \label{eqn:mean-free-pass}
+\end{equation}
+At the medium vacuum regime $0.01<k_n<0.5$ the flow is called Knudsen flow. The molecules do not interact and move in straight lines between points. If the vaccum chamber is having medium vacuum or higher, classical viscous friction of objects with gas particles inside the chamber could be neglected.
+
+
+
 \subsection{Faraday Cage}
 Faraday cage is a cage made by a continuous covering of a conductive material which is used to block electromagnetic fields. External electrical fields causes an electric charge distribution in the conductive cage without passing inside, which cancels the field's effect inside the cage. Faraday cage cannot prevent inside field caused by electric charges which are placed inside without touching the shield walls. Also, faraday cage blocks better high frequency magnetic field penetration, depending on the material skin depth penetration $\delta$.
 \begin{equation}
@@ -144,7 +172,7 @@ Where $\rho$ is the material electric resistivity, and $\mu_r$ is the relative m
 \subsection{Brownian Motion}
 Brownian motion is a pattern of random particles fluctuations inside a fluid, a random walk with no preferential direction of flow. This pattern happens at thermal equilibrium in a given temperature (on average there is no linear and angular momentum). 
 \par
-Maxwell-Boltzmann distribution of molecular speed can extract the expression of average kinetic energy for a gas particle.
+Maxwell-Boltzmann distribution of molecular speed can extract the expression of average kinetic energy for a gas particle and the total brownian motion kinetic energie.
 \begin{equation}
 f(v) = 4\pi(\frac{m}{2\pi kT})^{3/2}v^2exp(\frac{-mv^2}{2kT})     \label{eqn:Maxwell_Boltzmann}
 \end{equation}  
@@ -152,7 +180,7 @@ f(v) = 4\pi(\frac{m}{2\pi kT})^{3/2}v^2exp(\frac{-mv^2}{2kT})     \label{eqn:Max
 <E_k>=<\frac{mv^2}{2}> = \int_{0}^{\infty}\frac{mv^2}{2}f(v)dv =  \frac{3kT}{2}    \label{eqn:avrage_kinetic}
 \end{equation}
 \begin{equation}
-E_k=N<E_k> \frac{3NkT}{2}    \label{eqn:total_kinetic}
+E_k=N<E_k> \frac{3}{2}NkT    \label{eqn:total_kinetic}
 \end{equation}
 When system is in equilibrium, its kinetic energy is uniformly distributed among all its degrees of freedom. A macroscopic object in motion clearly is not in equilibrium. It has one degree of freedom (the center of mass motion) with far more energy than any other. If that degree of freedom interacts with others, the system will tend to move toward equilibrium. Energy will be transfered out of that one degree of freedom (so the object will slow down) and into all the others (so the object will become warmer).
 
