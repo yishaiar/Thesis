@@ -170,7 +170,7 @@ P-P_0 = p = p_0cos(\omega t -\kappa x)       \label{eqn:acoustic_pressure}
 \begin{equation}
 I = pV      \label{eqn:acoustic_intensity}
 \end{equation} 
-The power carried by acoustic waves $[\frac{W}{m^2}]$, acoustic intensity, depends on the material acoustic pressure and particle velosity. When the material pressure is reduced, the acoustic pressure is lower and less power is carried.
+The power carried by acoustic waves $[\frac{W}{m^2}]$, named acoustic intensity, depends on the material acoustic pressure and particle velosity. When the material pressure is reduced, the acoustic pressure is lower and less power is carried.
 
 
 \section{Torsion Pendulum Theory}
@@ -404,16 +404,22 @@ The field at a specific point is the super position of fields point value, of fi
 \par
 Usually the measurement is with a frequency. The test mass is moving in different frequencies (not moving is zero frequency). The masses around are not moving, and are filtered out.
 \par
-The angle caused by thr gravitational field is measured at each of those frequencies, measuring the energy spectral density $[\frac{rad}{\sqrt{Hz}}]$.
+The angle caused by the gravitational field is measured at each of those frequencies, measuring the energy spectral density $[\frac{rad}{\sqrt{Hz}}]$.
 In the measurement system different noises have different frequencies. By integrating over long time measurement noises are reduced. The signal to noise ratio (SNR) is the limiting factor for the sensetivity of a measuring system. In higher frequencies integration is faster, causing less noises and higher SNR.
 The SNR dependency on frequency cause difficuties measuring gravitational fields at low frequencies.
 
+\subsection{shot noise}
+When measurement is with a laser the ground SNR that could be achieved is limited by the system shot noise. Shot noise is a fundamental quantum physical phenomenon. Power fluctuations due to fluctuations in the number of photons. 
+\begin{equation}
+SNR = \frac{N}{\sqrt{N}} = \sqrt{N}    \label{eqn:shot_noise}
+\end{equation}
+While other system noises are higher than the shot noise limit, reducing noises and time integration would provide higher  accuracy and better mesurement results. 
 
 
 
-\section{Thermodynamic temperature}
 
-\subsection{shotnoise}
+
+
 
 
 
