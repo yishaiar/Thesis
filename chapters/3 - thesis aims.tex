@@ -3,23 +3,45 @@
 \begin{document}
 \chapter{thesis aims}\label{chp:example-2}
 \section{Measurement Method}
-Shot noise using a split detector in an interferometric technique is even on all frequencies, if integrating over a long time it would be reduced.
-
+The Cavendish experiment, is constructed using a torsional pendulum with a front mirror. The angle displaement is causing a mirror tilt. Optical measurement of angle displaement is made with a split detector. 
+\par
+Shot noise using a split detector in an interferometric technique is even on all frequencies. Shot limit when integrating over a long time.
 \begin{equation}
 \Delta\theta = \frac{1}{4\sqrt{2}\pi}\frac{\lambda}{L\sqrt{N}} \approx
 4\cdot10^{-14} [\frac{rad}{Hz}]    \label{eqn:gravitation_tourqe}
 \end{equation}
-When the gravitational force is measured using a torsional pendulum, there are noise limitation to the measuremnt sensetivity. The limitation are higher than the shot noise limit, meaning that reducing the noise could achieve higher sensetivity.
+When the gravitational force is measured using a torsional pendulum, there are noise limitation to the measuremnt sensetivity. The limitation are higher than the shot noise limit, meaning that reducing the noise could achieve higher sensetivity. The noises on the pendulum are magnetic noise, random fluctuations due to thermal brownian motion and acoustic waves. Friction is also limiting the pendulum response. 
 \par
-The noises on the pendulum are magnetic noise and random fluctuations due to thermal brownian motion. Friction is also limiting the pendulum response. 
+Pendulum is placed inside vacuum reducing brownian motion, acoustic waves and friction, vacuum chamber is reducing magnetic noise by faraday cage. At vacuum the brownian motion from envirement coupling is highly reduced, enabling to compensate the system noises and cool the pendulum temperture.
 \par
-Pendulum is placed inside vacuum reducing brownian motion and friction, vacuum chamber is reducing magnetic noise by faraday cage. When  
+The system is cooled down by using radiation pressure force. Fast modulated high intensity light sources from both ends of pendulum are adding controled small fast changing damping tourqe. The damping is by using a PID feedback loop. The damping is by feedback, enabling to damp all unknown noises from system. 
+\par
+The system ossiclations become smaller enlarging the SNR and the measuremnt sensetivity. The PID error is getting samller and damping response becomes small. 
+\begin{equation}
+e(t) = \theta_{error}(t)   \label{eqn:pid_error}
+\end{equation}
+\begin{equation}
+u(t) = K_Pe(t)+K_I\int_{0}^{t}e(t)+K_D\frac{de(t)}{dt}   \label{eqn:PID_eq}
+\end{equation}
+
+Introducing a new mass add a constant new tourqe to the system, which the PID is compensating. The PID response become a constant reverse tourqe. 
+\begin{equation}
+e(t) = \theta_{error}(t) + \theta_{gravity}(t)    \label{eqn:PID_measurement}
+\end{equation}
+\begin{equation}
+u(t) = u[ \theta_{error}(t)] + K_P\theta_{gravity}(t) \approx K_P\theta_{gravity}(t)\label{eqn:PID_measurement_eq}
+\end{equation}
+\begin{equation}
+\kappa\theta_{gravity} =\frac{u(t)}{K_P} = L\frac{GmM}{r^2}    \label{eqn:pid_gravitation_tourqe}
+\end{equation}
+\begin{equation}
+\kappa =\frac{8\pi^2ml^2}{T^2}    \label{eqn:empirical_tourqe}
+\end{equation}
+The measurement of that response is fast and accurate. The measurement sytem is measuring with fast response (short integration time) and high accuracy low frequency garvity fields. 
 
 
 
-The Cavendish experiment, performed in the 17th century, was the first experiment to measure the gravitational force between masses. The apparatus which is constructed by a torsional pendulum is still used to measure accurately gravitational forces. Assuming no friction or other damping force (simple harmonic oscillator) when a mass is interduced, there are two sources of torque in the system; tourqe by the mass gravitational force, and restoring tourqe caused by the wire torsion. Since gravity is a weak force the torsional pendulum obeys Hooke’s law (small angles). At equilibrium, when balance has been stabilized at an angle $\theta$, these two tourqes are canceled out.
-Torsion Pendulum is an oscillator made of mass hung by a string from a fixed point so it could swing free. When the mass is displaced from equilibrium angle, the pedulum is having a liniar restoring tourqe, caused by the twisted string. The restoring tourqe is rotating the mass back to equilibrium position.
- 
+
 \section{Optical Cooling}
 
 \section{accuracy}
