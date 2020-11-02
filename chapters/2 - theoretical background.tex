@@ -280,13 +280,7 @@ The radiation force assuming light field direction perpendicular to surface, and
  
 
 \section{Vacuum Theory}
-\subsection{Vacuum Chambers}
-Vaccuum chamber is a metalic chamber with a vacuum pump which has a pressure lower than the atmospheric pressure (which is 760 [Torr]). Quality of vacuum is divided to ranges; low vacuum, medium vacuum, high vacuum and ultra high vacuum. The main limitations to vacuum quality maintenance are leakage from the outside through the chamber and outgassing inside the chamber.
-\par
-Leaks and outgassing both increases the pressure (lowering the vacuum) at a constant rate over time. Usually, in order to keep equilibrium, the leaks and outgassing overcome by having a constant pump rate (vacuum pump working).   
-\begin{equation}
-Q_P = Q_L + Q_{des}  \label{eqn:vacuum_equilibrium}
-\end{equation}
+
 \subsection{Leak Rate}
 At any gas system, some gas would slowly leak over time and increase the pressure if not pumped out. The leak rate $Q_L$ is not a function of time, and resuls in a sustained increase of pressure P over time.
 \begin{equation}
@@ -304,7 +298,13 @@ The desorption rate $Q_{des}$ of the surfaces produces a gas yield that declines
 Q_{des} = q_{des}\cdot A\cdot\frac{t_0}{t}  \label{eqn:energy-mass-equivalence-relation}
 \end{equation}
 Outgassing is minimized by selection of low vapor pressures materials such as stainless steel and glass. Since water is a significant source of outgassing, it is usually minimize by baking the chamber in high tempertures while the pump is running.
-
+\subsection{Vacuum Chambers}
+Vaccuum chamber is a metalic chamber with a vacuum pump which has a pressure lower than the atmospheric pressure (which is 760 [Torr]). Quality of vacuum is divided to ranges; low vacuum, medium vacuum, high vacuum and ultra high vacuum. The main limitations to vacuum quality maintenance are leakage from the outside through the chamber and outgassing inside the chamber.
+\par
+Leaks and outgassing both increases the pressure (lowering the vacuum) at a constant rate over time. Usually, in order to keep equilibrium, the leaks and outgassing overcome by having a constant pump rate (vacuum pump working).   
+\begin{equation}
+Q_P = Q_L + Q_{des}  \label{eqn:vacuum_equilibrium}
+\end{equation}
 \subsection{Faraday Cage}
 Faraday cage is a cage made by a continuous covering of a conductive material which is used to block electromagnetic fields. External electrical fields causes an electric charge distribution in the conductive cage without passing inside, which cancels the field's effect inside the cage. Faraday cage cannot prevent inside field caused by electric charges which are placed inside without touching the shield walls. Also, faraday cage blocks better high frequency magnetic field penetration, depending on the material skin depth penetration $\delta$.
 \begin{equation}
