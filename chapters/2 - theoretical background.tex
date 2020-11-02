@@ -203,7 +203,7 @@ The PID damping $\gamma$ and damping time $\tau$ depends on the initial oscillat
 \subsection{Control Stability}
 Using PID control does not guarantee optimal control or stability. The control system is aiming to achieve critical damping of the process. Well tuned control would a reach the desired set point fast and accurate, and also apply over time the nesseary corrections to resist external forces trying to move variable from the set point.
 \par
-The controller response is its response to error. How much does the sytem overshoots a setpoint and the system oscillations. When controller gains are too high, instead of critical damping there is overdamping causing overshoot, due to the high gain the overshoot response overshoots to the other side, causing driving of the system.
+The controller response is its response to error. How much does the sytem overshoots a setpoint and the system oscillations. When controller gains are too high, instead of critical damping there is overdamping causing overshoot, due to the high gain the overshoot response overshoots to the other side, causing the system to be driven.
 
 
 
@@ -227,7 +227,7 @@ The field caused by a mass at a specific point is measured by measuring the grav
 
 
 \subsection{Cavendish Experiment}
-The Cavendish experiment, performed in the 17th century, was the first experiment to measure the gravitational force between masses. The apparatus which is constructed by a torsional pendulum is still used to measure accurately gravitational forces. Assuming no friction or other damping force (simple harmonic oscillator) when a mass is interduced, there are two sources of torque in the system; tourqe by the mass gravitational force, and restoring tourqe caused by the wire torsion. Since gravity is a weak force the torsional pendulum obeys Hooke’s law (small angles). At equilibrium, when balance has been stabilized at an angle $\theta$, these two tourqes are canceled out.
+The Cavendish experiment, first performed in the 17th century, was the first experiment to measure the gravitational force between masses. The apparatus which is constructed by a torsional pendulum is still used to measure accurately gravitational forces. Assuming no friction or other damping force (simple harmonic oscillator) when a mass is interduced, there are two sources of torque in the system; tourqe by the mass gravitational force, and restoring tourqe caused by the wire torsion. Since gravity is a weak force the torsional pendulum obeys Hooke’s law (small angles). At equilibrium, when balance has been stabilized at an angle $\theta$, these two tourqes are canceled out.
 \begin{equation}
 \overrightarrow{\tau} = \kappa\theta = LF = L\frac{GmM}{r^2}    \label{eqn:gravitation_tourqe}
 \end{equation}
@@ -243,7 +243,7 @@ In the measurement system different noises have different frequencies. By integr
 The SNR dependency on frequency cause difficuties measuring gravitational fields at low frequencies.
 
 \subsection{shot noise}
-When measurement is with a laser the ground SNR that could be achieved is limited by the system shot noise. Shot noise is a fundamental quantum physical phenomenon. Power fluctuations due to fluctuations in the number of photons. 
+When measurement is an optical, such as measuring angle displacement with a laser, the ground SNR that could be achieved is limited by the system shot noise. Shot noise is a fundamental quantum physical phenomenon. Power fluctuations due to fluctuations in the number of photons. 
 \begin{equation}
 SNR = \frac{N}{\sqrt{N}} = \sqrt{N}    \label{eqn:shot_noise}
 \end{equation}
@@ -259,12 +259,11 @@ While other system noises are higher than the shot noise limit, reducing noises 
 Radiation pressure is pressure on the surface due to momentum exchange with electromagnetic field, including momentum of light. The light is at any wavelength which is absorbed, reflected, or emitted. The pressure is causing force on the surface, although the force is usually insignificant.
   
 \par
-The radiation pressure force depends on the angle of surface compare to electromagnetic field, surface intesity reflectance and absorbance, and the power of light hitting the surface $\Theta_i$ (radiant flux, measured in watts). There is coupling effitiency $\eta$ due to the light passing through a light guide or fiber, and size difference between the light spot size and the target size. A is the surface area, c is the speed of light. 
+The radiation pressure force depends on the angle of surface compare to electromagnetic field, surface intesity reflectance and absorbance, and the power of light hitting the surface $\Theta_i$ (radiant flux, measured in watts). There is coupling efficiency $\eta$ due to the light losses while passing through light transmitters (such as light guide or fiber), and size difference between the light spot size and the target size.
 \begin{equation}
 P_{incident} = \frac{\frac{\Theta_e}{A}cos^2(\alpha)}{c} = \frac{\eta\cdot \Theta_{source}\cdot cos^2(\alpha)}{{A\cdot c}} \label{eqn:energy-mass-equivalence-relation}
 \end{equation}
-
-Assuming the light Direction is perpendicular to surface, and angle is neglected. Also, the light variation over the surface is negligible.
+The incident radiation pressure, where $A$ is the surface area, $c$ the speed of light. Assuming the light Direction is perpendicular to surface, and angle is neglected. Also, the light variation over the surface is negligible.
 
 \begin{equation}
 F = P_{total}\cdot A = (P_{incident}+P_{emitted})\cdot A = 2\cdot P_{incident}\cdot A\label{eqn:energy-mass-equivalence-relation}
