@@ -4,7 +4,7 @@
 \chapter{theoretical background}\label{chp:example-2}
 
 
-\section{Torsion Pendulum Theory}
+\section{Torsional Pendulum}
 \subsection{Torsional Pendulum}
 Torsion Pendulum is an oscillator made of mass hung by a string from a fixed point so it could swing free. When the mass is displaced from equilibrium angle, the pedulum is having a liniar restoring tourqe, caused by the twisted string. The restoring tourqe is rotating the mass back to equilibrium position.
 
@@ -76,12 +76,7 @@ The system damping ratio $\xi$ is the ratio between critical damping and the act
 \begin{equation}
 \theta(t) = Ae^{-\frac{t}{\tau}\cdot(1+\sqrt{1-\frac{1}{\xi^2}})} + Be^{-\frac{t}{\tau}\cdot(1-\sqrt{1-\frac{1}{\xi^2}})}    \label{eqn:damped_motion_equation}
 \end{equation}
-\begin{figure}[htbp]
-	\centering
-	\fbox{\includegraphics[scale=0.2]{\main/images/2 - theoretical background/damping.png}}
-	\caption[damped]{damped oscillators; wikipedia}
-	\label{fig:damped_oscillators}
-\end{figure}
+
 
 
 
@@ -107,8 +102,16 @@ the fastest return to equilibrium position. Although there is overshoot this is 
 \omega = \omega_0\sqrt{1-\xi^2}\approx\omega_0    \label{eqn:underdamped_frequency}
 \end{equation}
 
+\begin{figure}[htbp]
+	\centering
+	\fbox{\includegraphics[scale=0.2]{\main/images/2 - theoretical background/damping.png}}
+	\caption[damped]{damped oscillators; wikipedia}
+	\label{fig:damped_oscillators}
+\end{figure}
+
+
 \subsection{Overshoot}
-Overshoot is when output signal or function exceeds the target value. The response signal is not accurate compare to target.In controll theory there are two wanted conflicting properties; an accurate response (small overshoot), and small risetime (fast response). 
+Overshoot is when output signal or function exceeds the target value. The response signal is not accurate compare to target. In controll theory there are two wanted conflicting properties; an accurate response (small overshoot), and small risetime (fast response). 
 \par
 Overshoot is usually measured in percentage overshoot (PO). For second order systems, such as damped oscillators PO is a function of the damping ratio $\xi$. 
 
@@ -124,7 +127,7 @@ PO = 100\cdot e ^{\frac{-\xi\pi}{\sqrt{1-\xi^2}}} = \frac{output-target}{target}
 https://ocw.mit.edu/courses/mathematics/18-03sc-differential-equations-fall-2011/unit-ii-second-order-constant-coefficient-linear-equations/damped-harmonic-oscillators/MIT18_03SCF11_s13_2text.pdf
 
 https://www.sciencedirect.com/topics/engineering/underdamped-system#:~:text=When%20the%20damping%20ratio%20is%20between%200%20and%201%20(i.e.,is%20an%20exponential%20decay%20line.
-
+\fi
 
 \subsection{Driven Oscillator}
 If the damped oscillator system is further affected by an external time-dependent tourqe $\tau(t)$,  the system is called driven oscillator.
@@ -134,7 +137,7 @@ If the damped oscillator system is further affected by an external time-dependen
 \begin{equation}
 \ddot{\theta} + 2\xi\omega_0\dot{\theta} + \omega_0^2\theta = \frac{\tau(t)}{I}   \label{eqn:damped_motion_equation}
 \end{equation}
-\fi
+
 
 
 
