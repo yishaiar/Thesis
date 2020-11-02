@@ -283,15 +283,18 @@ The radiation force assuming light field direction perpendicular to surface, and
 \subsection{Vacuum Chambers}
 Vaccuum chamber is a metalic chamber with a vacuum pump which has a pressure lower than the atmospheric pressure (which is 760 [Torr]). Quality of vacuum is divided to ranges; low vacuum, medium vacuum, high vacuum and ultra high vacuum. The main limitations to vacuum quality maintenance are leakage from the outside through the chamber and outgassing inside the chamber.
 \par
-Usually leaks and outgassing, are overcome by having the pump working constantly. When pump is not working, leaks and outgassing both increases the pressure over time at a constant rate..   
-
+Leaks and outgassing both increases the pressure (lowering the vacuum) at a constant rate over time. Usually, in order to keep equilibrium, the leaks and outgassing overcome by having a constant pump rate (vacuum pump working).   
+\begin{equation}
+Q_P = Q_L + Q_{des}  \label{eqn:vacuum_equilibrium}
+\end{equation}
 \subsection{Leak Rate}
 At any gas system, some gas would slowly leak over time and increase the pressure if not pumped out. The leak rate $Q_L$ is not a function of time, and resuls in a sustained increase of pressure P over time.
 \begin{equation}
 Q_L = \frac{\Delta P\cdot V}{\Delta t}  \label{eqn:energy-mass-equivalence-relation}
 \end{equation}
 The leak rate could also prevant the system from reaching initial low pressure (at some point the leakage would be equal to the pumping rate).
-There is also diffusion of gas molecules, such as helium, which is insignifant when pressure is above $10^{-9}$. 
+\par
+There is also diffusion rate of gas molecules, such as helium, which is insignifant when pressure is above $10^{-9}$ [Torr] (less than high vacuum). 
 
 \subsection{Outgassing}
 Outgassing is the desorption of gas molecules in vacuum (primarily water)  that were adsorbed or absorbed in the material. The outgassing occures over time and increases the pressure farther more. At low pressures, there are more gas molecules adsorbed on the chamber surface than floating in the chamber. The total surface area is more important than the volume for reaching low pressure. 
