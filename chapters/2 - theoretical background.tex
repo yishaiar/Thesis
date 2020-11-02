@@ -308,13 +308,15 @@ Q_P = Q_L + Q_{des}  \label{eqn:vacuum_equilibrium}
 \subsection{Faraday Cage}
 Faraday cage is a cage made by a continuous covering of a conductive material which is used to block external electromagnetic fields. Faraday cage cannot prevent fields caused by electric charges placed inside.
 \par
-The external electrical fields causes an electric charge distribution in the conductive cage without passing inside. The cage blocks better penetration of high frequency magnetic fields, depending on the material skin depth $\delta$ which determines the shield penetrating frequencies. Electric current decays exponentially with depth through the material, the thicker the shield the better at attenuating lower frequency fields.
+The external electrical fields causes an electric charge distribution in the conductive cage without passing inside. The cage blocks better the penetration of high frequency magnetic fields, depending on the material skin depth $\delta$ which determines the shield penetrating frequencies. Electric current decays exponentially with depth through the material, the thicker the shield the better at attenuating lower frequency fields.
 \begin{equation}
 \delta = \frac{2\rho}{(2\pi f)(\mu_0\mu_r)}     \label{eqn:mean-free-pass}
 \end{equation}
 \iffalse
-Where $\rho$ is the material electric resistivity, and $\mu_r$ is the relative magnetic permeability.   Vacuum chambers are usually made of a few mm thick stainless steel 316, making them faraday cages with a skin depth which could block magnetic frequencies higher than 10 KHz and reduce magnetic noise from lower frequencies.
+Where $\rho$ is the material electric resistivity, and $\mu_r$ is the relative magnetic permeability.
 \fi
+Vacuum chambers are usually made of a few mm thick stainless steel 316, making them faraday cages with a skin depth which could block magnetic frequencies higher than 10 KHz and reduce magnetic noise from lower frequencies.
+
 
 \section{Pressure Affects}
 \subsection{Flow Characteristics}
@@ -327,24 +329,16 @@ P = \frac{N}{V}\cdot k_B\cdot T  \label{eqn:ideal-gasses}
 \begin{equation}
 I = \frac{k_B\cdot T}{\sqrt{2}\cdot\pi\cdot p\cdot d_m^2}     \label{eqn:mean-free-pass}
 \end{equation}
-Gas particle collide many times, the mean free path is the average distance the particle could pass between two collisions with other particles. Knudsen ratio could be derived from the term, ratio which is used to characterize types of gas flow compare to the pipe diameter.
+Gas particle collide many times, the mean free path is the average distance the particle could pass between two collisions with other particles. The Knudsen ratio which is used to characterize types of gas flow compare to the pipe diameter is derived from the term.
 \begin{equation}
 K_n = \frac{I}{d}     \label{eqn:mean-free-pass}
 \end{equation}
 
-\subsection{Viscous Friction}
-The friction caused by gasses is viscous friction, which is velocity dependenant. The velocity dependence is complicated, at very low speeds, gas resistance is approximately proportional to velocity. 
-
-\begin{equation}
-F_{drag} = -b\cdot v  \label{eqn:energy-mass-equivalence-relation}
-\end{equation}
-
-At the medium vacuum regime $0.01<k_n<0.5$ the flow is called Knudsen flow. The molecules do not interact and move in straight lines between points. If the vaccum chamber is having medium vacuum or higher, classical viscous friction of objects with gas particles inside the chamber could be neglected.
 
 \subsection{Brownian Motion}
 Brownian motion is the pattern of random particles fluctuations inside a fluid, a random walk with no preferential direction of flow. This pattern happens at thermal equilibrium in a given temperature (on average there is no linear and angular momentum). 
 \par
-Maxwell-Boltzmann distribution of molecular speed can extract the expression of average kinetic energy for a gas particle and the total brownian motion kinetic energie.
+The average kinetic energy for a gas particle could be found from Maxwell-Boltzmann distribution of molecular speed, the total brownian motion kinetic energy is the sum over all gas particles.
 \begin{equation}
 f(v) = 4\pi(\frac{m}{2\pi kT})^{3/2}v^2exp(\frac{-mv^2}{2kT})     \label{eqn:Maxwell_Boltzmann}
 \end{equation}  
@@ -355,10 +349,20 @@ f(v) = 4\pi(\frac{m}{2\pi kT})^{3/2}v^2exp(\frac{-mv^2}{2kT})     \label{eqn:Max
 E_k=N<E_k> \frac{3}{2}NkT = \frac{3}{2}PV    \label{eqn:total_kinetic}
 \end{equation}
 
-The Brownian motion kinetic energie is proptional to the number of particles. Vacuum reduces the pressure and number of particles, which reduces the energie. Also,there is energie coupling from the envirement on the sides of the medium. Reducing the number of particles reduces the energie coupling.
+The Brownian motion kinetic energy is proptional to the number of particles. Vacuum reduces the pressure and number of particles, which reduces the energy. Also,there is energy coupling from the envirement on the sides of the medium. Reducing the number of particles reduces the energy coupling.
+
+\subsection{Viscous Friction}
+The friction caused by gasses is viscous friction, which is velocity dependenant. The velocity dependence is complicated, at very low speeds, gas resistance is approximately proportional to velocity. 
+
+\begin{equation}
+F_{drag} = -b\cdot v  \label{eqn:energy-mass-equivalence-relation}
+\end{equation}
+
+At the medium vacuum regime, when knudsen ratio is $0.01<k_n<0.5$ the flow is called knudsen flow. The molecules do not interact and move in straight lines between points. If vaccum chamber is at medium vacuum or higher, classical viscous friction of objects with gas particles inside the chamber could be neglected.
+
 
 \subsection{Acoustic wave}
-Acoustic waves is an energy propagating through material, by adiabatic compression and decompression. One dimension acoustic wave equation, where the amplitude is acoustic pressure.
+Acoustic waves are energy propagating through material, by adiabatic compression and decompression. One dimension acoustic wave equation, where the amplitude is acoustic pressure.
 \begin{equation}
 P-P_0 = p = p_0cos(\omega t -\kappa x)       \label{eqn:acoustic_pressure}
 \end{equation}
