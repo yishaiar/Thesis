@@ -308,13 +308,13 @@ Q_P = Q_L + Q_{des}  \label{eqn:vacuum_equilibrium}
 \subsection{Faraday Cage}
 Faraday cage is a cage made by a continuous covering of a conductive material which is used to block electromagnetic fields. External electrical fields causes an electric charge distribution in the conductive cage without passing inside. Faraday cage cannot prevent fields caused by electric charges placed inside.
 \par
-
- The cage blocks better penetration of high frequency magnetic fields, depending on the material skin depth $\delta$.
+The cage blocks better penetration of high frequency magnetic fields, depending on the material skin depth $\delta$ wich determines the shield penetrating frequencies. Electric current decays exponentially with depth through the material, the thicker the shield the better at attenuating lower frequency fields.
 \begin{equation}
 \delta = \frac{2\rho}{(2\pi f)(\mu_0\mu_r)}     \label{eqn:mean-free-pass}
 \end{equation}
-Where $\rho$ is the material electric resistivity, and $\mu_r$ is the relative magnetic permeability. The cage cannot block stable or slowly varying magnetic fields from outside, the material skin depth determines the shield penetrating frequencies. Electric current decays exponentially with depth through the material, thicker shields attenuates lower frequency fields better. Vacuum chambers are usually made of a few mm thick stainless steel 316, making them faraday cages with a skin depth which could block magnetic frequencies higher than 10 KHz and reduce magnetic noise from lower frequencies.
-
+\iffalse
+Where $\rho$ is the material electric resistivity, and $\mu_r$ is the relative magnetic permeability.   Vacuum chambers are usually made of a few mm thick stainless steel 316, making them faraday cages with a skin depth which could block magnetic frequencies higher than 10 KHz and reduce magnetic noise from lower frequencies.
+\fi
 
 \section{Pressure Affects}
 \subsection{Flow Characteristics}
