@@ -174,6 +174,59 @@ SNR = \frac{N}{\sqrt{N}} = \sqrt{N}    \label{eqn:shot_noise}
 While other system noises are higher than the shot noise limit, reducing noises and time integration would provide higher accuracy and better mesurement results. 
 
 
+\section{Pressure Affects}
+\subsection{Flow Characteristics}
+The motivation to use vacuum is to reduce brownian motion and viscous friction caused by gas particles in the medium. Gas particles fluctuating and colliding with an average free pass. 
+\par
+Gas pressure at the medium is propotional to the number density of particles and inverse to the mean free pass of each particle.    
+\begin{equation}
+P = \frac{N}{V}\cdot k_B\cdot T  \label{eqn:ideal-gasses}
+\end{equation}
+\begin{equation}
+I = \frac{k_B\cdot T}{\sqrt{2}\cdot\pi\cdot p\cdot d_m^2}     \label{eqn:mean-free-pass}
+\end{equation}
+Gas particle collide many times, the mean free path is the average distance the particle could pass between two collisions with other particles. The Knudsen ratio which is used to characterize types of gas flow compare to the pipe diameter is derived from the term.
+\begin{equation}
+K_n = \frac{I}{d}     \label{eqn:mean-free-pass}
+\end{equation}
+
+
+\subsection{Brownian Motion}
+Brownian motion is the pattern of random particles fluctuations inside a fluid, a random walk with no preferential direction of flow. This pattern happens at thermal equilibrium in a given temperature (on average there is no linear and angular momentum). 
+\par
+The average kinetic energy for a gas particle could be found from Maxwell-Boltzmann distribution of molecular speed, the total brownian motion kinetic energy is the sum over all gas particles.
+\begin{equation}
+f(v) = 4\pi(\frac{m}{2\pi kT})^{3/2}v^2exp(\frac{-mv^2}{2kT})     \label{eqn:Maxwell_Boltzmann}
+\end{equation}  
+\begin{equation}
+<E_k>=<\frac{mv^2}{2}> = \int_{0}^{\infty}\frac{mv^2}{2}f(v)dv =  \frac{3kT}{2}    \label{eqn:avrage_kinetic}
+\end{equation}
+\begin{equation}
+E_k=N<E_k> \frac{3}{2}NkT = \frac{3}{2}PV    \label{eqn:total_kinetic}
+\end{equation}
+
+The Brownian motion kinetic energy is proptional to the number of particles. Vacuum reduces the pressure and number of particles, which reduces the energy. Also,there is energy coupling from the envirement on the sides of the medium. Reducing the number of particles reduces the energy coupling.
+
+\subsection{Viscous Friction}
+The friction caused by gasses is viscous friction, which is velocity dependenant. The velocity dependence is complicated, at very low speeds, gas resistance is approximately proportional to velocity. 
+
+\begin{equation}
+F_{drag} = -b\cdot v  \label{eqn:energy-mass-equivalence-relation}
+\end{equation}
+
+At the medium vacuum regime, when knudsen ratio is $0.01<k_n<0.5$ the flow is called knudsen flow. The molecules do not interact and move in straight lines between points. If vaccum chamber is at medium vacuum or higher, classical viscous friction of objects with gas particles inside the chamber could be neglected.
+
+
+\subsection{Acoustic wave}
+Acoustic waves are energy propagating through material, by adiabatic compression and decompression. One dimension acoustic wave equation, where the amplitude is acoustic pressure.
+\begin{equation}
+P-P_0 = p = p_0cos(\omega t -\kappa x)       \label{eqn:acoustic_pressure}
+\end{equation}
+\begin{equation}
+I = pV      \label{eqn:acoustic_intensity}
+\end{equation} 
+The power carried by acoustic waves $[\frac{W}{m^2}]$, named acoustic intensity, depends on the material acoustic pressure and particle velosity. When the material pressure is reduced, the acoustic pressure is lower and less power is carried.
+
 
 \section{PID Controller}
 proportional–integral–derivative controller (PID controller) is a feedback based control system. The control loop is used for time continuouse control of a process, so the process output (measured process variable) would be close to a defined set point.
@@ -232,102 +285,6 @@ F = \frac{2\eta\cdot\Theta_{source}}{{A\cdot c}}\cdot A = \frac{2\eta\cdot\Theta
 
 
  
-
-\section{Vacuum Theory}
-
-\subsection{Leak Rate}
-At any gas system, some gas would slowly leak over time and increase the pressure if not pumped out. The leak rate $Q_L$ is not a function of time, and resuls in a sustained increase of pressure P over time.
-\begin{equation}
-Q_L = \frac{\Delta P\cdot V}{\Delta t}  \label{eqn:energy-mass-equivalence-relation}
-\end{equation}
-The leak rate could also prevant the system from reaching initial low pressure (at some point the leakage would be equal to the pumping rate).
-\par
-There is also diffusion rate of gas molecules, such as helium, which is insignifant when pressure is above $10^{-9}$ [Torr] (less than high vacuum). 
-
-\subsection{Outgassing}
-Outgassing is the desorption of gas molecules in vacuum (primarily water)  that were adsorbed or absorbed in the material. The outgassing occures over time and increases the pressure farther more. At low pressures, there are more gas molecules adsorbed on the chamber surface than floating in the chamber. The total surface area is more important than the volume for reaching low pressure. 
-\par
-The desorption rate $Q_{des}$ of the surfaces produces a gas yield that declines over time, dependent on the desorption density which is area specific. It could be assumed that after a given time $t>t_0$ the increase is liniar over time, typicaly $t_0$ assumed to be one hour.
-\begin{equation}
-Q_{des} = q_{des}\cdot A\cdot\frac{t_0}{t}  \label{eqn:energy-mass-equivalence-relation}
-\end{equation}
-Outgassing is minimized by selection of low vapor pressures materials such as stainless steel and glass. Since water is a significant source of outgassing, it is usually minimize by baking the chamber in high tempertures while the pump is running.
-\subsection{Vacuum Chambers}
-Vaccuum chamber is a metalic chamber connected to a vacuum pump with pressure lower than the atmospheric pressure (which is 760 [Torr]). Quality of vacuum is divided to ranges; low vacuum, medium vacuum, high vacuum and ultra high vacuum. The main limitations to vacuum quality maintenance are leakage from the outside through the chamber and outgassing inside the chamber.
-\par
-Leaks and outgassing both increases the pressure (lowering the vacuum) at a constant rate over time. Usually, in order to keep equilibrium, the leaks and outgassing overcome by having a constant pump rate (vacuum pump working).   
-\begin{equation}
-Q_P = Q_L + Q_{des}  \label{eqn:vacuum_equilibrium}
-\end{equation}
-\subsection{Faraday Cage}
-Faraday cage is a cage made by a continuous covering of a conductive material which is used to block external electromagnetic fields. Faraday cage cannot prevent fields caused by electric charges placed inside.
-\par
-The external electrical fields causes an electric charge distribution in the conductive cage without passing inside. The cage blocks better the penetration of high frequency magnetic fields, depending on the material skin depth $\delta$ which determines the shield penetrating frequencies. Electric current decays exponentially with depth through the material, the thicker the shield the better at attenuating lower frequency fields.
-\begin{equation}
-\delta = \frac{2\rho}{(2\pi f)(\mu_0\mu_r)}     \label{eqn:mean-free-pass}
-\end{equation}
-\iffalse
-Where $\rho$ is the material electric resistivity, and $\mu_r$ is the relative magnetic permeability.
-\fi
-Vacuum chambers are usually made of a few mm thick stainless steel 316, making them faraday cages with a skin depth which could block magnetic frequencies higher than 10 KHz and reduce magnetic noise from lower frequencies.
-
-
-\section{Pressure Affects}
-\subsection{Flow Characteristics}
-The motivation to use vacuum is to reduce brownian motion and viscous friction caused by gas particles in the medium. Gas particles fluctuating and colliding with an average free pass. 
-\par
-Gas pressure at the medium is propotional to the number density of particles and inverse to the mean free pass of each particle.    
-\begin{equation}
-P = \frac{N}{V}\cdot k_B\cdot T  \label{eqn:ideal-gasses}
-\end{equation}
-\begin{equation}
-I = \frac{k_B\cdot T}{\sqrt{2}\cdot\pi\cdot p\cdot d_m^2}     \label{eqn:mean-free-pass}
-\end{equation}
-Gas particle collide many times, the mean free path is the average distance the particle could pass between two collisions with other particles. The Knudsen ratio which is used to characterize types of gas flow compare to the pipe diameter is derived from the term.
-\begin{equation}
-K_n = \frac{I}{d}     \label{eqn:mean-free-pass}
-\end{equation}
-
-
-\subsection{Brownian Motion}
-Brownian motion is the pattern of random particles fluctuations inside a fluid, a random walk with no preferential direction of flow. This pattern happens at thermal equilibrium in a given temperature (on average there is no linear and angular momentum). 
-\par
-The average kinetic energy for a gas particle could be found from Maxwell-Boltzmann distribution of molecular speed, the total brownian motion kinetic energy is the sum over all gas particles.
-\begin{equation}
-f(v) = 4\pi(\frac{m}{2\pi kT})^{3/2}v^2exp(\frac{-mv^2}{2kT})     \label{eqn:Maxwell_Boltzmann}
-\end{equation}  
-\begin{equation}
-<E_k>=<\frac{mv^2}{2}> = \int_{0}^{\infty}\frac{mv^2}{2}f(v)dv =  \frac{3kT}{2}    \label{eqn:avrage_kinetic}
-\end{equation}
-\begin{equation}
-E_k=N<E_k> \frac{3}{2}NkT = \frac{3}{2}PV    \label{eqn:total_kinetic}
-\end{equation}
-
-The Brownian motion kinetic energy is proptional to the number of particles. Vacuum reduces the pressure and number of particles, which reduces the energy. Also,there is energy coupling from the envirement on the sides of the medium. Reducing the number of particles reduces the energy coupling.
-
-\subsection{Viscous Friction}
-The friction caused by gasses is viscous friction, which is velocity dependenant. The velocity dependence is complicated, at very low speeds, gas resistance is approximately proportional to velocity. 
-
-\begin{equation}
-F_{drag} = -b\cdot v  \label{eqn:energy-mass-equivalence-relation}
-\end{equation}
-
-At the medium vacuum regime, when knudsen ratio is $0.01<k_n<0.5$ the flow is called knudsen flow. The molecules do not interact and move in straight lines between points. If vaccum chamber is at medium vacuum or higher, classical viscous friction of objects with gas particles inside the chamber could be neglected.
-
-
-\subsection{Acoustic wave}
-Acoustic waves are energy propagating through material, by adiabatic compression and decompression. One dimension acoustic wave equation, where the amplitude is acoustic pressure.
-\begin{equation}
-P-P_0 = p = p_0cos(\omega t -\kappa x)       \label{eqn:acoustic_pressure}
-\end{equation}
-\begin{equation}
-I = pV      \label{eqn:acoustic_intensity}
-\end{equation} 
-The power carried by acoustic waves $[\frac{W}{m^2}]$, named acoustic intensity, depends on the material acoustic pressure and particle velosity. When the material pressure is reduced, the acoustic pressure is lower and less power is carried.
-
-
-
-
 
 
 
