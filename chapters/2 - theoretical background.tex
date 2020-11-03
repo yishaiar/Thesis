@@ -50,7 +50,7 @@ If the restoring tourqe is the only tourqe acting, the oscillator is not driven 
 \end{equation}
 The natural resonant frequency $\omega_0$ and time period of oscillation $T$ are determined by the physical constants of the pendulum.
 \subsection{Damped Oscillator}
-If the system is also having damping (friction) which is proportional to the velocity, the system is called damped oscillator.
+If the system is also having damping (friction) which is proportional to the velocity, the system is a damped oscillator.
 
 
 \begin{equation}
@@ -171,39 +171,6 @@ D is proportional to error current change rate, by calculating the derivative. T
 \par
 The optimal control function is achieved by balancing the responses. The tuning constants depend on the characteristics of the specific procces. The response must be tuned for each control application.  
 
-\subsection{Damped Oscillator}
-PID controller can continuously calculates error value of an oscillator, to damp it to zero. If the defined set point is set to zero, the error is the measured process variable. The PID acts as friction, gradually working when the ossicilations are at the maximum speed to slow them down, and remove the tourqe energy.
-\begin{equation}
-e(t) = \theta(t) = \theta   \label{eqn:error}
-\end{equation}
-\begin{equation}
-\tau_{PID} = -\gamma\cdot\dot{\theta}   \label{eqn:friction_tourqe}
-\end{equation}
-The sytem is a damped oscillator, with an external force correction, which inserts tourqe to the oscillator.
-\begin{equation}
-\kappa\cdot\theta - \gamma\cdot\dot{\theta}  + I\cdot\ddot{\theta} = 0   \label{eqn:damped__pid_motion_equation}
-\end{equation}
-\begin{equation}
-\gamma\dot{\theta}  = Fr   \label{eqn:damped__pid_motion_equation}
-\end{equation}
-\begin{equation}
-\dot{\theta} = \omega_0\theta_{max}sin(\omega_0 t +\phi)    \label{eqn:undamped_motion_equation}
-\end{equation}
-\begin{equation}
-\dot{\theta}_{max} = \omega_0\theta_{max} = \theta_{max}\cdot\frac{2\pi}{T}    \label{eqn:undamped_motion_equation}
-\end{equation}
-\begin{equation}
-\gamma  = \frac{F_{max}r}{\dot{\theta}_{max}} =\frac{F_{max}rT}{\theta_{max}2\pi}    \label{eqn:damped_pid_motion_equation}
-\end{equation}
-\begin{equation}
-\tau =  \frac{2I}{\gamma}  \label{eqn:damping_time}
-\end{equation}
-The PID damping $\gamma$ and damping time $\tau$ depends on the initial oscillations angle. If the angle is too large compare to the inserted force, the system is extremly underdamped and the PID affect is neglected. The damping time would be infinite and the system would keep on ossicilating.
-
-\subsection{Control Stability}
-Using PID control does not guarantee optimal control or stability. The control system is aiming to achieve critical damping of the process. Well tuned control would a reach the desired set point fast and accurate, and also apply over time the nesseary corrections to resist external forces trying to move variable from the set point.
-\par
-The controller response is its response to error. How much does the sytem overshoots a setpoint and the system oscillations. When controller gains are too high, instead of critical damping there is overdamping causing overshoot, due to the high gain the overshoot response overshoots to the other side, causing the system to be driven.
 
 
 
