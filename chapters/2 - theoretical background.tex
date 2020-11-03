@@ -166,7 +166,7 @@ The angle caused by the gravitational field is measured at each of those frequen
 In the measurement system different noises have different frequencies. By integrating over long time measurement noises are reduced. The signal to noise ratio (SNR) is the limiting factor for the sensetivity of a measuring system. In higher frequencies integration is faster, causing less noises and higher SNR.
 The SNR dependency on frequency cause difficuties measuring gravitational fields at low frequencies.
 
-\subsection{Shot Noise Limit}
+\subsubsection{Shot Noise Limit}
 When measurement is an optical, such as measuring angle displacement with a laser, the ground sensetivity and SNR that could be achieved is limited by the system shot noise. A measuerment system can't measure a signal smaller than the system shot noise.The shot noise is a fundamental quantum physical phenomenon. Power fluctuations due to fluctuations in the number of photons. 
 \begin{equation}
 SNR = \frac{N}{\sqrt{N}} = \sqrt{N}    \label{eqn:shot_noise}
@@ -175,18 +175,7 @@ While other system noises are higher than the shot noise limit, reducing noises 
 
 
 \section{Vacuum Affects}
-\subsection{Flow Characteristics}
-Gas pressure at a medium is propotional to the number density of particles and inverse to the mean free pass of each particle.    
-\begin{equation}
-P = \frac{N}{V}\cdot k_B\cdot T  \label{eqn:ideal-gasses}
-\end{equation}
-\begin{equation}
-I = \frac{k_B\cdot T}{\sqrt{2}\cdot\pi\cdot p\cdot d_m^2}     \label{eqn:mean-free-pass}
-\end{equation}
-Gas particle collide many times, the mean free path is the average distance the particle could pass between two collisions with other particles. The Knudsen ratio which is used to characterize types of gas flow compare to the pipe diameter is derived from the term.
-\begin{equation}
-K_n = \frac{I}{d}     \label{eqn:mean-free-pass}
-\end{equation}
+
 
 
 \subsection{Brownian Motion}
@@ -204,7 +193,11 @@ E_k=N<E_k> \frac{3}{2}NkT = \frac{3}{2}PV    \label{eqn:total_kinetic}
 \end{equation}
 
 The Brownian motion kinetic energy is proptional to the number of particles. Vacuum reduces the pressure and number of particles, which reduces the energy. Also,there is energy coupling from the envirement on the sides of the medium. Reducing the number of particles reduces the energy coupling.
-
+\par
+Gas pressure at a medium is propotional to the number density of particles and inverse to the mean free pass of each particle.    
+\begin{equation}
+P = \frac{N}{V}\cdot k_B\cdot T  \label{eqn:ideal-gasses}
+\end{equation}
 \subsection{Viscous Friction}
 The friction caused by gasses is viscous friction, which is velocity dependenant. The velocity dependence is complicated, at very low speeds, gas resistance is approximately proportional to velocity. 
 
@@ -213,7 +206,16 @@ F_{drag} = -b\cdot v  \label{eqn:energy-mass-equivalence-relation}
 \end{equation}
 
 When knudsen ratio is $0.01<k_n<0.5$, at medium vacuum regime, the flow is called knudsen flow. The molecules do not interact and move in straight lines between points. If chamber vaccum level is medium or higher, classical viscous friction of objects with gas particles inside the chamber could be neglected.
+\subsubsection{Flow Characteristics}
+Gas pressure at a medium is inverse to the mean free pass of each particle. Gas particle collide many times, the mean free path is the average distance the particle could pass between two collisions with other particles.    
 
+\begin{equation}
+I = \frac{k_B\cdot T}{\sqrt{2}\cdot\pi\cdot p\cdot d_m^2}     \label{eqn:mean-free-pass}
+\end{equation}
+ The Knudsen ratio which is used to characterize types of gas flow compare to the pipe diameter is derived from the term.
+\begin{equation}
+K_n = \frac{I}{d}     \label{eqn:mean-free-pass}
+\end{equation}
 
 \subsection{Acoustic wave}
 Acoustic waves are energy propagating through material, by adiabatic compression and decompression. One dimension acoustic wave equation, where the amplitude is acoustic pressure.
