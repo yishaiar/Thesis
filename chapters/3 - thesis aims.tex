@@ -3,7 +3,7 @@
 \begin{document}
 \chapter{thesis aims}\label{chp:example-2}
 \section{Measurement Method}
-The Cavendish experiment, is constructed using a torsional pendulum with a front mirror. The angle displaement is causing a mirror tilt. Optical measurement of angle displaement is made with a split detector. 
+The Cavendish experiment, is constructed using a torsional pendulum with a front mirror. The angle displaement is causing a mirror tilt. Optical measurement of angle displaement is made with a split detector using interferometric technique. 
 \par
 Shot noise using a split detector in an interferometric technique is even on all frequencies. Shot limit when integrating over a long time.
 \begin{equation}
@@ -30,12 +30,12 @@ e(t) = \delta\theta(t)   \label{eqn:pid_error}
 u(t) = K_Pe(t)+K_I\int_{0}^{t}e(t)+K_D\frac{de(t)}{dt}   \label{eqn:PID_eq}
 \end{equation}
 
-Introducing a new mass adds a constant new tourqe to the system, which the PID is compensating with a propotional gain $K_P$. The PID response becomes mainly an inverse tourqe. 
+Introducing a new mass adds a constant new tourqe to the system, which the PID is compensating with a propotional gain $K_P$. The PID response becomes mainly an inverse tourqe. Assuming the mass is moving at low frequencies, when integrating over short periods the angle is constant in time.
 \begin{equation}
-e(t) = \delta\theta(t) + \theta_g(t)    \label{eqn:PID_measurement}
+e(t) = \delta\theta(t) + \theta_g    \label{eqn:PID_measurement}
 \end{equation}
 \begin{equation}
-u(t) = u[ \delta\theta(t)] + K_P\theta_{gravity} \label{eqn:PID_measurement_eq}
+u(t) = u[ \delta\theta(t)] + K_P\theta_g(t) \label{eqn:PID_measurement_eq}
 \end{equation}
 \begin{equation}
 U = \int u(t)dt  \approx K_P\theta_g \label{eqn:PID_measurement_eq}
@@ -46,6 +46,7 @@ U = \int u(t)dt  \approx K_P\theta_g \label{eqn:PID_measurement_eq}
 \begin{equation}
 \kappa =\frac{8\pi^2ml^2}{T^2}    \label{eqn:empirical_tourqe}
 \end{equation}
+
 The measurement of that response is fast and accurate. The measurement sytem is measuring with fast response (short integration time) and high accuracy low frequency garvity fields. 
 
  
