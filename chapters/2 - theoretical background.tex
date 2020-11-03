@@ -141,39 +141,6 @@ If the damped oscillator system is further affected by an external time-dependen
 
 
 
-\section{PID Controller}
-\subsection{PID Controller Feedback}
-proportional–integral–derivative controller (PID controller) is a feedback based control system. The control loop is used for time continuouse control of a process, so the process output (measured process variable) would be close to a defined set point.
-\par
-PID controller continuously calculates error value, which is the distance of the measured process variable from the defined set point. The feedback applies an external correction to the process, called control variable. The control variable is based on a proportional, integral and derivative gain to the error. Proper tuning of a PID enables an accurate automated correction to a controled process. The PID concept is used widely in applications requiring accurate automated control.
-
-
-
-\par
-The error and the error's integral and derivate are calculated continuously. The control is having three tuning parameters; $P, I, D$, the feed back correction is modulated by the tuning parameters value. Each parameter is assigned to a gain (proportional, integral and derivative). The response (control variable) is a weighted sum of the control terms. Over time the controller attempts to minimize the error $e(t)$ by adjusting the control variable $u(t)$, which is the PID output.
-\par
-\begin{figure}[htbp]
-	\centering
-	\fbox{\includegraphics[scale=0.2]{\main/images/2 - theoretical background/PID.png}}
-	\caption[PID]{PID controller feedback loop; from wikipedia}
-	\label{fig:PID_scheme}
-\end{figure}
-\begin{equation}
-u(t) = K_Pe(t)+K_I\int_{0}^{t}e(t)+K_D\frac{de(t)}{dt}   \label{eqn:PID_eq}
-\end{equation}
-
-
-P is proportional to the current error value $e(t)$. When error is large and positive, proportional output would be proportionately large and positive.
-\par
-I is proportional to past error value's integration. The response of the cumulative value could eliminate residual errors, such as signal offset.
-\par
-D is proportional to error current change rate, by calculating the derivative. The response of the change rate could eliminate more rapid changes.
-\par
-The optimal control function is achieved by balancing the responses. The tuning constants depend on the characteristics of the specific procces. The response must be tuned for each control application.  
-
-
-
-
 
 
 \section{Gravity Measurement}
@@ -215,6 +182,38 @@ When measurement is an optical, such as measuring angle displacement with a lase
 SNR = \frac{N}{\sqrt{N}} = \sqrt{N}    \label{eqn:shot_noise}
 \end{equation}
 While other system noises are higher than the shot noise limit, reducing noises and time integration would provide higher accuracy and better mesurement results. 
+
+
+
+\section{PID Controller}
+proportional–integral–derivative controller (PID controller) is a feedback based control system. The control loop is used for time continuouse control of a process, so the process output (measured process variable) would be close to a defined set point.
+\par
+PID controller continuously calculates error value, which is the distance of the measured process variable from the defined set point. The feedback applies an external correction to the process, called control variable. The control variable is based on a proportional, integral and derivative gain to the error. Proper tuning of a PID enables an accurate automated correction to a controled process. The PID concept is used widely in applications requiring accurate automated control.
+
+
+
+\par
+The error and the error's integral and derivate are calculated continuously. The control is having three tuning parameters; $P, I, D$, the feed back correction is modulated by the tuning parameters value. Each parameter is assigned to a gain (proportional, integral and derivative). The response (control variable) is a weighted sum of the control terms. Over time the controller attempts to minimize the error $e(t)$ by adjusting the control variable $u(t)$, which is the PID output.
+\par
+\begin{figure}[htbp]
+	\centering
+	\fbox{\includegraphics[scale=0.2]{\main/images/2 - theoretical background/PID.png}}
+	\caption[PID]{PID controller feedback loop; from wikipedia}
+	\label{fig:PID_scheme}
+\end{figure}
+\begin{equation}
+u(t) = K_Pe(t)+K_I\int_{0}^{t}e(t)+K_D\frac{de(t)}{dt}   \label{eqn:PID_eq}
+\end{equation}
+
+
+P is proportional to the current error value $e(t)$. When error is large and positive, proportional output would be proportionately large and positive.
+\par
+I is proportional to past error value's integration. The response of the cumulative value could eliminate residual errors, such as signal offset.
+\par
+D is proportional to error current change rate, by calculating the derivative. The response of the change rate could eliminate more rapid changes.
+\par
+The optimal control function is achieved by balancing the responses. The tuning constants depend on the characteristics of the specific procces. The response must be tuned for each control application.  
+
 
 
 
