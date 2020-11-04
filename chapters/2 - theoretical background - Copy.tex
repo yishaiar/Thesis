@@ -264,13 +264,6 @@ D is proportional to error current change rate, by calculating the derivative. T
 \par
 The optimal control function is achieved by balancing the responses. The tuning constants depend on the characteristics of the specific procces. The response must be tuned for each control application.  
 
-
-
-
-
-
-
-
 \section{Radiation pressure}
 Radiation pressure is pressure on the surface due to momentum exchange with electromagnetic field, including momentum of light. The light is at any wavelength which is absorbed, reflected, or emitted. The pressure is causing force on the surface, although the force is usually insignificant.
   
@@ -283,11 +276,13 @@ The radiation pressure assuming light field direction perpendicular to surface a
 \begin{equation}
 P_{incident} = \frac{\eta\Theta_{source}}{{Ac}} \label{eqn:radiation_pressure_perpendicular}
 \end{equation}
-
-The radiation force and surface is a reflective material.
+\begin{equation}
+F = P_{total}\cdot A = (P_{incident}+P_{emitted})\cdot A = P_{incident}(1+R)A \label{eqn:radiation_force}
+\end{equation}
+The radiation force assuming surface is a reflective material.
 
 \begin{equation}
-F = P_{total}\cdot A = (P_{incident}+P_{emitted})\cdot A = P_{incident}(1+R)A\approx 2P_{incident}A\label{eqn:radiation_force}
+F \approx 2P_{incident}A\label{eqn:radiation_force_reflective}
 \end{equation}
 \begin{equation}
 F = \frac{2\eta\cdot\Theta_{source}}{{A\cdot c}}\cdot A = \frac{2\eta\cdot\Theta_{source}}{{c}} \label{eqn:radiation_force_power}
