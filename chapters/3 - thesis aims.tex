@@ -5,13 +5,12 @@
 
 The Cavendish experiment, is constructed using a torsional pendulum with a front mirror. The angle displaement is causing a mirror tilt. Optical measurement of angle displaement is made with a split detector using interferometric technique.
 \par
-The measurement base limites are basic energy level quantum uncertaintyand measurement shot noise.
+The measurement is limited by the basic energy level quantum uncertainty and measurement system shot noise.
 \begin{equation}
-\frac{1}{2}\kappa <\delta\theta^2>= \frac{4}{\hslash\omega}    \label{eqn:basic uncertainty}
+\frac{1}{2}\kappa <\delta\theta^2>= \frac{\hslash\omega}{4}    \label{eqn:basic uncertainty}
 \end{equation}
 \begin{equation}
-\delta\theta= \sqrt{\frac{\hslash\omega}{2\kappa}} \approx
-cdot10^{-14} [rad]    \label{eqn:basic uncertainty}
+\delta\theta= \sqrt{\frac{\hslash\omega}{2\kappa}} \approx 10^{-14} [rad]    \label{eqn:basic uncertainty}
 \end{equation}
 
 Shot noise using a split detector in an interferometric technique is even on all frequencies. Shot limit when integrating over a long time.
@@ -19,16 +18,18 @@ Shot noise using a split detector in an interferometric technique is even on all
 \delta\theta = \frac{1}{4\sqrt{2}\pi}\frac{\lambda}{L\sqrt{N}} \approx
 10^{-14} [\frac{rad}{Hz}]    \label{eqn:gravitation_tourqe}
 \end{equation}
-When the gravitational force is measured using a torsional pendulum, there are noise limitation to the measuremnt sensetivity. The limitation are higher than the base limits, meaning that reducing the noise could achieve higher sensetivity. The noises on the pendulum are unknown magnetic noises, acoustic waves and quantum uncertainty due to thermal brownian motion. Friction is also limiting the pendulum response. 
+When the gravitational force is measured using a torsional pendulum, there are noise limitation to the measuremnt sensetivity. The limitation are higher than the basic limits, meaning that reducing the noise could achieve higher sensetivity. The noises on the pendulum are unknown magnetic noises, acoustic waves and quantum uncertainty due to thermal brownian motion. Friction is also limiting the pendulum response. 
 \par
-Pendulum is placed inside vacuum reducing brownian motion, acoustic waves and friction, vacuum chamber is reducing magnetic noise by faraday cage. At vacuum the brownian motion from envirement coupling is reduced.
+Pendulum is placed inside vacuum reducing brownian motion, acoustic waves and friction, vacuum chamber is reducing magnetic noise as a faraday cage. At vacuum the brownian motion from envirement coupling is reduced.
 \par
 The quantum uncertainty due to brownian motion is the main noise source. The quantum uncertainty at a given temperture (assuming above basic energy level).
 
 \begin{equation}
-\delta\theta_{max} = \sqrt{\frac{KT}{\kappa}}\propto{T}  \label{eqn:radiation force}
+\delta\theta = \sqrt{\frac{KT}{\kappa}}\propto{T}  \label{eqn:radiation force}
 \end{equation}
-
+\begin{equation}
+\delta\theta(t) = \delta\theta cos(\omega_0 t)   \label{eqn:pid_error}
+\end{equation}
 The noise reductance enables to damp and cool the pendulum temperture. Damping is made using a PID feedback loop. The feedback damping can dynamically damp the noises, without pre-knowledge of the existing noises. PID would reduce all noises, and reduce the temperature. Having an effective lower temperature would enable measuring smaller angles enlarging the SNR and the measuremnt sensetivity.
 \par
 When PID tuned correct damped pendulum is at critical damping and ossiclations become smaller. PID error is getting samller and damping response becomes small. 
