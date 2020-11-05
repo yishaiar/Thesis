@@ -3,32 +3,42 @@
 \begin{document}
 \chapter{methods and results}\label{chp:example-2}
 \section{Vacuum Chamber}
-\subsection{Vacuum Theory}
+\subsection{Vacuum Quality}
 \subsubsection{Leak Rate}
-At any gas system, some gas would slowly leak over time and increase the pressure if not pumped out. The leak rate $Q_L$ is not a function of time, and resuls in a sustained increase of pressure P over time.
+At any gas system, some gas would slowly leak over time and increase the pressure if not pumped out. The leak rate $Q_L$ is not a function of time but volume, and resuls in a sustained increase of pressure P over time.
 \begin{equation}
 Q_L = \frac{\Delta P\cdot V}{\Delta t}  \label{eqn:energy-mass-equivalence-relation}
 \end{equation}
 The leak rate could also prevant the system from reaching initial low pressure (at some point the leakage would be equal to the pumping rate).
 \par
-There is also diffusion rate of gas molecules, such as helium, which is insignifant when pressure is above $10^{-9}$ [Torr] (less than high vacuum). 
+There is also diffusion rate of gas molecules, such as helium, which is insignifant when pressure is above $10^{-9}$ [Torr] (vacuum lower than high vacuum). 
 
 \subsubsection{Outgassing}
-Outgassing is the desorption of gas molecules in vacuum (primarily water)  that were adsorbed or absorbed in the material. The outgassing occures over time and increases the pressure farther more. At low pressures, there are more gas molecules adsorbed on the chamber surface than floating in the chamber. The total surface area is more important than the volume for reaching low pressure. 
+At low pressures, there are more gas molecules adsorbed on the chamber surface than floating in the chamber. When pressure is below vapour pressure theres a desorption of gas molecules (primarily water) from the material.
 \par
-The desorption rate $Q_{des}$ of the surfaces produces a gas yield that declines over time, dependent on the desorption density which is area specific. It could be assumed that after a given time $t>t_0$ the increase is liniar over time, typicaly $t_0$ assumed to be one hour.
+Outgassing is the desorption rate $Q_{des}$ over time increasing the pressure. The desorption rate depends on the surface area and the desorption density $q_{des}$ which is area specific. 
 \begin{equation}
 Q_{des} = q_{des}\cdot A\cdot\frac{t_0}{t}  \label{eqn:energy-mass-equivalence-relation}
 \end{equation}
-Outgassing is minimized by selection of low vapor pressures materials such as stainless steel and glass. Since water is a significant source of outgassing, it is usually minimize by baking the chamber in high tempertures while the pump is running.
+The desorption rate produces a gas yield that declines over time. It could be assumed that after a given time $t>t_0$ the increase is liniar over time, typicaly $t_0$ assumed to be one hour.
+\par
+Outgassing is minimized by selection of low vapor pressures materials such as stainless steel and glass. Since water is a significant source of outgassing, it is usually minimize by baking the chamber at high tempertures while the pump is running.
 \subsubsection{Vacuum Chambers}
-Vaccuum chamber is a metalic chamber connected to a vacuum pump with pressure lower than the atmospheric pressure (which is 760 [Torr]). Quality of vacuum is divided to ranges; low vacuum, medium vacuum, high vacuum and ultra high vacuum. The main limitations to vacuum quality maintenance are leakage from the outside through the chamber and outgassing inside the chamber.
+Vaccuum chambers are metalic chambers connected to a vacuum pump with pressure lower than the atmospheric pressure. The main limitations to vacuum quality maintenance are leakage from the outside through the chamber and outgassing inside the chamber.
 \par
 Leaks and outgassing both increases the pressure (lowering the vacuum) at a constant rate over time. Usually, in order to keep equilibrium, the leaks and outgassing overcome by having a constant pump rate (vacuum pump working).   
 \begin{equation}
 Q_P = Q_L + Q_{des}  \label{eqn:vacuum_equilibrium}
 \end{equation}
-\subsection{Faraday Cage}
+In this experiment due to the relatively large size and uniqe shape of the measurement equipment, the vacuum chamber is having both a large leak and outgassing over time. The sensetivity of the measuerment did not allow having the pump working, causing pressure increase over time.
+\par 
+In order to minimize the pressure increase vacuum chamber was built using CF technology designed for ultra high vacuum, and the measurement system was designed to function at high tempertures while baking.
+\subsection{Design}
+
+
+
+\subsection{Magnetic Noise}
+
 Faraday cage is a cage made by a continuous covering of a conductive material which is used to block external electromagnetic fields. Faraday cage cannot prevent fields caused by electric charges placed inside.
 \par
 The external electrical fields causes an electric charge distribution in the conductive cage without passing inside. The cage blocks better the penetration of high frequency magnetic fields, depending on the material skin depth $\delta$ which determines the shield penetrating frequencies. Electric current decays exponentially with depth through the material, the thicker the shield the better at attenuating lower frequency fields.
