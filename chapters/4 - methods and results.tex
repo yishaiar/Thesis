@@ -2,7 +2,7 @@
 \documentclass[\main/master.tex]{subfiles}
 \begin{document}
 \chapter{methods and results}\label{chp:example-2}
-\section{Vacuum Chamber}
+\section{System design}
 \subsection{Vacuum Quality}
 \subsubsection{Leak Rate}
 At any gas system, some gas would slowly leak over time and increase the pressure if not pumped out. The leak rate $Q_L$ is not a function of time but volume, and resuls in a sustained increase of pressure P over time.
@@ -33,10 +33,6 @@ Q_P = Q_L + Q_{des}  \label{eqn:vacuum_equilibrium}
 In this experiment due to the relatively large size and uniqe shape of the measurement equipment, the vacuum chamber is having both a large leak and outgassing over time. The sensetivity of the measuerment did not allow having the pump working, causing pressure increase over time.
 \par 
 In order to minimize the pressure increase vacuum chamber was built using CF technology designed for ultra high vacuum, and the measurement system was designed to function at high tempertures while baking.
-\subsection{Design}
-
-
-
 \subsection{Magnetic Noise}
 
 Faraday cage is a cage made by a continuous covering of a conductive material which is used to block external electromagnetic fields. Faraday cage cannot prevent fields caused by electric charges placed inside.
@@ -49,6 +45,21 @@ The external electrical fields causes an electric charge distribution in the con
 Where $\rho$ is the material electric resistivity, and $\mu_r$ is the relative magnetic permeability.
 \fi
 Vacuum chambers are usually made of a few mm thick stainless steel 316, making them faraday cages with a skin depth which could block magnetic frequencies higher than 10 KHz and reduce magnetic noise from lower frequencies.
+\subsection{Pendulum Design}
+The chosen dimensions try to balance those two problems, having as good response aspossible while having a time period 300-600 seconds.In order to work with thin wire we chose to work with tungsten which is vacuumcompatible and has a high tensile strength. Note that the suction forces applied on thewire while the vacuum engine is working are much higher than the masses gravity. Thechosen dimensions of the wire; length249mm and0.05mm diameter.In order to reduce the magnetic noise we manufactured the beam and masses from steel316 which is also vacuum compatible. The chosen dimensions of the beam; length 238mm and 10 mm width and 90 gram weight, The masses weight is 24 gram each.The chosen mirror is a 1 inch thorlab’s OFC copper mirrror, gold coated. The mirrorhas low out gassing (although official not vacuum compatible). The mirror weight is..The achieved parameters are;
+\subsection{Chamber Design}
+Chamber design was carried out using solid works. The chamber build is two cylindrical tubes placed on each other so the pendulum is inside, and having three view ports in front. Two small viewports on the sides are used by the PID system to damp noises. One big on the middle is in front of the pendulum's mirror  used to measure the angle. The chamber has a 5-way which is connected to the vacuum engine and gauge. 
+\par
+Vacuum engine is connected to chamber through a valve, measurement is made when valve closed and engine off, to prevent rotation noise.
+\par
+ 
+\subsubsection{View ports}
+The view ports are for 550-1100 nm, with about 98$\%$ transmitted in our range. The main view port has 68.3mm View diameter, and the distance from the mirror is 82 mm which is giving a full FOV of about 39 degrees (instead of 90).
+\subsubsection{Bake out}
+Chamber was baked out to reduce outgassing from the various devices inside chamber and chamber itself. Bake out was carried using resistive wire, for a weak at about 110 $C^0$.The achieved stable vacuum is about 2·10−7[Hpa]
+
+\subsection{Measurement}
+The pendulum is placed is placed in the vacuum chamber, and the chamber is sealed.The chamber is connected to the engine to achieve UHV. The chamber is covered withresistive wire, and bakes out, bake out takes place for about a weak, and than thechamber is cooled down. The engine is disconnected using a valve. The chamber isplaced in the seismic box, and the PID and iteferometric optics are assembled. ThePID is damping the noises, and after they are damped the measurement begins.
 
 \section{PID}
 \subsection{Damped Oscillator}
