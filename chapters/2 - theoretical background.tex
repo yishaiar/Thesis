@@ -37,7 +37,6 @@ Note, $\kappa$ could also be found empirically by finding  the  oscillations per
 \subsection{Simple harmonic oscillator}
 The harmonic oscillator is a second order system that, when displaced, experiences a liniar restoring force proportional to the displacement from equilibrium. The torsional pendulum is an angular harmonic oscillator. It is equivalent to the liniar case, where instead of velosity and force, one has angular velosity and torque.
 \par\noindent
-
 If the restoring torque is the only torque acting, the oscillator is not driven or damped, called a simple harmonic oscillator. The torque is causing sinusoidal oscillations (simple harmonic motion) around the equilibrium angle.  
 \begin{equation}
 \tau = -\kappa\cdot\theta  = I\cdot\ddot{\theta}   \label{eqn:undamped_motion_equation}
@@ -64,7 +63,7 @@ If the system is also having damping (friction) which is proportional to the vel
 \begin{equation}
 \ddot{\theta} + 2\xi\omega_0\dot{\theta} + \omega_0^2\theta = 0   \label{eqn:damped_motion_equation}
 \end{equation}
-
+\noindent
 The system damping ratio $\xi$ is the ratio between critical damping and the actual damping. The parameter determines the type of damping the system has, and the damping time of the system $\tau$. The damping ratio is a function of the damping coefficient $b$. Sytem could either be undamped, overdamped, critically damped or underdamped.
 \begin{equation}
 \theta(t) = Ae^{-\omega_0 t(\xi+\sqrt{\xi^2-1})} + Be^{-\omega_0 t(\xi-\sqrt{\xi^2-1})}    \label{eqn:damped_motion_equation}
@@ -78,10 +77,6 @@ The system damping ratio $\xi$ is the ratio between critical damping and the act
 \begin{equation}
 \theta(t) = Ae^{-\frac{t}{\tau}\cdot(1+\sqrt{1-\frac{1}{\xi^2}})} + Be^{-\frac{t}{\tau}\cdot(1-\sqrt{1-\frac{1}{\xi^2}})}    \label{eqn:damped_motion_equation}
 \end{equation}
-
-
-
-
 Undamped ($\xi = 0$); there is no friction and damping $b = 0$, harmonic oscillations without decay.
 \begin{equation}
 \theta(t) = \theta_{max}cos(\omega_0 t )    \label{eqn:undamped_motion_equation}
