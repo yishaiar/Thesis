@@ -1,10 +1,10 @@
 \providecommand{\main}{..}
 \documentclass[\main/master.tex]{subfiles}
 \begin{document}
-\chapter{methods and results}\label{chp:example-2}
+\chapter{Methods and results}\label{chp:example-2}
 \section{System design}
-\subsection{Vacuum Quality}
-\subsubsection{Leak Rate}
+\subsection{Vacuum quality}
+\subsubsection{Leak rate}
 At any gas system, some gas would slowly leak over time and increase the pressure if not pumped out. The leak rate $Q_L$ is not a function of time but volume, and resuls in a sustained increase of pressure P over time.
 \begin{equation}
 Q_L = \frac{\Delta P\cdot V}{\Delta t}  \label{eqn:energy-mass-equivalence-relation}
@@ -33,7 +33,7 @@ Q_P = Q_L + Q_{des}  \label{eqn:vacuum_equilibrium}
 In this experiment due to the relatively large size and uniqe shape of the measurement equipment, the vacuum chamber is having both a large leak and outgassing over time. The sensetivity of the measuerment did not allow having the pump working, causing pressure increase over time.
 \par 
 In order to minimize the pressure increase over time vacuum chamber was built using CF Style Vacuum Components, designed for ultra high vacuum. The meausrement system inside chamber was designed to function after being exposed to high tempertures while baking.
-\subsection{Chamber Design}
+\subsection{Chamber design}
 
 Chamber and torsional pendulum design was carried out using Solid Works. The chamber build is two cylindrical tubes placed on each other with three view ports in front. The chamber has a 5-way which is connected to the vacuum engine and gauge. The torsional pendulum is placed inside the chamber. Vacuum engine is connected to chamber through a valve, measurement is made when valve closed and engine off, to prevent rotation noise.
 
@@ -72,7 +72,7 @@ Central viewport is in front of the pendulum's mirror, to measure mirror tilting
 	\label{fig:chamber front}
 \end{figure}
 
-\subsubsection{Pendulum Dimesions}
+\subsubsection{Pendulum dimesions}
 The chosen dimensions try to balance those two problems, having as good response aspossible while having a time period 300-600 seconds. In order to work with as thin string as possible tungsten string was chosen, with high tensile strength to overcome suction forces while vacuum engine is working and holding pendulum, tungsten is also vacuum compatible. string dimensions; length of 249 mm and0.05 mm diameter. Torsional beam dimensions; length 238mm and 10 mm width and 90 gram weight, masses weight 24 gram each. Mirror is a 1 inch thorlab’s OFC copper mirrror, gold coated, with low out gassing (although officially not vacuum compatible).
 
 
@@ -101,7 +101,7 @@ PID and measurement optics are assembled.
 
 
 
-\subsection{Magnetic Noise}
+\subsection{Magnetic noise}
 
 Faraday cage is a cage made by a continuous covering of a conductive material which is used to block external electromagnetic fields. The external electrical fields causes an electric charge distribution in the conductive cage without passing inside. Electric current decays exponentially with depth through the material.
 \par
@@ -115,15 +115,15 @@ Thicker faraday cage attenuate better lower frequency fields. Vacuum chambers ar
 The torsional pendum is guarded from the measurement system with a 
 
 
-\subsubsection{Pendulum Design}
+\subsubsection{Pendulum design}
 
 \par
 The angle of torsion is measured using a mirror connected in front of the pendulum.This mirror is a part of an optical interferometer with which the mirror tilt could bedetermined.In order to balance the pendulum so the mirror would not be tilted, beside the tiltof the gravity field. The center of mass needs to be adjusted. The center of mass isadjusted using a mass from the back, to balance the mirror weight.The longer the wire and the smaller the wire diameter - wire torsion coefficient issmaller. Small coefficient achieves a better angle response to the gravity field. On theother hand the Small coefficient is leading to a very long time period of the pendulum,which while integrating over time would lead to very long measurements time. Alsothe wire needs to be strong enough to hold the masses without been teared down.
 
 
 
-\section{PID}
-\subsection{Damped Oscillator}
+\section{Proportional–Integral–Derivative (PID)}
+\subsection{Damped oscillator}
 PID controller can continuously calculates error value of an oscillator, to damp it to zero. If the defined set point is set to zero, the error is the measured process variable. The PID acts as friction, gradually working when the ossicilations are at the maximum speed to slow them down, and remove the tourqe energy.
 \begin{equation}
 e(t) = \theta(t) = \theta   \label{eqn:error}
@@ -152,11 +152,11 @@ The sytem is a damped oscillator, with an external force correction, which inser
 \end{equation}
 The PID damping $\gamma$ and damping time $\tau$ depends on the initial oscillations angle. If the angle is too large compare to the inserted force, the system is extremly underdamped and the PID affect is neglected. The damping time would be infinite and the system would keep on ossicilating.
 
-\subsection{Control Stability}
+\subsection{Control stability}
 Using PID control does not guarantee optimal control or stability. The control system is aiming to achieve critical damping of the process. Well tuned control would a reach the desired set point fast and accurate, and also apply over time the nesseary corrections to resist external forces trying to move variable from the set point.
 \par
 The controller response is its response to error. How much does the sytem overshoots a setpoint and the system oscillations. When controller gains are too high, instead of critical damping there is overdamping causing overshoot, due to the high gain the overshoot response overshoots to the other side, causing the system to be driven.
-\subsection{Radiation Pressure Force}
+\subsection{Radiation pressure force}
 The pendulum is cooled down using radiation pressure force. Fast modulated light source with high intensity cause a small controlled force. The diffrence between two light sources from both ends of pendulum adds a controled small damping tourqe. 
 \begin{equation}
 F = \frac{2\eta\Theta}{{c}} \label{eqn:radiation force}
@@ -177,7 +177,7 @@ The setup could produce very small tourqes; light sources of 1 watt maximum powe
 
 
 
-\section{Modulated CW Laser}
+\section{Modulated CW laser}
 
 \subsection{Laser}
 
@@ -190,7 +190,7 @@ The laser is a high power coherent light source based on stimulated emmission wi
 Usually the power output is stable but has oscillations due to having several longitudinal modes causing nano second scale ossicilations, output power is steady when averaged over longer periods. Also, over long periods of time lasers have slight power oscillations due to temperture changes in the envirement.
 %The laser diode cavity face is rectangular, because of fabrication constraints. The rectangular face is causing cylindrical aberration, which   
 
-\subsection{Acousto Optic Modulator}
+\subsection{Acousto optic modulator}
 Acousto Optic Modulator (AOM), uses the acousto-optic effect to diffract and shift the frequency of light using RF waves. An oscillating electric signal drives a piezoelectric transducer to vibrate causing RF waves, the transducer attached to a material. This causes sound waves in the material, and periodic index modulation causing a Bragg grating. Incoming light scatters off the grating and due to Bragg diffraction comes at Bragg angle.
 \begin{equation}
 \theta_b = sin(\theta_b)\approx \frac{\lambda}{2n\Lambda} \label{eqn:energy-mass-equivalence-relation}
@@ -201,7 +201,7 @@ Since all parameters constant, modulation angle is constant, and possible modula
 
 
 \section{Modulated LED}
-\subsection{arduino}
+\subsection{Arduino}
 Arduino is an open-source microcontroller board used for building low cost and simple digital devices and circuits. Each microcontroller contains a microprocessor, controller, serial communication interface and is equipped with digital and analog input/output pins. The microcontrollers could be operated as stand alone or connected to computer through serial communication. 
 \par
 The Arduino Mega 2560, based on the ATmega2560 8-bit controller, is equiped with 16 MHz crystal oscillator (clock) and 15 PWM outputs pins. Arduino doesn't have analog output, but is simulates analog output using Pulse Width Modulation.
