@@ -40,7 +40,7 @@ Chamber and torsional pendulum design was carried out using Solid Works. The cha
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=0.4]{\main/images/4 - methods and results/total_chamber.png}}
-	\caption[total]{the total chamber}
+	\caption[total chamber]{The total chamber}
 	\label{fig:total}
 \end{figure}
 
@@ -50,7 +50,7 @@ The the pendulum mount is adjustable, enabling to adjust the hight of pendulum, 
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=0.25]{\main/images/4 - methods and results/mount.png}}
-	\caption[mount]{mount}
+	\caption[Pendulum mount]{The pendulum mount}
 	\label{fig:mount}
 \end{figure}
 
@@ -59,7 +59,7 @@ The the pendulum mount is adjustable, enabling to adjust the hight of pendulum, 
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=0.5]{\main/images/4 - methods and results/pendulum_front.png}}
-	\caption[pendulum front]{pendulum front}
+	\caption[Pendulum front]{The pendulum front}
 	\label{fig:pendulum front}
 \end{figure}
 
@@ -124,14 +124,14 @@ The angle of torsion is measured using a mirror connected in front of the pendul
 
 \section{Proportional–Integral–Derivative (PID)}
 \subsection{Damped oscillator}
-PID controller can continuously calculates error value of an oscillator, to damp it to zero. If the defined set point is set to zero, the error is the measured process variable. The PID acts as friction, gradually working when the ossicilations are at the maximum speed to slow them down, and remove the tourqe energy.
+PID controller can continuously calculates error value of an oscillator, to damp it to zero. If the defined set point is set to zero, the error is the measured process variable. The PID acts as friction, gradually working when the ossicilations are at the maximum speed to slow them down, and remove the torque energy.
 \begin{equation}
 e(t) = \theta(t) = \theta   \label{eqn:error}
 \end{equation}
 \begin{equation}
-\tau_{PID} = -\gamma\cdot\dot{\theta}   \label{eqn:friction_tourqe}
+\tau_{PID} = -\gamma\cdot\dot{\theta}   \label{eqn:friction_torque}
 \end{equation}
-The sytem is a damped oscillator, with an external force correction, which inserts tourqe to the oscillator.
+The sytem is a damped oscillator, with an external force correction, which inserts torque to the oscillator.
 \begin{equation}
 \kappa\cdot\theta - \gamma\cdot\dot{\theta}  + I\cdot\ddot{\theta} = 0   \label{eqn:damped__pid_motion_equation}
 \end{equation}
@@ -157,16 +157,16 @@ Using PID control does not guarantee optimal control or stability. The control s
 \par
 The controller response is its response to error. How much does the sytem overshoots a setpoint and the system oscillations. When controller gains are too high, instead of critical damping there is overdamping causing overshoot, due to the high gain the overshoot response overshoots to the other side, causing the system to be driven.
 \subsection{Radiation pressure force}
-The pendulum is cooled down using radiation pressure force. Fast modulated light source with high intensity cause a small controlled force. The diffrence between two light sources from both ends of pendulum adds a controled small damping tourqe. 
+The pendulum is cooled down using radiation pressure force. Fast modulated light source with high intensity cause a small controlled force. The diffrence between two light sources from both ends of pendulum adds a controled small damping torque. 
 \begin{equation}
 F = \frac{2\eta\Theta}{{c}} \label{eqn:radiation force}
 \end{equation}
 \begin{equation}
-\tau\approx d\Delta F = \frac{2d}{{c}} (\eta_1\Theta_1 -\eta_2\Theta_2) \label{eqn:radiation tourqe}
+\tau\approx d\Delta F = \frac{2d}{{c}} (\eta_1\Theta_1 -\eta_2\Theta_2) \label{eqn:radiation torque}
 \end{equation}
-The radiation pressure tourqe assuming light fields direction perpendicular to surface, $\Theta$ is the light source radiant flux [watt], and $\eta$ is the coupling efficiency. The center of mass distance from rotation axis $d$ of both forces is even.
+The radiation pressure torque assuming light fields direction perpendicular to surface, $\Theta$ is the light source radiant flux [watt], and $\eta$ is the coupling efficiency. The center of mass distance from rotation axis $d$ of both forces is even.
 \par
-The setup could produce very small tourqes; light sources of 1 watt maximum power and 8bit modulation steps could produce nano-$N\cdot m$ to pico-$N\cdot m$ tourqes. 
+The setup could produce very small torques; light sources of 1 watt maximum power and 8bit modulation steps could produce nano-$N\cdot m$ to pico-$N\cdot m$ torques. 
 
 
 
@@ -224,7 +224,7 @@ P\propto e^{\frac{q}{kT}\cdot V_d}\label{eqn:energy-mass-equivalence-relation}
 \end{equation}
 In order to overcome the led uncoherent profile and large opening angle, light was transfered through a light guide. Light guides are pipes made of thin filaments causing internal reflections used for directed transmission of luminous energy. Light guides are used to illuminate small areas, regardless of the spectral characteristics of the light source. They mainly depend on the cross sections of entrance and exit and the length. Making them ideal to overcoming focusing problems.
 \par
-Connecting a high power led to arduino, enables fast real-time controlled modulation of high power led with about 2ms speed. The light arrives to pendulum through a light guide allowing to assume beam variation through the surface neglegible.The light is controlled through a PID and applies a tourqe.
+Connecting a high power led to arduino, enables fast real-time controlled modulation of high power led with about 2ms speed. The light arrives to pendulum through a light guide allowing to assume beam variation through the surface neglegible.The light is controlled through a PID and applies a torque.
 \par
 Since the led power could be aproximated using liniar aproximation, the power modulation is propotional to the arduino duty cycle. That allows to control the liniar aproximation of the power output by changing the PID gain values.  
 \par
