@@ -6,7 +6,7 @@
 
 \section{Torsional pendulum}
 \subsection{Torsional pendulum}
-Torsion Pendulum is an oscillator made of mass hung by a string from a fixed point so it could swing free. When the mass is displaced from equilibrium angle, the pedulum is having a liniar restoring torque, caused by the twisted string. The restoring torque is rotating the mass back to equilibrium position.
+A torsional Pendulum is an oscillator made of mass hung by a string from a fixed point alowing it to swing freelly. When the mass is displaced from the equilibrium angle, the pedulum has a liniar restoring torque, caused by the twisted string. The restoring torque rotates the mass back to the equilibrium position.
 
 
 \begin{figure}[htbp]
@@ -15,28 +15,28 @@ Torsion Pendulum is an oscillator made of mass hung by a string from a fixed poi
 	\caption[Torsional pendulum]{A torsional pendulum}
 	\label{fig:torsion_pendulum}
 \end{figure}
-
-Assuming a mass with a profile which could be estimated to a long thin rod. When displaced from equilibrium, there are two sources of torque; the displacing torque and a liniar restoring torque at opposite direction. At equilibrium, when balance stabilizes in a specific angle, the two sources of torque cancel out. With small angles the pendulum obeys Hooke’s law, when $L$ is the rod length.
+\par\noindent
+The mass can be assumed to be a profile estimated as a long thin rod. When displaced from the equilibrium, there are two sources of torque; the displacing torque and a liniar restoring torque at the opposite direction. At equilibrium, when balance stabilizes in a specific angle, the two sources of torque cancel each other out. With small angles the pendulum obeys Hooke’s law, when $L$ is the rod length.
 \begin{equation}
 \tau = -\kappa\theta = LF    \label{eqn:Hooke_law}
 \end{equation}
-The moment of innertia of a rod oscillating around a pivot.
+The moment of innertia of a rod oscillating around a pivot is:
 \begin{equation}
 I = \frac{ML^2}{12}     \label{eqn:moment_innertia}
 \end{equation}  
 
 
-The string torsion coefficient $\kappa $ could be estimated, assuming homogeneousity of a circular string. Where G is the material shear modulus, j is the circular second moment of area ($Jzz$) and $h$ is the string length.
+The string torsion coefficient $\kappa $ could be estimated, assuming homogeneousity of a circular string. Where $G$ is the material shear modulus, $J$ is the circular second moment of area ($Jzz$) and $h$ is the string length.
 \begin{equation}
 \kappa = \frac{GJ}{h} = \frac{G}{h} \frac{\pi D^4}{32}    \label{eqn:torsion_coefficient}
 \end{equation}
-Note  $\kappa$ could also be found empirically by finding  the  oscillations period.
+Note, $\kappa$ could also be found empirically by finding  the  oscillations period.
  
 
 
 \subsection{Simple harmonic oscillator}
-Harmonic oscillator is a second order system that, when displaced, experiences a liniar restoring force proportional to the displacement from equilibrium. Torsional pendulum is an angular harmonic oscillator (equivalent to the liniar case, instead of velosity and force, angular velosity and torque).
-\par
+The harmonic oscillator is a second order system that, when displaced, experiences a liniar restoring force proportional to the displacement from equilibrium. The torsional pendulum is an angular harmonic oscillator. It is equivalent to the liniar case, where instead of velosity and force, one has angular velosity and torque.
+\par\noindent
 
 If the restoring torque is the only torque acting, the oscillator is not driven or damped, called a simple harmonic oscillator. The torque is causing sinusoidal oscillations (simple harmonic motion) around the equilibrium angle.  
 \begin{equation}
@@ -143,7 +143,7 @@ Newton law of universal gravitation states that every point mass attracts every 
 \overrightarrow{F}(r) = \frac{GMm}{r^2}\hat{r}    \label{eqn:gravitation_force}
 \end{equation} 
 The force is acting along the intersecting line, proportional to the product of the masses and inverse to the square of the distance between the centers. Since it is inverse to the distance square means the force is very weak. For example the force between two cubes 1 kg each 1 meter away would be $\overrightarrow{F} = 6.67\cdot10^{-11} [N]$.
-\par
+\par\noindent
 Gravitational field of a mass is a vector field consisting at every point a vector pointing directly towards the particle. The magnitude of the field at every point is calculated by applying the universal law, the force per unit mass. 
 \begin{equation}
 \overrightarrow{G}(r) = \frac{\overrightarrow{F}(r)}{m} = \frac{GM}{r^2}\hat{r}    \label{eqn:gravitation_field}
@@ -161,9 +161,9 @@ The Cavendish experiment, first performed in the 17th century, was the first exp
 
 \subsection{Gravity sensing}
 The field at a specific point is the super position of fields point value, of fields caused by any mass in space. Measuring accurately the gravitational field caused by a mass, with a known test mass, the mass weight or distance could be estimated. In order to filter out the other gravitational fields, caused by masses around, the measurement is measuring the difference from a baseline state.
-\par
+\par\noindent
 Usually the measurement is with a frequency. The test mass is moving in different frequencies (not moving is zero frequency). The masses around are not moving, and are filtered out.
-\par
+\par\noindent
 The angle caused by the gravitational field is measured at each of those frequencies, measuring the energy spectral density $[\frac{rad}{\sqrt{Hz}}]$.
 In the measurement system different noises have different frequencies. By integrating over long time measurement noises are reduced. The signal to noise ratio (SNR) is the limiting factor for the sensetivity of a measuring system. In higher frequencies integration is faster, causing less noises and higher SNR.
 The SNR dependency on frequency cause difficuties measuring gravitational fields at low frequencies.
@@ -182,7 +182,7 @@ While other system noises are higher than the shot noise limit, reducing noises 
 
 \subsection{Brownian motion}
 Brownian motion is the pattern of random particles fluctuations in fluid or gas, a random walk with no preferential direction of flow. This pattern happens at thermal equilibrium in a given temperature (on average there is no linear and angular momentum). 
-\par
+\par\noindent
 The average kinetic energy for a gas particle could be found from Maxwell-Boltzmann distribution of molecular speed, the total brownian motion kinetic energy is the sum over all gas particles.
 \begin{equation}
 f(v) = 4\pi(\frac{m}{2\pi kT})^{3/2}v^2exp(\frac{-mv^2}{2kT})     \label{eqn:Maxwell_Boltzmann}
@@ -241,12 +241,12 @@ The power carried by acoustic waves $[\frac{W}{m^2}]$, named acoustic intensity,
 
 \section{Proportional–Integral–Derivative (PID) controller}
 proportional–integral–derivative controller (PID controller) is a feedback based control system. The control loop is used for time continuouse control of a process, so the process output (measured process variable) would be close to a defined set point.
-\par
+\par\noindent
 PID controller continuously calculates error value, which is the distance of the measured process variable from the defined set point. The feedback applies an external correction to the process, called control variable. The control variable is based on a proportional $P$, integral $I$ and derivative $D$ gain to the error. Proper tuning of a PID enables an accurate automated correction to a controled process. The PID concept is used widely in applications requiring accurate automated control.
 
-\par
+\par\noindent
 The error and the error's integral and derivate are calculated continuously. The control is having three tuning parameters; $K_P, K_I, K_D$, the feed back correction is modulated by the tuning parameters value. Each parameter is assigned to a gain (P-I-D). The response (control variable) is a weighted sum of the control terms. Over time the controller attempts to minimize the error $e(t)$ by adjusting the control variable $u(t)$, which is the PID output.
-\par
+\par\noindent
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=0.2]{\main/images/2 - theoretical background/PID.png}}
@@ -259,17 +259,17 @@ u(t) = K_Pe(t)+K_I\int_{0}^{t}e(t)+K_D\frac{de(t)}{dt}   \label{eqn:PID_eq}
 
 
 P is proportional to the current error value $e(t)$. When error is large and positive, proportional output would be proportionately large and positive.
-\par
+\par\noindent
 I is proportional to past error value's integration. The response of the cumulative value could eliminate residual errors, such as signal offset.
-\par
+\par\noindent
 D is proportional to error current change rate, by calculating the derivative. The response of the change rate could eliminate more rapid changes.
-\par
+\par\noindent
 The optimal control function is achieved by balancing the responses. The tuning constants depend on the characteristics of the specific procces. The response must be tuned for each control application.  
 
 \section{Radiation pressure}
 Radiation pressure is pressure on the surface due to momentum exchange with electromagnetic field, including momentum of light. The light is at any wavelength which is absorbed, reflected, or emitted. The pressure is causing force on the surface, although the force is usually insignificant.
   
-\par
+\par\noindent
 The radiation pressure force depends on the angle of surface compare to electromagnetic field, surface intesity reflectance and absorbance, and the power of light hitting the surface $\Theta_i$ (radiant flux, measured in watts). There is coupling efficiency $\eta$ due to the light losses while passing through light transmitters (such as light guide or fiber), and size difference between the light beam size and the target size. The incident radiation pressure, when $\alpha$ is the field angle compare to surface area $A$, and $c$ the speed of light. As a first approximation assume that the beam is focused tightly enough that variation over the surface are negligible. 
 \begin{equation}
 P_{incident} = \frac{\frac{\Theta_i}{A}cos^2(\alpha)}{c} = \frac{\eta\cdot \Theta_{source}\cdot cos^2(\alpha)}{{A\cdot c}} \label{eqn:radiation_pressure}
