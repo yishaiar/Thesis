@@ -4,25 +4,7 @@
 \chapter{Methods and results}\label{chp:example-2}
 \section{System design}
 \subsection{Vacuum quality}
-\subsubsection{Leak rate}
-At any gas system, some gas would slowly leak over time and increase the pressure if not pumped out. The leak rate $Q_L$ is not a function of time but volume, and resuls in a sustained increase of pressure P over time.
-\begin{equation}
-Q_L = \frac{\Delta P\cdot V}{\Delta t}  \label{eqn:energy-mass-equivalence-relation}
-\end{equation}
-The leak rate could also prevant the system from reaching initial low pressure (at some point the leakage would be equal to the pumping rate).
-\par\noindent
-There is also diffusion rate of gas molecules, such as helium, which is insignifant when pressure is above $10^{-9}$ [Torr] (vacuum lower than high vacuum). 
 
-\subsubsection{Outgassing}
-At low pressures, there are more gas molecules adsorbed on the chamber surface than floating in the chamber. When pressure is below vapour pressure theres a desorption of gas molecules (primarily water) from the material.
-\par\noindent
-Outgassing is the desorption rate $Q_{des}$ over time increasing the pressure. The desorption rate depends on the surface area and the desorption density $q_{des}$ which is area specific. 
-\begin{equation}
-Q_{des} = q_{des}\cdot A\cdot\frac{t_0}{t}  \label{eqn:energy-mass-equivalence-relation}
-\end{equation}
-The desorption rate produces a gas yield that declines over time. It could be assumed that after a given time $t>t_0$ the increase is liniar over time, typicaly $t_0$ assumed to be one hour.
-\par\noindent
-Outgassing is minimized by selection of low vapor pressures materials such as stainless steel and glass. Since water is a significant source of outgassing, it is usually minimize by baking the chamber at high temperatures while the pump is running.
 \subsubsection{Vacuum Chambers}
 Vaccuum chambers are metalic chambers connected to a vacuum pump with pressure lower than the atmospheric pressure. The main limitations to vacuum quality maintenance are leakage from the outside through the chamber and outgassing inside the chamber.
 \par\noindent

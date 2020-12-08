@@ -16,11 +16,11 @@ A torsional Pendulum is an oscillator made of mass hung by a string from a fixed
 	\label{fig:torsion_pendulum}
 \end{figure}
 \par\noindent
-The mass can be assumed to be a profile estimated as a long thin rod. When displaced from the equilibrium, there are two sources of torque; the displacing torque and a liniar restoring torque at the opposite direction. At equilibrium, when balance stabilizes in a specific angle, the two sources of torque cancel each other out. With small angles the pendulum obeys Hooke’s law, when $L$ is the rod length.
+The mass can be assumed to be a profile estimated as a long thin rod. When displaced from the equilibrium, there are two sources of torque; the displacing torque and a liniar restoring torque at the opposite direction. At equilibrium, when balance stabilizes in a specific angle, the two sources of torque cancel each other out. With small angles the pendulum obeys Hooke’s law, when $r$ is the rod length.
 \begin{equation}
-\tau = -\kappa\theta = LF    \label{eqn:Hooke_law}
+\tau = -\kappa\theta = rF    \label{eqn:Hooke_law}
 \end{equation}
-The moment of innertia of a rod oscillating around a pivot is:
+The moment of innertia of a rod with lemgth $L$ oscillating around a pivot is:
 \begin{equation}
 I = \frac{ML^2}{12}     \label{eqn:moment_innertia}
 \end{equation}  
@@ -235,6 +235,26 @@ I = pV      \label{eqn:acoustic_intensity}
 \end{equation} 
 The power carried by acoustic waves $[\frac{W}{m^2}]$, known as acoustic intensity, depends on the material acoustic pressure and particle velosity. When the material pressure is reduced, the acoustic pressure is lower and less power is carried.
 
+\subsubsection{Leak rate}
+At any gas system, some gas would slowly leak over time and increase the pressure if not pumped out. The leak rate $Q_L$ is not a function of time but rather of volume, and resuls in a sustained increase of pressure P over time.
+\begin{equation}
+Q_L = \frac{\Delta P\cdot V}{\Delta t}  \label{eqn:energy-mass-equivalence-relation}
+\end{equation}
+The leak rate could prevant the system from reaching initial low pressure, since at some point the leakage would be equal to the pumping rate.
+\par\noindent
+There is also a diffusion rate of gas molecules, such as helium, which is insignifant when pressure is above $10^{-9}$ [Torr] (vacuum lower than high vacuum). 
+
+\subsubsection{Outgassing}
+At low pressures, there are more gas molecules adsorbed on the chamber surface than floating in the chamber. When pressure is below vapour pressure theres a desorption of gas molecules (primarily water) from the material.
+\par\noindent
+Outgassing is the desorption rate $Q_{des}$ which over time increases the pressure. The desorption rate depends on the surface area and the desorption density $q_{des}$ which is area specific. 
+\begin{equation}
+Q_{des} = q_{des}\cdot A\cdot\frac{t_0}{t}  \label{eqn:energy-mass-equivalence-relation}
+\end{equation}
+The desorption rate produces a gas yield that declines over time. It could be assumed that after a given time $t>t_0$ the increase is liniar over time, typicaly $t_0$ assumed to be one hour.
+\par\noindent
+Outgassing is minimized by selection of low vapor pressure materials such as stainless steel and glass. Since water is a significant source of outgassing, it is usually minimized by baking the chamber at high temperatures while the pump is running.
+
 
 \section{Proportional–integral–derivative (PID) controller}
 Proportional–integral–derivative controller (PID controller) is a feedback based control system. The control loop is used for time continuous control of a process, so the process output (measured process variable) would be close to a defined set point.
@@ -247,7 +267,7 @@ The error and it's integral and derivate are calculated continuously. The contro
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=0.4]{\main/images/2 - theoretical background/PID.png}}
-	\caption[PID controller feedback loop]{PID controller block diagram; from circuitdigest \cite{PID-diagram}}
+	\caption[PID controller block diagram]{PID controller block diagram; from circuitdigest \cite{PID-diagram}}
 	\label{fig:PID_scheme}
 \end{figure}
 \begin{equation}
