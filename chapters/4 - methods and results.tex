@@ -22,7 +22,7 @@ Q_{des} = q_{des}\cdot A\cdot\frac{t_0}{t}  \label{eqn:energy-mass-equivalence-r
 \end{equation}
 The desorption rate produces a gas yield that declines over time. It could be assumed that after a given time $t>t_0$ the increase is liniar over time, typicaly $t_0$ assumed to be one hour.
 \par\noindent
-Outgassing is minimized by selection of low vapor pressures materials such as stainless steel and glass. Since water is a significant source of outgassing, it is usually minimize by baking the chamber at high tempertures while the pump is running.
+Outgassing is minimized by selection of low vapor pressures materials such as stainless steel and glass. Since water is a significant source of outgassing, it is usually minimize by baking the chamber at high temperatures while the pump is running.
 \subsubsection{Vacuum Chambers}
 Vaccuum chambers are metalic chambers connected to a vacuum pump with pressure lower than the atmospheric pressure. The main limitations to vacuum quality maintenance are leakage from the outside through the chamber and outgassing inside the chamber.
 \par\noindent
@@ -30,9 +30,9 @@ Leaks and outgassing both increases the pressure (lowering the vacuum) at a cons
 \begin{equation}
 Q_P = Q_L + Q_{des}  \label{eqn:vacuum_equilibrium}
 \end{equation}
-In this experiment due to the relatively large size and uniqe shape of the measurement equipment, the vacuum chamber is having both a large leak and outgassing over time. The sensetivity of the measuerment did not allow having the pump working, causing pressure increase over time.
+In this experiment due to the relatively large size and uniqe shape of the measurement equipment, the vacuum chamber is having both a large leak and outgassing over time. The sensitivity of the measuerment did not allow having the pump working, causing pressure increase over time.
 \par\noindent 
-In order to minimize the pressure increase over time vacuum chamber was built using CF Style Vacuum Components, designed for ultra high vacuum. The meausrement system inside chamber was designed to function after being exposed to high tempertures while baking.
+In order to minimize the pressure increase over time vacuum chamber was built using CF Style Vacuum Components, designed for ultra high vacuum. The meausrement system inside chamber was designed to function after being exposed to high temperatures while baking.
 \subsection{Chamber design}
 
 Chamber and torsional pendulum design was carried out using Solid Works. The chamber build is two cylindrical tubes placed on each other with three view ports in front. The chamber has a 5-way which is connected to the vacuum engine and gauge. The torsional pendulum is placed inside the chamber. Vacuum engine is connected to chamber through a valve, measurement is made when valve closed and engine off, to prevent rotation noise.
@@ -151,7 +151,7 @@ The sytem is a damped oscillator, with an external force correction, which inser
 \begin{equation}
 \tau =  \frac{2I}{\gamma}  \label{eqn:damping_time}
 \end{equation}
-The PID damping $\gamma$ and damping time $\tau$ depends on the initial oscillations angle. If the angle is too large compare to the inserted force, the system is extremly underdamped and the PID affect is neglected. The damping time would be infinite and the system would keep on ossicilating.
+The PID damping $\gamma$ and damping time $\tau$ depends on the initial oscillations angle. If the angle is too large compare to the inserted force, the system is extremly underdamped and the PID affect is negligible. The damping time would be infinite and the system would keep on ossicilating.
 
 \subsection{Control stability}
 Using PID control does not guarantee optimal control or stability. The control system is aiming to achieve critical damping of the process. Well tuned control would a reach the desired set point fast and accurate, and also apply over time the nesseary corrections to resist external forces trying to move variable from the set point.
@@ -188,7 +188,7 @@ The laser is a high power coherent light source based on stimulated emmission wi
 
 
 \par\noindent
-Usually the power output is stable but has oscillations due to having several longitudinal modes causing nano second scale ossicilations, output power is steady when averaged over longer periods. Also, over long periods of time lasers have slight power oscillations due to temperture changes in the envirement.
+Usually the power output is stable but has oscillations due to having several longitudinal modes causing nano second scale ossicilations, output power is steady when averaged over longer periods. Also, over long periods of time lasers have slight power oscillations due to temperature changes in the environment.
 %The laser diode cavity face is rectangular, because of fabrication constraints. The rectangular face is causing cylindrical aberration, which   
 
 \subsection{Acousto optic modulator}
@@ -227,7 +227,7 @@ In order to overcome the led uncoherent profile and large opening angle, light w
 \par\noindent
 Connecting a high power led to arduino, enables fast real-time controlled modulation of high power led with about 2ms speed. The light arrives to pendulum through a light guide allowing to assume beam variation through the surface neglegible.The light is controlled through a PID and applies a torque.
 \par\noindent
-Since the led power could be aproximated using liniar aproximation, the power modulation is propotional to the arduino duty cycle. That allows to control the liniar aproximation of the power output by changing the PID gain values.  
+Since the led power could be aproximated using liniar aproximation, the power modulation is proportional to the arduino duty cycle. That allows to control the liniar aproximation of the power output by changing the PID gain values.  
 \par\noindent
 we assume we can neglect the ossiclations between two sides...
 

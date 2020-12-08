@@ -19,11 +19,11 @@ Shot noise using a split detector in an interferometric technique is even on all
 \delta\theta = \frac{1}{4\sqrt{2}\pi}\frac{\lambda}{L\sqrt{N}} \approx
 10^{-14} [\frac{rad}{Hz}]    \label{eqn:gravitation_torque}
 \end{equation}
-When the gravitational force is measured using a torsional pendulum, there are noise limitation to the measuremnt sensetivity. The limitation are higher than the basic limits, meaning that reducing the noise could achieve higher sensetivity. The noises on the pendulum are unknown magnetic noises, acoustic waves and quantum uncertainty due to thermal brownian motion. Friction is also limiting the pendulum response. 
+When the gravitational force is measured using a torsional pendulum, there are noise limitation to the measuremnt sensitivity. The limitation are higher than the basic limits, meaning that reducing the noise could achieve higher sensitivity. The noises on the pendulum are unknown magnetic noises, acoustic waves and quantum uncertainty due to thermal brownian motion. Friction is also limiting the pendulum response. 
 \par\noindent
-Pendulum is placed inside vacuum reducing brownian motion, acoustic waves and friction, vacuum chamber is reducing magnetic noise as a faraday cage. At vacuum the brownian motion from envirement coupling is reduced.
+Pendulum is placed inside vacuum reducing brownian motion, acoustic waves and friction, vacuum chamber is reducing magnetic noise as a faraday cage. At vacuum the brownian motion from environment coupling is reduced.
 \par\noindent
-The quantum uncertainty due to brownian motion is the main noise source. The quantum uncertainty at a given temperture (assuming above basic energy level).
+The quantum uncertainty due to brownian motion is the main noise source. The quantum uncertainty at a given temperature (assuming above basic energy level).
 
 \begin{equation}
 \delta\theta = \sqrt{\frac{KT}{\kappa}}\propto{T}  \label{eqn:radiation force}
@@ -31,7 +31,7 @@ The quantum uncertainty due to brownian motion is the main noise source. The qua
 \begin{equation}
 \delta\theta(t) = \delta\theta cos(\omega_0 t)   \label{eqn:pid_error}
 \end{equation}
-The noise reductance enables to damp and cool the pendulum temperture. Damping is made using a PID feedback loop. The feedback damping can dynamically damp the noises, without pre-knowledge of the existing noises. PID would reduce all noises, and reduce the temperature. Having an effective lower temperature would enable measuring smaller angles enlarging the SNR and the measuremnt sensetivity.
+The noise reductance enables to damp and cool the pendulum temperture. Damping is made using a PID feedback loop. The feedback damping can dynamically damp the noises, without pre-knowledge of the existing noises. PID would reduce all noises, and reduce the temperature. Having an effective lower temperature would enable measuring smaller angles enlarging the SNR and the measuremnt sensitivity.
 \par\noindent
 When PID tuned correct damped pendulum is at critical damping and ossiclations become smaller. PID error is getting samller and damping response becomes small. 
 \begin{equation}
@@ -42,7 +42,7 @@ u(t) = K_Pe(t)+K_I\int_{0}^{t}e(t)+K_D\frac{de(t)}{dt}   \label{eqn:PID_eq}
 \end{equation}
 
 \noindent
-Introducing a new mass adds a constant new torque to the system, which the PID is compensating with a propotional gain $K_P$. The PID response becomes mainly an inverse torque. Assuming the mass is moving at low frequencies, when integrating over short periods the angle is constant in time.
+Introducing a new mass adds a constant new torque to the system, which the PID is compensating with a proportional gain $K_P$. The PID response becomes mainly an inverse torque. Assuming the mass is moving at low frequencies, when integrating over short periods the angle is constant in time.
 \begin{equation}
 e(t) = \delta\theta(t) + \theta_g    \label{eqn:PID_measurement}
 \end{equation}
