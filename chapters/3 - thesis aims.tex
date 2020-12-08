@@ -13,6 +13,7 @@ The measurement is limited by the basic energy level quantum uncertainty and mea
 \delta\theta= \sqrt{\frac{\hslash\omega}{2\kappa}} \approx 10^{-14} [rad]    \label{eqn:basic uncertainty}
 \end{equation}
 
+\noindent
 Shot noise using a split detector in an interferometric technique is even on all frequencies. Shot limit when integrating over a long time.
 \begin{equation}
 \delta\theta = \frac{1}{4\sqrt{2}\pi}\frac{\lambda}{L\sqrt{N}} \approx
@@ -40,6 +41,7 @@ e(t) = \delta\theta(t)   \label{eqn:pid_error}
 u(t) = K_Pe(t)+K_I\int_{0}^{t}e(t)+K_D\frac{de(t)}{dt}   \label{eqn:PID_eq}
 \end{equation}
 
+\noindent
 Introducing a new mass adds a constant new torque to the system, which the PID is compensating with a propotional gain $K_P$. The PID response becomes mainly an inverse torque. Assuming the mass is moving at low frequencies, when integrating over short periods the angle is constant in time.
 \begin{equation}
 e(t) = \delta\theta(t) + \theta_g    \label{eqn:PID_measurement}
@@ -57,6 +59,7 @@ U = \int u(t)dt  \approx K_P\theta_g\Delta t \label{eqn:PID_measurement_eq}
 \kappa =\frac{8\pi^2ml^2}{T^2}    \label{eqn:empirical_torque}
 \end{equation}
 
+\noindent
 The measurement of that response is fast and accurate. The measurement sytem is measuring with fast response (short integration time) and high accuracy low frequency garvity fields. 
 
  

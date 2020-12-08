@@ -44,7 +44,7 @@ Chamber and torsional pendulum design was carried out using Solid Works. The cha
 	\label{fig:total}
 \end{figure}
 
-
+\noindent
 The the pendulum mount is adjustable, enabling to adjust the hight of pendulum, so it would be in front of viewports accurately. The upper tube of chamber is soldered with a base to which the pendulum mount is connected. The angle of torsion is measured using a mirror connected in front of the pendulum. In order to balance the pendulum so the mirror would not have an initial tilt, center of mass needs to be adjusted. The center of mass is adjusted using a mass from the back, to balance the mirror weight.
 
 \begin{figure}[htbp]
@@ -63,6 +63,7 @@ The the pendulum mount is adjustable, enabling to adjust the hight of pendulum, 
 	\label{fig:pendulum front}
 \end{figure}
 
+\noindent
 Central viewport is in front of the pendulum's mirror, to measure mirror tilting angle. Two small viewports on the sides of chamber are used by the PID system to damp noises. The view ports are for 550-1100 nm, with about 98$\%$ transmitted in our range. Central viewport has 68.3mm View diameter, and the distance from the mirror is 82 mm which is giving a full FOV of about 39 degrees (instead of 90 at intefermatry).
 
 \begin{figure}[htbp]
@@ -79,9 +80,9 @@ The chosen dimensions try to balance those two problems, having as good response
 \subsection{Measurement}
 Vacuum chamber and meausrement system were baked out to reduce outgassing, using resistive wire. Bake out was carried for a weak at about 110 $C^0$ achieving stable vacuum of about 2·10−4[Torr] after cool down. Engine is than disconnected using a valve, and chamber is placed inside a seismic box.
 PID and measurement optics are assembled.
-\par\noindent
 
- ThePID is damping the noises, and after they are damped the measurement begins.
+\par\noindent
+ThePID is damping the noises, and after they are damped the measurement begins.
 
 
 
@@ -104,8 +105,8 @@ PID and measurement optics are assembled.
 \subsection{Magnetic noise}
 
 Faraday cage is a cage made by a continuous covering of a conductive material which is used to block external electromagnetic fields. The external electrical fields causes an electric charge distribution in the conductive cage without passing inside. Electric current decays exponentially with depth through the material.
-\par\noindent
 
+\par\noindent
 The cage blocks better the penetration of high frequency magnetic fields, depending on the material skin depth $\delta$ which determines the shield penetration depth for a defined frequency. Skin depth is also dependent on material electric resistivity $\rho$ and magnetic permeability $\mu_0\mu_r$. 
 \begin{equation}
 \delta = \frac{2\rho}{(2\pi f)(\mu_0\mu_r)}     \label{eqn:mean-free-pass}
@@ -216,8 +217,8 @@ The method enables generating signals between board Vcc and off. Signal resoluti
 Since clock is connected to all PWM pins, they are in sync. When all pins have the same duty cycle, they all have the same voltage over time. At every point in time they could be looked at as a constant voltage supplies compare to each other, alowing to connect them in series and increase the output current up to 1[A]. 
 \subsection{Light Emitting Diode (LED)}
 The light emitting diode (led) is a high power long lifetime light source semiconductor based. The led is emitting light when current flows through. Led could be modulated at up to 100MHz. The initial opening angle of a led source varies between 45 to 120 degrees. The emitted light is incoherent in width meaning it's hard to focus it to a point (not diffraction limited). The emitted light is incoherent in length causing wide band spectrum.
-\par\noindent
 
+\par\noindent
 Forward voltage is applied causing electron injection and recombination with holes. The recombination is releasing energy in form of spontanious emmission photons. The modulation limitation is due to the electrons life time before recombination. The led power is proptional to the current flows through, Shockley diode equation for p-n junction defines the current relation to the diode voltage. In high enough values the power could be aproximated by liniar aproximation of the diode voltage.
 \begin{equation}
 P\propto e^{\frac{q}{kT}\cdot V_d}\label{eqn:energy-mass-equivalence-relation}
