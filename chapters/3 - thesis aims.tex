@@ -10,7 +10,7 @@ The measurement is limited by the basic energy level quantum uncertainty and mea
 \frac{1}{2}\kappa <\delta\theta^2>= \frac{\hslash\omega}{4}    \label{eqn:basic uncertainty}
 \end{equation}
 \begin{equation}
-\delta\theta= \sqrt{\frac{\hslash\omega}{2\kappa}} \approx 10^{-14} [rad]    \label{eqn:basic uncertainty}
+\delta\theta= \sqrt{\frac{\hslash\omega}{2\kappa}} \approx 10^{-16} [rad]    \label{eqn:basic uncertainty}
 \end{equation}
 
 \noindent
@@ -31,7 +31,12 @@ The quantum uncertainty due to Brownian motion is the main noise source. The qua
 \begin{equation}
 \delta\theta(t) = \delta\theta cos(\omega_0 t)   \label{eqn:pid_error}
 \end{equation}
-The noise reductance enables to damp and cool the pendulum temperature. Damping is made using a PID feedback loop. The feedback damping can dynamically damp the noises, without pre-knowledge of the existing noises. PID would reduce all noises, and reduce the temperature. Having an effective lower temperature would enable measuring smaller angles enlarging the SNR and the measurement sensitivity.
+\par\noindent
+The noise reductance enables to damp and cool the pendulum temperature. Cooling system is built using led light sources modulated at high speeds using a cheap arduino microcontroller. The modulated light is causing a small external radiation torque, which damps down the ossiclations.
+\par\noindent
+Damping is made using a PID feedback loop. The feedback damping can dynamically damp the noises, without pre-knowledge of the existing noises. PID would reduce all noises, and reduce the temperature. Having an effective lower temperature would enable measuring smaller angles enlarging the SNR and the measurement sensitivity.
+
+
 \par\noindent
 With PID tuned correct the damped pendulum is at critical damping and ossiclations become smaller. PID error and damping response are both minimized. 
 \begin{equation}
