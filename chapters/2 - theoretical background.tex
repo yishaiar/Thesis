@@ -143,7 +143,7 @@ The gravitational field of a mass is a vector field consisting at every point a 
 \begin{equation}
 \overrightarrow{G}(r) = \frac{\overrightarrow{F}(r)}{m} = \frac{GM}{r^2}\hat{r}    \label{eqn:gravitation_field}
 \end{equation}
-The field caused by a mass $M$ at a specific point is calculated by measuring the gravitational force. The gravitational force is caused by a known mass $m$ (test mass). Test mass $m$ is much smaller than the mass $M$, which ensures that there is a negligible influence on the behavior of $M$.  
+The field caused by a mass $M$ at a specific point is calculated by measuring the gravitational force. The gravitational force is caused by a known mass $m$ (a test mass). Test mass $m$ is much smaller than the mass $M$, which ensures that there is a negligible influence on the behavior of $M$.  
 
 
 
@@ -152,7 +152,11 @@ The Cavendish experiment, first performed in the 17th century, was the first exp
 \begin{equation}
 \overrightarrow{\tau} = \kappa\theta = LF = L\frac{GmM}{r^2}    \label{eqn:gravitation_torque}
 \end{equation}
-
+\begin{equation}
+\overline{\theta} = \frac{\tau}{\kappa}    \label{eqn:theta average}
+\end{equation}
+The torsion string coefficient $\kappa$ could be estimated from the oscillations period.
+ 
 
 \subsection{Gravity sensing}
 The field at a specific point is the superposition of fields' point value. These fields are created by any mass in space. Measuring the gravitational field caused by a mass accurately, with a known test mass, the mass weight or distance could be estimated. In order to filter out the other gravitational fields caused by masses around, one measures the difference from a baseline state.
@@ -172,6 +176,29 @@ SNR = \frac{N}{\sqrt{N}} = \sqrt{N}    \label{eqn:shot_noise}
 \end{equation}
 While other system noises are higher than the shot noise limit, reducing noises and longer time integration would provide higher accuracy and better mesurement results. 
 
+\section{Radiation pressure}
+Radiation pressure is pressure on the surface due to momentum exchange with an electromagnetic field, including momentum of light. The light is at any wavelength which is absorbed, reflected, or emitted. The pressure causes force on the surface, although the force is usually insignificant.
+  
+\par\noindent
+The radiation pressure force depends on the angle of surface compare to the electromagnetic field, as well as the surface intesity reflectance and absorbance, and the power of light hitting the surface $\Theta_i$ (radiant flux, measured in watts). There is coupling efficiency $\eta$ due to the light losses while passing through light transmitters (such as light guide or fiber), and size difference between the light beam size and the target size. In the equation below, the incident radiation pressure is calculated, when $\alpha$ is the field angle, compared to the surface area $A$, and $c$ the speed of light. As a first approximation one assumes, that the beam is focused tightly enough that variation over the surface is negligible. 
+\begin{equation}
+P_{incident} = \frac{\frac{\Theta_i}{A}cos^2(\alpha)}{c} = \frac{\eta\cdot \Theta_{source}\cdot cos^2(\alpha)}{{A\cdot c}} \label{eqn:radiation_pressure}
+\end{equation}
+The radiation pressure assuming light field direction perpendicular to surface and angle negligiblity is: 
+\begin{equation}
+P_{incident} = \frac{\eta\Theta_{source}}{{Ac}} \label{eqn:radiation_pressure_perpendicular}
+\end{equation}
+
+The radiation force assuming surface is a reflective material:
+\begin{equation}
+F = P_{total}\cdot A = (P_{incident}+P_{emitted})\cdot A = P_{incident}(1+R)A \label{eqn:radiation_force}
+\end{equation}
+\begin{equation}
+F \approx 2P_{incident}A = \frac{2\eta\Theta_{source}}{{c}}\cdot \frac{A}{A} \label{eqn:radiation_force_reflective}
+\end{equation}
+\begin{equation}
+F = \frac{2\eta\Theta_{source}}{{c}} \label{eqn:radiation_force_power}
+\end{equation}
 
 \section{Vacuum affects}
 
@@ -284,29 +311,7 @@ D is proportional to error current change rate, by calculating the derivative. T
 \par\noindent
 The optimal control function is achieved by balancing the responses. The tuning constants depend on the characteristics of the specific process. The response must be tuned for each control application.  
 
-\section{Radiation pressure}
-Radiation pressure is pressure on the surface due to momentum exchange with an electromagnetic field, including momentum of light. The light is at any wavelength which is absorbed, reflected, or emitted. The pressure causes force on the surface, although the force is usually insignificant.
-  
-\par\noindent
-The radiation pressure force depends on the angle of surface compare to the electromagnetic field, as well as the surface intesity reflectance and absorbance, and the power of light hitting the surface $\Theta_i$ (radiant flux, measured in watts). There is coupling efficiency $\eta$ due to the light losses while passing through light transmitters (such as light guide or fiber), and size difference between the light beam size and the target size. In the equation below, the incident radiation pressure is calculated, when $\alpha$ is the field angle, compared to the surface area $A$, and $c$ the speed of light. As a first approximation one assumes, that the beam is focused tightly enough that variation over the surface is negligible. 
-\begin{equation}
-P_{incident} = \frac{\frac{\Theta_i}{A}cos^2(\alpha)}{c} = \frac{\eta\cdot \Theta_{source}\cdot cos^2(\alpha)}{{A\cdot c}} \label{eqn:radiation_pressure}
-\end{equation}
-The radiation pressure assuming light field direction perpendicular to surface and angle negligiblity is: 
-\begin{equation}
-P_{incident} = \frac{\eta\Theta_{source}}{{Ac}} \label{eqn:radiation_pressure_perpendicular}
-\end{equation}
 
-The radiation force assuming surface is a reflective material:
-\begin{equation}
-F = P_{total}\cdot A = (P_{incident}+P_{emitted})\cdot A = P_{incident}(1+R)A \label{eqn:radiation_force}
-\end{equation}
-\begin{equation}
-F \approx 2P_{incident}A = \frac{2\eta\Theta_{source}}{{c}}\cdot \frac{A}{A} \label{eqn:radiation_force_reflective}
-\end{equation}
-\begin{equation}
-F = \frac{2\eta\Theta_{source}}{{c}} \label{eqn:radiation_force_power}
-\end{equation}
 \end{document}
 
 
