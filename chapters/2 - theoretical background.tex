@@ -137,7 +137,7 @@ If the damped oscillator system is further affected by an external time-dependen
 \subsection{Gravitational field}
 Newton's law of universal gravitation states that every point mass attracts every other point mass in the universe.
 \begin{equation}
-\overrightarrow{F}(r) = \frac{GMm}{r^2}\hat{r}    \label{eqn:gravitation_force}
+\overrightarrow{F}(r) = \frac{GmM}{r^2}\hat{r}    \label{eqn:gravitation_force}
 \end{equation} 
 The force acts along the intersecting line, proportional to the product of the masses and inverse to the square of the distance between the centers. The inversity to the distance square means the force is very weak. For example the force between two cubes 1 kg each, 1 meter apart would be $\overrightarrow{F} = 6.67\cdot10^{-11} [N]$.
 \par\noindent
@@ -157,10 +157,21 @@ The Cavendish experiment, first performed in the 17th century, was the first exp
 	\caption[Cavendish apparatus]{Cavendish apparatus \cite{howell2019}}
 	\label{fig:Cavendish apparatus}
 \end{figure}
+\FloatBarrier
 \par\noindent
 The net gravitational torque for a balanced torsion pendulum is constisted of two inverse torques that nearly counterbalance each other.
+
+
 \begin{equation}
-\tau = lF_g(r_1)cos\theta_1 - lF(r_2)cos\theta_2     \label{eqn:gravitation_torque}
+\tau_g = lF_g(r_1)cos\theta_1 - lF_g(r_2)cos\theta_2 = ldGmM(\frac{1}{r_1^3} - \frac{1}{r_2^3})     \label{eqn:gravitation_torque}
+\end{equation}
+\begin{equation}
+h(l) = \frac{1}{(d^2 +(x-l)^2)^{3/2}};\quad h(l) = \frac{1}{r_1^3},\quad	h(-l) = \frac{1}{r_2^3},\quad	h(0) = \frac{1}{r_0^3}    \label{eqn:gravitation_torque}
+\end{equation}
+\par\noindent
+Since $l<<d,x,r_0$ one can approximate $h(l)-h(-l)\approx h'(0)\cdot 2l,\quad h'(0) = \frac{3x}{r_0^5}$
+\begin{equation}
+\tau_g = ldGmM[h(l)-h(-l)]\approx \frac{6l^2GmMdx} {r_0^5} = \frac{6l^2GmMcos\theta sin\theta} {r_0^3}      \label{eqn:gravitation_torque}
 \end{equation}
 
 \par\noindent
