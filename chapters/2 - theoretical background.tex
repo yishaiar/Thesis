@@ -160,8 +160,6 @@ The Cavendish experiment, first performed in the 17th century, was the first exp
 \FloatBarrier
 \par\noindent
 The net gravitational torque for a balanced torsion pendulum is constisted of two inverse torques that nearly counterbalance each other.
-
-
 \begin{equation}
 \tau_g = lF_g(r_1)cos\theta_1 - lF_g(r_2)cos\theta_2 = ldGmM(\frac{1}{r_1^3} - \frac{1}{r_2^3})     \label{eqn:gravitation_torque}
 \end{equation}
@@ -169,7 +167,10 @@ The net gravitational torque for a balanced torsion pendulum is constisted of tw
 h(l) = \frac{1}{(d^2 +(x-l)^2)^{3/2}};\quad h(l) = \frac{1}{r_1^3},\quad	h(-l) = \frac{1}{r_2^3},\quad	h(0) = \frac{1}{r_0^3}    \label{eqn:gravitation_torque}
 \end{equation}
 \par\noindent
-Since $l<<d,x,r_0$ one can approximate $h(l)-h(-l)\approx h'(0)\cdot 2l,\quad h'(0) = \frac{3x}{r_0^5}$
+Since $l<<d,x,r_0$ one can approximate:
+\begin{equation}
+h(l)-h(-l)\approx h'(0)\cdot 2l,\quad h'(0) = \frac{3x}{r_0^5}\label{eqn:aproximation}
+\end{equation}
 \begin{equation}
 \tau_g = ldGmM[h(l)-h(-l)]\approx \frac{6l^2GmMdx} {r_0^5} = \frac{6l^2GmMcos\theta sin\theta}{r_0^3}      \label{eqn:gravitation_torque}
 \end{equation}
