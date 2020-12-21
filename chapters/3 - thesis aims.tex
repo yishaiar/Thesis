@@ -40,7 +40,7 @@ Damping is made using a PID feedback loop. The angle tilt and is measured and an
 
 
 \par\noindent
-With PID tuned correct the damped pendulum is at critical damping and ossiclations become smaller. PID error and damping response are both minimized. 
+With PID tuned correct the damped pendulum is at critical damping and ossiclations become smaller. PID error $e(t)$ and damping response $u(t)$ are both minimized. 
 \begin{equation}
 e(t) = \delta\theta(t)   \label{eqn:pid_error}
 \end{equation}
@@ -57,16 +57,21 @@ e(t) = \delta\theta(t) + \theta_g    \label{eqn:PID_measurement}
 u(t) = u[ \delta\theta(t)] + K_P\theta_g(t) \label{eqn:PID_measurement_eq}
 \end{equation}
 \begin{equation}
-U = \int u(t)dt  \approx K_P\theta_g\Delta t \label{eqn:PID_measurement_eq}
-\end{equation}
-\begin{equation}
-\tau(r) = L\frac{GmM}{r^2} =  \kappa\theta_g = \kappa\frac{U}{K_P\Delta t}      \label{eqn:pid_gravitation_torque}
-\end{equation}
-\begin{equation}
-\kappa =\frac{8\pi^2ml^2}{T^2}    \label{eqn:empirical_torque}
+U = \int u(t)dt  \approx K_P\overline{\theta}_g\Delta t \label{eqn:PID_measurement_eq}
 \end{equation}
 
-\noindent
+\begin{equation}
+\overline{\theta}_g \approx \frac{U}{K_P\Delta t}      \label{eqn:pid_gravitation_torque}
+\end{equation}
+In the previous chapter it was shown that for a torsional pendulum:
+
+\begin{equation}
+\overline{\theta}_g \approx \frac{3GMcos\theta sin\theta}{\omega_0^2 r_0^3}    \label{eqn:theta average}
+\end{equation}
+\par\noindent
+Sensing mass $m$ appears only in the natural
+frequency, angle is propotional to period's length $T$, and pendulum length $l$ drops out, indicating that small sensors work as well as large ones as long as their periods are the same.
+\par\noindent
 The measurement sytem allows fast response (short integration time) and high accuracy while measuring low frequency gravity fields. 
 
  
