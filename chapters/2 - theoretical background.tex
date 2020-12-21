@@ -171,7 +171,7 @@ h(l) = \frac{1}{(d^2 +(x-l)^2)^{3/2}};\quad h(l) = \frac{1}{r_1^3},\quad	h(-l) =
 \par\noindent
 Since $l<<d,x,r_0$ one can approximate $h(l)-h(-l)\approx h'(0)\cdot 2l,\quad h'(0) = \frac{3x}{r_0^5}$
 \begin{equation}
-\tau_g = ldGmM[h(l)-h(-l)]\approx \frac{6l^2GmMdx} {r_0^5} = \frac{6l^2GmMcos\theta sin\theta} {r_0^3}      \label{eqn:gravitation_torque}
+\tau_g = ldGmM[h(l)-h(-l)]\approx \frac{6l^2GmMdx} {r_0^5} = \frac{6l^2GmMcos\theta sin\theta}{r_0^3}      \label{eqn:gravitation_torque}
 \end{equation}
 
 \par\noindent
@@ -179,15 +179,18 @@ Assuming no friction or other damping force (a simple harmonic oscillator) when 
 \par\noindent
 At equilibrium, when balance has been stabilized at an angle $\theta$, these two torques are canceled out.
 \begin{equation}
-\tau = \kappa\theta = lF_g(r)    \label{eqn:gravitation_torque}
-\end{equation}
-
-\begin{equation}
-\tau = \kappa\theta = lF_g(r)    \label{eqn:gravitation_torque}
+\kappa\theta = \tau_g(r_0)\approx \frac{6l^2GmMcos\theta sin\theta}{r_0^3}    \label{eqn:gravitation_torque}
 \end{equation}
 \begin{equation}
 \overline{\theta} = \frac{\tau}{\kappa} = \frac{\tau}{I\omega_0^2}    \label{eqn:theta average}
 \end{equation}
+\begin{equation}
+\overline{\theta} \approx \frac{3GMcos\theta sin\theta}{\omega_0^2 r_0^3}    \label{eqn:theta average}
+\end{equation}
+\par\noindent
+Sensing mass $m$ appears only in the natural
+frequency, angle is propotional to preiod length $T$, and pendulum length $l$ drops out, indicating that small sensors work as well as large ones as long as their periods are the same.
+\par\noindent
 The torsion string coefficient $\kappa$ could be estimated from the oscillations period. With accurate angle measurement, the gravitational force could be estimated.
  
 
