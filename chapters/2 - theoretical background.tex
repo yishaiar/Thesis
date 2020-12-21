@@ -245,7 +245,7 @@ The friction caused by gasses is viscous friction, which is velocity dependent. 
 \begin{equation}
 F_{drag} = -b\cdot v  \label{eqn:energy-mass-equivalence-relation}
 \end{equation}
-
+\par\noindent
 When Knudsen ratio is $0.01<k_n<0.5$, at a medium vacuum regime, the flow is called Knudsen flow. The molecules do not interact and move in straight lines between points. If chamber vaccum level is medium or higher, classical viscous friction of objects with gas particles inside the chamber could be negligible.
 
 \subsubsection{Flow Characteristics}
@@ -311,11 +311,11 @@ u(t) = K_Pe(t)+K_I\int_{0}^{t}e(t)+K_D\frac{de(t)}{dt}   \label{eqn:PID_eq}
 \end{equation}
 
 \noindent
-P is proportional to the current error value $e(t)$. When error is large and positive, proportional output would be proportionately large and positive.
+$P$ is proportional to the current error value $e(t)$. When error is large and positive, proportional output would be proportionately large and positive.
 \par\noindent
-I is proportional to past error value's integration. The response of the cumulative value could eliminate residual errors, such as signal offset.
+$I$ is proportional to past error value's integration. The response of the cumulative value could eliminate residual errors, such as signal offset.
 \par\noindent
-D is proportional to error current change rate, by calculating the derivative. The response of the change rate could eliminate more rapid changes.
+$D$ is proportional to error current change rate, by calculating the derivative. The response of the change rate could eliminate more rapid changes.
 \par\noindent
 The optimal control function is achieved by balancing the responses. The tuning constants depend on the characteristics of the specific process. The response must be tuned for each control application.  
 
