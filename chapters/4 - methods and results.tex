@@ -207,7 +207,7 @@ Since clock is connected to all PWM pins, they are in sync. When all pins have t
 The light emitting diode (led) is a high power long lifetime light source semiconductor based. The led is emitting light when current flows through. Led could be modulated at up to 100MHz. The initial opening angle of a led source varies between 45 to 120 degrees. The emitted light is incoherent in width meaning it's hard to focus it to a point (not diffraction limited). The emitted light is incoherent in length causing wide band spectrum.
 
 \par\noindent
-Forward voltage is applied causing electron injection and recombination with holes. The recombination is releasing energy in form of spontanious emmission photons. The modulation limitation is due to the electrons life time before recombination. The led power is proptional to the current flows through, Shockley diode equation for p-n junction defines the current relation to the diode voltage. In high enough values the power could be aproximated by liniar aproximation of the diode voltage.
+Forward voltage is applied causing electron injection and recombination with holes. The recombination is releasing energy in form of spontanious emmission photons. The modulation limitation is due to the electrons life time before recombination. The led power is proptional to the current flows through, Shockley diode equation for p-n junction defines the current relation to the diode voltage. In high enough values the power could be aproximated by linear aproximation of the diode voltage.
 \begin{equation}
 P\propto e^{\frac{q}{kT}\cdot V_d}\label{eqn:energy-mass-equivalence-relation}
 \end{equation}
@@ -215,7 +215,7 @@ In order to overcome the led uncoherent profile and large opening angle, light w
 \par\noindent
 Connecting a high power led to arduino, enables fast real-time controlled modulation of high power led with about 2ms speed. The light arrives to pendulum through a light guide allowing to assume beam variation through the surface neglegible.The light is controlled through a PID and applies a torque.
 \par\noindent
-Since the led power could be aproximated using liniar aproximation, the power modulation is proportional to the arduino duty cycle. That allows to control the liniar aproximation of the power output by changing the PID gain values.  
+Since the led power could be aproximated using linear aproximation, the power modulation is proportional to the arduino duty cycle. That allows to control the linear aproximation of the power output by changing the PID gain values.  
 \par\noindent
 we assume we can neglect the ossiclations between two sides...
 
