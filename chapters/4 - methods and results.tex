@@ -3,14 +3,13 @@
 \begin{document}
 \chapter{Methods and results}\label{chp:example-2}
 \section{System build}
-
-\subsubsection{design}
 \par\noindent
-Chamber and torsional pendulum design was carried out using Solid Works.
+Torsional pendulum and vacuum chamber design was carried out using Solid Works.
+\subsection{Torsional pendulum design}
 \par\noindent
 The chosen pendulum dimensions are designed to balance two problems, to achieve high angle sensitivity as possible (large string torsion coefficient $\kappa$) while having high mass sensitivity (longer oscillations time period $T$). 
 \par\noindent
-For a torsional pendulum, where $D$ is the string diameter, and I is the moment of innetia:
+For a torsional pendulum, where $D$ is the string diameter, and I is the moment of innertia:
 \begin{equation}
 \kappa = \frac{G}{h} \frac{\pi D^4}{32}    \label{eqn:torsion_coefficient}
 \end{equation}
@@ -18,17 +17,23 @@ For a torsional pendulum, where $D$ is the string diameter, and I is the moment 
 T = 2\pi\sqrt{\frac{I}{\kappa}}= 2\pi\sqrt{\frac{2ml^2}{\kappa}}   \label{eqn:undamped_motion_equation}
 \end{equation}
 \par\noindent
-In order to work with as thin string as possible, tungsten string with high tensile strength was chosen. The high tensile strength enables to overcome suction forces while vacuum engine is working and holding the pendulum without tear. Tungsten is also vacuum compatible. The shear modulus $G$ for tungsten; 130-160 [Gpa].
+In order to achieve a string with as small diameter as possible, tungsten string with high tensile strength was chosen. The high tensile strength allows a small diameter while overcoming suction forces when vacuum engine is working and holding the pendulum without tear. Tungsten is also vacuum compatible. The shear modulus $G$ for tungsten; 130-160 [Gpa]\cite{tungsten}.
 \par\noindent
-In order to minimize the magnetic noise in the measurements, the torsion pendulum was made out of stainless steel 316 (instead of 304). Stainless steel 316 has a lower relative magnetic permeability $\mu_r$ \cite{ASSDA}.
+In order to minimize the magnetic noise in the measurements, the torsion pendulum was made out of stainless steel 316 (instead of 304). Stainless steel 316 has a lower relative magnetic permeability $\mu_r$ \cite{SS316}.
 \par\noindent
 The experiment, is constructed using a front mirror, the angle displacement causes a mirror tilt.  
-
+\begin{figure}[htbp]
+	\centering
+	\fbox{\includegraphics[scale=0.4]{\main/images/4 - methods and results/pendulum_front.png}}
+	\caption[Pendulum front]{The pendulum front}
+	\label{fig:pendulum front}
+\end{figure}
+\FloatBarrier
 \begin{easylist}
 & Tungsten string info;
 && made of 99\% pure Tungsten
 && length $h$ of 249 mm
-&& diameter $D$ of 0.05 mm
+&& diameter $D$ of 0.08 mm
 & Torsional beam info;
 && made of SS316
 && length $2l$ of 218 mm
@@ -42,11 +47,27 @@ The experiment, is constructed using a front mirror, the angle displacement caus
 \end{easylist}
 \begin{easylist}
 & constants;
-&& $\kappa = 2.6E-6$
-&& $T = 86[s]$
-& experimental;
-&& $T = 84[s]$
+&& expected;
+&&& $I = 0.487\cdot10^{-3}[kg\cdot m^2]$
+&&& $\kappa = 2.1\cdot10^{-6}[\frac{N\cdot m}{rad}] - 2.6\cdot10^{-6} [\frac{N\cdot m}{rad}]$
+&&& $T = 96[s] - 86 [s]$
+&& experimental;
+&&& $\kappa = 2.7\cdot10^{-6}[\frac{N\cdot m}{rad}]$
+&&& $T = 84[s]$
 \end{easylist}
+
+\subsubsection{Pendulum design}
+
+\par\noindent
+The angle of torsion is measured using a mirror connected in front of the pendulum.This mirror is a part of an optical interferometer with which the mirror tilt could bedetermined.In order to balance the pendulum so the mirror would not be tilted, beside the tiltof the gravity field. The center of mass needs to be adjusted. The center of mass isadjusted using a mass from the back, to balance the mirror weight.The longer the wire and the smaller the wire diameter - wire torsion coefficient issmaller. Small coefficient achieves a better angle response to the gravity field. On theother hand the Small coefficient is leading to a very long time period of the pendulum,which while integrating over time would lead to very long measurements time. Alsothe wire needs to be strong enough to hold the masses without been teared down.
+
+
+
+
+
+
+
+
 
 The pendulum is placed inside vacuum, reducing Brownian motion, acoustic waves and friction. The vacuum chamber is reducing magnetic noise as a Faraday cage.
 The chamber build is two cylindrical tubes placed on each other with three view ports in front. The chamber has a 5-way which is connected to the vacuum engine and gauge. The torsional pendulum is placed inside the chamber. Vacuum engine is connected to chamber through a valve, measurement is made when valve closed and engine off, to prevent rotation noise.
@@ -86,12 +107,7 @@ The the pendulum mount is adjustable, enabling to adjust the hight of pendulum, 
 
 
 
-\begin{figure}[htbp]
-	\centering
-	\fbox{\includegraphics[scale=0.5]{\main/images/4 - methods and results/pendulum_front.png}}
-	\caption[Pendulum front]{The pendulum front}
-	\label{fig:pendulum front}
-\end{figure}
+
 
 \noindent
 Central viewport is in front of the pendulum's mirror, to measure mirror tilting angle. Two small viewports on the sides of chamber are used by the PID system to damp noises. The view ports are for 550-1100 nm, with about 98$\%$ transmitted in our range. Central viewport has 68.3mm View diameter, and the distance from the mirror is 82 mm which is giving a full FOV of about 39 degrees (instead of 90 at intefermatry).
@@ -103,8 +119,7 @@ Central viewport is in front of the pendulum's mirror, to measure mirror tilting
 	\label{fig:chamber front}
 \end{figure}
 
-\subsubsection{Pendulum dimesions}
-The chosen dimensions try to balance those two problems, having as good response aspossible while having a time period 300-600 seconds. In order to work with as thin string as possible tungsten string was chosen, with high tensile strength to overcome suction forces while vacuum engine is working and holding pendulum, tungsten is also vacuum compatible. string dimensions; length of 249 mm and0.05 mm diameter. Torsional beam dimensions; length 238mm and 10 mm width and 90 gram weight, masses weight 24 gram each. Mirror is a 1 inch thorlab’s OFC copper mirrror, gold coated, with low out gassing (although officially not vacuum compatible).
+
 
 
 \subsection{Measurement}
@@ -146,10 +161,6 @@ Thicker faraday cage attenuate better lower frequency fields. Vacuum chambers ar
 The torsional pendum is guarded from the measurement system with a 
 
 
-\subsubsection{Pendulum design}
-
-\par\noindent
-The angle of torsion is measured using a mirror connected in front of the pendulum.This mirror is a part of an optical interferometer with which the mirror tilt could bedetermined.In order to balance the pendulum so the mirror would not be tilted, beside the tiltof the gravity field. The center of mass needs to be adjusted. The center of mass isadjusted using a mass from the back, to balance the mirror weight.The longer the wire and the smaller the wire diameter - wire torsion coefficient issmaller. Small coefficient achieves a better angle response to the gravity field. On theother hand the Small coefficient is leading to a very long time period of the pendulum,which while integrating over time would lead to very long measurements time. Alsothe wire needs to be strong enough to hold the masses without been teared down.
 
 
 
