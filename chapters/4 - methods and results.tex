@@ -5,7 +5,16 @@
 
 \section{System build}
 \par\noindent
-Torsional pendulum and vacuum chamber design was carried out using Solid Works.
+The experiment system was designed to minimize magnetic noises by avoiding capacitance and choosing low magnetic permeability materials.
+\par\noindent
+The torsional pendulum is placed inside vacuum, reducing Brownian motion, acoustic waves and friction. The vacuum chamber is reducing magnetic noise as a Faraday cage.
+\par\noindent
+The vacuum chamber is placed inside a seismic box, farther reducing acoustic waves and magnetic noise from the environment.
+
+\par\noindent
+The experiment system was designed to minimize the outgassing rate, both by choosing low outgassing materials and avoiding air pockets. 
+\par\noindent
+Design of torsional pendulum and vacuum chamber was carried out using Solid Works.
 
 \subsection{Torsional pendulum design}
 \begin{figure}[htbp]
@@ -32,7 +41,7 @@ In order to achieve a string with as small diameter as possible, tungsten string
 \par\noindent
 In order to minimize the magnetic noise in the measurements, the torsion pendulum was made out of stainless steel 316 (instead of stainless steel 304). Stainless steel 316 has a lower relative magnetic permeability $\mu_r$ \cite{SS316}.
 \par\noindent
-The experiment, is constructed using a front mirror, the angle displacement causes a mirror tilt. In order to minimize the magnetic noise, chosen mirror is made fully of metal (instead of coated glass). Having an Oxygen-free copper (OFC) mirror, while not officially vacuum compatible hopefully minimizes vacuum outgassing.
+The experiment, is constructed using a front mirror, the angle displacement causes a mirror tilt. In order to minimize the magnetic noise, chosen mirror is made fully of metal (instead of coated glass). Having an Oxygen-free copper (OFC) mirror, while not officially vacuum compatible hopefully minimizes the vacuum outgassing.
 
 \subsubsection{Design}
 \par\noindent
@@ -91,32 +100,13 @@ The matching mass $m_1$ has a similar weight and shape as the mirror $m_2$, both
 	\label{fig:chamber front}
 \end{figure}
 \FloatBarrier
-\par\noindent
-The torsional pendulum is placed inside vacuum, reducing Brownian motion, acoustic waves and friction. The vacuum chamber is reducing magnetic noise as a Faraday cage.
-The chamber build is two cylindrical tubes placed on each other with three view ports in front. The chamber has a 5-way which is connected to the vacuum engine and gauge. The torsional pendulum is placed inside the chamber. Vacuum engine is connected to chamber through a valve, measurement is made when valve closed and engine off, to prevent rotation noise.
 
-\subsubsection{Vacuum Chambers}
 \par\noindent
-Vaccuum chambers are metalic chambers connected to a vacuum pump with pressure lower than the atmospheric pressure. The main limitations to vacuum quality maintenance are leakage $Q_L$ from the outside through the chamber and outgassing $Q_{des}$ inside the chamber (desorption of gas molecules from the material).
-\par\noindent
-Leaks and outgassing both increases the pressure (lowering the vacuum) at a constant rate over time. Usually, in order to keep equilibrium, the leaks and outgassing are overcome by having a constant pump rate $Q_P$ (vacuum pump working constantly).   
-\begin{equation}
-Q_P = Q_L + Q_{des}  \label{eqn:vacuum_equilibrium}
-\end{equation}
-In this experiment due to the relatively large size and uniqe shape of the measurement equipment, the vacuum chamber is having both a large leak and outgassing rates over time. The sensitivity of the measuerment does not allow having the pump working, causing pressure increase over time.
-\par\noindent 
-In order to minimize the pressure increase over time vacuum chamber was built using CF Style Vacuum Components, designed for ultra high vacuum. The meausrement system inside chamber was designed to function after being exposed to high temperatures while baking, and having a low outgassing rate (materials,holes).
-\subsection{Chamber design}
-\begin{figure}[htbp]
-	\centering
-	\fbox{\includegraphics[scale=0.4]{\main/images/4 - methods and results/total_chamber.png}}
-	\caption[total chamber]{The total chamber}
-	\label{fig:total}
-\end{figure}
-\FloatBarrier
+Vacuum chamber build is two cylindrical tubes placed on each other with three view ports in front. The chamber has a 5-way which is connected to the vacuum engine and gauge. Vacuum engine is connected to chamber through a valve, measurement is made when valve closed and engine off, to prevent rotation noise.
+
 \subsubsection{Chamber viewports}
 \par\noindent
-Central viewport is in front of the pendulum's mirror, to measure angle tilt. Two small viewports on the sides of chamber are used by the noise damping system (PID) to damp noises. 
+Central viewport is in front of the pendulum's mirror, to measure the tilt angle. Two small viewports on the sides of the chamber are used by the noise damping system (PID) to damp noises. 
 \par\noindent
 The view ports are for 550-1100 nm, with about 98$\%$ power transmittance in the range.
 \par\noindent
@@ -125,53 +115,51 @@ Central viewport has 68.3mm View diameter, and the distance from the mirror is 8
 \subsubsection{Pendulum mount}
 \begin{figure}[htbp]
 	\centering
-	\fbox{\includegraphics[scale=0.25]{\main/images/4 - methods and results/mount.png}}
+	\fbox{\includegraphics[scale=0.2]{\main/images/4 - methods and results/mount.png}}
 	\caption[Pendulum mount]{The pendulum mount}
 	\label{fig:mount}
 \end{figure}
 \FloatBarrier
 \par\noindent
-The the pendulum mount is adjustable, enabling to adjust the hight of pendulum, so it would be in front of viewports accurately. The upper tube of chamber is soldered with a base to which the pendulum mount is connected. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\subsection{Measurement}
-Vacuum chamber and meausrement system were baked out to reduce outgassing, using resistive wire. Bake out was carried for a weak at about 110 $C^0$ achieving stable vacuum of about 2·10−4[Torr] after cool down. Engine is than disconnected using a valve, and chamber is placed inside a seismic box.
-PID and measurement optics are assembled.
+The upper tube of chamber is soldered with a base to which a mount is connected. The pendulum string is holded via the mount.
+\par\noindent
+The mount is adjustable, enabling to adjust the pendulum's string length, so pendulum would be in front of viewports accurately. 
+\subsubsection{Chamber mount}
+\subsection{Noise reduction}
 
 \par\noindent
-ThePID is damping the noises, and after they are damped the measurement begins.
+After the desired vacuum is achieved, engine disconnected using the valve and engine turned off. The seismic box is closed, and waiting for the oscillations to damp down.
+
+
+\subsection{Vacuum Quality}
+\subsubsection{pressure increase}
+\par\noindent
+Vaccuum chambers are metalic chambers connected to a vacuum pump with pressure lower than the atmospheric pressure. The main limitations to vacuum quality maintenance are leakage $Q_L$ from the outside through the chamber and outgassing $Q_{des}$ inside the chamber (desorption of gas molecules from the material).
+\par\noindent
+Leaks and outgassing both increases the pressure at a constant rate over time. Usually, in order to keep equilibrium, the leaks and outgassing are overcome by having a constant pump rate $Q_P$ (vacuum pump working constantly).   
+\begin{equation}
+Q_P = Q_L + Q_{des}  \label{eqn:vacuum_equilibrium}
+\end{equation}
+In this experiment due to the relatively large size and uniqe shape of the measurement equipment, the vacuum chamber is having both a large leak and outgassing rates over time. The sensitivity of the measuerment does not allow having the pump working, causing pressure increase over time.
+\subsubsection{minimized pressure increase}
+In order to minimize the leak rate the vacuum chamber was built using CF style vacuum Components, designed for ultra high vacuum.
+\par\noindent
+Vacuum chamber and meausrement system were baked out to reduce outgassing, using resistive wire. 
+\par\noindent
+Bake out was carried for a weak at about $110 C^0$ achieving stable vacuum of about $2\cdot 10^{−4} [Torr]$ after cool down.
+
+\subsection{Chamber design}
+\begin{figure}[htbp]
+	\centering
+	\fbox{\includegraphics[scale=0.4]{\main/images/4 - methods and results/total_chamber.png}}
+	\caption[total chamber]{The total chamber}
+	\label{fig:total}
+\end{figure}
+\FloatBarrier
 
 
 
-
-
-
-
-
-\subsubsection{Bake out}
-
-
-
-
-
-
-
-
-
-
-\subsection{Magnetic noise}
+\subsubsection{Magnetic noise}
 
 Faraday cage is a cage made by a continuous covering of a conductive material which is used to block external electromagnetic fields. The external electrical fields causes an electric charge distribution in the conductive cage without passing inside. Electric current decays exponentially with depth through the material.
 
@@ -183,6 +171,42 @@ The cage blocks better the penetration of high frequency magnetic fields, depend
 Thicker faraday cage attenuate better lower frequency fields. Vacuum chambers are usually made of a few mm thick stainless steel, making a faraday cage with skin depth which could block magnetic frequencies higher than 10 KHz and reduce magnetic noise from lower frequencies.
 \par\noindent
 The torsional pendum is guarded from the measurement system with a 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\par\noindent
+ThePID is damping the noises, and after they are damped the measurement begins.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
