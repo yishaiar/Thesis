@@ -109,7 +109,11 @@ The matching mass $m_1$ has a similar weight and shape as the mirror $m_2$, both
 \FloatBarrier
 
 \par\noindent
-Vacuum chamber build is two cylindrical tubes placed on each other with three view ports in front. The chamber has a 5-way which is connected to the vacuum engine and gauge. Vacuum engine is connected to chamber through a valve, measurement is made when valve closed and engine off, to prevent rotation noise.
+Vacuum chamber build is two cylindrical tubes placed on each other with three view ports in front. The chamber has a 5-way which is connected to the vacuum engine and gauge.
+\par\noindent
+Vacuum chamber is bounded to the breadboard by an adjustable mount.
+\par\noindent
+Vacuum engine is connected to chamber through a valve, measurement is made when valve closed and engine off, to prevent rotation noise.
 
 \subsubsection{Chamber viewports}
 \par\noindent
@@ -131,61 +135,51 @@ Central viewport has 68.3mm View diameter, and the distance from the mirror is 8
 The upper tube of chamber is soldered with a base to which a mount is connected. The pendulum string is holded via the mount.
 \par\noindent
 The mount is adjustable, enabling to adjust the pendulum's string length, so pendulum would be in front of viewports accurately. 
-\subsubsection{Chamber mount}
-\subsection{Noise reduction}
-
-\par\noindent
-After the desired vacuum is achieved, engine disconnected using the valve and engine turned off. The seismic box is closed, and waiting for the oscillations to damp down.
-
 
 \subsection{Vacuum Quality}
 \subsubsection{pressure increase}
 \par\noindent
 Vaccuum chambers are metalic chambers connected to a vacuum pump with pressure lower than the atmospheric pressure. The main limitations to vacuum quality maintenance are leakage $Q_L$ from the outside through the chamber and outgassing $Q_{des}$ inside the chamber (desorption of gas molecules from the material).
 \par\noindent
-Leaks and outgassing both increases the pressure at a constant rate over time. Usually, in order to keep equilibrium, the leaks and outgassing are overcome by having a constant pump rate $Q_P$ (vacuum pump working constantly).   
+Leaks and outgassing both increases the pressure at a constant rate over time, and are overcome by having a constant pump rate $Q_P$ (vacuum pump working constantly).   
 \begin{equation}
 Q_P = Q_L + Q_{des}  \label{eqn:vacuum_equilibrium}
 \end{equation}
-In this experiment due to the relatively large size and uniqe shape of the measurement equipment, the vacuum chamber is having both a large leak and outgassing rates over time. The sensitivity of the measuerment does not allow having the pump working, causing pressure increase over time.
+In this experiment due to the relatively large size and uniqe shape of the measurement equipment, the vacuum chamber is having both a large leak and outgassing rates. The sensitivity of the measuerment does not allow having the pump working, causing pressure increase over time.
 \subsubsection{minimized pressure increase}
-In order to minimize the leak rate the vacuum chamber was built using CF style vacuum Components, designed for ultra high vacuum.
 \par\noindent
 Vacuum chamber and meausrement system were baked out to reduce outgassing, using resistive wire. 
 \par\noindent
 Bake out was carried for a weak at about $110 C^0$ achieving stable vacuum of about $2\cdot 10^{−4} [Torr]$ after cool down.
+\par\noindent
+The vacuum chamber was built using CF style vacuum Components, designed for ultra high vacuum, minimizing the leak rate.
 
 
-
-
-
-\subsubsection{Magnetic noise}
-
-Faraday cage is a cage made by a continuous covering of a conductive material which is used to block external electromagnetic fields. The external electrical fields causes an electric charge distribution in the conductive cage without passing inside. Electric current decays exponentially with depth through the material.
+\subsection{Noise reduction}
+\subsubsection{Faraday cage}
+\par\noindent
+Faraday cage is a cage made by a continuous covering of a conductive material used to block external electromagnetic fields. The external electrical fields causes an electric charge distribution in the conductive cage without passing inside. Electric current decays exponentially with depth through the material.
 
 \par\noindent
-The cage blocks better the penetration of high frequency magnetic fields, depending on the material skin depth $\delta$ which determines the shield penetration depth for a defined frequency. Skin depth is also dependent on material electric resistivity $\rho$ and magnetic permeability $\mu_0\mu_r$. 
+The cage blocks better the penetration of high frequency magnetic fields, depending on the material skin depth $\delta$ which determines the shield penetration depth for a defined frequency. Skin depth is dependent on the material electric resistivity $\rho$ and magnetic permeability $\mu$. 
 \begin{equation}
-\delta = \frac{2\rho}{(2\pi f)(\mu_0\mu_r)}     \label{eqn:mean-free-pass}
+\delta = \sqrt{\frac{2\rho}{(2\pi f)(\mu)} }    \label{eqn:skin depth}
 \end{equation}
-Thicker faraday cage attenuate better lower frequency fields. Vacuum chambers are usually made of a few mm thick stainless steel, making a faraday cage with skin depth which could block magnetic frequencies higher than 10 KHz and reduce magnetic noise from lower frequencies.
+
+\subsubsection{Seismic box}
+The measurement system is placed inside a seismic box which is a faraday cage with 76 mm thickness, blocking magnetic fields with $f\ge 30 [Hz]$ from the environment.
 \par\noindent
-The torsional pendum is guarded from the measurement system with a 
+The seismic box is both reducing acoustic waves and magnetic noises from the environment.
+\subsubsection{Vacuum chamber}
+The Vacuum chamber is a second faraday cage blocking magnetic noise from the electronic system placed inside the seismic box.
+\par\noindent
+Vacuum chambers are made of stainless steel 316 with approximately 3 mm thickness, making a faraday cage which blocks magnetic fields with $f\ge 20 [KHz]$ while reducing magnetic noises from lower frequency fields.
+\par\noindent
+As seen previously, Brownian motion, acoustic waves and friction are pressure dependent and are farther reduced by having vacuum.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\subsection{Noise reduction}
+\par\noindent
+After the desired vacuum is achieved, engine disconnected using the valve and engine turned off. The seismic box is closed, and waiting for the oscillations to damp down.
 
 
 \par\noindent
