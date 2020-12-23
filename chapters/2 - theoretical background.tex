@@ -6,43 +6,34 @@
 
 \section{Torsional pendulum}
 \subsection{Torsional pendulum}
-A torsional pendulum is an oscillator made of mass hung by a string from a fixed point allowing it to swing freely. When the mass is displaced from the equilibrium angle, the pendulum has a linear restoring torque, caused by the twisted string. The restoring torque rotates the mass back to the equilibrium position.
-
-
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=1.2]{\main/images/2 - theoretical background/torsion_pendulum.JPG}}
-	\caption[Torsional pendulum]{A torsional pendulum}
+	\caption[Torsional pendulum]{Torsional pendulum}
 	\label{fig:torsion_pendulum}
 \end{figure}
-
 \par\noindent
-The pendulum can be assumed to be of two masses $m$ connected by a rigid, massless thin rod, with length of $2l$, and a pivot at distance $l$ from each side. When displaced from the equilibrium, there are two sources of torque; the displacing torque, and a linear restoring torque at the opposite direction.
+A torsional pendulum is an oscillator made of mass hung by a string from a fixed point allowing it to swing freely. When the mass is displaced from the equilibrium angle, the pendulum has a linear restoring torque, caused by the twisted string. The restoring torque, which is proportional to the string torsion coefficient $\kappa$, rotates the mass back to the equilibrium position:
 \begin{equation}
-\tau = lF cos\theta -\kappa\theta    \label{eqn:Hooke_law}
-\end{equation} 
-At equilibrium, when balance stabilizes in a specific angle, the two sources of torque cancel each other out. 
-With small equilibrium angle:
-\begin{equation}
-\tau = \kappa\theta = lF    \label{eqn:Hooke_law}
+\tau = -\kappa\cdot\theta     \label{eqn:undamped_motion_equation}
 \end{equation}
 
 
-\noindent
-The string torsion coefficient $\kappa $ could be estimated, assuming homogeneity of a circular string. Where $G$ is the material shear modulus, $J$ is the circular second moment of area ($Jzz$) and $h$ is the string length.
+\par\noindent
+String torsion coefficient $\kappa$ could be estimated, assuming homogeneity of a circular string. Where $G$ is the material shear modulus, $J$ is the circular second moment of area ($Jzz$), $h$ is the string length and $d$ is the string diameter:
 \begin{equation}
 \kappa = \frac{GJ}{h} = \frac{G}{h} \frac{\pi d^4}{32}    \label{eqn:torsion_coefficient}
 \end{equation}
-Note, $\kappa$ could also be found empirically by finding  the  oscillations period.
+
  
 
 
 \subsection{Simple harmonic oscillator}
 The harmonic oscillator is a second order system that, when displaced, experiences a linear restoring force proportional to the displacement from equilibrium. The torsional pendulum is an angular harmonic oscillator. It is equivalent to the linear case, where instead of velocity and force, one has angular velocity and torque.
 \par\noindent
-If the restoring torque is the only torque acting then the oscillator is not driven or damped, one has a simple harmonic oscillator. The torque causes sinusoidal oscillations (simple harmonic motion) around the equilibrium angle.  
+If the restoring torque is the only torque acting then the oscillator is not driven or damped, one has a simple harmonic motion, where $I$ is the moment of inertia. The torque causes sinusoidal oscillations (simple harmonic motion) around the equilibrium angle:  
 \begin{equation}
-\tau = -\kappa\cdot\theta  = I\cdot\ddot{\theta}   \label{eqn:undamped_motion_equation}
+ \tau = -\kappa\cdot\theta  = I\cdot\ddot{\theta}   \label{eqn:undamped_motion_equation}
 \end{equation}
 \begin{equation}
 \theta(t) = \theta_{max}cos(\omega_0 t )    \label{eqn:undamped_motion_equation}
@@ -50,11 +41,8 @@ If the restoring torque is the only torque acting then the oscillator is not dri
 \begin{equation}
 \omega_0  = \frac{2\pi}{T} = \sqrt{\frac{\kappa}{I}}   \label{eqn:undamped_motion_equation}
 \end{equation}
-The moment of inertia of a rod with length $2l$ oscillating around a pivot is:
-\begin{equation}
-I = 2ml^2     \label{eqn:moment_inertia}
-\end{equation}  
-The natural resonant frequency $\omega_0$ and time period of oscillation $T$ are determined by the physical constants of the pendulum.
+\par\noindent
+The natural resonant frequency $\omega_0$ and time period of oscillation $T$ are determined by the physical constants of the pendulum $\kappa$,$I$. Accordingly, the string torsion coefficient $\kappa$ could also be found empirically by finding the oscillations period $T$.
 
 
 \subsection{Damped oscillator}
@@ -133,7 +121,6 @@ If the damped oscillator system is further affected by an external time-dependen
 
 
 \section{Gravity measurement}
-
 \subsection{Gravitational field}
 Newton's law of universal gravitation states that every point mass attracts every other point mass in the universe.
 \begin{equation}
@@ -160,7 +147,9 @@ The field caused by a mass $M$ at a specific point is calculated by measuring th
 \par\noindent
 The Cavendish experiment, first performed in the 17th century, was the first experiment to measure the gravitational force between masses. 
 \par\noindent
-The apparatus, as seen below, is constructed by a torsional pendulum and a nearby mass $M$, creating a net torque on the pendulum. The torsional pendulum is formed of two masses $m$ connected by a rigid, massless thin rod, with length of $2l$.
+The apparatus, as seen in the figure, is constructed by a torsional pendulum and a nearby mass $M$, creating a net torque on the pendulum. 
+\par\noindent
+The pendulum can be assumed to be of two masses $m$ connected by a rigid, massless thin rod, with length of $2l$, and a pivot at distance $l$ from each side.
 
 \par\noindent
 The net gravitational torque $\tau_g$ for a balanced torsion pendulum is the sum of two inverse, nearly counterbalancing gravitational torques, from each mass $m$:
@@ -190,17 +179,21 @@ One can approximate $\theta_1 \approx \theta_2 = \theta$ where $\theta$ is the t
 \end{equation}
 
 \par\noindent
-Assuming no friction or other damping force (a simple harmonic oscillator) when a mass $M$ is introduced, there are two sources of torque in the system; the net torque caused by the gravitational force $\tau_g$, and an inverse restoring torque caused by the wire torsion.
+Assuming no friction or other damping force (a simple harmonic oscillator) when a mass $M$ is introduced, there are two sources of torque in the system; the net torque caused by the gravitational force $\tau_g$, and a linear restoring torque at the opposite direction caused by the wire torsion:
 \begin{equation}
 \tau = \tau_g - \kappa\theta     \label{eqn:gravitation_torque}
 \end{equation} 
 \par\noindent
-At equilibrium, when balance has been stabilized, these two torques are cancelled out:
+At equilibrium, when balance stabilizes in a specific angle, the two sources of torque cancel each other out:
 \begin{equation}
-\tau = 0 \rightarrow\kappa\theta = \tau_g    \label{eqn:gravitation_torque}
+\kappa\theta = \tau_g    \label{eqn:gravitation_torque}
 \end{equation}
 \begin{equation}
 \overline{\theta} = \frac{\tau_g}{\kappa}     \label{eqn:theta average}
+\end{equation} 
+The moment of inertia of a rod with length $2l$ oscillating around a pivot is:
+\begin{equation}
+I = 2ml^2     \label{eqn:moment_inertia}
 \end{equation} 
 As seen previously, for a torsion pendulum:
 \begin{equation}
