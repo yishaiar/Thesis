@@ -1,9 +1,9 @@
 \providecommand{\main}{..}
 \documentclass[\main/master.tex]{subfiles}
 \begin{document}
-\chapter{Thesis aims}\label{chp:Thesis aims}
+\chapter{Thesis aims}\label{chapter:Thesis aims}
 
-The Cavendish experiment, is constructed using a torsional pendulum with a front mirror. The angle displacement causes a mirror tilt. Optical measurement of angle displaement is made with a split detector using interferometric technique.
+The Cavendish experiment, is constructed using a torsional pendulum with a front mirror. The angle displacement causes a mirror tilt. Optical measurement of angle displacement is made with a split detector using interferometric technique.
 \par\noindent
 The measurement is limited by the basic energy level quantum uncertainty and measurement system shot noise.
 \begin{equation}
@@ -19,9 +19,9 @@ Shot noise, using a split detector in an interferometric technique, is even on a
 \delta\theta = \frac{1}{4\sqrt{2}\pi}\frac{\lambda}{L\sqrt{N}} \approx
 10^{-14} [\frac{rad}{Hz}]    \label{eqn:gravitation_torque}
 \end{equation}
-When the gravitational force is measured using a torsional pendulum, there are noise limitations to the measuremnt sensitivity. The limitations are higher than the basic limits, meaning that reducing the noise could achieve higher sensitivity. The noises on the pendulum are unknown magnetic noises, acoustic waves and quantum uncertainty due to thermal Brownian motion. Friction also limits the pendulum response. 
+When the gravitational force is measured using a torsional pendulum, there are noise limitations to the measurement sensitivity. The limitations are higher than the basic limits, meaning that reducing the noise could achieve higher sensitivity. The noises on the pendulum are unknown magnetic noises, acoustic waves and quantum uncertainty due to thermal Brownian motion. Friction also limits the pendulum response. 
 \par\noindent
-The pendulum is placed inside vacuum, reducing Brownian motion, acoustic waves and friction. The vacuum chamber is reducing magnetic noise as a Faraday cage. In vacuum the brownian motion from environment coupling is reduced.
+The pendulum is placed inside vacuum, reducing Brownian motion, acoustic waves and friction. The vacuum chamber is reducing magnetic noise as a Faraday cage. In vacuum the Brownian motion from environment coupling is reduced.
 \par\noindent
 The quantum uncertainty due to Brownian motion is the main noise source. The quantum uncertainty at a given temperature (assuming above basic energy level) is:
 
@@ -34,18 +34,18 @@ The quantum uncertainty due to Brownian motion is the main noise source. The qua
 \par\noindent
 The noise reductance enables to damp and cool the pendulum temperature. 
 \par\noindent
-The cooling system is built using two led light sources placed in front of each pendulum side. The leds are modulated at high speeds using a simple arduino microcontroller. The modulated light is causing a small external radiation torque, which damps down the ossiclations.
+The cooling system is built using two led light sources placed in front of each pendulum side. The led sources are modulated at high speeds using a simple Arduino microcontroller. The modulated light is causing a small external radiation torque, which damps down the oscillations.
 \par\noindent
 Damping is made using a PID feedback loop. The angle tilt and is measured and an equivalent feedback external source is applied. The feedback damping can dynamically damp down the noises, without pre-knowledge of the existing noises. PID can reduce all noises, and temperature. Having an effective lower temperature would enable measuring smaller angles enlarging the SNR and the measurement sensitivity.
 
 
 \par\noindent
-With PID tuned correct the damped pendulum is at critical damping and ossiclations become smaller. PID error $e(t)$ and damping response $u(t)$ are both minimized. 
+With PID tuned correct the damped pendulum is at critical damping and oscillations become smaller. PID error $e(t)$ and damping response $u(t)$ are both minimized. 
 \begin{equation}
 e(t) = \delta\theta(t)   \label{eqn:pid_error}
 \end{equation}
 \begin{equation}
-u(t) = K_Pe(t)+K_I\int_{0}^{t}e(t)+K_D\frac{de(t)}{dt}   \label{eqn:PID_eq}
+u(t) = K_P e(t)+K_I\int_{0}^{t}e(t)+K_D\frac{de(t)}{dt}   \label{eqn:PID_eqn}
 \end{equation}
 
 \noindent
@@ -57,7 +57,7 @@ e(t) = \delta\theta(t) + \theta_g    \label{eqn:PID_measurement}
 u(t) = u[ \delta\theta(t)] + K_P\theta_g(t) \label{eqn:PID_measurement_eqn}
 \end{equation}
 \begin{equation}
-U = \int u(t)dt  \approx K_P\overline{\theta}_g\Delta t \label{eqn:PID_measurement_eqn}
+U = \int u(t) dt  \approx K_P\overline{\theta}_g\Delta t \label{eqn:PID_measurement_eqn}
 \end{equation}
 
 \begin{equation}
@@ -70,9 +70,9 @@ In the previous chapter it was shown that for a torsional pendulum:
 \end{equation}
 \par\noindent
 Sensing mass $m$ appears only in the natural
-frequency, angle is propotional to period's length $T$, and pendulum length $l$ drops out, indicating that small sensors work as well as large ones as long as their periods are the same.
+frequency, angle is proportional to period's length $T$, and pendulum length $l$ drops out, indicating that small sensors work as well as large ones as long as their periods are the same.
 \par\noindent
-The measurement sytem allows fast response (short integration time) and high accuracy while measuring low frequency gravity fields. 
+The measurement system allows fast response (short integration time) and high accuracy while measuring low frequency gravity fields. 
 
  
  
