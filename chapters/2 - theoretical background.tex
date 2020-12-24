@@ -20,7 +20,7 @@ A torsional pendulum is an oscillator made of mass hung by a string from a fixed
 
 
 \par\noindent
-String torsion coefficient $\kappa$ could be estimated, assuming homogeneity of a circular string. Where $G$ is the material shear modulus, $J$ is the circular second moment of area ($Jzz$), $h$ is the string length and $d$ is the string diameter:
+String torsion coefficient $\kappa$ can be estimated, assuming homogeneity of a circular string. Where $G$ is the material shear modulus, $J$ is the circular second moment of area ($Jzz$), $h$ is the string length and $d$ is the string diameter:
 \begin{equation}
 \kappa = \frac{GJ}{h} = \frac{G}{h} \frac{\pi d^4}{32}    \label{eqn:torsion_coefficient}
 \end{equation}
@@ -31,10 +31,11 @@ String torsion coefficient $\kappa$ could be estimated, assuming homogeneity of 
 \subsection{Simple harmonic oscillator}
 The harmonic oscillator is a second order system that, when displaced, experiences a linear restoring force proportional to the displacement from equilibrium. The torsional pendulum is an angular harmonic oscillator. It is equivalent to the linear case, where instead of velocity and force, one has angular velocity and torque.
 \par\noindent
-If the restoring torque is the only torque acting then the oscillator is not driven or damped, one has a simple harmonic motion, where $I$ is the moment of inertia. The torque causes sinusoidal oscillations (simple harmonic motion) around the equilibrium angle:  
+If the restoring torque is the only torque in action then the oscillator is not driven or damped, resulting in a simple harmonic motion, where $I$ is the moment of inertia. 
 \begin{equation}
- \tau = -\kappa\cdot\theta  = I\cdot\ddot{\theta}   \label{eqn:undamped_motion_equation}
+\tau = -\kappa\cdot\theta  = I\cdot\ddot{\theta}   \label{eqn:undamped_motion_equation}
 \end{equation}
+The torque causes sinusoidal oscillations (simple harmonic motion) around the equilibrium angle:  
 \begin{equation}
 \theta(t) = \theta_{max}cos(\omega_0 t )    \label{eqn:undamped_motion_equation}
 \end{equation}
@@ -46,7 +47,7 @@ The natural resonant frequency $\omega_0$ and time period of oscillation $T$ are
 
 
 \subsection{Damped oscillator}
-If the system is also having damping (friction) which is proportional to the velocity, the system is a damped oscillator.
+If the system also has damping (friction) which is proportional to the velocity, the system is a damped oscillator.
 
 
 \begin{equation}
@@ -72,7 +73,7 @@ The system damping ratio $\xi$ is the ratio between critical damping and the act
 \begin{equation}
 \theta(t) = Ae^{-\frac{t}{\tau}\cdot(1+\sqrt{1-\frac{1}{\xi^2}})} + Be^{-\frac{t}{\tau}\cdot(1-\sqrt{1-\frac{1}{\xi^2}})}    \label{eqn:damped_motion_equation}
 \end{equation}
-Undamped ($\xi = 0$); there is no friction and damping $b = 0$ leading to harmonic oscillations without decay.
+Undamped ($\xi = 0$); there is no friction and damping, leading to harmonic oscillations without decay.
 \begin{equation}
 \theta(t) = \theta_{max}cos(\omega_0 t )    \label{eqn:undamped_motion_equation}
 \end{equation}
@@ -80,7 +81,7 @@ Overdamped ($\xi > 1$); due to high friction, the system cannot oscillate and it
 \begin{equation}
 \theta(t) = Ae^{-\frac{t}{\tau}\cdot(1+\sqrt{1-\frac{1}{\xi^2}})} + Be^{-\frac{t}{\tau}\cdot(1-\sqrt{1-\frac{1}{\xi^2}})}    \label{eqn:overdamped_motion_equation}
 \end{equation}
-Critically damped ($\xi = 1$); due to high friction, the system cannot oscillate and it decays exponentially to the equilibrium position. For a fixed $I, \kappa$, choosing $b$ to be at the critical damping value would give the fastest return to the equilibrium position. Although there is overshoot this is often a desirable property.
+Critically damped ($\xi = 1$); due to high friction, the system cannot oscillate and it decays exponentially to the equilibrium position. For a fixed $I, \kappa$, choosing $b$ to be at the critical damping value would give the fastest return to the equilibrium position. Although there is overshoot, this is often a desirable property.
 
 \begin{equation}
 \theta(t) = \theta_{max}\cdot e^{-\frac{t}{\tau}}     \label{eqn:underdamped_motion_equation}
@@ -126,17 +127,15 @@ Newton's law of universal gravitation states that every point mass attracts ever
 \begin{equation}
 \overrightarrow{F}(r) = \frac{GmM}{r^2}\hat{r}    \label{eqn:gravitation_force}
 \end{equation} 
-The force acts along the intersecting line, proportional to the product of the masses and inverse to the square of the distance between the centers, meaning the force is very weak. For example the force between two cubes 1 kg each, 1 meter apart would be $\overrightarrow{F} = 6.67\cdot10^{-11} [N]$.
+The force acts along the intersecting line, proportional to the product of the masses and inverse to the square of the distance between the centers, meaning the force is very weak. For example, the force between two cubes 1 kg each, 1 meter apart would be $\overrightarrow{F} = 6.67\cdot10^{-11} [N]$.
 \par\noindent
-The gravitational field $G$ of mass $M$ is a vector field consisting at every point a vector pointing directly towards the particle. The magnitude of the field at every point is calculated by applying the universal law, the force per unit mass. 
+The gravitational field $G$ of mass $M$ is a vector field consisting, at every point, vector pointing directly towards the particle. The magnitude of the field at every point is calculated by applying the universal law, the force per unit mass. 
 \begin{equation}
 \overrightarrow{G}(r) = \frac{\overrightarrow{F}(r)}{m} = \frac{GM}{r^2}\hat{r}    \label{eqn:gravitation_field}
 \end{equation}
 \subsubsection{Field measurement}
 \par\noindent
-The field caused by test mass $M$ at a specific point is calculated by measuring the gravitational force. Test mass $M$ is much larger than each mass $m$, which ensures that there is a negligible influence on the behaviour of $M$.  
-
-
+The field caused by test mass $M$ at a specific point is calculated by measuring the gravitational force. Test mass $M$ is much larger than each mass $m$, ensuring a negligible influence on the behaviour of $M$.  
 
 \subsection{Cavendish experiment}
 \subsubsection{Apparatus}
@@ -218,7 +217,7 @@ The SNR dependency on frequency causes difficulties measuring gravitational fiel
 This is a significant challenge while designing gravimetric sensors.
 
 \subsubsection{Shot noise limit}
-A measurement system can't measure a signal smaller than the system shot noise, which is a fundamental quantum physical phenomenon. Power fluctuations due to fluctuations in the number of photons. When measurement systems are optical, such as measuring angle displacement with a laser, the ground sensitivity and SNR that could be achieved are limited by the system shot noise.   
+A measurement system can't measure a signal smaller than the system shot noise, which is a fundamental quantum physical phenomenon. Power fluctuates due to fluctuations in the number of photons. When measurement systems are optical, such as measuring angle displacement with a laser, the ground sensitivity and SNR that could be achieved are limited by the system shot noise.   
 \begin{equation}
 SNR = \frac{N}{\sqrt{N}} = \sqrt{N}    \label{eqn:shot_noise}
 \end{equation}
@@ -228,9 +227,9 @@ While other system noises are higher than the shot noise limit, reducing noises 
 Radiation pressure is pressure on the surface due to momentum exchange with an electromagnetic field, including momentum of light. The light is at any wavelength which is absorbed, reflected, or emitted. The pressure causes force on the surface, although the force is usually insignificant.
   
 \par\noindent
-The radiation pressure force depends on the angle of surface compare to the electromagnetic field, as well as the surface intensity reflectance and absorbance, and the power of light hitting the surface $\Theta_i$ (radiant flux, measured in watts). There is coupling efficiency $\eta$ due to the light losses while passing through light transmitters (such as light guide or fiber), and size difference between the light beam size and the target size. 
+The radiation pressure force depends on the surface angle compared to the electromagnetic field, as well as the surface intensity reflectance and absorbance, and the power of light hitting the surface $\Theta_i$ (radiant flux, measured in watts). There is coupling efficiency $\eta$ due to the light losses while passing through light transmitters (such as light guide or fiber), and size difference between the light beam size and the target size. 
 \par\noindent
-In the equation below, the incident radiation pressure is calculated, when $\alpha$ is the field angle, compared to the surface area $A$, and $c$ the speed of light. As a first approximation one assumes, that the beam is focused tightly enough that variation over the surface is negligible. 
+In the equation below, the incident radiation pressure is calculated, when $\alpha$ is the field angle, compared to the surface area $A$, and $c$ the speed of light. As a first approximation one assumes that the beam is focused tightly enough that variation over the surface is negligible. 
 \begin{equation}
 P_{incident} = \frac{\frac{\Theta_i}{A}cos^2(\alpha)}{c} = \frac{\eta\cdot \Theta_{source}\cdot cos^2(\alpha)}{{A\cdot c}} \label{eqn:radiation_pressure}
 \end{equation}
@@ -253,7 +252,7 @@ F = \frac{2\eta\Theta_{source}}{{c}} \label{eqn:radiation_force_power}
 \section{Vacuum affects}
 
 \subsection{Brownian motion}
-Brownian motion is the pattern of random particles' fluctuations at fluid or gas, a random walk with no preferential direction of flow. This pattern happens at thermal equilibrium in a given temperature (on average there is no linear and angular momentum). 
+Brownian motion is the pattern of random particles' fluctuations at fluid or gas phases, a random walk with no preferential direction of flow. This pattern happens at thermal equilibrium in a given temperature (on average there is no linear and angular momentum). 
 \par\noindent
 The average kinetic energy for a gas particle could be found from Maxwell-Boltzmann distribution of molecular speed, whereas the total Brownian motion kinetic energy is the sum over all gas particles.
 \begin{equation}
@@ -290,14 +289,14 @@ F_{drag} = -b\cdot v  \label{eqn:energy-mass-equivalence-relation}
 \par\noindent
 When Knudsen ratio is $0.01<k_n<0.5$, at a medium vacuum regime, the flow is called Knudsen flow. The molecules do not interact and move in straight lines between points. If chamber vacuum level is medium or higher, classical viscous friction of objects with gas particles inside the chamber could be negligible.
 
-\subsubsection{Flow Characteristics}
+\subsubsection{Flow characteristics}
 Gas pressure at a medium is inverse to the mean free pass of each particle. A gas particle collides many times along it's way. It's mean free path is the average distance the particle could pass between two collisions with other particles. 
 
 
 \begin{equation}
 I = \frac{k_B\cdot T}{\sqrt{2}\cdot\pi\cdot p\cdot d_m^2}     \label{eqn:mean-free-pass}
 \end{equation}
-The Knudsen ratio which is used to characterize types of gas flow compare to the pipe diameter is derived from the above term.
+The Knudsen ratio, derived from the above term, is used to characterize types of gas flow compare to the pipe diameter.
 \begin{equation}
 K_n = \frac{I}{d}     \label{eqn:mean-free-pass}
 \end{equation}
@@ -323,24 +322,25 @@ The leak rate could prevent the system from reaching initial low pressure, since
 There is also a diffusion rate of gas molecules, such as helium, which is insignificant when pressure is above $10^{-9}$ [Torr] (vacuum lower than high vacuum). 
 
 \subsubsection{Outgassing}
-At low pressures, there are more gas molecules adsorbed on the chamber surface than floating in the chamber. When pressure is below vapor pressure there's a desorption of gas molecules (primarily water) from the material.
+\par\noindent
+At low pressures, there are more gas molecules adsorbed on the chamber surface than floating in the chamber. When pressure is below vapor pressure there is a desorption of gas molecules (primarily water) from the material.
 \par\noindent
 Outgassing is the desorption rate $Q_{des}$ which over time increases the pressure. The desorption rate depends on the surface area and the desorption density $q_{des}$ which is area specific. 
 \begin{equation}
 Q_{des} = q_{des}\cdot A\cdot\frac{t_0}{t}  \label{eqn:energy-mass-equivalence-relation}
 \end{equation}
-The desorption rate produces a gas yield that declines over time. It could be assumed that after a given time $t>t_0$ the increase is linear over time, typically $t_0$ assumed to be one hour.
+The desorption rate produces a gas yield that declines over time. It could be assumed that after a given time $t>t_0$, the increase is linear over time, typically $t_0$ assumed to be one hour.
 \par\noindent
 Outgassing is minimized by selection of low vapor pressure materials such as stainless steel and glass. Since water is a significant source of outgassing, it is usually minimized by baking the chamber at high temperatures while the pump is running.
 
 
 \section{Proportional–integral–derivative (PID) controller}
-Proportional–integral–derivative controller (PID controller) is a feedback based control system. The control loop is used for time continuous control of a process, so the process output (measured process variable) would be close to a defined set point.
+Proportional–integral–derivative (PID) controller is a feedback based control system. The control loop is used for time continuous control of a process, so the process output (measured process variable) is close to a defined set point.
 \par\noindent
 PID controller continuously calculates error value, which is the distance of the measured process variable from the defined set point. The feedback applies an external correction to the process, called control variable. The control variable is based on a gain to the error of proportional $P$, integral $I$ and derivative $D$. Proper tuning of a PID enables an accurate automated correction to a controlled process. The PID concept is used widely in applications requiring accurate automated control.
 
 \par\noindent
-The error and it's integral and derivate are calculated continuously. The control has three tuning parameters; $K_P, K_I, K_D$, the feed back correction is modulated by the tuning parameters' value. Each parameter is assigned to a gain (P-I-D). The response (control variable) is a weighted sum of the control terms. Over time the controller attempts to minimize the error $e(t)$ by adjusting the control variable $u(t)$, which is the PID output.
+The error and its integral and derivate are calculated continuously. The control has three tuning parameters; $K_P, K_I, K_D$, the feed back correction is modulated by the tuning parameters' value. Each parameter is assigned to a gain (P-I-D). The response (control variable) is a weighted sum of the control terms. Over time the controller attempts to minimize the error $e(t)$ by adjusting the control variable $u(t)$, which is the PID output.
 \par\noindent
 \begin{figure}[htbp]
 	\centering
