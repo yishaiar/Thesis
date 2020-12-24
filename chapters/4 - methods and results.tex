@@ -266,26 +266,6 @@ The setup could produce very small torques; light sources of 1 watt maximum powe
 
 \section{Modulated CW laser}
 
-\subsection{Laser}
-
-
-The laser is a high power coherent light source based on stimulated emission with narrow spectrum. Inside a cavity Electron is excited to a higher energy level, and forced by photon with the correct wavelength to be absorbed emitting coherent photon. The coherence allows focusing beam to a tight spot, and being collimated over long distances. Continuous wave (CW) laser are lasing constant output power over time.
-
-
-
-\par\noindent
-Usually the power output is stable but has oscillations due to having several longitudinal modes causing nano second scale oscillations, output power is steady when averaged over longer periods. Also, over long periods of time lasers have slight power oscillations due to temperature changes in the environment.
-%The laser diode cavity face is rectangular, because of fabrication constraints. The rectangular face is causing cylindrical aberration, which   
-
-\subsection{Acousto optic modulator}
-Acousto Optic Modulator (AOM), uses the acousto-optic effect to diffract and shift the frequency of light using RF waves. An oscillating electric signal drives a piezoelectric transducer to vibrate causing RF waves, the transducer attached to a material. This causes sound waves in the material, and periodic index modulation causing a Bragg grating. Incoming light scatters off the grating and due to Bragg diffraction comes at Bragg angle.
-\begin{equation}
-\theta_b = sin(\theta_b)\approx \frac{\lambda}{2n\Lambda} \label{eqn:energy-mass-equivalence-relation}
-\end{equation} 
-$\Lambda$ is the RF wavelength, $\lambda$ is the light source wavelength. 
-\par\noindent
-Since all parameters constant, modulation angle is constant, and possible modulation speed is nano seconds. Giving a stable fast modulation method for CW laser.
-
 
 \section{Modulated LED}
 \subsection{Arduino}
@@ -363,4 +343,25 @@ PO = 100\cdot e ^{\frac{-\xi\pi}{\sqrt{1-\xi^2}}} = \frac{output-target}{target}
 \end{equation}
  
 \section{Accuracy}
+
+\subsection{Laser}
+
+
+The laser is a high power coherent light source based on stimulated emission with narrow spectrum. Inside a cavity Electron is excited to a higher energy level, and forced by photon with the correct wavelength to be absorbed emitting coherent photon. The coherence allows focusing beam to a tight spot, and being collimated over long distances. Continuous wave (CW) laser are lasing constant output power over time.
+
+
+
+\par\noindent
+Usually the power output is stable but has oscillations due to having several longitudinal modes causing nano second scale oscillations, output power is steady when averaged over longer periods. Also, over long periods of time lasers have slight power oscillations due to temperature changes in the environment.
+%The laser diode cavity face is rectangular, because of fabrication constraints. The rectangular face is causing cylindrical aberration, which   
+
+\subsection{Acousto optic modulator}
+Acousto Optic Modulator (AOM), uses the acousto-optic effect to diffract and shift the frequency of light using RF waves. An oscillating electric signal drives a piezoelectric transducer to vibrate causing RF waves, the transducer attached to a material. This causes sound waves in the material, and periodic index modulation causing a Bragg grating. Incoming light scatters off the grating and due to Bragg diffraction comes at Bragg angle.
+\begin{equation}
+\theta_b = sin(\theta_b)\approx \frac{\lambda}{2n\Lambda} \label{eqn:energy-mass-equivalence-relation}
+\end{equation} 
+$\Lambda$ is the RF wavelength, $\lambda$ is the light source wavelength. 
+\par\noindent
+Since all parameters constant, modulation angle is constant, and possible modulation speed is nano seconds. Giving a stable fast modulation method for CW laser.
+
 \end{document}
