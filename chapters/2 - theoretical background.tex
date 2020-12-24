@@ -158,12 +158,12 @@ The net gravitational torque $\tau_g$ for a balanced torsion pendulum is the sum
 \begin{equation}
 \tau_g = l \cdot F(r_1) \cdot cos\theta_1 - l \cdot F(r_2) \cdot cos\theta_2 = l d GmM(\frac{1}{r_1^3} - \frac{1}{r_2^3})     \label{eqn:gravitation_torque}
 \end{equation}
-One can define function $h(l); \quad h(l) = \frac{1}{r_1^3},\quad	h(-l) = \frac{1}{r_2^3},\quad	h(0) = \frac{1}{r_0^3}$.
+Defining the function $h(l)$, where: $h(l) = \frac{1}{r_1^3},\quad	h(-l) = \frac{1}{r_2^3},\quad	h(0) = \frac{1}{r_0^3}$.
 \begin{equation}
 h(l) = \frac{1}{(d^2 +(x-l)^2)^{3/2}} \label{eqn:gravitation_torque}
 \end{equation}
 \par\noindent
-The net torque is proportional to the difference of the functions $h(l)-h(-l)$. Since $l<<d,x,r_0$ an approximation can take place:
+The net torque is proportional to the difference of the functions $h(l)-h(-l)$. Since $l<<d,x,r_0$ one can approximate:
 \begin{equation}
 h(l)-h(-l)\approx h'(0)\cdot 2l,\quad h'(0) = \frac{3x}{r_0^5}\label{eqn:approximation}
 \end{equation}
