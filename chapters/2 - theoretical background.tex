@@ -344,12 +344,12 @@ The error and its integral and derivate are calculated continuously. The control
 \par\noindent
 \begin{figure}[htbp]
 	\centering
-	\fbox{\includegraphics[scale=0.4]{\main/images/2 - theoretical background/PID.png}}
-	\caption[PID controller block diagram]{PID controller block diagram; from circuitdigest \cite{PID-diagram}}
+	\fbox{\includegraphics[scale=0.4]{\main/images/2 - theoretical background/pid_diagram_powerpoint.jpg}}
+	\caption[PID controller block diagram]{PID controller block diagram}
 	\label{fig:PID_scheme}
 \end{figure}
 \begin{equation}
-u(t) = K_P e(t)+K_I\int_{0}^{t}e(t)+K_D\frac{de(t)}{dt}   \label{eqn:PID_eqn}
+u(t) = K_P e(t)+K_I\int_{0}^{t}e(\tau)d\tau+K_D\frac{de(t)}{dt}   \label{eqn:PID_eqn}
 \end{equation}
 
 \noindent
