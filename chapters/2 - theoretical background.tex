@@ -230,45 +230,49 @@ According to eq.~\ref{eqn:theta average_2}, by accurate angle measurement, the g
  
 
 \subsection{Gravity sensing}
-The field at a specific point is the superposition of multiple fields, caused by any mass in space $M$ acting on mass $m$ located at that point. Measuring the gravitational field caused by a specific test mass $M$ accurately, test mass $M$ weight or its distance could be estimated. In order to filter out the other gravitational fields caused by masses around, one measures the difference from a baseline state.
+The field at a specific point is the superposition of multiple fields, caused by any mass in space $M$ acting on mass $m$ located at that point. Measuring the gravitational field caused by a specific test mass $M$ accurately with known mass $m$, the test mass $M$ weight or its distance could be estimated. In order to filter out the other gravitational fields caused by masses around, one measures the difference from a baseline state.
 \par\noindent
-Usually the measurement is with a frequency. The test mass moves in different frequencies, where not moving would be zero frequency. The masses around don't move, and are filtered out.
+Usually the measurement is based on measuring oscillation frequency. The test mass oscillates in different frequencies, where not moving would be zero frequency. The masses around that do not move, are filtered out.
 \par\noindent
-The angle caused by the gravitational field is measured at each of those frequencies, measuring the energy spectral density $[\frac{rad}{\sqrt{Hz}}]$.
-In the measurement system different noises have different frequencies. By integrating over long periods measurement noises are reduced. The signal to noise ratio (SNR) is the limiting factor for the sensitivity of a measuring system. In higher frequencies integration is faster, causing less noises and higher SNR.
-The SNR dependency on frequency causes difficulties measuring gravitational fields at low frequencies.
+The sensor's tilt angle caused by the gravitational field is measured at each frequency, measuring the energy spectral density $[\frac{rad}{\sqrt{Hz}}]$ of the sensor.
+In the measurement system different noises have different frequencies. By integrating over long periods, measurement noises are reduced. The signal to noise ratio (SNR) is the limiting factor for the sensitivity of a measuring system. In higher frequencies the integration is faster, causing less noises and higher SNR.
+The dependency of the SNR on frequency causes difficulties when measuring gravitational fields at low frequencies.
 \par\noindent
-This is a significant challenge while designing gravimetric sensors.
+This limitation is a significant challenge while designing gravimetric sensors for low frequencies.
 
-\subsubsection{Shot noise limit}
-A measurement system can't measure a signal smaller than the system shot noise, which is a fundamental quantum physical phenomenon. Power fluctuates due to fluctuations in the number of photons. When measurement systems are optical, such as measuring angle displacement with a laser, the ground sensitivity and SNR that could be achieved are limited by the system shot noise.   
+\subsubsection{The shot noise limit}
+A optical measurement system can not measure a signal smaller than its shot noise, which is a fundamental quantum physical phenomenon. The power of an optical signal fluctuates due to fluctuations in the number of photons $N$ in the signal. The SNR of a shot noise limited system is:
 \begin{equation}
 SNR = \frac{N}{\sqrt{N}} = \sqrt{N}    \label{eqn:shot_noise}
 \end{equation}
-While other system noises are higher than the shot noise limit, reducing noises and longer time integration would provide higher accuracy and better measurement results. 
+However, while other system noises are higher than the shot noise limit, reducing noises and averaging the time integration can provide higher accuracy and better measurement results. 
 
-\section{Radiation pressure}
-Radiation pressure is pressure on the surface due to momentum exchange with an electromagnetic field, including momentum of light. The light is at any wavelength which is absorbed, reflected, or emitted. The pressure causes force on the surface, although the force is usually insignificant.
+\section{Radiation-pressure}
+Radiation-pressure is the pressure of a light beam on the surface due to momentum exchange with the electromagnetic field. The momentum exchange may occur with light at any wavelength which is absorbed, reflected, or emitted by the surface. The pressure causes a force on the surface, although this force is usually insignificant.
   
 \par\noindent
-The radiation pressure force depends on the surface angle compared to the electromagnetic field, as well as the surface intensity reflectance and absorbance, and the power of light hitting the surface $\Theta_i$ (radiant flux, measured in watts). There is coupling efficiency $\eta$ due to the light losses while passing through light transmitters (such as light guide or fiber), and size difference between the light beam size and the target size. 
+The radiation-pressure force depends on the surface angle relative to the electromagnetic field propagating direction, as well as the surface reflectance and absorbance, and the power of light hitting the surface $\Theta_i$ (radiant flux, measured in watts). 
 \par\noindent
-In the equation below, the incident radiation pressure is calculated, when $\alpha$ is the field angle, compared to the surface area $A$, and $c$ the speed of light. As a first approximation one assumes that the beam is focused tightly enough that variation over the surface is negligible. 
+Assuming that the beam is focused tightly enough that variation over the surface is negligible, the incident radiation pressure is:
 \begin{equation}
 P_{incident} = \frac{\frac{\Theta_i}{A}cos^2(\alpha)}{c} = \frac{\eta\cdot \Theta_{source}\cdot cos^2(\alpha)}{{A\cdot c}} \label{eqn:radiation_pressure}
 \end{equation}
-The radiation pressure assuming light field direction perpendicular to surface and angle negligibility is: 
+Where $\alpha$ is the field angle, compared to the surface area $A$, $c$ is the speed of light and $\eta$ is the coupling efficiency due to light losses. The light losses are caused by the light beam passing through light transmitters (such as light guide or fiber), and size difference between the light beam size and the target size. 
+\par\noindent
+When the light field direction is perpendicular to the surface or the angle of the incident is negligible the radiation pressure is:
 \begin{equation}
 P_{incident} = \frac{\eta\Theta_{source}}{{Ac}} \label{eqn:radiation_pressure_perpendicular}
 \end{equation}
 \par\noindent
-The radiation force assuming surface is a reflective material:
+For a reflective material with reflectivity $R$, the radiation force is:
 \begin{equation}
-F = P_{total}\cdot A = (P_{incident}+P_{emitted})\cdot A = P_{incident}(1+R)A \label{eqn:radiation_force}
+F = P_{total}\cdot A = (P_{incident}+P_{reflected})\cdot A = P_{incident}(1+R)A \label{eqn:radiation_force}
 \end{equation}
+For a material with high reflectivity, $R\approx 1$:
 \begin{equation}
 F \approx 2P_{incident}A = \frac{2\eta\Theta_{source}}{{c}}\cdot \frac{A}{A} \label{eqn:radiation_force_reflective}
 \end{equation}
+Thus:
 \begin{equation}
 F = \frac{2\eta\Theta_{source}}{{c}} \label{eqn:radiation_force_power}
 \end{equation}
@@ -278,23 +282,28 @@ F = \frac{2\eta\Theta_{source}}{{c}} \label{eqn:radiation_force_power}
 \subsection{Brownian motion}
 Brownian motion is the pattern of random particles' fluctuations at fluid or gas phases, a random walk with no preferential direction of flow. This pattern happens at thermal equilibrium in a given temperature (on average there is no linear and angular momentum). 
 \par\noindent
-The average kinetic energy for a gas particle could be found from Maxwell-Boltzmann distribution of molecular speed, whereas the total Brownian motion kinetic energy is the sum over all gas particles.
+According to the ideal gas law: 
 \begin{equation}
-f(v) = 4\pi(\frac{m}{2\pi k_BT})^{3/2}v^2exp(\frac{-mv^2}{2kk_BT})     \label{eqn:Maxwell_Boltzmann}
-\end{equation}  
+N k_B T = PV  \label{eqn:ideal-gasses}
+\end{equation}
+Where $N$ is the number of particles inside the medium, $k_B$ is the Boltzmann constant, $T$ is the temperature, $P$ is the gas pressure and $V$ is the medium volume. Thus, when medium volume $V$ is constant, the gas pressure is proportional to the number of particles.
+\par\noindent
+The Maxwell-Boltzmann distribution of molecular speed is:
+\begin{equation}
+f(v) = 4\pi(\frac{m}{2 \pi k_B T})^{3/2}\cdot v^2\cdot exp(\frac{-mv^2}{2kk_BT})     \label{eqn:Maxwell_Boltzmann}
+\end{equation} 
+\par\noindent 
+Thus, the average kinetic energy for a gas particle is: 
 \begin{equation}
 <E_k>=<\frac{mv^2}{2}> = \int_{0}^{\infty}\frac{mv^2}{2}f(v)dv =  \frac{3k_BT}{2}    \label{eqn:average_kinetic}
 \end{equation}
-Gas pressure at a medium is proportional to the number density of particles.    
+\par\noindent
+Thus, the total Brownian motion energy is:
 \begin{equation}
-PV = N k_B T  \label{eqn:ideal-gasses}
+E_k = N<E_k> =\frac{3}{2}N k_B T = \frac{3}{2}PV    \label{eqn:total_kinetic}
 \end{equation}
-\begin{equation}
-E_k=N<E_k> =\frac{3}{2}N k_B T = \frac{3}{2}PV    \label{eqn:total_kinetic}
-\end{equation}
-
-\noindent
-The Brownian motion kinetic energy is proportional to the number of particles. Vacuum reduces the pressure and number of particles, which reduces the energy. There is energy coupling from the environment on the sides of the medium. Reducing the number of particles reduces the energy coupling.
+\par\noindent
+Eq.~\ref{eqn:total_kinetic} shows that the Brownian motion energy is proportional to the number of gas particles inside the medium. Reducing the gas pressure (having vacuum), which reduces the number of gas particles results with a reduction in the total Brownian motion energy. Since there is thermal energy coupling from the environment on the sides of the medium, reducing the number of particles reduces the energy coupling.
 \subsubsection{Brownian uncertainty}
 The Brownian motion kinetic energy is proportional to the temperature. The noise of quantum uncertainty due to Brownian motion at a given temperature is: 
 \begin{equation}
@@ -304,8 +313,9 @@ The Brownian motion kinetic energy is proportional to the temperature. The noise
 \delta\theta = \sqrt{\frac{k_BT}{\kappa}}\propto{T}  \label{eqn:radiation force}
 \end{equation}
 
-\subsection{Viscous friction}
-The friction caused by gasses is viscous friction, which is velocity dependent. The velocity dependence is complicated. At very low speeds, gas resistance is approximately proportional to velocity: 
+\subsection{Drag}
+The friction caused by gas resistance, which is dependent on the relative velocity between the gas and the object. 
+At the turbulent flow regime, the gas resistance is proportional to the square of the relative velocity: 
 
 \begin{equation}
 F_{drag} = -b\cdot v  \label{eqn:energy-mass-equivalence-relation}
