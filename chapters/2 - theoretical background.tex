@@ -22,7 +22,7 @@ The restoring torque $\tau$, which is proportional to the string torsion coeffic
 \par\noindent
 Assuming homogeneity of a circular string, the string torsion coefficient $\kappa$ can be estimated:
 \begin{equation}
-\kappa = \frac{GJ}{h} = \frac{G}{h} \frac{\pi d^4}{32}    \label{eqn:torsion_coefficient}
+\kappa = \frac{GJ}{h} = \frac{G}{h} \frac{\pi d^4}{32}    \label{eqn:torsion_coefficient_homogeneity}
 \end{equation}
 \par\noindent
 Where $G$ is the material shear modulus, $J$ is the circular second moment of area ($Jzz$), $h$ is the string length and $d$ is the string diameter.
@@ -129,13 +129,14 @@ https://ocw.mit.edu/courses/mathematics/18-03sc-differential-equations-fall-2011
 
 https://www.sciencedirect.com/topics/engineering/underdamped-system#:~:text=When%20the%20damping%20ratio%20is%20between%200%20and%201%20(i.e.,is%20an%20exponential%20decay%20line.
 \fi
-\iffalse
+
 
 \subsubsection{Driven oscillator}
-If the damped oscillator system is further affected by an external time-dependent torque $\tau(t)$, the system is known as a driven oscillator.
+If the damped oscillator system is further affected by an external time-dependent torque $\tau(t)$, the system is known as a driven oscillator, and its motion equation is:
 \begin{equation}
 \tau(t) -\kappa\cdot\theta - b\dot{\theta}  = I\cdot\ddot{\theta}   \label{eqn:driven_motion_equation}
 \end{equation} 
+Eq.~\ref{eqn:driven_motion_equation} could be rewritten as:
 \begin{equation}
 \ddot{\theta} + 2\xi\omega_0\dot{\theta} + \omega_0^2\theta = \frac{\tau(t)}{I}   \label{eqn:damped_motion_equation}
 \end{equation}
@@ -147,19 +148,19 @@ If the damped oscillator system is further affected by an external time-dependen
 
 \section{Gravity measurement}
 \subsection{Gravitational field}
-Newton's law of universal gravitation states that every point mass attracts every other point mass in the universe:
+Newton's law of universal gravitation states that every point mass $M$ attracts every other point mass $m$ in the universe by force $F$ given by:
 \begin{equation}
-\overrightarrow{F}(r) = \frac{GmM}{r^2}\hat{r}    \label{eqn:gravitation_force}
+\overrightarrow{F}(r) = \frac{GMm}{r^2}\hat{r}    \label{eqn:gravitation_force}
 \end{equation} 
-The force acts along the intersecting line, proportional to the product of the masses and inverse to the square of the distance between the centers, meaning the force is very weak. For example, the force between two cubes 1 kg each, 1 meter apart would be $\overrightarrow{F} = 6.67\cdot10^{-11} [N]$.
+The force $F$ acts along the intersecting line, proportional to the product of the masses and inverse to the square of the distance $r$ between the centers, causing the force to be very weak. For example, the force between two cubes 1 kg each, 1 meter apart would be $\overrightarrow{F} = 6.67\cdot10^{-11} [N]$.
 \par\noindent
-The gravitational field $G$ of mass $M$ is a vector field consisting, at every point, vector pointing directly towards the particle. The magnitude of the field at every point is calculated by applying the universal law, the force per unit mass. 
+The gravitational field $g$ of mass $M$ is defined as the force per unit mass, which is a vector field consisting, at every point, a vector pointing directly towards the particle. The magnitude of the field at every point is calculated by applying the universal law. 
 \begin{equation}
-\overrightarrow{G}(r) = \frac{\overrightarrow{F}(r)}{m} = \frac{GM}{r^2}\hat{r}    \label{eqn:gravitation_field}
+\overrightarrow{g}(r) = \frac{\overrightarrow{F}(r)}{m} = \frac{GM}{r^2}\hat{r}    \label{eqn:gravitation_field}
 \end{equation}
 \subsubsection{Field measurement}
 \par\noindent
-The field caused by test mass $M$ at a specific point is calculated by measuring the gravitational force. Test mass $M$ is much larger than each mass $m$, ensuring a negligible influence on the behavior of $M$.  
+The field caused by a test mass $M$ at a specific point is calculated by measuring the gravitational force acting on known mass $m$. In general, test mass $M$ is much larger than mass $m$, ensuring a negligible influence on the behavior of $M$.  
 
 \subsection{Cavendish experiment}
 \subsubsection{Apparatus}
@@ -173,64 +174,63 @@ The field caused by test mass $M$ at a specific point is calculated by measuring
 \par\noindent
 The Cavendish experiment, first performed in the 17th century, was the first experiment to measure the gravitational force between masses. 
 \par\noindent
-The apparatus, as seen in the figure, is constructed by a torsional pendulum and a nearby test mass $M$, creating a net torque on the pendulum. 
+The apparatus, shown in fig.~\ref{fig:Cavendish apparatus}, is constructed by a torsional pendulum and a nearby test mass $M$, creating a net torque on the pendulum. 
 \par\noindent
-The pendulum can be assumed to be of two masses $m$ connected by a rigid, massless thin rod, with length of $2l$, and a pivot at distance $l$ from each side.
+The pendulum can be assumed to be consisted of two masses $m$ connected by a rigid, massless thin rod, with length of $2l$, and a pivot point at distance $l$ from each mass.
 \par\noindent
 The pendulum moment of inertia oscillating around the pivot is:
 \begin{equation}
 I = 2ml^2     \label{eqn:moment_inertia}
 \end{equation} 
 \subsubsection{gravitational torque}
-The net gravitational torque $\tau_g$ for a balanced torsion pendulum is the sum of two inverse, nearly counterbalancing, gravitational torques, one from each mass $m$:
+The mass $M$, located at distance $r_0$ from the pivot point attracts the two masses and creates torques. The net gravitational torque $\tau_g$ for a balanced torsion pendulum is the sum of two inverse, nearly counterbalancing, gravitational torques, one from each mass $m$:
 \begin{equation}
-\tau_g = l \cdot F(r_1) \cdot cos\theta_1 - l \cdot F(r_2) \cdot cos\theta_2 = l d GmM(\frac{1}{r_1^3} - \frac{1}{r_2^3})     \label{eqn:gravitation_torque}
+\tau_g = l \cdot F(r_1) \cdot cos\theta_1 - l \cdot F(r_2) \cdot cos\theta_2 = l d GmM(\frac{1}{r_1^3} - \frac{1}{r_2^3})     \label{eqn:net_gravitation_torque}
 \end{equation}
-Defining the function $h(l)$, where: $h(l) = \frac{1}{r_1^3},\quad	h(-l) = \frac{1}{r_2^3},\quad	h(0) = \frac{1}{r_0^3}$.
+Defining the function $h(l)$:
 \begin{equation}
 h(l) = \frac{1}{(d^2 +(x-l)^2)^{3/2}} \label{eqn:gravitation_torque}
 \end{equation}
-\par\noindent
-The net torque is proportional to the difference of the functions $h(l)-h(-l)$. Since $l<<d,x,r_0$ one can approximate:
+Where $h(l) = \frac{1}{r_1^3},\quad	h(-l) = \frac{1}{r_2^3},\quad	h(0) = \frac{1}{r_0^3}$, and $h'(0) = \frac{3x}{r_0^5}$. Since $l<<d,x,r_0$ one can approximate:
 \begin{equation}
-h(l)-h(-l)\approx h'(0)\cdot 2l,\quad h'(0) = \frac{3x}{r_0^5}\label{eqn:approximation}
+h(l)-h(-l)\approx h'(0)\cdot 2l = \frac{6lx}{r_0^5}\label{eqn:approximation}
 \end{equation}
+According to eq.~\ref{eqn:net_gravitation_torque}, the net torque is proportional to the difference of the functions $h(l)-h(-l)$:
 \begin{equation}
-\tau_g = l d GmM[h(l)-h(-l)]\approx \frac{6l^2GmMdx} {r_0^5} = \frac{6l^2GmMcos\theta sin\theta}{r_0^3}      \label{eqn:gravitation_torque}
+\tau_g = l d GmM[h(l)-h(-l)]\approx \frac{6l^2GmMxd} {r_0^5} = \frac{6l^2GmM sin\theta cos\theta}{r_0^3}      
+\label{eqn:net_gravitation_torque_approx}
 \end{equation}
-Accordingly, it the approximated that $\theta_1 \approx \theta_2 = \theta$, where $\theta$ is the tilt angle of the torsion. Which results with response the net force gradient, as can be seen by the dependency on $\frac{1}{r^3}$.
+Where $\theta$ is the tilt angle of the torsional pendulum and approximately $\theta_1 \approx \theta_2 = \theta$.
 \subsubsection{Simple harmonic oscillator}
-Assuming no friction or other damping force (simple harmonic motion) when test mass $M$ is introduced, there are two sources of torque in the system; the net torque caused by the gravitational force $\tau_g$, and a restoring torque at the opposite direction, where  $\kappa$ is the wire torsion coefficient:
+Assuming no friction or other damping force (simple harmonic motion) when a test mass $M$ is introduced, there are two sources of torque in the system; the net torque caused by the gravitational force $\tau_g$ (eq.~\ref{eqn:net_gravitation_torque_approx}), and a restoring torque at the opposite direction caused by the wire torsion (eq.~\ref{eqn:undamped_motion_equation}):
 \begin{equation}
 \tau = \tau_g - \kappa\theta     \label{eqn:gravitation_torque}
 \end{equation}
 \par\noindent
-As seen previously, for a torsion pendulum:
+As seen previously in eq.~\ref{eqn:undamped_omega}, for a torsional pendulum:
 \begin{equation}
 \kappa = I\omega_0^2 = (2ml^2)(\frac{2\pi}{T})^2     \label{eqn:moment_inertia}
 \end{equation} 
 \par\noindent
-At equilibrium, when balance stabilizes in a specific angle, the two sources of torque cancel each other out:
+At equilibrium, the two sources of torque cancel each other out:
 \begin{equation}
 \kappa\theta = \tau_g    \label{eqn:gravitation_torque}
 \end{equation}
+Accordingly, $\overline{\theta}$ the average equilibrium tilt angle of torsion is:
 \begin{equation}
-\overline{\theta} = \frac{\tau_g}{\kappa}     \label{eqn:theta average}
+\overline{\theta} = \frac{\tau_g}{\kappa}  \approx \frac{6l^2GmMcos\theta sin\theta}{2ml^2 (\frac{2\pi}{T})^2 r_0^3}   \label{eqn:theta average}
 \end{equation} 
-
- 
-
 \begin{equation}
-\overline{\theta} \approx \frac{6l^2GmMcos\theta sin\theta}{2ml^2 (\frac{2\pi}{T})^2 r_0^3} = \frac{3GT^2cos\theta sin\theta}{4\pi^2 } \cdot \frac{M}{r_0^3}   \label{eqn:theta average}
+\overline{\theta}  \approx \frac{3GT^2cos\theta sin\theta}{4\pi^2 } \cdot \frac{M}{r_0^3}   \label{eqn:theta average_2}
 \end{equation}
 \par\noindent
-The pendulum angle is proportional to period's length $T$, pendulum length $l$ and masses $m$ are dropped out, indicating that short light weight sensors work as well as larger ones, as long as their periods are the same.
+The pendulum equilibrium angle is proportional to the square of the period's length $T$, the pendulum length $l$ and the masses $m$ are dropped out, indicating that short and light weight sensors work well as larger ones, as long as their periods are the same.
 \par\noindent
-The torsion string coefficient $\kappa$ could be estimated from the oscillations period. With accurate angle measurement, the gravitational field could be estimated.
+According to eq.~\ref{eqn:theta average_2}, by accurate angle measurement, the gravitational field could be estimated.
  
 
 \subsection{Gravity sensing}
-The field at a specific point is the superposition of fields' point value. These fields are created by any mass in space. Measuring the gravitational field caused by a mass accurately, with a known test mass, the mass weight or distance could be estimated. In order to filter out the other gravitational fields caused by masses around, one measures the difference from a baseline state.
+The field at a specific point is the superposition of multiple fields, caused by any mass in space $M$ acting on mass $m$ located at that point. Measuring the gravitational field caused by a specific test mass $M$ accurately, test mass $M$ weight or its distance could be estimated. In order to filter out the other gravitational fields caused by masses around, one measures the difference from a baseline state.
 \par\noindent
 Usually the measurement is with a frequency. The test mass moves in different frequencies, where not moving would be zero frequency. The masses around don't move, and are filtered out.
 \par\noindent
@@ -387,7 +387,7 @@ $D$ is proportional to error current change rate, by calculating the derivative.
 \par\noindent
 The optimal control function is achieved by balancing the responses. The tuning constants depend on the characteristics of the specific process. The response must be tuned for each control application.  
 
-\fi
+
 \end{document}
 
 
