@@ -42,7 +42,10 @@ Damping is made using a PID feedback loop. The tilt angle is measured, and an eq
 \par\noindent
 With PID tuned correct the damped pendulum is at critical damping and oscillations become smaller. The measured error $e(t)$ and the PID damping response $u(t)$ (eq.~\ref{eqn:PID response}) are both minimized. 
 \par\noindent
-Introducing a new mass adds a constant new torque to the system $\tau_g$ (eq.~\ref{eqn:net_gravitation_torque_approx}), the PID is compensating the torque with a proportional gain $K_P$. The PID response becomes mainly an inverse torque. Assuming the mass moves at low frequencies, when integrating over short periods the angle is constant in time.
+Introducing a new mass adds a constant new torque to the system $\tau_g$ (eq.~\ref{eqn:net_gravitation_torque_approx}), accordingly the average tilt angle becomes $\theta_g$ 
+(eq.~\ref{eqn:theta average_2}). 
+
+The PID is compensating measured error with a proportional gain $K_P$. The PID response becomes mainly an inverse torque. Assuming the mass moves at low frequencies, when integrating over short periods the angle is constant in time.
 \begin{equation}
 e(t) = \delta\theta(t) + \theta_g    \label{eqn:PID_measurement}
 \end{equation}
