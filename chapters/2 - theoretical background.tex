@@ -2,7 +2,6 @@
 \documentclass[\main/master.tex]{subfiles}
 \begin{document}
 \chapter{Theoretical background}\label{chapter:Theoretical background}
-
 \section{Torsional pendulum}
 \subsection{Torsional pendulum}
 \begin{figure}[htbp]
@@ -189,7 +188,7 @@ The mass $M$, located at distance $r_0$ from the pivot point attracts the two ma
 \end{equation}
 Defining the function $h(l)$:
 \begin{equation}
-h(l) = \frac{1}{(d^2 +(x-l)^2)^{3/2}} \label{eqn:gravitation_torque}
+h(l) = \frac{1}{(d^2 +(x-l)^2)^{3/2}} \label{eqn:gravitation torque func}
 \end{equation}
 Where $h(l) = \frac{1}{r_1^3},\quad	h(-l) = \frac{1}{r_2^3},\quad	h(0) = \frac{1}{r_0^3}$, and $h'(0) = \frac{3x}{r_0^5}$. Since $l<<d,x,r_0$ one can approximate:
 \begin{equation}
@@ -214,7 +213,7 @@ As seen previously in eq.~\ref{eqn:undamped_omega}, for a torsional pendulum:
 \par\noindent
 At equilibrium, the two sources of torque cancel each other out:
 \begin{equation}
-\kappa\theta = \tau_g    \label{eqn:gravitation_torque}
+\kappa\theta = \tau_g    \label{eqn:gravitation_torque_equilibrium}
 \end{equation}
 Accordingly, $\overline{\theta}$ the average equilibrium tilt angle of torsion is:
 \begin{equation}
@@ -295,7 +294,7 @@ f(v) = 4\pi(\frac{m}{2 \pi k_B T})^{3/2}\cdot v^2\cdot exp(\frac{-mv^2}{2kk_BT})
 \par\noindent 
 Thus, the average kinetic energy for a gas particle is: 
 \begin{equation}
-<E_k>=<\frac{mv^2}{2}> = \int_{0}^{\infty}\frac{mv^2}{2}f(v)dv =  \frac{3k_BT}{2}    \label{eqn:average_kinetic}
+<E_k>=<\frac{mv^2}{2}> = \int_{0}^{\infty}\frac{mv^2}{2}f(v)dv =  \frac{3k_BT}{2}    \label{eqn:average kinetic}
 \end{equation}
 \par\noindent
 Thus, the total Brownian motion energy is:
@@ -317,24 +316,30 @@ The Brownian motion kinetic energy is proportional to the temperature. The noise
 \subsubsection{Flow characteristics}
 The Reynolds number $Re$ is used to characterize types of gas flow:
 \begin{equation}
-Re= \frac{\rho v d}{\mu}     \label{eqn:Reynolds number}
+Re= \frac{\rho u L}{\mu}     \label{eqn:Reynolds number}
 \end{equation}
-Where $\rho$ is the gas density, $v$ is the flow speed, $d$ is the medium diameter and $\mu$ is the fluid viscosity. The density $\rho$ of an ideal gas: 
+Where $\rho$ is the gas density, $u$ is the flow speed, $L$ is the medium characteristic dimensions and $\mu$ is the fluid viscosity. The density $\rho$ of an ideal gas: 
 \begin{equation}
 \rho = \frac{MP}{RT}     \label{eqn:ideal density}
 \end{equation}
 Where $M$ is the gas molar mass, and $R$ is the ideal gas constant. Thus, for a constant temperature $T$ the medium pressure $P$ is proportional the gas density $\rho$ and to the Reynolds number $Re$. 
 
 \subsubsection{Drag}
-Drag force $F_{drag}$ is the friction caused by gas resistance, which is dependent on the relative velocity $v$ (the flow speed) between the gas and the object. At higher pressures, when Reynolds number is relatively high the drag is proportional to the square of the relative velocity $v$:
+Drag force $F_{drag}$ is the friction caused by gas resistance, which is dependent on the relative velocity $v$ between the gas and the object. At higher pressures, when Reynolds number is relatively high the drag is proportional to the square of the relative velocity $v$:
 \begin{equation}
-F_{drag} = -\frac{1}{2}\rho v^2 C_d A  \label{eqn:drag_force}
+F_{drag} = \frac{1}{2}\rho v^2 C_d A  \label{eqn:energy-mass-equivalence-relation}
 \end{equation}
 Where $C_d$ is the drag coefficient, and $A$ is the cross section of the area. When pressure decreases and the Reynolds number approaches zero it can be shown that  $C_d \rightarrow \frac{24}{Re}$, resulting with Stokes' drag:
+
 \begin{equation}
 F_{drag} = -\frac{1}{2}\rho v^2 C_d A  = -\frac{1}{2}\rho v^2 \frac{24}{Re} A = -\frac{1}{2}\rho v^2 \frac{24\mu}{\rho v d} \frac{\pi d^2}{4} = -3\pi\mu d v = -b v
 \label{eqn:drag_force_low}
 \end{equation}
+\begin{equation}
+F_{drag} = - b \cdot v
+\label{eqn:drag_force_low_final}
+\end{equation}
+
 
 
 
@@ -421,7 +426,6 @@ $I$ is proportional to past error value's integration. The response of the cumul
 $D$ is proportional to error current change rate, by calculating the derivative. The response of the change rate could eliminate more rapid changes.
 \par\noindent
 The optimal control function is achieved by balancing the responses. The tuning constants depend on the characteristics of the specific process. The response must be tuned for each control application.  
-
 
 \end{document}
 
