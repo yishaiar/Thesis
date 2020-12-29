@@ -322,10 +322,10 @@ Where $\rho$ is the gas density, $v$ is the flow speed, $d$ is the area diameter
 \begin{equation}
 \rho = \frac{MP}{RT}     \label{eqn:ideal density}
 \end{equation}
-Where $M$ is the gas molar mass, and $R$ is the ideal gas constant. Thus, for a constant temperature $T$ the medium pressure $P$ is proportional the gas density $\rho$ and to the Reynolds number $Re$. 
+Where $M$ is the gas molar mass, and $R$ is the ideal gas constant. Thus, for a constant temperature $T$ the medium pressure $P$ is proportional to the gas density $\rho$ and to the Reynolds number $Re$. 
 
 \subsubsection{Drag}
-Drag force $F_{drag}$ is the friction caused by gas resistance, which is dependent on the relative velocity (the flow speed) $v$ between the gas and the object. At higher pressures, when Reynolds number is relatively high the drag is proportional to the square of the relative velocity $v$:
+THE drag force $F_{drag}$ is the friction caused by gas resistance, which is dependent on the relative velocity (the gas flow speed) $v$ between the gas and the object. At higher pressures, when Reynolds number is relatively high the drag is proportional to the square of the velocity:
 \begin{equation}
 F_{drag} = -\frac{1}{2}\rho C_d A\cdot v^2 = -b\cdot v^2 \label{eqn:energy-mass-equivalence-relation}
 \end{equation}
@@ -347,8 +347,8 @@ Acoustic waves are adiabatic compression and decompression waves propagating thr
 \begin{equation}
 P=P_0 cos(\omega t -k x)       \label{eqn:acoustic_pressure}
 \end{equation}
-
-Where $P$ is the actual pressure, $P_0$ is the average pressure, $k$ is the acoustic wave number and $omega$ is the wave angular frequency. The acoustic intensity is defined by:
+\par\noindent
+Where $P$ is the actual pressure, $P_0$ is the average pressure, $k$ is the acoustic wave number and $\omega$ is the wave angular frequency. The acoustic intensity is defined by:
 \begin{equation}
 I = pV      \label{eqn:acoustic_intensity}
 \end{equation} 
@@ -385,6 +385,7 @@ The outgassing is minimized by selecting low vapor-pressure materials such as st
 	\label{fig:PID_scheme}
 \end{figure}
 \FloatBarrier
+\par\noindent
 Proportional–integral–derivative (PID) controller is a feedback based control system. The control loop is used for time continuous control of a process, so the process output is close to a defined set point.
 \par\noindent
 PID controller continuously calculates error value, which is the difference of the process output from the defined set point. The feedback applies an external correction to the process, called control variable. The control variable is based on a gain to the error of proportional $P$, integral $I$ and derivative $D$. Proper tuning of a PID enables an accurate automated correction to a controlled process. The PID concept is used widely in applications requiring accurate automated control.
