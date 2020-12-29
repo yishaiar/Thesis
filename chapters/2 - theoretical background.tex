@@ -323,7 +323,13 @@ Where $\rho$ is the gas density, $u$ is the flow speed, $L$ is the medium charac
 \begin{equation}
 \rho = \frac{MP}{RT}     \label{eqn:ideal density}
 \end{equation}
-Where $M$ is the gas molar mass, and $R$ is the ideal gas constant. Thus, for a constant temperature $T$ the medium pressure $P$ is proportional the gas density $\rho$ and the Reynolds number $Re$. 
+Where $M$ is the gas molar mass, and $R$ is the ideal gas constant. Thus, for a constant temperature $T$ the medium pressure $P$ is proportional the gas density $\rho$ and to the Reynolds number $Re$. 
+
+\subsubsection{Drag}
+Drag is the friction caused by gas resistance, which is dependent on the relative velocity $v$ between the gas and the object. At higher pressures, when Reynolds number is relatively high the drag is proportional to the square of the relative velocity:
+\begin{equation}
+F_{drag} = \frac{1}{2}\rho v^2 C_d A  \label{eqn:energy-mass-equivalence-relation}
+\end{equation}
 
 \subsubsection{Flow characteristics}
 Gas pressure at a medium is inverse to the mean free pass of each particle. A gas particle collides many times along it's way. It's mean free path is the average distance the particle could pass between two collisions with other particles. 
@@ -338,7 +344,6 @@ K_n = \frac{I}{d}     \label{eqn:mean-free-pass}
 \end{equation}
 
 
-The friction caused by gas resistance, which is dependent on the relative velocity between the gas and the object. 
 At the turbulent flow regime, the gas resistance is proportional to the square of the relative velocity: 
 
 \begin{equation}
