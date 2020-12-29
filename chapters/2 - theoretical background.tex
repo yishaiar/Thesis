@@ -317,9 +317,9 @@ The Brownian motion kinetic energy is proportional to the temperature. The noise
 \subsubsection{Flow characteristics}
 The Reynolds number $Re$ is used to characterize types of gas flow:
 \begin{equation}
-Re= \frac{\rho v L}{\mu}     \label{eqn:Reynolds number}
+Re= \frac{\rho v d}{\mu}     \label{eqn:Reynolds number}
 \end{equation}
-Where $\rho$ is the gas density, $v$ is the flow speed, $L$ is the medium characteristic dimensions and $\mu$ is the fluid viscosity. The density $\rho$ of an ideal gas: 
+Where $\rho$ is the gas density, $v$ is the flow speed, $d$ is the medium diameter and $\mu$ is the fluid viscosity. The density $\rho$ of an ideal gas: 
 \begin{equation}
 \rho = \frac{MP}{RT}     \label{eqn:ideal density}
 \end{equation}
@@ -328,11 +328,11 @@ Where $M$ is the gas molar mass, and $R$ is the ideal gas constant. Thus, for a 
 \subsubsection{Drag}
 Drag force $F_{drag}$ is the friction caused by gas resistance, which is dependent on the relative velocity $v$ (the flow speed) between the gas and the object. At higher pressures, when Reynolds number is relatively high the drag is proportional to the square of the relative velocity $v$:
 \begin{equation}
-F_{drag} = \frac{1}{2}\rho v^2 C_d A  \label{eqn:drag_force}
+F_{drag} = -\frac{1}{2}\rho v^2 C_d A  \label{eqn:drag_force}
 \end{equation}
 Where $C_d$ is the drag coefficient, and $A$ is the cross section of the area. When pressure decreases and the Reynolds number approaches zero it can be shown that  $C_d \rightarrow \frac{24}{Re}$, resulting with Stokes' drag:
 \begin{equation}
-F_{drag} = \frac{1}{2}\rho v^2 C_d A  = \frac{1}{2}\rho v^2 \frac{24}{Re} A = \frac{1}{2}\rho v^2 \frac{24\mu}{\rho v L} A = \frac{12\mu vA}{L} 
+F_{drag} = -\frac{1}{2}\rho v^2 C_d A  = -\frac{1}{2}\rho v^2 \frac{24}{Re} A = -\frac{1}{2}\rho v^2 \frac{24\mu}{\rho v d} \frac{\pi d^2}{4} = -3\pi\mu d v = -b v
 \label{eqn:drag_force_low}
 \end{equation}
 
