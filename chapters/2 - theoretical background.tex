@@ -325,45 +325,21 @@ Where $\rho$ is the gas density, $v$ is the flow speed, $d$ is the area diameter
 Where $M$ is the gas molar mass, and $R$ is the ideal gas constant. Thus, for a constant temperature $T$ the medium pressure $P$ is proportional the gas density $\rho$ and to the Reynolds number $Re$. 
 
 \subsubsection{Drag}
-Drag force $F_{drag}$ is the friction caused by gas resistance, which is dependent on the relative velocity $v$ between the gas and the object. At higher pressures, when Reynolds number is relatively high the drag is proportional to the square of the relative velocity $v$:
+Drag force $F_{drag}$ is the friction caused by gas resistance, which is dependent on the relative velocity (the flow speed) $v$ between the gas and the object. At higher pressures, when Reynolds number is relatively high the drag is proportional to the square of the relative velocity $v$:
 \begin{equation}
 F_{drag} = \frac{1}{2}\rho v^2 C_d A  \label{eqn:energy-mass-equivalence-relation}
 \end{equation}
-Where $C_d$ is the drag coefficient, and $A$ is the cross section of the area. When pressure decreases and the Reynolds number approaches zero it can be shown that  $C_d \rightarrow \frac{24}{Re}$, resulting with Stokes' drag:
+Where $C_d$ is the drag coefficient, and $A$ is the cross section of the area. When pressure decreases and the Reynolds number approaches zero it can be shown that $C_d \rightarrow \frac{24}{Re}$, resulting with Stokes' drag:
 
 \begin{equation}
-F_{drag} = -\frac{1}{2}\rho v^2 C_d A  = -\frac{1}{2}\rho v^2 \frac{24}{Re} A = -\frac{1}{2}\rho v^2 \frac{24\mu}{\rho v d} \frac{\pi d^2}{4} = -3\pi\mu d v = -b v
+F_{drag} = -\frac{1}{2}\rho v^2 C_d A  = -\frac{1}{2}\rho v^2 \frac{24}{Re} A = -\frac{1}{2}\rho v^2 \frac{24\mu}{\rho v d} \frac{\pi d^2}{4} = -3\pi\mu d\cdot v
 \label{eqn:drag_force_low}
 \end{equation}
 \begin{equation}
 F_{drag} = - b \cdot v
 \label{eqn:drag_force_low_final}
 \end{equation}
-
-
-
-
-\subsubsection{Flow characteristics}
-Gas pressure at a medium is inverse to the mean free pass of each particle. A gas particle collides many times along it's way. It's mean free path is the average distance the particle could pass between two collisions with other particles. 
-
-
-\begin{equation}
-I = \frac{k_B\cdot T}{\sqrt{2}\cdot\pi\cdot p\cdot d_m^2}     \label{eqn:mean-free-pass}
-\end{equation}
-The Knudsen ratio, derived from the above term, is used to characterize types of gas flow compare to the pipe diameter.
-\begin{equation}
-K_n = \frac{I}{d}     \label{eqn:mean-free-pass}
-\end{equation}
-
-
-At the turbulent flow regime, the gas resistance is proportional to the square of the relative velocity: 
-
-\begin{equation}
-F_{drag} = -b\cdot v  \label{eqn:energy-mass-equivalence-relation}
-\end{equation}
-\par\noindent
-When Knudsen ratio is $0.01<k_n<0.5$, at a medium vacuum regime, the flow is called Knudsen flow. The molecules do not interact and move in straight lines between points. If chamber vacuum level is medium or higher, classical viscous friction of objects with gas particles inside the chamber could be negligible.
-
+The drag force is pressure dependent, until pressure decreases to a level in which the drag is negligible.
 
 \subsection{Acoustic wave}
 Acoustic waves are energy propagating through material, by adiabatic compression and decompression. The equation of one dimension acoustic wave, where the amplitude is acoustic pressure is:
