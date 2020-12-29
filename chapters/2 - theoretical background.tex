@@ -327,20 +327,19 @@ Where $M$ is the gas molar mass, and $R$ is the ideal gas constant. Thus, for a 
 \subsubsection{Drag}
 Drag force $F_{drag}$ is the friction caused by gas resistance, which is dependent on the relative velocity (the flow speed) $v$ between the gas and the object. At higher pressures, when Reynolds number is relatively high the drag is proportional to the square of the relative velocity $v$:
 \begin{equation}
-F_{drag} = \frac{1}{2}\rho v^2 C_d A  \label{eqn:energy-mass-equivalence-relation}
+F_{drag} = -\frac{1}{2}\rho C_d A\cdot v^2 \label{eqn:energy-mass-equivalence-relation}
 \end{equation}
 Where $C_d$ is the drag coefficient, and $A$ is the cross section of the area. When pressure decreases and the Reynolds number approaches zero it can be shown that $C_d \rightarrow \frac{24}{Re}$, resulting with Stokes' drag:
 
 \begin{equation}
-F_{drag} = -\frac{1}{2}\rho v^2 C_d A  = -\frac{1}{2}\rho v^2 \frac{24}{Re} A = -\frac{1}{2}\rho v^2 \frac{24\mu}{\rho v d} \frac{\pi d^2}{4} = -3\pi\mu d\cdot v
+F_{drag} = -\frac{1}{2}\rho C_d A\cdot v^2  = -\frac{1}{2}\rho \frac{24}{Re} A\cdot v^2 = -\frac{1}{2}\rho \frac{24\mu}{\rho v d}\cdot v^2 \frac{\pi d^2}{4} = -3\pi\mu d\cdot v
 \label{eqn:drag_force_low}
 \end{equation}
 \begin{equation}
 F_{drag} = - b \cdot v
 \label{eqn:drag_force_low_final}
 \end{equation}
-The air viscosity is  $\mu = 1.81/cdot10^{-5}[\frac{kg}{m/cdot s}]$ resulting with a 
-The drag force is pressure dependent, until pressure decreases to a level in which the drag  is negligible.
+The drag force is pressure dependent, decreased pressure results with lower drag force. When reaching the medium vacuum regime, the drag becomes Stokes's drag which is viscosity dependent,
 
 \subsection{Acoustic wave}
 Acoustic waves are energy propagating through material, by adiabatic compression and decompression. The equation of one dimension acoustic wave, where the amplitude is acoustic pressure is:
