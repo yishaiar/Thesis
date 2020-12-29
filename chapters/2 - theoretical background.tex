@@ -230,9 +230,9 @@ According to eq.~\ref{eqn:theta average_2}, by accurate angle measurement, the g
  
 
 \subsection{Gravity sensing}
-The field at a specific point is the superposition of multiple fields, caused by any mass in space $M$ acting on mass $m$ located at that point. Measuring the gravitational field caused by a specific test mass $M$ accurately with known mass $m$, the test mass $M$ weight or its distance could be estimated. In order to filter out the other gravitational fields caused by masses around, one measures the difference from a baseline state.
+The field at a specific point is the superposition of multiple fields, caused by any mass in space $M$ acting on the mass $m$ located at that point. Measuring the gravitational field caused by a specific test mass $M$ accurately with known mass $m$, the test mass $M$ weight or its distance could be estimated. In order to filter out the other gravitational fields caused by masses around, one measures the difference from a baseline state.
 \par\noindent
-Usually the measurement is based on measuring oscillation frequency. The test mass oscillates in different frequencies, where not moving would be zero frequency. The masses around that do not move, are filtered out.
+Usually the measurement is based on measuring oscillation frequency. The test mass oscillates in different frequencies. The masses around that do not move, are filtered out.
 \par\noindent
 The sensor's tilt angle caused by the gravitational field is measured at each frequency, measuring the energy spectral density $[\frac{rad}{\sqrt{Hz}}]$ of the sensor.
 In the measurement system different noises have different frequencies. By integrating over long periods, measurement noises are reduced. The signal to noise ratio (SNR) is the limiting factor for the sensitivity of a measuring system. In higher frequencies the integration is faster, causing less noises and higher SNR.
@@ -241,7 +241,7 @@ The dependency of the SNR on frequency causes difficulties when measuring gravit
 This limitation is a significant challenge while designing gravimetric sensors for low frequencies.
 
 \subsubsection{The shot noise limit}
-A optical measurement system can not measure a signal smaller than its shot noise, which is a fundamental quantum physical phenomenon. The power of an optical signal fluctuates due to fluctuations in the number of photons $N$ in the signal. The SNR of a shot noise limited system is:
+An optical measurement system can not measure a signal smaller than its shot noise, which is a fundamental quantum physical phenomenon. The power of an optical signal fluctuates due to fluctuations in the number of photons $N$ in the signal. The SNR of a shot noise limited system is:
 \begin{equation}
 SNR = \frac{N}{\sqrt{N}} = \sqrt{N}    \label{eqn:shot_noise}
 \end{equation}
@@ -286,7 +286,7 @@ According to the ideal gas law:
 \begin{equation}
 N k_B T = PV  \label{eqn:ideal-gasses}
 \end{equation}
-Where $N$ is the number of particles inside the medium, $k_B$ is the Boltzmann constant, $T$ is the temperature, $P$ is the gas pressure and $V$ is the medium volume. Thus, when medium volume $V$ is constant, the gas pressure is proportional to the number of particles.
+Where $N$ is the number of particles inside the medium, $k_B$ is the Boltzmann constant, $T$ is the temperature, $P$ is the gas pressure and $V$ is the medium volume. Thus, when medium volume $V$ is constant, the gas pressure $P$ is proportional to the number of particles $N$.
 \par\noindent
 The Maxwell-Boltzmann distribution of molecular speed is:
 \begin{equation}
@@ -303,7 +303,7 @@ Thus, the total Brownian motion energy is:
 E_k = N<E_k> =\frac{3}{2}N k_B T = \frac{3}{2}PV    \label{eqn:total_kinetic}
 \end{equation}
 \par\noindent
-Eq.~\ref{eqn:total_kinetic} shows that the Brownian motion energy is proportional to the number of gas particles inside the medium. Reducing the gas pressure (having vacuum), which reduces the number of gas particles results with a reduction in the total Brownian motion energy. Since there is thermal energy coupling from the environment on the sides of the medium, reducing the number of particles reduces the energy coupling.
+Eq.~\ref{eqn:total_kinetic} shows that the Brownian motion energy is proportional to the number of gas particles inside the medium. Reducing the gas pressure (having vacuum), which reduces the number of gas particles results with a reduction in the total Brownian motion energy. Since there is thermal energy coupling from the environment on the sides of the medium, reducing the number of particles also reduces the energy coupling.
 \subsubsection{Brownian uncertainty}
 The Brownian motion kinetic energy is proportional to the temperature. The noise of quantum uncertainty due to Brownian motion at a given temperature is: 
 \begin{equation}
