@@ -356,7 +356,7 @@ The acoustic intensity is the power carried by acoustic waves $[\frac{W}{m^2}]$,
 
 \subsection{Vacuum quality}
 \subsubsection{Leak rate}
-At any vacuum gas system, some gas would slowly leak over time and increase the pressure if not pumped out. The leak rate $Q_L$ is not a function of time but rather of volume, and results in a sustained increase of pressure P over time.
+At any vacuum gas system, some gas slowly leaks over time and increases the gas pressure if not pumped out. The leak rate $Q_L$ is the pressure change over time for a given volume, and results in a sustained increase of pressure P over time:
 \begin{equation}
 Q_L = \frac{\Delta P\cdot V}{\Delta t}  \label{eqn:energy-mass-equivalence-relation}
 \end{equation}
@@ -366,15 +366,15 @@ There is also a diffusion rate of gas molecules, such as helium, which is insign
 
 \subsubsection{Outgassing}
 \par\noindent
-At low pressures, there are more gas molecules adsorbed on the chamber surface than floating in the chamber. When pressure is below vapor pressure there is a desorption of gas molecules (primarily water) from the material.
+At low pressures, there are more gas molecules (primarily water) bound to the chamber surfaces than floating in the chamber. When pressure is below vapor pressure there is a desorption of the gas molecules from the material.
 \par\noindent
-Outgassing is the desorption rate $Q_{des}$ which over time increases the pressure. The desorption rate depends on the surface area and the desorption density $q_{des}$ which is area specific. 
+Outgassing is the desorption rate $Q_{des}$ which over time increases the pressure. The desorption rate depends on the surface area and the desorption density $q_{des}$ which is area dependent. 
 \begin{equation}
 Q_{des} = q_{des}\cdot A\cdot\frac{t_0}{t}  \label{eqn:energy-mass-equivalence-relation}
 \end{equation}
-The desorption rate produces a gas yield that declines over time. It could be assumed that after a given time $t>t_0$, the increase is linear over time, typically $t_0$ assumed to be one hour.
+The desorption rate produces a gas yield that declines over time. It could be assumed that after a given time $t_0$, typically one hour, the pressure increase is linear over time.
 \par\noindent
-Outgassing is minimized by selection of low vapor pressure materials such as stainless steel and glass. Since water is a significant source of outgassing, it is usually minimized by baking the chamber at high temperatures while the pump is running.
+Outgassing is minimized by selection of low vapor pressure materials such as stainless steel and glass. Since water is a significant source of outgassing, the outgassing is usually minimized by baking the chamber at high temperatures while having the vacuum pump is running.
 
 
 \section{Proportional–integral–derivative (PID) controller}
