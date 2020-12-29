@@ -42,11 +42,13 @@ Damping is made using a PID feedback loop. The tilt angle is measured, and an eq
 \par\noindent
 With PID tuned correct the damped pendulum is at critical damping and oscillations become smaller. The measured error $e(t)$ and the PID damping response $u(t)$ (eq.~\ref{eqn:PID response}) are both minimized. 
 \par\noindent
-Introducing a new mass adds a constant new torque to the system $\tau_g$ (eq.~\ref{eqn:net_gravitation_torque_approx}), accordingly the average tilt angle becomes $\overline{\theta}_g$ (eq.~\ref{eqn:theta average_2}). The measured error $e(t)$:
+In the previous chapter it was shown that for a torsional pendulum the average tilt angle becomes $\overline{\theta}_g$ (eq.~\ref{eqn:theta average_2}). The angle is proportional to the square of the period's length $T$, the pendulum length $l$ and the masses $m$ are dropped out, indicating that short and light weight sensors work well as larger ones, as long as their periods are the same.
+\par\noindent
+Introducing a new mass adds a constant new torque to the system $\tau_g$ (eq.~\ref{eqn:net_gravitation_torque_approx}), accordingly the average tilt angle becomes $\overline{\theta}_g$ (eq.~\ref{eqn:theta average_2}). The resulting measured error $e(t)$:
 \begin{equation}
 e(t) = \delta\theta(t) + \theta_g    \label{eqn:error_measurement}
 \end{equation}
-The PID is compensating the constant error with a proportional gain $K_P$. The PID response becomes mainly an inverse torque:
+The PID is compensating the new error with mainly a proportional gain $K_P$, and the response $u(t)$ becomes mainly an inverse torque:
 \begin{equation}
 u(t) = u[ \delta\theta(t)] + K_P\theta_g(t) \label{eqn:PID_response}
 \end{equation}
@@ -54,17 +56,12 @@ Assuming the mass is oscillating at a low frequency, when integrating over short
 \begin{equation}
 U = \int u(t) dt  \approx K_P\overline{\theta}_g\Delta t \label{eqn:PID_measurement_eqn}
 \end{equation}
-Where $U$ is the sum of the PID response, and $Delta t$ is the integration time. The gravitational angle is:
+Where $U$ is the sum of the PID response, and $\Delta t$ is the integration time. The gravitational angle is:
 \begin{equation}
 \overline{\theta}_g \approx \frac{U}{K_P\Delta t}      \label{eqn:pid_gravitation_torque}
 \end{equation}
-In the previous chapter it was shown that for a torsional pendulum the average tilt angle becomes $\overline{\theta}_g$ (eq.~\ref{eqn:theta average_2}). The angle is proportional to the square of the period's length $T$, the pendulum length $l$ and the masses $m$ are dropped out, indicating that short and light weight sensors work well as larger ones, as long as their periods are the same.
 \par\noindent
 According to eq.~\ref{eqn:theta average_2}, by accurate angle measurement, the gravitational field could be estimated.
- 
-
-\par\noindent
-The torsion string coefficient $\kappa$ could be estimated from the oscillations period. With accurate angle measurement, the gravitational field could be estimated.
 \par\noindent
 The measurement system allows fast response (short integration time) and high accuracy while measuring low frequency gravity fields. 
 
