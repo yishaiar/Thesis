@@ -37,18 +37,16 @@ As shown previously (eq.~\ref{eqn:undamped_omega}), for a torsional pendulum, th
 \begin{equation}
 T = 2\pi\sqrt{\frac{I}{\kappa}}= 2\pi\sqrt{\frac{2ml^2}{\kappa}}   \label{eqn:undamped_motion_equation_3}
 \end{equation}
-Where $\kappa$ the string torsion coefficient is given by(eq.~\ref{eqn:torsion_coefficient_homogeneity}):
+Where $\kappa$ the string torsion coefficient is given by (eq.~\ref{eqn:torsion_coefficient_homogeneity}):
 \begin{equation}
 \kappa = \frac{G}{h} \frac{\pi d^4}{32}    \label{eqn:torsion_coefficient}
 \end{equation}
 \par\noindent
-Longer string with smaller diameter results with a desired small string torsion coefficient $\kappa$. 
-\par\noindent
-In order to achieve a string with as small diameter as possible, tungsten string with high tensile strength was chosen. The high tensile strength allows a small diameter while overcoming suction forces when vacuum engine is working and holding the pendulum without tear. Tungsten is also vacuum compatible. 
+Longer string with smaller diameter results in a desired small string torsion coefficient $\kappa$. In order to achieve a string with as small a diameter as possible, tungsten string with high tensile strength was chosen. The high tensile strength allows a small diameter while overcoming suction forces when vacuum engine is working and holding the pendulum without tear. Tungsten is also vacuum compatible. 
 \par\noindent
 In order to minimize the magnetic noise in the measurements, the torsional pendulum was made out of stainless steel 316 (instead of stainless steel 304). Stainless steel 316 has a lower relative magnetic permeability $\mu_r$ \cite{SS316}.
 \par\noindent
-The experiment, is constructed using a front mirror, the angle displacement causes a mirror tilt. In order to minimize the magnetic noise, chosen mirror is made fully of metal (instead of coated glass). Having an Oxygen-free copper (OFC) mirror, while not officially vacuum compatible hopefully minimizes the vacuum outgassing.
+The experiment is constructed using a front mirror, where the angle displacement causes a mirror tilt. In order to minimize magnetic noise, the chosen mirror is made fully of metal (instead of coated glass). Having an Oxygen-free copper (OFC) mirror, while not officially vacuum compatible, hopefully minimizes the vacuum outgassing.
 \subsubsection{Technical information}
 \begin{easylist}
 & Tungsten string;
@@ -63,7 +61,7 @@ The experiment, is constructed using a front mirror, the angle displacement caus
 %& & weight of 90 gram 
 && identical side masses weight $m$ 20.5 gram
 & Mirror;
-&& made of Oxygen-free copper (OFC), gold coated
+&& made of oxygen-free copper (OFC), gold coated
 && diameter of 1 inch
 \end{easylist}
 \begin{easylist}
@@ -80,11 +78,11 @@ The experiment, is constructed using a front mirror, the angle displacement caus
 \par\noindent
 The torsional pendulum angle tilt is measured using a mirror connected in front of the pendulum. The mirror is a part of an optical interferometer with which the mirror tilt could be determined.
 \par\noindent
-In order to balance the pendulum, so the mirror would not have an initial downward tilt. The pendulum center of mass needs to be adjusted. 
+In order to balance the pendulum so that the mirror will not have an initial downward tilt, the pendulum center of mass needs to be adjusted. 
 \par\noindent
 The center of mass is adjusted using a matching mass of the mirror from behind, which balances the mirror weight.
 \par\noindent
-The matching mass $m_1$ has a similar weight and shape as the mirror $m_2$, both are connected to the pendulum via spring $w$ from their center. The spring enables accurate distance adjusting to prevent downward tilt.
+The matching mass $m_1$ has a similar weight and shape as the mirror $m_2$, and both are connected to the pendulum via spring $w$ from their center. The spring enables accurate distance adjusting to prevent downward tilt.
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=1.2]{\main/images/4 - methods and results/pendulum_top.JPG}}
@@ -110,19 +108,15 @@ The matching mass $m_1$ has a similar weight and shape as the mirror $m_2$, both
 \FloatBarrier
 
 \par\noindent
-The vacuum chamber is composed of two cylindrical tubes placed one over the other with three view ports in front. The chamber has a 5-way which is connected to the vacuum engine and gauge.
+The vacuum chamber is composed of two cylindrical tubes placed one over the other with three view ports in front. The chamber is connected to a vacuum engine and gauge.
 \par\noindent
-Vacuum chamber is bounded to the breadboard by an adjustable mount.
-\par\noindent
-The vacuum engine is connected to the chamber through a valve. Measurements are made when the valve is closed and the engine off, to prevent rotation noise.
+The vacuum chamber is bounded to the breadboard by an adjustable mount. The vacuum engine is connected to the chamber through a valve. Measurements are made when the valve is closed and the engine off, to prevent rotation noise.
 
 \subsubsection{Chamber viewports}
 \par\noindent
-Central viewport is in front of the pendulum's mirror, to measure the tilt angle. Two small viewports on the sides of the chamber are used by the noise damping system (PID) to damp noises. 
+The central viewport is in front of the pendulum's mirror, to measure the tilt angle. Two small viewports on the sides of the chamber are used by the noise damping system (PID) to damp noises. 
 \par\noindent
-The view ports are for 550-1100 nm, with about 98$\%$ power transmittance in the range.
-\par\noindent
-The central viewport has a 68.3mm view diameter, and the distance from the mirror is 82 mm which gives a full field of view of about $39^0$ degrees (instead of $90^0$ at interferometry).
+The view ports are for 550-1100 nm, with about 98$\%$ power transmittance in the range. The central viewport has a 68.3mm view diameter, and the distance from the mirror is 82 mm which gives a full field of view of about $39^0$ degrees (instead of $90^0$ at interferometry).
 
 \subsubsection{Pendulum mount}
 \begin{figure}[htbp]
@@ -133,12 +127,10 @@ The central viewport has a 68.3mm view diameter, and the distance from the mirro
 \end{figure}
 \FloatBarrier
 \par\noindent
-The upper tube of the chamber is soldered with a base to which a mount is connected. The pendulum string is held via the mount.
-\par\noindent
-The mount is adjustable, enabling the adjustment of the pendulum's string length, to be in front of viewports accurately. 
+The upper tube of the chamber is soldered with a base to which a mount is connected. The pendulum string is held via the mount. The mount is adjustable, enabling the adjustment of the pendulum's string length, to be in front of viewports accurately. 
 
 \subsection{Vacuum quality}
-\subsubsection{pressure increase}
+\subsubsection{Pressure increase}
 \par\noindent
 Vacuum chambers are metallic chambers connected to a vacuum pump with pressure lower than the atmospheric pressure. The main limitations to vacuum quality maintenance are leakage $Q_L$ from the outside through the chamber and outgassing $Q_{des}$ inside the chamber (desorption of gas molecules from the material).
 \par\noindent
@@ -146,20 +138,20 @@ Leaks and outgassing both increase the pressure at a constant rate over time, an
 \begin{equation}
 Q_P = Q_L + Q_{des}  \label{eqn:vacuum_equilibrium}
 \end{equation}
-In this experiment due to the relatively large size and unique shape of the measurement equipment, the vacuum chamber has both a large leak and outgassing rates. The sensitivity of the measurement does not allow having the pump working, causing pressure increase over time.
-\subsubsection{minimized pressure increase}
+In this experiment, due to the relatively large size and unique shape of the measurement equipment, the vacuum chamber has a significant leak and outgassing rates. The pumping must be disconnected during measurement due to the measurement sensitivity, causing pressure increase over time.
+\subsubsection{Minimized pressure increase}
 \par\noindent
-Vacuum chamber and measurement system were baked out to reduce outgassing, using resistive wire. 
+The vacuum chamber and measurement system were baked-out to reduce outgassing, using resistive wire. 
 \par\noindent
-The bake out was carried out for a week at about $110 C^0$ achieving stable vacuum of about $2\cdot 10^{−4} [Torr]$ after cool down.
+The bake-out was carried out for a week at about $110 C^0$ achieving stable vacuum of about $2\cdot 10^{−4} [Torr]$ after cooling down.
 \par\noindent
-The vacuum chamber was built using CF style vacuum Components, designed for ultra high vacuum, minimizing the leak rate.
+The vacuum chamber was built using CF style vacuum components, designed for ultra high vacuum, minimizing the leak rate.
 
 
 \subsection{Noise reduction}
-\subsubsection{Faraday Cage}
+\subsubsection{Faraday cage}
 \par\noindent
-Faraday Cage is a cage made by a continuous covering of a conductive material used to block external electromagnetic fields. The external electrical fields cause an electric charge distribution in the conductive cage without passing inside. Electric current decays exponentially with depth through the material.
+The Faraday cage is a cage made by continuous covering of a conductive material used to block external electromagnetic fields. The external electrical fields cause an electric charge distribution in the conductive cage without passing inside. Electric current decays exponentially with depth through the material.
 
 \par\noindent
 The degree at which the cage blocks the penetration of high frequency magnetic fields, depends on the material skin depth $\delta$ which determines the shield penetration depth for a defined frequency. Skin depth is dependent on the material electric resistivity $\rho$ and magnetic permeability $\mu$. 
@@ -168,15 +160,13 @@ The degree at which the cage blocks the penetration of high frequency magnetic f
 \end{equation}
 
 \subsubsection{Seismic box}
-The measurement system is placed inside a seismic box which is a Faraday Cage with 76 mm thickness, blocking magnetic fields with $f \ge 30 [Hz]$ from the environment.
-\par\noindent
-The seismic box is both reducing acoustic waves and magnetic noises from the environment.
+The measurement system is placed inside a seismic box which is a Faraday Cage with 76 mm thickness, blocking magnetic fields with $f \ge 30 [Hz]$ from the environment. The seismic box is both reducing acoustic waves and magnetic noises from the environment.
 \subsubsection{Vacuum chamber}
-The Vacuum chamber is a second cage blocking magnetic noise from the electronic system placed inside the seismic box.
+The vacuum chamber is a second cage blocking magnetic noise from the electronic system placed inside the seismic box.
 \par\noindent
 Vacuum chambers are made of stainless steel with approximately 3 mm thickness, making a Faraday Cage which blocks magnetic fields with $f\ge 20 [KHz]$ while reducing magnetic noises from lower frequency fields.
 \par\noindent
-As seen previously, Brownian motion, acoustic waves and friction are pressure dependent and are farther reduced by having vacuum.
+, Brownian motion, acoustic waves and friction are pressure dependent and are farther reduced by having vacuum.
 
 \subsection{Noise reduction}
 \par\noindent
