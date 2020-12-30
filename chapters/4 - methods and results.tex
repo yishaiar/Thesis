@@ -168,7 +168,7 @@ Arduino is an open-source microcontroller board used for building low cost and s
 The Arduino Mega 2560, is based on the ATmega2560 8-bit controller, and equipped with a 16 MHz crystal oscillator (clock) and 15 PWM outputs pins. The Arduino does can not produce an analog output, but it simulates an analog output using Pulse Width Modulation (PWM). The Arduino's output is a digital $V_d = 5[V]$ output.
 \subsubsection{Pulse Width Modulation}
 \par\noindent
-The controller switches the output signal fast between the digital output and off, generating a square wave. Repeating the pattern fast enough (having a square wave with short period $T$) results in an analog signal almost as if the signal is a steady analog voltage. The time signal duration is called the pulse width ($PW$). With the clock, the controller is able to modulate $PW$, changing the ratio of the time signal is on compared to off, which is the duty cycle $D$:
+The controller switches the output signal fast between the digital output and off, generating a square wave. The controller is repeating the pattern generating a square wave with a period of $T \ propto 2\cdot 10^{-6}$) results in an analog signal almost as if the signal is a steady analog voltage. The time signal duration is called the pulse width ($PW$). With the clock, the controller is able to modulate $PW$, changing the ratio of the time signal is on compared to off, which is the duty cycle $D$:
 \begin{equation}
 D = \frac{PW}{T}\cdot 100  \label{eqn:duty cycle}
 \end{equation}
