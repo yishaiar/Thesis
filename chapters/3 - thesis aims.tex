@@ -53,7 +53,8 @@ e(t) = \delta\theta(t) + \theta_g(t)    \label{eqn:error_measurement}
 \end{equation}
 The PID is compensating for the new error with mainly a proportional gain $K_P$, and the response $u(t)$ becomes mainly an inverse torque:
 \begin{equation}
-u(t) = u[e(t)] \approx K_P\theta_g(t) \approx \kappa \overline{\theta}_g \label{eqn:PID_response}
+\tau_{PID} = u(t) = u[e(t)] \approx K_P\theta_g(t) \approx \tau_{g} = \kappa \overline{\theta}_g 
+\label{eqn:PID_response}
 \end{equation}
 Assuming the mass is oscillating at a low frequency, when integrating over short periods the angle is constant in time:
 \begin{equation}
