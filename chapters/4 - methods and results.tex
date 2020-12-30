@@ -126,18 +126,18 @@ The view ports are for 550-1100 nm, with about 98$\%$ power transmittance in the
 \end{figure}
 \FloatBarrier
 \par\noindent
-The upper tube of the chamber is soldered with a base to which a mount is connected. The pendulum string is held via the mount. The mount is adjustable, enabling the adjustment of the pendulum's string length, to be in front of viewports accurately. 
+The upper tube of the chamber is soldered with a base to which a mount is connected. The pendulum string is held via the mount. The mount is adjustable, enabling the adjustment of the pendulum's string length, to place the pendulum in front of the viewports accurately. 
 
 \subsection{Vacuum quality}
 \subsubsection{Pressure increase}
 \par\noindent
 Vacuum chambers are metallic chambers connected to a vacuum pump with pressure lower than the atmospheric pressure. The main limitations to vacuum quality maintenance are leakage $Q_L$ from the outside through the chamber and outgassing $Q_{des}$ inside the chamber (desorption of gas molecules from the material).
 \par\noindent
-Leaks and outgassing both increase the pressure at a constant rate over time, and are overcome by having a constant pump rate $Q_P$ (vacuum pump working constantly).   
+Leaks and outgassing both increase the pressure at a constant rate over time, and are overcome by having a constant pump rate $Q_P$ (the vacuum pump working constantly).   
 \begin{equation}
 Q_P = Q_L + Q_{des}  \label{eqn:vacuum_equilibrium}
 \end{equation}
-In this experiment, due to the relatively large size and unique shape of the measurement equipment, the vacuum chamber has a significant leak and outgassing rates. The pumping must be disconnected during measurement due to the measurement sensitivity, causing pressure increase over time.
+In this experiment, due to the relatively large size and unique shape of the measurement equipment, the vacuum chamber has a significant leak and outgassing rates. The pumping must be off during measurement, due to the measurement sensitivity, causing pressure increase over time.
 \subsubsection{Minimized pressure increase}
 \par\noindent
 The vacuum chamber and measurement system were baked-out to reduce outgassing, using resistive wire. 
@@ -147,8 +147,9 @@ The bake-out was carried out for a week at about $110 C^0$ achieving stable vacu
 The vacuum chamber was built using CF style vacuum components, designed for ultra high vacuum, minimizing the leak rate.
 
 
-\subsection{Noise reduction}
-\subsubsection{Faraday cage}
+\section{Noise reduction}
+As demonstrated previously (eq.~\ref{eqn:total_kinetic}, eq.~\ref{eqn:acoustic_intensity}, eq.~\ref{eqn:drag force}), Brownian motion, acoustic waves and friction are pressure dependent and are further reduced by maintaining low pressure (through use of vacuum).
+\subsection{Faraday cage}
 \par\noindent
 The Faraday cage is a cage made by continuous covering of a conductive material used to block external electromagnetic fields. The external electrical fields cause an electric charge distribution in the conductive cage without passing inside. Electric current decays exponentially with depth through the material.
 
@@ -165,7 +166,6 @@ The vacuum chamber is a second cage blocking magnetic noise from the electronic 
 \par\noindent
 Vacuum chambers are made of stainless steel with approximately 3 mm thickness, making a Faraday Cage which blocks magnetic fields with $f\ge 20 [KHz]$ while reducing magnetic noises from lower frequency fields.
 \par\noindent
-As demonstrated previously (eq.~\ref{eqn:total_kinetic}, eq.~\ref{eqn:acoustic_intensity}, eq.~\ref{eqn:drag force}), Brownian motion, acoustic waves and friction are pressure dependent and are further reduced by maintaining low pressure (through use of vacuum).
 
 \subsection{Noise reduction}
 \par\noindent
