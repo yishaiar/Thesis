@@ -51,13 +51,13 @@ The angle is proportional to the square of the period's length $T$, the pendulum
 \begin{equation}
 e(t) = \delta\theta(t) + \theta_g    \label{eqn:error_measurement}
 \end{equation}
-The PID is compensating the new error with mainly a proportional gain $K_P$, and the response $u(t)$ becomes mainly an inverse torque:
+The PID is compensating for the new error with mainly a proportional gain $K_P$, and the response $u(t)$ becomes mainly an inverse torque:
 \begin{equation}
-u(t) = u[ \delta\theta(t)] + K_P\theta_g(t) \label{eqn:PID_response}
+u(t) = u[ \delta\theta(t)] + K_P\theta_g(t) \approx \kappa \overline{\theta}_g \label{eqn:PID_response}
 \end{equation}
 Assuming the mass is oscillating at a low frequency, when integrating over short periods the angle is constant in time:
 \begin{equation}
-U = \int u(t) dt  \approx K_P\overline{\theta}_g\Delta t \label{eqn:PID_measurement_eqn}
+U = \int u(t) dt  \approx K_P\overline{\theta}_g\Delta t  \label{eqn:PID_measurement_eqn}
 \end{equation}
 Where $U$ is the sum of the PID response, and $\Delta t$ is the integration time. The gravitational angle is:
 \begin{equation}
