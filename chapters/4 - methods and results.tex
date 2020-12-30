@@ -168,19 +168,19 @@ Arduino is an open-source microcontroller board used for building low cost and s
 The Arduino Mega 2560, is based on the ATmega2560 8-bit controller, and equipped with a 16 MHz crystal oscillator (clock) and 15 PWM outputs pins. The Arduino does can not produce an analog output, but it simulates an analog output using Pulse Width Modulation (PWM). The Arduino's output is a digital $V_d = 5[V]$ output.
 \subsubsection{Pulse Width Modulation}
 \par\noindent
-The controller switches the output signal fast between the digital output and off, generating a square wave. Repeating the pattern fast enough (having a square wave with short period $T$) results in an analog signal almost as if the signal is a steady analog voltage. The time signal duration is called the pulse width ($PW$). With the clock, the controller is able to modulate $PW$, changing the ratio of the time signal is on compared to off, which is called duty cycle $D$:
+The controller switches the output signal fast between the digital output and off, generating a square wave. Repeating the pattern fast enough (having a square wave with short period $T$) results in an analog signal almost as if the signal is a steady analog voltage. The time signal duration is called the pulse width ($PW$). With the clock, the controller is able to modulate $PW$, changing the ratio of the time signal is on compared to off, which is the duty cycle $D$:
 \begin{equation}
 D = \frac{PW}{T}\cdot 100  \label{eqn:duty cycle}
 \end{equation}
-The analog voltage value is the average voltage, determined by the duty cycle:
+The analog voltage $V_a$ is the average voltage, determined by the duty cycle:
 \begin{equation}
-V = \frac{\sum PW\cdot V_d}{\sum T} = \frac{N\cdot PW\cdot V_d}{N\cdot T} = \frac{V_d}{100}\cdot D   \label{eqn:analog voltage}
+V_a = \frac{\sum PW\cdot V_d}{\sum T} = \frac{N\cdot PW\cdot V_d}{N\cdot T} = \frac{V_d}{100}\cdot D   \label{eqn:analog voltage}
 \end{equation}
-The Arduino is able to modulate the duty cycle, with PWM Frequency of up to 500Hz, resulting in modulation to the analog signal:
+The Arduino is able to modulate the duty cycle, with PWM Frequency of up to 500Hz, resulting in modulation to the analog voltage:
 \begin{equation}
-V(t) = \frac{V_d}{100}\cdot D(t)   \label{eqn:analog voltage}
+V_a(t) = \frac{V_d}{100}\cdot D(t)   \label{eqn:analog voltage}
 \end{equation}
-The method enables generating voltages between $Vcc = 5[V]$ and off, the voltage modulation is limited by the microcontroller resolution (8-bit). Also, since the Arduino clock is connected to all PWM pins, they are all in sync. When all pins have the same duty cycle, they all have the same $V(t)$. At every point in time each could be looked at as a constant voltage supply compare to the other pins, allowing to connect all in series and increase the total output current up to $1[A]$. 
+The method enables generating voltages between $V_d = 5[V]$ and off, the voltage modulation is limited by the microcontroller resolution (8-bit). Also, since the Arduino clock is connected to all PWM pins, they are all in sync. When all pins have the same duty cycle, they all have the same $V_a(t)$. At every point in time each could be looked at as a constant voltage supply compare to the other pins, allowing to connect all in series and increase the total output current up to $1[A]$. 
 
 
 
