@@ -162,13 +162,13 @@ Where $\Theta$ is the light source radiant flux [watt], $\alpha$ is the light in
 \par\noindent
 The setup can produce very small external torques with high dynamic range; light sources each with 1 watt maximum power and 8bit modulation steps, assuming $\eta = 0.7$ can produce torques up to $\tau = 5\cdot10^-{10} [N\cdot m]$ with modulation steps of $\Delta\tau = 2\cdot10^-{12} [N\cdot m]$. 
 
-\subsection{Arduino controller}
-Arduino is an open-source microcontroller board used for building low cost and simple digital devices and circuits. Each microcontroller contains a microprocessor, controller, serial communication interface and is equipped with digital and analog input/output pins. The microcontrollers could be operated as stand alone or connected to computer through serial communication. 
+\subsubsection{Arduino microcontroller}
+Arduino is an open-source microcontroller board used for building low cost and simple digital circuits. Each microcontroller contains a microprocessor, controller, serial communication interface and is equipped with digital and analog input/output pins. The microcontrollers could be operated as stand alone or connected to computer through serial communication. 
 \par\noindent
-The Arduino Mega 2560, based on the ATmega2560 8-bit controller, is equipped with 16 MHz crystal oscillator (clock) and 15 PWM outputs pins. Arduino doesn't have analog output, but is simulates analog output using Pulse Width Modulation.
+The Arduino Mega 2560, is based on the ATmega2560 8-bit controller, and equipped with a 16 MHz crystal oscillator (clock) and 15 PWM outputs pins. Arduino doesn't have analog output, but is simulates analog output using Pulse Width Modulation (PWM).
+\subsection{Pulse Width Modulation}
 \par\noindent
-The controller switches the output signal between the board Vcc (which is a digital 5[V]) and off, generating a square wave.
-Repeating the pattern fast enough results in an analog signal as if the signal is a steady voltage. The time signal duration called the pulse width. Controller is modulating with clock the pulse width, changing the ratio time signal is on compare to off. 
+The controller switches the output signal fast between the board's digital output $Vcc = 5[V]$ and off, generating a square wave. Repeating the pattern fast enough results in an analog signal almost as if the signal is a steady analog voltage. The time signal duration is called the pulse width. With the clock controller is able to modulate the pulse width, changing the ratio of the time signal is on compared to off. 
 \par\noindent
 Output voltage is determined by that ratio, which is called duty cycle. 100\% duty cycle meaning power is always on and output is the full Vcc, 0\% power off and 50\% signal is on and off equally resulting with output of half. 
 \par\noindent
