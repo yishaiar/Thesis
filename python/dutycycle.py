@@ -18,6 +18,7 @@ for i in x:
         y.append(y[-1]+duty)
     if i%int(N/2) == 0 and i !=0:
         duty =0.2
+y = np.asarray(y)*2.55
 # y[x%2 == 0]=x[x%2 == 0]/2
 # y[x%2 != 0] = x[x%2 == 0]/2 +duty
 # y = y*8

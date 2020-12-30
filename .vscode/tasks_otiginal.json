@@ -25,7 +25,7 @@
         {
             "label": "clear_all_aux",
             "type": "shell",
-            "command": "del *.aux; del *.log; del *.bbl; del *.log; del *.toc; del *.lof; del *.blg",
+            "command": "del *.aux; del *.log; del *.bbl; del *.log; del *.toc; del *.lof; del *.blg; del *.out",
             "problemMatcher": []
         },
     ]
