@@ -145,7 +145,19 @@ The vacuum chamber and measurement system were baked-out to reduce outgassing, u
 The bake-out was carried out for a week at about $110 C^0$ achieving stable vacuum of about $2\cdot 10^{−4} [Torr]$ after cooling down.
 \par\noindent
 The vacuum chamber was built using CF style vacuum components, designed for ultra high vacuum, minimizing the leak rate.
-\subsection{Noise reduction}
+\section{Modulated light source}
+\subsection{Radiation pressure force}
+The pendulum is cooled down using radiation pressure force. Fast modulated light source with high intensity cause a small controlled force. The difference between two light sources from both ends of pendulum adds a controlled small damping torque. 
+\begin{equation}
+F = \frac{2\eta\Theta}{{c}} \label{eqn:radiation force}
+\end{equation}
+\begin{equation}
+\tau\approx d\Delta F = \frac{2d}{{c}} (\eta_1\Theta_1 -\eta_2\Theta_2) \label{eqn:radiation torque}
+\end{equation}
+The radiation pressure torque assuming light fields direction perpendicular to surface, $\Theta$ is the light source radiant flux [watt], and $\eta$ is the coupling efficiency. The center of mass distance from rotation axis $d$ of both forces is even.
+\par\noindent
+The setup could produce very small torques; light sources of 1 watt maximum power and 8bit modulation steps could produce nano-$N\cdot m$ to pico-$N\cdot m$ torques. 
+
 
 \section{Noise reduction}
 \subsection{Faraday cage}
@@ -230,17 +242,6 @@ The PID damping $\gamma$ and damping time $\tau$ depends on the initial oscillat
 Using PID control does not guarantee optimal control or stability. The control system is aiming to achieve critical damping of the process. Well tuned control would a reach the desired set point fast and accurate, and also apply over time the necessary corrections to resist external forces trying to move variable from the set point.
 \par\noindent
 The controller response is its response to error. How much does the system overshoots a setpoint and the system oscillations. When controller gains are too high, instead of critical damping there is overdamping causing overshoot, due to the high gain the overshoot response overshoots to the other side, causing the system to be driven.
-\subsection{Radiation pressure force}
-The pendulum is cooled down using radiation pressure force. Fast modulated light source with high intensity cause a small controlled force. The difference between two light sources from both ends of pendulum adds a controlled small damping torque. 
-\begin{equation}
-F = \frac{2\eta\Theta}{{c}} \label{eqn:radiation force}
-\end{equation}
-\begin{equation}
-\tau\approx d\Delta F = \frac{2d}{{c}} (\eta_1\Theta_1 -\eta_2\Theta_2) \label{eqn:radiation torque}
-\end{equation}
-The radiation pressure torque assuming light fields direction perpendicular to surface, $\Theta$ is the light source radiant flux [watt], and $\eta$ is the coupling efficiency. The center of mass distance from rotation axis $d$ of both forces is even.
-\par\noindent
-The setup could produce very small torques; light sources of 1 watt maximum power and 8bit modulation steps could produce nano-$N\cdot m$ to pico-$N\cdot m$ torques. 
 
 
 
