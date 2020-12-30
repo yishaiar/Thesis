@@ -151,13 +151,13 @@ Newton's law of universal gravitation states that every mass $M$ attracts every 
 \end{equation}
 The force $F$ acts along the intersecting line, proportional to the product of the masses and inverse to the square of the distance $r$ between the centers. Since $G$ the gravitational constant, is very small, the force is very weak. For example, the force between two cubes 1 kg each, 1 meter apart would be $\overrightarrow{F} = 6.67\cdot10^{-11} [N]$.
 \par\noindent
-The gravitational field $g$ of mass $M$ is defined as the force per unit mass, which is a vector field consisting, at every point, a vector pointing directly towards the particle. The magnitude of the field at every point is calculated by applying the universal law. 
+The gravitational field $g$ of mass $M$ is defined as the force per unit mass, which is a vector field consisting, at every point, a vector pointing directly towards the mass. The magnitude of the field at every point is calculated by applying the universal law. 
 \begin{equation}
 \overrightarrow{g}(r) = \frac{\overrightarrow{F}(r)}{m} = \frac{GM}{r^2}\hat{r}    \label{eqn:gravitation_field}
 \end{equation}
 \subsubsection{Field measurement}
 \par\noindent
-The field caused by a test mass $M$ at a specific point is calculated by measuring the gravitational force acting on known mass $m$. In general, test mass $M$ is much larger than mass $m$, ensuring a negligible influence on the behavior of $M$.  
+The field caused by a test mass $M$ at a specific point is calculated by measuring the gravitational force acting on a known mass $m$. In general, test mass $M$ is much larger than mass $m$, ensuring a negligible influence on the behavior of $M$.  
 
 \subsection{Cavendish experiment}
 \subsubsection{Apparatus}
@@ -169,9 +169,7 @@ The field caused by a test mass $M$ at a specific point is calculated by measuri
 \end{figure}
 %\FloatBarrier
 \par\noindent
-The Cavendish experiment, first performed in the 17th century, was the first experiment to measure the gravitational force between masses. 
-\par\noindent
-The apparatus, shown in fig.~\ref{fig:Cavendish apparatus}, is constructed by a torsional pendulum and a nearby test mass $M$, creating a net torque on the pendulum. 
+The Cavendish experiment, first performed in the 17th century, was the first experiment to measure the gravitational force between masses. The apparatus, shown in fig.~\ref{fig:Cavendish apparatus}, is constructed by a torsional pendulum and a nearby test mass $M$, creating a net torque on the pendulum. 
 \par\noindent
 The pendulum can be assumed to be consisted of two masses $m$ connected by a rigid, massless thin rod, with length of $2l$, and a pivot point at distance $l$ from each mass.
 \par\noindent
@@ -283,7 +281,7 @@ According to the ideal gas law:
 \begin{equation}
 N k_B T = PV  \label{eqn:ideal-gasses}
 \end{equation}
-Where $N$ is the number of particles inside the medium, $k_B$ is the Boltzmann constant, $T$ is the temperature, $P$ is the gas pressure and $V$ is the medium volume. Thus, when having a constant volume $V$, the gas pressure $P$ is proportional to the number of particles $N$.
+Where $N$ is the number of particles inside the medium, $k_B$ is the Boltzmann constant, $T$ is the temperature, $P$ is the gas pressure and $V$ is the medium's volume. Thus, when having a constant volume $V$, the gas pressure $P$ is proportional to the number of particles $N$.
 \par\noindent
 The Maxwell-Boltzmann distribution of molecular speed is:
 \begin{equation}
@@ -295,7 +293,7 @@ Thus, the average kinetic energy for a gas particle is:
 <E_k>=<\frac{mv^2}{2}> = \int_{0}^{\infty}\frac{mv^2}{2}f(v)dv =  \frac{3k_BT}{2}    \label{eqn:average kinetic}
 \end{equation}
 \par\noindent
-Thus, the total Brownian motion energy is:
+The total Brownian motion energy is:
 \begin{equation}
 E_k = N<E_k> =\frac{3}{2}N k_B T = \frac{3}{2}PV    \label{eqn:total_kinetic}
 \end{equation}
@@ -310,19 +308,31 @@ The Brownian motion kinetic energy is proportional to the temperature. The noise
 \delta\theta = \sqrt{\frac{k_BT}{\kappa}}\propto{T}  \label{eqn:radiation force}
 \end{equation}
 
-\subsection{Drag}
+\subsection{Acoustic wave}
+Acoustic waves are adiabatic compression and decompression waves propagating through a material. The wave equation of one dimension acoustic wave:
+\begin{equation}
+P = P_0 cos(\omega t -k x)       \label{eqn:acoustic_pressure}
+\end{equation}
+\par\noindent
+Where $P$ is the actual pressure, $P_0$ is the average pressure, $k$ is the acoustic wave number and $\omega$ is the wave angular frequency. The acoustic intensity is defined by:
+\begin{equation}
+I = P v      \label{eqn:acoustic_intensity}
+\end{equation} 
+The acoustic intensity $I$ is the power carried by the acoustic waves $[\frac{W}{m^2}]$, and it depends on the material pressure $P$ and the particle velocity $v$. When the material pressure is reduced, the acoustic pressure is lower and less power is carried.
+
+\subsection{Friction}
 \subsubsection{Flow characteristics}
 The Reynolds number $Re$ is used to characterize types of gas flow:
 \begin{equation}
 Re= \frac{\rho v d}{\mu}     \label{eqn:Reynolds number}
 \end{equation}
-Where $\rho$ is the gas density, $v$ is the flow speed, $d$ is the area diameter and $\mu$ is the fluid viscosity. The density $\rho$ of an ideal gas: 
+Where $\rho$ is the gas density, $v$ is the flow speed, $d$ is the diameter of the area cross section and $\mu$ is the fluid viscosity. The density $\rho$ of an ideal gas: 
 \begin{equation}
 \rho = \frac{MP}{RT}     \label{eqn:ideal density}
 \end{equation}
 Where $M$ is the gas molar mass, and $R$ is the ideal gas constant. Thus, for a constant temperature $T$ the pressure $P$ is proportional to the gas density $\rho$ and to the Reynolds number $Re$. 
 
-\subsubsection{Drag}
+\subsubsection{Drag force}
 The drag force $F_{drag}$ is the friction caused by gas resistance, which is dependent on the relative velocity (the gas flow speed) $v$ between the gas and the object. At higher pressures, when Reynolds number is relatively high the drag is proportional to the square of the velocity:
 \begin{equation}
 F_{drag} = -\frac{1}{2}\rho C_d A\cdot v^2 = -b\cdot v^2 \label{eqn:energy-mass-equivalence-relation}
@@ -340,17 +350,6 @@ F_{drag} = - b \cdot v
 %The air viscosity is  $\mu = 1.81/cdot10^{-5}[\frac{kg}{m/cdot s}]$ resulting with a 
 The drag force proportionality factor $b$ is pressure dependent, decreased pressure results with lower drag force. When reaching the medium vacuum regime, the drag becomes Stokes's drag and the proportionality factor becomes viscosity dependent. The viscosity for a specific gas at a given temperature is constant, resulting with a constant drag force.
 
-\subsection{Acoustic wave}
-Acoustic waves are adiabatic compression and decompression waves propagating through a material. The wave equation of one dimension acoustic wave:
-\begin{equation}
-P = P_0 cos(\omega t -k x)       \label{eqn:acoustic_pressure}
-\end{equation}
-\par\noindent
-Where $P$ is the actual pressure, $P_0$ is the average pressure, $k$ is the acoustic wave number and $\omega$ is the wave angular frequency. The acoustic intensity is defined by:
-\begin{equation}
-I = P v      \label{eqn:acoustic_intensity}
-\end{equation} 
-The acoustic intensity $I$ is the power carried by the acoustic waves $[\frac{W}{m^2}]$, and it depends on the material pressure $P$ and the particle velocity $v$. When the material pressure is reduced, the acoustic pressure is lower and less power is carried.
 
 \subsection{Vacuum quality}
 \subsubsection{Leak rate}
