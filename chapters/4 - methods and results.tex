@@ -176,11 +176,13 @@ The analog voltage $V_a$ is the average voltage, determined by the duty cycle:
 \begin{equation}
 V_a = \frac{\sum PW\cdot V_d}{\sum T} = \frac{N\cdot PW\cdot V_d}{N\cdot T} = \frac{V_d}{100}\cdot D   \label{eqn:analog voltage}
 \end{equation}
-The Arduino is able to modulate the duty cycle, with PWM Frequency of up to 500Hz, resulting in modulation to the analog voltage:
+The Arduino is able to modulate the duty cycle, resulting in modulation to the analog voltage:
 \begin{equation}
 V_a(t) = \frac{V_d}{100}\cdot D(t)   \label{eqn:analog voltage}
 \end{equation}
-The method enables generating voltages between $V_d = 5[V]$ and off, the voltage modulation is limited by the microcontroller resolution (8-bit). Also, since the Arduino clock is connected to all PWM pins, they are all in sync. When all pins have the same duty cycle, they all have the same $V_a(t)$. At every point in time each could be looked at as a constant voltage supply compare to the other pins, allowing to connect all in series and increase the total output current up to $1[A]$. 
+The method enables generating voltages between $V_d = 5[V]$ and off, the voltage resolution is limited by the microcontroller resolution (8-bit). The possible modulation speed is up to the PWM Frequency of 500Hz.
+\par\noindent 
+Also, since the Arduino clock is connected to all PWM pins, they are all in sync. When all pins have the same duty cycle, they all have the same $V_a(t)$. At every point in time each pin could be looked at as a constant voltage supply compare to the other pins, allowing to connect all in series and increase the total output current up to $I = 1[A]$. 
 
 
 
