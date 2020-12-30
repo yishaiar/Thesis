@@ -58,11 +58,12 @@ The PID is compensating for the new error with mainly a proportional gain $K_P$,
 \end{equation}
 Assuming the mass is oscillating at a low frequency, when integrating over short periods the angle is constant in time:
 \begin{equation}
-U = \int u(t) dt  \approx K_P\overline{\theta}_g\Delta t  \label{eqn:PID_measurement_eqn}
+U = \int u(t) dt = K_P\overline{\theta}_g\Delta t \approx \kappa \overline{\theta}_g \Delta t 
+\label{eqn:PID_measurement_eqn}
 \end{equation}
 Where $U$ is the sum of the PID response, and $\Delta t$ is the integration time. The gravitational angle is:
 \begin{equation}
-\overline{\theta}_g \approx \frac{U}{K_P\Delta t}      \label{eqn:pid_gravitation_torque}
+\overline{\theta}_g = \frac{U}{K_P\Delta t}      \label{eqn:pid_gravitation_torque}
 \end{equation}
 \par\noindent
 According to eq.~\ref{eqn:theta average_3}, by accurate angle measurement, the gravitational field could be estimated. According to eq.~\ref{eqn:pid_gravitation_torque}, the measurement system allows fast response (short integration time) and high accuracy while measuring low frequency gravity fields. 
