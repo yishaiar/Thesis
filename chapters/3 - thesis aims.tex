@@ -5,28 +5,28 @@
 
 The Cavendish experiment, is constructed using a torsional pendulum with a front mirror. The angle displacement causes a mirror tilt. Optical measurement of angle displacement is made with a split detector using interferometric technique.
 \par\noindent
-The measurement is limited by the basic energy level quantum uncertainty and measurement system shot noise.
+The measurement is limited by the basic energy level quantum uncertainty and measurement system shot noise. The basic energy level quantum uncertainty:
 \begin{equation}
 \frac{1}{2}\kappa <\delta\theta^2>= \frac{\hslash\omega}{4}    \label{eqn:basic uncertainty}
 \end{equation}
 \begin{equation}
-\delta\theta= \sqrt{\frac{\hslash\omega}{2\kappa}} \approx 10^{-16} [rad]    \label{eqn:basic uncertainty}
+\delta\theta= \sqrt{\frac{\hslash\omega}{2\kappa}} \approx 10^{-16} [rad]    \label{eqn:basic uncertainty_1}
 \end{equation}
 
 \noindent
-Shot noise, using a split detector in an interferometric technique, is even on all frequencies. Shot limit when integrating over a long time could be calculated as \cite{howell2019}:
+Shot noise, using a split detector in an interferometric technique, is even on all frequencies. The shot noise limit when integrating over a long time could be calculated as \cite{howell2019}:
 \begin{equation}
 \delta\theta = \frac{1}{4\sqrt{2}\pi}\frac{\lambda}{L\sqrt{N}} \approx
-10^{-14} [\frac{rad}{Hz}]    \label{eqn:gravitation_torque}
+10^{-14} [\frac{rad}{Hz}]    \label{eqn:gravitation_torque_2}
 \end{equation}
-When the gravitational force is measured using a torsional pendulum, there are noise limitations to the measurement sensitivity. The limitations are higher than the basic limits, meaning that reducing the noise could achieve higher sensitivity. The noises on the pendulum are unknown magnetic noises, acoustic waves and quantum uncertainty due to thermal Brownian motion. Friction also limits the pendulum response. 
+When the gravitational force is measured using a torsional pendulum, there are noise limitations to the measurement sensitivity. The limitations are higher than the basic limits, meaning that reducing the noise enables higher sensitivity. The noises on the pendulum are unknown magnetic noises, acoustic waves and quantum uncertainty due to thermal Brownian motion. Friction also limits the pendulum response. 
 \par\noindent
-The pendulum is placed inside vacuum, reducing Brownian motion, acoustic waves and friction. The vacuum chamber is reducing magnetic noise as a Faraday cage. In vacuum the Brownian motion from environment coupling is reduced.
+The pendulum is placed inside a vacuum chamber, reducing Brownian motion, acoustic waves and friction. The vacuum chamber is reducing magnetic noise as a Faraday cage. In vacuum the Brownian motion from environment coupling is reduced.
 \par\noindent
 The quantum uncertainty due to Brownian motion is the main noise source. The quantum uncertainty at a given temperature (assuming above basic energy level) is:
 
 \begin{equation}
-\delta\theta = \sqrt{\frac{k_BT}{\kappa}}\propto{T}  \label{eqn:radiation force}
+\delta\theta = \sqrt{\frac{k_BT}{\kappa}}\propto{T}  \label{eqn:brownian uncertainty}
 \end{equation}
 \begin{equation}
 \delta\theta(t) = \delta\theta cos(\omega_0 t)   \label{eqn:pid_error}
@@ -36,44 +36,37 @@ The noise reduction enables to damp and cool the pendulum temperature.
 \par\noindent
 The cooling system is built using two led light sources placed in front of each pendulum side. The led sources are modulated at high speeds using a simple Arduino microcontroller. The modulated light is causing a small external radiation torque, which damps down the oscillations.
 \par\noindent
-Damping is made using a PID feedback loop. The angle tilt and is measured and an equivalent feedback external source is applied. The feedback damping can dynamically damp down the noises, without pre-knowledge of the existing noises. PID can reduce all noises, and temperature. Having an effective lower temperature would enable measuring smaller angles enlarging the SNR and the measurement sensitivity.
+Damping is made using a PID feedback loop. The tilt angle is measured, and an equivalent feedback external source is applied. The feedback damping can dynamically damp down the noises, without pre-knowledge of the existing noises. The PID can reduce the noises, and the effective temperature. Having a lower effective temperature enlarges the SNR and the measurement sensitivity, which enables measuring smaller tilt angles.
 
 
 \par\noindent
-With PID tuned correct the damped pendulum is at critical damping and oscillations become smaller. PID error $e(t)$ and damping response $u(t)$ are both minimized. 
+With PID tuned correct the damped pendulum is at critical damping and oscillations become smaller. The measured error $e(t)$ and the PID damping response $u(t)$ (eq.~\ref{eqn:PID response}) are both minimized. 
+\par\noindent
+Introducing a new mass adds a constant new torque to the system $\tau_g$ (eq.~\ref{eqn:net_gravitation_torque_approx}), accordingly the average tilt angle becomes $\overline{\theta}_g$ (eq.~\ref{eqn:theta average_2}):
 \begin{equation}
-e(t) = \delta\theta(t)   \label{eqn:pid_error}
-\end{equation}
-\begin{equation}
-u(t) = K_P e(t)+K_I\int_{0}^{t}e(t)+K_D\frac{de(t)}{dt}   \label{eqn:PID_eqn}
-\end{equation}
-
-\noindent
-Introducing a new mass adds a constant new torque to the system, which the PID is compensating with a proportional gain $K_P$. The PID response becomes mainly an inverse torque. Assuming the mass moves at low frequencies, when integrating over short periods the angle is constant in time.
-\begin{equation}
-e(t) = \delta\theta(t) + \theta_g    \label{eqn:PID_measurement}
-\end{equation}
-\begin{equation}
-u(t) = u[ \delta\theta(t)] + K_P\theta_g(t) \label{eqn:PID_measurement_eqn}
-\end{equation}
-\begin{equation}
-U = \int u(t) dt  \approx K_P\overline{\theta}_g\Delta t \label{eqn:PID_measurement_eqn}
-\end{equation}
-
-\begin{equation}
-\overline{\theta}_g \approx \frac{U}{K_P\Delta t}      \label{eqn:pid_gravitation_torque}
-\end{equation}
-In the previous chapter it was shown that for a torsional pendulum:
-
-\begin{equation}
-\overline{\theta} \approx \frac{3GT^2cos\theta sin\theta}{4\pi^2 } \cdot \frac{M}{r_0^3}   \label{eqn:theta average}
+\overline{\theta}_g  \approx \frac{3GT^2cos\theta sin\theta}{4\pi^2 } \cdot \frac{M}{r_0^3}   \label{eqn:theta average_3}
 \end{equation}
 \par\noindent
-The pendulum angle is proportional to period's length $T$, pendulum length $l$ and masses $m$ are dropped out, indicating that short light weight sensors work as well as larger ones, as long as their periods are the same.
+The angle is proportional to the square of the period's length $T$, the pendulum length $l$ and the masses $m$ are dropped out, which indicates that short and light weight sensors work well as larger ones, as long as their periods are the same. The resulting measured error $e(t)$:
+\begin{equation}
+e(t) = \delta\theta(t) + \theta_g(t)    \label{eqn:error_measurement}
+\end{equation}
+The PID is compensating for the new error with mainly a proportional gain $K_P$, and the response $u(t)$ becomes mainly an inverse torque:
+\begin{equation}
+\tau_{PID} = u(t) = u[e(t)] \approx K_P\theta_g(t) \approx \tau_{g} = \kappa \overline{\theta}_g 
+\label{eqn:PID_response}
+\end{equation}
+Assuming the mass is oscillating at a low frequency, when integrating over short periods the angle is constant in time:
+\begin{equation}
+U = \int u(t) dt = K_P\overline{\theta}_g\Delta t 
+\label{eqn:PID_measurement_eqn}
+\end{equation}
+Where $U$ is the sum of the PID response, and $\Delta t$ is the integration time. The gravitational angle is:
+\begin{equation}
+\overline{\theta}_g = \frac{U}{K_P\Delta t}      \label{eqn:pid_gravitation_torque}
+\end{equation}
 \par\noindent
-The torsion string coefficient $\kappa$ could be estimated from the oscillations period. With accurate angle measurement, the gravitational field could be estimated.
-\par\noindent
-The measurement system allows fast response (short integration time) and high accuracy while measuring low frequency gravity fields. 
+According to eq.~\ref{eqn:theta average_3}, by accurate angle measurement, the gravitational field could be estimated. According to eq.~\ref{eqn:pid_gravitation_torque}, the measurement system allows fast response (short integration time) and high accuracy while measuring low frequency gravity fields. 
 
  
  

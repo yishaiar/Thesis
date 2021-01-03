@@ -6,7 +6,8 @@
         {
             "label": "compile_upload_full",
             "type": "shell",
-            "command": "lualatex master; bibtex master; ./master.pdf; lualatex master; lualatex master; git add --all; git commit --all -m 'auto';git push --all",
+            "command": "lualatex master; bibtex master; ./master.pdf; lualatex master; lualatex master; git add --all; git commit --all -m 'auto';git push --all --force",
+            //"command": "lualatex master; bibtex master; ./master.pdf; lualatex master; lualatex master",
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -25,7 +26,7 @@
         {
             "label": "clear_all_aux",
             "type": "shell",
-            "command": "del *.aux; del *.log; del *.bbl; del *.log; del *.toc; del *.lof; del *.blg",
+            "command": "del *.aux; del *.log; del *.bbl; del *.log; del *.toc; del *.lof; del *.blg; del *.out;",
             "problemMatcher": []
         },
         {
@@ -38,7 +39,9 @@
         {
             "label": "git-pull_build ",
             "type": "shell",
-            "command": "git pull -f; lualatex master; bibtex master; ./master.pdf; lualatex master; lualatex master;lualatex chapter; bibtex chapter; ./chapter.pdf",
+            "command": "lualatex master; bibtex master; ./master.pdf; lualatex master; lualatex master;lualatex chapter; bibtex chapter; ./chapter.pdf",
+          //"command": "git pull -f; lualatex master; bibtex master; ./master.pdf; lualatex master; lualatex master;lualatex chapter; bibtex chapter; ./chapter.pdf",
+            
             "runOptions": {
                 "runOn": "folderOpen"
             },

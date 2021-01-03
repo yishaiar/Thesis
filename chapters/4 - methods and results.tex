@@ -3,7 +3,7 @@
 \begin{document}
 \chapter{Methods and results}\label{chapter:Methods and results}
 
-\section{System build}
+\section{System structure}
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=0.3]{\main/images/4 - methods and results/total_chamber.png}}
@@ -12,45 +12,41 @@
 \end{figure}
 \FloatBarrier
 \par\noindent
-The experiment system was designed to minimize magnetic noises by avoiding capacitance and choosing low magnetic permeability materials.
-\par\noindent
-The torsional pendulum is placed inside a vacuum chamber, reducing Brownian motion, acoustic waves and friction. The vacuum chamber also reduces magnetic noise as a Faraday Cage.
-\par\noindent
-The vacuum chamber is placed inside seismic box, farther reducing acoustic waves and magnetic noises from the environment.
+The experiment is designed to minimize magnetic noises by avoiding capacitance and by choosing low magnetic permeability materials. Therefore, the torsional pendulum is placed inside a vacuum chamber, reducing Brownian motion, acoustic waves and friction. The vacuum chamber also reduces magnetic noise as a Faraday Cage. The vacuum chamber is placed inside seismic box, further reducing acoustic waves and magnetic noises from the environment.
 
 \par\noindent
-The experiment system was designed to minimize the outgassing rate, both by choosing low outgassing materials and avoiding air pockets in the devices. 
-\par\noindent
-The design of torsional pendulum and vacuum chamber was carried out using Solid Works.
+The experiment system is designed to minimize the outgassing rate, by both choosing low outgassing materials and avoiding air pockets inside the devices. The design of torsional pendulum and vacuum chamber was carried out using Solid Works.
 
 \subsection{Torsional pendulum design}
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=0.3]{\main/images/4 - methods and results/pendulum_front.png}}
-	\caption[Torsion pendulum, front view]{Torsion pendulum, front view}
+	\caption[Torsional pendulum, front view]{Torsional pendulum, front view}
 	\label{fig:pendulum front}
 \end{figure}
 \FloatBarrier
 \subsubsection{Design constraints}
 \par\noindent
-The chosen pendulum dimensions are designed to balance two problems, to achieve high angle sensitivity to field (large string torsion coefficient $\kappa$) while having high mass sensitivity to angle (longer oscillation time period $T$). 
+The chosen pendulum dimensions are designed to balance the achievement of high angle sensitivity to field (large string torsion coefficient $\kappa$, eq.~\ref{eqn:gravitation_torque_equilibrium}) while maintaining high mass sensitivity to angle (longer oscillation time period $T$, eq.~\ref{eqn:theta average_2}). 
 \par\noindent
-As shown previously, for a torsional pendulum with length of $2l$, two identical masses $m$ on the sides, and a string with diameter $d$ and length $h$, where $I$ is the moment of inertia, $\kappa$ is the string torsion coefficient and $G$ is the material shear modulus:
-
+For a torsional pendulum with length of $2l$, and two identical masses $m$ on the sides, the moment of inertia is:
 \begin{equation}
-T = 2\pi\sqrt{\frac{I}{\kappa}}= 2\pi\sqrt{\frac{2ml^2}{\kappa}}   \label{eqn:undamped_motion_equation}
+I = 2ml^2     \label{eqn:moment_inertia_2}
+\end{equation} 
+As shown previously (eq.~\ref{eqn:undamped_omega}), for a torsional pendulum, the period is:
+\begin{equation}
+T = 2\pi\sqrt{\frac{I}{\kappa}}= 2\pi\sqrt{\frac{2ml^2}{\kappa}}   \label{eqn:undamped_motion_equation_4}
 \end{equation}
+Where $\kappa$ the string torsion coefficient is given by (eq.~\ref{eqn:torsion_coefficient_homogeneity}):
 \begin{equation}
 \kappa = \frac{G}{h} \frac{\pi d^4}{32}    \label{eqn:torsion_coefficient}
 \end{equation}
 \par\noindent
-Longer string with smaller diameter results with a desired small string torsion coefficient $\kappa$. 
+Longer string with smaller diameter results in a desired small string torsion coefficient $\kappa$. In order to achieve a string with as small a diameter as possible, tungsten string with high tensile strength was chosen. The high tensile strength allows a small diameter while overcoming suction forces when vacuum engine is working and holding the pendulum without tear. Tungsten is also vacuum compatible. 
 \par\noindent
-In order to achieve a string with as small diameter as possible, tungsten string with high tensile strength was chosen. The high tensile strength allows a small diameter while overcoming suction forces when vacuum engine is working and holding the pendulum without tear. Tungsten is also vacuum compatible. 
+In order to minimize the magnetic noise in the measurements, the torsional pendulum was made out of stainless steel 316 (instead of stainless steel 304). Stainless steel 316 has a lower relative magnetic permeability $\mu_r$ \cite{SS316}.
 \par\noindent
-In order to minimize the magnetic noise in the measurements, the torsion pendulum was made out of stainless steel 316 (instead of stainless steel 304). Stainless steel 316 has a lower relative magnetic permeability $\mu_r$ \cite{SS316}.
-\par\noindent
-The experiment, is constructed using a front mirror, the angle displacement causes a mirror tilt. In order to minimize the magnetic noise, chosen mirror is made fully of metal (instead of coated glass). Having an Oxygen-free copper (OFC) mirror, while not officially vacuum compatible hopefully minimizes the vacuum outgassing.
+The experiment is constructed using a front mirror, where the angle displacement causes a mirror tilt. In order to minimize magnetic noise, the chosen mirror is made fully of metal (instead of coated glass). Having an oxygen-free copper (OFC) mirror, while not officially vacuum compatible, hopefully minimizes the vacuum outgassing.
 \subsubsection{Technical information}
 \begin{easylist}
 & Tungsten string;
@@ -65,7 +61,7 @@ The experiment, is constructed using a front mirror, the angle displacement caus
 %& & weight of 90 gram 
 && identical side masses weight $m$ 20.5 gram
 & Mirror;
-&& made of Oxygen-free copper (OFC), gold coated
+&& made of oxygen-free copper (OFC), gold coated
 && diameter of 1 inch
 \end{easylist}
 \begin{easylist}
@@ -80,26 +76,25 @@ The experiment, is constructed using a front mirror, the angle displacement caus
 \end{easylist}
 \subsubsection{Design}
 \par\noindent
-The torsion pendulum angle tilt is measured using a mirror connected in front of the pendulum. The mirror is a part of an optical interferometer with which the mirror tilt could be determined.
+The torsional pendulum angle tilt is measured using a mirror connected in front of the pendulum. The mirror is a part of an optical interferometer with which the mirror tilt could be determined.
 \par\noindent
-In order to balance the pendulum, so the mirror would not have an initial downward tilt. The pendulum center of mass needs to be adjusted. 
-\par\noindent
-The center of mass is adjusted using a matching mass of the mirror from behind, which balances the mirror weight.
-\par\noindent
-The matching mass $m_1$ has a similar weight and shape as the mirror $m_2$, both are connected to the pendulum via spring $w$ from their center. The spring enables accurate distance adjusting to prevent downward tilt.
-\begin{figure}[htbp]
-	\centering
-	\fbox{\includegraphics[scale=1.2]{\main/images/4 - methods and results/pendulum_top.JPG}}
-	\caption[Torsion pendulum, top view]{Torsion pendulum, top view}
-	\label{fig:pendulum top}
-\end{figure}
-\FloatBarrier 
+The pendulum center of mass needs to be adjusted, to avoid downward tilt of the mirror, due to earth gravity $g$. With a balanced pendulum the downward torque would be canceled out $\tau_y = 0$. The center of mass is adjusted using a balancing mass $m_1$ to the mirror's weight $m_2$ from behind:
 \begin{equation}
 \tau_y = 0 = m_1r_1g-m_2r_2g = m_1r_1g-m_2(w-r_1)g    \label{eqn:downward torque}
 \end{equation}
 \begin{equation}
-\frac{m_1}{m_2} = \frac{w-r_1}{r_1}\approx 1   \label{eqn:downward torque}
+\frac{m_1}{m_2} = \frac{w-r_1}{r_1}   \label{eqn:downward torque cancelled}
 \end{equation}
+\par\noindent
+As shown in fig.~\ref{fig:pendulum top}, the balancing mass and the mirror are connected to the pendulum via spring $w$ from their center, and have a similar shape and weight. The spring enables accurate distance adjusting to prevent the downward tilt.
+\begin{figure}[htbp]
+	\centering
+	\fbox{\includegraphics[scale=1.2]{\main/images/4 - methods and results/pendulum_top.JPG}}
+	\caption[The torsional pendulum, top view]{The torsional pendulum, top view}
+	\label{fig:pendulum top}
+\end{figure}
+\FloatBarrier 
+
 
 
 \subsection{Vacuum chamber design}
@@ -112,19 +107,15 @@ The matching mass $m_1$ has a similar weight and shape as the mirror $m_2$, both
 \FloatBarrier
 
 \par\noindent
-The vacuum chamber is composed of two cylindrical tubes placed one over the other with three view ports in front. The chamber has a 5-way which is connected to the vacuum engine and gauge.
+The vacuum chamber is composed of two cylindrical tubes placed one over the other with three view ports in front. The chamber is connected to a vacuum engine and gauge.
 \par\noindent
-Vacuum chamber is bounded to the breadboard by an adjustable mount.
-\par\noindent
-The vacuum engine is connected to the chamber through a valve. Measurements are made when the valve is closed and the engine off, to prevent rotation noise.
+The vacuum chamber is bounded to the breadboard by an adjustable mount. The vacuum engine is connected to the chamber through a valve. Measurements are made when the valve is closed and the engine off, to prevent rotation noise.
 
 \subsubsection{Chamber viewports}
 \par\noindent
-Central viewport is in front of the pendulum's mirror, to measure the tilt angle. Two small viewports on the sides of the chamber are used by the noise damping system (PID) to damp noises. 
+The central viewport is in front of the pendulum's mirror, to measure the tilt angle. Two small viewports on the sides of the chamber are used by the noise damping system (PID) to damp noises. 
 \par\noindent
-The view ports are for 550-1100 nm, with about 98$\%$ power transmittance in the range.
-\par\noindent
-The central viewport has a 68.3mm view diameter, and the distance from the mirror is 82 mm which gives a full field of view of about $39^0$ degrees (instead of $90^0$ at interferometry).
+The view ports are for 550-1100 nm, with about 98$\%$ power transmittance in the range. The central viewport has a 68.3mm view diameter, and the distance from the mirror is 82 mm which gives a full field of view of about $39^0$ degrees (instead of $90^0$ at interferometry).
 
 \subsubsection{Pendulum mount}
 \begin{figure}[htbp]
@@ -135,33 +126,76 @@ The central viewport has a 68.3mm view diameter, and the distance from the mirro
 \end{figure}
 \FloatBarrier
 \par\noindent
-The upper tube of the chamber is soldered with a base to which a mount is connected. The pendulum string is held via the mount.
-\par\noindent
-The mount is adjustable, enabling the adjustment of the pendulum's string length, to be in front of viewports accurately. 
+The upper tube of the chamber is soldered with a base to which a mount is connected. The pendulum string is held via the mount. The mount is adjustable, enabling the adjustment of the pendulum's string length, to place the pendulum in front of the viewports accurately. 
 
 \subsection{Vacuum quality}
-\subsubsection{pressure increase}
+\subsubsection{Pressure increase}
 \par\noindent
 Vacuum chambers are metallic chambers connected to a vacuum pump with pressure lower than the atmospheric pressure. The main limitations to vacuum quality maintenance are leakage $Q_L$ from the outside through the chamber and outgassing $Q_{des}$ inside the chamber (desorption of gas molecules from the material).
 \par\noindent
-Leaks and outgassing both increase the pressure at a constant rate over time, and are overcome by having a constant pump rate $Q_P$ (vacuum pump working constantly).   
+Leaks and outgassing both increase the pressure at a constant rate over time, and are overcome by having a constant pump rate $Q_P$ (the vacuum pump working constantly).   
 \begin{equation}
 Q_P = Q_L + Q_{des}  \label{eqn:vacuum_equilibrium}
 \end{equation}
-In this experiment due to the relatively large size and unique shape of the measurement equipment, the vacuum chamber has both a large leak and outgassing rates. The sensitivity of the measurement does not allow having the pump working, causing pressure increase over time.
-\subsubsection{minimized pressure increase}
+In this experiment, due to the relatively large size and unique shape of the measurement equipment, the vacuum chamber has a significant leak and outgassing rates. The pumping must be off during measurement, due to the measurement sensitivity, causing pressure increase over time.
+\subsubsection{Minimized pressure increase}
 \par\noindent
-Vacuum chamber and measurement system were baked out to reduce outgassing, using resistive wire. 
+The vacuum chamber and measurement system were baked-out to reduce outgassing, using resistive wire. 
 \par\noindent
-The bake out was carried out for a week at about $110 C^0$ achieving stable vacuum of about $2\cdot 10^{−4} [Torr]$ after cool down.
+The bake-out was carried out for a week at about $110 C^0$ achieving stable vacuum of about $2\cdot 10^{−4} [Torr]$ after cooling down.
 \par\noindent
-The vacuum chamber was built using CF style vacuum Components, designed for ultra high vacuum, minimizing the leak rate.
+The vacuum chamber was built using CF style vacuum components, designed for ultra high vacuum, minimizing the leak rate.
+\section{Modulated light source}
+\subsection{Radiation pressure force}
+Fast modulated light source with high intensity cause a small controlled force (eq.~\ref{eqn:radiation_force_power}):
+\begin{equation}
+F = \frac{2\eta\Theta}{{c}} \label{eqn:radiation force_1}
+\end{equation}
+The difference between two light sources from both ends of the pendulum add a small external  radiation-pressure net torque:
+\begin{equation}
+\tau = l\cdot F_1 \cdot cos\alpha_1 - l\cdot F_2 \cdot cos\alpha_2  \label{eqn:radiation torque}
+\end{equation}
+Where $\Theta$ is the light source radiant flux [watt], $\alpha$ is the light incident angle compared to the pendulum surface, and $\eta$ is the coupling efficiency of the light source. The radiation pressure torque assuming that both light fields have the same coupling efficiency and are very close to being perpendicular to surface, causing both incidence angles to be negligible:  
+\begin{equation}
+\tau \approx l(F_1 - F_2) \approx \frac{2l\eta}{{c}} (\Theta_1 -\Theta_2) \label{eqn:radiation torque_final}
+\end{equation}
+\par\noindent
+The setup can produce very small external torques with high dynamic range; light sources each with 1 watt maximum power and 8bit modulation steps, assuming $\eta = 0.7$ can produce torques up to $\tau = 5\cdot10^-{10} [N\cdot m]$ with modulation steps of $\Delta\tau = 2\cdot10^-{12} [N\cdot m]$. 
+
+\subsection{Arduino microcontroller}
+Arduino is an open-source microcontroller board used for building low cost and simple digital circuits. Each microcontroller contains a microprocessor, controller, serial communication interface and is equipped with digital and analog input/output pins. The microcontrollers could be operated as stand alone or connected to computer through serial communication. 
+\par\noindent
+The Arduino Mega 2560, is based on the ATmega2560 8-bit controller, and equipped with a $16 [MHz]$ crystal oscillator (clock), and 15 PWM outputs pins. The Arduino Mega's output is a digital $V_d = 5[V]$ output. The Arduino does not have a digital-to-analog converter (DAC), but it simulates an analog output using Pulse Width Modulation (PWM). 
+\subsubsection{Pulse Width Modulation}
+\begin{figure}[htbp]
+	\centering
+	\fbox{\includegraphics[scale=0.5]{\main/images/4 - methods and results/duty_cycle.png}}
+	\caption[The PWM analog voltage]{The PWM analog voltage}
+	\label{fig:duty_cycle}
+\end{figure}
+\FloatBarrier
+\par\noindent
+As shown in fig.~\ref{fig:duty_cycle}, the controller switches the output signal fast between the digital output and off, generating a square wave with a short period $T$. The controller is repeating the pattern, which results in an analog signal almost as if the signal is a steady analog voltage. The time signal duration is called the pulse width ($PW$). With the clock, the controller is able to modulate $PW$, changing the ratio of the time signal is on compared to off, which is the duty cycle $D$:
+\begin{equation}
+D = \frac{PW}{T}\cdot 100  \label{eqn:duty cycle}
+\end{equation}
+The analog voltage $V_a$ is the average voltage, determined by the duty cycle. The Arduino is able to modulate the duty cycle, resulting in modulation to the analog voltage:
+\begin{equation}
+V_a(t) = \frac{ PW(t)\cdot V_d}{ T}  = \frac{V_d}{100}\cdot D(t)   \label{eqn:analog voltage}
+\end{equation}
+The method enables generating voltages between $V_d = 5[V]$ and off, the voltage resolution is limited by the microcontroller resolution (8-bit). In order to be able to change the duty cycle,the clock resolution is limited the controller bit-rate. The square wave period $T$ is:
+\begin{equation}
+T = \frac{8-bit }{16MHz}  \approx 16\mu [s]	    \label{eqn:square wave frequency}
+\end{equation}
+The clock is having about 120 full periods of the square wave before changing to a new duty cycle value, having a $500[Hz]$ PWM frequency for the analog voltage modulation. 
+\par\noindent 
+Also, since the Arduino clock is connected to all PWM pins, they are all in sync. When all pins have the same duty cycle, they all have the same $V_a(t)$. At every point in time each pin could be looked at as a constant voltage supply compare to the other pins, allowing to connect all in series and increase the total output current up to $I = 1[A]$. 
 
 
-\subsection{Noise reduction}
-\subsubsection{Faraday Cage}
+\section{Noise reduction}
+\subsection{Faraday cage}
 \par\noindent
-Faraday Cage is a cage made by a continuous covering of a conductive material used to block external electromagnetic fields. The external electrical fields cause an electric charge distribution in the conductive cage without passing inside. Electric current decays exponentially with depth through the material.
+The Faraday cage is a cage made by continuous covering of a conductive material used to block external electromagnetic fields. The external electrical fields cause an electric charge distribution in the conductive cage without passing inside. Electric current decays exponentially with depth through the material.
 
 \par\noindent
 The degree at which the cage blocks the penetration of high frequency magnetic fields, depends on the material skin depth $\delta$ which determines the shield penetration depth for a defined frequency. Skin depth is dependent on the material electric resistivity $\rho$ and magnetic permeability $\mu$. 
@@ -170,19 +204,17 @@ The degree at which the cage blocks the penetration of high frequency magnetic f
 \end{equation}
 
 \subsubsection{Seismic box}
-The measurement system is placed inside a seismic box which is a Faraday Cage with 76 mm thickness, blocking magnetic fields with $f \ge 30 [Hz]$ from the environment.
-\par\noindent
-The seismic box is both reducing acoustic waves and magnetic noises from the environment.
+The measurement system is placed inside a seismic box which is a Faraday cage with 76 mm thickness, blocking magnetic fields with $f \ge 30 [Hz]$ from the environment. The seismic box is both reducing acoustic waves and magnetic noises from the environment.
 \subsubsection{Vacuum chamber}
-The Vacuum chamber is a second cage blocking magnetic noise from the electronic system placed inside the seismic box.
+The vacuum chamber is a second cage blocking magnetic noise from the electronic system placed inside the seismic box.
 \par\noindent
-Vacuum chambers are made of stainless steel with approximately 3 mm thickness, making a Faraday Cage which blocks magnetic fields with $f\ge 20 [KHz]$ while reducing magnetic noises from lower frequency fields.
+Vacuum chambers are made of stainless steel with approximately 3 mm thickness, making a Faraday cage which blocks magnetic fields with $f\ge 20 [KHz]$ while reducing magnetic noises from lower frequency fields.
+\subsection{Vacuum}
 \par\noindent
-As seen previously, Brownian motion, acoustic waves and friction are pressure dependent and are farther reduced by having vacuum.
-
-\subsection{Noise reduction}
+As demonstrated previously (eq.~\ref{eqn:total_kinetic}, eq.~\ref{eqn:acoustic_intensity}, eq.~\ref{eqn:drag force}), Brownian motion, acoustic waves and friction are pressure dependent and are considerably reduced by maintaining low pressure (through the use of vacuum chamber).
+\subsection{Active noise damping}
 \par\noindent
-After the desired vacuum is achieved, engine disconnected using the valve and engine turned off. The seismic box is closed, and waiting for the oscillations to damp down.
+After the desired vacuum is achieved, the vacuum engine is disconnected using the valve and turned off, and the seismic box is closed. After approximately eight hours the pendulum oscillations damp down to a level which could be affected by the weak force caused by radiation pressure.
 
 
 \par\noindent
@@ -216,26 +248,26 @@ PID controller can continuously calculates error value of an oscillator, to damp
 e(t) = \theta(t) = \theta   \label{eqn:error}
 \end{equation}
 \begin{equation}
-\tau_{PID} = -\gamma\cdot\dot{\theta}   \label{eqn:friction_torque}
+\tau_{PID} = -\gamma\cdot\dot{\theta}   \label{eqn:friction_torque_pid}
 \end{equation}
 The system is a damped oscillator, with an external force correction, which inserts torque to the oscillator.
 \begin{equation}
-\kappa\cdot\theta - \gamma\cdot\dot{\theta}  + I\cdot\ddot{\theta} = 0   \label{eqn:damped__pid_motion_equation}
+\kappa\cdot\theta - \gamma\cdot\dot{\theta}  + I\cdot\ddot{\theta} = 0   \label{eqn:damped_pid_motion_equation}
 \end{equation}
 \begin{equation}
-\gamma\dot{\theta}  = LF   \label{eqn:damped__pid_motion_equation}
+\gamma\dot{\theta}  = LF   \label{eqn:damped_pid_motion_equation_1}
 \end{equation}
 \begin{equation}
-\dot{\theta} = \omega_0\theta_{max}sin(\omega_0 t +\phi)    \label{eqn:undamped_motion_equation}
+\dot{\theta} = \omega_0\theta_{max}sin(\omega_0 t +\phi)    \label{eqn:undamped_motion_equation_1}
 \end{equation}
 \begin{equation}
-\dot{\theta}_{max} = \omega_0\theta_{max} = \theta_{max}\cdot\frac{2\pi}{T}    \label{eqn:undamped_motion_equation}
+\dot{\theta}_{max} = \omega_0\theta_{max} = \theta_{max}\cdot\frac{2\pi}{T}    \label{eqn:undamped_motion_equation_3}
 \end{equation}
 \begin{equation}
-\gamma  = \frac{LF_{max}}{\dot{\theta}_{max}} =\frac{LF_{max}T}{\theta_{max}2\pi}    \label{eqn:damped_pid_motion_equation}
+\gamma  = \frac{LF_{max}}{\dot{\theta}_{max}} =\frac{LF_{max}T}{\theta_{max}2\pi}    \label{eqn:damped_pid_motion_equation_2}
 \end{equation}
 \begin{equation}
-\tau =  \frac{2I}{\gamma}  \label{eqn:damping_time}
+\tau =  \frac{2I}{\gamma}  \label{eqn:damping_time_pid}
 \end{equation}
 The PID damping $\gamma$ and damping time $\tau$ depends on the initial oscillations angle. If the angle is too large compare to the inserted force, the system is extremely underdamped and the PID affect is negligible. The damping time would be infinite and the system would keep on oscillating.
 
@@ -243,17 +275,6 @@ The PID damping $\gamma$ and damping time $\tau$ depends on the initial oscillat
 Using PID control does not guarantee optimal control or stability. The control system is aiming to achieve critical damping of the process. Well tuned control would a reach the desired set point fast and accurate, and also apply over time the necessary corrections to resist external forces trying to move variable from the set point.
 \par\noindent
 The controller response is its response to error. How much does the system overshoots a setpoint and the system oscillations. When controller gains are too high, instead of critical damping there is overdamping causing overshoot, due to the high gain the overshoot response overshoots to the other side, causing the system to be driven.
-\subsection{Radiation pressure force}
-The pendulum is cooled down using radiation pressure force. Fast modulated light source with high intensity cause a small controlled force. The difference between two light sources from both ends of pendulum adds a controlled small damping torque. 
-\begin{equation}
-F = \frac{2\eta\Theta}{{c}} \label{eqn:radiation force}
-\end{equation}
-\begin{equation}
-\tau\approx d\Delta F = \frac{2d}{{c}} (\eta_1\Theta_1 -\eta_2\Theta_2) \label{eqn:radiation torque}
-\end{equation}
-The radiation pressure torque assuming light fields direction perpendicular to surface, $\Theta$ is the light source radiant flux [watt], and $\eta$ is the coupling efficiency. The center of mass distance from rotation axis $d$ of both forces is even.
-\par\noindent
-The setup could produce very small torques; light sources of 1 watt maximum power and 8bit modulation steps could produce nano-$N\cdot m$ to pico-$N\cdot m$ torques. 
 
 
 
@@ -268,26 +289,16 @@ The setup could produce very small torques; light sources of 1 watt maximum powe
 
 
 \section{Modulated LED}
-\subsection{Arduino}
-Arduino is an open-source microcontroller board used for building low cost and simple digital devices and circuits. Each microcontroller contains a microprocessor, controller, serial communication interface and is equipped with digital and analog input/output pins. The microcontrollers could be operated as stand alone or connected to computer through serial communication. 
-\par\noindent
-The Arduino Mega 2560, based on the ATmega2560 8-bit controller, is equipped with 16 MHz crystal oscillator (clock) and 15 PWM outputs pins. Arduino doesn't have analog output, but is simulates analog output using Pulse Width Modulation.
-\par\noindent
-The controller switches the output signal between the board Vcc (which is a digital 5[V]) and off, generating a square wave.
-Repeating the pattern fast enough results in an analog signal as if the signal is a steady voltage. The time signal duration called the pulse width. Controller is modulating with clock the pulse width, changing the ratio time signal is on compare to off. 
-\par\noindent
-Output voltage is determined by that ratio, which is called duty cycle. 100\% duty cycle meaning power is always on and output is the full Vcc, 0\% power off and 50\% signal is on and off equally resulting with output of half. 
-\par\noindent
-The method enables generating signals between board Vcc and off. Signal resolution limited by the microcontroller resolution (8-bit). Due to the fast Arduino clock possible signal modulation frequency is up to 500Hz.
-\par\noindent
-Since clock is connected to all PWM pins, they are in sync. When all pins have the same duty cycle, they all have the same voltage over time. At every point in time they could be looked at as a constant voltage supplies compare to each other, allowing to connect them in series and increase the output current up to 1[A]. 
+
+
+
 \subsection{Light Emitting Diode (LED)}
 The light emitting diode (led) is a high power long lifetime light source semiconductor based. The led is emitting light when current flows through. Led could be modulated at up to 100MHz. The initial opening angle of a led source varies between 45 to 120 degrees. The emitted light is incoherent in width meaning it's hard to focus it to a point (not diffraction limited). The emitted light is incoherent in length causing wide band spectrum.
 
 \par\noindent
 Forward voltage is applied causing electron injection and recombination with holes. The recombination is releasing energy in form of spontaneous emission photons. The modulation limitation is due to the electrons life time before recombination. The led power is proportional to the current flows through, Shockley diode equation for p-n junction defines the current relation to the diode voltage. In high enough values the power could be approximated by linear approximation of the diode voltage.
 \begin{equation}
-P\propto e^{\frac{q}{kT}\cdot V_d}\label{eqn:energy-mass-equivalence-relation}
+P\propto e^{\frac{q}{kT}\cdot V_d}\label{eqn:led power}
 \end{equation}
 In order to overcome the led uncoherent profile and large opening angle, light was transferred through a light guide. Light guides are pipes made of thin filaments causing internal reflections used for directed transmission of luminous energy. Light guides are used to illuminate small areas, regardless of the spectral characteristics of the light source. They mainly depend on the cross sections of entrance and exit and the length. Making them ideal to overcoming focusing problems.
 \par\noindent
@@ -297,21 +308,6 @@ Since the led power could be approximated using linear approximation, the power 
 \par\noindent
 we assume we can neglect the oscillations between two sides...
 
-
-
-\begin{figure}[htbp]
-	\centering
-	\fbox{\includegraphics[scale=0.5]{\main/images/devices/duty50.png}}
-	\caption[Duty cycle 50\%]{Duty cycle 50\%  - signal is on and off equal times}
-	\label{fig:duty50}
-\end{figure}
- 
-\begin{figure}[htbp]
-	\centering
-	\fbox{\includegraphics[scale=0.5]{\main/images/devices/duty90.png}}
-	\caption[Duty cycle 90\%]{Duty cycle 90\% - 90\% of the time signal on, equivalent to 90\% of the full Vcc signal}
-	\label{fig:duty90}
-\end{figure}
 
 
 
@@ -358,7 +354,7 @@ Usually the power output is stable but has oscillations due to having several lo
 \subsection{Acousto optic modulator}
 Acousto Optic Modulator (AOM), uses the acousto-optic effect to diffract and shift the frequency of light using RF waves. An oscillating electric signal drives a piezoelectric transducer to vibrate causing RF waves, the transducer attached to a material. This causes sound waves in the material, and periodic index modulation causing a Bragg grating. Incoming light scatters off the grating and due to Bragg diffraction comes at Bragg angle.
 \begin{equation}
-\theta_b = sin(\theta_b)\approx \frac{\lambda}{2n\Lambda} \label{eqn:energy-mass-equivalence-relation}
+\theta_b = sin(\theta_b)\approx \frac{\lambda}{2n\Lambda} \label{eqn:aom angle}
 \end{equation} 
 $\Lambda$ is the RF wavelength, $\lambda$ is the light source wavelength. 
 \par\noindent
