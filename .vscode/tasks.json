@@ -39,8 +39,8 @@
         {
             "label": "git-pull_build ",
             "type": "shell",
-            "command": "lualatex master; bibtex master; ./master.pdf; lualatex master; lualatex master;lualatex chapter; bibtex chapter; ./chapter.pdf",
-          //"command": "git pull -f; lualatex master; bibtex master; ./master.pdf; lualatex master; lualatex master;lualatex chapter; bibtex chapter; ./chapter.pdf",
+            //"command": "lualatex master; bibtex master; ./master.pdf; lualatex master; lualatex master;lualatex chapter; bibtex chapter; ./chapter.pdf",
+            "command": "git pull -f; lualatex master; bibtex master; ./master.pdf; lualatex master; lualatex master;lualatex chapter; bibtex chapter; ./chapter.pdf",
             
             "runOptions": {
                 "runOn": "folderOpen"
