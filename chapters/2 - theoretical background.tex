@@ -21,7 +21,7 @@ The restoring torque $\tau$, which is proportional to the string torsion coeffic
 \par\noindent
 Assuming homogeneity of a circular string, the string torsion coefficient $\kappa$ can be estimated by:
 \begin{equation}
-\kappa = \frac{GJ}{h} = \frac{G}{h} \frac{\pi (\frac{d}{2})^4}{2} = \frac{G}{h} \frac{\pi d^4}{32}   \label{eqn:torsion_coefficient_homogeneity}
+\kappa = \frac{GJ}{h} = \frac{G}{h} \frac{\pi}{2} (\frac{d}{2})^4 = \frac{G}{h} \frac{\pi d^4}{32}   \label{eqn:torsion_coefficient_homogeneity}
 \end{equation}
 \par\noindent
 Where $G$ is the material shear modulus, $J$ is the circular second moment of area ($Jzz$), $h$ is the string length and $d$ is the string diameter.
@@ -31,7 +31,7 @@ Where $G$ is the material shear modulus, $J$ is the circular second moment of ar
 \subsection{Simple harmonic oscillator}
 The harmonic oscillator is a second order system that, when displaced, experiences a linear restoring force proportional to the displacement from equilibrium. The torsional pendulum is an angular harmonic oscillator. However, it is equivalent to the linear case, where instead of velocity and force, one has angular velocity and torque.
 \par\noindent
-If the restoring torque is the only torque in action, then the oscillator is not driven or damped oscillator, resulting in a simple harmonic motion:
+If the restoring torque $tau$ is the only torque in action, then the oscillator is not driven or damped oscillator, resulting in a simple harmonic motion:
 \begin{equation}
 \tau = -\kappa\cdot\theta  = I\cdot\ddot{\theta}   \label{eqn:undamped_motion_equation}
 \end{equation}
@@ -42,11 +42,12 @@ Solving eq.~\ref{eqn:undamped_motion_equation}, the torque causes sinusoidal osc
 \begin{equation}
 \theta(t) = \theta_{max}cos(\omega_0 t )    \label{eqn:undamped_motion_equation_solved}
 \end{equation}
+Where $\theta_{max}$ is the oscillations amplitude, $\omega_0$ is the natural resonant frequency of the oscillations.
 \begin{equation}
 \omega_0  = \frac{2\pi}{T} = \sqrt{\frac{\kappa}{I}}   \label{eqn:undamped_omega}
 \end{equation}
 \par\noindent
-Where $\omega_0$ is the natural resonant frequency, and $T$ is the time period of oscillation, $\omega_0$ and $T$ are determined by the physical constants of the pendulum $\kappa$, $I$. Accordingly, the string torsion coefficient $\kappa$ could also be found empirically by finding the oscillations period $T$.
+The time period of oscillation $T$ and $\omega_0$ are determined by the physical constants of the pendulum $\kappa$, $I$. Accordingly, the string torsion coefficient $\kappa$ could also be found empirically by finding the oscillations period $T$.
 
 
 \subsection{Damped oscillator}
