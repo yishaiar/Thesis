@@ -107,7 +107,7 @@ When $\xi > 1$ the oscillator is overdamped; due to high friction, the system ca
 \end{equation}
 \fi 
 \par\noindent
-Fig.~\ref{fig:damped_oscillators} shows the amplitude of the oscillations of the different damping types.
+Fig.~\ref{fig:damped_oscillators} shows a comparison of the different damping types oscillations:
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=0.5]{\main/images/2 - theoretical background/damp.png}}
@@ -143,7 +143,7 @@ Newton's law of universal gravitation states that every mass $M$ attracts every 
 \end{equation}
 The force $F$ acts along the intersecting line, proportional to the product of the masses and inverse to the square of the distance $r$ between the centers. Since $G$ the gravitational constant, is very small, the force is very weak. For example, the force between two cubes 1 kg each, 1 meter apart would be $\overrightarrow{F} = 6.67\cdot10^{-11} [N]$.
 \par\noindent
-The gravitational field $g$ of mass $M$ is defined as the force per unit mass, which is a vector field consisting, at every point, a vector pointing directly towards the mass. The magnitude of the field at every point is calculated by applying the universal law. 
+The gravitational field $g$ of mass $M$ is defined as the force per unit mass, which is a vector field consisting, at every point, a vector pointing directly towards the mass. The magnitude of the field at every point is calculated by applying the universal law, given by: 
 \begin{equation}
 \overrightarrow{g}(r) = \frac{\overrightarrow{F}(r)}{m} = \frac{GM}{r^2}\hat{r}    \label{eqn:gravitation_field}
 \end{equation}
@@ -275,7 +275,7 @@ N k_B T = PV  \label{eqn:ideal-gasses}
 \end{equation}
 Where $N$ is the number of particles inside the medium, $k_B$ is the Boltzmann constant, $T$ is the temperature, $P$ is the gas pressure and $V$ is the medium's volume. Thus, when having a constant volume $V$, the gas pressure $P$ is proportional to the number of particles $N$.
 \par\noindent
-The Maxwell-Boltzmann distribution of molecular speed is:
+The Maxwell-Boltzmann distribution of molecular velocity for particles with mass $m$ is:
 \begin{equation}
 f(v) = 4\pi(\frac{m}{2 \pi k_B T})^{3/2}\cdot v^2\cdot exp(\frac{-mv^2}{2kk_BT})     \label{eqn:Maxwell_Boltzmann}
 \end{equation} 
@@ -306,11 +306,11 @@ Acoustic waves are adiabatic compression and decompression waves propagating thr
 P = P_0 cos(\omega t -k x)       \label{eqn:acoustic_pressure}
 \end{equation}
 \par\noindent
-Where $P$ is the actual pressure, $P_0$ is the average pressure, $k$ is the acoustic wave number and $\omega$ is the wave angular frequency. The acoustic intensity is defined by:
+Where $P$ is the actual pressure, $P_0$ is the average pressure, $k$ is the acoustic wave number and $\omega$ is the wave angular frequency. The acoustic intensity $I$ is defined by:
 \begin{equation}
 I = P u      \label{eqn:acoustic_intensity}
 \end{equation} 
-The acoustic intensity $I$ is the power carried by the acoustic waves $[\frac{W}{m^2}]$, and it depends on the material pressure $P$ and the particle velocity $u$. When the material pressure is reduced, the acoustic pressure is lower and less power is carried.
+The acoustic intensity is the power carried by the acoustic waves $[\frac{W}{m^2}]$, and it depends on the material pressure $P$ and the particle velocity $u$. When the material pressure is reduced, the acoustic pressure is lower and less power is carried.
 
 \subsection{Friction}
 \subsubsection{Flow characteristics}
@@ -318,14 +318,14 @@ The Reynolds number $Re$ is used to characterize types of gas flow:
 \begin{equation}
 Re= \frac{\rho v d}{\mu}     \label{eqn:Reynolds number}
 \end{equation}
-Where $\rho$ is the gas density, $v$ is the flow speed, $d$ is the diameter of the area cross section and $\mu$ is the fluid viscosity. The density $\rho$ of an ideal gas: 
+Where $\rho$ is the gas density, $v$ is the flow velocity, $d$ is the diameter of the area cross section and $\mu$ is the fluid viscosity. The density $\rho$ of an ideal gas: 
 \begin{equation}
 \rho = \frac{MP}{RT}     \label{eqn:ideal density}
 \end{equation}
 Where $M$ is the gas molar mass, and $R$ is the ideal gas constant. Thus, for a constant temperature $T$ the pressure $P$ is proportional to the gas density $\rho$ and to the Reynolds number $Re$. 
 
 \subsubsection{Drag force}
-The drag force $F_{drag}$ is the friction caused by gas resistance, which is dependent on the relative velocity (the gas flow speed) $v$ between the gas and the object. At higher pressures, when Reynolds number is relatively high the drag is proportional to the square of the velocity:
+The drag force $F_{drag}$ is the friction caused by gas resistance, which is dependent on the relative velocity (the gas flow velocity) $v$ between the gas and the object. At higher pressures, when Reynolds number is relatively high the drag is proportional to the square of the velocity:
 \begin{equation}
 F_{drag} = -\frac{1}{2}\rho C_d A\cdot v^2 = -\frac{M P C_d A}{2RT}\cdot v^2= -b\cdot v^2 
 \label{eqn:drag force}
