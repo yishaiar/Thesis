@@ -31,14 +31,14 @@ Where $G$ is the material shear modulus, $J$ is the circular second moment of ar
 \subsection{Simple harmonic oscillator}
 The harmonic oscillator is a second order system that, when displaced, experiences a linear restoring force proportional to the displacement from equilibrium. The torsional pendulum is an angular harmonic oscillator. However, it is equivalent to the linear case, where instead of velocity and force, one has angular velocity and torque.
 \par\noindent
-If the restoring torque $tau$ is the only torque in action, then the oscillator is not driven or damped oscillator, resulting in a simple harmonic motion:
+If the restoring torque $tau$ is the only torque in action, then the oscillator is not driven oscillator, resulting in a simple harmonic motion:
 \begin{equation}
 \tau = -\kappa\cdot\theta  = I\cdot\ddot{\theta}   \label{eqn:undamped_motion_equation}
 \end{equation}
 \par\noindent
 Where $I$ is the moment of inertia of the torsional pendulum. 
 \par\noindent
-Solving eq.~\ref{eqn:undamped_motion_equation}, the torque causes sinusoidal oscillations (simple harmonic motion) around the equilibrium angle:  
+Solving eq.~\ref{eqn:undamped_motion_equation}, the restoring torque causes sinusoidal oscillations (simple harmonic motion) around the equilibrium angle:  
 \begin{equation}
 \theta(t) = \theta_{max}cos(\omega_0 t )    \label{eqn:undamped_motion_equation_solved}
 \end{equation}
@@ -141,16 +141,17 @@ Newton's law of universal gravitation states that every mass $M$ attracts every 
 \begin{equation}
 \overrightarrow{F}(r) = \frac{GMm}{r^2}\hat{r}    \label{eqn:gravitation_force}
 \end{equation}
-The force $F$ acts along the intersecting line, proportional to the product of the masses and inverse to the square of the distance $r$ between the centers. Since $G$ the gravitational constant, is very small, the force is very weak. For example, the force between two cubes 1 kg each, 1 meter apart would be $\overrightarrow{F} = 6.67\cdot10^{-11} [N]$.
+The force $F$ acts along the intersecting line, proportional to the product of the masses and inverse to the square of the distance $r$ between the centers. Since $G$ the gravitational constant, is very small, the force is very weak.
 \par\noindent
 The gravitational field $g$ of mass $M$ is defined as the force per unit mass, which is a vector field consisting, at every point, a vector pointing directly towards the mass. The magnitude of the field at every point is calculated by applying the universal law, given by: 
 \begin{equation}
 \overrightarrow{g}(r) = \frac{\overrightarrow{F}(r)}{m} = \frac{GM}{r^2}\hat{r}    \label{eqn:gravitation_field}
 \end{equation}
+\iffalse
 \subsubsection{Field measurement}
 \par\noindent
 The field caused by a test mass $M$ at a specific point is calculated by measuring the gravitational force acting on a known mass $m$. In general, test mass $M$ is much larger than mass $m$, ensuring a negligible influence on the behavior of $M$.  
-
+\fi
 \subsection{Cavendish experiment}
 \subsubsection{Apparatus}
 \begin{figure}[htbp]
@@ -211,7 +212,7 @@ Accordingly, $\overline{\theta}$ the average equilibrium tilt angle of torsion i
 \overline{\theta}  \approx \frac{3GT^2cos\theta sin\theta}{4\pi^2 } \cdot \frac{M}{r_0^3}   \label{eqn:theta average_2}
 \end{equation}
 \par\noindent
-The pendulum equilibrium angle is proportional to the square of the period's length $T$, the pendulum length $l$ and the masses $m$ are dropped out, indicating that short and light weight sensors work well as larger ones, as long as their periods are the same.
+The pendulum equilibrium angle is proportional to the square of the period's length $T$, the pendulum length $l$ as well as the masses $m$ are dropped out, indicating that short and light weight sensors work well as larger ones, as long as their periods are the same.
 \par\noindent
 According to eq.~\ref{eqn:theta average_2}, by accurate angle measurement, the gravitational field could be estimated.
  
