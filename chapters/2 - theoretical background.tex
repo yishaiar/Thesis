@@ -95,15 +95,12 @@ When $\xi = 1$ the oscillator is critically damped; due to high friction, the sy
 \theta(t) = \theta_{max}(1+\frac{t}{\tau}) e^{-\frac{t}{\tau}}     \label{eqn:critically_damped_motion_equation}
 \end{equation}
 \par\noindent
-When $\xi > 1$ the oscillator is overdamped; when there is high friction, the system cannot oscillate and it decays exponentially to the equilibrium position. 
+When $\xi > 1$ the oscillator is overdamped; when there is high friction, the system cannot oscillate and it decays exponentially to the equilibrium position. When defining $xi'  = \frac{\xi}{\sqrt{\xi^2 - 1}}$ the motion is given by: 
 \begin{equation}
 \theta(t) = \frac{\theta_{max}}{2} [ (1-\xi')e^{-\frac{t}{\tau}(1+\frac{1}{\xi'})} +(1-\xi')e^{-\frac{t}{\tau}(1-\frac{1}{\xi'})} ]
 \label{eqn:overdamped_motion_equation}
 \end{equation}
-where 
-\begin{equation}
-\xi'  = \frac{\xi}{\sqrt{\xi^2 - 1}}  \label{eqn:overdamped_motion_equation_coefficient}
-\end{equation}
+
 \iffalse
 \begin{equation}
 \theta(t) = Ae^{-\frac{t}{\tau}(1+\sqrt{1-\frac{1}{\xi^2}})} + Be^{-\frac{t}{\tau}(1-\sqrt{1-\frac{1}{\xi^2}})}    \label{eqn:overdamped_motion_equation}
