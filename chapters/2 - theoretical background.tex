@@ -21,7 +21,7 @@ The restoring torque $\tau$, which is proportional to the string torsion coeffic
 \par\noindent
 Assuming homogeneity of a circular string, the string torsion coefficient $\kappa$ can be estimated by:
 \begin{equation}
-\kappa = \frac{GJ}{h} = \frac{G}{h} \frac{\pi}{2} (\frac{d}{2})^4 = \frac{G}{h} \frac{\pi d^4}{32}   \label{eqn:torsion_coefficient_homogeneity}
+\kappa = \frac{GJ}{h} = \frac{G}{h} \frac{\pi(\frac{d}{2})^4}{2}  = \frac{G}{h} \frac{\pi d^4}{32}   \label{eqn:torsion_coefficient_homogeneity}
 \end{equation}
 \par\noindent
 Where $G$ is the material shear modulus, $J$ is the circular second moment of area ($Jzz$), $h$ is the string length and $d$ is the string diameter.
@@ -42,7 +42,7 @@ Solving eq.~\ref{eqn:undamped_motion_equation}, the torque causes sinusoidal osc
 \begin{equation}
 \theta(t) = \theta_{max}cos(\omega_0 t )    \label{eqn:undamped_motion_equation_solved}
 \end{equation}
-Where $\theta_{max}$ is the oscillations amplitude, $\omega_0$ is the natural resonant frequency of the oscillations.
+Where $\theta_{max}$ is the oscillations amplitude and $\omega_0$ is the natural resonant frequency of the oscillations.
 \begin{equation}
 \omega_0  = \frac{2\pi}{T} = \sqrt{\frac{\kappa}{I}}   \label{eqn:undamped_omega}
 \end{equation}
@@ -51,12 +51,11 @@ The time period of oscillation $T$ and $\omega_0$ are determined by the physical
 
 
 \subsection{Damped oscillator}
-If the system also has damping torque (a friction), the system is a damped oscillator: 
-
+The system is a damped oscillator if there is also a damping torque, given by:
 \begin{equation}
 \tau_{drag} = -b\cdot\dot{\theta}   \label{eqn:friction_torque}
 \end{equation}
-The damping torque, is proportional to the angular velocity, where $b$ is the oscillator damping coefficient. 
+The damping torque, is friction proportional to the angular velocity $\dot{\theta}$, where $b$ is the oscillator damping coefficient. 
 \par\noindent
 Thus, eq.~\ref{eqn:undamped_motion_equation} becomes:
 \begin{equation}
