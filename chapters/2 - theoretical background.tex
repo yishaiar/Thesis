@@ -150,7 +150,7 @@ The gravitational field $g$ of mass $M$ is defined as the force per unit mass, w
 \iffalse
 \subsubsection{Field measurement}
 \par\noindent
-The field caused by a test mass $M$ at a specific point is calculated by measuring the gravitational force acting on a known mass $m$. In general, test mass $M$ is much larger than mass $m$, ensuring a negligible influence on the behavior of $M$.  
+The field caused by a test mass $M$ at a specific point is calculated by measuring the gravitational force acting on a known mass $m$. In general, test mass $M$ is much larger than mass $m$, ensuring a negligible influence on the behaviour of $M$.  
 \fi
 \subsection{Cavendish experiment}
 \subsubsection{Apparatus}
@@ -164,7 +164,7 @@ The field caused by a test mass $M$ at a specific point is calculated by measuri
 \par\noindent
 The Cavendish experiment, first performed in the 17th century, was the first experiment to measure the gravitational force between masses. The Cavendish apparatus, shown in fig.~\ref{fig:Cavendish apparatus}, is constructed by a torsional pendulum and a nearby test mass $M$, creating a net torque on the pendulum. 
 \par\noindent
-The pendulum can be assumed to be consisted of two masses $m$ connected by a rigid, massless thin rod, with length of $2l$, and a pivot point at distance $l$ from each mass.
+The pendulum can be assumed to consist of two masses $m$ connected by a rigid, massless thin rod, with length of $2l$, and a pivot point at distance $l$ from each mass.
 \par\noindent
 The pendulum moment of inertia oscillating around the pivot is:
 \begin{equation}
@@ -229,12 +229,19 @@ The dependency of the SNR on frequency causes difficulties when measuring gravit
 This limitation is a significant challenge while designing gravimetric sensors for low frequencies.
 
 \subsubsection{The shot noise limit}
-An optical measurement system can not measure a signal smaller than its shot noise, which is a fundamental quantum physical phenomenon. The power of an optical signal fluctuates due to fluctuations in the number of photons $N$ in the signal. The SNR of a shot noise limited system is:
+The shot noise is a fundamental quantum physical phenomenon in which the power of an optical signal fluctuates due to fluctuations in the number of photons in the signal. The power of an optical signal $P_{signal}$ is:
 \begin{equation}
-SNR = \frac{N}{\sqrt{N}} = \sqrt{N}    \label{eqn:shot_noise}
+P_{signal} = N h \nu   \label{eqn:signal_power}
+\end{equation}
+Where $N$ is the number of photons, $h$ is the Planck constant and $\nu$ is the photon frequency. Since the shot noise is a Poisson process, $P_{shot}$ can be calculated as the root mean square (RMS) of the current fluctuations power:
+\begin{equation}
+P_{shot} = \sqrt{P}    \label{eqn:shot_power}
+\end{equation}
+An optical measurement system for a coherent beam can not measure a signal smaller than its shot noise, the SNR of a shot noise limited system is:
+\begin{equation}
+SNR = \frac{P_{signal}}{P_{shot}} =\frac{N}{\sqrt{N}} = \sqrt{N}    \label{eqn:shot_noise}
 \end{equation}
 However, while other system noises are higher than the shot noise limit, reducing noises and averaging the time integration can provide higher accuracy and better measurement results. 
-
 \section{Radiation-pressure}
 Radiation-pressure is the pressure of a light beam on the surface due to momentum exchange with the electromagnetic field. The momentum exchange may occur with light at any wavelength which is absorbed, reflected, or emitted by the surface. The pressure causes a force on the surface, although this force is usually insignificant.
   
@@ -247,7 +254,7 @@ P_{incident} = \frac{\frac{\Theta_i}{A}cos^2(\alpha)}{c} = \frac{\eta\cdot \Thet
 \end{equation}
 Where $\alpha$ is the field angle, compared to the surface area $A$, $c$ is the speed of light and $\eta$ is the coupling efficiency due to light losses. The light losses are caused by the light beam passing through light transmitters (such as light guide or fiber), and size difference between the light beam size and the target size. 
 \par\noindent
-When the light field direction is perpendicular to the surface or the angle of the incident is negligible the radiation pressure is:
+When the light field direction is perpendicular to the surface the radiation pressure is:
 \begin{equation}
 P_{incident} = \frac{\eta\Theta_{source}}{{Ac}} \label{eqn:radiation_pressure_perpendicular}
 \end{equation}
@@ -268,6 +275,7 @@ F \approx \frac{2\eta\Theta_{source}}{{c}} \label{eqn:radiation_force_power}
 \section{Vacuum affects}
 
 \subsection{Brownian motion}
+\subsubsection{Brownian energy}
 Brownian motion is the pattern of random particles' fluctuations at fluid or gas phases, a random walk with no preferential direction of flow. This pattern happens at thermal equilibrium in a given temperature (on average there is no linear and angular momentum). 
 \par\noindent
 According to the ideal gas law: 
@@ -291,14 +299,35 @@ The total Brownian motion energy is:
 E_k = N<E_k> =\frac{3}{2}N k_B T = \frac{3}{2}PV    \label{eqn:total_kinetic}
 \end{equation}
 \par\noindent
-Eq.~\ref{eqn:total_kinetic} shows that the Brownian motion energy is proportional to the number of gas particles inside the medium. Reducing the gas pressure (having vacuum), which reduces the number of gas particles results with a reduction in the total Brownian motion energy. Since there is thermal energy coupling from the environment on the sides of the medium, reducing the number of particles also reduces the energy coupling.
+Eq.~\ref{eqn:total_kinetic} shows that the Brownian motion energy is proportional to the number of gas particles inside the medium. Reducing the gas pressure, which reduces the number of gas particles results In a reduction of the total Brownian motion energy. 
+\subsubsection{Energy coupling}
+The law of heat conduction is:
+\begin{equation}
+\dot{Q} = \lambda A \frac{\Delta T}{\Delta x}   \label{eqn:heat conduction}
+\end{equation}
+\par\noindent
+Where $\dot{Q}$ is the rate of heat flow passing distance of $\Delta x$ through a material with thermal conductivity $\lambda$ with area $A$. It can be shown that for an ideal gas the thermal conductivity is:
+\begin{equation}
+\lambda  = \frac{1}{3}c_v\rho v l   \label{eqn:heat conduction}
+\end{equation}
+\begin{equation}
+\Delta x ^2  = \frac{1}{3} l^2   \label{eqn:heat conduction}
+\end{equation}
+Where $c_v$ is the specific heat capacity of material and $l$ is the particles mean free path. The resulting rate of heat flow is:
+\begin{equation}
+\dot{Q} = \frac{1}{3}c_v\rho v l A \frac{\Delta T}{\sqrt{\frac{1}{3} l^2 }} = \frac{1}{\sqrt{3}}c_v\rho v A \Delta T   \label{eqn:heat conduction}
+\end{equation}
+
+%https://www.tec-science.com/thermodynamics/heat/thermal-conduction-in-solids/
+\par\noindent
+Since there is thermal energy coupling from the environment on the sides of the medium, reducing the number of particles also reduces the energy coupling.
 \subsubsection{Brownian uncertainty}
 The Brownian motion kinetic energy is proportional to the temperature. The noise of quantum uncertainty due to Brownian motion at a given temperature is: 
 \begin{equation}
 \frac{1}{2}\kappa (\delta\theta)^2= \frac{1}{2}k_BT  \label{eqn:Brownian uncertainty}
 \end{equation}
 \begin{equation}
-\delta\theta = \sqrt{\frac{k_B T}{\kappa}} = \sqrt{\frac{k_B}{\kappa}}\sqrt{T} \label{eqn:Brownian uncertainty 2}
+\delta\theta = \sqrt{\frac{k_B T}{\kappa}}  \label{eqn:Brownian uncertainty 2}
 \end{equation}
 
 \subsection{Acoustic wave}

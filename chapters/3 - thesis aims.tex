@@ -5,36 +5,36 @@
 
 The Cavendish experiment, is constructed using a torsional pendulum with a front mirror. The angle displacement causes a mirror tilt. Optical measurement of angle displacement is made with a split detector using interferometric technique.
 \par\noindent
-The measurement is limited by the basic energy level quantum uncertainty and measurement system shot noise. The basic energy level quantum uncertainty:
+The measurement is limited by the basic energy level quantum uncertainty and measurement system shot noise. The basic energy level quantum uncertainty is:
 \begin{equation}
 \frac{1}{2}\kappa <\delta\theta^2>= \frac{\hslash\omega}{4}    \label{eqn:basic uncertainty}
 \end{equation}
 \begin{equation}
 \delta\theta= \sqrt{\frac{\hslash\omega}{2\kappa}} \approx 10^{-16} [rad]    \label{eqn:basic uncertainty_1}
 \end{equation}
-
-\noindent
+\par\noindent
 The corresponding Shot noise limit for the interferometer is calculated as \cite{howell2019}:
 \begin{equation}
 \delta\theta = \frac{1}{4\sqrt{2}\pi}\frac{\lambda}{L\sqrt{N}} \approx
 10^{-14} [\frac{rad}{Hz}]    \label{eqn:gravitation_torque_2}
 \end{equation}
+As shown in eq.~\ref{eqn:Brownian uncertainty 2}, the quantum uncertainty due to Brownian motion (assuming above basic energy level) is temperature dependent. At room temperature ($T = 300[k]$) the noise could be estimated to:
+\begin{equation}
+\delta\theta = \sqrt{\frac{k_B T}{\kappa}} \approx 4\cdot 10^{-8} [rad] \label{eqn:Brownian uncertainty 3}
+\end{equation}
+\par\noindent
 When the gravitational force is measured using a torsional pendulum, there are noise limitations to the measurement sensitivity. The technical noise is greater than the fundamental noise, meaning that reducing the noise enables higher sensitivity. The noise on the pendulum is composed of unknown magnetic noises, acoustic waves and quantum uncertainty due to thermal Brownian motion. Friction also limits the pendulum response. 
 \par\noindent
 The pendulum is placed inside a vacuum chamber, reducing Brownian motion, acoustic waves and friction. The vacuum chamber is reducing magnetic noise as a Faraday cage. In vacuum the Brownian motion from environment coupling is reduced.
 \par\noindent
-The quantum uncertainty due to Brownian motion is the main noise source. As shown in eq.~\ref{eqn:Brownian uncertainty 2}, the quantum uncertainty at a given temperature (assuming above basic energy level) is:
 
-\begin{equation}
-\delta\theta = \sqrt{\frac{k_B T}{\kappa}} = \sqrt{\frac{k_B}{\kappa}}\sqrt{T} \label{eqn:Brownian uncertainty 3}
-\end{equation}
 \begin{equation}
 \delta\theta(t) = \delta\theta cos(\omega_0 t)   \label{eqn:pid_error}
 \end{equation}
 \par\noindent
-The noise reduction enables to damp and cool the pendulum temperature. 
+The quantum uncertainty due to Brownian motion is the main noise source. The noise reduction enables to damp and cool the pendulum temperature. 
 \par\noindent
-The cooling system is built using two led light sources placed in front of each pendulum side. The led sources are modulated at high speeds using a simple Arduino microcontroller. The modulated light is causing a small external radiation torque, which damps down the oscillations.
+The cooling system is built using two LED light sources placed in front of each pendulum side. The led sources are modulated at high speeds using a simple Arduino microcontroller. The modulated light is causing a small external radiation torque, which damps down the oscillations.
 \par\noindent
 Damping is made using a PID feedback loop. The tilt angle is measured, and an equivalent feedback external source is applied. The feedback damping can dynamically damp down the noises, without pre-knowledge of the existing noises. The PID can reduce the noises, and the effective temperature. Having a lower effective temperature enlarges the SNR and the measurement sensitivity, which enables measuring smaller tilt angles.
 

@@ -25,4 +25,12 @@ I = 2*m*l**2
 T = 2*np.pi*np.sqrt(I/kappa)
 
 
+# brownian uncertainty
+
+T0 = 300
+k_b = 1.380649e-23
+noise = np.sqrt(k_b*T0/kappa)
+
+
+
 
