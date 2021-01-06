@@ -150,7 +150,7 @@ The gravitational field $g$ of mass $M$ is defined as the force per unit mass, w
 \iffalse
 \subsubsection{Field measurement}
 \par\noindent
-The field caused by a test mass $M$ at a specific point is calculated by measuring the gravitational force acting on a known mass $m$. In general, test mass $M$ is much larger than mass $m$, ensuring a negligible influence on the behavior of $M$.  
+The field caused by a test mass $M$ at a specific point is calculated by measuring the gravitational force acting on a known mass $m$. In general, test mass $M$ is much larger than mass $m$, ensuring a negligible influence on the behaviour of $M$.  
 \fi
 \subsection{Cavendish experiment}
 \subsubsection{Apparatus}
@@ -273,26 +273,18 @@ F \approx \frac{2\eta\Theta_{source}}{{c}} \label{eqn:radiation_force_power}
 \end{equation}
 
 \section{Vacuum affects}
-\subsection{Ideal gas}
-An ideal gas is a theoretical gas composed of many randomly moving gas particles that are not having interparticle interactions. The ideal gas law is given by:
-\begin{equation}
-PV = nRT = n N_A k_B T = N k_B T  \label{eqn:ideal-gasses}
-\end{equation}
-Where $P$ is the gas pressure, $V$ is the medium's volume, $R$ is the ideal gas constant, $T$ is the temperature and $k_B$ is the Boltzmann constant. The number of particles $N$ is a product of the number of moles $n$ and the Avogadro constant $N_A$. For gas particles with a molar mass $M$ the density $\rho$ is given by:
-\begin{equation}
-\rho = \frac{MP}{RT}     \label{eqn:ideal density}
-\end{equation}
-The Reynolds number $Re$ is used to characterize types of gas flow, for an ideal gas $Re$ is given by:
-\begin{equation}
-Re= \frac{\rho v d}{\mu}     \label{eqn:Reynolds number}
-\end{equation}
-Where $v$ is the gas flow velocity, $d$ is the diameter of the area cross section and $\mu$ is the fluid viscosity.
-
-
 
 \subsection{Brownian motion}
 \subsubsection{Brownian energy}
-Brownian motion is the pattern of random particles' fluctuations at fluid or gas phases, a random walk with no preferential direction of flow. This pattern happens at thermal equilibrium in a given temperature (on average there is no linear and angular momentum). The Maxwell-Boltzmann distribution of molecular velocity for particles with mass $m$ is:
+Brownian motion is the pattern of random particles' fluctuations at fluid or gas phases, a random walk with no preferential direction of flow. This pattern happens at thermal equilibrium in a given temperature (on average there is no linear and angular momentum). 
+\par\noindent
+According to the ideal gas law: 
+\begin{equation}
+N k_B T = PV  \label{eqn:ideal-gasses}
+\end{equation}
+Where $N$ is the number of particles inside the medium, $k_B$ is the Boltzmann constant, $T$ is the temperature, $P$ is the gas pressure and $V$ is the medium's volume. Thus, when having a constant volume $V$, the gas pressure $P$ is proportional to the number of particles $N$.
+\par\noindent
+The Maxwell-Boltzmann distribution of molecular velocity for particles with mass $m$ is:
 \begin{equation}
 f(v) = 4\pi(\frac{m}{2 \pi k_B T})^{3/2}\cdot v^2\cdot exp(\frac{-mv^2}{2k_BT})     \label{eqn:Maxwell_Boltzmann}
 \end{equation} 
@@ -309,23 +301,26 @@ E_k = N<E_k> =\frac{3}{2}N k_B T = \frac{3}{2}PV    \label{eqn:total_kinetic}
 \par\noindent
 Eq.~\ref{eqn:total_kinetic} shows that the Brownian motion energy is proportional to the number of gas particles inside the medium. Reducing the gas pressure, which reduces the number of gas particles results In a reduction of the total Brownian motion energy. 
 \subsubsection{Energy coupling}
-There is thermal energy coupling from the environment on the sides of the medium, phonons are penetrating and pass energy to the gas particles inside the medium. The law of heat conduction (Fourier's law) is:
+The law of heat conduction is:
 \begin{equation}
 \dot{Q} = \lambda A \frac{\Delta T}{\Delta x}   \label{eqn:heat conduction}
 \end{equation}
 \par\noindent
-Where $\dot{Q}$ is the rate of heat flow propagating distance of $\Delta x$ through a material with thermal conductivity $\lambda$ with area $A$.The heat flow is proportional to the temperature difference $\Delta T$. It can be shown that for an ideal gas with a mean free path $l$ the passing distance is $\Delta x ^2  = \frac{1}{3} l^2 $, and the thermal conductivity is:
+Where $\dot{Q}$ is the rate of heat flow passing distance of $\Delta x$ through a material with thermal conductivity $\lambda$ with area $A$. It can be shown that for an ideal gas the thermal conductivity is:
 \begin{equation}
-\lambda  = \frac{l}{3}\rho c_v v = \frac{l}{3} \frac{MP}{RT} c_v v   \label{eqn:heat conduction coefficient}
+\lambda  = \frac{1}{3}c_v\rho v l   \label{eqn:heat conduction}
 \end{equation}
-\par\noindent
-Where $c_v$ is the specific heat capacity of the gas, the rate of heat flow is:
 \begin{equation}
-\dot{Q} =  \frac{l}{3} \frac{MP}{RT} c_v v A \frac{\Delta T}{\sqrt{\frac{1}{3} l^2 }} = \frac{M P c_v v A \Delta T}{\sqrt{3}RT}   \label{eqn:heat conduction 2}
+\Delta x ^2  = \frac{1}{3} l^2   \label{eqn:heat conduction}
 \end{equation}
-Eq.~\ref{eqn:heat conduction 2} shows that the rate of thermal energy coupling from the environment is proportional to the gas pressure. Reducing the pressure reduces the energy coupling rate.
+Where $c_v$ is the specific heat capacity of material and $l$ is the particles mean free path. The resulting rate of heat flow is:
+\begin{equation}
+\dot{Q} = \frac{1}{3}c_v\rho v l A \frac{\Delta T}{\sqrt{\frac{1}{3} l^2 }} = \frac{1}{\sqrt{3}}c_v\rho v A \Delta T   \label{eqn:heat conduction}
+\end{equation}
+
 %https://www.tec-science.com/thermodynamics/heat/thermal-conduction-in-solids/
 \par\noindent
+Since there is thermal energy coupling from the environment on the sides of the medium, reducing the number of particles also reduces the energy coupling.
 \subsubsection{Brownian uncertainty}
 The Brownian motion kinetic energy is proportional to the temperature. The noise of quantum uncertainty due to Brownian motion at a given temperature is: 
 \begin{equation}
