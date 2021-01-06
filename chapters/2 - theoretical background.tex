@@ -336,10 +336,14 @@ H(p,x) = \frac{p^2}{2m}+\frac{1}{2}\kappa x^2
 \end{equation}
 It can be shown that the partition function $Z$ for a classical continuous system with one degree of freedom is:
 \begin{equation}
-Z = \frac{1}{h}\int_{-\infty}^{\infty}dx\int_{-\infty}^{\infty} dp exp(-\frac{p^2}{2 m k_B T}) exp(-\frac{\kappa x^2}{2 k_B T }) = \frac{1}{h} \sqrt{2\pi m k_B T} \sqrt{2\pi k_B T \kappa} = \frac{k_B T}{1}
+Z = \frac{1}{h}\int_{-\infty}^{\infty}dx\int_{-\infty}^{\infty} dp exp(-\frac{p^2}{2 m k_B T}) exp(-\frac{\kappa x^2}{2 k_B T }) = \frac{1}{h} \sqrt{2\pi m k_B T} \sqrt{2\pi k_B T \kappa} = \frac{k_B T}{h\omega} = \frac{1}{\beta h\omega}
 \label{eqn:partition function}
 \end{equation}
-
+Where $\beta = k_B T$ is the 
+The thermodynamic energy of the oscillator is: 
+\begin{equation}
+E = \frac{1}{2}\kappa (\delta\theta)^2= \frac{1}{2}k_BT  \label{eqn:Brownian uncertainty}
+\end{equation}
 
 
 
