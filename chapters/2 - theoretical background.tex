@@ -336,15 +336,18 @@ H(p,x) = \frac{p^2}{2m}+\frac{1}{2}\kappa x^2
 \end{equation}
 It can be shown that the partition function $Z$ for a classical continuous system with one degree of freedom is:
 \begin{equation}
-Z = \frac{1}{h}\int_{-\infty}^{\infty}dx\int_{-\infty}^{\infty} dp exp(-\frac{p^2}{2 m k_B T}) exp(-\frac{\kappa x^2}{2 k_B T }) = \frac{1}{h} \sqrt{2\pi m k_B T} \sqrt{2\pi k_B T \kappa} = \frac{k_B T}{\hslash\omega} = \frac{1}{\beta\hslash\omega}
+Z = \frac{1}{h}\int_{-\infty}^{\infty}exp(-\frac{\kappa x^2}{2}\cdot \beta)dx \int_{-\infty}^{\infty} exp(-\frac{p^2}{2m}]\cdot \beta)dp = 
+\frac{1}{h} \sqrt{\frac{}{}2\pi m/\beta} \sqrt{2\pi k_B T \kappa} = \frac{k_B T}{\hslash\omega} 
+= \frac{1}{\beta\hslash\omega}
 \label{eqn:partition function}
 \end{equation}
-Where $\beta = k_B T$ is the 
+Where $\beta = \frac{1}{k_B T}$ is the 
 The thermodynamic energy of the oscillator is: 
 \begin{equation}
 E = -\frac{\partial}{\partial\beta}lnZ = -\frac{\partial}{\partial\beta}\frac{1}{\beta\hslash\omega} = \frac{1}{\beta}  = k_B T
 \label{eqn:Brownian uncertainty}
 \end{equation}
+
 The Brownian motion kinetic energy is proportional to the temperature. The noise of quantum uncertainty due to Brownian motion at a given temperature is: 
 \begin{equation}
 \frac{1}{2}\kappa (\delta\theta)^2= \frac{1}{2}k_BT  \label{eqn:Brownian uncertainty}
