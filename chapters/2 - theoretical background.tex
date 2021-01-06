@@ -276,7 +276,7 @@ F \approx \frac{2\eta\Theta_{source}}{{c}} \label{eqn:radiation_force_power}
 \subsection{Gas flow}
 An ideal gas is a theoretical gas composed of many randomly moving gas particles that are not having interparticle interactions. The ideal gas law is given by:
 \begin{equation}
-PV = nRT = n N_A k_B T = N k_B T  \label{eqn:ideal-gasses}
+PV = nRT = (n N_A) k_B T = N k_B T  \label{eqn:ideal-gasses}
 \end{equation}
 Where $P$ is the gas pressure, $V$ is the medium's volume, $R$ is the ideal gas constant, $T$ is the temperature and $k_B$ is the Boltzmann constant. The number of particles $N$ is a product of the number of moles $n$ and the Avogadro constant $N_A$. For gas particles with a molar mass $M$ the density $\rho$ is given by:
 \begin{equation}
@@ -315,12 +315,12 @@ The heat flow is propagating a distance of $\Delta x$ through a material with su
 %https://www.tec-science.com/thermodynamics/heat/thermal-conduction-in-solids/
 
 \subsubsection{Classical harmonic oscillators and equipartition of energy}
-The Hamiltonian of a simple harmonic oscillator is:
+The Hamiltonian $H$ of a simple harmonic oscillator is:
 \begin{equation}
 H(p,x) = \frac{p^2}{2m}+\frac{1}{2}\kappa x^2
 \label{eqn:Hamiltonian}
 \end{equation}
-For a classical continuous system with one degree of freedom the partition function $Z$ is:
+The simple harmonic oscillator has a momentum $p$ and position $x$, which is one degree of freedom. For a classical continuous system with one degree of freedom the partition function $Z$ is:
 \begin{equation}
 Z = \frac{1}{h}\int_{-\infty}^{\infty}exp(-\frac{\kappa x^2}{2}\cdot \beta)dx \int_{-\infty}^{\infty} exp(-\frac{p^2}{2m}\cdot \beta)dp = 
 \frac{1}{h} \sqrt{\frac{2\pi m}{\beta}} \sqrt{\frac{2\pi }{\kappa\beta} } = \frac{1}{\beta\hslash\omega}
