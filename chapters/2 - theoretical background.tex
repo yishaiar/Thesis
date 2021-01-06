@@ -273,7 +273,7 @@ F \approx \frac{2\eta\Theta_{source}}{{c}} \label{eqn:radiation_force_power}
 \end{equation}
 
 \section{Vacuum affects}
-\subsection{Ideal gas}
+\subsection{Gas flow}
 An ideal gas is a theoretical gas composed of many randomly moving gas particles that are not having interparticle interactions. The ideal gas law is given by:
 \begin{equation}
 PV = nRT = n N_A k_B T = N k_B T  \label{eqn:ideal-gasses}
@@ -282,14 +282,6 @@ Where $P$ is the gas pressure, $V$ is the medium's volume, $R$ is the ideal gas 
 \begin{equation}
 \rho = \frac{MP}{RT}     \label{eqn:ideal density}
 \end{equation}
-The Reynolds number $Re$ is used to characterize types of gas flow, for an ideal gas $Re$ is given by:
-\begin{equation}
-Re= \frac{\rho v d}{\mu}     \label{eqn:Reynolds number}
-\end{equation}
-Where $v$ is the gas flow velocity, $d$ is the diameter of the area cross section and $\mu$ is the fluid viscosity.
-
-
-
 \subsection{Brownian motion}
 \subsubsection{Brownian energy}
 Brownian motion is the pattern of random particles' fluctuations at fluid or gas phases, a random walk with no preferential direction of flow. This pattern happens at thermal equilibrium in a given temperature (on average there is no linear and angular momentum). The Maxwell-Boltzmann distribution of molecular velocity for particles with mass $m$ is:
@@ -333,20 +325,20 @@ The Hamiltonian of a simple harmonic oscillator is:
 H(p,x) = \frac{p^2}{2m}+\frac{1}{2}\kappa x^2
 \label{eqn:Hamiltonian}
 \end{equation}
-It can be shown that for a classical continuous system with one degree of freedom the partition function $Z$  is:
+For a classical continuous system with one degree of freedom the partition function $Z$ is:
 \begin{equation}
 Z = \frac{1}{h}\int_{-\infty}^{\infty}exp(-\frac{\kappa x^2}{2}\cdot \beta)dx \int_{-\infty}^{\infty} exp(-\frac{p^2}{2m}\cdot \beta)dp = 
 \frac{1}{h} \sqrt{\frac{2\pi m}{\beta}} \sqrt{\frac{2\pi }{\kappa\beta} } = \frac{1}{\beta\hslash\omega}
 \label{eqn:partition function}
 \end{equation}
-Where $\beta = \frac{1}{k_B T}$ is the thermodynamic beta. The thermodynamic energy of the oscillator is: 
+Where $\beta = \frac{1}{k_B T}$ is the thermodynamic beta. the thermodynamic energy of the oscillator is : 
 \begin{equation}
 E = -\frac{\partial}{\partial\beta}lnZ = -\frac{\partial}{\partial\beta}\frac{1}{\beta\hslash\omega} = \frac{1}{\beta}  = k_B T
 \label{eqn:thermodynamic energy}
 \end{equation}
 The mean energy $E$ of an oscillator in equilibrium with a heat bath at temperature $T$, when heat bath is composed of ideal gas:
 \begin{equation}
-E = k_B T = k_B\frac{PV}{N}
+E = k_B T = k_B\frac{PV}{N k_B} = \frac{PV}{N}
 \label{eqn:Brownian uncertainty}
 \end{equation}
 
