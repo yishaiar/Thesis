@@ -326,26 +326,30 @@ Where $c_v$ is the specific heat capacity of the gas, the rate of heat flow is:
 Eq.~\ref{eqn:heat conduction 2} shows that the rate of thermal energy coupling from the environment is proportional to the gas pressure. Reducing the pressure reduces the energy coupling rate.
 %https://www.tec-science.com/thermodynamics/heat/thermal-conduction-in-solids/
 \par\noindent
-\subsubsection{Brownian uncertainty}
 
-\subsubsection{Brownian uncertainty}
+\subsubsection{Classical harmonic oscillators and equipartition of energy}
 The Hamiltonian of a simple harmonic oscillator is:
 \begin{equation}
 H(p,x) = \frac{p^2}{2m}+\frac{1}{2}\kappa x^2
 \label{eqn:Hamiltonian}
 \end{equation}
-It can be shown that the partition function $Z$ for a classical continuous system with one degree of freedom is:
+It can be shown that for a classical continuous system with one degree of freedom the partition function $Z$  is:
 \begin{equation}
-Z = \frac{1}{h}\int_{-\infty}^{\infty}exp(-\frac{\kappa x^2}{2}\cdot \beta)dx \int_{-\infty}^{\infty} exp(-\frac{p^2}{2m}]\cdot \beta)dp = 
+Z = \frac{1}{h}\int_{-\infty}^{\infty}exp(-\frac{\kappa x^2}{2}\cdot \beta)dx \int_{-\infty}^{\infty} exp(-\frac{p^2}{2m}\cdot \beta)dp = 
 \frac{1}{h} \sqrt{\frac{2\pi m}{\beta}} \sqrt{\frac{2\pi }{\kappa\beta} } = \frac{1}{\beta\hslash\omega}
 \label{eqn:partition function}
 \end{equation}
-Where $\beta = \frac{1}{k_B T}$ is the 
-The thermodynamic energy of the oscillator is: 
+Where $\beta = \frac{1}{k_B T}$ is the thermodynamic beta. The thermodynamic energy of the oscillator is: 
 \begin{equation}
 E = -\frac{\partial}{\partial\beta}lnZ = -\frac{\partial}{\partial\beta}\frac{1}{\beta\hslash\omega} = \frac{1}{\beta}  = k_B T
+\label{eqn:thermodynamic energy}
+\end{equation}
+The mean energy $E$ of an oscillator in equilibrium with a heat bath at temperature $T$, when heat bath is composed of ideal gas:
+\begin{equation}
+E = k_B T = k_B\frac{PV}{N}
 \label{eqn:Brownian uncertainty}
 \end{equation}
+
 
 The Brownian motion kinetic energy is proportional to the temperature. The noise of quantum uncertainty due to Brownian motion at a given temperature is: 
 \begin{equation}
