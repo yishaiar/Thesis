@@ -278,28 +278,35 @@ An ideal gas is a theoretical gas composed of many randomly moving gas particles
 \begin{equation}
 PV = nRT = (n N_A) k_B T = N k_B T  \label{eqn:ideal-gasses}
 \end{equation}
-Where $P$ is the gas pressure, $V$ is the medium's volume, $R$ is the ideal gas constant, $T$ is the temperature and $k_B$ is the Boltzmann constant. The number of particles $N$ is a product of the number of moles $n$ and the Avogadro constant $N_A$. For an ideal gas composed of particles with a molar mass $M$ the density $\rho$ is given by:
+Where $P$ is the gas pressure, $V$ is the medium's volume, $R$ is the ideal gas constant, $T$ is the temperature and $k_B$ is the Boltzmann constant. The number of particles $N$ is a product of the number of moles $n$ and the Avogadro constant $N_A$. For an ideal gas the density $\rho$ is given by:
 \begin{equation}
 \rho(P) = \frac{MP}{RT}     \label{eqn:ideal density}
 \end{equation}
-For a diluted gas the viscosity $\mu$ is given by:
+Where $M$ is the gas particles molar mass. For a diluted ideal gas the viscosity $\mu$ is given by:
 \begin{equation}
-\mu(\rho) = \alpha l \rho \sqrt{\frac{2\pi k_B  T}{\pi m}}      \label{eqn:viscosity}
+\mu(P) = \alpha l \rho(P) \sqrt{\frac{2\pi k_B  T}{\pi m}}      \label{eqn:viscosity}
 \end{equation}
-Where $\alpha$ is a numerical constant, $l$ is the mean free path of the gas particles and $m$ is the molecular mass. The viscosity is density dependent, resulting with an ideal gas pressure dependency for viscosity $\mu(P)$
+Where $\alpha$ is a numerical constant, $l$ is the mean free path of the gas particles and $m$ is the molecular mass. The viscosity is density dependent, resulting with an ideal gas pressure dependency.
 
 \subsection{Friction}
-The drag force $F_{drag}$ is the friction caused by gas resistance, which is dependent on the relative velocity (the gas flow velocity) $v$ between the gas and the object. At higher pressures, when Reynolds number is relatively high the drag is proportional to the square of the velocity:
+The drag force $F_{drag}$ is the friction caused by gas resistance, which is dependent on the relative velocity (the gas flow velocity) $v$ between the gas and the object. The drag is proportional to the square of the velocity:
 \begin{equation}
-F_{drag} = -\frac{1}{2}\rho C_d A\cdot v^2 = -\frac{M P C_d A}{2RT}\cdot v^2= -b\cdot v^2 
+F_{drag}(P,v) = -\frac{1}{2}\rho C_d A\cdot v^2 = -\frac{M P C_d A}{2RT}\cdot v^2= -b(P)\cdot v^2 
 \label{eqn:drag force}
 \end{equation}
-Where $C_d$ is the drag coefficient, $A$ is the cross section of the area, and $b$ is the drag force proportionality factor. The Reynolds number $Re$ which is used to characterize types of gas flow is given by:
+Where $C_d$ is the drag coefficient, $A$ is the cross section of the area, and $b$ is the drag force proportionality factor. At higher pressures, when the gas is having a turbulent flow, the drag coefficient $C_d$ is approximately constant. When pressure decreases the gas is having a laminar flow, the drag coefficient $C_d$ for laminar flow is given by:
+\begin{equation}
+F_{drag}(P,v) = -\frac{1}{2}\rho C_d A\cdot v^2 = -\frac{M P C_d A}{2RT}\cdot v^2= -b(P)\cdot v^2 
+\label{eqn:drag force}
+\end{equation}
+
+
+ The Reynolds number $Re$ which is used to characterize types of gas flow is given by:
 \begin{equation}
 Re= \frac{\rho v d}{\mu}     \label{eqn:Reynolds number}
 \end{equation}
 Thus, for a constant temperature $T$ the pressure $P$ is proportional to the gas density $\rho$ and to the Reynolds number $Re$. 
-When pressure decreases and the Reynolds number approaches zero it can be shown that $C_d \rightarrow \frac{24}{Re}$, resulting with Stokes' drag:
+and the Reynolds number approaches zero it can be shown that $C_d \rightarrow \frac{24}{Re}$, resulting with Stokes' drag:
 \begin{equation}
 F_{drag} = -\frac{1}{2}\rho C_d A\cdot v^2  = -\frac{1}{2}\rho \frac{24}{Re} A\cdot v^2 = -\frac{1}{2}\rho \frac{24\mu}{\rho v d}\cdot v^2 \frac{\pi d^2}{4} = -3\pi\mu d\cdot v
 \label{eqn:drag_force_low}
