@@ -289,16 +289,19 @@ Where $M$ is the gas particles molar mass. For a diluted ideal gas the viscosity
 Where $\alpha$ is a numerical constant, $l$ is the mean free path of the gas particles and $m$ is the molecular mass. The viscosity is density dependent, resulting with an ideal gas pressure dependency.
 
 \subsection{Friction}
-The drag force $F_{drag}$ is the friction caused by gas resistance, which is dependent on the relative velocity (the gas flow velocity) $v$ between the gas and the object. The drag is proportional to the square of the velocity:
+The drag force $F_{drag}$ is the friction caused by gas resistance, which is dependent on the relative velocity (the gas flow velocity) $v$ between the gas and the object. At higher pressures, when the gas is having a turbulent flow, the drag is proportional to the square of the velocity:
 \begin{equation}
-F_{drag}(P,v) = -\frac{1}{2}\rho C_d A\cdot v^2 = -\frac{M P C_d A}{2RT}\cdot v^2= -b(P)\cdot v^2 
+F_{drag}(P,v) = -\frac{1}{2}\rho(P) C_d \pi r^2\cdot v^2 = -b\cdot v^2 
 \label{eqn:drag force}
 \end{equation}
-Where $C_d$ is the drag coefficient, $A$ is the cross section of the area, and $b$ is the drag force proportionality factor. At higher pressures, when the gas is having a turbulent flow, the drag coefficient $C_d$ is approximately constant. When pressure decreases the gas is having a laminar flow, the drag coefficient $C_d$ for laminar flow is given by:
+Where $C_d$ is the drag coefficient, $r$ is the radius of the area cross section, and $b$ is the drag force proportionality factor. When pressure decreases the gas is having a laminar flow, and the drag force is given by Stokes' law:
 \begin{equation}
-F_{drag}(P,v) = -\frac{1}{2}\rho C_d A\cdot v^2 = -\frac{M P C_d A}{2RT}\cdot v^2= -b(P)\cdot v^2 
+F_{drag} = -6\pi\mu r\cdot v = -b\cdot v
 \label{eqn:drag force}
 \end{equation}
+For ideal gas both the density and viscosity are pressure dependent, and decrease with pressure. Due to the pressure dependency of the drag force, decreased pressure results with lower drag force.
+
+
 
 
  The Reynolds number $Re$ which is used to characterize types of gas flow is given by:
@@ -306,19 +309,7 @@ F_{drag}(P,v) = -\frac{1}{2}\rho C_d A\cdot v^2 = -\frac{M P C_d A}{2RT}\cdot v^
 Re= \frac{\rho v d}{\mu}     \label{eqn:Reynolds number}
 \end{equation}
 Thus, for a constant temperature $T$ the pressure $P$ is proportional to the gas density $\rho$ and to the Reynolds number $Re$. 
-and the Reynolds number approaches zero it can be shown that $C_d \rightarrow \frac{24}{Re}$, resulting with Stokes' drag:
-\begin{equation}
-F_{drag} = -\frac{1}{2}\rho C_d A\cdot v^2  = -\frac{1}{2}\rho \frac{24}{Re} A\cdot v^2 = -\frac{1}{2}\rho \frac{24\mu}{\rho v d}\cdot v^2 \frac{\pi d^2}{4} = -3\pi\mu d\cdot v
-\label{eqn:drag_force_low}
-\end{equation}
-\begin{equation}
-F_{drag} = - b \cdot v
-\label{eqn:drag_force_low_final}
-\end{equation}
-%The air viscosity is  $\mu = 1.81/cdot10^{-5}[\frac{kg}{m/cdot s}]$ resulting with a 
-The drag force proportionality factor $b$ is pressure dependent, decreased pressure results with lower drag force. When reaching the medium vacuum regime, the drag becomes Stokes's drag and the proportionality factor becomes viscosity dependent. The viscosity for a specific gas at a given temperature is constant, resulting with a constant drag force.
-
-
+and the Reynolds number approaches zero it can be shown that $C_d \rightarrow \frac{24}{Re}$, resulting with 
 
 \subsection{Brownian motion}
 \subsubsection{Brownian energy}
