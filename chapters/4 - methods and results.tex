@@ -7,12 +7,12 @@
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=0.3]{\main/images/4 - methods and results/total_chamber.png}}
-	\caption[Total chamber]{Total chamber}
+	\caption[Total chamber]{The system structure}
 	\label{fig:Total chamber}
 \end{figure}
 \FloatBarrier
 \par\noindent
-The experiment is designed to minimize magnetic noises by avoiding capacitance and by choosing low magnetic permeability materials. Therefore, the torsional pendulum is placed inside a vacuum chamber, reducing Brownian motion, acoustic waves and friction. The vacuum chamber also reduces magnetic noise as a Faraday Cage. The vacuum chamber is placed inside seismic box, further reducing acoustic waves and magnetic noises from the environment.
+The experiment is designed to minimize magnetic noises by avoiding capacitance and by choosing low magnetic permeability materials. Therefore, the torsional pendulum is placed inside a vacuum chamber, reducing Brownian motion, acoustic waves and friction. The vacuum chamber also reduces magnetic noise as a Faraday Cage. The vacuum chamber is placed inside seismic box, further reducing acoustic waves and magnetic noises from the environment. 
 
 \par\noindent
 The experiment system is designed to minimize the outgassing rate, by both choosing low outgassing materials and avoiding air pockets inside the devices. The design of torsional pendulum and vacuum chamber was carried out using Solid Works.
@@ -146,21 +146,6 @@ The bake-out was carried out for a week at about $110 C^0$ achieving stable vacu
 \par\noindent
 The vacuum chamber was built using CF style vacuum components, designed for ultra high vacuum, minimizing the leak rate.
 \section{Modulated light source}
-\subsection{Radiation pressure force}
-Fast modulated light source with high intensity cause a small controlled force (eq.~\ref{eqn:radiation_force_power}):
-\begin{equation}
-F = \frac{2\eta\Theta}{{c}} \label{eqn:radiation force_1}
-\end{equation}
-The difference between two light sources from both ends of the pendulum add a small external  radiation-pressure net torque:
-\begin{equation}
-\tau = l\cdot F_1 \cdot cos\alpha_1 - l\cdot F_2 \cdot cos\alpha_2  \label{eqn:radiation torque}
-\end{equation}
-Where $\Theta$ is the light source radiant flux [watt], $\alpha$ is the light incident angle compared to the pendulum surface, and $\eta$ is the coupling efficiency of the light source. The radiation pressure torque assuming that both light fields have the same coupling efficiency and are very close to being perpendicular to surface, causing both incidence angles to be negligible:  
-\begin{equation}
-\tau \approx l(F_1 - F_2) \approx \frac{2l\eta}{{c}} (\Theta_1 -\Theta_2) \label{eqn:radiation torque_final}
-\end{equation}
-\par\noindent
-The setup can produce very small external torques with high dynamic range; light sources each with 1 watt maximum power and 8bit modulation steps, assuming $\eta = 0.7$ can produce torques up to $\tau = 5\cdot10^-{10} [N\cdot m]$ with modulation steps of $\Delta\tau = 2\cdot10^-{12} [N\cdot m]$. 
 
 \subsection{Arduino microcontroller}
 Arduino is an open-source microcontroller board used for building low cost and simple digital circuits. Each microcontroller contains a microprocessor, controller, serial communication interface and is equipped with digital and analog input/output pins. The microcontrollers could be operated as stand alone or connected to computer through serial communication. 
@@ -179,7 +164,7 @@ As shown in fig.~\ref{fig:duty_cycle}, the controller switches the output signal
 \begin{equation}
 D = \frac{PW}{T}\cdot 100  \label{eqn:duty cycle}
 \end{equation}
-The analog voltage $V_a$ is the average voltage, determined by the duty cycle. The Arduino is able to modulate the duty cycle, resulting in modulation to the analog voltage:
+The analog voltage $V_a$ is the average voltage, determined by the duty cycle. The Arduino is able to modulate the duty cycle, resulting in modulation of the voltage:
 \begin{equation}
 V_a(t) = \frac{ PW(t)\cdot V_d}{ T}  = \frac{V_d}{100}\cdot D(t)   \label{eqn:analog voltage}
 \end{equation}
@@ -187,9 +172,43 @@ The method enables generating voltages between $V_d = 5[V]$ and off, the voltage
 \begin{equation}
 T = \frac{8-bit }{16MHz}  \approx 16\mu [s]	    \label{eqn:square wave frequency}
 \end{equation}
-The clock is having about 120 full periods of the square wave before changing to a new duty cycle value, having a $500[Hz]$ PWM frequency for the analog voltage modulation. 
+The clock is having about 120 full periods of the square wave before changing to a new duty cycle value, limiting the voltage modulation frequency to a $500[Hz]$ PWM frequency . 
 \par\noindent 
 Also, since the Arduino clock is connected to all PWM pins, they are all in sync. When all pins have the same duty cycle, they all have the same $V_a(t)$. At every point in time each pin could be looked at as a constant voltage supply compare to the other pins, allowing to connect all in series and increase the total output current up to $I = 1[A]$. 
+
+
+\subsection{Light emitting diode (LED)}
+The light emitting diode (LED) is a high power long lifetime light source semiconductor based. The led is emitting light when current flows through. Led could be modulated at up to 100MHz. The initial opening angle of a led source varies between 45 to 120 degrees. The emitted light is incoherent in width meaning it's hard to focus it to a point (not diffraction limited). The emitted light is incoherent in length causing wide band spectrum.
+
+\par\noindent
+Forward voltage is applied causing electron injection and recombination with holes. The recombination is releasing energy in form of spontaneous emission photons. The modulation limitation is due to the electrons life time before recombination. The led power is proportional to the current flows through, Shockley diode equation for p-n junction defines the current relation to the diode voltage. In high enough values the power could be approximated by linear approximation of the diode voltage.
+\begin{equation}
+P\propto e^{\frac{q}{kT}\cdot V_d}\label{eqn:led power}
+\end{equation}
+In order to overcome the led uncoherent profile and large opening angle, light was transferred through a light guide. Light guides are pipes made of thin filaments causing internal reflections used for directed transmission of luminous energy. Light guides are used to illuminate small areas, regardless of the spectral characteristics of the light source. They mainly depend on the cross sections of entrance and exit and the length. Making them ideal to overcoming focusing problems.
+\par\noindent
+Connecting a high power led to Arduino, enables fast real-time controlled modulation of high power led with about 2ms speed. The light arrives to pendulum through a light guide allowing to assume beam variation through the surface negligible.The light is controlled through a PID and applies a torque.
+\par\noindent
+Since the led power could be approximated using linear approximation, the power modulation is proportional to the Arduino duty cycle. That allows to control the linear approximation of the power output by changing the PID gain values.  
+\par\noindent
+we assume we can neglect the oscillations between two sides...
+
+
+\subsection{Radiation pressure force}
+Fast modulated light source with high intensity cause a small controlled force (eq.~\ref{eqn:radiation_force_power}):
+\begin{equation}
+F = \frac{2\eta\Theta}{{c}} \label{eqn:radiation force_1}
+\end{equation}
+The difference between two light sources from both ends of the pendulum add a small external  radiation-pressure net torque:
+\begin{equation}
+\tau = l\cdot F_1 \cdot cos\alpha_1 - l\cdot F_2 \cdot cos\alpha_2  \label{eqn:radiation torque}
+\end{equation}
+Where $\Theta$ is the light source radiant flux [watt], $\alpha$ is the light incident angle compared to the pendulum surface, and $\eta$ is the coupling efficiency of the light source. The radiation pressure torque assuming that both light fields have the same coupling efficiency and are very close to being perpendicular to surface, causing both incidence angles to be negligible:  
+\begin{equation}
+\tau \approx l(F_1 - F_2) \approx \frac{2l\eta}{{c}} (\Theta_1 -\Theta_2) \label{eqn:radiation torque_final}
+\end{equation}
+\par\noindent
+The setup can produce very small external torques with high dynamic range; light sources each with 1 watt maximum power and 8bit modulation steps, assuming $\eta = 0.7$ can produce torques up to $\tau = 5\cdot10^-{10} [N\cdot m]$ with modulation steps of $\Delta\tau = 2\cdot10^-{12} [N\cdot m]$. 
 
 
 \section{Noise reduction}
@@ -291,22 +310,6 @@ The controller response is its response to error. How much does the system overs
 \section{Modulated LED}
 
 
-
-\subsection{Light Emitting Diode (LED)}
-The light emitting diode (led) is a high power long lifetime light source semiconductor based. The led is emitting light when current flows through. Led could be modulated at up to 100MHz. The initial opening angle of a led source varies between 45 to 120 degrees. The emitted light is incoherent in width meaning it's hard to focus it to a point (not diffraction limited). The emitted light is incoherent in length causing wide band spectrum.
-
-\par\noindent
-Forward voltage is applied causing electron injection and recombination with holes. The recombination is releasing energy in form of spontaneous emission photons. The modulation limitation is due to the electrons life time before recombination. The led power is proportional to the current flows through, Shockley diode equation for p-n junction defines the current relation to the diode voltage. In high enough values the power could be approximated by linear approximation of the diode voltage.
-\begin{equation}
-P\propto e^{\frac{q}{kT}\cdot V_d}\label{eqn:led power}
-\end{equation}
-In order to overcome the led uncoherent profile and large opening angle, light was transferred through a light guide. Light guides are pipes made of thin filaments causing internal reflections used for directed transmission of luminous energy. Light guides are used to illuminate small areas, regardless of the spectral characteristics of the light source. They mainly depend on the cross sections of entrance and exit and the length. Making them ideal to overcoming focusing problems.
-\par\noindent
-Connecting a high power led to Arduino, enables fast real-time controlled modulation of high power led with about 2ms speed. The light arrives to pendulum through a light guide allowing to assume beam variation through the surface negligible.The light is controlled through a PID and applies a torque.
-\par\noindent
-Since the led power could be approximated using linear approximation, the power modulation is proportional to the Arduino duty cycle. That allows to control the linear approximation of the power output by changing the PID gain values.  
-\par\noindent
-we assume we can neglect the oscillations between two sides...
 
 
 
