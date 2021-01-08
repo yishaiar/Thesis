@@ -286,11 +286,11 @@ Where $M$ is the gas particles molar mass. For a diluted ideal gas the viscosity
 \begin{equation}
 \mu(P) = \alpha l \rho(P) \sqrt{\frac{2\pi k_B  T}{\pi m}}      \label{eqn:viscosity}
 \end{equation}
-Where $\alpha$ is a numerical constant, $l$ is the mean free path of the gas particles and $m$ is the molecular mass. The viscosity is density dependent, resulting with an ideal gas pressure dependency. It can be shown that for an ideal gas the heat flow propagation distance is $\Delta x ^2  = \frac{1}{3} l^2 $, and the thermal conductivity $\lambda$ is:
+Where $\alpha$ is a numerical constant, $l$ is the mean free path of the gas particles and $m$ is the molecular mass. It can be shown that for an ideal gas the thermal conductivity $\lambda$ is:
 \begin{equation}
-\lambda  = \frac{l}{3}\rho c_v v = \frac{l}{3} \frac{MP}{RT} c_v v   \label{eqn:heat conduction coefficient}
+\lambda(P)  = \frac{l}{3}\rho(P) c_v v    \label{eqn:heat conduction coefficient}
 \end{equation}
-Where $c_v$ is the specific heat capacity of the material.
+Where $c_v$ is the specific heat capacity of the material and the heat flow propagation distance is $\Delta x ^2  = \frac{1}{3} l^2 $.
 
 
 \subsection{Friction}
@@ -305,16 +305,6 @@ F_{drag} = -6\pi\mu r\cdot v = -b\cdot v
 \label{eqn:drag force}
 \end{equation}
 For ideal gas both the density and viscosity are pressure dependent, and decrease with pressure. Due to the pressure dependency of the drag force, decreased pressure results with lower drag force.
-
-
-
-
- The Reynolds number $Re$ which is used to characterize types of gas flow is given by:
-\begin{equation}
-Re= \frac{\rho v d}{\mu}     \label{eqn:Reynolds number}
-\end{equation}
-Thus, for a constant temperature $T$ the pressure $P$ is proportional to the gas density $\rho$ and to the Reynolds number $Re$. 
-and the Reynolds number approaches zero it can be shown that $C_d \rightarrow \frac{24}{Re}$, resulting with 
 
 \subsection{Brownian motion}
 \subsubsection{Brownian energy}
