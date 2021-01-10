@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 mm=1e-3
 gr = 1e-3
@@ -31,6 +32,17 @@ T0 = 300
 k_b = 1.380649e-23
 noise = np.sqrt(k_b*T0/kappa)
 
+e= 1.6e-19
 
 
 
+VT = 0.026
+c = k_b*T0/e *np.log(10)
+Is = 1e12
+I= np.arange(500000)/1000
+vd = c*np.log10(I/Is)
+vd1 = c/np.log(10)*(I/Is-1)
+
+
+plt.plot(I,vd)
+plt.plot(I,vd1)
