@@ -178,10 +178,12 @@ Also, since the Arduino clock is connected to all PWM pins, they are all in sync
 
 
 \subsection{Light emitting diode (LED)}
-The light emitting diode (LED) is a high power long lifetime light source semiconductor based. The led is emitting light when current flows through. Led could be modulated at up to 100MHz. The initial opening angle of a led source varies between 45 to 120 degrees. The emitted light is incoherent in width meaning it's hard to focus it to a point (not diffraction limited). The emitted light is incoherent in length causing wide band spectrum.
-
+The light emitting diode (LED) is a semiconductor based light source with high power, and a long lifetime. The led is emitting light when current flows through, and could be modulated up to $100MHz$. The LED opening angle (FOV) varies between 45 to 120 degrees, and the emitted light is incoherent in width meaning it's hard to focus it to a point (not diffraction limited). The emitted light is incoherent in length causing wide band spectrum.
 \par\noindent
-Forward voltage is applied causing electron injection and recombination with holes. The recombination is releasing energy in form of spontaneous emission photons. The modulation limitation is due to the electrons life time before recombination. The led power is proportional to the current flows through, Shockley diode equation for p-n junction defines the current relation to the diode voltage. In high enough values the power could be approximated by linear approximation of the diode voltage.
+Forward voltage is applied causing electron injection and recombination with holes. The recombination is releasing energy in form of spontaneous emission photons. The modulation limitation is due to the electrons life time before recombination. The led power is proportional to the current flows through, Shockley diode equation for p-n junction defines the current relation to the diode voltage. 
+
+
+In high enough values the power could be approximated by linear approximation of the diode voltage.
 \begin{equation}
 P\propto e^{\frac{q}{kT}\cdot V_d}\label{eqn:led power}
 \end{equation}
