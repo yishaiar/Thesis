@@ -180,13 +180,17 @@ Also, since the Arduino clock is connected to all PWM pins, they are all in sync
 \subsection{Light emitting diode (LED)}
 The light emitting diode (LED) is a semiconductor based light source with high power, and a long lifetime. Forward voltage is applied to a p-n junction, causing electron injection and recombination with holes. The recombination is releasing energy in form of spontaneous emission photons (incoherent light). Due to the electrons life time before recombination, the LED could be modulated up to $100MHz$. The LED opening angle (FOV) varies between 45 to 120 degrees, and the emitted light is incoherent in width meaning it's hard to focus it to a point (not diffraction limited) and incoherent in length causing wide band spectrum.
 \par\noindent
-The current  $I$ flowing through the LED is defined by the Shockley diode equation for p-n junctions:
+The LED current $I$ is defined by the Shockley diode equation for p-n junctions:
 \begin{equation}
 I  = I_s (e^{V_d\cdot \frac{e}{n k_B T} }-1) = I_s (e^{\frac{V_d}{n V_T} } -1) \overset{V_d>>V_T}{\approx} I_s e^{\frac{V_d}{n V_T} }   \label{eqn:led current}
 \end{equation}
-Where $I_s$ is the saturation current of the diode, $V_d$ is the LED forward voltage, $n$ is the led emission coefficient, $e$ is the electron charge, and $V_T$ is the thermal voltage. When $V_d>>V_T$ the exponent is much is given by:
+Where $I_s$ is the saturation current of the diode, $V_d$ is the LED forward voltage, $n$ is the led emission coefficient, $e$ is the electron charge, and $V_T$ is the thermal voltage. The LED forward voltage at room temperature ($T=300K$) is given by:
 \begin{equation}
 V_d \approx n V_T ln10 log_{10} (\frac{I}{I_s}) \label{eqn:led voltage}
+\end{equation}
+Since the forward voltage is logarithm of the current, it varies very slow and is approximately constant over a wide current range. Having a constant forward voltage results with large changes in the LED current due to small changes in the driving circuit supply voltage. LED driving circuit consisted of a resistor in series with the LED stabilizes the current, the circuit current is given by:
+\begin{equation}
+I =\frac{V-V_d}{R} \label{eqn:led circuit}
 \end{equation}
 
 

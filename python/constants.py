@@ -38,7 +38,7 @@ e= 1.6e-19
 
 VT = k_b*T0/e
 c = k_b*T0/e *np.log(10)
-Is = 1e12
+Is = 1e1
 I= np.arange(10000)/10000
 vd = c*np.log10(I/Is)
 
@@ -63,7 +63,7 @@ vs = (P*R-vd**2)/(-vd)
 plt.plot(vd,I)
 # # plt.plot(vd,I1)
 
-plt.plot(vs,I)
+# plt.plot(vs,I)
 
 # plt.plot(vs,P)
 
