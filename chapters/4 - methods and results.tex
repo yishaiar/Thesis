@@ -206,11 +206,13 @@ Since the forward voltage $V_l$ varies as the logarithm of the current, it varie
 \begin{equation}
 I =\frac{V-V_l}{R} \label{eqn:led circuit}
 \end{equation}
-The circuit is composed of a blue LED with $V_l\approx 4.5V$, supply voltage of 6 PWM Arduino pins in parallel (eq.~\ref{eqn:pwm current}, eq.~\ref{eqn:pwm voltage}) and resistor $R = 200\Omega$, the LED output power is given by:
+The circuit is composed of a blue LED with $V_l\approx 4.5V$, supply voltage of 6 PWM Arduino pins in parallel (eq.~\ref{eqn:pwm current}, eq.~\ref{eqn:pwm voltage}) and resistor $R = 200\Omega$, the radiant flux is given by:
 \begin{equation}
-\Theta(t) = I_{total}\cdot V_l = NI\cdot V_l = N V_l \frac{V-V_l}{R}\cdot  =N V_l\frac{\frac{5}{100}\cdot D(t)-V_l}{R} \approx N V_l\frac{\frac{5}{100}\cdot D(t)}{R} = 0.007\cdot D(t) \label{eqn:led power}
+\Theta(t) = I_{total}\cdot V_l = NI\cdot V_l = N V_l \frac{V-V_l}{R}\cdot  =N V_l\frac{\frac{5}{100}\cdot D(t)-V_l}{R} \approx N V_l\frac{\frac{5}{100}\cdot D(t)}{R} = 0.007\cdot D(t)[W] \label{eqn:led power}
 \end{equation}
-In order to overcome the led uncoherent profile and large FOV, the light was transferred through a light guide. Light guides are pipes made of thin filaments causing internal reflections used  to illuminate small areas, regardless of the spectral characteristics of the light source. They mainly depend on the cross sections of entrance and exit and the length, making them ideal to overcoming focusing problems. Due to coupling efficiency and size difference between the output beam from the lightguide and the pendulum sides, the light hitting the pendulum is $\eta\Theta(t)$. The resulting torque is given by:
+In order to overcome the led uncoherent profile and large FOV, the light is coupled to a light guide, a pipe made of thin filaments causing internal reflections used  to illuminate small areas, regardless of the spectral characteristics of the light source. Light guide mainly depend on the entrance and exit cross section and length, making them ideal to overcoming focusing problems. 
+\par\noindent
+Due to coupling efficiency and size difference between the output beam from the lightguide and the pendulum sides, the efficiency of flux hitting the pendulum is estimated to be $\eta = 0.7$ and the torque is given by:
 \begin{equation}
 \tau(t)  =\frac{2l\eta}{{c}} (\Theta_1(t) -\Theta_2(t)) = 3.56^{-12}(D_1(t) -D_2(t)) 
 \label{eqn:led tourqe}
@@ -240,7 +242,7 @@ The vacuum chamber is a second cage blocking magnetic noise from the electronic 
 Vacuum chambers are made of stainless steel with approximately 3 mm thickness, making a Faraday cage which blocks magnetic fields with $f\ge 20 [KHz]$ while reducing magnetic noises from lower frequency fields.
 \subsection{Vacuum}
 \par\noindent
-As demonstrated previously (eq.~\ref{eqn:total_kinetic}, eq.~\ref{eqn:acoustic_intensity}, eq.~\ref{eqn:drag force}), Brownian motion, acoustic waves and friction are pressure dependent and are considerably reduced by maintaining low pressure (through the use of vacuum chamber).
+As demonstrated previously (eq.~\ref{eqn:heat conduction 2},eq.~\ref{eqn:total_kinetic}, eq.~\ref{eqn:acoustic_intensity}, eq.~\ref{eqn:drag force}), Brownian motion, acoustic waves and friction are pressure dependent and are considerably reduced by maintaining low pressure (through the use of vacuum chamber).
 \subsection{Active noise damping}
 \par\noindent
 After the desired vacuum is achieved, the vacuum engine is disconnected using the valve and turned off, and the seismic box is closed. After approximately eight hours the pendulum oscillations damp down to a level which could be affected by the weak force caused by radiation pressure.
