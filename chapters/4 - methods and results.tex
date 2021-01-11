@@ -216,7 +216,7 @@ In order to overcome the led uncoherent profile and large FOV, the light was tra
 \label{eqn:led tourqe}
 \end{equation}
 \par\noindent
-The LED power could be approximated by linear approximation of the Arduino duty cycle $D(t)$, which varies between 0 to 100\% with 8bit resolution, giving a maximal power output of approximately $P = 670mW$ and torques up to $\tau = 7\cdot10^-{10} [N\cdot m]$ with modulation steps of $\Delta\tau = 3.5\cdot10^-{12} [N\cdot m]$. As shown in eq.~\ref{eqn:pwm frequency}), the LED could be modulated up to $500[Hz]$ resulting with fast modulated light source with high intensity. Since the led power could be approximated using linear approximation, it allows to control the approximated power output by changing the PID gain values.  
+The LED power could be approximated by linear approximation of the Arduino duty cycle $D(t)$, which varies between 0 to 100\% with 8bit resolution, generating torques up to $\tau = 7\cdot10^-{10} [N\cdot m]$ with modulation steps of $\Delta\tau = 1.4\cdot10^-{12} [N\cdot m]$. As shown in eq.~\ref{eqn:pwm frequency}), the LED could be modulated up to $500[Hz]$ resulting with fast modulated external force for the PID algorithm. Also, since the led power could be approximated using linear approximation, it allows to control the approximated power output by changing the PID gain values.  
 
 
 
