@@ -164,7 +164,7 @@ As shown in fig.~\ref{fig:duty_cycle}, the controller switches the output signal
 \begin{equation}
 D = \frac{PW}{T}\cdot 100  \label{eqn:duty cycle}
 \end{equation}
-The analog voltage $V_a$ is the average voltage, determined by the duty cycle. The Arduino is able to modulate the duty cycle, resulting in modulation of the average voltage $V_a$. Also, since the Arduino clock is connected to all PWM pins, they are all in sync. When all pins have the same duty cycle, they all have the same $V_a(t)$. At every point in time each pin could be looked at as a constant voltage supply compare to the other pins, allowing to connect all in series and increase the total output voltage. The total output $V$ power is given by:
+The Arduino is able to modulate the duty cycle in time, resulting in modulation of the average voltage $V_a$ which is the simulated analog voltage of a single pin. Also, since the Arduino clock is connected to all PWM pins, they are all in sync. When all pins have the same duty cycle $D$, they all have the same voltage frequency and phase, resulting with the pins being constant voltage supplies compare to each other. When connecting all pins in series, the total output $V$ power is given by:
 \begin{equation}
 V(t) = N\cdot V_a(t) = N\cdot\frac{ PW(t)\cdot V_d}{ T}  = N\cdot\frac{V_d}{100}\cdot D(t)   \label{eqn:analog voltage}
 \end{equation}
