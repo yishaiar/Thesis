@@ -182,19 +182,19 @@ The light emitting diode (LED) is a semiconductor based light source with high p
 \par\noindent
 The LED current $I$ is defined by the Shockley diode equation for p-n junctions:
 \begin{equation}
-I  = I_s (e^{V_d\cdot \frac{e}{n k_B T} }-1) = I_s (e^{\frac{V_d}{n V_T} } -1) \overset{V_d>>V_T}{\approx} I_s e^{\frac{V_d}{n V_T} }   \label{eqn:led current}
+I  = I_s (e^{V_l\cdot \frac{e}{n k_B T} }-1) = I_s (e^{\frac{V_d}{n V_T} } -1) \overset{V_d>>V_T}{\approx} I_s e^{\frac{V_d}{n V_T} }   \label{eqn:led current}
 \end{equation}
-Where $I_s$ is the saturation current of the diode, $V_d$ is the LED forward voltage, $n$ is the led emission coefficient, $e$ is the electron charge, and $V_T$ is the thermal voltage. The LED forward voltage at room temperature ($T=300K$) is given by:
+Where $I_s$ is the saturation current of the diode, $V_l$ is the LED forward voltage, $n$ is the led emission coefficient, $e$ is the electron charge, and $V_T$ is the thermal voltage. The LED forward voltage at room temperature ($T=300K$) is given by:
 \begin{equation}
-V_d \approx n V_T ln10 log_{10} (\frac{I}{I_s}) \label{eqn:led voltage}
+V_l \approx n V_T ln10 log_{10} (\frac{I}{I_s}) \label{eqn:led voltage}
 \end{equation}
 Since the forward voltage is logarithm of the current, it varies very slow and is approximately constant over wide current range. Having a constant forward voltage results with large changes in the LED current due to small changes in the driving circuit supply voltage $V$. LED driving circuit consisted of resistor $R$ in series with the LED stabilizes the current, the circuit current is given by:
 \begin{equation}
-I =\frac{V-V_d}{R} \label{eqn:led circuit}
+I =\frac{V-V_l}{R} \label{eqn:led circuit}
 \end{equation}
 The LED forward voltage direction is inverse to the current. Since the supply voltage $V$ is composed of $N$ voltage supplies in parallel the LED output power is given by:
 \begin{equation}
-P = I_{total}\cdot (-V_d) = (NI)\cdot (-V_d) = N(-V_d)\frac{V-V_d}{R}  =N(-V_d)\frac{\frac{V_d}{100}\cdot D(t)-V_d}{R} \label{eqn:led power}
+P = I_{total}\cdot (-V_l) = (NI)\cdot (-V_l) = N(-V_l)\frac{V-V_d}{R}  =N(-V_l)\frac{\frac{V_d}{100}\cdot D(t)-V_l}{R} \label{eqn:led power}
 \end{equation}
 
 oltage is proportional to the current flows through,
