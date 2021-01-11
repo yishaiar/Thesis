@@ -174,15 +174,15 @@ Arduino is an open-source microcontroller board used for building inexpensive di
 \end{figure}
 \FloatBarrier
 \par\noindent
-As shown in fig.~\ref{fig:duty_cycle}, the controller switches the output signal fast between the digital output and off, generating a square wave with a short period $T$. The controller is repeating the pattern, which results in an analog signal almost as if the signal is a steady analog voltage. The time signal duration is called the pulse width ($PW$). With the clock, the controller is able to modulate $PW$, changing the ratio of the time signal is on compared to off, which is the duty cycle $D$:
+As shown in fig.~\ref{fig:duty_cycle}, the controller switches the output signal fast between the digital output on and off, generating a square wave with period $T$. Pulse width ($PW$) is the time duration in which the signal is on. With the clock, the controller is able to modulate $PW$, changing the ratio of time signal is on compared to off, which is the duty cycle $D$:
 \begin{equation}
-D = \frac{PW}{T}\cdot 100  \label{eqn:duty cycle}
+D(t) = \frac{PW(t)}{T}\cdot 100  \label{eqn:duty cycle}
 \end{equation}
-The duty cycle varies between 0 to 100\%, with the microcontroller resolution. The analog voltage $V_a$ is the average voltage, determined by the duty cycle. The Arduino is able to modulate the duty cycle, resulting in modulation of the voltage:
+The duty cycle varies between 0 to 100\%, with resolution limited by the controller. The Arduino is modulating the duty cycle, resulting in modulation of the The analog voltage (the average voltage) $V_a$ given by: 
 \begin{equation}
 V_a(t) = \frac{ PW(t)\cdot V_d}{ T}  = \frac{V_d}{100}\cdot D(t)  = \frac{5}{100}\cdot D(t)  \label{eqn:analog voltage}
 \end{equation}
-The method enables generating voltages between $V_d = 5[V]$ and off, the voltage resolution is limited by the microcontroller resolution (8-bit). Also, since the Arduino clock is connected to all PWM pins, they are all in sync. When all PWM pins have the same duty cycle, they all have the same voltage, frequency and phase. Even though the pins output varies in time, they are constant voltage supplies compare to each other, allowing to connect $N$ pins in parallel and increase the output current. 
+Since the Arduino clock is connected to all PWM pins, they are all in sync. When all PWM pins have the same duty cycle, they all have the same voltage, frequency and phase. Even though the pins output vary in time, they are constant voltage supplies compare to each other, allowing to connect $N$ pins in parallel and increase the output current $I_{total}$ given by: 
 \begin{equation}
 I_{total} = N\cdot I   \label{eqn:analog current}
 \end{equation}
@@ -206,21 +206,18 @@ Since the forward voltage varies as the logarithm of the current, it varies slow
 \begin{equation}
 I =\frac{V-V_l}{R} \label{eqn:led circuit}
 \end{equation}
-The circuit is composed by a blue LED with $V_l\approx 4.5V$, 6 PWM Arduino pins in parallel supply voltage and a resistor $R = 200\Omega$, the LED output power is given by:
+The circuit is composed by a blue LED with $V_l\approx 4.5V$, supply voltage of 6 PWM Arduino pins in parallel and resistor $R = 200\Omega$, the LED output power is given by:
 \begin{equation}
 \Theta(t) = I_{total}\cdot V_l = NI\cdot V_l = N V_l \frac{V-V_l}{R}\cdot  =N V_l\frac{\frac{5}{100}\cdot D(t)-V_l}{R} \approx N V_l\frac{\frac{5}{100}\cdot D(t)}{R} = 0.007\cdot D(t) \label{eqn:led power}
 \end{equation}
-The LED power could be approximated by linear approximation of Arduino duty cycle $D(t)$, which varies between 0 to 100\% with 8bit resolution, giving a maximal power output of approximately %P = 670mW%. As shown in eq.~\ref{eqn:pwm frequency}), the LED could be modulated up to %500[Hz% resulting with fast modulated light source with high intensity. Since the led power could be approximated using linear approximation, it allows to control the approximated power output by changing the PID gain values.  
-\par\noindent
-In order to overcome the led uncoherent profile and large FOV, the light was transferred through a light guide. Light guides are pipes made of thin filaments causing internal reflections used  to illuminate small areas, regardless of the spectral characteristics of the light source. They mainly depend on the cross sections of entrance and exit and the length, making them ideal to overcoming focusing problems.
-
-The setup can produce very small external torques with high dynamic range; light sources each with 1 watt maximum power and 8bit modulation steps, assuming $\eta = 0.7$ can produce torques up to $\tau = 5\cdot10^-{10} [N\cdot m]$ with modulation steps of $\Delta\tau = 2\cdot10^-{12} [N\cdot m]$. 
-
- The resulting torque is given by:
+In order to overcome the led uncoherent profile and large FOV, the light was transferred through a light guide. Light guides are pipes made of thin filaments causing internal reflections used  to illuminate small areas, regardless of the spectral characteristics of the light source. They mainly depend on the cross sections of entrance and exit and the length, making them ideal to overcoming focusing problems. Due to coupling efficiency and size difference between the output beam from the lightguide and the pendulum sides, the light hitting the pendulum is $\eta\Theta(t)$. The resulting torque is given by:
 \begin{equation}
-\tau(t)  \frac{2l\eta}{{c}} (\Theta_1(t) -\Theta_2(t)) 3.56E-12(D_1(t) -D_2(t)) 
+\tau(t)  =\frac{2l\eta}{{c}} (\Theta_1(t) -\Theta_2(t)) = 3.56^{-12}(D_1(t) -D_2(t)) 
 \label{eqn:led tourqe}
 \end{equation}
+\par\noindent
+The LED power could be approximated by linear approximation of the Arduino duty cycle $D(t)$, which varies between 0 to 100\% with 8bit resolution, giving a maximal power output of approximately $P = 670mW$ and torques up to $\tau = 7\cdot10^-{10} [N\cdot m]$ with modulation steps of $\Delta\tau = 3.5\cdot10^-{12} [N\cdot m]$. As shown in eq.~\ref{eqn:pwm frequency}), the LED could be modulated up to $500[Hz]$ resulting with fast modulated light source with high intensity. Since the led power could be approximated using linear approximation, it allows to control the approximated power output by changing the PID gain values.  
+
 
 
 
