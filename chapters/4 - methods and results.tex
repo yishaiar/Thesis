@@ -155,7 +155,7 @@ The Arduino Mega 2560, is based on the ATmega2560 8-bit controller, and equipped
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=0.5]{\main/images/4 - methods and results/duty_cycle.png}}
-	\caption[The PWM analog voltage]{The PWM analog voltage of a single pin}
+	\caption[The PWM analog voltage]{The PWM analog voltage}
 	\label{fig:duty_cycle}
 \end{figure}
 \FloatBarrier
@@ -164,9 +164,9 @@ As shown in fig.~\ref{fig:duty_cycle}, the controller switches the output signal
 \begin{equation}
 D = \frac{PW}{T}\cdot 100  \label{eqn:duty cycle}
 \end{equation}
-The Arduino is able to modulate the duty cycle in time, resulting in modulation of the average voltage $V_a$ which is the simulated analog voltage of a single pin. Also, since the Arduino clock is connected to all PWM pins, they are all in sync. When all pins have the same duty cycle $D$, they all have the same voltage frequency and phase, resulting with the pins being constant voltage supplies compare to each other. When connecting all pins in series, the total output $V$ power is given by:
+The analog voltage $V_a$ is the average voltage, determined by the duty cycle. The Arduino is able to modulate the duty cycle, resulting in modulation of the voltage:
 \begin{equation}
-V(t) = N\cdot V_a(t) = N\cdot\frac{ PW(t)\cdot V_d}{ T}  = N\cdot\frac{V_d}{100}\cdot D(t)   \label{eqn:analog voltage}
+V_a(t) = \frac{ PW(t)\cdot V_d}{ T}  = \frac{V_d}{100}\cdot D(t)   \label{eqn:analog voltage}
 \end{equation}
 The method enables generating voltages between $V_d = 5[V]$ and off, the voltage resolution is limited by the microcontroller resolution (8-bit). In order to be able to change the duty cycle,the clock resolution is limited the controller bit-rate. The square wave period $T$ is:
 \begin{equation}
@@ -174,9 +174,7 @@ T = \frac{8-bit }{16MHz}  \approx 16\mu [s]	    \label{eqn:square wave frequency
 \end{equation}
 The clock is having about 120 full periods of the square wave before changing to a new duty cycle value, limiting the voltage modulation frequency to a $500[Hz]$ PWM frequency . 
 \par\noindent 
-
-
-% up to $I = 1[A]$. 
+Also, since the Arduino clock is connected to all PWM pins, they are all in sync. When all PWM pins have the same duty cycle, they all have the same voltage, frequency and phase. Even though the pins varies in time, they are constant voltage supplies compare to each other, allowing to connect all in parallel and increase the output current $I = \sum I_i$ up to a maximal current of $I = 1[A]$. 
 
 
 \subsection{Light emitting diode (LED)}
