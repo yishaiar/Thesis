@@ -145,8 +145,11 @@ The vacuum chamber and measurement system were baked-out to reduce outgassing, u
 The bake-out was carried out for a week at about $110 C^0$ achieving stable vacuum of about $2\cdot 10^{−4} [Torr]$ after cooling down.
 \par\noindent
 The vacuum chamber was built using CF style vacuum components, designed for ultra high vacuum, minimizing the leak rate.
+
 \section{Modulated light source}
+At each of the small viewports on the sides of the chamber there is a controlled LED light source, which are used to generate torque to damp the system using a PID algorithm.
 \subsection{Radiation pressure force}
+
 Fast modulated light source with high intensity cause a small controlled force (eq.~\ref{eqn:radiation_force_power}):
 \begin{equation}
 F = \frac{2\eta\Theta}{{c}} \label{eqn:radiation force_1}
@@ -161,9 +164,7 @@ Where $\Theta$ is the light source radiant flux [watt], $\alpha$ is the light in
 \end{equation}
 \par\noindent
 \subsection{Arduino microcontroller}
-Arduino is an open-source microcontroller board used for building low cost and simple digital circuits. Each microcontroller contains a microprocessor, controller, serial communication interface and is equipped with digital and analog input/output pins. The microcontrollers could be operated as stand alone or connected to computer through serial communication. 
-\par\noindent
-The Arduino Mega 2560, is based on the ATmega2560 8-bit controller, and equipped with a $16 [MHz]$ crystal oscillator (clock), and 15 PWM outputs pins. The Arduino Mega's output is a digital output $V_d = 5[V]$. The Arduino does not have a digital-to-analog converter (DAC), but it simulates an analog output using Pulse Width Modulation (PWM). 
+Arduino is an open-source microcontroller board used for building inexpensive digital circuits, containing microprocessor, controller and serial communication interface. The Arduino Mega 2560, is based on the ATmega2560 8-bit controller, and equipped with a $16 [MHz]$ crystal oscillator (clock) and 15 PWM outputs pins. The Arduino Mega's output is a digital output $V_d = 5[V]$. The Arduino does not have a digital-to-analog converter (DAC), but it simulates an analog output using Pulse Width Modulation (PWM). 
 \subsubsection{Pulse Width Modulation}
 \begin{figure}[htbp]
 	\centering
@@ -214,11 +215,11 @@ The circuit is composed by a blue LED with $V_l\approx 4.5V$, 6 PWM Arduino pins
 \end{equation}
 The LED power could be approximated by linear approximation of Arduino duty cycle $D(t)$, which varies between 0 to 100\% with 8bit resolution, giving a maximal power output of approximately %P = 670mW%. As shown in eq.~\ref{eqn:pwm frequency}), the LED could be modulated up to %500[Hz% resulting with fast modulated light source with high intensity. Since the led power could be approximated using linear approximation, it allows to control the approximated power output by changing the PID gain values.  
 \par\noindent
-The LED 
-
-In order to overcome the led uncoherent profile and large opening angle, light was transferred through a light guide. Light guides are pipes made of thin filaments causing internal reflections used for directed transmission of luminous energy. Light guides are used to illuminate small areas, regardless of the spectral characteristics of the light source. They mainly depend on the cross sections of entrance and exit and the length. Making them ideal to overcoming focusing problems.
-
-
+In order to overcome the led uncoherent profile and large opening angle, light was transferred through a light guide. Light guides are pipes made of thin filaments causing internal reflections used for directed transmission of luminous energy. Light guides are used to illuminate small areas, regardless of the spectral characteristics of the light source. They mainly depend on the cross sections of entrance and exit and the length. Making them ideal to overcoming focusing problems. The resulting torque is given by:
+\begin{equation}
+\tau \approx l(F_1 - F_2) \approx \frac{2l\eta}{{c}} (\Theta_1 -\Theta_2) 
+\label{eqn:led tourqe}
+\end{equation}
 
 
 The setup can produce very small external torques with high dynamic range; light sources each with 1 watt maximum power and 8bit modulation steps, assuming $\eta = 0.7$ can produce torques up to $\tau = 5\cdot10^-{10} [N\cdot m]$ with modulation steps of $\Delta\tau = 2\cdot10^-{12} [N\cdot m]$. 
