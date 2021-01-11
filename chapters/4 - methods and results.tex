@@ -147,7 +147,7 @@ The bake-out was carried out for a week at about $110 C^0$ achieving stable vacu
 The vacuum chamber was built using CF style vacuum components, designed for ultra high vacuum, minimizing the leak rate.
 
 \section{Modulated light source}
-At each of the small viewports on the sides of the chamber there is a controlled LED light source, which are used to generate torque to damp the system using a PID algorithm.
+At each of the small viewports on the sides of the chamber there is a controlled LED light source. The light sources are controlled by a PID algorithm through a computer and are used to generate torques in real time to damp the pendulum noises.
 \subsection{Radiation pressure force}
 
 Fast modulated light source with high intensity cause a small controlled force (eq.~\ref{eqn:radiation_force_power}):
@@ -202,9 +202,6 @@ Where $I_s$ is the saturation current of the diode, $V_l$ is the LED forward vol
 V_l \approx n V_T ln10 log_{10} (\frac{I}{I_s}) \label{eqn:led voltage}
 \end{equation}
 \subsection{LED setup}
-The setup is composed by two Arduino controlled LED, which are driven by arduino PWM pins. 
-
-
 Since the forward voltage varies as the logarithm of the current, it varies slowly, being approximately constant over wide current range. Having a constant forward voltage results with large changes in the LED current due to small changes in the driving circuit supply voltage $V$. LED driving circuit consisted of resistor $R$ in series with the LED stabilizes the current, the circuit current is given by:
 \begin{equation}
 I =\frac{V-V_l}{R} \label{eqn:led circuit}
@@ -215,14 +212,16 @@ The circuit is composed by a blue LED with $V_l\approx 4.5V$, 6 PWM Arduino pins
 \end{equation}
 The LED power could be approximated by linear approximation of Arduino duty cycle $D(t)$, which varies between 0 to 100\% with 8bit resolution, giving a maximal power output of approximately %P = 670mW%. As shown in eq.~\ref{eqn:pwm frequency}), the LED could be modulated up to %500[Hz% resulting with fast modulated light source with high intensity. Since the led power could be approximated using linear approximation, it allows to control the approximated power output by changing the PID gain values.  
 \par\noindent
-In order to overcome the led uncoherent profile and large opening angle, light was transferred through a light guide. Light guides are pipes made of thin filaments causing internal reflections used for directed transmission of luminous energy. Light guides are used to illuminate small areas, regardless of the spectral characteristics of the light source. They mainly depend on the cross sections of entrance and exit and the length. Making them ideal to overcoming focusing problems. The resulting torque is given by:
+In order to overcome the led uncoherent profile and large FOV, the light was transferred through a light guide. Light guides are pipes made of thin filaments causing internal reflections used  to illuminate small areas, regardless of the spectral characteristics of the light source. They mainly depend on the cross sections of entrance and exit and the length, making them ideal to overcoming focusing problems.
+
+The setup can produce very small external torques with high dynamic range; light sources each with 1 watt maximum power and 8bit modulation steps, assuming $\eta = 0.7$ can produce torques up to $\tau = 5\cdot10^-{10} [N\cdot m]$ with modulation steps of $\Delta\tau = 2\cdot10^-{12} [N\cdot m]$. 
+
+ The resulting torque is given by:
 \begin{equation}
-\tau \approx l(F_1 - F_2) \approx \frac{2l\eta}{{c}} (\Theta_1 -\Theta_2) 
+\tau(t)  \frac{2l\eta}{{c}} (\Theta_1(t) -\Theta_2(t)) 3.56E-12(D_1(t) -D_2(t)) 
 \label{eqn:led tourqe}
 \end{equation}
 
-
-The setup can produce very small external torques with high dynamic range; light sources each with 1 watt maximum power and 8bit modulation steps, assuming $\eta = 0.7$ can produce torques up to $\tau = 5\cdot10^-{10} [N\cdot m]$ with modulation steps of $\Delta\tau = 2\cdot10^-{12} [N\cdot m]$. 
 
 
 \section{Noise reduction}
