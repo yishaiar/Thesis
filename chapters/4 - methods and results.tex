@@ -180,11 +180,11 @@ D(t) = \frac{PW(t)}{T}\cdot 100  \label{eqn:duty cycle}
 \end{equation}
 The duty cycle varies between 0 to 100\%, with resolution limited by the controller. The Arduino is modulating the duty cycle, resulting in modulation of the The analog voltage (the average voltage) $V_a$ given by: 
 \begin{equation}
-V_a(t) = \frac{ PW(t)\cdot V_d}{ T}  = \frac{V_d}{100}\cdot D(t)  = \frac{5}{100}\cdot D(t)  \label{eqn:analog voltage}
+V_a(t) = \frac{ PW(t)\cdot V_d}{ T}  = \frac{V_d}{100}\cdot D(t)  = \frac{5}{100}\cdot D(t)  \label{eqn:pwm voltage}
 \end{equation}
 Since the Arduino clock is connected to all PWM pins, they are all in sync. When all PWM pins have the same duty cycle, they all have the same voltage, frequency and phase. Even though the pins output vary in time, they are constant voltage supplies compare to each other, allowing to connect $N$ pins in parallel and increase the output current $I_{total}$ given by: 
 \begin{equation}
-I_{total} = N\cdot I   \label{eqn:analog current}
+I_{total} = N\cdot I   \label{eqn:pwm current}
 \end{equation}
 The clock is having about 120 full periods of the square wave before changing to a new duty cycle value, limiting the voltage modulation frequency. Also, in order to be able to change the duty cycle, the clock frequency is limited by the controller bit-rate. The PWM frequency is given by:
 \begin{equation}
@@ -202,11 +202,11 @@ Where $I_s$ is the saturation current of the diode, $V_l$ is the LED forward vol
 V_l \approx n V_T ln10 log_{10} (\frac{I}{I_s}) \label{eqn:led voltage}
 \end{equation}
 \subsection{LED setup}
-Since the forward voltage varies as the logarithm of the current, it varies slowly, being approximately constant over wide current range. Having a constant forward voltage results with large changes in the LED current due to small changes in the driving circuit supply voltage $V$. LED driving circuit consisted of resistor $R$ in series with the LED stabilizes the current, the circuit current is given by:
+Since the forward voltage $V_l$ varies as the logarithm of the current, it varies slowly, being approximately constant over wide current range, resulting with large changes in the LED current due to small changes in the circuit supply voltage $V$. Driving circuit composed of resistor $R$ in series with the LED stabilizes the current, the current is given by:
 \begin{equation}
 I =\frac{V-V_l}{R} \label{eqn:led circuit}
 \end{equation}
-The circuit is composed by a blue LED with $V_l\approx 4.5V$, supply voltage of 6 PWM Arduino pins in parallel and resistor $R = 200\Omega$, the LED output power is given by:
+The circuit is composed of a blue LED with $V_l\approx 4.5V$, supply voltage of 6 PWM Arduino pins in parallel (eq.~\ref{eqn:pwm current}, eq.~\ref{eqn:pwm voltage}) and resistor $R = 200\Omega$, the LED output power is given by:
 \begin{equation}
 \Theta(t) = I_{total}\cdot V_l = NI\cdot V_l = N V_l \frac{V-V_l}{R}\cdot  =N V_l\frac{\frac{5}{100}\cdot D(t)-V_l}{R} \approx N V_l\frac{\frac{5}{100}\cdot D(t)}{R} = 0.007\cdot D(t) \label{eqn:led power}
 \end{equation}
