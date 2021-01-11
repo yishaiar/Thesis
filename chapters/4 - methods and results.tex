@@ -172,7 +172,7 @@ Where $\alpha$ is the force incident angle compared to the pendulum surface. Lig
 \end{equation}
 \par\noindent
 \subsection{Arduino microcontroller}
-Arduino is an open-source microcontroller board used for building inexpensive digital circuits, containing microprocessor, controller and serial communication interface. The Arduino Mega 2560, is based on the ATmega2560 8-bit controller, and equipped with a $16 [MHz]$ crystal oscillator (clock) and 15 PWM outputs pins. The Arduino Mega's output is a digital output $V_d = 5[V]$. The Arduino does not have a digital-to-analog converter (DAC), but it simulates an analog output using Pulse Width Modulation (PWM). 
+Arduino is an open-source microcontroller board used for building inexpensive digital circuits, containing microprocessor, controller and serial communication interface. The Arduino Mega 2560, is based on the ATmega2560 8-bit controller, and equipped with a $16 [MHz]$ crystal oscillator (clock) and 15 PWM outputs pins. The Arduino Mega's output is a digital output $V_d = 5[V]$ without a digital-to-analog converter (DAC), but it can simulate analog output using Pulse Width Modulation (PWM). 
 \subsubsection{Pulse Width Modulation}
 \begin{figure}[htbp]
 	\centering
@@ -199,9 +199,9 @@ The clock is having about 120 full periods of the square wave before changing to
 f_{PWM} = \frac{1 }{120T}= \frac{1 }{120 \frac{8-bit }{16MHz}}  \approx 500[Hz]	    \label{eqn:pwm frequency}
 \end{equation}
 \subsection{Light emitting diode (LED)}
-The light emitting diode (LED) is a semiconductor based light source with high power, and a long lifetime. Forward voltage is applied to a p-n junction, causing electron injection and recombination with holes. The recombination is releasing energy in form of spontaneous emission photons (incoherent light). Due to the electrons life time before recombination, the LED could be modulated up to $100MHz$. The LED opening angle (FOV) varies between 45 to 120 degrees, and the emitted light is incoherent in width meaning it's hard to focus it to a point (not diffraction limited) and incoherent in length causing wide band spectrum.
+The light emitting diode (LED) is a semiconductor based light source with high power, and a long lifetime. Forward voltage is applied to a p-n junction, causing electron injection and recombination with holes. The recombination is releasing energy in form of spontaneous emission photons (incoherent light). Due to the electrons life time before recombination, the LED could be modulated up to $100MHz$.
 \par\noindent
-The LED current $I$ is defined by the Shockley diode equation for p-n junctions:
+The LED opening angle (FOV) varies between 45 to 120 degrees, and the emitted light is incoherent in width meaning it's hard to focus it to a point (not diffraction limited) and incoherent in length causing wide band spectrum. The LED current $I$ is defined by the Shockley diode equation for p-n junctions:
 \begin{equation}
 I  = I_s (e^{V_l\cdot \frac{e}{n k_B T} }-1) = I_s (e^{\frac{V_d}{n V_T} } -1) \overset{V_d>>V_T}{\approx} I_s e^{\frac{V_d}{n V_T} }   \label{eqn:led current}
 \end{equation}
@@ -210,15 +210,17 @@ Where $I_s$ is the saturation current of the diode, $V_l$ is the LED forward vol
 V_l \approx n V_T ln10 log_{10} (\frac{I}{I_s}) \label{eqn:led voltage}
 \end{equation}
 \subsection{LED setup}
-Since the forward voltage $V_l$ varies as the logarithm of the current, it varies slowly, being approximately constant over wide current range, resulting with large changes in the LED current due to small changes in the circuit supply voltage $V$. Driving circuit composed of resistor $R$ in series with the LED stabilizes the current, the current is given by:
+\subsubsection{Circuit}
+Since the forward voltage $V_l$ varies as the logarithm of the current, it varies slowly, being approximately constant over wide current range, resulting with large changes in the LED current due to small changes in the circuit supply voltage $V$. Driving circuit composed of resistor $R$ in series with the LED stabilizes the current, given by:
 \begin{equation}
 I =\frac{V-V_l}{R} \label{eqn:led circuit}
 \end{equation}
-The circuit is composed of a blue LED with $V_l\approx 4.5V$, supply voltage of 6 PWM Arduino pins in parallel (eq.~\ref{eqn:pwm current}, eq.~\ref{eqn:pwm voltage}) and resistor $R = 200\Omega$, the radiant flux is given by:
+The circuit is composed of a blue LED with $V_l\approx 4.5V$, supply voltage of 6 PWM Arduino pins in parallel (eq.~\ref{eqn:pwm current}, eq.~\ref{eqn:pwm voltage}) and resistor $R = 200\Omega$, the LED radiant flux $[W]$ is given by:
 \begin{equation}
-\Theta(t) = I_{total}\cdot V_l = NI\cdot V_l = N V_l \frac{V-V_l}{R}\cdot  =N V_l\frac{\frac{5}{100}\cdot D(t)-V_l}{R} \approx N V_l\frac{\frac{5}{100}\cdot D(t)}{R} = 0.007\cdot D(t)[W] \label{eqn:led power}
+\Theta(t) = I_{total}\cdot V_l = NI\cdot V_l = N V_l \frac{V-V_l}{R}\cdot  =N V_l\frac{\frac{5}{100}\cdot D(t)-V_l}{R} \approx N V_l\frac{\frac{5}{100}\cdot D(t)}{R} = 0.007\cdot D(t)\label{eqn:led power}
 \end{equation}
-In order to overcome the led uncoherent profile and large FOV, the light is coupled to a light guide, a pipe made of thin filaments causing internal reflections used  to illuminate small areas, regardless of the spectral characteristics of the light source. Light guide mainly depend on the entrance and exit cross section and length, making them ideal to overcoming focusing problems. 
+\par\noindent
+In order to overcome the led uncoherent profile and large FOV, the light is coupled to a light guide, a pipe made of thin filaments causing internal reflections used  to illuminate small areas, regardless of the spectral characteristics of the light source. Light guide mainly depend on the entrance and exit cross section and length, making it ideal to overcome focusing problems. 
 \par\noindent
 Due to coupling efficiency and size difference between the output beam from the lightguide and the pendulum sides, the efficiency of flux hitting the pendulum is estimated to be $\eta = 0.7$ and the torque is given by:
 \begin{equation}
