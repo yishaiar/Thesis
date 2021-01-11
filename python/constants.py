@@ -40,7 +40,7 @@ VT = k_b*T0/e
 n = 4
 c = n*k_b*T0/e *np.log(10)
 Is = 5e16
-I= np.arange(1530)/10000
+I= np.arange(0,2601)/100000
 
 vd = c*np.log10(I/Is)
 
@@ -56,20 +56,22 @@ vd = c*np.log10(I/Is)
 #           I1.append(0)
 
 N = 6
-P = I*(-vd)
+P = I*N*(-vd)
 R = 360
 # vs = (P*R-vd**2)/(-vd)
 
-vs = (I*R/N+vd)
+vs = (I*R+vd)
 
 
-# plt.plot(vd,I)
-# # plt.plot(vd,I1)
+plt.plot(vd,I)
+# plt.plot(vd,I1)
 
 # plt.plot(vs,I)
 
-plt.plot(vs,P)
+# plt.plot(vs,P)
 
 # plt.plot(P,I)
 
 
+# D = np.arange(2**8)/2**8*100
+# vs = 0.05*D

@@ -164,7 +164,7 @@ As shown in fig.~\ref{fig:duty_cycle}, the controller switches the output signal
 \begin{equation}
 D = \frac{PW}{T}\cdot 100  \label{eqn:duty cycle}
 \end{equation}
-The analog voltage $V_a$ is the average voltage, determined by the duty cycle. The Arduino is able to modulate the duty cycle, resulting in modulation of the voltage:
+The duty cycle varies between 0 to 100\%, with the microcontroller resolution. The analog voltage $V_a$ is the average voltage, determined by the duty cycle. The Arduino is able to modulate the duty cycle, resulting in modulation of the voltage:
 \begin{equation}
 V_a(t) = \frac{ PW(t)\cdot V_d}{ T}  = \frac{V_d}{100}\cdot D(t)  = \frac{5}{100}\cdot D(t)  \label{eqn:analog voltage}
 \end{equation}
@@ -192,11 +192,11 @@ Since the forward voltage varies as the logarithm of the current, it varies slow
 \begin{equation}
 I =\frac{V-V_l}{R} \label{eqn:led circuit}
 \end{equation}
-The driving circuit is composed of supply voltage with 6 PWM Arduino pins in parallel, and a resistor $R = 360\Omega$, the LED output power is given by:
+The driving circuit is composed of supply voltage with 6 PWM Arduino pins in parallel, and a resistor $R = 200\Omega$, for a blue LED $V_l\approx 4.5V$ and the LED output power is given by:
 \begin{equation}
-P(t) = I_{total}\cdot |V_l| = NI\cdot |V_l| = N |V_l| \frac{V-V_l}{R}\cdot  =N |V_l|\frac{\frac{5}{100}\cdot D(t)-V_l}{R} =|V_l|(\frac{ D(t)}{1200}-\frac{1}{60} ) \label{eqn:led power}
+P(t) = I_{total}\cdot V_l = NI\cdot V_l = N V_l \frac{V-V_l}{R}\cdot  =N V_l\frac{\frac{5}{100}\cdot D(t)-V_l}{R} \approx N V_l\frac{\frac{5}{100}\cdot D(t)}{R} = 0.007\cdot D(t) \label{eqn:led power}
 \end{equation}
-
+Where the Arduino response varies 
 oltage is proportional to the current flows through,
  defines the current relation to the diode voltage. 
 In high enough values the power could be approximated by linear approximation of the diode voltage.
