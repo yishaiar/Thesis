@@ -192,9 +192,9 @@ Since the forward voltage varies as the logarithm of the current, it varies slow
 \begin{equation}
 I =\frac{V-V_l}{R} \label{eqn:led circuit}
 \end{equation}
-The driving circuit is composed of supply voltage with $N=6$ PWM Arduino pins in parallel, and resistor $R = 360\Omega$, the LED output power is given by:
+The driving circuit is composed of supply voltage with 6 PWM Arduino pins in parallel, and a resistor $R = 360\Omega$, the LED output power is given by:
 \begin{equation}
-P(t) = I_{total}\cdot (-V_l) = (NI)\cdot (-V_l) = -N\frac{V-V_d}{R}\cdot (-V_l)  =-N V_l\frac{\frac{V_d}{100}\cdot D(t)-V_l}{R} =-V_l\frac{ D(t)}{20}+\frac{V_l}{60}  \label{eqn:led power}
+P(t) = I_{total}\cdot |V_l| = NI\cdot |V_l| = N |V_l| \frac{V-V_l}{R}\cdot  =N |V_l|\frac{\frac{5}{100}\cdot D(t)-V_l}{R} =|V_l|(\frac{ D(t)}{1200}-\frac{1}{60} ) \label{eqn:led power}
 \end{equation}
 
 oltage is proportional to the current flows through,
