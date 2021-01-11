@@ -38,8 +38,8 @@ e= 1.6e-19
 
 VT = k_b*T0/e
 c = k_b*T0/e *np.log(10)
-Is = 1e1
-I= np.arange(10000)/10000
+Is = 1e13
+I= np.arange(260,1635)/100000
 vd = c*np.log10(I/Is)
 
 # rd = (VT/I[-100])
@@ -56,15 +56,19 @@ vd = c*np.log10(I/Is)
 
 P = I*(-vd)
 R = 360
-vs = (P*R-vd**2)/(-vd)
+# vs = (P*R-vd**2)/(-vd)
+
+vs = I*R+vd 
 
 
-
-plt.plot(vd,I)
+# plt.plot(vd,I)
 # # plt.plot(vd,I1)
 
 # plt.plot(vs,I)
 
-# plt.plot(vs,P)
+plt.plot(vs,P)
 
 # plt.plot(P,I)
+
+
+

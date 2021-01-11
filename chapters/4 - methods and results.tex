@@ -150,12 +150,12 @@ The vacuum chamber was built using CF style vacuum components, designed for ultr
 \subsection{Arduino microcontroller}
 Arduino is an open-source microcontroller board used for building low cost and simple digital circuits. Each microcontroller contains a microprocessor, controller, serial communication interface and is equipped with digital and analog input/output pins. The microcontrollers could be operated as stand alone or connected to computer through serial communication. 
 \par\noindent
-The Arduino Mega 2560, is based on the ATmega2560 8-bit controller, and equipped with a $16 [MHz]$ crystal oscillator (clock), and 15 PWM outputs pins. The Arduino Mega's output is a digital $V_d = 5[V]$ output. The Arduino does not have a digital-to-analog converter (DAC), but it simulates an analog output using Pulse Width Modulation (PWM). 
+The Arduino Mega 2560, is based on the ATmega2560 8-bit controller, and equipped with a $16 [MHz]$ crystal oscillator (clock), and 15 PWM outputs pins. The Arduino Mega's output is a digital output $V_d = 5[V]$. The Arduino does not have a digital-to-analog converter (DAC), but it simulates an analog output using Pulse Width Modulation (PWM). 
 \subsubsection{Pulse Width Modulation}
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=0.5]{\main/images/4 - methods and results/duty_cycle.png}}
-	\caption[The PWM analog voltage]{The PWM analog voltage}
+	\caption[The PWM analog voltage]{The PWM analog voltage of a single pin}
 	\label{fig:duty_cycle}
 \end{figure}
 \FloatBarrier
@@ -164,9 +164,9 @@ As shown in fig.~\ref{fig:duty_cycle}, the controller switches the output signal
 \begin{equation}
 D = \frac{PW}{T}\cdot 100  \label{eqn:duty cycle}
 \end{equation}
-The analog voltage $V_a$ is the average voltage, determined by the duty cycle. The Arduino is able to modulate the duty cycle, resulting in modulation of the voltage:
+The analog voltage $V_a$ is the average voltage, determined by the duty cycle. The Arduino is able to modulate the duty cycle, resulting in modulation of the average voltage $V_a$. Also, since the Arduino clock is connected to all PWM pins, they are all in sync. When all pins have the same duty cycle, they all have the same $V_a(t)$. At every point in time each pin could be looked at as a constant voltage supply compare to the other pins, allowing to connect all in series and increase the total output voltage. The total output $V$ power is given by:
 \begin{equation}
-V_a(t) = \frac{ PW(t)\cdot V_d}{ T}  = \frac{V_d}{100}\cdot D(t)   \label{eqn:analog voltage}
+V(t) = N\cdot V_a(t) = N\cdot\frac{ PW(t)\cdot V_d}{ T}  = N\cdot\frac{V_d}{100}\cdot D(t)   \label{eqn:analog voltage}
 \end{equation}
 The method enables generating voltages between $V_d = 5[V]$ and off, the voltage resolution is limited by the microcontroller resolution (8-bit). In order to be able to change the duty cycle,the clock resolution is limited the controller bit-rate. The square wave period $T$ is:
 \begin{equation}
@@ -174,7 +174,9 @@ T = \frac{8-bit }{16MHz}  \approx 16\mu [s]	    \label{eqn:square wave frequency
 \end{equation}
 The clock is having about 120 full periods of the square wave before changing to a new duty cycle value, limiting the voltage modulation frequency to a $500[Hz]$ PWM frequency . 
 \par\noindent 
-Also, since the Arduino clock is connected to all PWM pins, they are all in sync. When all pins have the same duty cycle, they all have the same $V_a(t)$. At every point in time each pin could be looked at as a constant voltage supply compare to the other pins, allowing to connect all in series and increase the total output current up to $I = 1[A]$. 
+
+
+% up to $I = 1[A]$. 
 
 
 \subsection{Light emitting diode (LED)}
@@ -192,7 +194,10 @@ Since the forward voltage is logarithm of the current, it varies very slow and i
 \begin{equation}
 I =\frac{V-V_d}{R} \label{eqn:led circuit}
 \end{equation}
-
+The LED power is given by:
+\begin{equation}
+P = I =\frac{V-V_d}{R} \label{eqn:led circuit}
+\end{equation}
 
 oltage is proportional to the current flows through,
  defines the current relation to the diode voltage. 
