@@ -214,7 +214,7 @@ Since the forward voltage $V_l$ varies as the logarithm of the current, it varie
 \begin{equation}
 I =\frac{V-V_l}{R} \label{eqn:led circuit}
 \end{equation}
-The circuit is composed of a blue LED with $V_l\approx 4.5V$, supply voltage of 6 PWM Arduino pins in parallel (eq.~\ref{eqn:pwm current}, eq.~\ref{eqn:pwm voltage}) and resistor $R = 200\Omega$, the LED radiant flux $[W]$ is given by:
+The circuit is composed of a blue LED with $V_l\approx 4.5V$, supply voltage with 6 parallel PWM Arduino pins (eq.~\ref{eqn:pwm current}, eq.~\ref{eqn:pwm voltage}) and resistor $R = 200\Omega$, the LED radiant flux $[W]$ is given by:
 \begin{equation}
 \Theta(t) = I_{total}\cdot V_l = NI\cdot V_l = N V_l \frac{V-V_l}{R}\cdot  =N V_l\frac{\frac{5}{100}\cdot D(t)-V_l}{R} \approx N V_l\frac{\frac{5}{100}\cdot D(t)}{R} = 0.007\cdot D(t)\label{eqn:led power}
 \end{equation}
