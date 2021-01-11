@@ -168,15 +168,14 @@ The analog voltage $V_a$ is the average voltage, determined by the duty cycle. T
 \begin{equation}
 V_a(t) = \frac{ PW(t)\cdot V_d}{ T}  = \frac{V_d}{100}\cdot D(t)   \label{eqn:analog voltage}
 \end{equation}
-The method enables generating voltages between $V_d = 5[V]$ and off, the voltage resolution is limited by the microcontroller resolution (8-bit). In order to be able to change the duty cycle,the clock resolution is limited the controller bit-rate. The square wave period $T$ is:
+The method enables generating voltages between $V_d = 5[V]$ and off, the voltage resolution is limited by the microcontroller resolution (8-bit). Also, since the Arduino clock is connected to all PWM pins, they are all in sync. When all PWM pins have the same duty cycle, they all have the same voltage, frequency and phase. Even though the pins output varies in time, they are constant voltage supplies compare to each other, allowing to connect $N$ pins in parallel and increase the output current. 
 \begin{equation}
-T = \frac{8-bit }{16MHz}  \approx 16\mu [s]	    \label{eqn:square wave frequency}
+I_{total} = N\cdot I   \label{eqn:analog current}
 \end{equation}
-The clock is having about 120 full periods of the square wave before changing to a new duty cycle value, limiting the voltage modulation frequency to a $500[Hz]$ PWM frequency . 
-\par\noindent 
-Also, since the Arduino clock is connected to all PWM pins, they are all in sync. When all PWM pins have the same duty cycle, they all have the same voltage, frequency and phase. Even though the pins varies in time, they are constant voltage supplies compare to each other, allowing to connect all in parallel and increase the output current $I = \sum I_i$. 
-
-
+The clock is having about 120 full periods of the square wave before changing to a new duty cycle value, limiting the voltage modulation frequency. Also, in order to be able to change the duty cycle, the clock frequency is limited by the controller bit-rate. The PWM frequency is given by:
+\begin{equation}
+f_{PWM} = \frac{1 }{120T}= \frac{1 }{120 \frac{8-bit }{16MHz}}  \approx 500[Hz]	    \label{eqn:pwm frequency}
+\end{equation}
 \subsection{Light emitting diode (LED)}
 The light emitting diode (LED) is a semiconductor based light source with high power, and a long lifetime. Forward voltage is applied to a p-n junction, causing electron injection and recombination with holes. The recombination is releasing energy in form of spontaneous emission photons (incoherent light). Due to the electrons life time before recombination, the LED could be modulated up to $100MHz$. The LED opening angle (FOV) varies between 45 to 120 degrees, and the emitted light is incoherent in width meaning it's hard to focus it to a point (not diffraction limited) and incoherent in length causing wide band spectrum.
 \par\noindent
@@ -184,14 +183,16 @@ The LED current $I$ is defined by the Shockley diode equation for p-n junctions:
 \begin{equation}
 I  = I_s (e^{V_l\cdot \frac{e}{n k_B T} }-1) = I_s (e^{\frac{V_d}{n V_T} } -1) \overset{V_d>>V_T}{\approx} I_s e^{\frac{V_d}{n V_T} }   \label{eqn:led current}
 \end{equation}
-Where $I_s$ is the saturation current of the diode, $V_l$ is the LED forward voltage, $n$ is the led emission coefficient, $e$ is the electron charge, and $V_T$ is the thermal voltage. The LED forward voltage at room temperature ($T=300K$) is given by:
+Where $I_s$ is the saturation current of the diode, $V_l$ is the LED forward voltage, $n$ is the led emission coefficient, $e$ is the electron charge, and $V_T$ is the thermal voltage. The LED forward voltage is given by:
 \begin{equation}
 V_l \approx n V_T ln10 log_{10} (\frac{I}{I_s}) \label{eqn:led voltage}
 \end{equation}
-Since the forward voltage is logarithm of the current, it varies very slow and is approximately constant over wide current range. Having a constant forward voltage results with large changes in the LED current due to small changes in the driving circuit supply voltage $V$. LED driving circuit consisted of resistor $R$ in series with the LED stabilizes the current, the circuit current is given by:
+\subsubsection{Arduino driving circuit}
+Since the forward voltage varies as the logarithm of the current, it varies slowly, being approximately constant over wide current range. Having a constant forward voltage results with large changes in the LED current due to small changes in the driving circuit supply voltage $V$. LED driving circuit consisted of resistor $R$ in series with the LED stabilizes the current, the circuit current is given by:
 \begin{equation}
 I =\frac{V-V_l}{R} \label{eqn:led circuit}
 \end{equation}
+The driving circuit is a pa 
 The LED forward voltage direction is inverse to the current. Since the supply voltage $V$ is composed of $N$ voltage supplies in parallel the LED output power is given by:
 \begin{equation}
 P = I_{total}\cdot (-V_l) = (NI)\cdot (-V_l) = N(-V_l)\frac{V-V_d}{R}  =N(-V_l)\frac{\frac{V_d}{100}\cdot D(t)-V_l}{R} \label{eqn:led power}
