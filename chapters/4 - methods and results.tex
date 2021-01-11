@@ -146,7 +146,20 @@ The bake-out was carried out for a week at about $110 C^0$ achieving stable vacu
 \par\noindent
 The vacuum chamber was built using CF style vacuum components, designed for ultra high vacuum, minimizing the leak rate.
 \section{Modulated light source}
-
+\subsection{Radiation pressure force}
+Fast modulated light source with high intensity cause a small controlled force (eq.~\ref{eqn:radiation_force_power}):
+\begin{equation}
+F = \frac{2\eta\Theta}{{c}} \label{eqn:radiation force_1}
+\end{equation}
+The difference between two light sources from both ends of the pendulum add a small external  radiation-pressure net torque:
+\begin{equation}
+\tau = l\cdot F_1 \cdot cos\alpha_1 - l\cdot F_2 \cdot cos\alpha_2  \label{eqn:radiation torque}
+\end{equation}
+Where $\Theta$ is the light source radiant flux [watt], $\alpha$ is the light incident angle compared to the pendulum surface, and $\eta$ is the coupling efficiency of the light source. The radiation pressure torque assuming that both light fields have the same coupling efficiency and are very close to being perpendicular to surface, causing both incidence angles to be negligible:  
+\begin{equation}
+\tau \approx l(F_1 - F_2) \approx \frac{2l\eta}{{c}} (\Theta_1 -\Theta_2) \label{eqn:radiation torque_final}
+\end{equation}
+\par\noindent
 \subsection{Arduino microcontroller}
 Arduino is an open-source microcontroller board used for building low cost and simple digital circuits. Each microcontroller contains a microprocessor, controller, serial communication interface and is equipped with digital and analog input/output pins. The microcontrollers could be operated as stand alone or connected to computer through serial communication. 
 \par\noindent
@@ -187,49 +200,27 @@ Where $I_s$ is the saturation current of the diode, $V_l$ is the LED forward vol
 \begin{equation}
 V_l \approx n V_T ln10 log_{10} (\frac{I}{I_s}) \label{eqn:led voltage}
 \end{equation}
-\subsubsection{Arduino driving circuit}
+\subsection{LED setup}
+The setup is composed by two Arduino controlled LED, which are driven by arduino PWM pins. 
+
+
 Since the forward voltage varies as the logarithm of the current, it varies slowly, being approximately constant over wide current range. Having a constant forward voltage results with large changes in the LED current due to small changes in the driving circuit supply voltage $V$. LED driving circuit consisted of resistor $R$ in series with the LED stabilizes the current, the circuit current is given by:
 \begin{equation}
 I =\frac{V-V_l}{R} \label{eqn:led circuit}
 \end{equation}
-The driving circuit is composed of supply voltage with 6 PWM Arduino pins in parallel, and a resistor $R = 200\Omega$, for a blue LED $V_l\approx 4.5V$ and the LED output power is given by:
+The circuit is composed by a blue LED with $V_l\approx 4.5V$, 6 PWM Arduino pins in parallel supply voltage and a resistor $R = 200\Omega$, the LED output power is given by:
 \begin{equation}
-P(t) = I_{total}\cdot V_l = NI\cdot V_l = N V_l \frac{V-V_l}{R}\cdot  =N V_l\frac{\frac{5}{100}\cdot D(t)-V_l}{R} \approx N V_l\frac{\frac{5}{100}\cdot D(t)}{R} = 0.007\cdot D(t) \label{eqn:led power}
+\Theta(t) = I_{total}\cdot V_l = NI\cdot V_l = N V_l \frac{V-V_l}{R}\cdot  =N V_l\frac{\frac{5}{100}\cdot D(t)-V_l}{R} \approx N V_l\frac{\frac{5}{100}\cdot D(t)}{R} = 0.007\cdot D(t) \label{eqn:led power}
 \end{equation}
-Where the Arduino response varies 
-oltage is proportional to the current flows through,
- defines the current relation to the diode voltage. 
-In high enough values the power could be approximated by linear approximation of the diode voltage.
+The LED power could be approximated by linear approximation of Arduino duty cycle $D(t)$, which varies between 0 to 100\% with 8bit resolution, giving a maximal power output of approximately %P = 670mW%. As shown in eq.~\ref{eqn:pwm frequency}), the LED could be modulated up to %500[Hz% resulting with fast modulated light source with high intensity. Since the led power could be approximated using linear approximation, it allows to control the approximated power output by changing the PID gain values.  
+\par\noindent
+The LED 
 
-
-
-In high enough values the power could be approximated by linear approximation of the diode voltage.
-\begin{equation}
-P\propto e^{\frac{q}{kT}\cdot V_d}\label{eqn:led power}
-\end{equation}
 In order to overcome the led uncoherent profile and large opening angle, light was transferred through a light guide. Light guides are pipes made of thin filaments causing internal reflections used for directed transmission of luminous energy. Light guides are used to illuminate small areas, regardless of the spectral characteristics of the light source. They mainly depend on the cross sections of entrance and exit and the length. Making them ideal to overcoming focusing problems.
-\par\noindent
-Connecting a high power led to Arduino, enables fast real-time controlled modulation of high power led with about 2ms speed. The light arrives to pendulum through a light guide allowing to assume beam variation through the surface negligible.The light is controlled through a PID and applies a torque.
-\par\noindent
-Since the led power could be approximated using linear approximation, the power modulation is proportional to the Arduino duty cycle. That allows to control the linear approximation of the power output by changing the PID gain values.  
-\par\noindent
-we assume we can neglect the oscillations between two sides...
 
 
-\subsection{Radiation pressure force}
-Fast modulated light source with high intensity cause a small controlled force (eq.~\ref{eqn:radiation_force_power}):
-\begin{equation}
-F = \frac{2\eta\Theta}{{c}} \label{eqn:radiation force_1}
-\end{equation}
-The difference between two light sources from both ends of the pendulum add a small external  radiation-pressure net torque:
-\begin{equation}
-\tau = l\cdot F_1 \cdot cos\alpha_1 - l\cdot F_2 \cdot cos\alpha_2  \label{eqn:radiation torque}
-\end{equation}
-Where $\Theta$ is the light source radiant flux [watt], $\alpha$ is the light incident angle compared to the pendulum surface, and $\eta$ is the coupling efficiency of the light source. The radiation pressure torque assuming that both light fields have the same coupling efficiency and are very close to being perpendicular to surface, causing both incidence angles to be negligible:  
-\begin{equation}
-\tau \approx l(F_1 - F_2) \approx \frac{2l\eta}{{c}} (\Theta_1 -\Theta_2) \label{eqn:radiation torque_final}
-\end{equation}
-\par\noindent
+
+
 The setup can produce very small external torques with high dynamic range; light sources each with 1 watt maximum power and 8bit modulation steps, assuming $\eta = 0.7$ can produce torques up to $\tau = 5\cdot10^-{10} [N\cdot m]$ with modulation steps of $\Delta\tau = 2\cdot10^-{12} [N\cdot m]$. 
 
 
