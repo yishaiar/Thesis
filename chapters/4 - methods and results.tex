@@ -166,13 +166,13 @@ In front of each of the viewports on the sides of the chamber there is a control
 
 
 \subsection{Radiation pressure force}
-Two light sources with a given flux causes a radiation-pressure force (eq.~\ref{eqn:radiation_force_power}), one on each mass of the torsional pendulum. As seen in eq.~\ref{eqn:net_gravitation_torque}, the difference between the two torques, add an external net torque. Assuming that both light fields have the same coupling efficiency $\eta$ and are very close to being perpendicular to surface with negligible incidence angles $\alpha_1\approx\alpha_2\approx 0$, the radiation-pressure net torque is given by:  
+Two light sources with a given flux $\Theta_i$ causes a radiation-pressure force (eq.~\ref{eqn:radiation_force_power}), one on each mass of the torsional pendulum. As seen in eq.~\ref{eqn:net_gravitation_torque}, the difference between the two torques, adds an external net torque. Assuming that both light fields have the same coupling efficiency $\eta$ and are very close to being perpendicular to surface with negligible incidence angles $\alpha_1\approx\alpha_2\approx 0$, the radiation-pressure net torque is given by:  
 \begin{equation}
 \tau = l\cdot F_1 \cdot cos\alpha_1 - l\cdot F_2 \cdot cos\alpha_2\approx l(F_1 - F_2) \approx \frac{2l\eta}{{c}} (\Theta_1 -\Theta_2)  \label{eqn:radiation torque}
 \end{equation}
 
 \subsection{Arduino microcontroller}
-Arduino is an open-source microcontroller board used for building inexpensive digital circuits, containing microprocessor, controller and serial communication interface. The Arduino Mega 2560, is based on the ATmega2560 8-bit controller, and equipped with a $16 [MHz]$ crystal oscillator (clock) and 15 PWM outputs pins. The Arduino Mega's output is a digital output $V_d = 5[V]$ without a digital-to-analog converter (DAC), but it can simulate analog output using Pulse Width Modulation (PWM). 
+Arduino is an inexpensive open-source microcontroller with a serial communication interface and a digital output without digital-to-analog converter (DAC). The Arduino Mega 2560 contains ATmega2560 8-bit controller, a $16 [MHz]$ crystal oscillator (clock), 15 PWM outputs pins.
 \subsubsection{Pulse Width Modulation}
 \begin{figure}[htbp]
 	\centering
@@ -182,7 +182,7 @@ Arduino is an open-source microcontroller board used for building inexpensive di
 \end{figure}
 \FloatBarrier
 \par\noindent
-As shown in fig.~\ref{fig:duty_cycle}, the controller switches the output signal fast between the digital output on and off, generating a square wave with period $T$. Pulse width ($PW$) is the time duration in which the signal is on. With the clock, the controller is able to modulate $PW$, changing the ratio of time signal is on compared to off, which is the duty cycle $D$:
+The microcontroller can simulate analog output using Pulse Width Modulation (PWM). As shown in fig.~\ref{fig:duty_cycle}, the controller switches the output signal fast between the digital output on and off, generating a square wave with period $T$. Pulse width ($PW$) is the time duration in which the signal is on. With the clock, the controller is able to modulate $PW$, changing the ratio of time signal is on compared to off, which is the duty cycle $D$:
 \begin{equation}
 D(t) = \frac{PW(t)}{T}\cdot 100  \label{eqn:duty cycle}
 \end{equation}
