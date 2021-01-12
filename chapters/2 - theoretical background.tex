@@ -224,17 +224,17 @@ The dependency of the SNR on frequency causes difficulties when measuring gravit
 This limitation is a significant challenge while designing gravimetric sensors for low frequencies.
 
 \subsubsection{The shot noise limit}
-The shot noise is a fundamental quantum physical phenomenon in which the power of an optical signal fluctuates due to fluctuations in the number of photons in the signal. The power of an optical signal $P_{signal}$ is:
+The shot noise is a fundamental quantum physical phenomenon in which the power of an optical signal fluctuates due to fluctuations in the number of photons in the signal. The power of an optical signal $p_{signal}$ is:
 \begin{equation}
-P_{signal} = N h \nu   \label{eqn:signal_power}
+p_{signal} = N h \nu   \label{eqn:signal_power}
 \end{equation}
 Where $N$ is the number of photons, $h$ is the Planck constant and $\nu$ is the photon frequency. Since the shot noise is a Poisson process, $P_{shot}$ can be calculated as the root mean square (RMS) of the current fluctuations power:
 \begin{equation}
-P_{shot} = \sqrt{P}    \label{eqn:shot_power}
+p_{shot} = \sqrt{p}    \label{eqn:shot_power}
 \end{equation}
 An optical measurement system for a coherent beam can not measure a signal smaller than its shot noise, the SNR of a shot noise limited system is:
 \begin{equation}
-SNR = \frac{P_{signal}}{P_{shot}} =\frac{N}{\sqrt{N}} = \sqrt{N}    \label{eqn:shot_noise}
+SNR = \frac{p_{signal}}{p_{shot}} =\frac{N}{\sqrt{N}} = \sqrt{N}    \label{eqn:shot_noise}
 \end{equation}
 However, while other system noises are higher than the shot noise limit, reducing noises and averaging the time integration can provide higher accuracy and better measurement results. 
 \section{Radiation-pressure}
@@ -267,7 +267,7 @@ Thus:
 F \approx \frac{2\eta\Theta_{source}}{{c}} \label{eqn:radiation_force_power}
 \end{equation}
 
-\section{Vacuum affects}
+\section{Pressure and environment affects}
 \subsection{Ideal gas}
 An ideal gas is a theoretical gas composed of many randomly moving gas particles that are not having interparticle interactions. The ideal gas law is given by:
 \begin{equation}
@@ -282,7 +282,6 @@ Where $M$ is the gas particles molar mass. For a diluted ideal gas the viscosity
 \mu(P) = \alpha l \rho \sqrt{\frac{2\pi k_B  T}{\pi m}}      \label{eqn:viscosity}
 \end{equation}
 Where $\alpha$ is a numerical constant, $l$ is the mean free path of the gas particles and $m$ is the molecular mass. 
-
 
 \subsection{Friction}
 The drag force $F_{drag}$ is the friction caused by gas resistance, which is dependent on the relative velocity (the gas flow velocity) $v$ between the gas and the object. At higher pressures, when the gas is having a turbulent flow, the drag is proportional to the square of the velocity:
@@ -366,6 +365,18 @@ The Brownian motion kinetic energy is proportional to the temperature. The noise
 \delta\theta = \sqrt{\frac{k_B T}{\kappa}}  \label{eqn:Brownian uncertainty 2}
 \end{equation}
 \fi
+\subsection{Radiative cooling}
+Radiative cooling is a phenomenon in which a black body loses heat by thermal radiation to remain in thermal equilibrium at constant temperature $T$. The thermal radiation energy over all frequencies per surface area $J$ is given by the Stefan–Boltzmann law:
+\begin{equation}
+J = \sigma\epsilon T^4  \label{eqn: Stefan–Boltzmann law}
+\end{equation}
+Where $\sigma$ is the Stefan–Boltzmann constant, and the emissivity $\epsilon$ is a value between $0-1$ which defines how the black body is close to being an ideal black body.
+\par\noindent 
+The difference between absorbed and emitted power is the net absorbed power $p$, given by: 
+\begin{equation}
+p = p_{absorb}-p_{emit} = \sigma\epsilon A (T_0^4-T^4)  \label{eqn: Stefan–Boltzmann power}
+\end{equation}
+Where $T_0$ is the environment temperature and $T$ is the black body temperature.  
 \subsection{Acoustic wave}
 Acoustic waves are adiabatic compression and decompression waves propagating through a material. The wave equation of one dimension acoustic wave:
 \begin{equation}
@@ -374,7 +385,7 @@ P = P_0 cos(\omega t -k x)       \label{eqn:acoustic_pressure}
 \par\noindent
 Where $P$ is the actual pressure, $P_0$ is the average pressure, $k$ is the acoustic wave number and $\omega$ is the wave angular frequency. Acoustic energy is carried by the acoustic waves, the acoustic power $p$ is the rate acoustic energy is emitted, given by:
 \begin{equation}
-I = AP u  = A P\sqrt{\frac{K_s}{\rho}}     \label{eqn:acoustic_intensity}
+p = AP u  = A P\sqrt{\frac{K_s}{\rho}}     \label{eqn:acoustic_intensity}
 \end{equation}
 Where $u$ is the material acoustic velocity and $K_s$ is the modulus of bulk elasticity for gases. When the material pressure is reduced, the acoustic pressure is lower and less power is carried.
 
