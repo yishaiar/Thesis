@@ -13,9 +13,11 @@
 \end{figure}
 \FloatBarrier
 \par\noindent
-The experiment setup, shown in fig.~\ref{fig:setup}, is composed by the torsion pendulum placed inside a vacuum chamber, tilt angle measurement system and a feedback system, all placed inside a seismic box. The tilt angle is measured by a LASER beam tilted by the pendulum's front mirror and measured by a quadrant detector, the detector is connected to a computer by an oscilloscope through a signal amplifier. The tilt angle signal is reflected by a piezo driven mirror, which is tuned making sure the pendulum is balanced relative to the detector's center (the PID needs a reference for error calculations, otherwise it would calculate a wrong error and fail in damping). The feedback system is composed by two LED light sources, modulated in real time by an Arduino micro-controller which is controlled by a PID feed-back loop in the computer. The LED light sources are placed in front of each of the viewports on the sides of the chamber, each coupled to a side mass of the pendulum. 
+The experiment setup, shown in fig.~\ref{fig:setup}, is composed by the torsion pendulum placed inside a vacuum chamber, tilt angle measurement system and a feedback system, all placed inside a seismic box. The angle is measured by a LASER beam tilted by the pendulum's front mirror and measured in a quadrant detector, the detector is connected to a computer by an oscilloscope through a signal amplifier. The tilt angle signal is reflected by a piezo driven mirror, which is tuned so the pendulum is balanced relative to the detector's center (the PID needs a reference for error calculations, otherwise it would calculate a wrong error and fail in damping). 
 \par\noindent
-When the desired vacuum is achieved, the vacuum engine is disconnected using the valve and turned off, and the seismic box is closed. When the pendulum's oscillations settle down to a level which could be affected by the weak torques caused by radiation pressure (amplitude caused mainly by environmental noises, as explained in previous chapters). The angle is read on real time by the PID algorithm, and an equivalent radiation-pressure torque is exerted by the LED's flux damping down the pendulum noises.
+The feedback system is composed by two LED light sources, modulated in real time by an Arduino micro-controller which is controlled by a PID feed-back loop in the computer. The LED light sources are placed in front of each of the viewports on the sides of the chamber, each coupled to a side mass of the pendulum. 
+\par\noindent
+When the desired vacuum is achieved, the vacuum engine is disconnected using the valve and turned off, and the seismic box is closed. When the oscillations settle down to a level which could be affected by the weak torques caused by radiation pressure (an amplitude caused mainly by environmental noises, as explained in previous chapters). The angle is read in real time by the PID algorithm, and an equivalent radiation-pressure torque is exerted by the LED's flux damping down the pendulum noises.
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=0.3]{\main/images/4 - methods and results/total_chamber.png}}
@@ -136,12 +138,6 @@ In order to minimize the pressure increase, the vacuum chamber is built using CF
 
 \section{Noise reduction}
 \subsection{Faraday cage}
-\par\noindent
-The Faraday cage is a cage made by continuous covering of a conductive material used to block external electromagnetic fields. The external electrical fields cause an electric charge distribution in the conductive cage without passing inside. Electric current decays exponentially with depth through the material. The material skin depth $\delta$ defines the magnetic field's penetration depth, given by:
-\begin{equation}
-\delta = \sqrt{\frac{2\rho}{(2\pi f)(\mu)} }    \label{eqn:skin depth}
-\end{equation}
-Where $\rho$ is the material electric resistivity, $\mu$ the magnetic permeability and $f$ is the frequency of the magnetic field.
 \par\noindent
 The measurement system is placed inside a seismic box which is a Faraday cage with 76 mm thickness, blocking magnetic fields with $f \ge 30 [Hz]$ from the environment. The seismic box is both reducing acoustic waves and magnetic noises from the environment.
 \par\noindent

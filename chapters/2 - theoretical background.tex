@@ -406,6 +406,13 @@ Q_{des} = q_{des} A\frac{t_0}{t}  \label{eqn:desorption rate}
 Where $A$ is the surface area, and $q_{des}$ is the desorption density, which is area dependent. The desorption rate $Q_{des}$ produces a gas yield that declines over time. It could be assumed that after a given time $t_0$, typically one hour, the pressure increase is linear over time.
 \par\noindent
 The outgassing is minimized by selecting low vapor-pressure materials such as stainless steel and glass. Since water is a significant source of outgassing, the outgassing is usually minimized by baking the chamber at high temperatures while having the vacuum pump running (bake-out).
+\subsection{Faraday cage}
+\par\noindent
+Faraday cage is a cage made by continuous covering of a conductive material used to block external electromagnetic fields. The external electrical fields cause an electric charge distribution in the conductive cage without passing inside. Electric current decays exponentially with depth through the material. The material skin depth $\delta$ defines the magnetic field's penetration depth, given by:
+\begin{equation}
+\delta = \sqrt{\frac{2\rho}{(2\pi f)(\mu)} }    \label{eqn:skin depth}
+\end{equation}
+Where $\rho$ is the material electric resistivity, $\mu$ the magnetic permeability and $f$ is the frequency of the magnetic field.
 
 
 \section{Proportional–integral–derivative (PID) controller}
