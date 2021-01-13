@@ -121,7 +121,8 @@ The upper tube of the chamber is soldered with an adjustable mount, shown in fig
 \end{figure}
 \FloatBarrier
 \par\noindent
-The experiment system, shown in fig.~\ref{fig:setup}, is composed by the torsion pendulum, a measurement system and a feedback system. The tilt angle measurement is done by a quadrant detector, which connected to the computer by an oscilloscope through an amplifier. The feedback system is composed by two LED light sources, modulated in real time by an Arduino micro-controller which is controlled by a PID feed-back loop. The angle is read on real time by the algorithm, and an equivalent external torque is coupled to the pendulum by the LED flux. 
+The experiment system, shown in fig.~\ref{fig:setup}, is composed by the torsion pendulum, a measurement system and a feedback system. The tilt angle is measured by LASER beam tilted by the pendulum and measured by a quadrant detector, the detector is connected to a computer by an oscilloscope through a signal amplifier. The feedback system is composed by two LED light sources, modulated in real time by an Arduino micro-controller which is controlled by a PID feed-back loop in the computer. The LED light sources are placed in front of each of the viewports on the sides of the chamber, each coupled to a side mass of the pendulum. The angle is read on real time by the algorithm, and an equivalent radiation-pressure torque is exerted by the LED's flux. The signal is passing by a piezo driven mirror, which makes sure the pendulum is initially balanced relative to the detector (eq.~\ref{eqn:theta average} is for a balanced torsional pendulum). 
+
 \section{Noise reduction}
 \subsection{Pressure increase}
 \par\noindent
