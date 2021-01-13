@@ -26,16 +26,6 @@ Magnetic noise is reduced by choosing low magnetic permeability materials, avoid
 \par\noindent
 The torsional pendulum design, shown in fig.~\ref{fig:pendulum front}, is composed of thin rod with length $2l$, two identical masses $m$ on the sides, a front mirror and a balancing mass. The design is maximizing the angle measurement sensitivity, while maintaining low magnetic noise and low vacuum pressure (low outgassing rate). 
 \subsubsection{Design}
-\par\noindent
-The torsional pendulum tilt angle is measured using a mirror in front of the pendulum. Due to an unbalanced center of mass, earth's gravity causes a downward torque $\tau_y$. The center of mass is balanced using a balancing mass $m_1$ to the mirror's weight $m_2$, thus avoiding downward tilt of the mirror: 
-\begin{equation}
-\tau_y = r_1\cdot m_1 g \cdot cos(0) - r_2\cdot m_2 g \cdot cos (0)\ = g( m_1 r_1  - m_2 (w-r_1) )  =0    \label{eqn:downward torque}
-\end{equation}
-\begin{equation}
-\frac{m_1}{m_2} = \frac{w-r_1}{r_1}   \label{eqn:downward torque cancelled}
-\end{equation}
-\par\noindent
-As shown in fig.~\ref{fig:pendulum top}, the balancing mass and the mirror are connected to the pendulum via spring $w$ from their center, and have a similar shape and weight. The spring enables accurate distance adjusting to prevent the downward tilt.
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=1.2]{\main/images/4 - methods and results/pendulum_top.JPG}}
@@ -43,6 +33,16 @@ As shown in fig.~\ref{fig:pendulum top}, the balancing mass and the mirror are c
 	\label{fig:pendulum top}
 \end{figure}
 \FloatBarrier 
+\par\noindent
+The torsional pendulum tilt angle is measured using a mirror in front of the pendulum. Due to an unbalanced center of mass, earth's gravity causes a downward torque $\tau_y$. As shown in fig.~\ref{fig:pendulum top}, the center of mass is balanced using a balancing mass with similar shape and weight as the mirror. The balancing mass and the mirror are connected to the pendulum by a spring $w$ from their center, and the downward torque is given by:
+\begin{equation}
+\tau_y = r_1\cdot m_1 g \cdot cos(0) - r_2\cdot m_2 g \cdot cos (0)\ = g( m_1 r_1  - m_2 (w-r_1) )  =0    \label{eqn:downward torque}
+\end{equation}
+Where $m_1$, $m_2$ are the masses of the mirror's and the weight, and $r_1$, $r_2$ are respectively their distance from the center of the pendulum. The spring allows adjusting th distance, given by: 
+\begin{equation}
+\frac{m_1}{m_2} = \frac{w-r_1}{r_1}   \label{eqn:downward torque cancelled}
+\end{equation}
+
 
 \subsubsection{Design constraints}
 \par\noindent
