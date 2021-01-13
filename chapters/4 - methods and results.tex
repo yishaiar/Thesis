@@ -25,6 +25,24 @@ Magnetic noise is reduced by choosing low magnetic permeability materials, avoid
 \FloatBarrier
 \par\noindent
 The torsional pendulum design, shown in fig.~\ref{fig:pendulum front}, is composed of thin rod with length $2l$, two identical masses $m$ on the sides, a front mirror and a balancing mass. The design is maximizing the angle measurement sensitivity, while maintaining low magnetic noise and low vacuum pressure (low outgassing rate). 
+\subsubsection{Design}
+\par\noindent
+The torsional pendulum tilt angle is measured using a mirror in front of the pendulum ,due to an unbalanced center of mass, earth's gravity causes a downward torque $\tau_y$. The center of mass is balanced using a balancing mass $m_1$ to the mirror's weight $m_2$, thus avoiding downward tilt of the mirror: 
+\begin{equation}
+\tau_y = 0 = m_1r_1g-m_2r_2g = m_1r_1g-m_2(w-r_1)g    \label{eqn:downward torque}
+\end{equation}
+\begin{equation}
+\frac{m_1}{m_2} = \frac{w-r_1}{r_1}   \label{eqn:downward torque cancelled}
+\end{equation}
+\par\noindent
+As shown in fig.~\ref{fig:pendulum top}, the balancing mass and the mirror are connected to the pendulum via spring $w$ from their center, and have a similar shape and weight. The spring enables accurate distance adjusting to prevent the downward tilt.
+\begin{figure}[htbp]
+	\centering
+	\fbox{\includegraphics[scale=1.2]{\main/images/4 - methods and results/pendulum_top.JPG}}
+	\caption[The torsional pendulum, top view]{The torsional pendulum, top view}
+	\label{fig:pendulum top}
+\end{figure}
+\FloatBarrier 
 
 \subsubsection{Design constraints}
 \par\noindent
@@ -65,26 +83,6 @@ The experiment is constructed using a front mirror, where the angle displacement
 &&& $\kappa = 2.7\cdot10^{-6}[\frac{N\cdot m}{rad}]$
 &&& $T = 84[s]$
 \end{easylist}
-\subsubsection{Design}
-\par\noindent
-The torsional pendulum angle tilt is measured using a mirror connected in front of the pendulum. The mirror is a part of an optical interferometer with which the mirror tilt could be determined.
-\par\noindent
-The pendulum center of mass needs to be adjusted, to avoid downward tilt of the mirror, due to earth gravity $g$. With a balanced pendulum the downward torque would be canceled out $\tau_y = 0$. The center of mass is adjusted using a balancing mass $m_1$ to the mirror's weight $m_2$ from behind:
-\begin{equation}
-\tau_y = 0 = m_1r_1g-m_2r_2g = m_1r_1g-m_2(w-r_1)g    \label{eqn:downward torque}
-\end{equation}
-\begin{equation}
-\frac{m_1}{m_2} = \frac{w-r_1}{r_1}   \label{eqn:downward torque cancelled}
-\end{equation}
-\par\noindent
-As shown in fig.~\ref{fig:pendulum top}, the balancing mass and the mirror are connected to the pendulum via spring $w$ from their center, and have a similar shape and weight. The spring enables accurate distance adjusting to prevent the downward tilt.
-\begin{figure}[htbp]
-	\centering
-	\fbox{\includegraphics[scale=1.2]{\main/images/4 - methods and results/pendulum_top.JPG}}
-	\caption[The torsional pendulum, top view]{The torsional pendulum, top view}
-	\label{fig:pendulum top}
-\end{figure}
-\FloatBarrier 
 
 
 
