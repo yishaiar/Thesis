@@ -152,11 +152,6 @@ The vacuum chamber is a second cage blocking magnetic noise from the electronic 
 
 
 \section{Modulated light source}
-In front of each of the viewports on the sides of the chamber there is a controlled light source, coupled to a side mass of the pendulum. The light flux is modulated by a PID algorithm through a computer and used to generate torques in real time to actively damp the pendulum noises.
-\par\noindent
-
-
-
 \subsection{Radiation pressure force}
 Two light sources with a given flux $\Theta_i$ causes a radiation-pressure force (eq.~\ref{eqn:radiation_force_power}), one on each mass of the torsional pendulum. As seen in eq.~\ref{eqn:net_gravitation_torque}, the difference between the two torques, adds an external net torque. Assuming that both light fields have the same coupling efficiency $\eta$ and are very close to being perpendicular to surface with negligible incidence angles $\alpha_1\approx\alpha_2\approx 0$, the radiation-pressure net torque is given by:  
 \begin{equation}
@@ -221,11 +216,9 @@ Due to coupling efficiency and size difference between the output beam from the 
 \par\noindent
 The LED power could be approximated by linear approximation of the Arduino duty cycle $D(t)$, which varies between 0 to 100\% with 8bit resolution, generating torques up to $\tau = 7\cdot10^-{10} [N\cdot m]$ with modulation steps of $\Delta\tau = 1.4\cdot10^-{12} [N\cdot m]$. As shown in eq.~\ref{eqn:pwm frequency}), the LED could be modulated up to $500[Hz]$ resulting with fast modulated external force for the PID algorithm. Also, since the led power could be approximated using linear approximation, it allows to control the approximated power output by changing the PID gain values.  
 \subsection{LASER}
-Initially the modulated light source were composed by a single high power LASER diode coupled in series into two acousto optic modulators (AOM), coupled into optic fibers for mod cleaning, and coupled to the pendulum.
+Initially the modulated light sources were composed by a single high power LASER diode coupled in series into two acousto optic modulators (AOM), and coupled into the pendulum through optic fibers for mod cleaning. AOM can divide a single coherent light beam into two beams, with a proportional response to an input voltage, resulting with a controlled intensity ratio between the beams.
 \par\noindent
-AOM can divide a single light beam into two beams, with a proportional response to an input voltage, resulting with a controlled intensity ratio between the beams. That setup minimizes uncertainties of the intensity difference due to internal noises such as thermal and shot noise, since both sides are from the same source.
-\par\noindent
-The apparatus uncertainty due to the non linearity of the AOM response and LASER power fluctuations proved to be larger than the uncertainties of the intensity difference.   
+The setup minimizes uncertainties of the light intensity since both light sources have a mutual source, causing a reduced torque uncertainty due to internal noises such as thermal and shot noise. The apparatus uncertainty due to the non linearity of the AOM response and LASER power fluctuations proved to be larger than the uncertainties of the intensity difference.   
 
 
 
