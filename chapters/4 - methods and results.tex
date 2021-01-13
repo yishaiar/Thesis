@@ -96,9 +96,7 @@ The experiment is constructed using a front mirror, where the angle displacement
 \FloatBarrier
 
 \par\noindent
-The vacuum chamber, shown in fig.~\ref{fig:chamber front}, is composed of two cylindrical tubes placed one over the other with three view ports in front. The chamber is connected to a vacuum engine and gauge.
-\par\noindent
-The vacuum chamber is bounded to the breadboard by an adjustable mount. The vacuum engine is connected to the chamber through a valve. Measurements are made when the valve is closed and the engine off, to prevent rotation noise.
+The vacuum chamber, shown in fig.~\ref{fig:chamber front}, is composed of two cylindrical tubes placed one over the other with three view ports in front. The chamber is connected to a vacuum engine and gauge. The vacuum engine is connected to the chamber through a valve. Measurements are made when the valve is closed and the engine off, to prevent rotation noise.
 
 \subsubsection{Chamber viewports}
 \par\noindent
@@ -113,16 +111,15 @@ As shown in fig.~\ref{fig:Total chamber}, the central viewport is in front of th
 \end{figure}
 \FloatBarrier
 \par\noindent
-The upper tube of the chamber is soldered with a base to an adjustable mount, shown in fig.~\ref{fig:mount}. The string of the torsional pendulum is held by the mount, enabling the adjustment of the string's length and placing the pendulum in front of the viewports accurately. 
+The upper tube of the chamber is soldered with an adjustable mount, shown in fig.~\ref{fig:mount}. The string of the torsional pendulum is held by the mount, enabling the adjustment of the string's length and placing the pendulum in front of the viewports accurately. 
 \section{Noise reduction}
 \subsection{Pressure increase}
 \par\noindent
-Vacuum chambers are metallic chambers connected to a vacuum pump with pressure lower than the atmospheric pressure. The main limitations to vacuum quality maintenance are leakage $Q_L$ from the outside (eq.~\ref{eqn:leak rate}) through the chamber and outgassing $Q_{des}$ inside the chamber (eq.~\ref{eqn:desorption rate}), both increasing the pressure at a constant rate over time, and are overcome by having a constant pump rate $Q_P$ (the vacuum pump working constantly).   
+The main limitations to maintenance of low pressure are leakage $Q_L$ from the outside (eq.~\ref{eqn:leak rate}) and outgassing $Q_{des}$ inside the chamber (eq.~\ref{eqn:desorption rate}), increasing the pressure at a constant rate over time. The low pressure is maintained by having a pumping rate $Q_P$ given by:
 \begin{equation}
-Q_P = Q_L + Q_{des}  \label{eqn:vacuum_equilibrium}
+Q_P \leq Q_L + Q_{des}  \label{eqn:vacuum_equilibrium}
 \end{equation}
-In this experiment, due to the relatively large size and unique shape of the measurement equipment, the vacuum chamber has a significant leak and outgassing rates. The pumping must be off during measurement, due to the measurement sensitivity, causing pressure increase over time.
-\subsubsection{Minimized pressure increase}
+When the vacuum pump is working the pressure stabilizes on a pressure, at which the pumping rate is equal to the leak and outgassing. In this experiment, due to the measurement sensitivity, the pumping must be off during measurement, causing pressure increase over time. Due to the measurement equipment, the vacuum chamber has a large volume (high leak rate) and area (high outgassing rate).
 \par\noindent
 In order to minimize the pressure increase, the vacuum chamber was built using CF style vacuum components, designed for ultra high vacuum, minimizing the leak rate. ALSO, the vacuum chamber and measurement system were baked-out to reduce outgassing, using resistive wire. The bake-out was carried out for a week at about $110 C^0$ achieving stable vacuum of about $2\cdot 10^{−4} [Torr]$ after cooling down.
 \par\noindent

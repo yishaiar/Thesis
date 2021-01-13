@@ -388,12 +388,13 @@ Where $u$ is the material acoustic velocity and $K_s$ is the modulus of bulk ela
 
 \subsection{Vacuum quality}
 \subsubsection{Leak rate}
-At any vacuum system, some gas slowly leaks over time and increases the gas pressure if not pumped out. The leak rate $Q_L$ is the pressure change over time for a given volume, and results in a sustained increase of the pressure $P$ over time:
+At any vacuum system, some gas slowly leaks over time and increases the gas pressure if not pumped out, the leak rate $Q_L$ is given by: 
 \begin{equation}
 Q_L = \frac{\Delta P\cdot V}{\Delta t}  \label{eqn:leak rate}
 \end{equation}
-The leak rate could also prevent the system from reaching initial low pressure, since at some point the leakage would be equal to the pumping rate.
-\par\noindent
+Where $\Delta P$ is the difference between the internal pressure and the external pressure, causing a sustained pressure increase over time $\Delta t$ for a given volume.
+
+%The leak rate could also prevent the system from reaching initial low pressure, since at some point the leakage would be equal to the pumping rate.
 %There is also a diffusion rate of gas molecules, such as helium, which is insignificant when pressure is above $10^{-9}$ [Torr] (vacuum lower than high vacuum). 
 
 \subsubsection{Outgassing}
