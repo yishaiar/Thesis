@@ -97,15 +97,7 @@ In order to minimize the magnetic noise in the measurements, the torsional pendu
 
 \par\noindent
 The vacuum chamber, shown in fig.~\ref{fig:chamber front}, is composed of two cylindrical tubes placed one over the other with three view ports in front. The chamber is connected to a vacuum engine and gauge. The vacuum engine is connected to the chamber through a valve. Measurements are made when the valve is closed and the engine off, to prevent rotation noise.
-\subsubsection{Pressure increase}
-\par\noindent
-The main limitations to maintenance of low pressure are leakage $Q_L$ from the outside (eq.~\ref{eqn:leak rate}) and outgassing $Q_{des}$ inside the chamber (eq.~\ref{eqn:desorption rate}), increasing the pressure at a constant rate over time. The low pressure is maintained by having a pumping rate $Q_P$ given by:
-\begin{equation}
-Q_P \leq Q_L + Q_{des}  \label{eqn:vacuum_equilibrium}
-\end{equation}
-When the vacuum engine is working, the pumping rate is equal to the leak and outgassing and pressure is stable. In this experiment, due to the measurement sensitivity, the pumping must be off during measurement, causing pressure increase over time. Due to the measurement equipment, the vacuum chamber has a large volume (high leak rate) and area (high outgassing rate).
-\par\noindent
-In order to minimize the pressure increase, the vacuum chamber was built using CF style vacuum components, designed for ultra high vacuum, minimizing the leak rate. Also, the torsional pendulum and vacuum chamber were baked-out to reduce outgassing, using resistive wire. The bake-out was carried out for a week at about $110 C^0$ achieving stable vacuum of about $2\cdot 10^{−4} [Hpa]$ after cooling down.
+
 \subsubsection{Chamber viewports}
 \par\noindent
 As shown in fig.~\ref{fig:Total chamber}, the central viewport is in front of the pendulum's front mirror. The central viewport has a 68.3mm view diameter with the mirror located 82 mm away, giving a measurement FOV of about $39^0$ degrees (instead of $90^0$ at interferometry). The two small viewports are in front of the pendulum's sensing masses to damp down the pendulum noises, and are connected to the chamber through light guides. The view ports are for 550-1100 nm, with about 98$\%$ power transmittance in the range. 
@@ -120,6 +112,15 @@ As shown in fig.~\ref{fig:Total chamber}, the central viewport is in front of th
 \FloatBarrier
 \par\noindent
 The upper tube of the chamber is soldered with an adjustable mount, shown in fig.~\ref{fig:mount}. The string of the torsional pendulum is held by the mount, enabling the adjustment of the string's length and placing the pendulum in front of the viewports accurately (shown in fig.~\ref{fig:Total chamber}). 
+\subsubsection{Pressure increase}
+\par\noindent
+The main limitations to maintenance of low pressure are leakage $Q_L$ from the outside (eq.~\ref{eqn:leak rate}) and outgassing $Q_{des}$ inside the chamber (eq.~\ref{eqn:desorption rate}), increasing the pressure at a constant rate over time. The low pressure is maintained by having a pumping rate $Q_P$ given by:
+\begin{equation}
+Q_P \leq Q_L + Q_{des}  \label{eqn:vacuum_equilibrium}
+\end{equation}
+When the vacuum engine is working, the pumping rate is equal to the leak and outgassing and pressure is stable. In this experiment, due to the measurement sensitivity, the pumping must be off during measurement, causing pressure increase over time. Due to the pendulum's shape and size, the vacuum chamber is with large volume (high leak rate) and area (high outgassing rate).
+\par\noindent
+In order to minimize the pressure increase, the vacuum chamber is built using CF components which are designed for ultra high vacuum, and minimize the leak rate. Also, the torsional pendulum and vacuum chamber were baked-out to reduce outgassing, using resistive wire. The bake-out was carried out for a week at about $110 C^0$ achieving stable vacuum of about $2\cdot 10^{−4} [Hpa]$ after cooling down.
 \subsection{Experiment setup}
 \begin{figure}[htbp]
 	\centering
@@ -134,7 +135,6 @@ The experiment setup, shown in fig.~\ref{fig:setup}, is composed by the torsion 
 When the desired vacuum is achieved, the vacuum engine is disconnected using the valve and turned off, and the seismic box is closed. Approximately after eight hours the pendulum's oscillations settle down to the amplitude caused by the environment noises level and which could be affected by the weak torques caused by radiation pressure. The angle is read on real time by the PID algorithm, and an equivalent radiation-pressure torque is exerted by the LED's flux damping down the pendulum noises.
 
 \section{Noise reduction}
-
 \subsection{Faraday cage}
 \par\noindent
 The Faraday cage is a cage made by continuous covering of a conductive material used to block external electromagnetic fields. The external electrical fields cause an electric charge distribution in the conductive cage without passing inside. Electric current decays exponentially with depth through the material. The material skin depth $\delta$ defines the magnetic field's penetration depth, given by:
