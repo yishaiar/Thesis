@@ -39,7 +39,7 @@ As shown in fig.~\ref{fig:pendulum top}, the center of mass is balanced using a 
 \begin{equation}
 \tau_y = r_1\cdot m_1 g \cdot cos(0) - r_2\cdot m_2 g \cdot cos (0)\ = g( m_1 r_1  - m_2 (w-r_1) )  =0    \label{eqn:downward torque}
 \end{equation}
-Where $m_1$, $m_2$ are the masses of the mirror and the balancing mass, and $r_1$, $r_2$ are respectively their distance from the pendulum's center of mass. The spring allows adjusting the distance, given by: 
+Where $m_1$, $m_2$ are the masses of the mirror and the balancing mass, and $r_1$, $r_2$ are respectively their distance from the pendulum's center of mass. The spring allows accurate adjustment of the distance, given by: 
 \begin{equation}
 \frac{m_1}{m_2} = \frac{w-r_1}{r_1}   \label{eqn:downward torque cancelled}
 \end{equation}
@@ -47,16 +47,14 @@ Where $m_1$, $m_2$ are the masses of the mirror and the balancing mass, and $r_1
 
 \subsubsection{Design constraints}
 \par\noindent
-The chosen pendulum dimensions are designed to achieve large angle sensitivity to field torque (small string torsion coefficient $\kappa$, eq.~\ref{eqn:theta average}) while maintaining large angle sensitivity to mass (longer oscillation time period $T$, eq.~\ref{eqn:theta average}). For a torsional pendulum with moment of inertia $I$ (eq.~\ref{eqn:moment_inertia}) and string torsion coefficient $\kappa$ (eq.~\ref{eqn:torsion_coefficient_homogeneity}), the period $T$ is given by (eq.~\ref{eqn:undamped_omega}): 
+The chosen pendulum dimensions are designed to achieve large angle sensitivity to torque caused by a gravity field (small string torsion coefficient $\kappa$, eq.~\ref{eqn:theta average}) while maintaining large angle sensitivity to mass (longer oscillation time period $T$, eq.~\ref{eqn:theta average}). For a torsional pendulum with moment of inertia $I$ (eq.~\ref{eqn:moment_inertia}) and string torsion coefficient $\kappa$ (eq.~\ref{eqn:torsion_coefficient_homogeneity}), the period $T$ is given by (eq.~\ref{eqn:undamped_omega}): 
 \begin{equation}
 T = 2\pi\sqrt{\frac{I}{\kappa}}= 2\pi\sqrt{\frac{2ml^2}{\kappa}} =  2\pi\sqrt{\frac{2ml^2}{\frac{G}{h} \frac{\pi d^4}{32}}}  \label{eqn:undamped_motion_equation_4}
 \end{equation}
 \par\noindent
 As shown in eq.~\ref{eqn:undamped_motion_equation_4}, longer string $h$ with smaller diameter $d$ results with small string torsion coefficient while having a large period. Tungsten string is both vacuum compatible (material with low outgassing) and has high tensile strength, which allows holding the pendulum without tear inside the vacuum chamber while having small string diameter. 
 \par\noindent
-In order to minimize the magnetic noise in the measurements, the torsional pendulum was made out of stainless steel 316 (instead of stainless steel 304). Stainless steel 316 has a lower relative magnetic permeability $\mu_r$ \cite{SS316}.
-\par\noindent
-The experiment is constructed using a front mirror, where the angle displacement causes a mirror tilt. In order to minimize magnetic noise, the chosen mirror is made fully of metal (instead of coated glass). Having an oxygen-free copper (OFC) mirror, while not officially vacuum compatible, hopefully minimizes the vacuum outgassing.
+In order to minimize the magnetic noise in the measurements, the torsional pendulum is made out of stainless steel 316 (instead of stainless steel 304) with lower magnetic permeability \cite{SS316}, and the chosen front mirror is made fully of oxygen-free copper (OFC) instead of coated glass preventing capacitance. Having an OFC mirror, while not officially vacuum compatible, hopefully minimizes the vacuum outgassing.
 \subsubsection{Technical information}
 \begin{easylist}
 & Tungsten string;
