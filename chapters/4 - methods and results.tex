@@ -12,7 +12,7 @@
 \end{figure}
 \FloatBarrier
 \par\noindent
-The experiment is designed to minimize magnetic noises by avoiding capacitance and by choosing low magnetic permeability materials. Therefore, the torsional pendulum is placed inside a vacuum chamber, reducing Brownian motion, acoustic waves and friction. The vacuum chamber also reduces magnetic noise as a Faraday Cage. The vacuum chamber is placed inside seismic box, further reducing acoustic waves and magnetic noises from the environment. 
+The experiment system, shown in fig.~\ref{fig:Total chamber}, is designed to minimize magnetic noises by avoiding capacitance and by choosing low magnetic permeability materials. Therefore, the torsional pendulum is placed inside a vacuum chamber, reducing Brownian motion, acoustic waves and friction. The vacuum chamber also reduces magnetic noise as a Faraday Cage. The vacuum chamber is placed inside seismic box, further reducing acoustic waves and magnetic noises from the environment. 
 
 \par\noindent
 The experiment system is designed to minimize the outgassing rate, by both choosing low outgassing materials and avoiding air pockets inside the devices. The design of torsional pendulum and vacuum chamber was carried out using Solid Works.
@@ -27,7 +27,7 @@ The experiment system is designed to minimize the outgassing rate, by both choos
 \FloatBarrier
 \subsubsection{Design constraints}
 \par\noindent
-The chosen pendulum dimensions are designed to balance the achievement of high angle sensitivity to field (large string torsion coefficient $\kappa$, eq.~\ref{eqn:gravitation_torque_equilibrium}) while maintaining high mass sensitivity to angle (longer oscillation time period $T$, eq.~\ref{eqn:theta average_2}). 
+The torsional pendulum design, shown in fig.~\ref{fig:pendulum front}, is designed to balance the achievement of high angle sensitivity to field (large string torsion coefficient $\kappa$, eq.~\ref{eqn:gravitation_torque_equilibrium}) while maintaining high mass sensitivity to angle (longer oscillation time period $T$, eq.~\ref{eqn:theta average_2}). 
 \par\noindent
 For a torsional pendulum with length of $2l$, and two identical masses $m$ on the sides, the moment of inertia is:
 \begin{equation}
@@ -224,7 +224,7 @@ In order to overcome the led uncoherent profile and large FOV, the light is coup
 Due to coupling efficiency and size difference between the output beam from the lightguide and the pendulum sides, the efficiency of flux hitting the pendulum is estimated to be $\eta = 0.7$ and the torque is given by:
 \begin{equation}
 \tau(t)  =\frac{2l\eta}{{c}} (\Theta_1(t) -\Theta_2(t)) = 3.56^{-12}(D_1(t) -D_2(t)) 
-\label{eqn:led tourqe}
+\label{eqn:led torque}
 \end{equation}
 \par\noindent
 The LED power could be approximated by linear approximation of the Arduino duty cycle $D(t)$, which varies between 0 to 100\% with 8bit resolution, generating torques up to $\tau = 7\cdot10^-{10} [N\cdot m]$ with modulation steps of $\Delta\tau = 1.4\cdot10^-{12} [N\cdot m]$. As shown in eq.~\ref{eqn:pwm frequency}), the LED could be modulated up to $500[Hz]$ resulting with fast modulated external force for the PID algorithm. Also, since the led power could be approximated using linear approximation, it allows to control the approximated power output by changing the PID gain values.  
