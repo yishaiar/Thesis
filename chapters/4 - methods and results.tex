@@ -12,9 +12,9 @@
 \end{figure}
 \FloatBarrier
 \par\noindent
-The design of torsional pendulum and vacuum chamber, shown in fig.~\ref{fig:Total chamber}, was carried out using Solid Works. The experiment system is designed to minimize environment noises. Therefore, the torsional pendulum is placed inside a vacuum chamber, keeping the pendulum at low pressure reduces Brownian motion, acoustic waves and friction. In order to maintain low pressure for long periods, system is designed to minimize the outgassing rate, by both choosing low outgassing materials and avoiding air pockets inside the devices. 
+The design of torsional pendulum and vacuum chamber, shown in fig.~\ref{fig:Total chamber}, was carried out using Solid Works. The experiment system is designed to minimize environment noises. Therefore, the torsional pendulum is placed inside a vacuum chamber, maintaining low pressure reduces Brownian motion, acoustic waves and friction. In order to maintain low pressure for long periods, system is designed to minimize the outgassing rate, by both choosing low outgassing materials and avoiding air pockets inside the devices. 
 \par\noindent
-The magnetic noise is reduced by choosing low magnetic permeability materials, avoiding capacitance and by having the vacuum chamber as a Faraday Cage. The vacuum chamber is placed inside seismic box, further reducing acoustic waves and magnetic noises from the environment. 
+Magnetic noise is reduced by choosing low magnetic permeability materials, avoiding capacitance and by having the vacuum chamber as a Faraday Cage. The vacuum chamber is placed inside seismic box, further reducing acoustic waves and magnetic noises from the environment. 
 \subsection{Torsional pendulum design}
 \begin{figure}[htbp]
 	\centering
@@ -25,7 +25,13 @@ The magnetic noise is reduced by choosing low magnetic permeability materials, a
 \FloatBarrier
 \subsubsection{Design constraints}
 \par\noindent
-The torsional pendulum design, shown in fig.~\ref{fig:pendulum front}, is designed to balance the achievement of high angle sensitivity to field (large string torsion coefficient $\kappa$, eq.~\ref{eqn:gravitation_torque_equilibrium}) while maintaining high mass sensitivity to angle (longer oscillation time period $T$, eq.~\ref{eqn:theta average_2}). 
+The torsional pendulum design, shown in fig.~\ref{fig:pendulum front}, is designed to have an optimal mass sensitivity to field torque, given by eq.~\ref{eqn:gravitation_torque_equilibrium}:
+\begin{equation}
+m \approx \overline{\theta}  \cdot \frac{4\pi^2 r_0^3}{3GT^2cos\theta sin\theta} \approx  \frac{\kappa}{\tau_g}  \cdot \frac{4\pi^2 r_0^3}{3GT^2cos\theta sin\theta}
+  \label{eqn:mass measure}
+\end{equation} 
+
+ to balance the achievement of large angle sensitivity to field torque (large string torsion coefficient $\kappa$, ) while maintaining high mass sensitivity to angle (longer oscillation time period $T$, eq.~\ref{eqn:theta average_2}). 
 \par\noindent
 For a torsional pendulum with length of $2l$, and two identical masses $m$ on the sides, the moment of inertia is:
 \begin{equation}
