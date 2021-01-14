@@ -33,7 +33,7 @@ Introducing a new mass adds a constant new torque to the system $\tau_g$ (eq.~\r
 \overline{\theta}_g  \approx \frac{3GT^2cos\theta sin\theta}{4\pi^2 } \cdot \frac{M}{r_0^3}   \label{eqn:theta average_2}
 \end{equation}
 \par\noindent
-The angle is proportional to the square of the period's length $T$, the pendulum length $l$ and the masses $m$ are dropped out, which indicates that short and light weight sensors work well as larger ones, as long as their periods are the same. Thus, changing the PID measured error $e(t) = \delta\theta(t) + theta_g(t)$. The PID is compensating for the new error with mainly a proportional gain $K_P$, and the response $u(t)$ becomes mainly an inverse torque:
+The angle is proportional to the square of the period's length $T$, the pendulum length $l$ and the masses $m$ are dropped out, which indicates that short and light weight sensors work well as larger ones, as long as their periods are the same. Thus, changing the PID measured error $e(t) = \delta\theta(t) + \theta_g(t)$. The PID is compensating for the new error with mainly a proportional gain $K_P$, and the response $u(t)$ becomes mainly an inverse torque:
 \begin{equation}
 \tau_{PID} = u(t) = u[e(t)] \approx K_P\theta_g(t) \approx \tau_{g} \approx \kappa \overline{\theta}_g 
 \label{eqn:PID_response}
