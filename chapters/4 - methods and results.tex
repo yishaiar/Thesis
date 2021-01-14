@@ -242,19 +242,16 @@ The PID damping $\gamma$ and damping time $\tau$ depend on the initial oscillati
 %The system is a damped oscillator with an external torque correction, shown in eq.~\ref{eqn:damped_motion_equation}.
 
 \subsection{Control stability}
-PID control does not guarantee optimal control or stability, the control system aims to reach the desired set point by critically damping of the process (the oscillator). Well tuned control reaches the desired set point fast and accurate, and also applies over time the necessary corrections to resist external forces trying to move the process from the set point.
+PID control does not guarantee optimal control or stability, the control system aims to reach the desired set point by critically damping $\xi = 1$ of the process (the oscillator). Well tuned control reaches the desired set point fast and accurate, and also applies over time the necessary corrections to resist external forces trying to move the process from the set point.
 \par\noindent
-The controller response is its response to error. How much does the system overshoots a setpoint and the system oscillations. When controller gains are too high, instead of critical damping there is overdamping causing overshoot, due to the high gain the overshoot response overshoots to the other side, causing the system to be driven (shown in eq.~\ref{eqn:driven_motion_equation_2}).
-
-\section{Overshoot}
-Overshoot is when output signal or function exceeds the target value. The response signal is not accurate compare to target. In control theory there are two wanted conflicting properties; an accurate response (small overshoot), and small risetime (fast response). 
-\par\noindent
-Overshoot is usually measured in percentage overshoot (PO). For second order systems, such as damped oscillators PO is a function of the damping ratio $\xi$. 
-
-
+Overshoot is when output signal or function exceeds the target value. The response signal is not accurate compare to target. In control theory there are two wanted conflicting properties; an accurate response (small overshoot), and small risetime (fast response). Overshoot is usually measured in percentage overshoot (PO). For second order systems, such as damped oscillators PO is a function of the damping ratio $\xi$. 
 \begin{equation}
 PO = 100\cdot e ^{\frac{-\xi\pi}{\sqrt{1-\xi^2}}} = \frac{output-target}{target}   \label{eqn:percentage_overshoot}
 \end{equation}
+\par\noindent
+The controller response to error (shown in eq.~\ref{eqn:PID response}) defines how much will the oscillator overshoot the setpoint. When controller gains  are too high, instead of critical damping there is overdamping causing overshoot. Due to the high gains the overshoot response overshoots agian to the other side, causing the system to be driven (shown in eq.~\ref{eqn:driven_motion_equation_2}).
+
+
 
 \section{pid operate (algorithm)}
 
