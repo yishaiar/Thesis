@@ -224,18 +224,20 @@ PID controller continuously calculates the oscillator's error value, damping it 
 \begin{equation}
 \tau_{PID} = -\gamma\dot{e}(t) =    -\gamma\dot{\theta}(t)     \label{eqn:friction_torque_pid}
 \end{equation}
-Where $\gamma$ is the PID damping coefficient is given by: 
+Where $\gamma$ is the PID damping coefficient.
+The PID is controlling the LED radiation force, shown in eq.~\ref{eqn:led torque}:
 \begin{equation}
-\gamma  =  \frac{\tau_{PID}}{\dot{\theta}_{max}} =       \frac{\tau_{PID}}{\theta_{max}\cdot\frac{2\pi}{T}} =  \frac{T}{2 \pi \theta_{max} } \tau_{PID}    \label{eqn:damped_pid_motion_equation_2}
+\tau_{PID} = \tau(t)_{LED} = 3.56^{-12}(D_1(t) -D_2(t))      \label{eqn:friction_torque_pid 2}
+\end{equation}
+The PID damping coefficient is given by: 
+\begin{equation}
+\gamma  =  \frac{max(\tau_{PID})}{\dot{\theta}_{max}} =       \frac{max(3.56^{-12}(D_1(t) -D_2(t)))}{\theta_{max}\cdot\frac{2\pi}{T}} =  \frac{3.56^{-10}T}{2 \pi \theta_{max} }     \label{eqn:damped_pid_motion_equation_2}
 \end{equation}
 
 
 %The system is a damped oscillator with an external torque correction, shown in eq.~\ref{eqn:damped_motion_equation}.
 
-The PID is controlling the LED radiation force, shown in eq.~\ref{eqn:led torque}:
-\begin{equation}
-\tau_{PID} = \tau(t)_{LED} = 3.56^{-12}(D_1(t) -D_2(t))      \label{eqn:friction_torque_pid 2}
-\end{equation}
+
 
 
 
