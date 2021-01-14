@@ -224,34 +224,20 @@ PID controller continuously calculates the oscillator's error value, damping it 
 \begin{equation}
 \tau_{PID} = -\gamma\dot{e}(t) =    -\gamma\dot{\theta}(t)     \label{eqn:friction_torque_pid}
 \end{equation}
-Where $\gamma$ is the PID damping coefficient.
-The PID is controlling the LED radiation force, shown in eq.~\ref{eqn:led torque}:
+Where $\gamma$ is the damping coefficient. The PID is controlling the LED radiation force, given in eq.~\ref{eqn:led torque}, where $D$ the duty cycle varies between 0 to 100%:
 \begin{equation}
 \tau_{PID} = \tau(t)_{LED} = 3.56^{-12}(D_1(t) -D_2(t))      \label{eqn:friction_torque_pid 2}
 \end{equation}
 The PID damping coefficient is given by: 
 \begin{equation}
-\gamma  =  \frac{max(\tau_{PID})}{\dot{\theta}_{max}} =       \frac{max(3.56^{-12}(D_1(t) -D_2(t)))}{\theta_{max}\cdot\frac{2\pi}{T}} =  \frac{3.56^{-10}T}{2 \pi \theta_{max} }     \label{eqn:damped_pid_motion_equation_2}
+\gamma  =  \frac{max(\tau_{PID})}{\dot{\theta}_{max}} =       \frac{max(3.56^{-12}(D_1(t) -D_2(t)))}{\theta_{max}\cdot\frac{2\pi}{T}} \approx  \frac{3.56^{-10}T}{2 \pi \theta_{max} }     \label{eqn:damped_pid_motion_equation_2}
 \end{equation}
-
+As shown in eq.~\ref{eqn:damping_time}  the damping time $\tau$ is given by:
+\begin{equation}
+\tau =  \frac{2I}{\gamma} =  \frac{1}{\xi\omega_0}  \label{eqn:damping_time_pid}
+\end{equation}
 
 %The system is a damped oscillator with an external torque correction, shown in eq.~\ref{eqn:damped_motion_equation}.
-
-
-
-
-
-\begin{equation}
-\gamma\dot{\theta}  = LF   \label{eqn:damped_pid_motion_equation_1}
-\end{equation}
-
-
-\begin{equation}
-\gamma  = \frac{LF_{max}}{\dot{\theta}_{max}} =\frac{LF_{max}T}{\theta_{max}2\pi}    \label{eqn:damped_pid_motion_equation_2}
-\end{equation}
-\begin{equation}
-\tau =  \frac{2I}{\gamma}  \label{eqn:damping_time_pid}
-\end{equation}
 The PID damping $\gamma$ and damping time $\tau$ depends on the initial oscillations angle. If the angle is too large compare to the inserted force, the system is extremely underdamped and the PID affect is negligible. The damping time would be infinite and the system would keep on oscillating.
 
 \subsection{Control stability}
