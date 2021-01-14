@@ -226,7 +226,7 @@ PID controller continuously calculates the oscillator's error value, damping it 
 \end{equation}
 Where $\gamma$ is the PID damping coefficient is given by: 
 \begin{equation}
-\gamma  =  \frac{\tau_{PID}}{\dot{\theta}_{max}} =       \frac{\tau_{PID}}{\theta_{max}\cdot\frac{2\pi}{T}}    \label{eqn:damped_pid_motion_equation_2}
+\gamma  =  \frac{\tau_{PID}}{\dot{\theta}_{max}} =       \frac{\tau_{PID}}{\theta_{max}\cdot\frac{2\pi}{T}} =  \frac{T}{2 \pi \theta_{max} } \tau_{PID}    \label{eqn:damped_pid_motion_equation_2}
 \end{equation}
 
 
