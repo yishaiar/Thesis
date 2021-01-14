@@ -1,26 +1,6 @@
 \providecommand{\main}{..}
 \documentclass[\main/master.tex]{subfiles}
-\usepackage{showframe,blindtext}
-
-\makeatletter
-\def\thickhrulefill{\leavevmode \leaders \hrule height ex \hfill
-\kern \z@}
-\def\@makechapterhead#1{%
-    \vspace*{-105\p@}%<-------------
-    {\parindent \z@ 
-        {\raggedleft \reset@font
-            \scshape \@chapapp{}
-        \thechapter\par\nobreak}%
-        \par\nobreak
-        \vspace*{10\p@}
-        \interlinepenalty\@M
-        {\raggedright \Huge \bfseries #1}%
-        \par\nobreak
-        \hrulefill
-        \par\nobreak
-        \vskip 20\p@
-    }}
-
+\xpatchcmd{\@makechapterhead}
 
 \begin{document}
 \chapter{Theoretical background}\label{chapter:Theoretical background}
