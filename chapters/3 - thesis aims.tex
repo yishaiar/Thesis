@@ -26,7 +26,7 @@ The reduction of the amplitude enables to actively damp down the remaining noise
 \par\noindent
 Damping is made using a PID feedback loop. The tilt angle is measured, and an equivalent feedback external source is applied. The feedback damps the noises, without pre-knowledge of the existing noises, effectively reducing the pendulum's temperature (eq.~\ref{eqn:Brownian uncertainty 3}). Having a lower effective temperature enlarges the SNR and the measurement sensitivity, which enables measuring smaller tilt angles.
 \par\noindent
-With PID tuned correct the damped pendulum is at critical damping and oscillations become smaller. The measured error $e(t)$ and the PID damping response $u(t)$ (eq.~\ref{eqn:PID response}) are both minimized. 
+With PID tuned correct the damped pendulum is at critical damping and oscillations become smaller. The measured error $e(t) = \delta\theta(t)$ and the PID damping response $u(t)$ (eq.~\ref{eqn:PID response}) are both minimized. 
 \par\noindent
 Introducing a new mass adds a constant new torque to the system $\tau_g$ (eq.~\ref{eqn:net_gravitation_torque_approx}), accordingly the average tilt angle becomes $\overline{\theta}_g$ (eq.~\ref{eqn:theta average}):
 \begin{equation}
