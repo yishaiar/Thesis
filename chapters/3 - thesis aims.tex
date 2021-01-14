@@ -36,9 +36,9 @@ Introducing a new mass adds a constant new torque to the system $\tau_g$ (eq.~\r
 \overline{\theta}_g  \approx \frac{3GT^2cos\theta sin\theta}{4\pi^2 } \cdot \frac{M}{r_0^3}   \label{eqn:theta average_2}
 \end{equation}
 \par\noindent
-The angle is proportional to the square of the period's length $T$, the pendulum length $l$ and the masses $m$ are dropped out, which indicates that short and light weight sensors work well as larger ones, as long as their periods are the same. Thus, changing the PID measured error $e(t) = \delta\theta(t) + \overline{\theta}_g$. The PID is compensating for the new error with mainly a proportional gain $K_P$, and the response $u(t)$ becomes mainly an inverse torque:
+The angle is proportional to the square of the period's length $T$, the pendulum length $l$ and the masses $m$ are dropped out, which indicates that short and light weight sensors work well as larger ones, as long as their periods are the same. Thus, changing the PID measured error $e(t) = \delta\theta(t) + theta_g(t)$. The PID is compensating for the new error with mainly a proportional gain $K_P$, and the response $u(t)$ becomes mainly an inverse torque:
 \begin{equation}
-\tau_{PID} = u(t) = u[e(t)] \approx K_P\theta_g(t) \approx \tau_{g} = \kappa \overline{\theta}_g 
+\tau_{PID} = u(t) = u[e(t)] \approx K_P\theta_g(t) \approx \tau_{g} \approx \kappa \overline{\theta}_g 
 \label{eqn:PID_response}
 \end{equation}
 Assuming the mass is oscillating at a low frequency, when integrating over short periods the angle is constant in time:
@@ -51,7 +51,7 @@ Where $U$ is the sum of the PID response, and $\Delta t$ is the integration time
 \overline{\theta}_g = \frac{U}{K_P\Delta t}      \label{eqn:pid_gravitation_torque}
 \end{equation}
 \par\noindent
-According to eq.~\ref{eqn:theta average_3}, by accurate angle measurement, the gravitational field could be estimated. According to eq.~\ref{eqn:pid_gravitation_torque}, the measurement system allows fast response (short integration time) and high accuracy while measuring low frequency gravity fields. 
+According to eq.~\ref{eqn:theta average_2}, by accurate angle measurement, the gravitational field could be estimated. According to eq.~\ref{eqn:pid_gravitation_torque}, the measurement system allows fast response (short integration time) and high accuracy while measuring low frequency gravity fields. 
 
  
  
