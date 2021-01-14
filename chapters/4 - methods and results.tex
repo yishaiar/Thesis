@@ -221,9 +221,9 @@ PID controller can continuously calculates error value of an oscillator, to damp
 \begin{equation}
 \tau_{PID} = -\gamma\dot{e}(t) =    -\gamma\dot{\theta}(t)     \label{eqn:friction_torque_pid}
 \end{equation}
-The system is a damped oscillator, with an external force correction, which inserts torque to the oscillator.
+Where $\gamma$ is the PID damping coefficient, as shown in eq.~\ref{eqn:damped_motion_equation}) the system is a damped oscillator, with an external force correction, which inserts torque to the oscillator, given by:
 \begin{equation}
-\kappa\cdot\theta - \gamma\cdot\dot{\theta}  + I\cdot\ddot{\theta} = 0   \label{eqn:damped_pid_motion_equation}
+\kappa\theta - \gamma\dot{\theta}  + I\ddot{\theta} = 0   \label{eqn:damped_pid_motion_equation}
 \end{equation}
 \begin{equation}
 \gamma\dot{\theta}  = LF   \label{eqn:damped_pid_motion_equation_1}
