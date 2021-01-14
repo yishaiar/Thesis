@@ -31,14 +31,12 @@ Where $G$ is the material shear modulus, $J$ is the circular second moment of ar
 \subsection{Simple harmonic oscillator}
 The harmonic oscillator is a second order system that, when displaced, experiences a linear restoring force proportional to the displacement from equilibrium. The torsional pendulum is an angular harmonic oscillator. However, it is equivalent to the linear case, where instead of velocity and force, one has angular velocity and torque.
 \par\noindent
-If the restoring torque $tau$ is the only torque in action, then the oscillator is not driven oscillator, resulting in a simple harmonic motion:
+If the restoring torque $\tau$ is the only torque in action, then the oscillator is not driven oscillator, resulting in a simple harmonic motion:
 \begin{equation}
 \tau = -\kappa\cdot\theta  = I\cdot\ddot{\theta}   \label{eqn:undamped_motion_equation}
 \end{equation}
 \par\noindent
-Where $I$ is the moment of inertia of the torsional pendulum. 
-\par\noindent
-Solving eq.~\ref{eqn:undamped_motion_equation}, the restoring torque causes sinusoidal oscillations (simple harmonic motion) around the equilibrium angle:  
+Where $I$ is the moment of inertia of the torsional pendulum. Solving eq.~\ref{eqn:undamped_motion_equation}, the restoring torque causes sinusoidal oscillations (simple harmonic motion) around the equilibrium angle:  
 \begin{equation}
 \theta(t) = \theta_{max}cos(\omega_0 t )    \label{eqn:undamped_motion_equation_solved}
 \end{equation}
@@ -51,11 +49,7 @@ The time period of oscillation $T$ and $\omega_0$ are determined by the physical
 
 
 \subsection{Damped oscillator}
-The system is a damped oscillator if there is also a damping torque, given by:
-\begin{equation}
-\tau_{drag} = -b\cdot\dot{\theta}   \label{eqn:friction_torque}
-\end{equation}
-The damping torque, is a drag torque (friction) which is opposite to the oscillator's angular velocity $\dot{\theta}$, where $b$ is the oscillator damping coefficient. Thus, eq.~\ref{eqn:undamped_motion_equation} becomes:
+The system is a damped oscillator if there is also a damping torque $\tau = -b\cdot\dot{\theta}$. The damping torque is opposite to the oscillator's angular velocity $\dot{\theta}$, where $b$ is the oscillator damping coefficient. Thus, eq.~\ref{eqn:undamped_motion_equation} becomes:
 \begin{equation}
 \tau = -\kappa\cdot\theta - b\dot{\theta}  = I\cdot\ddot{\theta}   \label{eqn:damped_motion_equation}
 \end{equation}
