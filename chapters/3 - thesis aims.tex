@@ -25,7 +25,7 @@ When the gravitational force is measured using a torsional pendulum, there are n
 \delta\theta(t) = \delta\theta cos(\omega_0 t)   \label{eqn:pid_error}
 \end{equation}
 \par\noindent
-The reduction of the amplitude enables to actively damp down the remaining noises and cool down the pendulum temperature. The cooling system is built using two LED light sources placed in front of each pendulum side. The led sources are modulated at high speeds using a simple Arduino microcontroller. The modulated light is causing a small external radiation torque, which damps down the oscillations.
+The reduction of the amplitude enables to actively damp down the remaining noises and cool down the pendulum temperature. The cooling system is built using two LED light sources, each placed in front of a pendulum side mass. The led sources are fast modulated using a simple Arduino microcontroller. The modulated light is causing a small external radiation torque, which damps down the oscillations.
 \par\noindent
 Damping is made using a PID feedback loop. The tilt angle is measured, and an equivalent feedback external source is applied. The feedback damps the noises, without pre-knowledge of the existing noises, effectively reducing the pendulum's temperature (eq.~\ref{eqn:Brownian uncertainty 3}). Having a lower effective temperature enlarges the SNR and the measurement sensitivity, which enables measuring smaller tilt angles.
 \par\noindent
@@ -36,11 +36,7 @@ Introducing a new mass adds a constant new torque to the system $\tau_g$ (eq.~\r
 \overline{\theta}_g  \approx \frac{3GT^2cos\theta sin\theta}{4\pi^2 } \cdot \frac{M}{r_0^3}   \label{eqn:theta average_2}
 \end{equation}
 \par\noindent
-The angle is proportional to the square of the period's length $T$, the pendulum length $l$ and the masses $m$ are dropped out, which indicates that short and light weight sensors work well as larger ones, as long as their periods are the same. The resulting measured error $e(t)$:
-\begin{equation}
-e(t) = \delta\theta(t) + \theta_g(t)    \label{eqn:error_measurement}
-\end{equation}
-The PID is compensating for the new error with mainly a proportional gain $K_P$, and the response $u(t)$ becomes mainly an inverse torque:
+The angle is proportional to the square of the period's length $T$, the pendulum length $l$ and the masses $m$ are dropped out, which indicates that short and light weight sensors work well as larger ones, as long as their periods are the same. Thus, changing the PID measured error $e(t) = \delta\theta(t) + \overline{\theta}_g$. The PID is compensating for the new error with mainly a proportional gain $K_P$, and the response $u(t)$ becomes mainly an inverse torque:
 \begin{equation}
 \tau_{PID} = u(t) = u[e(t)] \approx K_P\theta_g(t) \approx \tau_{g} = \kappa \overline{\theta}_g 
 \label{eqn:PID_response}
