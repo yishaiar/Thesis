@@ -230,11 +230,11 @@ Where $\gamma$ is the damping coefficient. The PID is controlling the LED radiat
 \end{equation}
 The PID damping coefficient is given by: 
 \begin{equation}
-\gamma  =  \frac{max(\tau_{PID})}{\dot{\theta}_{max}} =       \frac{max(3.56^{-12}(D_1(t) -D_2(t)))}{\theta_{max}\cdot\frac{2\pi}{T}} \approx  \frac{3.56^{-10}T}{2 \pi \theta_{max} }     \label{eqn:damped_pid_motion_equation_2}
+\gamma  =  \frac{max(\tau_{PID})}{\dot{\theta}_{max}} =       \frac{max(3.56^{-12}(D_1(t) -D_2(t)))}{\theta_{max}\cdot\frac{2\pi}{T}} \approx  \frac{1.1^{-10}T}{ \theta_{max} }     \label{eqn:damped_pid_motion_equation_2}
 \end{equation}
-As shown in eq.~\ref{eqn:damping_time}  the damping time $\tau$ is given by:
+As shown in eq.~\ref{eqn:damping_time} the damping time $\tau$ is given by:
 \begin{equation}
-\tau =  \frac{2I}{\gamma} =  \frac{1}{\xi\omega_0}  \label{eqn:damping_time_pid}
+\tau = \frac{1}{\xi\omega_0} =  \frac{2I}{\gamma} = \frac{2\cdot 0.487\cdot 10^{-3}}{\frac{1.1^{-10}T}{ \theta_{max} } } =    \label{eqn:damping_time_pid}
 \end{equation}
 
 %The system is a damped oscillator with an external torque correction, shown in eq.~\ref{eqn:damped_motion_equation}.
