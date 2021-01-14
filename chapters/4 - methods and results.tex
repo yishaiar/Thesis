@@ -220,16 +220,25 @@ The PID is damping a simple harmonic oscillator (eq.~\ref{eqn:undamped_motion_eq
 \begin{equation}
 \dot{\theta}_{max} = \omega_0\theta_{max} = \theta_{max}\cdot\frac{2\pi}{T}    \label{eqn:undamped_motion_equation_3}
 \end{equation}
-PID controller can continuously calculates error value of an oscillator, to damp it to zero. If the defined set point is set to zero, the error is the measured process variable $e(t) = \theta(t)$. The PID acts as friction, gradually working when the oscillations are at the maximum velocity to slow them down, and remove the torque energy:
+PID controller continuously calculates the oscillator's error value, damping it to zero. If the defined set point is set to zero, the error is the measured process variable $e(t) = \theta(t)$. The PID acts as friction, gradually working when the oscillations are at the maximum velocity to slow them down, and remove the torque energy:
 \begin{equation}
 \tau_{PID} = -\gamma\dot{e}(t) =    -\gamma\dot{\theta}(t)     \label{eqn:friction_torque_pid}
 \end{equation}
-Where $\gamma$ is the PID damping coefficient. 
+Where $\gamma$ is the PID damping coefficient is given by: 
+\begin{equation}
+\gamma  =  \frac{\tau_{PID}}{\dot{\theta}_{max}} =       \frac{\tau_{PID}}{\theta_{max}\cdot\frac{2\pi}{T}}    \label{eqn:damped_pid_motion_equation_2}
+\end{equation}
+
+
 %The system is a damped oscillator with an external torque correction, shown in eq.~\ref{eqn:damped_motion_equation}.
 
-
-
 The PID is controlling the LED radiation force, shown in eq.~\ref{eqn:led torque}:
+\begin{equation}
+\tau_{PID} = \tau(t)_{LED} = 3.56^{-12}(D_1(t) -D_2(t))      \label{eqn:friction_torque_pid 2}
+\end{equation}
+
+
+
 \begin{equation}
 \gamma\dot{\theta}  = LF   \label{eqn:damped_pid_motion_equation_1}
 \end{equation}
