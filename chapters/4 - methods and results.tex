@@ -7,15 +7,15 @@
 \subsection{Experiment setup}
 \begin{figure}[htbp]
 	\centering
-	\fbox{\includegraphics[scale=0.15]{\main/images/4 - methods and results/setup.png}}
+	\fbox{\includegraphics[scale=0.2]{\main/images/4 - methods and results/setup.png}}
 	\caption[The experiment setup]{The experiment setup}
 	\label{fig:setup}
 \end{figure}
 \FloatBarrier
 \par\noindent
-The experiment setup, shown in fig.~\ref{fig:setup}, is composed by the torsion pendulum placed inside a vacuum chamber, tilt angle measurement system and a feedback system, all placed inside a seismic box. The angle is measured by a LASER beam tilted by the pendulum's front mirror and measured in a quadrant detector, the detector is connected to a computer by an oscilloscope through a signal amplifier. The tilt angle signal is reflected by a piezo driven mirror, which is tuned so the pendulum is balanced relative to the detector's center (the PID needs a reference for error calculations, otherwise it would calculate a wrong error and fail in damping). 
+The experiment setup, shown in fig.~\ref{fig:setup}, is composed of a the torsion pendulum placed inside a vacuum chamber, a tilt angle measurement system and a feedback system, all placed inside a seismic box. The angle is measured by a laser beam deflected by the pendulum's front mirror and detected by a quadrant detector. The detector is connected to a computer by an oscilloscope through a signal amplifier. The light reflected from the pendulum mirror is reflected by a piezo driven mirror, which is tuned so that the reflected light would strike the detector's center (the PID needs a reference for error calculations). 
 \par\noindent
-The feedback system is composed by two LED light sources, modulated in real time by an Arduino micro-controller which is controlled by a PID feed-back loop in the computer. The LED light sources are placed in front of each of the viewports on the sides of the chamber, each coupled to a side mass of the pendulum. 
+The feedback system is composed of two LED light sources, modulated in real time by an Arduino micro-controller which is controlled by the PID feed-back loop in the computer. The LED light sources are placed in front of each of the transparent windows (viewports) on the sides of the chamber, each coupled to a side mass of the pendulum. 
 \par\noindent
 When the desired vacuum is achieved, the vacuum engine is disconnected using the valve and turned off, and the seismic box is closed. When the oscillations settle down to a level which could be affected by the weak torques caused by radiation pressure (an amplitude caused mainly by environmental noises, as explained in previous chapters). The angle is read in real time by the PID algorithm, and an equivalent radiation-pressure torque is exerted by the LED's flux damping down the pendulum noises.
 \begin{figure}[htbp]
@@ -209,10 +209,10 @@ Due to coupling efficiency and size difference between the output beam from the 
 \end{equation}
 \par\noindent
 The LED power could be approximated by linear approximation of the Arduino duty cycle $D(t)$, which varies between 0 to 100\% with 8bit resolution, generating torques up to $\tau = 7\cdot10^-{10} [N\cdot m]$ with modulation steps of $\Delta\tau = 1.4\cdot10^-{12} [N\cdot m]$. As shown in eq.~\ref{eqn:pwm frequency}), the LED could be modulated up to $500[Hz]$ resulting with fast modulated external force for the PID algorithm. Also, since the led power could be approximated using linear approximation, it allows to control the approximated power output by changing the PID gain values.  
-\subsection{LASER}
-Initially the modulated light sources were composed by a single high power LASER diode coupled in series into two acousto optic modulators (AOM), and coupled into the pendulum through optic fibers for mod cleaning. AOM can divide a single coherent light beam into two beams, with a proportional response to an input voltage, resulting with a controlled intensity ratio between the beams.
+\subsection{Laser setup}
+Initially the modulated light sources were composed by a single high power laser diode coupled in series into two acousto optic modulators (AOM), and coupled into the pendulum through optic fibers for mod cleaning. AOM can divide a single coherent light beam into two beams, with a proportional response to an input voltage, resulting with a controlled intensity ratio between the beams.
 \par\noindent
-The setup minimizes uncertainties of the light intensity since both light sources have a mutual source, causing a reduced torque uncertainty due to internal noises such as thermal and shot noise. The apparatus uncertainty due to the non linearity of the AOM response and LASER power fluctuations proved to be larger than the uncertainties of the intensity difference.   
+The setup minimizes uncertainties of the light intensity since both light sources have a mutual source, causing a reduced torque uncertainty due to internal noises such as thermal and shot noise. The apparatus uncertainty due to the non linearity of the AOM response and laser power fluctuations proved to be larger than the uncertainties of the intensity difference.   
 
 
 \subsection{Damped oscillator}
