@@ -13,11 +13,12 @@
 \end{figure}
 \FloatBarrier
 \par\noindent
-The experiment setup, shown in fig.~\ref{fig:setup}, is composed of a the torsion pendulum placed inside a vacuum chamber, a tilt angle measurement system and a feedback system, all placed inside a seismic box. The angle is measured by a laser beam deflected by the pendulum's front mirror and detected by a quadrant detector. The detector is connected to a computer by an oscilloscope through a signal amplifier. The light reflected from the pendulum mirror is reflected by a piezo driven mirror, which is tuned so that the reflected light would strike the detector's center (the PID needs a reference for error calculations). 
+The experiment setup, shown in fig.~\ref{fig:setup}, is composed of a the torsion pendulum placed inside a vacuum chamber, a tilt angle measurement system and a feedback system. The experiment setup is placed inside a seismic box, which is not shown in the figure. The angle is measured by a laser beam deflected by the pendulum's front mirror and detected by a quadrant detector. The detector is connected to a computer by an oscilloscope through a signal amplifier. The light reflected from the pendulum mirror is reflected by a piezo driven mirror, which is tuned so that the reflected light would strike the detector's center (the PID needs a reference for error calculations). 
 \par\noindent
-The feedback system is composed of two LED light sources, modulated in real time by an Arduino micro-controller which is controlled by the PID feed-back loop in the computer. The LED light sources are placed in front of each of the transparent windows (viewports) on the sides of the chamber, each coupled to a side mass of the pendulum. 
+The feedback system is composed of two LED light sources, modulated in real time by an Arduino micro-controller which is controlled by the PID feed-back loop in the computer. The LED light sources are placed in front of each of the transparent windows (viewports) on the sides of the vacuum chamber, each coupled to a side mass of the pendulum. 
 \par\noindent
 When the desired vacuum is achieved, the vacuum engine is disconnected using the valve and turned off, and the seismic box is closed. When the oscillations settle down to a level which could be affected by the weak torques caused by radiation pressure (an amplitude caused mainly by environmental noises, as explained in previous chapters). The angle is read in real time by the PID algorithm, and an equivalent radiation-pressure torque is exerted by the LED's flux damping down the pendulum noises.
+\subsubsection{Design}
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=0.3]{\main/images/4 - methods and results/total_chamber.png}}
@@ -26,9 +27,9 @@ When the desired vacuum is achieved, the vacuum engine is disconnected using the
 \end{figure}
 \FloatBarrier
 \par\noindent
-The design of torsional pendulum and vacuum chamber, shown in fig.~\ref{fig:Total chamber}, was carried out using Solid Works. The design aims to minimize environment noises. As demonstrated previously (eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:total_kinetic}, eq.~\ref{eqn:acoustic_intensity}, eq.~\ref{eqn:drag force}), Brownian motion from the environment, thermal coupling, acoustic waves and friction are pressure dependent and are considerably reduced by maintaining low pressure. Therefore, the torsional pendulum is placed inside a vacuum chamber. Magnetic noise is reduced by choosing low magnetic permeability materials, avoiding capacitance and by having a Faraday Cage. 
+The design of torsional pendulum and vacuum chamber, shown in fig.~\ref{fig:Total chamber}, was carried out using Solid Works. The design aims to minimize environment noises. As demonstrated previously (eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:total_kinetic}, eq.~\ref{eqn:acoustic_intensity}, eq.~\ref{eqn:drag force}), Brownian motion of gas particles, thermal coupling, acoustic waves and friction are pressure dependent and are considerably reduced by maintaining low pressure. Therefore, the torsional pendulum is placed inside a vacuum chamber. Magnetic noise is reduced by choosing low magnetic permeability materials, avoiding capacitance and using a Faraday cage. 
 \par\noindent
-The vacuum chamber is placed inside seismic box, further reducing acoustic waves and magnetic noise. In order to maintain low pressure for long periods, system is designed to minimize the outgassing rate, by both choosing low outgassing materials and avoiding air pockets inside the devices. 
+The vacuum chamber is placed inside seismic box, further reducing acoustic waves and magnetic noise. In order to maintain low pressure for long periods, the system is designed to minimize the outgassing rate by both, choosing low outgassing materials and avoiding air pockets inside the devices. 
 \subsection{Torsional pendulum design}
 \begin{figure}[htbp]
 	\centering
@@ -38,9 +39,7 @@ The vacuum chamber is placed inside seismic box, further reducing acoustic waves
 \end{figure}
 \FloatBarrier
 \par\noindent
-The torsional pendulum design, shown in fig.~\ref{fig:pendulum front}, is composed of thin rod with length $2l$, two identical masses $m$ on the sides, a front mirror and a balancing mass. The torsional pendulum tilt angle is measured using a mirror in front of the pendulum. Due to an unbalanced center of mass, earth's gravity causes a downward torque $\tau_y$. 
-%The design is maximizing the angle measurement sensitivity, while maintaining low magnetic noise and low vacuum pressure (low outgassing rate). 
-%\subsubsection{Design}
+The torsional pendulum design, shown in fig.~\ref{fig:pendulum front}, is composed of a thin rod with length $2l$, two identical masses $m$ on the sides, a front mirror and a balancing mass. The mirror is used for tilt angle measurement. Due to an unbalanced center of mass, the earth's gravity causes a downward torque $\tau_y$. 
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=1.2]{\main/images/4 - methods and results/pendulum_top.JPG}}
@@ -49,13 +48,13 @@ The torsional pendulum design, shown in fig.~\ref{fig:pendulum front}, is compos
 \end{figure}
 \FloatBarrier 
 \par\noindent
-As shown in fig.~\ref{fig:pendulum top}, the center of mass is balanced using a balancing mass with similar shape and weight as the mirror. The balancing mass and the mirror are connected to the pendulum by a spring $w$ from their center, and the downward torque is given by:
+The center of mass is balanced using a balancing mass with similar shape and weight as the mirror, as shown in fig.~\ref{fig:pendulum top}. The balancing mass and the mirror are connected to the pendulum by a beam with length $w$ from their centers, and the downward torque is given by:
 \begin{equation}
 \tau_y = r_1\cdot m_1 g \cdot cos(0) - r_2\cdot m_2 g \cdot cos (0)\ = g( m_1 r_1  - m_2 (w-r_1) )  =0    \label{eqn:downward torque}
 \end{equation}
-Where $m_1$, $m_2$ are the masses of the mirror and the balancing mass, and $r_1$, $r_2$ are respectively their distance from the pendulum's center of mass. The spring allows accurate adjustment of the distance, given by: 
+Where $m_1$, $m_2$ are the masses of the mirror and the balancing mass, and $r_1$, $r_2$ are their distance from the pendulum's center of mass respectively. The beam allows accurate adjustment of the distance $r$, given by: 
 \begin{equation}
-\frac{m_1}{m_2} = \frac{w-r_1}{r_1}   \label{eqn:downward torque cancelled}
+ r_1 = \frac{w}{\frac{m_1}{m_2}+1}  \label{eqn:downward torque cancelled}
 \end{equation}
 
 
@@ -140,9 +139,9 @@ In order to minimize the pressure increase, the vacuum chamber is built using CF
 As demonstrated previously (eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:total_kinetic}, eq.~\ref{eqn:acoustic_intensity}, eq.~\ref{eqn:drag force}), Brownian motion from the environment, thermal coupling, acoustic waves and friction are pressure dependent and are considerably reduced by maintaining low pressure.
 I will add calculations..
 \par\noindent
-The measurement system is placed inside a seismic box which is a Faraday cage with 76 mm thickness, blocking magnetic fields with $f \ge 30 [Hz]$ from the environment. The seismic box is both reducing acoustic waves and magnetic noises from the environment.
+The measurement system is placed inside a seismic box which is a Faraday cage with 76 mm thickness, blocking magnetic fields with $f \ge 30 [Hz]$ from the environment. The seismic box is both reducing acoustic waves and magnetic noise from the environment.
 \par\noindent
-The vacuum chamber is a second cage blocking magnetic noise from the electronic system placed inside the seismic box. Vacuum chambers are made out of approximately 3 mm thick stainless steel, blocking magnetic fields with $f\ge 20 [KHz]$ while reducing magnetic noises from lower frequency fields.
+The vacuum chamber is a second cage blocking magnetic noise from the electronic system placed inside the seismic box. Vacuum chambers are made out of approximately 3 mm thick stainless steel, blocking magnetic fields with $f\ge 20 [KHz]$ while reducing magnetic noise from lower frequency fields.
 \par\noindent
 
 \section{Proportional–Integral–Derivative (PID)}
