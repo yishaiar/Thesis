@@ -151,7 +151,7 @@ The PID continuously calculates the oscillator's error value from a defined set 
 \end{equation}
 Where $\gamma$ is the PID damping coefficient, if the defined set point zero, the error is the measured process variable $\theta(t)$. The PID damping coefficient has a constant value given by:
 \begin{equation}
-\gamma  =  \frac{max(\tau_{PID})}{\dot{\theta}_{max}} =  \frac{max(\tau_{PID})}{\theta_{max}\cdot\frac{2\pi}{T}} =         \label{eqn:damped_pid_motion_equation_2}
+\gamma  =  \frac{max(\tau_{PID})}{\dot{\theta}_{max}} =  \frac{max(\tau_{PID})}{\theta_{max}\cdot\frac{2\pi}{T}} =\frac{1}{\theta_{max}}\cdot \frac{max(\tau_{PID})\cdot T}{2\pi}          \label{eqn:damped_pid_motion_equation_2}
 \end{equation}
 As shown in eq.~\ref{eqn:damping_time} the damping time $\tau$ is given by:
 \begin{equation}
