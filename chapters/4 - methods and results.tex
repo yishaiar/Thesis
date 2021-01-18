@@ -148,11 +148,9 @@ A PID feed-back loop is damping the torsional pendulum by continuously calculati
 \tau_{PID}(t) = -\gamma\dot{e}(t) =  -\gamma\cdot [\dot{\theta}(t)-0]  =  -\gamma\dot{\theta}(t)  
 \label{eqn:friction_torque_pid}
 \end{equation}
-Where $\gamma$ is the PID damping coefficient. When the defined set point is zero, the error $e(t)$ is the measured process which is the tilt angle of the torsional pendulum $\theta(t)$. The torque is modulated proportionately to the velocity of the oscillations, meaning it needs to have high speed and high dynamic range modulations. The torsional pendulum is a simple harmonic oscillator (eq.~\ref{eqn:undamped_motion_equation_solved}) with maximal velocity given by:
-\begin{equation}
-\dot{\theta}_{max} = \omega_0\theta_{max} = \theta_{max}\cdot\frac{2\pi}{T}    \label{eqn:undamped_motion_equation_3}
-\end{equation}
-The PID damping coefficient $gamma$ is a constant value given by:
+Where $\gamma$ is the PID damping coefficient. When the defined set point is zero, the error $e(t)$ is the measured process which is the tilt angle of the torsional pendulum $\theta(t)$. The torque is modulated proportionately to the velocity of the oscillations, meaning it needs to have high speed and high dynamic range modulations.
+\par\noindent
+The torsional pendulum is a simple harmonic oscillator with maximal velocity $\dot{\theta}_{max} = \theta_{max}\cdot\frac{2\pi}{T} $ (eq.~\ref{eqn:undamped_motion_equation_solved}). The PID damping coefficient $\gamma$ is a constant value given by:
 \begin{equation}
 \gamma  =  \frac{\tau_{PID}(t)}{\dot{\theta}(t)} = \frac{max(\tau_{PID})}{\dot{\theta}_{max}} =  \frac{max(\tau_{PID})}{\theta_{max}\cdot\frac{2\pi}{T}} =\frac{max(\tau_{PID})}{\theta_{max}}\cdot \frac{ T}{2\pi}          \label{eqn:damped_pid_motion_equation_2}
 \end{equation}
