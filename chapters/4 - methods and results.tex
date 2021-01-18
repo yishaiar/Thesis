@@ -157,13 +157,14 @@ As shown in eq.~\ref{eqn:damping_time} the damping time $\tau$ and damping ratio
 \begin{equation}
 \tau = \frac{T}{2 \pi \xi } =  \frac{2I}{\gamma} = \frac{\theta_{max}}{ max(\tau_{PID})} \cdot \frac{8 \pi ml^2}{T}  \label{eqn:damping_time_pid}
 \end{equation}
+The PID damping $\gamma$ and damping time $\tau$ depend on ratio between the initial oscillations angle and the maximal torque exerted by the PID. If the angle is too large compare to the external torque, the PID affect is negligible, causing an infinite damping time, meaning the torsional pendulum is extremely underdamped (very small $\xi$).
 \begin{equation}
 \xi = \frac{T^2}{ 16 \pi^2 ml^2 }\cdot\frac{ max(\tau_{PID})}{\theta_{max}} 
 \label{eqn:damping_ratio_pid}
 \end{equation}
 
 \par\noindent
-The PID damping $\gamma$ and damping time $\tau$ depend on the initial oscillations angle. If the angle is too large compare to the external torque, the system is extremely underdamped (having a small $\xi$) and the PID affect is negligible, causing an infinite damping time, and pendulum would keep oscillating.
+
 
 %The system is a damped oscillator with an external torque correction, shown in eq.~\ref{eqn:damped_motion_equation}.
 
