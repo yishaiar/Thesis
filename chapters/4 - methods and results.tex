@@ -147,13 +147,13 @@ A PID feed-back loop is damping the torsional pendulum by continuously calculati
 \begin{equation}
 \tau_{PID}(t) = -\gamma\dot{e}(t) =  -\gamma\cdot [\dot{\theta}(t)-0]  =  -\gamma\dot{\theta}(t)  \label{eqn:friction_torque_pid}
 \end{equation}
-Where $\gamma$ is the PID damping coefficient, if the defined set point zero, the error is the measured process which is the oscillator velocity $\dot{\theta}(t)$. The torsional pendulum is a simple harmonic oscillator (eq.~\ref{eqn:undamped_motion_equation_solved}) with maximal velocity given by:
+Where $\gamma$ is the PID damping coefficient, if the defined set point zero, the error is the measured process which is the tilt angle of the torsional pendulum $\theta(t)$. The torsional pendulum is a simple harmonic oscillator (eq.~\ref{eqn:undamped_motion_equation_solved}) with maximal velocity given by:
 \begin{equation}
 \dot{\theta}_{max} = \omega_0\theta_{max} = \theta_{max}\cdot\frac{2\pi}{T}    \label{eqn:undamped_motion_equation_3}
 \end{equation}
- The PID damping coefficient has a constant value given by:
+The PID damping coefficient has a constant value given by:
 \begin{equation}
-\gamma  =  \frac{max(\tau_{PID})}{\dot{\theta}_{max}} =  \frac{max(\tau_{PID})}{\theta_{max}\cdot\frac{2\pi}{T}} =\frac{max(\tau_{PID})}{\theta_{max}}\cdot \frac{ T}{2\pi}          \label{eqn:damped_pid_motion_equation_2}
+\gamma  =  \frac{\tau_{PID}(t)}{\dot{\theta}(t)} = \frac{max(\tau_{PID})}{\dot{\theta}_{max}} =  \frac{max(\tau_{PID})}{\theta_{max}\cdot\frac{2\pi}{T}} =\frac{max(\tau_{PID})}{\theta_{max}}\cdot \frac{ T}{2\pi}          \label{eqn:damped_pid_motion_equation_2}
 \end{equation}
 As shown in eq.~\ref{eqn:damping_time} the damping time $\tau$ and damping ratio $\xi$ are given by:
 \begin{equation}
