@@ -142,7 +142,7 @@ The initial measured angle due to to noises is $\theta_{max} = $
 
 \section{Proportional–Integral–Derivative (PID) controller}
 \subsection{Control stability}
-A PID feed-back loop is damping the torsional pendulum by continuously calculating the error value of the measured signal from a defined set point $e(t) =\theta(t)-SP $, and damp it to zero. The control system aims to reach $SP$ by critically damping of the process (the torsional pendulum). A well tuned PID reaches the $SP$ fast and accurate, while resisting forces trying to move the process from the $SP$. 
+A PID feed-back loop is damping the torsional pendulum by continuously calculating the error value of the measured signal from a defined set point $e(t) =SP -\theta(t) $, and damp it to zero. The control system aims to reach $SP$ by critically damping of the process (the torsional pendulum). A well tuned PID reaches the $SP$ fast and accurate, while resisting forces trying to move the process from the $SP$. 
 \par\noindent
 In control theory there are two wanted conflicting properties; an accurate response (small overshoot), and small risetime (fast response). Overshoot is when the output signal (the actual PID response) exceeds the target value (the wanted response), thus the response is not accurate.  Overshoot is usually measured in percentage overshoot $PO$, for second order systems $PO$ is given by:
 \begin{equation}
@@ -155,13 +155,13 @@ As seen in eq.~\ref{eqn:percentage_overshoot} when PID gains are too high, inste
 \subsection{Damped oscillator}
 The PID mainly acts as friction, gradually working when the oscillations are at the maximum velocity slowing them down, with a torque $\tau_{PID}$ given by:
 \begin{equation}
-\tau_{PID}(t) = -\gamma\dot{e}(t) =  -\gamma\cdot [\dot{\theta}(t)-\dot{SP}] =-\gamma\cdot [\dot{\theta}(t)-0]  =  -\gamma\dot{\theta}(t)  
+\tau_{PID}(t) = -\gamma\dot{e}(t) =  -\gamma\cdot [\dot{SP} -\dot{\theta}(t)] =-\gamma\cdot [0-\dot{\theta}(t)]  =  \gamma\dot{\theta}(t)  
 \label{eqn:friction_torque_pid}
 \end{equation}
 \par\noindent
 Where $\gamma$ is the PID damping coefficient, since $SP$ is constant, $\dot{e}(t)$ is the the torsional pendulum's oscillations velosity $\dot{\theta}(t)$. The torque is proportional to the oscillations velocity, meaning it needs a high speed modulation compare to the oscillations period $T$ (to prevent phase delay), and high dynamic range compare to oscillations maximal velosity $\dot{\theta}_{max}$ (to avoid overshoot). 
 \par\noindent
-The torsional pendulum is a simple harmonic oscillator with maximal velocity $\dot{\theta}_{max} =\frac{2\pi}{T} \theta_{max}$ (see eq.~\ref{eqn:undamped_motion_equation_solved}), and The PID damping coefficient $\gamma$ is a constant value given by:
+The torsional pendulum is a simple harmonic oscillator with maximal velocity $\dot{\theta}_{max} =\frac{2\pi}{T} \theta_{max}$ (see eq.~\ref{eqn:undamped_motion_equation_solved}), and the PID damping coefficient $\gamma$ is a constant value given by:
 \begin{equation}
 \gamma  =  \frac{\tau_{PID}(t)}{\dot{\theta}(t)} = \frac{max(\tau_{PID})}{\dot{\theta}_{max}} =  \frac{max(\tau_{PID})}{\theta_{max}\cdot\frac{2\pi}{T}} =\frac{max(\tau_{PID})}{\theta_{max}}\cdot \frac{ T}{2\pi}          \label{eqn:damped_pid_motion_equation_2}
 \end{equation}
