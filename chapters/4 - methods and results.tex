@@ -211,12 +211,10 @@ An Arduino is an inexpensive open-source microcontroller with a serial communica
 \par\noindent
 The microcontroller can simulate analog output using Pulse Width Modulation (PWM). As shown in fig.~\ref{fig:duty_cycle}, the controller switches the output signal on and off, generating a square wave with period $T$. Pulse width ($PW$) is the time duration in which the signal is on, the controller is able to modulate the $PW$, and thus change the duty cycle which is the ratio of time signal is on compared to off $D(t) = \frac{PW(t)}{T}\cdot 100$. The duty cycle varies between 0 to 100, with resolution limited by the controller. The modulation is proportional to the analog average voltage $V_a$ given by: 
 \begin{equation}
-V_a(t) = \frac{ PW(t)\cdot V_d}{ T}  = \frac{V_d}{100}\cdot D(t)  = \frac{5}{100}\cdot D(t)  \label{eqn:pwm voltage}
+V_a(t) = \frac{ PW(t)\cdot V_d}{ T}  = \frac{V_d}{100}\cdot D(t)   \label{eqn:pwm voltage}
 \end{equation}
-Since the Arduino clock is connected to all PWM pins, they are all synchronized and have the same voltage, frequency and phase. Where $N$ pins are connected in parallel the output current $I_{total}$ is given by: 
-\begin{equation}
-I_{total} = N\cdot I   \label{eqn:pwm current}
-\end{equation}
+Since the Arduino clock is connected to all PWM pins, they are all synchronized and have the same voltage, frequency and phase. The output current of $N$ pins connected in parallel is $I_{total} = N\cdot I$.
+\par\noindent
 Since the clock must have at least 120 periods of square waves before it can change to a new duty cycle value, this limits the voltage modulation frequency. Another limitation to the duty cycle change rate is the controller bit-rate. Accordingly, PWM maximal frequency is given by:
 \begin{equation}
 f_{PWM} = \frac{1 }{120T}= \frac{1 }{120 \frac{8-bit }{16MHz}}  \approx 500[Hz]	    \label{eqn:pwm frequency}
@@ -232,10 +230,8 @@ Where $I$ is the LED current, $I_s$ is the saturation current, $n$ is the emissi
 \begin{equation}
 I =\frac{V-V_l}{R} \label{eqn:led circuit}
 \end{equation}
-\subsection{LED setup}
-
-
-The circuit is composed of a blue LED with $V_l\approx 4.5V$, supply voltage with 6 parallel PWM Arduino pins (eq.~\ref{eqn:pwm current}, eq.~\ref{eqn:pwm voltage}) and resistor $R = 200\Omega$, the LED radiant flux $[W]$ is given by:
+\subsection{LED circuit}
+The LED is a blue LED with $V_l\approx 4.5V$, with $N=6$ parallel PWM Arduino pins for supply voltage  (eq.~\ref{eqn:pwm current}, eq.~\ref{eqn:pwm voltage}) and resistor $R = 200\Omega$. The LED flux $\Theta(t)$ is given by:
 \begin{equation}
 \Theta(t) = I_{total}\cdot V_l = NI\cdot V_l = N V_l \frac{V-V_l}{R}\cdot  =N V_l\frac{\frac{5}{100}\cdot D(t)-V_l}{R} \approx N V_l\frac{\frac{5}{100}\cdot D(t)}{R} = 0.007\cdot D(t)\label{eqn:led power}
 \end{equation}
