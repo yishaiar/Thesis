@@ -151,11 +151,11 @@ The PID continuously calculates the oscillator's error value from a defined set 
 \end{equation}
 Where $\gamma$ is the PID damping coefficient, if the defined set point zero, the error is the measured process variable $\theta(t)$. The PID damping coefficient has a constant value given by:
 \begin{equation}
-\gamma  =  \frac{max(\tau_{PID})}{\dot{\theta}_{max}} =  \frac{max(\tau_{PID})}{\theta_{max}\cdot\frac{2\pi}{T}} =\frac{1}{\theta_{max}}\cdot \frac{max(\tau_{PID})\cdot T}{2\pi}          \label{eqn:damped_pid_motion_equation_2}
+\gamma  =  \frac{max(\tau_{PID})}{\dot{\theta}_{max}} =  \frac{max(\tau_{PID})}{\theta_{max}\cdot\frac{2\pi}{T}} =\frac{max(\tau_{PID})}{\theta_{max}}\cdot \frac{ T}{2\pi}          \label{eqn:damped_pid_motion_equation_2}
 \end{equation}
 As shown in eq.~\ref{eqn:damping_time} the damping time $\tau$ and damping ratio $\xi$ are given by:
 \begin{equation}
-\tau = \frac{1}{\xi\omega_0} =  \frac{2I}{\gamma} = \theta_{max} \cdot \frac{4 \pi (2ml^2)}{max(\tau_{PID})\cdot T}  \label{eqn:damping_time_pid}
+\tau = \frac{1}{\xi\omega_0} =  \frac{2I}{\gamma} = \frac{\theta_{max}}{ max(\tau_{PID})} \cdot \frac{4 \pi (2ml^2)}{T}  \label{eqn:damping_time_pid}
 \end{equation}
 \par\noindent
 The PID damping $\gamma$ and damping time $\tau$ depend on the initial oscillations angle. If the angle is too large compare to the external torque, the system is extremely underdamped (having a small $\xi$) and the PID affect is negligible, causing an infinite damping time, and pendulum would keep oscillating.
