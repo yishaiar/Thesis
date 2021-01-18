@@ -141,18 +141,15 @@ The vacuum chamber is a second cage that blocks magnetic noise from the electron
 The initial measured angle due to to noises is $\theta_{max} = $
 
 \section{Proportional–Integral–Derivative (PID)}
-A PID feed-back loop is damping the torsional pendulum by continuously calculating the oscillator's error value $e(t)$ from a defined set point $SP$, and damping it to zero.
 \subsection{Control stability}
-PID control does not guarantee optimal control or stability, the control system aims to reach the desired set point by critically damping of the process (the oscillator). Well tuned control reaches the desired set point fast and accurate, and able to resist external forces trying to move the process from the set point.
+A PID feed-back loop is damping the torsional pendulum by continuously calculating the error value $e(t)$ from a defined set point $SP$, and damping it to zero. The control system aims to reach $SP$ by critically damping of the process (the torsional pendulum). A well tuned PID reaches the $SP$ fast and accurate, and able to resist forces trying to move the process from the $SP$. 
 \par\noindent
-Overshoot is when output signal or function exceeds the target value. The response signal is not accurate compare to target. In control theory there are two wanted conflicting properties; an accurate response (small overshoot), and small risetime (fast response). Overshoot is usually measured in percentage overshoot (PO). For second order systems, such as damped oscillators PO is given by:
+In control theory there are two wanted conflicting properties; an accurate response (small overshoot), and small risetime (fast response). Overshoot is when output signal or function exceeds the target value, thus the response signal is not accurate compare to target.  Overshoot is usually measured in percentage overshoot (PO). For second order systems, such as damped oscillators PO is given by:
 \begin{equation}
 PO = 100\cdot e ^{\frac{-\xi\pi}{\sqrt{1-\xi^2}}} = \frac{output-target}{target}   \label{eqn:percentage_overshoot}
 \end{equation}
 \par\noindent
-The controller response to error (shown in eq.~\ref{eqn:PID response}) defines how much will the oscillator overshoot the setpoint. When controller gains  are too high, instead of critical damping there is overdamping causing overshoot. Due to the high gains the overshoot response overshoots again to the other side, causing the system to be driven (shown in eq.~\ref{eqn:driven_motion_equation_2}).
-
-
+A PID control does not guarantee optimal control or stability of the process. When not tuned correct, it can either overshoot or have a slow response. The feed-back response to error (shown in eq.~\ref{eqn:PID response}) defines how much will the oscillator overshoot the setpoint, when PID gains are too high, instead of critical damping there is overdamping causing overshoot. Due to the high gains the overshoot response overshoots again to the other side, causing the system to be a driven oscillator (shown in eq.~\ref{eqn:driven_motion_equation_2}). A slow response causes phase delay between the signal and the equivalent PID response, again resulting with a driven oscillator.
 \subsection{Damped oscillator}
 The PID mainly acts as friction, gradually working when the oscillations are at the maximum velocity slowing them down, with a torque $\tau_{PID}$ given by:
 \begin{equation}
