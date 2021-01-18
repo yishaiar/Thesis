@@ -141,15 +141,16 @@ The vacuum chamber is a second cage that blocks magnetic noise from the electron
 \section{Proportional–Integral–Derivative (PID)}
 
 \subsection{Damped oscillator}
-The PID is damping a simple harmonic oscillator (eq.~\ref{eqn:undamped_motion_equation_solved}) with velocity given by:
+A PID feed-back loop is damping the torsional pendulum, which is a simple harmonic oscillator (eq.~\ref{eqn:undamped_motion_equation_solved}) with a maximal velocity given by:
 \begin{equation}
 \dot{\theta}_{max} = \omega_0\theta_{max} = \theta_{max}\cdot\frac{2\pi}{T}    \label{eqn:undamped_motion_equation_3}
 \end{equation}
-PID controller continuously calculates the oscillator's error value, damping it to zero. If the defined set point is set to zero, the error is the measured process variable $e(t) = \theta(t)$. The PID acts as friction, gradually working when the oscillations are at the maximum velocity to slow them down, and remove the torque energy:
+The PID controller continuously calculates the oscillator's error value, damping it to zero. The PID acts as friction, gradually working when the oscillations are at the maximum velocity to slow them down, and remove the torque energy:
 \begin{equation}
-\tau_{PID} = -\gamma\dot{e}(t) =    -\gamma\dot{\theta}(t)     \label{eqn:friction_torque_pid}
+\tau_{PID} = -\gamma\dot{e}(t) =  -\gamma(\dot{\theta}(t)-0)  =  -\gamma\dot{\theta}(t)  \label{eqn:friction_torque_pid}
 \end{equation}
-Where $\gamma$ is the damping coefficient. The PID is controlling the LED radiation force, given in eq.~\ref{eqn:led torque}, where $D$ the duty cycle of each LED varies between 0 to 100%:
+Where $\gamma$ is the damping coefficient, if the defined set point zero, the error is the measured process variable $\theta(t)$. 
+The PID is controlling the LED radiation force, given in eq.~\ref{eqn:led torque}, where $D$ the duty cycle of each LED varies between 0 to 100%:
 \begin{equation}
 \tau_{PID} = \tau(t)_{LED} = 3.56^{-12}(D_1(t) -D_2(t))      \label{eqn:friction_torque_pid 2}
 \end{equation}
