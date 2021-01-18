@@ -90,22 +90,7 @@ The designed elements specifications:
 && shear modulus $G$ of 130-160 Gpa.
 \end{easylist}
 \end{multicols}
-The torsional pendulum parameters:
-\begin{multicols}{2}
-\raggedcolumns
-\begin{easylist}
-& expected;
-&& $I = 0.487\cdot10^{-3}[kg\cdot m^2]$
-&& $\kappa = 2.1\cdot10^{-6}[\frac{N\cdot m}{rad}] - 2.6\cdot10^{-6} [\frac{N\cdot m}{rad}]$
-&& $T = 96[s] - 86 [s]$
-\end{easylist}
-\columnbreak
-\begin{easylist}
-& measured;
-&& $\kappa = 2.7\cdot10^{-6}[\frac{N\cdot m}{rad}]$
-&& $T = 86[s]$
-\end{easylist}
-\end{multicols}
+
 
 \subsection{Vacuum chamber design}
 \begin{figure}[htbp]
@@ -114,7 +99,7 @@ The torsional pendulum parameters:
 	\caption[Vacuum chamber, front view]{Vacuum chamber, front view}
 	\label{fig:chamber front}
 \end{figure}
-\FloatBarrier
+%\FloatBarrier
 
 \par\noindent
 The vacuum chamber, shown in fig.~\ref{fig:chamber front}, is composed of two cylindrical tubes placed one over the other with three view ports in front. The chamber is connected to a vacuum engine and gauge. The vacuum engine is connected to the chamber through a valve. The measurements are conducted when the valve is closed and the engine is off, to prevent rotation noise.
@@ -149,7 +134,23 @@ The vacuum chamber is a second cage that blocks magnetic noise from the electron
 \par\noindent
 \subsubsection{Angle amplitude}
 The initial measured angle due to to noises is $\theta_{max} = $
-
+\subsection{results}
+The torsional pendulum parameters:
+\begin{multicols}{2}
+\raggedcolumns
+\begin{easylist}
+& expected;
+&& $I = 0.487\cdot10^{-3}[kg\cdot m^2]$
+&& $\kappa = 2.1\cdot10^{-6}[\frac{N\cdot m}{rad}] - 2.6\cdot10^{-6} [\frac{N\cdot m}{rad}]$
+&& $T = 96[s] - 86 [s]$
+\end{easylist}
+\columnbreak
+\begin{easylist}
+& measured;
+&& $\kappa = 2.7\cdot10^{-6}[\frac{N\cdot m}{rad}]$
+&& $T = 86[s]$
+\end{easylist}
+\end{multicols}
 \section{Proportional–Integral–Derivative (PID) controller}
 \subsection{Control stability}
 A PID feed-back loop is damping the torsional pendulum by continuously calculating the error value of the measured signal from a defined set point $e(t) =SP -\theta(t) $, and damp it to zero. The control system aims to reach $SP$ by critically damping of the process (the torsional pendulum). A well tuned PID reaches the $SP$ fast and accurate, while resisting forces trying to move the process from the $SP$. 
