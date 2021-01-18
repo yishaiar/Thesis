@@ -148,9 +148,9 @@ A PID feed-back loop is damping the torsional pendulum by continuously calculati
 \tau_{PID}(t) = -\gamma\dot{e}(t) =  -\gamma\cdot [\dot{\theta}(t)-0]  =  -\gamma\dot{\theta}(t)  
 \label{eqn:friction_torque_pid}
 \end{equation}
-Where $\gamma$ is the PID damping coefficient. When the defined set point is zero, the error $e(t)$ is the measured process which is the tilt angle of the torsional pendulum $\theta(t)$. The torque is modulated proportionately to the velocity of the oscillations, meaning it needs to have high speed and high dynamic range modulations.
+Where $\gamma$ is the PID damping coefficient. When the defined set point is zero, the error $e(t)$ is the measured process which is the tilt angle of the torsional pendulum $\theta(t)$. The torque is modulated proportionately to the velocity of the oscillations, meaning it needs to have modulations with high speed and high dynamic range.
 \par\noindent
-The torsional pendulum is a simple harmonic oscillator with maximal velocity $\dot{\theta}_{max} = \theta_{max}\cdot\frac{2\pi}{T} $ (eq.~\ref{eqn:undamped_motion_equation_solved}). The PID damping coefficient $\gamma$ is a constant value given by:
+The torsional pendulum is a simple harmonic oscillator with maximal velocity $\dot{\theta}_{max} =\frac{2\pi}{T} \theta_{max} $ (see eq.~\ref{eqn:undamped_motion_equation_solved}). The PID damping coefficient $\gamma$ is a constant value given by:
 \begin{equation}
 \gamma  =  \frac{\tau_{PID}(t)}{\dot{\theta}(t)} = \frac{max(\tau_{PID})}{\dot{\theta}_{max}} =  \frac{max(\tau_{PID})}{\theta_{max}\cdot\frac{2\pi}{T}} =\frac{max(\tau_{PID})}{\theta_{max}}\cdot \frac{ T}{2\pi}          \label{eqn:damped_pid_motion_equation_2}
 \end{equation}
@@ -168,7 +168,7 @@ In order to critically damp the torsional pendulum by the PID, the PID torque $\
 max(\tau_{PID}) \geq  \tau_{critical} = \frac{ 8 \pi^2 I }{T^2}\cdot\theta_{max} = \frac{ 8 \pi^2 \cdot 0.487\cdot10^{-3} }{(86)^2}\cdot 5\cdot10^{-6} = 2.6\cdot10^{-11}[N\cdot m]
 \label{eqn:damping_torque_pid}
 \end{equation}
-The PID controlled torque $\tau_{PID}(t)$ needs to have high modulation dynamic range and speed to continuously damp the oscillations (eq.~\ref{eqn:friction_torque_pid}), and a maximal torque given by eq.~\ref{eqn:damping_torque_pid} to achieve critical damping.
+The PID controlled torque $\tau_{PID}(t)$ needs to have modulations with high speed and high dynamic range to continuously damp the oscillations (eq.~\ref{eqn:friction_torque_pid}), and a maximal torque given by eq.~\ref{eqn:damping_torque_pid} to achieve critical damping.
 \par\noindent
 
 
@@ -178,9 +178,13 @@ The PID controlled torque $\tau_{PID}(t)$ needs to have high modulation dynamic 
 \subsection{Radiation-pressure torque}
 Two light sources with given flux, $\Theta_i$ cause radiation-pressure forces (eq.~\ref{eqn:radiation_force_power}), one on each mass of the torsional pendulum. As seen in eq.~\ref{eqn:net_gravitation_torque}, the difference between the two torques adds an external net torque. Assuming that both light fields have the same coupling efficiency $\eta$ and are very close to be perpendicular to the surface with negligible incidence angles $\alpha_1\approx\alpha_2\approx 0$, the radiation-pressure net torque is given by:  
 \begin{equation}
-\tau = l\cdot F_1 \cdot cos\alpha_1 - l\cdot F_2 \cdot cos\alpha_2\approx l(F_1 - F_2) \approx \frac{2l\eta}{{c}} (\Theta_1 -\Theta_2)\approx C\Delta \Theta \label{eqn:radiation torque}
+\tau = l\cdot F_1 \cdot cos\alpha_1 - l\cdot F_2 \cdot cos\alpha_2\approx l(F_1 - F_2) \approx \frac{2l\eta}{{c}} \Delta \Theta \label{eqn:radiation torque}
 \end{equation}
-The radiation-pressure net torque is an external torque, modulated by changing the light sources flux, which could be used to damp the torsional pendulum movement.
+The radiation-pressure net torque is modulated by changing the difference between the light sources' flux (enabling high dynamic range to modulation). As shown in eq.~\ref{eqn:damping_torque_pid}, to damp the torsional pendulum the maximal net torque is given by:
+\begin{equation}
+\tau  \approx \frac{2l\eta}{{c}} \Delta \Theta \label{eqn:radiation torque}
+\end{equation}
+
 
 \subsection{Arduino microcontroller}
 Arduino is an inexpensive open-source microcontroller with a serial communication interface and a digital output without digital-to-analog converter (DAC). The Arduino Mega 2560 contains ATmega2560 8-bit controller, a $16 [MHz]$ crystal oscillator (clock) and 15 PWM outputs pins with digital output of $V_d = 5[V]$.
