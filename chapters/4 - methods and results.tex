@@ -153,7 +153,7 @@ Where $\gamma$ is the PID damping coefficient, if the defined set point zero, th
 \begin{equation}
 \gamma  =  \frac{max(\tau_{PID})}{\dot{\theta}_{max}} =  \frac{max(\tau_{PID})}{\theta_{max}\cdot\frac{2\pi}{T}} =\frac{1}{\theta_{max}}\cdot \frac{max(\tau_{PID})\cdot T}{2\pi}          \label{eqn:damped_pid_motion_equation_2}
 \end{equation}
-As shown in eq.~\ref{eqn:damping_time} the damping time $\tau$ is given by:
+As shown in eq.~\ref{eqn:damping_time} the damping time $\tau$ and damping ratio $\xi$ are given by:
 \begin{equation}
 \tau = \frac{1}{\xi\omega_0} =  \frac{2I}{\gamma} \approx \frac{2\cdot 0.487\cdot 10^{-3}}{\frac{1.1^{-10}T}{ \theta_{max} } } \approx 8.8\cdot 10^{6} \frac{\theta_{max}}{ T} \label{eqn:damping_time_pid}
 \end{equation}
