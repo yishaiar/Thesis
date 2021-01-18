@@ -142,9 +142,9 @@ The initial measured angle due to to noises is $\theta_{max} = $
 
 \section{Proportional–Integral–Derivative (PID)}
 \subsection{Control stability}
-A PID feed-back loop is damping the torsional pendulum by continuously calculating the error value of the measured signal from a defined set point $e(t) =\theta(t)-SP $, and damp it to zero. The control system aims to reach $SP$ by critically damping of the process (the torsional pendulum). A well tuned PID reaches the $SP$ fast and accurate, and able to resist forces trying to move the process from the $SP$. 
+A PID feed-back loop is damping the torsional pendulum by continuously calculating the error value of the measured signal from a defined set point $e(t) =\theta(t)-SP $, and damp it to zero. The control system aims to reach $SP$ by critically damping of the process (the torsional pendulum). A well tuned PID reaches the $SP$ fast and accurate, while resisting forces trying to move the process from the $SP$. 
 \par\noindent
-In control theory there are two wanted conflicting properties; an accurate response (small overshoot), and small risetime (fast response). Overshoot is when output signal or function exceeds the target value, thus the response signal is not accurate compare to target.  Overshoot is usually measured in percentage overshoot (PO). For second order systems, such as damped oscillators PO is given by:
+In control theory there are two wanted conflicting properties; an accurate response (small overshoot), and small risetime (fast response). Overshoot is when the output signal (the actual PID response) exceeds the target value (the wanted response), thus the response is not accurate compare to target.  Overshoot is usually measured in percentage overshoot $PO$, for second order systems $PO$ is given by:
 \begin{equation}
 PO = 100\cdot e ^{\frac{-\xi\pi}{\sqrt{1-\xi^2}}} = \frac{output-target}{target}   \label{eqn:percentage_overshoot}
 \end{equation}
