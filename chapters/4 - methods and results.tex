@@ -158,7 +158,7 @@ As shown in eq.~\ref{eqn:damping_time} the damping time $\tau$ and damping ratio
 \tau = \frac{T}{2 \pi \xi } =  \frac{2I}{\gamma} = \frac{\theta_{max}}{ max(\tau_{PID})} \cdot \frac{8 \pi ml^2}{T}  \label{eqn:damping_time_pid}
 \end{equation}
 \begin{equation}
-\xi = \frac{T}{2 \pi \frac{\theta_{max}}{ max(\tau_{PID})} \cdot \frac{8 \pi ml^2}{T} }
+\xi = \frac{T^2}{ 16 \pi^2 ml^2 }\cdot\frac{ max(\tau_{PID})}{\theta_{max}} 
 \label{eqn:damping_ratio_pid}
 \end{equation}
 
