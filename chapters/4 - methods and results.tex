@@ -197,7 +197,7 @@ The apparatus had dynamic range of 1000 steps and modulation speed of $1 sec$. T
 The apparatus uncertainty due to the non linearity of the AOM response and laser power fluctuations proved to be larger than the uncertainties of the intensity difference. Also, modulation speed (response time) proved to be more important than modulation range. 
 \subsubsection{Results}
 \subsection{Arduino setup}
-The modulated light sources are composed of two LED light sources driven by an Arduino microcontroller, resulting with a linear response of the torque to the PID control (see eq.~\ref{eqn:radiation torque}) and minimizing overshoot, while minimizing phase delay having a fast response time and .
+The modulated light sources are composed of two LED light sources driven by an Arduino microcontroller, resulting with a linear response of the torque to the PID control (see eq.~\ref{eqn:radiation torque}) and minimizing overshoot, while minimizing phase delay by having a fast response time.
 \par\noindent
 Arduino is an inexpensive open-source microcontroller with a serial communication interface and a digital output without digital-to-analog converter (DAC). The Arduino Mega 2560 contains ATmega2560 8-bit controller, a $16 [MHz]$ crystal oscillator (clock) and 15 PWM outputs pins with digital output of $V_d = 5[V]$.
 \subsubsection{Pulse Width Modulation}
@@ -209,11 +209,7 @@ Arduino is an inexpensive open-source microcontroller with a serial communicatio
 \end{figure}
 \FloatBarrier
 \par\noindent
-The microcontroller can simulate analog output using Pulse Width Modulation (PWM). As shown in fig.~\ref{fig:duty_cycle}, the controller switches the output signal fast between the digital output on and off, generating a square wave with period $T$. Pulse width ($PW$) is the time duration in which the signal is on. With the clock, the controller is able to modulate $PW$, changing the ratio of time signal is on compared to off, which is the duty cycle $D$:
-\begin{equation}
-D(t) = \frac{PW(t)}{T}\cdot 100  \label{eqn:duty cycle}
-\end{equation}
-The duty cycle varies between 0 to 100\%, with resolution limited by the controller. The Arduino is modulating the duty cycle, resulting in modulation of the The analog voltage (the average voltage) $V_a$ given by: 
+The microcontroller can simulate analog output using Pulse Width Modulation (PWM). As shown in fig.~\ref{fig:duty_cycle}, the controller switches the output signal fast between the digital output on and off, generating a square wave with period $T$. Pulse width ($PW$) is the time duration in which the signal is on, the controller is able to modulate $PW$, and thus changing the duty cycle $D(t)$ which is the ratio of time signal is on compared to off $D(t) = \frac{PW(t)}{T}\cdot 100$. The duty cycle varies between 0 to 100, with resolution limited by the controller. The duty cycle modulation results in modulation of the average voltage (the analog voltage) $V_a$ given by: 
 \begin{equation}
 V_a(t) = \frac{ PW(t)\cdot V_d}{ T}  = \frac{V_d}{100}\cdot D(t)  = \frac{5}{100}\cdot D(t)  \label{eqn:pwm voltage}
 \end{equation}
