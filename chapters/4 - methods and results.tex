@@ -145,7 +145,7 @@ A PID feed-back loop is damping the torsional pendulum, which is a simple harmon
 \begin{equation}
 \dot{\theta}_{max} = \omega_0\theta_{max} = \theta_{max}\cdot\frac{2\pi}{T}    \label{eqn:undamped_motion_equation_3}
 \end{equation}
-The PID continuously calculates the oscillator's error value from a defined set point, damping the error to zero. The PID mainly acts as a frictional torque, gradually working when the oscillations are at the maximum velocity slowing them down, given by:
+The PID continuously calculates the oscillator's error value from a defined set point, damping the error to zero. The PID mainly acts as friction, gradually working when the oscillations are at the maximum velocity slowing them down, with a torque $\tau_{PID}$ given by:
 \begin{equation}
 \tau_{PID} = -\gamma\dot{e}(t) =  -\gamma\cdot [\dot{\theta}(t)-0]  =  -\gamma\dot{\theta}(t)  \label{eqn:friction_torque_pid}
 \end{equation}
