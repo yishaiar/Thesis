@@ -184,15 +184,11 @@ Two light sources with given flux, $\Theta_i$ cause radiation-pressure forces (e
 \begin{equation}
 \tau = l\cdot F_1 \cdot cos\alpha_1 - l\cdot F_2 \cdot cos\alpha_2\approx l(F_1 - F_2) \approx \frac{2l\eta}{{c}} \Delta \Theta \label{eqn:radiation torque}
 \end{equation}
-The radiation-pressure net torque is modulated by changing the difference between the light sources' flux (enabling high dynamic range to modulation), with maximal net torque $\tau_{max}$: 
+The radiation-pressure net torque is modulated by changing the difference between the light sources' flux, according to eq.~\ref{eqn:damping_torque_pid} the maximal net torque $\tau_{max}$ is given by: 
 \begin{equation}
 \tau_{max}  \approx \frac{2l\eta}{{c}} \cdot 2 \Theta_{max} \approx \frac{0.218\cdot \eta}{{3\cdot10^{8}}} \cdot 2 \Theta_{max} \approx 7.27\cdot10^{-10} \cdot \eta\Theta_{max}   \label{eqn:max radiation torque}
 \end{equation}
-Where $\Theta_{max}$ is the is the the light sources' maximal flux with optical setup efficiency $\eta$. As shown in eq.~\ref{eqn:damping_torque_pid}, to successfully damp the torsional pendulum the maximal flux in each light source $\Theta_{max}$ is given by:
-\begin{equation}
-\Theta_{max} \geq \frac{2.6\cdot10^{-11}}{7.27\cdot10^{-10}\cdot \eta} \geq \frac{36\cdot10^{-3}}{\eta}
- \label{eqn:max radiation flux}
-\end{equation}
+Where $\Theta_{max}$ is the is the the light sources' maximal flux with optical setup efficiency $\eta$. 
 \subsection{Laser setup}
 Initially the modulated light sources were composed of a single laser diode coupled in series into two acousto optic modulators (AOM), with mod cleaning by coupling the modulated light into the torsional pendulum through optical fibers. An AOM can divide a single coherent light beam into two beams, with intensity ratio proportional to the AOM response to input voltage, resulting with a controlled modulation of the two light sources intensity.
 \par\noindent
