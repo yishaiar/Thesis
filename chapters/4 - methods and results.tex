@@ -184,12 +184,15 @@ The radiation-pressure net torque is modulated by changing the difference betwee
 \begin{equation}
 \tau_{max}  \approx \frac{2l\eta}{{c}} \cdot 2 \Theta_{max} \approx \frac{0.218\cdot 0.7}{{3\cdot10^{8}}} \cdot 2 \Theta_{max} \approx 3.63\cdot10^{-10} \cdot \Theta_{max}   \label{eqn:max radiation torque}
 \end{equation}
-Where $\Theta_{max}$ is the is the the light sources' maximal flux and the assumed efficiency of $\eta \approx 0.5$. As shown in eq.~\ref{eqn:damping_torque_pid}, to successfully damp the torsional pendulum the maximal flux  $\Theta_{max}$ is given by:
+Where $\Theta_{max}$ is the is the the light sources' maximal flux and the assumed efficiency of $\eta \approx 0.5$. As shown in eq.~\ref{eqn:damping_torque_pid}, to successfully damp the torsional pendulum the maximal flux $\Theta_{max}$ is given by:
 \begin{equation}
 \Theta_{max} \geq \frac{2.6\cdot10^{-11}}{3.63\cdot10^{-10}} \geq 72 mW 
  \label{eqn:max radiation flux}
 \end{equation}
-
+\subsection{Laser setup}
+Initially the modulated light sources were composed of a single high power laser diode coupled in series into two acousto optic modulators (AOM), and coupled into the pendulum through optic fibers for mod cleaning. AOM can divide a single coherent light beam into two beams, with a proportional response to an input voltage, resulting with a controlled intensity ratio between the beams.
+\par\noindent
+The setup minimizes uncertainties of the light intensity since both light sources have a mutual source, causing a reduced torque uncertainty due to internal noises such as thermal and shot noise. The apparatus uncertainty due to the non linearity of the AOM response and laser power fluctuations proved to be larger than the uncertainties of the intensity difference. 
 \subsection{Arduino microcontroller}
 Arduino is an inexpensive open-source microcontroller with a serial communication interface and a digital output without digital-to-analog converter (DAC). The Arduino Mega 2560 contains ATmega2560 8-bit controller, a $16 [MHz]$ crystal oscillator (clock) and 15 PWM outputs pins with digital output of $V_d = 5[V]$.
 \subsubsection{Pulse Width Modulation}
@@ -247,10 +250,7 @@ Due to coupling efficiency and size difference between the output beam from the 
 \end{equation}
 \par\noindent
 The LED power could be approximated by linear approximation of the Arduino duty cycle $D(t)$, which varies between 0 to 100\% with 8bit resolution, generating torques up to $\tau = 7\cdot10^-{10} [N\cdot m]$ with modulation steps of $\Delta\tau = 1.4\cdot10^-{12} [N\cdot m]$. As shown in eq.~\ref{eqn:pwm frequency}), the LED could be modulated up to $500[Hz]$ resulting with fast modulated external force for the PID algorithm. Also, since the led power could be approximated using linear approximation, it allows to control the approximated power output by changing the PID gain values.  
-\subsection{Laser setup}
-Initially the modulated light sources were composed by a single high power laser diode coupled in series into two acousto optic modulators (AOM), and coupled into the pendulum through optic fibers for mod cleaning. AOM can divide a single coherent light beam into two beams, with a proportional response to an input voltage, resulting with a controlled intensity ratio between the beams.
-\par\noindent
-The setup minimizes uncertainties of the light intensity since both light sources have a mutual source, causing a reduced torque uncertainty due to internal noises such as thermal and shot noise. The apparatus uncertainty due to the non linearity of the AOM response and laser power fluctuations proved to be larger than the uncertainties of the intensity difference.   
+  
 
 
 \subsection{Control stability}
