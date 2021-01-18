@@ -180,11 +180,14 @@ Two light sources with given flux, $\Theta_i$ cause radiation-pressure forces (e
 \begin{equation}
 \tau = l\cdot F_1 \cdot cos\alpha_1 - l\cdot F_2 \cdot cos\alpha_2\approx l(F_1 - F_2) \approx \frac{2l\eta}{{c}} \Delta \Theta \label{eqn:radiation torque}
 \end{equation}
-The radiation-pressure net torque is modulated by changing the difference between the light sources' flux (enabling high dynamic range to modulation). As shown in eq.~\ref{eqn:damping_torque_pid}, to damp the torsional pendulum the maximal net torque is given by:
+The radiation-pressure net torque is modulated by changing the difference between the light sources' flux (enabling high dynamic range to modulation). 
+\begin{equation}
+max(\tau)  \approx \frac{2l\eta}{{c}} \cdot 2 \Theta_{max} \approx \frac{0.218\cdot 0.7}{{3\cdot10^{8}}} \cdot 2 \Theta_{max} \approx 5.1\cdot10^{-10} \cdot \Theta_{max}   \label{eqn:max radiation torque}
+\end{equation}
+As shown in eq.~\ref{eqn:damping_torque_pid}, to damp the torsional pendulum the light sources maximal flux is given by:
 \begin{equation}
 max(\tau)  = \frac{2l\eta}{{c}} \cdot 2 \Theta_{max} \approx \frac{0.218\cdot 0.7}{{3\cdot10^{8}}} \cdot 2 \Theta_{max} \approx 5.1\cdot10^{-10} \cdot \Theta_{max} \geq 2.6\cdot10^{-11}  \label{eqn:max radiation torque}
 \end{equation}
-
 
 \subsection{Arduino microcontroller}
 Arduino is an inexpensive open-source microcontroller with a serial communication interface and a digital output without digital-to-analog converter (DAC). The Arduino Mega 2560 contains ATmega2560 8-bit controller, a $16 [MHz]$ crystal oscillator (clock) and 15 PWM outputs pins with digital output of $V_d = 5[V]$.
