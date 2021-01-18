@@ -178,7 +178,7 @@ max(\tau_{PID}) \geq  \tau_{critical} = \frac{ 8 \pi^2 I }{T^2}\cdot\theta_{max}
 \label{eqn:damping_torque_pid}
 \end{equation}
 \par\noindent
-The PID controlled torque $\tau_{PID}(t)$ needs a maximal torque given by eq.~\ref{eqn:damping_torque_pid}. Since, it is proportional to the oscillations velocity (eq.~\ref{eqn:friction_torque_pid}), it needs a high speed modulation compare to the oscillations period $T$ (to prevent phase delay), and high dynamic range compare to oscillations maximal velosity $\dot{\theta}_{max}$ (to avoid overshoot). The sufficient modulation speed and range are unknown.
+The PID controlled torque $\tau_{PID}(t)$ needs a maximal torque given by eq.~\ref{eqn:damping_torque_pid}. Since, it is proportional to the oscillations velocity (eq.~\ref{eqn:friction_torque_pid}), it needs a high speed modulation compare to the oscillations period $T$ (to prevent phase delay), and high dynamic range compare to oscillations velosity $\dot{\theta}_{max}$ (to avoid overshoot). The sufficient modulation speed and range are unknown.
 \subsection{Radiation-pressure torque}
 Two light sources with given flux, $\Theta_i$ cause radiation-pressure forces (eq.~\ref{eqn:radiation_force_power}), one on each mass of the torsional pendulum. As seen in eq.~\ref{eqn:net_gravitation_torque}, the difference between the two torques adds an external net torque. Assuming that both light fields have the same coupling efficiency $\eta$ and are very close to be perpendicular to the surface with negligible incidence angles $\alpha_1\approx\alpha_2\approx 0$, the radiation-pressure net torque is given by:  
 \begin{equation}
@@ -194,9 +194,9 @@ Where $\Theta_{max}$ is the is the the light sources' maximal flux with optical 
  \label{eqn:max radiation flux}
 \end{equation}
 \subsection{Laser setup}
-Initially the modulated light sources were composed of a single laser $220 mW$ diode coupled in series into two acousto optic modulators (AOM), with mod cleaning by coupling the modulated light into the torsional pendulum through optical fibers. An AOM can divide a single coherent light beam into two beams, with intensity ratio proportional to the AOM response to input voltage, resulting with a controlled modulation of the two light sources intensity.
+Initially the modulated light sources were composed of a single $\Theta_{max} = 220 mW$ laser diode coupled in series into two acousto optic modulators (AOM), with mod cleaning by coupling the modulated light into the torsional pendulum through optical fibers. An AOM can divide a single coherent light beam into two beams, with intensity ratio proportional to the AOM response to input voltage, resulting with a controlled modulation of the two light sources intensity.
 \par\noindent
-The apparatus had dynamic range of 1000 steps with modulation speed of 
+The apparatus had efficiency $\eta\approx 0.4$ ($\Theta_{max}>90mW$), dynamic range of 1000 steps and modulation speed of 1 second due to oscilloscope read time.
 The setup minimized uncertainties of the light intensity since both light sources had a mutual source, causing a reduced torque uncertainty due to internal noises such as thermal and shot noise. The apparatus uncertainty due to the non linearity of the AOM response and laser power fluctuations proved to be larger than the uncertainties of the intensity difference.
 
  
