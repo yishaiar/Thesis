@@ -233,14 +233,14 @@ I =\frac{V-V_l}{R} \label{eqn:led circuit}
 \subsection{LED circuit}
 The LED is a blue LED with $V_l\approx 4.5V$, with $N=6$ parallel PWM Arduino pins for supply voltage (eq.~\ref{eqn:pwm voltage}) and resistor $R = 200\Omega$. The LED flux $\Theta(t)$ is given by:
 \begin{equation}
-\Theta(t) = I_{total}\cdot V_l = NI\cdot V_l = N V_l \frac{V-V_l}{R}\cdot  =N V_l\frac{\frac{V_d}{100}\cdot D(t)-V_l}{R} \approx \frac{N V_lV_d}{100R}\cdot D(t) = 0.007\cdot D(t)\label{eqn:led power}
+\Theta(t) = I_{total}\cdot V_l = NI\cdot V_l = N V_l \frac{V-V_l}{R}\cdot  =N V_l\frac{\frac{V_d}{100}\cdot D(t)-V_l}{R} \approx \frac{N V_lV_d}{100R}\cdot D(t) \label{eqn:led power}
 \end{equation}
 \par\noindent
-In order to overcome the led uncoherent profile and large FOV, the light is coupled to a light guide, a pipe made of thin filaments causing internal reflections used  to illuminate small areas, regardless of the spectral characteristics of the light source. Light guide mainly depend on the entrance and exit cross section and length, making it ideal to overcome focusing problems. 
+In order to overcome the led incoherent profile and large illumination angle, the light is coupled to a light guide, which is a pipe made of thin filaments causing internal reflections designe to illuminate small areas, regardless of the spectral characteristics of the light source. The light guide output is mainly dependent on the cross section and length of the lightguide, making it ideal to overcome focusing problems. 
 \par\noindent
-Due to coupling efficiency and size difference between the output beam from the lightguide and the pendulum sides, the efficiency of flux hitting the pendulum is estimated to be $\eta = 0.7$ and the torque $\tau(t)_{LED}$ is given by:
+Due to coupling efficiency and size difference between the output beam from the lightguide and the pendulum sides, the efficiency of flux hitting the pendulum was estimated to be $\eta = 0.7$, thus the PID torque $\tau_{PID}(t)$ is given by:
 \begin{equation}
-\tau(t)_{LED}  =\frac{2l\eta}{{c}} (\Theta_1(t) -\Theta_2(t)) = 3.56^{-12}(D_1(t) -D_2(t)) 
+\tau_{PID}(t) \approx \frac{2l\eta}{{c}} (\Theta_1(t) -\Theta_2(t)) \approx \frac{2l\eta}{{c}} \cdot\frac{N V_lV_d}{100R}(D_1(t) -D_2(t))  \approx   3.56^{-12}(D_1(t) -D_2(t)) 
 \label{eqn:led torque}
 \end{equation}
 \par\noindent
