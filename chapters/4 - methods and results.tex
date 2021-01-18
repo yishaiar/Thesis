@@ -155,15 +155,15 @@ Where $\gamma$ is the PID damping coefficient, if the defined set point zero, th
 \end{equation}
 As shown in eq.~\ref{eqn:damping_time} the damping time $\tau$ and damping ratio $\xi$ are given by:
 \begin{equation}
-\tau = \frac{T}{2 \pi \xi } =  \frac{2I}{\gamma} = \frac{\theta_{max}}{ max(\tau_{PID})} \cdot \frac{8 \pi ml^2}{T}  \label{eqn:damping_time_pid}
+\tau = \frac{T}{2 \pi \xi } =  \frac{2I}{\gamma} = \frac{\theta_{max}}{ max(\tau_{PID})} \cdot \frac{4\pi I}{T}  \label{eqn:damping_time_pid}
 \end{equation}
 The PID damping $\gamma$ and damping time $\tau$ depend on ratio between the initial oscillations angle and the maximal torque exerted by the PID. If the angle is too large compare to the external torque, the PID affect is negligible, causing an infinite damping time, meaning the torsional pendulum is extremely underdamped (very small $\xi$).
 \begin{equation}
-\xi = \frac{T^2}{ 16 \pi^2 ml^2 }\cdot\frac{ max(\tau_{PID})}{\theta_{max}} =1 
+\xi = \frac{T^2}{ 8 \pi^2 I }\cdot\frac{ max(\tau_{PID})}{\theta_{max}} =1 
 \label{eqn:damping_ratio_pid}
 \end{equation}
 \begin{equation}
-max(\tau_{PID}) =\frac{ 16 \pi^2 ml^2 }{T^2}\cdot\theta_{max} = 
+max(\tau_{critical}) =\frac{ 8 \pi^2 I }{T^2}\cdot\theta_{max} = 
 \label{eqn:damping_ratio_pid}
 \end{equation}
 \par\noindent
