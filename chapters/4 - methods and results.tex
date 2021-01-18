@@ -182,11 +182,11 @@ Two light sources with given flux, $\Theta_i$ cause radiation-pressure forces (e
 \end{equation}
 The radiation-pressure net torque is modulated by changing the difference between the light sources' flux (enabling high dynamic range to modulation), with maximal net torque $\tau_{max}$: 
 \begin{equation}
-\tau_{max}  \approx \frac{2l\eta}{{c}} \cdot 2 \Theta_{max} \approx \frac{0.218\cdot 0.7}{{3\cdot10^{8}}} \cdot 2 \Theta_{max} \approx 3.63\cdot10^{-10} \cdot \Theta_{max}   \label{eqn:max radiation torque}
+\tau_{max}  \approx \frac{2l\eta}{{c}} \cdot 2 \Theta_{max} \approx \frac{0.218\cdot \eta}{{3\cdot10^{8}}} \cdot 2 \Theta_{max} \approx 7.27\cdot10^{-10} \cdot \eta\Theta_{max}   \label{eqn:max radiation torque}
 \end{equation}
-Where $\Theta_{max}$ is the is the the light sources' maximal flux and the assumed efficiency of $\eta \approx 0.5$. As shown in eq.~\ref{eqn:damping_torque_pid}, to successfully damp the torsional pendulum the maximal flux $\Theta_{max}$ is given by:
+Where $\Theta_{max}$ is the is the the light sources' maximal flux with a given efficiency $\eta$. As shown in eq.~\ref{eqn:damping_torque_pid}, to successfully damp the torsional pendulum the maximal flux in each light source $\Theta_{max}$ is given by:
 \begin{equation}
-\Theta_{max} \geq \frac{2.6\cdot10^{-11}}{3.63\cdot10^{-10}} \geq 72 mW 
+\Theta_{max} \geq \frac{2.6\cdot10^{-11}}{7.27\cdot10^{-10}\cdot \eta} \geq \frac{36\cdot10^{-3}}{\eta}
  \label{eqn:max radiation flux}
 \end{equation}
 \subsection{Laser setup}
