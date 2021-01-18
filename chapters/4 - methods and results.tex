@@ -141,7 +141,7 @@ The vacuum chamber is a second cage that blocks magnetic noise from the electron
 The initial measured angle due to to noises is $\theta_{max} = $
 
 \section{Proportional–Integral–Derivative (PID)}
-A PID feed-back loop is damping the torsional pendulum by continuously calculating the oscillator's error value from a defined set point, damping the error $e(t)$ to zero.
+A PID feed-back loop is damping the torsional pendulum by continuously calculating the oscillator's error value $e(t)$ from a defined set point $SP$, and damping it to zero.
 \subsection{Control stability}
 PID control does not guarantee optimal control or stability, the control system aims to reach the desired set point by critically damping of the process (the oscillator). Well tuned control reaches the desired set point fast and accurate, and able to resist external forces trying to move the process from the set point.
 \par\noindent
@@ -156,12 +156,12 @@ The controller response to error (shown in eq.~\ref{eqn:PID response}) defines h
 \subsection{Damped oscillator}
 The PID mainly acts as friction, gradually working when the oscillations are at the maximum velocity slowing them down, with a torque $\tau_{PID}$ given by:
 \begin{equation}
-\tau_{PID}(t) = -\gamma\dot{e}(t) =  -\gamma\cdot [\dot{\theta}(t)-0]  =  -\gamma\dot{\theta}(t)  
+\tau_{PID}(t) = -\gamma\dot{e}(t) =  -\gamma\cdot [\dot{\theta}(t)-\dot{SP}] =-\gamma\cdot [\dot{\theta}(t)-0]  =  -\gamma\dot{\theta}(t)  
 \label{eqn:friction_torque_pid}
 \end{equation}
-Where $\gamma$ is the PID damping coefficient. When the defined set point is zero, the error $e(t)$ is the measured process which is the tilt angle of the torsional pendulum $\theta(t)$. 
+Where $\gamma$ is the PID damping coefficient, since the set point is constant, the error derivative $\dot{e}(t)$ is the measured process velosity which is the angular velosity of the torsional pendulum $\dot{\theta}(t)$. 
 \par\noindent
-The torque is proportional to the oscillations velocity, meaning it needs a high speed modulation compare to the oscillations period $T$ (to prevent phase delay), and high dynamic range compare to oscillations maximal velosity $\dot{\theta}_{max}$ (to ). The torsional pendulum is a simple harmonic oscillator with maximal velocity $\dot{\theta}_{max} =\frac{2\pi}{T} \theta_{max}$ (see eq.~\ref{eqn:undamped_motion_equation_solved}). The PID damping coefficient $\gamma$ is a constant value given by:
+The torque is proportional to the oscillations velocity, meaning it needs a high speed modulation compare to the oscillations period $T$ (to prevent phase delay), and high dynamic range compare to oscillations maximal velosity $\dot{\theta}_{max}$ (to avoid overshoot). The torsional pendulum is a simple harmonic oscillator with maximal velocity $\dot{\theta}_{max} =\frac{2\pi}{T} \theta_{max}$ (see eq.~\ref{eqn:undamped_motion_equation_solved}). The PID damping coefficient $\gamma$ is a constant value given by:
 \begin{equation}
 \gamma  =  \frac{\tau_{PID}(t)}{\dot{\theta}(t)} = \frac{max(\tau_{PID})}{\dot{\theta}_{max}} =  \frac{max(\tau_{PID})}{\theta_{max}\cdot\frac{2\pi}{T}} =\frac{max(\tau_{PID})}{\theta_{max}}\cdot \frac{ T}{2\pi}          \label{eqn:damped_pid_motion_equation_2}
 \end{equation}
