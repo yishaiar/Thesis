@@ -164,7 +164,7 @@ The PID damping $\gamma$ and damping time $\tau$ depend on ratio between the ini
 \xi = \frac{T^2}{ 8 \pi^2 I }\cdot\frac{ \tau_{critical}}{\theta_{max}} = 1 
 \label{eqn:damping_ratio_pid}
 \end{equation}
-In order to be able to be able to critically damp the torsional pendulum the external torque of the pid needs to be at least as large as the critical damping torqe $\tau_{critical}$:
+In order to critically damp the torsional pendulum by the PID, the external torque $\tau_{PID}$ needs to be able to exert torques as large as the critical damping torque $\tau_{critical}$. The PID external torque is given by:
 \begin{equation}
 max(\tau_{PID}) \geq  \tau_{critical} \geq \frac{ 8 \pi^2 I }{T^2}\cdot\theta_{max} \geq
 \label{eqn:damping_ratio_pid}
