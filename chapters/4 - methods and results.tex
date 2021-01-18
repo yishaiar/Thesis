@@ -143,15 +143,15 @@ The initial measured angle due to to noises is $\theta_{max} = $
 \section{Proportional–Integral–Derivative (PID)}
 
 \subsection{Damped oscillator}
-A PID feed-back loop is damping the torsional pendulum, which is a simple harmonic oscillator (eq.~\ref{eqn:undamped_motion_equation_solved}) with a maximal velocity given by:
+A PID feed-back loop is damping the torsional pendulum by continuously calculating the oscillator's error value from a defined set point, damping the error to zero. The PID mainly acts as friction, gradually working when the oscillations are at the maximum velocity slowing them down, with a torque $\tau_{PID}$ given by:
+\begin{equation}
+\tau_{PID}(t) = -\gamma\dot{e}(t) =  -\gamma\cdot [\dot{\theta}(t)-0]  =  -\gamma\dot{\theta}(t)  \label{eqn:friction_torque_pid}
+\end{equation}
+Where $\gamma$ is the PID damping coefficient, if the defined set point zero, the error is the measured process variable $\theta(t)$. The torsional pendulum is a simple harmonic oscillator (eq.~\ref{eqn:undamped_motion_equation_solved}) with maximal velocity given by:
 \begin{equation}
 \dot{\theta}_{max} = \omega_0\theta_{max} = \theta_{max}\cdot\frac{2\pi}{T}    \label{eqn:undamped_motion_equation_3}
 \end{equation}
-The PID continuously calculates the oscillator's error value from a defined set point, damping the error to zero. The PID mainly acts as friction, gradually working when the oscillations are at the maximum velocity slowing them down, with a torque $\tau_{PID}$ given by:
-\begin{equation}
-\tau_{PID} = -\gamma\dot{e}(t) =  -\gamma\cdot [\dot{\theta}(t)-0]  =  -\gamma\dot{\theta}(t)  \label{eqn:friction_torque_pid}
-\end{equation}
-Where $\gamma$ is the PID damping coefficient, if the defined set point zero, the error is the measured process variable $\theta(t)$. The PID damping coefficient has a constant value given by:
+ The PID damping coefficient has a constant value given by:
 \begin{equation}
 \gamma  =  \frac{max(\tau_{PID})}{\dot{\theta}_{max}} =  \frac{max(\tau_{PID})}{\theta_{max}\cdot\frac{2\pi}{T}} =\frac{max(\tau_{PID})}{\theta_{max}}\cdot \frac{ T}{2\pi}          \label{eqn:damped_pid_motion_equation_2}
 \end{equation}
@@ -164,9 +164,9 @@ The PID damping $\gamma$ and damping time $\tau$ depend on ratio between the ini
 \xi = \frac{T^2}{ 8 \pi^2 I }\cdot\frac{ \tau_{critical}}{\theta_{max}} = 1 
 \label{eqn:damping_ratio_pid}
 \end{equation}
-In order to critically damp the torsional pendulum by the PID, the PID torque $\tau_{PID}$ needs to be able to exert torques as large as the critical damping torque $max(\tau_{PID}) \geq  \tau_{critical}$. The PID torque $\tau_{PID}$ is given by:
+In order to critically damp the torsional pendulum by the PID, the PID torque $\tau_{PID}$ needs to be able to exert torques as large as the critical damping torque $max(\tau_{PID}) \geq  \tau_{critical}$. The maximal PID torque $max(\tau_{PID})$ is given by:
 \begin{equation}
-max(\tau_{PID}) \geq  \tau_{critical} \geq \frac{ 8 \pi^2 I }{T^2}\cdot\theta_{max} \geq \frac{ 8 \pi^2 \cdot 0.487\cdot10^{-3} }{(86)^2}\cdot 5\cdot10^{-6} \geq 2.6\cdot10^{-11}[N\cdot m]
+max(\tau_{PID}) \geq  \tau_{critical} = \frac{ 8 \pi^2 I }{T^2}\cdot\theta_{max} = \frac{ 8 \pi^2 \cdot 0.487\cdot10^{-3} }{(86)^2}\cdot 5\cdot10^{-6} = 2.6\cdot10^{-11}[N\cdot m]
 \label{eqn:damping_torque_pid}
 \end{equation}
 \par\noindent
