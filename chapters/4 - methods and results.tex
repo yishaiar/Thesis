@@ -149,7 +149,9 @@ In control theory there are two wanted conflicting properties; an accurate respo
 PO = 100\cdot e ^{\frac{-\xi\pi}{\sqrt{1-\xi^2}}} = \frac{output-target}{target}   \label{eqn:percentage_overshoot}
 \end{equation}
 \par\noindent
-A PID control does not guarantee optimal control or stability of the process. When not tuned correct, it can either overshoot or have a slow response. The feed-back response to error (shown in eq.~\ref{eqn:PID response}) defines how much will the oscillator overshoot the $SP$. As seen in eq.~\ref{eqn:percentage_overshoot} when PID gains are too high, instead of critical damping there is overdamping, which is causing overshoot. Due to the high gains the overshoot response overshoots again to the other side, causing the system to be a driven oscillator (shown in eq.~\ref{eqn:driven_motion_equation_2}). A slow response causes phase delay between the signal and the equivalent PID response, again resulting with a driven oscillator.
+The PID response to error (shown in eq.~\ref{eqn:PID response}) defines how much will the oscillator overshoot the $SP$. A PID control does not guarantee optimal control or stability of the process. When not tuned correct, it can either overshoot or have a slow response, both resulting with a driven oscillator.
+\par\noindent
+As seen in eq.~\ref{eqn:percentage_overshoot} when PID gains are too high, instead of critical damping there is overdamping, which is causing overshoot. Due to the high gains the overshoot response overshoots again to the other side, causing the system to be a driven oscillator (shown in eq.~\ref{eqn:driven_motion_equation_2}). A slow response causes phase delay between the signal and the equivalent PID response, again resulting with a driven oscillator.
 \subsection{Damped oscillator}
 The PID mainly acts as friction, gradually working when the oscillations are at the maximum velocity slowing them down, with a torque $\tau_{PID}$ given by:
 \begin{equation}
