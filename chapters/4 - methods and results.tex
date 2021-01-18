@@ -157,6 +157,11 @@ As shown in eq.~\ref{eqn:damping_time} the damping time $\tau$ and damping ratio
 \begin{equation}
 \tau = \frac{T}{2 \pi \xi } =  \frac{2I}{\gamma} = \frac{\theta_{max}}{ max(\tau_{PID})} \cdot \frac{8 \pi ml^2}{T}  \label{eqn:damping_time_pid}
 \end{equation}
+\begin{equation}
+\xi = \frac{T}{2 \pi \frac{\theta_{max}}{ max(\tau_{PID})} \cdot \frac{8 \pi ml^2}{T} }
+\label{eqn:damping_ratio_pid}
+\end{equation}
+
 \par\noindent
 The PID damping $\gamma$ and damping time $\tau$ depend on the initial oscillations angle. If the angle is too large compare to the external torque, the system is extremely underdamped (having a small $\xi$) and the PID affect is negligible, causing an infinite damping time, and pendulum would keep oscillating.
 
