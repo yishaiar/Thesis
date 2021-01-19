@@ -362,13 +362,9 @@ Acoustic waves are adiabatic compression and decompression waves propagating thr
 P_{ac} = P cos(\omega t -k x)       \label{eqn:acoustic_pressure}
 \end{equation}
 \par\noindent
-Where $P_{ac}$ is the actual pressure, $P$ is the average pressure, $k$ is the acoustic wave number and $\omega$ is the wave angular frequency. At room pressure $P_0\approx 1\cdot 10^{-5} [Pa]$ the acoustic intensity is $I_0\approx1\cdot 10^{-12}[\frac{W}{m^2}]$. The acoustic intensity is given by:
+Where $P_{ac}$ is the actual pressure, $P$ is the average pressure, $k$ is the acoustic wave number and $\omega$ is the wave angular frequency. The acoustic intensity is $I = P_{ac}^2 \propto P^2$, at room pressure $P_0\approx 1\cdot 10^{5} [Pa]$ the acoustic intensity is $I_0\approx 1\cdot 10^{-12}[\frac{W}{m^2}]$. The acoustic power $p$ is the rate acoustic energy is emitted, given by:
 \begin{equation}
-I = P_{ac}^2 \propto P^2      \label{eqn:acoustic intensity}
-\end{equation}
- The acoustic power $p$ is the rate acoustic energy is emitted, given by:
-\begin{equation}
-p = A\cdot I = A\cdot I_0\frac{P^2} {P_0^2} =   \label{eqn:acoustic_intensity}
+p = A\cdot I = A\cdot I_0\frac{P^2} {P_0^2} \approx A\cdot 1\cdot 10^{-12}\frac{P^2} {1\cdot 10^{5\cdot 2}}\approx \label{eqn:acoustic_intensity}
 \end{equation}
 Where $u$ is the material acoustic velocity and $K_s$ is the modulus of bulk elasticity for gases. When the gas pressure is reduced, the acoustic pressure is lower and less power is carried.
 
