@@ -213,9 +213,9 @@ The apparatus uncertainty due to the non linearity of the AOM response and laser
 The modulated light sources are composed of two LED light sources driven by an Arduino microcontroller with a linear response of the LED power to the PID control, causing a linear response of the torque (see eq.~\ref{eqn:radiation torque}) which minimizes the overshoot, and a fast response time which minimizes phase delay.
 \par\noindent
 The Arduino is an inexpensive open-source microcontroller with a serial communication interface and a digital output without digital-to-analog converter (DAC). The Arduino Mega 2560 contains ATmega2560 8-bit controller, a $16 [MHz]$ crystal oscillator (clock) and 15 PWM outputs pins with digital output of $V_d = 5[V]$.
-\begin{figure}[h]
+\begin{figure}[htbp]
 	\centering
-	\fbox{\includegraphics[width=.8\textwidth]{\main/images/4 - methods and results/duty_cycle.png}}
+	\fbox{\includegraphics[scale=0.17]{\main/images/4 - methods and results/duty_cycle.png}}
 	\caption[The PWM analog voltage]{The PWM analog voltage}
 	\label{fig:duty_cycle}
 \end{figure}
