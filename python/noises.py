@@ -5,6 +5,7 @@ P = 1E-4*100
 T = 298
 N_A = 6.022E23
 R = 8.314
+# mu_298k = 1.85e-5*np.sqrt()
 # bolzman
 SIGMA = 5.67E-8
 EPSILON =0.075
@@ -24,6 +25,13 @@ p = 6/N_A*np.sqrt(P*A*R*T*np.sqrt(3*R*T/M))
 v = np.sqrt(3*R*T/M)
 
 # ACOUSTIC
-rho = M*P/(R*T)
-k_s = 142E3
-p = A*P*np.sqrt(k_s/rho)
+c=1e-22
+p = A*P**2*c
+
+
+
+
+# # ACOUSTIC
+# rho = M*P/(R*T)
+# k_s = 142E3
+# p = A*P*np.sqrt(k_s/rho)
