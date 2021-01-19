@@ -359,12 +359,16 @@ Where $T$ is the environment temperature and $T_0$ is the black body temperature
 \subsection{Acoustic wave}
 Acoustic waves are adiabatic compression and decompression waves propagating through a material. The wave equation of one dimension acoustic wave:
 \begin{equation}
-P = P_0 cos(\omega t -k x)       \label{eqn:acoustic_pressure}
+P_{ac} = P cos(\omega t -k x)       \label{eqn:acoustic_pressure}
 \end{equation}
 \par\noindent
-Where $P$ is the actual pressure, $P_0$ is the average pressure, $k$ is the acoustic wave number and $\omega$ is the wave angular frequency. Acoustic energy is carried by the acoustic waves, the acoustic power $p$ is the rate acoustic energy is emitted, given by:
+Where $P_{ac}$ is the actual pressure, $P$ is the average pressure, $k$ is the acoustic wave number and $\omega$ is the wave angular frequency. The acoustic intensity at room pressure is given by:
 \begin{equation}
-p = AP u  = A P\sqrt{\frac{K_s}{\rho}}     \label{eqn:acoustic_intensity}
+I_0 = P_{ac}^2 \propto P_0^2      \label{eqn:acoustic intensity}
+\end{equation}
+Acoustic energy is carried by the acoustic waves, the acoustic power $p$ is the rate acoustic energy is emitted, given by:
+\begin{equation}
+p = AI = AP_{ac} u  = A P_{ac}\sqrt{\frac{K_s}{\rho}}     \label{eqn:acoustic_intensity}
 \end{equation}
 Where $u$ is the material acoustic velocity and $K_s$ is the modulus of bulk elasticity for gases. When the gas pressure is reduced, the acoustic pressure is lower and less power is carried.
 
