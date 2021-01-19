@@ -53,11 +53,21 @@ inner=1.25in]{geometry}
 \usepackage{cite}
 \usepackage{placeins}
 %\usepackage{amssymb}
+\usepackage{multicol}
 \usepackage[ampersand]{easylist}
 \ListProperties(Hide=100, Hang=true, Progressive=3ex, Style*=$\bullet$ ,Style2*=$\circ$ ,Style3*=\tiny$\blacksquare$, Style4*=-- )
-\usepackage{titlesec}
-\titleformat{\chapter}{\bfseries\LARGE}{\thechapter~}{0em}{}
-%\titleformat{\chapter}{}{}{0em}{\bf\LARGE}
-\titlespacing*{\chapter}{0pt}{0pt}{20pt}
-\let\cleardoublepage\clearpage
-\usepackage{multicol}
+
+%\usepackage{titlesec}
+%\titleformat{\chapter}{\bfseries\LARGE}{\thechapter~}{0em}{}
+%%\titleformat{\chapter}{}{}{0em}{\bf\LARGE}
+%\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+%\let\cleardoublepage\clearpage
+
+
+\makeatletter
+\renewcommand{\@makechapterhead}[1]{%
+  {\noindent\raggedright\normalfont% Alignment and font reset
+   \huge\bfseries \@chapapp\space\thechapter~~#1\par\nobreak}% Formatting
+  \vspace{\baselineskip}% ...just a little space
+}
+\makeatother
