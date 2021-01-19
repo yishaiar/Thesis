@@ -37,6 +37,7 @@ pw = np.concatenate(([pw[0]], pw))
 # y[x%2 == 0]=x[x%2 == 0]/2
 # y[x%2 != 0] = x[x%2 == 0]/2 +duty
 # y = y*T
+plt.figure(figsize=(20,10))
 plt.step(y,V)
 plt.step(y,pw)
 plt.xlabel('time [$\mu$s]')
@@ -44,5 +45,5 @@ plt.ylabel('voltage [V]')
 plt.legend(['Digital voltage','Analog voltage'])
 
 # plt.title ('Duty Cycle 90%')
-plt.savefig('duty_cycle.png')
+# plt.savefig('duty_cycle.png')
 
