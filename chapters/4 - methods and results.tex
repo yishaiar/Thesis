@@ -185,13 +185,13 @@ The PID damping $\gamma$, damping time $\tau$ and damping type $\xi$ depend on t
 \xi = \frac{T^2}{ 8 \pi^2 I }\cdot\frac{ \tau_{critical}}{\theta_{max}} = 1 
 \label{eqn:damping_ratio_pid}
 \end{equation}
-In order to critically damp the torsional pendulum by the PID, the PID torque $\tau_{PID}$ needs to be able to exert torques as large as the critical damping torque $max(\tau_{PID}) \geq  \tau_{critical}$, given by:
+In order to critically damp the torsional pendulum, the PID torque $\tau_{PID}$ needs to be able to exert torques as large as the critical damping torque $max(\tau_{PID}) \geq  \tau_{critical}$, given by:
 \begin{equation}
 max(\tau_{PID}) \geq  \tau_{critical} = \frac{ 8 \pi^2 I }{T^2}\cdot\theta_{max} = \frac{ 8 \pi^2 \cdot 0.487\cdot10^{-3} }{(86)^2}\cdot 5\cdot10^{-6} = 2.6\cdot10^{-11}[N\cdot m]
 \label{eqn:damping_torque_pid}
 \end{equation}
 \par\noindent
-The PID controlled torque $\tau_{PID}(t)$ needs a maximal torque given by eq.~\ref{eqn:damping_torque_pid}. Since, it is proportional to the oscillations velocity (eq.~\ref{eqn:friction_torque_pid}), it needs a high speed modulation compare to the oscillations period $T$ (to prevent phase delay), and high dynamic range compare to oscillations velosity $\dot{\theta}_{max}$ (to avoid overshoot). The sufficient modulation speed and range are unknown.
+As shown in  eq.~\ref{eqn:damping_torque_pid} the PID maximal torque is given by $max(\tau_{PID}) \geq 2.6\cdot10^{-11}[N\cdot m]$. Since, it is proportional to the oscillations velocity (eq.~\ref{eqn:friction_torque_pid}), it needs a high speed modulation compare to the oscillations period $T$ (to prevent phase delay), and high dynamic range compare to oscillations velosity $\dot{\theta}_{max}$ (to avoid overshoot). The sufficient modulation speed and range are unknown.
 \subsection{Radiation-pressure torque}
 Two light sources with given flux, $\Theta_i$ cause radiation-pressure forces (eq.~\ref{eqn:radiation_force_power}), one on each mass of the torsional pendulum. As seen in eq.~\ref{eqn:net_gravitation_torque}, the difference between the two torques adds an external net torque. Assuming that both light fields have the same coupling efficiency $\eta$ and are very close to be perpendicular to the surface with negligible incidence angles $\alpha_1\approx\alpha_2\approx 0$, the radiation-pressure net torque is given by:  
 \begin{equation}
