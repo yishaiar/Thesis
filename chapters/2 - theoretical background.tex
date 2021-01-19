@@ -210,11 +210,9 @@ The dependency of the SNR on frequency causes difficulties when measuring gravit
 This limitation is a significant challenge while designing gravimetric sensors for low frequencies.
 
 \subsubsection{The shot noise limit}
-The shot noise is a fundamental quantum physical phenomenon in which the power of an optical signal fluctuates due to fluctuations in the number of photons in the signal. The power of an optical signal $p_{signal}$ is:
-\begin{equation}
-p_{signal} = N h \nu   \label{eqn:signal_power}
-\end{equation}
-Where $N$ is the number of photons, $h$ is the Planck constant and $\nu$ is the photon frequency. Since the shot noise is a Poisson process, the shot noise power $p_{shot}$ can be calculated as the root mean square (RMS) of the current fluctuations power:
+The shot noise is a fundamental quantum physical phenomenon in which the power of an optical signal fluctuates due to fluctuations in the number of photons in the signal. 
+\par\noindent
+An optical signal of $N$ photons with frequency $\nu$ is with power $p_{signal} = N h \nu$, where $h$ is the Planck constant. Since the shot noise is a Poisson process, the shot noise power can be calculated as the root mean square (RMS) of the signal power $p_{shot} = \sqrt{p}$.
 \begin{equation}
 p_{shot} = \sqrt{p}    \label{eqn:shot_power}
 \end{equation}
