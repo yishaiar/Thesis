@@ -246,7 +246,7 @@ An ideal gas is a theoretical gas composed of many randomly moving gas particles
 \begin{equation}
 PV = nRT = (n N_A) k_B T = N k_B T  \label{eqn:ideal-gasses}
 \end{equation}
-Where $P$ is the gas pressure, $V$ is the medium's volume, $R$ is the ideal gas constant, $T$ is the temperature and $k_B$ is the Boltzmann constant. The number of particles $N$ is a product of the number of moles $n$ and the Avogadro constant $N_A$. For an ideal gas the density $\rho$ is given by:
+Where $P$ is the gas pressure, $V$ is the medium's volume, $R$ is the ideal gas constant, $T$ is the gas temperature and $k_B$ is the Boltzmann constant. The number of particles $N$ is a product of the number of moles $n$ and the Avogadro constant $N_A$. For an ideal gas the density $\rho$ is given by:
 \begin{equation}
 \rho = \frac{MP}{RT}     \label{eqn:ideal density}
 \end{equation}
@@ -339,15 +339,15 @@ The Brownian motion kinetic energy is proportional to the temperature. The noise
 \end{equation}
 \fi
 \subsection{Radiative cooling}
-Radiative cooling is a phenomenon in which a black body loses heat by thermal radiation to remain in thermal equilibrium at constant temperature $T$. The thermal radiation power $p_{emit}$ over all frequencies is given by the Stefan–Boltzmann law:
+Radiative cooling is a phenomenon in which a black body loses heat by thermal radiation to remain in thermal equilibrium at constant temperature $T_0$. The thermal radiation power $p_{emit}$ over all frequencies is given by the Stefan–Boltzmann law:
 \begin{equation}
-p_{emit} = \sigma\epsilon A T^4  \label{eqn: Stefan–Boltzmann law}
+p_{emit} = \sigma\epsilon A T_0^4  \label{eqn: Stefan–Boltzmann law}
 \end{equation}
 Where $\sigma$ is the Stefan–Boltzmann constant, and the emissivity $\epsilon$ is a value which defines how close the black body to an ideal black body. The net absorbed power $p$ is given by: 
 \begin{equation}
-p = p_{absorb}-p_{emit} = \sigma\epsilon A (T_0^4-T^4)  \label{eqn: Stefan–Boltzmann power}
+p = p_{absorb}-p_{emit} = \sigma\epsilon A (T^4-T_0^4)  \label{eqn: Stefan–Boltzmann power}
 \end{equation}
-Where $T_0$ is the environment temperature and $T$ is the black body temperature.  
+Where $T$ is the environment () temperature and $T$ is the black body temperature.  
 \subsection{Acoustic wave}
 Acoustic waves are adiabatic compression and decompression waves propagating through a material. The wave equation of one dimension acoustic wave:
 \begin{equation}
