@@ -106,7 +106,7 @@ The vacuum chamber, shown in fig.~\ref{fig:chamber front}, is composed of two cy
 
 \subsubsection{Chamber viewports}
 \par\noindent
-The central viewport is located in front of the pendulum's front mirror. The central viewport has a 68.3mm view diameter where the mirror is located 82 mm away, giving a measurement FOV of about $39^0$ degrees. The other two small viewports are located in front of the pendulum's side masses and they are used for damping down the pendulum noises. They and are connected to the chamber through light guides. The view ports are transparent for light in 550-1100 nm range, with about 98$\%$ power transmittance in this range. 
+The central viewport is located in front of the pendulum's front mirror. The central viewport has a 68.3mm view diameter where the mirror is located 82 mm away, giving a measurement FOV of about $39^0$ degrees. The other two small viewports are located in front of the pendulum's side masses and they are used for damping down the pendulum noises. They are connected to the chamber through light guides. The view ports are transparent for light in 550-1100 nm range, with about 98$\%$ power transmittance in this range. 
 
 \subsubsection{Pendulum mount}
 \begin{figure}[htbp]
@@ -234,21 +234,21 @@ f_{PWM} = \frac{1 }{120T}= \frac{1 }{120 \frac{8-bit }{16MHz}}  \approx 500[Hz]	
 \subsection{Light emitting diode (LED)}
 The light emitting diode (LED) is a semiconductor light source with high power, and a long lifetime. A forward voltage applied to a p-n junction, causes electron injection which recombine with holes. The recombination releases energy in form of spontaneous emission photons (incoherent light). Due to the electrons life time, the LED could be modulated up to $100MHz$.
 \par\noindent
-The LED illumination angle varies between $45^0-120^0$. Since emitted light is incoherent it's hard to focus it to a point (not diffraction limited) and it has wide bandwidth spectrum. The LED forward voltage $V_l$ given by the Shockley diode equation for p-n junctions:
+The LED illumination angle varies between $45^0-120^0$. Since emitted light is incoherent it's hard to focus it to a point (not diffraction limited) and it has wide bandwidth spectrum. Given by the Shockley diode equation for p-n junctions, the LED forward voltage $V_l$ is:
 \begin{equation}
 V_l(I) \approx n V_T ln10 log_{10} (\frac{I}{I_s})\approx constant \label{eqn:led voltage}
 \end{equation}
-Where $I$ is the LED current, $I_s$ is the saturation current, $n$ is the emission coefficient, and $V_T$ is the thermal voltage. Since the forward voltage varies as the logarithm of the current, it varies slowly, being approximately constant over wide current range, resulting with large changes in the LED current due to small changes in the circuit supply voltage $V$. In the driving circuit a resistor $R$ is connected in series with the LED to stabilizes the current, and the current is given by:
+Where $I$ is the LED current, $I_s$ is the saturation current, $n$ is the emission coefficient, and $V_T$ is the thermal voltage. Since the forward voltage varies as the logarithm of the current, it varies slowly, being approximately constant over wide current range, resulting with large changes in the LED current due to small changes in the circuit supply voltage $V$. In the driving circuit a resistor $R$ is connected in series with the LED to stabilizes the current, and the current $I$ is given by:
 \begin{equation}
 I =\frac{V-V_l}{R} \label{eqn:led circuit}
 \end{equation}
 \subsection{LED circuit}
-The LED is a blue LED with $V_l\approx 4.5V$, with $N=6$ parallel PWM Arduino pins for supply voltage (eq.~\ref{eqn:pwm voltage}) and resistor $R = 200\Omega$. The LED flux $\Theta(t)$ is given by:
+The LED is a blue LED with $V_l\approx 4.5V$, $N=6$ parallel PWM Arduino pins for the supply voltage (eq.~\ref{eqn:pwm voltage}) and resistor $R = 200\Omega$. The LED flux $\Theta(t)$ is given by:
 \begin{equation}
 \Theta(t) = I_{total}\cdot V_l = NI\cdot V_l = N V_l \frac{V-V_l}{R}\cdot  =N V_l\frac{\frac{V_d}{100}\cdot D(t)-V_l}{R} \approx \frac{N V_lV_d}{100R}\cdot D(t) \label{eqn:led power}
 \end{equation}
 \par\noindent
-In order to overcome the led incoherent profile and large illumination angle, the light is coupled to a light guide, which is a pipe made of thin filaments causing internal reflections designed to illuminate small areas, regardless of the spectral characteristics of the light source. The light guide efficiency is mainly dependent on the cross section and length of the lightguide, making it ideal to overcome focusing problems. 
+In order to overcome the led incoherent profile and large illumination angle, the light sources are coupled to light guides (the vacuum chamber viewports were designed to have light guides in front), which is a pipe made of thin filaments causing internal reflections designed to illuminate small areas, regardless of the spectral characteristics of the light source. The light guide efficiency is mainly dependent on the cross section and length of the lightguide, making it ideal to overcome focusing problems. 
 \par\noindent
 Due to coupling efficiency and size difference between the output beam from the lightguide and the pendulum sides, the efficiency of flux hitting the pendulum was estimated to be $\eta = 0.7$, thus with LED flux given by eq.~\ref{eqn:led power}, the PID torque $\tau_{PID}(t)$ is given by (eq.~\ref{eqn:radiation torque}):
 \begin{equation}
