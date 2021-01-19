@@ -209,14 +209,14 @@ Initially the modulated light sources were composed of a single laser diode coup
 The apparatus had dynamic range of 1000 steps and modulation speed of $1 sec$. The setup minimized uncertainties of the light intensity since both light sources had a mutual source, partly canceling internal noises such as thermal and shot noise. 
 \par\noindent
 The apparatus uncertainty due to the non linearity of the AOM response and laser power fluctuations proved to be larger than the uncertainties of the intensity difference. Also, modulation speed (response time) proved to be more important than modulation range. 
-\subsection{Arduino setup}
+\subsection{Arduino microcontroller}
 The modulated light sources are composed of two LED light sources driven by an Arduino microcontroller with a linear response of the LED power to the PID control, causing a linear response of the torque (see eq.~\ref{eqn:radiation torque}) which minimizes the overshoot, and a fast response time which minimizes phase delay.
 \par\noindent
 An Arduino is an inexpensive open-source microcontroller with a serial communication interface and a digital output without digital-to-analog converter (DAC). The Arduino Mega 2560 contains ATmega2560 8-bit controller, a $16 [MHz]$ crystal oscillator (clock) and 15 PWM outputs pins with digital output of $V_d = 5[V]$.
 \subsubsection{Pulse Width Modulation}
 \begin{figure}[htbp]
 	\centering
-	\fbox{\includegraphics[scale=0.5]{\main/images/4 - methods and results/duty_cycle.png}}
+	\fbox{\includegraphics[scale=0.25]{\main/images/4 - methods and results/duty_cycle.png}}
 	\caption[The PWM analog voltage]{The PWM analog voltage}
 	\label{fig:duty_cycle}
 \end{figure}
