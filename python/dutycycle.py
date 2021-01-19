@@ -42,8 +42,9 @@ plt.step(y,V)
 plt.step(y,pw)
 plt.xlabel('time [$\mu$s]')
 plt.ylabel('voltage [V]')
-plt.legend(['Digital voltage','Analog voltage'])
+plt.legend()
+plt.legend(['Digital voltage','Analog voltage'],loc=2, prop={'size': 20})
 
 # plt.title ('Duty Cycle 90%')
-# plt.savefig('duty_cycle.png')
+plt.savefig('duty_cycle.png')
 
