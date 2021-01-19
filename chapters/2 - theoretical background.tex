@@ -280,16 +280,15 @@ F_{drag} = -6\pi\mu r\cdot v = -b\cdot v
 Where $r$ is the radius of the area cross section. For ideal gas both the density and viscosity are pressure dependent, and decrease with pressure. Due to the pressure dependency of the drag force, decreased pressure results with lower drag force.
 
 \subsection{Brownian motion}
-\subsubsection{Brownian energy}
 Brownian motion is the pattern of random particles' fluctuations at fluid or gas phases, a random walk with no preferential direction of flow. This pattern happens at thermal equilibrium in a given temperature. The  Brownian motion energy is the total kinetic energy of the gas particles, which is given by:
 \begin{equation}
 E_k = N<E_k> =\frac{3}{2}N k_B T = \frac{3}{2}PV    \label{eqn:total_kinetic}
 \end{equation}
-Due to Brownian motion particles collide with cross section $A$ with rate $R$ given by:
+Due to Brownian motion particles collide into cross section $A$ with rate $R$ given by:
 \begin{equation}
 R = \frac{N}{V} v A = \frac{P}{RT} \sqrt{\frac{3RT}{M}} A = PA\sqrt{\frac{3}{MRT}}   \label{eqn:collision rate}
 \end{equation}
-The Brownian motion cause momentum exchange with random particles collision, resulting with force given by the RMS of the rate $\sqrt{R}$ and the average particle momentum exchange $<\frac{dk}{dt}> =2mv$. The force $F$ is given by: 
+The random collisions cause momentum exchange, resulting with force given by the RMS of the rate $\sqrt{R}$ and the average particle momentum exchange $<\frac{dk}{dt}> =2mv$. The force $F$ is given by: 
 \begin{equation}
 F  = \sqrt{R}\cdot 2mv= \sqrt{PA\sqrt{\frac{3}{MRT}}}\cdot 2m\sqrt{\frac{3RT}{M}} = \sqrt{\frac{12PA}{N_A}\sqrt{\frac{3mRT}{N_A}} }     \label{eqn:Brownian coupling}
 \end{equation}
@@ -299,7 +298,7 @@ p = F\cdot v = \sqrt{\frac{12PA}{N_A}\sqrt{\frac{3mRT}{N_A}} }\cdot\sqrt{\frac{3
     \label{eqn:Brownian power}
 \end{equation}
 \par\noindent
-Eq.~\ref{eqn:total_kinetic} shows that the Brownian motion energy is proportional to the number of gas particles inside the medium. Reducing the gas pressure, which reduces the number of gas particles results In a reduction of the total Brownian motion energy. 
+the Brownian motion energy (eq.~\ref{eqn:total_kinetic})and Brownian power coupling (eq.~\ref{eqn:Brownian power}) both depend on the gas pressure. Reducing the gas pressure, results in reduction Brownian energy and power coupling. 
 \subsection{Thermal energy coupling}
 There is thermal energy coupling from the environment on the sides of the medium, phonons are penetrating and passing energy to gas particles inside the medium. It can be shown that for an ideal gas with specific heat capacity $c_v$, the heat flow propagation distance is $\Delta x ^2  = \frac{1}{3} l^2 $, and the thermal conductivity $\lambda$ is given by:
 \begin{equation}
@@ -367,7 +366,7 @@ Where $P$ is the actual pressure, $P_0$ is the average pressure, $k$ is the acou
 \begin{equation}
 p = AP u  = A P\sqrt{\frac{K_s}{\rho}}     \label{eqn:acoustic_intensity}
 \end{equation}
-Where $u$ is the material acoustic velocity and $K_s$ is the modulus of bulk elasticity for gases. When the material pressure is reduced, the acoustic pressure is lower and less power is carried.
+Where $u$ is the material acoustic velocity and $K_s$ is the modulus of bulk elasticity for gases. When the gas pressure is reduced, the acoustic pressure is lower and less power is carried.
 
 
 \subsection{Vacuum quality}
