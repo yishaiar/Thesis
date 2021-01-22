@@ -94,16 +94,16 @@ Where $m_1$, $m_2$ are the masses of the mirror and the balancing mass, and $r_1
 
 \subsubsection{Design constraints}
 \par\noindent
-The chosen pendulum dimensions are designed to achieve large angle sensitivity to torque caused by a the gravity field (small string torsion coefficient $\kappa$ is needed, see eq.~\ref{eqn:theta average}) while maintaining large angle sensitivity to mass (longer oscillation time period $T$, see eq.~\ref{eqn:theta average}). For a torsional pendulum with moment of inertia $I$ and string torsion coefficient $\kappa$, the period $T$ is given by (eq.~\ref{eqn:undamped_omega}): 
+The chosen pendulum dimensions are designed to achieve large angle sensitivity to the torque caused by a the gravity field (small string torsion coefficient $\kappa$ is needed, see eq.~\ref{eqn:theta average}) while maintaining large angle sensitivity to mass (longer oscillation time period $T$, as shown in eq.~\ref{eqn:theta average}). For a torsional pendulum with moment of inertia $I$ and string torsion coefficient $\kappa$, the period $T$ is given by (eq.~\ref{eqn:undamped_omega}): 
 \begin{equation}
 T = 2\pi\sqrt{\frac{I}{\kappa}}= 2\pi\sqrt{\frac{2ml^2}{\kappa}} =  2\pi\sqrt{\frac{2ml^2}{\frac{G}{h} \frac{\pi d^4}{32}}}  \label{eqn:undamped_motion_equation_4}
 \end{equation}
 \par\noindent
-As shown in eq.~\ref{eqn:undamped_motion_equation_4}, longer string $h$ with smaller diameter $d$ results in small string torsion coefficient while having a large period. A tungsten string is both, vacuum compatible (material with low outgassing) and has high tensile strength \cite{tungsten}, which allows holding the pendulum robustly inside the vacuum chamber while having small string diameter. 
+As shown in eq.~\ref{eqn:undamped_motion_equation_4}, longer string length $h$ with smaller diameter $d$ results in small string torsion coefficient while having a large period. The string is made of tungsten that is both, vacuum compatible (material with low outgassing) and has high tensile strength \cite{tungsten}, and is holding the pendulum robustly inside the vacuum chamber while having small string diameter. 
 \par\noindent
 In order to minimize the magnetic noise in the measurements, the torsional pendulum is made out of stainless steel 316 (instead of stainless steel 304) which has lower magnetic permeability \cite{SS316}, and the chosen front mirror is made fully of oxygen-free copper (OFC) instead of coated glass thus preventing capacitance. 
 \subsubsection{Technical information}
-The designed elements specifications:
+The designed elements specifications are:
 \begin{multicols}{2}
 \raggedcolumns
 \begin{easylist}
@@ -133,16 +133,16 @@ The measurement system is placed inside a seismic box which is also a Faraday ca
 \par\noindent
 The vacuum chamber is a second cage that blocks magnetic noise from the electronic system placed inside the seismic box. The vacuum chambers is made out of approximately 3 mm thick stainless steel, blocking magnetic fields with frequencies $f\ge 20 [KHz]$ and reducing magnetic noise with lower frequencies.
 \par\noindent
-As shown previously, there are environment noises affecting the torsional pendulum (eq.~\ref{eqn:Brownian power}, eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:acoustic power}, eq.~\ref{eqn: Stefan–Boltzmann power}). Assuming pressure of $P = 1\cdot 10^{−4} [Hpa]$, gas and environment temperature of $T = 298K$ and pendulum temperature $T_0 = 0K$ (maximal noise power), the power of the different noises is given by:
+As shown previously, there are other environment noises affecting the torsional pendulum (eq.~\ref{eqn:Brownian power}, eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:acoustic power}, eq.~\ref{eqn: Stefan–Boltzmann power}). Assuming pressure of $P = 1\cdot 10^{−4} [Hpa]$, gas and environment temperature of $T = 298K$ and pendulum temperature $T_0 = 0K$ (maximal noise power), the power of the other different noises are given by:
 \begin{easylist}
 & Black body radiation power $p=0.38[W]$ 
 & Thermal flow power $p=0.083[W]$
 & Brownian motion power $p=1.2\cdot 10^{-22}[W]$
 & Acoustic waves power $p=1.14\cdot 10^{-28}[W]$
 \end{easylist}
-The black body radiation and heat flow, are temperature dependent and thus grow gradually while the torsional pendulum temperature is reduced. Due to to the remaining noises, the initial oscillations amplitude is $\theta_{max} = 5\cdot10^{-7}[rad]$. 
+The black body radiation and heat flow, are temperature dependent and thus grow gradually while the torsional pendulum temperature is reduced. Due to to the remaining noises, the initial measured oscillations amplitude of the pendulum is $\theta_{max} = 5\cdot10^{-7}[rad]$. 
 \subsection{results}
-The torsional pendulum parameters:
+The system measured results compared to the expected from the equations, the expected $\kappa$ has a range due to uncertainty of the string tensile strength.
 \begin{multicols}{2}
 \raggedcolumns
 \begin{easylist}
@@ -162,16 +162,16 @@ The torsional pendulum parameters:
 \end{multicols}
 \section{Proportional–Integral–Derivative (PID) controller}
 \subsection{Control stability}
-A PID feed-back loop is damping the torsional pendulum by continuously calculating the error value of the measured signal from a defined set point $e(t) =SP -\theta(t) $, and damp it to zero. The PID aims to reach the $SP$ with critical damping of the process (the torsional pendulum).
+The PID feed-back loop is continuously calculating the error value of the measured signal from a defined set point, which is the deviation of the pendulum amplitude from a $SP$ angle $e(t) =SP -\theta(t) $. The PID aims to reach the $SP$ with critical damping of the process (the torsional pendulum) by damping the error to zero. 
 \par\noindent
-In control theory there are two wanted conflicting properties; an accurate response (small overshoot), and small risetime (fast response). Overshoot is when the output signal (the actual PID response) exceeds the target value (the wanted response), thus the response is not accurate. The overshoot $PO$ of a second order system is given by:
+In control theory there are two wanted conflicting properties; an accurate response (small overshoot), and small risetime (fast response). Overshoot is the value of output signal (the actual PID response) exceeds the target value (the wanted response), thus the response is not accurate. The overshoot rate of a second order system is given by:
 \begin{equation}
-overshoot = 100\cdot e ^{\frac{-\xi\pi}{\sqrt{1-\xi^2}}} = \frac{output-target}{target}   \label{eqn:percentage_overshoot}
+overshoot =  \frac{output-target}{target} = e ^{\frac{-\xi\pi}{\sqrt{1-\xi^2}}}  \label{eqn:overshoot}
 \end{equation}
 \par\noindent
-The PID response to error (shown in eq.~\ref{eqn:PID response}) defines how much will the oscillator overshoot the $SP$. A PID control does not guarantee optimal control or stability of the process. When not tuned correct, it can either overshoot or have a slow response, both resulting with a driven oscillator.
+Where $\xi$ is the damping ratio of the oscillator define in eq.~\ref{eqn:system damping ratio}. The PID response to error (shown in eq.~\ref{eqn:PID response}) defines how much will the oscillator overshoot the $SP$. A PID control does not guarantee optimal control or stability of the process. When not tuned correct, it can either overshoot or have a slow response, both resulting with a driven oscillator.
 \par\noindent
-As seen in eq.~\ref{eqn:percentage_overshoot} when PID gains are too high, instead of critical damping there is overdamping, which is causing overshoot. Due to the high gains the overshoot response overshoots again to the other side, causing the system to be a driven oscillator (shown in eq.~\ref{eqn:driven_motion_equation_2}). A slow response causes phase delay between the signal and the equivalent PID response, again resulting with a driven oscillator.
+As seen in eq.~\ref{eqn:percentage_overshoot} when the PID gains are too high, instead of critical damping there is overdamping, which is causing overshoot. Due to the high gains the overshoot response overshoots again to the other side, causing the system to be a driven oscillator (shown in eq.~\ref{eqn:driven_motion_equation_2}). A slow response causes phase delay between the signal and the equivalent PID response, again resulting with a driven oscillator.
 \subsection{Damped oscillator}
 The PID mainly acts as friction, gradually working when the oscillations are at the maximum velocity slowing them down, with a torque $\tau_{PID}$ given by:
 \begin{equation}
