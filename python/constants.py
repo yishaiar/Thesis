@@ -21,12 +21,13 @@ l /=2
 kappa = (G*np.pi*D**4)/(h*32)
 I_CM = M*((2*l)**2)/12
 I1 = 2*m*l**2
-I =np.asarray([I1,I1 + 2*I_CM])
+# I =np.asarray([I1,I1 + 2*I_CM])
 # I = 0.0007853341
 T = 2*np.pi*np.sqrt(I/kappa[:,None])
 
-
-
+# ACTUAL
+T=84
+1/((T/(2*np.pi))**2)/I1)
 
 
 

@@ -142,7 +142,7 @@ As shown previously, there are other environment noises affecting the torsional 
 \end{easylist}
 The black body radiation and heat flow, are temperature dependent and thus grow gradually while the torsional pendulum temperature is reduced. Due to to the remaining noises, the initial measured oscillations amplitude of the pendulum is $\theta_{max} = 5\cdot10^{-7}[rad]$. 
 \subsection{results}
-The system expected $\kappa$ from the equations has a range due to uncertainty of the string tensile strength $G$. The system measured results compared to the expected results are:
+The system measured results compared to the expected results from the equations are given by:
 \begin{multicols}{2}
 \raggedcolumns
 \begin{easylist}
@@ -160,6 +160,7 @@ The system expected $\kappa$ from the equations has a range due to uncertainty o
 && $\theta_{max} = 5\cdot10^{-7}[rad]$
 \end{easylist}
 \end{multicols}
+The expected $\kappa$, $T$ have a range due to uncertainty of the string tensile strength $G$. The amplitude $\theta_{max}$ is an experimental value depended on the amount of noise actually reduced, thus do not have an expected simulated value.
 \section{Proportional–Integral–Derivative (PID) controller}
 \subsection{Control stability}
 The PID feed-back loop is continuously calculating the error value of the measured signal from a defined set point, which is the deviation of the pendulum amplitude from a $SP$ angle $e(t) =SP -\theta(t) $. The PID aims to reach the $SP$ with critical damping of the process (the torsional pendulum) by damping the error to zero. 
