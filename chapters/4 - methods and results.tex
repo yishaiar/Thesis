@@ -53,7 +53,7 @@ The central viewport is located in front of the pendulum's front mirror. The cen
 \par\noindent
 In this experiment, due to the measurement sensitivity, the vacuum engine pumping must be off during measurement. The main limitations to the maintenance of low pressure are the leakage $Q_L$ from the outside (eq.~\ref{eqn:leak rate}) and the outgassing $Q_{des}$ inside the chamber (eq.~\ref{eqn:desorption rate}), thus increasing of the pressure at a constant rate over time. Due to the pendulum's shape and size, the vacuum chamber has large volume (high leak rate) and shell area (high outgassing rate).
 \par\noindent
-In order to minimize the pressure increase rate, the vacuum chamber is built using CF components which are designed for ultra high vacuum, and minimize the leak rate. Also, to reduce outgassing, the torsional pendulum and vacuum chamber were baked-out at $120 C^0$ for a week, using resistive wire. The achieved pressure for the experiments after cooling down is $P \approx 1\cdot 10^{−4} [Hpa]$ for a month without pumping with the vacuum engine.
+In order to minimize the pressure increase rate, the vacuum chamber is built using CF components which are designed for ultra high vacuum, and minimize the leak rate. Also, to reduce outgassing, the torsional pendulum and vacuum chamber were baked-out at $120 C^0$ for a week, using resistive wire. The measured pressure at the experiments after cooling down is $P \approx 1\cdot 10^{−4} [Hpa]$ for a month without pumping with the vacuum engine.
 \subsection{Torsional pendulum design}
 \subsubsection{Adjustable mount}
 \begin{figure}[htbp]
@@ -82,7 +82,7 @@ The torsional pendulum design, shown in fig.~\ref{fig:pendulum front}, is compos
 \end{figure}
 \FloatBarrier 
 \par\noindent
-The center of mass is balanced using a balancing mass with similar shape and weight as the mirror on the other side, as shown in fig.~\ref{fig:pendulum top}. The balancing mass and the mirror are connected from their centers to the pendulum by a beam with length $w$, thus the overall downward torque with tilt angle $\phi$ is:
+The center of mass is balanced using a balancing mass with similar shape and weight as the mirror on the other side, as shown in fig.~\ref{fig:pendulum top}. The balancing mass and the mirror are connected from their centers to the pendulum by a beam with length $w$, thus the overall downward torque with tilt angle $\phi$ is given by:
 \begin{equation}
 \tau_y = r_1\cdot m_1 g \cdot cos\phi - r_2\cdot m_2 g \cdot cos \phi\ = g\cdot cos\phi( m_1 r_1  - m_2 (w-r_1) )    \label{eqn:downward torque}
 \end{equation}
@@ -96,7 +96,7 @@ Where $m_1$, $m_2$ are the masses of the mirror and the balancing mass, and $r_1
 \par\noindent
 The chosen pendulum dimensions are designed to achieve large angle sensitivity to the torque caused by a the gravity field (small string torsion coefficient $\kappa$ is needed, see eq.~\ref{eqn:theta average}) while maintaining large angle sensitivity to mass (longer oscillation time period $T$, as shown in eq.~\ref{eqn:theta average}). For a torsional pendulum with moment of inertia $I$ and string torsion coefficient $\kappa$, the period $T$ is given by (eq.~\ref{eqn:undamped_omega}): 
 \begin{equation}
-T = 2\pi\sqrt{\frac{I}{\kappa}}= 2\pi\sqrt{\frac{2ml^2}{\kappa}} =  2\pi\sqrt{\frac{2ml^2}{\frac{G}{h} \frac{\pi d^4}{32}}}  \label{eqn:undamped_motion_equation_4}
+T = 2\pi\sqrt{\frac{I}{\kappa}}=  =  2\pi\sqrt{\frac{I}{\frac{G}{h} \frac{\pi d^4}{32}}}  \label{eqn:undamped_motion_equation_4}
 \end{equation}
 \par\noindent
 As shown in eq.~\ref{eqn:undamped_motion_equation_4}, longer string length $h$ with smaller diameter $d$ results in small string torsion coefficient while having a large period. The string is made of tungsten that is both, vacuum compatible (material with low outgassing) and has high tensile strength \cite{tungsten}, and is holding the pendulum robustly inside the vacuum chamber while having small string diameter. 
@@ -142,7 +142,7 @@ As shown previously, there are other environment noises affecting the torsional 
 \end{easylist}
 The black body radiation and heat flow, are temperature dependent and thus grow gradually while the torsional pendulum temperature is reduced. Due to to the remaining noises, the initial measured oscillations amplitude of the pendulum is $\theta_{max} = 5\cdot10^{-7}[rad]$. 
 \subsection{results}
-The system measured results compared to the expected from the equations, the expected $\kappa$ has a range due to uncertainty of the string tensile strength.
+The system expected $\kappa$ from the equations has a range due to uncertainty of the string tensile strength $G$. The system measured results compared to the expected results are:
 \begin{multicols}{2}
 \raggedcolumns
 \begin{easylist}
