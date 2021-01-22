@@ -230,7 +230,7 @@ Where $I$ is the LED current, $I_s$ is the saturation current, $n$ is the emissi
 \begin{equation}
 I =\frac{N\cdot V-V_l}{R}\approx \frac{N\cdot V}{R}\label{eqn:led circuit}
 \end{equation}
-The LED light sources has a linear response of the torque (see eq.~\ref{eqn:radiation torque}) which minimizes the overshoot, and a fast response time which minimizes phase delay. 
+The LED light sources has a fast response time which minimizes phase delay with approximately a linear torque response (see eq.~\ref{eqn:radiation torque}) which minimizes the overshoot. 
 
 \subsection{Arduino microcontroller}
 The modulated light sources are composed of two LED light sources driven by an Arduino microcontroller with a linear response of the LED power to the PID control, causing a linear response of the torque (see eq.~\ref{eqn:radiation torque}) which minimizes the overshoot, and a fast response time which minimizes phase delay.
