@@ -228,7 +228,7 @@ V_l(I) \approx n V_T ln10 log_{10} (\frac{I}{I_s})\approx constant \label{eqn:le
 \end{equation}
 Where $I$ is the LED current, $I_s$ is the saturation current, $n$ is the emission coefficient, and $V_T$ is the thermal voltage. Since the forward voltage varies as the logarithm of the current, it varies slowly, being approximately constant over wide current range, resulting with large changes in the LED current due to small changes in the circuit supply voltage $V$. In the driving circuit a resistor $R$ is connected in series with the LED to stabilizes the current $I$, the LED power with circuit of $N$ voltages supplies in parallel is given by:
 \begin{equation}
-\Theta = I\cdot V_l  =\frac{N\cdot V-V_l}{R}\approx \frac{N\cdot V}{R}\label{eqn:led circuit}
+\Theta = I\cdot V_l  =\frac{N\cdot V-V_l}{R}\cdot V_l\approx \frac{N\cdot V\cdot V_l}{R}\label{eqn:led circuit}
 \end{equation}
 The LED light sources has a fast response time which minimizes phase delay with approximately a linear torque response (see eq.~\ref{eqn:radiation torque}) which minimizes the overshoot. 
 
