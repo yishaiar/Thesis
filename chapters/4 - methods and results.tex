@@ -235,7 +235,7 @@ The LED illumination angle varies between $45^0-120^0$. Since emitted light is i
 
 
 \subsection{Arduino microcontroller}
-The modulated light sources are composed of two LED light sources driven by an Arduino microcontroller with response to the PID control, causing a torque. The Arduino is an inexpensive open-source microcontroller with a serial communication interface and a digital output without digital-to-analog converter (DAC). The Arduino Mega 2560 contains ATmega2560 8-bit controller, a $16 [MHz]$ crystal oscillator (clock) and 15 PWM outputs pins with digital output of $V_d = 5[V]$.
+The modulated light sources are two LED light sources driven by an Arduino microcontroller, causing the PID torque. The Arduino is an inexpensive open-source microcontroller with a serial communication interface and a digital output without digital-to-analog converter (DAC). The Arduino Mega 2560 contains ATmega2560 8-bit controller, a $16 [MHz]$ crystal oscillator (clock) and 15 PWM outputs pins with digital output of $V_d = 5[V]$.
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=0.17]{\main/images/4 - methods and results/duty_cycle.png}}
@@ -248,13 +248,13 @@ The microcontroller can simulate analog output using Pulse Width Modulation (PWM
 \begin{equation}
 V_a(t) = \frac{ PW(t)\cdot V_d}{ T}  = \frac{V_d}{100}\cdot D(t)   \label{eqn:pwm voltage}
 \end{equation}
-Since the Arduino clock is connected to all PWM pins, they are all synchronized and have the same voltage, frequency and phase, allowing to connect them in parallel. Since the clock must have at least 120 periods of square waves before it can change to a new duty cycle value, this limits the voltage modulation frequency. Another limitation to the duty cycle change rate is the controller bit-rate. Accordingly, PWM maximal frequency is given by:
+Since the Arduino clock is connected to all PWM pins, they are all synchronized and have the same voltage, frequency and phase, allowing to connect them in parallel. The clock must have at least 120 periods of square waves before it can change to a new duty cycle value, this limits the voltage modulation frequency. Another limitation to the duty cycle change rate is the controller bit-rate. Accordingly, PWM maximal frequency is given by:
 \begin{equation}
 f_{PWM} = \frac{1 }{120T}= \frac{1 }{120 \frac{8-bit }{16MHz}}  \approx 500[Hz]	    \label{eqn:pwm frequency}
 \end{equation}
 
 \subsection{LED circuit}
-The LED is a blue LED with $V_l\approx 4.5V$, with $N=6$ parallel PWM Arduino pins for the supply voltage (eq.~\ref{eqn:pwm voltage}) and resistor $R = 200\Omega$. Due to coupling efficiency and size difference between the output beam from the lightguide and the pendulum sides, the efficiency of flux hitting the pendulum is estimated $\eta = 0.7$, thus with LED flux given by eq.~\ref{eqn:led power}, the PID torque $\tau_{PID}(t)$ is given by (eq.~\ref{eqn:radiation torque}):
+The LED circuits are each composed of a blue LED with $V_l\approx 4.5V$, with $N=6$ parallel PWM Arduino pins for the supply voltage (eq.~\ref{eqn:pwm voltage}) and resistor $R = 200\Omega$. Due to coupling efficiency and size difference between the output beam from the lightguide and the pendulum sides, the efficiency of flux hitting the pendulum is estimated $\eta = 0.7$, thus with LED flux given by eq.~\ref{eqn:led power}, the PID torque $\tau_{PID}(t)$ is given by (eq.~\ref{eqn:radiation torque}):
 \begin{equation}
 \tau_{PID}(t) \approx \frac{2l\eta}{{c}} (\Theta_1(t) -\Theta_2(t)) \approx \frac{2l\eta}{{c}} \cdot\frac{N V_l V_d}{100R}(D_1(t) -D_2(t))  \approx   3.4\cdot 10^{-12}(D_1(t) -D_2(t)) 
 \label{eqn:led torque}
