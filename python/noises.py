@@ -5,13 +5,13 @@ import matplotlib.pyplot as plt
 A = 1.14E-2
 P = 1E-4*100
 T = 298.0
-T_0 = 288.0
+T_0 = 0.0
 N_A = 6.022E23
 R = 8.314
 # mu_298k = 1.85e-5*np.sqrt()
 # bolzman
 SIGMA = 5.67E-8
-EPSILON =0.03
+EPSILON =0.023
 p =SIGMA  *EPSILON*A*(T**4-T_0**4)
 print(p)
 
@@ -57,3 +57,12 @@ p = max_tourqe/2*THETA_MAX*OMEGA
 # rho = M*P/(R*T)
 # k_s = 142E3
 # p = A*P*np.sqrt(k_s/rho)
+
+
+
+# eps= np.asarray([0.0919,0.0798,0.0666,0.051,0.0417])
+# t= np.asarray([300,240,180,120,80])
+# z= np.polyfit(t,eps,1)
+# plt.plot(t,eps)
+# t1 = np.arange(300)
+# plt.plot(t1,t1*z[0]+z[1])
