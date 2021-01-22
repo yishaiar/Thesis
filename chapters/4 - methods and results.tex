@@ -222,11 +222,11 @@ The apparatus uncertainty due to the non linearity of the AOM response and laser
 \subsection{Light emitting diode (LED)}
 The light emitting diode (LED) is a semiconductor light source with high power, and a long lifetime. A forward voltage applied to a p-n junction, causes electron injection which recombine with holes. The recombination releases energy in form of spontaneous emission photons (incoherent light). Due to the electrons life time, the LED could be modulated up to $100MHz$ (fast response, which can minimize the PID phase delay). Given by the Shockley diode equation for p-n junctions, the LED forward voltage $V_l$ is:
 \begin{equation}
-V_l(I) \approx n V_T ln10 log_{10} (\frac{I}{I_s})\approx constant \label{eqn:led voltage}
+V_l(I_l) \approx n V_T ln10 log_{10} (\frac{I_l}{I_s})\approx constant \label{eqn:led voltage}
 \end{equation}
-Where $I$ is the LED current, $I_s$ is the saturation current, $n$ is the emission coefficient, and $V_T$ is the thermal voltage. Since the forward voltage varies as the logarithm of the current, it varies slowly, being approximately constant over wide current range, resulting with large changes in the LED current due to small changes in the circuit supply voltage $V$. In the driving circuit a resistor $R$ is connected in series with the LED to stabilizes the current, The LED flux with circuit of $N$ voltages supplies in parallel is given by:
+Where $I_l$ is the LED current, $I_s$ is the saturation current, $n$ is the emission coefficient, and $V_T$ is the thermal voltage. Since the forward voltage varies as the logarithm of the current, it varies slowly, being approximately constant over wide current range, resulting with large changes in the LED current due to small changes in the circuit supply voltage $V$. In the driving circuit a resistor $R$ is connected in series with the LED to stabilizes the current, The LED flux with circuit of $N$ voltages supplies in parallel is given by:
 \begin{equation}
-\Theta = I\cdot V_l  =\frac{N\cdot V-V_l}{R}\cdot V_l\approx \frac{N\cdot V_l\cdot V}{R}\label{eqn:led power}
+\Theta = I_l\cdot V_l  =\frac{N\cdot V-V_l}{R}\cdot V_l\approx \frac{N\cdot V_l\cdot V}{R}\label{eqn:led power}
 \end{equation}
 \par\noindent
 The LED light source has approximately a linear response (see eq.~\ref{eqn:radiation torque}) which can minimize the PID overshoot.
