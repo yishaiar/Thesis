@@ -169,9 +169,9 @@ In control theory there are two wanted conflicting properties; an accurate respo
 overshoot =  \frac{output-target}{target} = e ^{\frac{-\xi\pi}{\sqrt{1-\xi^2}}}  \label{eqn:overshoot}
 \end{equation}
 \par\noindent
-Where $\xi$ is the damping ratio of the oscillator define in eq.~\ref{eqn:system damping ratio}. The PID response to error (shown in eq.~\ref{eqn:PID response}) defines how much will the oscillator overshoot the $SP$. A PID control does not guarantee optimal control or stability of the process. When not tuned correct, it can either overshoot or have a slow response, both resulting with a driven oscillator.
+Where $\xi$ is the damping ratio of the oscillator define in eq.~\ref{eqn:system damping ratio}. The PID response to error (shown in eq.~\ref{eqn:PID response}) defines how much will the oscillator overshoot the $SP$. A PID control does not guarantee optimal control or stability of the process. When not tuned correctly, it can either overshoot or have a slow response, both resulting with a driven oscillator.
 \par\noindent
-As seen in eq.~\ref{eqn:percentage_overshoot} when the PID gains are too high, instead of critical damping there is overdamping, which is causing overshoot. Due to the high gains the overshoot response overshoots again to the other side, causing the system to be a driven oscillator (shown in eq.~\ref{eqn:driven_motion_equation_2}). A slow response causes phase delay between the signal and the equivalent PID response, again resulting with a driven oscillator.
+As seen in eq.~\ref{eqn:percentage_overshoot} when the PID gains are too high, instead of critical damping there is overdamping, which is causing overshoot. Due to the high gains the overshoot response overshoots again to the other side, causing the system to be an unwanted driven oscillator (shown in eq.~\ref{eqn:driven_motion_equation_2}). A slow response causes phase delay between the signal and the equivalent PID response, resulting  again with a driven oscillator.
 \subsection{Damped oscillator}
 The PID mainly acts as friction, gradually working when the oscillations are at the maximum velocity slowing them down, with a torque $\tau_{PID}$ given by:
 \begin{equation}
@@ -179,15 +179,17 @@ The PID mainly acts as friction, gradually working when the oscillations are at 
 \label{eqn:friction_torque_pid}
 \end{equation}
 \par\noindent
-Where $\gamma$ is the PID damping coefficient, since $SP$ is constant, $\dot{e}(t)$ is the the torsional pendulum's oscillations velosity $\dot{\theta}(t)$. The torsional pendulum is a simple harmonic oscillator with initial oscillations amplitude $\theta_{max}$ and velocity amplitude $\dot{\theta}_{max} =\frac{2\pi}{T} \theta_{max}$ (see eq.~\ref{eqn:undamped_motion_equation_solved}). The PID damping coefficient $\gamma$ is given by:
+Where $\gamma$ is the PID damping coefficient,and $\dot{e}(t)$ is the the torsional pendulum's oscillations velosity. 
+\par\noindent
+The torsional pendulum is a simple harmonic oscillator with initial oscillations amplitude $\theta_{max}$ and velocity amplitude $\dot{\theta}_{max} =\frac{2\pi}{T} \theta_{max}$ (see eq.~\ref{eqn:undamped_motion_equation_solved}). Accordingly, the PID damping coefficient $\gamma$ is given by:
 \begin{equation}
 \gamma  =  \frac{\tau_{PID}(t)}{\dot{\theta}(t)} = \frac{max(\tau_{PID})}{\dot{\theta}_{max}} =  \frac{max(\tau_{PID})}{\theta_{max}\cdot\frac{2\pi}{T}} =\frac{max(\tau_{PID})}{\theta_{max}}\cdot \frac{ T}{2\pi}          \label{eqn:damped_pid_motion_equation_2}
 \end{equation}
-Where $max(\tau_{PID})$ is the maximal torque exerted by the PID. When damping using a PID the damping time $\tau$ and damping ratio $\xi$ are given by (eq.~\ref{eqn:damping_time}):
+Where $max(\tau_{PID})$ is the maximal torque exerted by the PID. When damping using the PID the damping time $\tau$ and damping ratio $\xi$ are given by (eq.~\ref{eqn:damping_time}):
 \begin{equation}
 \tau = \frac{T}{2 \pi \xi } =  \frac{2I}{\gamma} = \frac{\theta_{max}}{ max(\tau_{PID})} \cdot \frac{4\pi I}{T}  \label{eqn:damping_time_pid}
 \end{equation}
-The PID damping $\gamma$, damping time $\tau$ and damping type $\xi$ depend on the ratio $\theta_{max}/max(\tau_{PID})$. If $\theta_{max}$ is too large compare to the external torque, the PID affect is negligible, causing an extremely underdamped pendulum with an infinite damping time. When the pendulum is critically damped  by $\tau_{critical}$ (eq.~\ref{eqn:critically_damped_motion_equation}), the damping ratio $\xi$ is given by:
+The PID damping $\gamma$, the damping time $\tau$ and the damping type defined by $\xi$ depend on the ratio $\theta_{max}/max(\tau_{PID})$. If $\theta_{max}$ is too large compare to the external torque, the PID affect is negligible, causing an extremely underdamped pendulum with an infinite damping time. When the pendulum is critically damped  by $\tau_{critical}$, the damping ratio $\xi$ is given by (eq.~\ref{eqn:critically_damped_motion_equation}):
 \begin{equation}
 \xi = \frac{T^2}{ 8 \pi^2 I }\cdot\frac{ \tau_{critical}}{\theta_{max}} = 1 
 \label{eqn:damping_ratio_pid}
