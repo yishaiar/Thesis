@@ -204,21 +204,32 @@ max(\tau_{PID}) \geq  \tau_{critical} = \frac{ 8 \pi^2 I }{T^2}\cdot\theta_{max}
 As shown in  eq.~\ref{eqn:damping_torque_pid} the PID maximal torque is given by $max(\tau_{PID}) \geq 2.6\cdot10^{-11}[N\cdot m]$. Since, it is proportional to the oscillations velocity (eq.~\ref{eqn:friction_torque_pid}), it needs a high modulation rate compare to the oscillations period $T$ (to prevent phase delay), and high dynamic range compare to velosity amplitude $\dot{\theta}_{max}$ (to avoid overshoot). 
 %The sufficient modulation speed and range are unknown.
 \subsection{Radiation-pressure torque}
-The PID torque was chosen to be a Radiation-pressure torque. The setup is composed of two light sources with given flux, $\Theta_i(t)$, one in front of a mass on the side of the torsional pendulum. As seen in eq.~\ref{eqn:net_gravitation_torque}, the difference between two torques adds an external net torque. Assuming that both light fields have the same coupling efficiency $\eta$ and are very close to be perpendicular to the surface with negligible incidence angles $\alpha_1\approx\alpha_2\approx 0$, using eq.~\ref{eqn:radiation_force_power}, the radiation-pressure net torque $\tau(t)$ can be calculated by:  
+The PID torque was chosen to be a Radiation-pressure torque. The setup is composed of two light sources with given flux, $\Theta_i(t)$, one in front of a mass on a side of the torsional pendulum. As seen in eq.~\ref{eqn:net_gravitation_torque}, the difference between two torques adds an external net torque. Assuming that both light fields have the same coupling efficiency $\eta$ and are very close to be perpendicular to the surface with negligible incidence angles $\alpha_1\approx\alpha_2\approx 0$, using eq.~\ref{eqn:radiation_force_power}, the radiation-pressure net torque $\tau(t)$ can be calculated by:  
 \begin{equation}
 \tau(t) = l\cdot F_1(t) \cdot cos\alpha_1 - l\cdot F_2(t) \cdot cos\alpha_2\approx l(F_1(t) - F_2(t)) \approx \frac{2l\eta}{{c}} \Delta \Theta(t) \label{eqn:radiation torque}
 \end{equation}
-The radiation-pressure net torque is modulated by changing the difference between the light sources' flux $\Delta \Theta(t)$. The maximal net torque $\tau_{max}$ is given by: 
+The radiation-pressure net torque can be controlled by changing the difference between the light sources' flux $\Delta \Theta(t)$. Thus, the maximal net torque $\tau_{max}$ is given by: 
 \begin{equation}
 \tau_{max}  \approx \frac{2l\eta}{{c}} \cdot 2 \Theta_{max} \approx \frac{0.218\cdot \eta}{{3\cdot10^{8}}} \cdot 2 \Theta_{max} \approx 7.27\cdot10^{-10} \cdot \eta\Theta_{max}   \label{eqn:max radiation torque}
 \end{equation}
 Where $\Theta_{max}$ is the is the the light sources' maximal flux with optical setup efficiency $\eta$. 
 \subsection{Laser setup}
-Initially the modulated light sources were composed of a single laser diode coupled in series into two acousto optic modulators (AOM), with mod cleaning by coupling the modulated light into the torsional pendulum through optical fibers. An AOM can divide a single coherent light beam into two beams, with intensity ratio proportional to the AOM response to input voltage, resulting with controlled modulation of the light sources difference.
+Initially the modulated light sources were composed of a single laser diode coupled in series into two acousto optic modulators (AOM), with special filtered mode using optical fibers. The AOMs divides the single coherent light beam into two beams, with both the total power and the intensity ratio modulated the a response to input voltage, resulting with controlled modulation of the light sources difference.
 \par\noindent
 The apparatus had dynamic range of 1000 steps and modulation speed of $1 sec$. The setup minimized uncertainties of the light intensity since both light sources had a mutual source, partly cancelling internal noises such as thermal and shot noise. 
 \par\noindent
-The apparatus uncertainty due to the non linearity of the AOM response and laser power fluctuations proved to be larger than the uncertainties of the intensity difference. Also, modulation speed (response time) proved to be more important than modulation range. 
+The apparatus uncertainty due to the non linearity of the AOM response and laser power fluctuations proved to be larger than the uncertainties of the intensity difference. Also, modulation speed (response time) proved to be more important than modulation range. Due to the conclusions, the PID torque was changed to two controlled high power LED sources.
+\subsection{Light emitting diode (LED)}
+The light emitting diode (LED) is a semiconductor light source with high power, and a long lifetime. A forward voltage applied to a p-n junction, causes electron injection which recombine with holes. The recombination releases energy in form of spontaneous emission photons (incoherent light). Due to the electrons life time, the LED could be modulated up to $100MHz$.
+\par\noindent
+The LED illumination angle varies between $45^0-120^0$. Since emitted light is incoherent it's hard to focus it to a point (not diffraction limited) and it has wide bandwidth spectrum. Given by the Shockley diode equation for p-n junctions, the LED forward voltage $V_l$ is:
+\begin{equation}
+V_l(I) \approx n V_T ln10 log_{10} (\frac{I}{I_s})\approx constant \label{eqn:led voltage}
+\end{equation}
+Where $I$ is the LED current, $I_s$ is the saturation current, $n$ is the emission coefficient, and $V_T$ is the thermal voltage. Since the forward voltage varies as the logarithm of the current, it varies slowly, being approximately constant over wide current range, resulting with large changes in the LED current due to small changes in the circuit supply voltage $V$. In the driving circuit a resistor $R$ is connected in series with the LED to stabilizes the current, and the current $I$ is given by:
+\begin{equation}
+I =\frac{V-V_l}{R} \label{eqn:led circuit}
+\end{equation}
 \subsection{Arduino microcontroller}
 The modulated light sources are composed of two LED light sources driven by an Arduino microcontroller with a linear response of the LED power to the PID control, causing a linear response of the torque (see eq.~\ref{eqn:radiation torque}) which minimizes the overshoot, and a fast response time which minimizes phase delay.
 \par\noindent
@@ -241,17 +252,7 @@ Since the clock must have at least 120 periods of square waves before it can cha
 \begin{equation}
 f_{PWM} = \frac{1 }{120T}= \frac{1 }{120 \frac{8-bit }{16MHz}}  \approx 500[Hz]	    \label{eqn:pwm frequency}
 \end{equation}
-\subsection{Light emitting diode (LED)}
-The light emitting diode (LED) is a semiconductor light source with high power, and a long lifetime. A forward voltage applied to a p-n junction, causes electron injection which recombine with holes. The recombination releases energy in form of spontaneous emission photons (incoherent light). Due to the electrons life time, the LED could be modulated up to $100MHz$.
-\par\noindent
-The LED illumination angle varies between $45^0-120^0$. Since emitted light is incoherent it's hard to focus it to a point (not diffraction limited) and it has wide bandwidth spectrum. Given by the Shockley diode equation for p-n junctions, the LED forward voltage $V_l$ is:
-\begin{equation}
-V_l(I) \approx n V_T ln10 log_{10} (\frac{I}{I_s})\approx constant \label{eqn:led voltage}
-\end{equation}
-Where $I$ is the LED current, $I_s$ is the saturation current, $n$ is the emission coefficient, and $V_T$ is the thermal voltage. Since the forward voltage varies as the logarithm of the current, it varies slowly, being approximately constant over wide current range, resulting with large changes in the LED current due to small changes in the circuit supply voltage $V$. In the driving circuit a resistor $R$ is connected in series with the LED to stabilizes the current, and the current $I$ is given by:
-\begin{equation}
-I =\frac{V-V_l}{R} \label{eqn:led circuit}
-\end{equation}
+
 \subsection{LED circuit}
 The LED is a blue LED with $V_l\approx 4.5V$, $N=6$ parallel PWM Arduino pins for the supply voltage (eq.~\ref{eqn:pwm voltage}) and resistor $R = 200\Omega$. The LED flux $\Theta(t)$ is given by:
 \begin{equation}
