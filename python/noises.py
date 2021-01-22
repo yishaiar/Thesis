@@ -5,13 +5,17 @@ import matplotlib.pyplot as plt
 A = 1.14E-2
 P = 1E-4*100
 T = 298.0
-T_0 = 0.0
+T_0 = 288.0
 N_A = 6.022E23
 R = 8.314
 # mu_298k = 1.85e-5*np.sqrt()
 # bolzman
 SIGMA = 5.67E-8
-EPSILON =0.023
+
+eps= np.asarray([0.0919,0.0798,0.0666,0.051,0.0417])
+t= np.asarray([300,240,180,120,80])
+z= np.polyfit(t,eps,1)
+EPSILON =T_0*z[0]+z[1]
 p =SIGMA  *EPSILON*A*(T**4-T_0**4)
 print(p)
 
@@ -43,7 +47,11 @@ T1=299
 T0=np.arange(T1*100)/100.0
 T = np.ones(T1*100)*298.0
 
-p=SIGMA*EPSILON*A*(T**4-T0**4)+np.sqrt(M/(R*T1))*C_V*A*P*(T-T0)
+
+
+
+
+p=SIGMA*(T0*z[0]+z[1])*A*(T**4-T0**4)+np.sqrt(M/(R*T1))*C_V*A*P*(T-T0)
 
 plt.plot(T0,p)
 
