@@ -54,9 +54,6 @@ The central viewport is located in front of the pendulum's front mirror. The cen
 In this experiment, due to the measurement sensitivity, the vacuum engine pumping must be off during measurement. The main limitations to the maintenance of low pressure are the leakage $Q_L$ from the outside (eq.~\ref{eqn:leak rate}) and the outgassing $Q_{des}$ inside the chamber (eq.~\ref{eqn:desorption rate}), thus increasing of the pressure at a constant rate over time. Due to the pendulum's shape and size, the vacuum chamber has large volume (high leak rate) and shell area (high outgassing rate).
 \par\noindent
 In order to minimize the pressure increase rate, the vacuum chamber is built using CF components which are designed for ultra high vacuum, and minimize the leak rate. Also, to reduce outgassing, the torsional pendulum and vacuum chamber were baked-out at $120 C^0$ for a week, using resistive wire. The achieved pressure for the experiments after cooling down is $P \approx 1\cdot 10^{−4} [Hpa]$ for a month without pumping with the vacuum engine.
-
-
-
 \subsection{Torsional pendulum design}
 \subsubsection{Adjustable mount}
 \begin{figure}[htbp]
@@ -76,7 +73,7 @@ An adjustable mount shown in fig.~\ref{fig:mount} is soldered to the upper tube 
 \end{figure}
 \FloatBarrier
 \par\noindent
-The torsional pendulum design, shown in fig.~\ref{fig:pendulum front}, is composed of a thin rod with length $2l$, string with length $h$, two identical masses $m$ on the sides, a front mirror and a balancing mass. The mirror is used for tilt angle measurement. Due to an unbalanced center of mass, the earth's gravity causes a downward torque $\tau_y$. 
+The torsional pendulum design, shown in fig.~\ref{fig:pendulum front}, is composed of a thin rod with length $2l$, string with length $h$, two identical masses $m$ on the sides, a front mirror and a balancing mass. The mirror is used for the tilt angle measurement. Due to an unbalanced center of mass, the earth's gravity causes a downward torque $\tau_y$. 
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=1.2]{\main/images/4 - methods and results/pendulum_top.JPG}}
@@ -85,9 +82,9 @@ The torsional pendulum design, shown in fig.~\ref{fig:pendulum front}, is compos
 \end{figure}
 \FloatBarrier 
 \par\noindent
-The center of mass is balanced using a balancing mass with similar shape and weight as the mirror, as shown in fig.~\ref{fig:pendulum top}. The balancing mass and the mirror are connected to the pendulum by a beam with length $w$ from their centers, and the downward torque is given by:
+The center of mass is balanced using a balancing mass with similar shape and weight as the mirror on the other side, as shown in fig.~\ref{fig:pendulum top}. The balancing mass and the mirror are connected from their centers to the pendulum by a beam with length $w$, thus the overall downward torque is:
 \begin{equation}
-\tau_y = r_1\cdot m_1 g \cdot cos(0) - r_2\cdot m_2 g \cdot cos (0)\ = g( m_1 r_1  - m_2 (w-r_1) )  =0    \label{eqn:downward torque}
+\tau_y = r_1\cdot m_1 g \cdot cos(\phi) - r_2\cdot m_2 g \cdot cos (\pi-\phi)\ = gcos(\phi)( m_1 r_1  + m_2 (w-r_1) )    \label{eqn:downward torque}
 \end{equation}
 Where $m_1$, $m_2$ are the masses of the mirror and the balancing mass, and $r_1$, $r_2$ are their distance from the pendulum's center of mass respectively. The beam allows to cancel out $\tau_y$ by accurate adjustment of the distance $r_1$, given by: 
 \begin{equation}
