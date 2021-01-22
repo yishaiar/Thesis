@@ -246,9 +246,7 @@ The microcontroller can simulate analog output using Pulse Width Modulation (PWM
 \begin{equation}
 V_a(t) = \frac{ PW(t)\cdot V_d}{ T}  = \frac{V_d}{100}\cdot D(t)   \label{eqn:pwm voltage}
 \end{equation}
-Since the Arduino clock is connected to all PWM pins, they are all synchronized and have the same voltage, frequency and phase. The current of $N$ pins connected in parallel is $N\cdot I$.
-\par\noindent
-Since the clock must have at least 120 periods of square waves before it can change to a new duty cycle value, this limits the voltage modulation frequency. Another limitation to the duty cycle change rate is the controller bit-rate. Accordingly, PWM maximal frequency is given by:
+Since the Arduino clock is connected to all PWM pins, they are all synchronized and have the same voltage, frequency and phase, allowing to connect them in parallel. Since the clock must have at least 120 periods of square waves before it can change to a new duty cycle value, this limits the voltage modulation frequency. Another limitation to the duty cycle change rate is the controller bit-rate. Accordingly, PWM maximal frequency is given by:
 \begin{equation}
 f_{PWM} = \frac{1 }{120T}= \frac{1 }{120 \frac{8-bit }{16MHz}}  \approx 500[Hz]	    \label{eqn:pwm frequency}
 \end{equation}
