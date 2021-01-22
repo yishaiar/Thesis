@@ -257,7 +257,7 @@ f_{PWM} = \frac{1 }{120T}= \frac{1 }{120 \frac{8-bit }{16MHz}}  \approx 500[Hz]	
 \subsection{LED circuit}
 The LED is a blue LED with $V_l\approx 4.5V$, $N=6$ parallel PWM Arduino pins for the supply voltage (eq.~\ref{eqn:pwm voltage}) and resistor $R = 200\Omega$. The LED flux $\Theta(t)$ is given by:
 \begin{equation}
-\Theta(t) = I\cdot V_l = NI\cdot V_l = N V_l \frac{V-V_l}{R}\cdot  =N V_l\frac{\frac{V_d}{100}\cdot D(t)-V_l}{R} \approx \frac{N V_lV_d}{100R}\cdot D(t) \label{eqn:led power}
+\Theta(t) = I\cdot V_l = I\cdot V_l =  V_l \frac{N\cdot V-V_l}{R}  = V_l\frac{N\cdot\frac{V_d}{100}\cdot D(t)-V_l}{R} \approx \frac{N V_lV_d}{100R}\cdot D(t) \label{eqn:led power}
 \end{equation}
 \par\noindent
 In order to overcome the LED incoherent profile and large illumination angle, the light sources are coupled to light guides (the vacuum chamber viewports were designed to have light guides in front). A light guide is a pipe made of thin filaments causing internal reflections, designed to illuminate small areas, regardless of the spectral characteristics of the light source. The light guide efficiency is mainly dependent on the cross section and length of the lightguide, making it ideal to overcome focusing problems. 
