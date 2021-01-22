@@ -218,9 +218,8 @@ Initially the modulated light sources were composed of a single laser diode coup
 \par\noindent
 The apparatus had dynamic range of 1000 steps and modulation speed of $1 sec$. The setup minimized uncertainties of the light intensity since both light sources had a mutual source, partly cancelling internal noises such as thermal and shot noise. 
 \par\noindent
-The apparatus uncertainty due to the non linearity of the AOM response and laser power fluctuations proved to be larger than the uncertainties of the intensity difference. Also, modulation speed (response time) proved to be more important than modulation range. Due to the conclusions, the PID torque was changed to two controlled high power LED sources. 
+The apparatus uncertainty due to the non linearity of the AOM response and laser power fluctuations proved to be larger than the uncertainties of the intensity difference. Also, modulation speed (response time) proved to be more important than modulation range. Due to the conclusions, the PID torque was changed to two controlled high power Light emitting diode (LED) sources.
 \subsection{Light emitting diode (LED)}
-LED sources having a linear response of the torque (see eq.~\ref{eqn:radiation torque}) which minimizes the overshoot, and a fast response time which minimizes phase delay.
 The light emitting diode (LED) is a semiconductor light source with high power, and a long lifetime. A forward voltage applied to a p-n junction, causes electron injection which recombine with holes. The recombination releases energy in form of spontaneous emission photons (incoherent light). Due to the electrons life time, the LED could be modulated up to $100MHz$.
 \par\noindent
 The LED illumination angle varies between $45^0-120^0$. Since emitted light is incoherent it's hard to focus it to a point (not diffraction limited) and it has wide bandwidth spectrum. Given by the Shockley diode equation for p-n junctions, the LED forward voltage $V_l$ is:
@@ -229,8 +228,10 @@ V_l(I) \approx n V_T ln10 log_{10} (\frac{I}{I_s})\approx constant \label{eqn:le
 \end{equation}
 Where $I$ is the LED current, $I_s$ is the saturation current, $n$ is the emission coefficient, and $V_T$ is the thermal voltage. Since the forward voltage varies as the logarithm of the current, it varies slowly, being approximately constant over wide current range, resulting with large changes in the LED current due to small changes in the circuit supply voltage $V$. In the driving circuit a resistor $R$ is connected in series with the LED to stabilizes the current, the current $I$ of a circuit with $N$ voltages supplies in parallel is given by:
 \begin{equation}
-I =\frac{N\cdot V-V_l}{R} \label{eqn:led circuit}
+I =\frac{N\cdot V-V_l}{R}\approx \frac{N\cdot V}{R}\label{eqn:led circuit}
 \end{equation}
+The LED light sources has a linear response of the torque (see eq.~\ref{eqn:radiation torque}) which minimizes the overshoot, and a fast response time which minimizes phase delay. 
+
 \subsection{Arduino microcontroller}
 The modulated light sources are composed of two LED light sources driven by an Arduino microcontroller with a linear response of the LED power to the PID control, causing a linear response of the torque (see eq.~\ref{eqn:radiation torque}) which minimizes the overshoot, and a fast response time which minimizes phase delay.
 \par\noindent
