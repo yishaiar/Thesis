@@ -220,15 +220,14 @@ The apparatus had dynamic range of 1000 steps and modulation speed of $1 sec$. T
 \par\noindent
 The apparatus uncertainty due to the non linearity of the AOM response and laser power fluctuations proved to be larger than the uncertainties of the intensity difference. Also, modulation speed (response time) proved to be more important than modulation range. Due to the conclusions, the PID torque was changed to two controlled high power Light emitting diode (LED) sources.
 \subsection{Light emitting diode (LED)}
-The light emitting diode (LED) is a semiconductor light source with high power, and a long lifetime. A forward voltage applied to a p-n junction, causes electron injection which recombine with holes. The recombination releases energy in form of spontaneous emission photons (incoherent light). Due to the electrons life time, the LED could be modulated up to $100MHz$. Given by the Shockley diode equation for p-n junctions, the LED forward voltage $V_l$ is:
+The light emitting diode (LED) is a semiconductor light source with high power, and a long lifetime. A forward voltage applied to a p-n junction, causes electron injection which recombine with holes. The recombination releases energy in form of spontaneous emission photons (incoherent light). Due to the electrons life time, the LED could be modulated up to $100MHz$ (which minimizes the PID phase delay). Given by the Shockley diode equation for p-n junctions, the LED forward voltage $V_l$ is:
 \begin{equation}
 V_l(I) \approx n V_T ln10 log_{10} (\frac{I}{I_s})\approx constant \label{eqn:led voltage}
 \end{equation}
-Where $I$ is the LED current, $I_s$ is the saturation current, $n$ is the emission coefficient, and $V_T$ is the thermal voltage. Since the forward voltage varies as the logarithm of the current, it varies slowly, being approximately constant over wide current range, resulting with large changes in the LED current due to small changes in the circuit supply voltage $V$. In the driving circuit a resistor $R$ is connected in series with the LED to stabilizes the current $I$, the LED power with circuit of $N$ voltages supplies in parallel is given by:
+Where $I$ is the LED current, $I_s$ is the saturation current, $n$ is the emission coefficient, and $V_T$ is the thermal voltage. Since the forward voltage varies as the logarithm of the current, it varies slowly, being approximately constant over wide current range, resulting with large changes in the LED current due to small changes in the circuit supply voltage $V$. In the driving circuit a resistor $R$ is connected in series with the LED to stabilizes the current $I$. The LED flux with circuit of $N$ voltages supplies in parallel is given by:
 \begin{equation}
 \Theta = I\cdot V_l  =\frac{N\cdot V-V_l}{R}\cdot V_l\approx \frac{N\cdot V_l\cdot V}{R}\label{eqn:led power}
 \end{equation}
-The LED light sources has a fast response time which minimizes phase delay with approximately a linear torque response (see eq.~\ref{eqn:radiation torque}) which minimizes the overshoot.
 \par\noindent
 The LED illumination angle varies between $45^0-120^0$. Since emitted light is incoherent it's hard to focus it to a point (not diffraction limited) and it has wide bandwidth spectrum. In order to overcome the LED incoherent profile and large illumination angle, the LED light sources are coupled to light guides (the vacuum chamber viewports were designed to have light guides in front). A light guide is a pipe made of thin filaments causing internal reflections, designed to illuminate small areas, regardless of the spectral characteristics of the light source. The light guide efficiency $\eta$ is mainly dependent on the cross section and length of the lightguide, making it ideal to overcome focusing problems. 
 
@@ -253,7 +252,7 @@ f_{PWM} = \frac{1 }{120T}= \frac{1 }{120 \frac{8-bit }{16MHz}}  \approx 500[Hz]	
 \end{equation}
 
 \subsection{LED circuit}
-The LED is a blue LED with $V_l\approx 4.5V$, $N=6$ parallel PWM Arduino pins for the supply voltage (eq.~\ref{eqn:pwm voltage}) and resistor $R = 200\Omega$. The LED flux $\Theta(t)$ is given by:
+The LED is a blue LED with $V_l\approx 4.5V$, with $N=6$ parallel PWM Arduino pins for the supply voltage (eq.~\ref{eqn:pwm voltage}) and resistor $R = 200\Omega$. The LED flux $\Theta(t)$ is given by:
 \begin{equation}
 \Theta(t) = \frac{N\cdot V_l\cdot V(t)}{R} = V_l\frac{N\cdot\frac{V_d}{100}\cdot D(t)}{R} \approx \frac{N V_l V_d}{100R}\cdot D(t) \label{eqn:led power}
 \end{equation}
