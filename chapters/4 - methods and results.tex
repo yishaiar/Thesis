@@ -13,11 +13,11 @@
 \end{figure}
 \FloatBarrier
 \par\noindent
-The experiment setup, shown in fig.~\ref{fig:setup}, is composed of a torsion pendulum placed inside a vacuum chamber, a tilt angle measurement system and a feedback system. The experiment setup is placed inside a seismic box, which is not shown in the figure. The angle is measured by a laser beam deflected by the pendulum's front mirror and detected by a quadrant detector. The detector is connected to a computer by an oscilloscope through a signal amplifier. The light reflected from the pendulum mirror is reflected by a piezo driven mirror, which is tuned so that the reflected light would strike the detector's center (the PID needs a reference for error calculations). 
+The experiment setup, shown in fig.~\ref{fig:setup}, is composed of a torsion pendulum placed inside a vacuum chamber, a tilt angle measurement system and a feedback system. The experiment setup is placed inside an acoustic box, which is not shown in the figure. The angle is measured by a laser beam deflected by the pendulum's front mirror and detected by a quadrant detector. The detector is connected to a computer by an oscilloscope through a signal amplifier. The light reflected from the pendulum mirror is reflected by a piezo driven mirror, which is tuned so that the reflected light would strike the detector's center (the PID needs a reference for error calculations). 
 \par\noindent
-The feedback system is composed of two LED light sources, modulated in real time by an Arduino micro-controller which is controlled by the PID feed-back loop in the computer. The LED light sources are placed each in front of a transparent windows (viewports) on the sides of the vacuum chamber, each coupled to a side mass of the pendulum. 
+The feedback system is composed of two LED light sources, modulated in real time by an Arduino micro-controller which is controlled by the PID feed-back loop in the computer. The LED light sources are each coupled to a side mass of the pendulum. The light is passed through the vacuum chamber by having transparent windows (viewports) on the sides of the chamber. 
 \par\noindent
-The vacuum chamber is connected to a vacuum engine, which is pumping out the pressure. When the desired pressure is achieved, the vacuum engine is disconnected using the valve and turned off, and the seismic box is closed. When the oscillations settle down to a level which could be affected by the weak torques caused by radiation pressure (an amplitude caused mainly by environmental noises, as explained in previous chapters). The angle is read in real time by the PID algorithm, and an equivalent radiation-pressure torque is exerted by the LED's flux damping down the pendulum noises.
+The vacuum chamber is connected to a vacuum engine, which is pumping out gas and lowering the pressure. When the desired pressure is achieved, the vacuum engine is disconnected using the valve and turned off, and the acoustic box is sealed. When the oscillations settle down to a level which could be affected by the weak torques caused by radiation pressure, the angle is read in real time by the PID algorithm, and radiation-pressure torque is exerted by the LED's flux for damping down the pendulum noises.
 \subsubsection{Design of the system}
 \begin{figure}[htbp]
 	\centering
@@ -27,11 +27,11 @@ The vacuum chamber is connected to a vacuum engine, which is pumping out the pre
 \end{figure}
 \FloatBarrier
 \par\noindent
-The design of torsional pendulum and vacuum chamber, shown in fig.~\ref{fig:Total chamber}, was carried out using the software Solid Works. The torsional pendulum was manufactured by the university workshop, and the vacuum chamber was manufactured by HTC Vacuum, the assembling was performed at the lab. The system had undergone changes, and the final design of the system is presented. 
+The design of torsional pendulum and vacuum chamber, shown in fig.~\ref{fig:Total chamber}, was carried out using the software Solid Works. The torsional pendulum was manufactured by the university workshop, and the vacuum chamber was manufactured at HTC Vacuum. The assembling was performed at the HUJI lab. The system had undergone changes, and the final design of the system is presented. 
 \par\noindent
 As shown previously (eq.~\ref{eqn:Brownian power}, eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:acoustic power}, eq.~\ref{eqn:drag force}), Brownian motion energy coupling, thermal coupling, acoustic waves and friction are pressure dependent and are considerably reduced by maintaining low pressure. Therefore, the torsional pendulum is placed inside a vacuum chamber. Magnetic noise is reduced by choosing low magnetic permeability materials, avoiding capacitance and using a Faraday cage. 
 \par\noindent
-The vacuum chamber is placed inside seismic box, further reducing acoustic waves and magnetic noise. In order to maintain low pressure for long periods, the system is designed to minimize the outgassing rate by both, choosing low outgassing materials and avoiding air pockets inside the devices. 
+The vacuum chamber is placed inside an acoustic box, further reducing acoustic waves and magnetic noise. In order to maintain low pressure for long periods, the system is designed to minimize the outgassing rate by both, choosing low outgassing materials and avoiding air pockets inside the devices. 
 \subsection{Vacuum chamber design}
 \begin{figure}[htbp]
 	\centering
@@ -46,12 +46,12 @@ The vacuum chamber, shown in fig.~\ref{fig:chamber front}, is composed of two cy
 
 \subsubsection{Chamber viewports}
 \par\noindent
-The central viewport is located in front of the pendulum's front mirror. The central viewport has a 68.3 [mm] view diameter where the mirror is located 82 [mm] away, giving a measurement FOV of about $39^0$ degrees. The other two small viewports are located in front of the pendulum's side masses and they are used for damping down the pendulum noises. They are connected to the chamber through light guides. The view ports are transparent for light in the $550-1100 [nm]$ range, with about 98$\%$ power transmittance in this range. 
+The lower tube has three viewports. The central viewport is located in front of the pendulum's front mirror. The central viewport has a 68.3 [mm] view diameter where the mirror is located 82 [mm] away, giving a measurement FOV of about $39^0$ degrees. The other two small viewports are located in front of the pendulum's side masses and they are used for damping down the pendulum noises. They are connected to the chamber through light guides. The view ports are transparent for light in the $550-1100 [nm]$ range, with about 98$\%$ power transmittance in this range. 
 
 
-\subsubsection{Pressure increase}
+\subsubsection{Vacuum maintenance}
 \par\noindent
-In this experiment, due to the measurement sensitivity, the vacuum engine pumping must be off during measurement. The main limitations to the maintenance of low pressure are the leakage $Q_L$ from the outside (eq.~\ref{eqn:leak rate}) and the outgassing $Q_{des}$ inside the chamber (eq.~\ref{eqn:desorption rate}), thus increasing of the pressure at a constant rate over time. Due to the pendulum's shape and size, the vacuum chamber has large volume (high leak rate) and shell area (high outgassing rate).
+Due to the measurement sensitivity, the vacuum engine pumping must be off during measurement. Accordingly, the main limitations to the maintenance of low pressure are the leakage $Q_L$ from the outside (eq.~\ref{eqn:leak rate}) and the outgassing $Q_{des}$ inside the chamber (eq.~\ref{eqn:desorption rate}), thus increasing of the pressure at a constant rate over time. Due to the pendulum's shape and size, the vacuum chamber has large volume (high leak rate) and large surface area (high outgassing rate).
 \par\noindent
 In order to minimize the pressure increase rate, the vacuum chamber is built using CF components which are designed for ultra high vacuum, and minimize the leak rate. Also, to reduce outgassing, the torsional pendulum and vacuum chamber were baked-out at $120 C^0$ for a week, using resistive wire. The measured pressure at the experiments after cooling down is $P \approx 1\cdot 10^{−4} [Hpa]$ for a month without pumping with the vacuum engine.
 \subsection{Torsional pendulum design}
@@ -64,7 +64,7 @@ In order to minimize the pressure increase rate, the vacuum chamber is built usi
 \end{figure}
 \FloatBarrier
 \par\noindent
-An adjustable mount shown in fig.~\ref{fig:mount} is soldered to the upper tube of the chamber, as shown in fig.~\ref{fig:Total chamber}. The string of the torsional pendulum is held by the mount, enabling to adjust the height, distance and angle of the pendulum relative to the viewports, placing it in front accurately. 
+An adjustable mount for adjusting the height, distance and angle of the torsional pendulum, shown in fig.~\ref{fig:Total chamber}. The torsional pendulum string is held by the adjustable mount from the upper tube of the vacuum, placing it accurately in front of the viewports. 
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=0.3]{\main/images/4 - methods and results/pendulum_front_names.png}}
@@ -73,7 +73,7 @@ An adjustable mount shown in fig.~\ref{fig:mount} is soldered to the upper tube 
 \end{figure}
 \FloatBarrier
 \par\noindent
-The torsional pendulum design, shown in fig.~\ref{fig:pendulum front}, is composed of a thin rod with length $2l$, string with length $h$, two identical masses $m$ on the sides, a front mirror and a balancing mass. The mirror is used for the tilt angle measurement. Due to an unbalanced center of mass, the earth's gravity causes a downward torque $\tau_z$. 
+The torsional pendulum design, shown in fig.~\ref{fig:pendulum front}, is composed of a thin rod with the length $2l$, string with length $h$, two identical masses $m$ on the sides, a front mirror and a balancing mass. The mirror is used for the tilt angle measurement. Due to an unbalanced center of mass, the earth's gravity causes a downward torque $\tau_z$. 
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=1.2]{\main/images/4 - methods and results/pendulum_top.JPG}}
@@ -129,9 +129,9 @@ The designed elements specifications are:
 
 
 \subsection{Noise reduction}
-The measurement system is placed inside a seismic box which is also a Faraday cage with 76 mm thickness, that can block magnetic fields with frequencies $f \ge 30 [Hz]$ from the environment. Thus, the seismic box both reduces acoustic waves and magnetic noise from the environment.
+The measurement system is placed inside a seismic box which is also a Faraday cage with 76 mm thickness, that can block magnetic fields with frequencies $f \ge 30 [Hz]$ from the environment. Thus, the acoustic box both reduces acoustic waves and magnetic noise from the environment.
 \par\noindent
-The vacuum chamber is a second cage that blocks magnetic noise from the electronic system placed inside the seismic box. The vacuum chambers is made out of approximately 3 mm thick stainless steel, blocking magnetic fields with frequencies $f\ge 20 [KHz]$ and reducing magnetic noise with lower frequencies.
+The vacuum chamber is a second cage that blocks magnetic noise from the electronic system placed inside the acoustic box. The vacuum chambers is made out of approximately 3 mm thick stainless steel, blocking magnetic fields with frequencies $f\ge 20 [KHz]$ and reducing magnetic noise with lower frequencies.
 \par\noindent
 As shown previously, there are other environment noises affecting the torsional pendulum (eq.~\ref{eqn:Brownian power}, eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:acoustic power}, eq.~\ref{eqn: Stefan–Boltzmann power}). Assuming pressure of $P = 1\cdot 10^{−4} [Hpa]$, gas and environment temperature of $T = 298K$ and pendulum temperature $T_0 = 0K$ (maximal noise power), the power of the other different noises are given by:
 \begin{easylist}
