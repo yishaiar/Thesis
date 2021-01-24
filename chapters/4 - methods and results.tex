@@ -73,7 +73,7 @@ An adjustable mount for adjusting the height, distance and angle of the torsiona
 \end{figure}
 \FloatBarrier
 \par\noindent
-The torsional pendulum design, shown in fig.~\ref{fig:pendulum front}, is composed of a thin rod with the length $2l$, string with length $h$, two identical masses $m$ on the sides, a front mirror and a balancing mass. The mirror is used for the tilt angle measurement. Due to an unbalanced center of mass, the earth's gravity causes a downward torque $\tau_z$. 
+The torsional pendulum design, shown in fig.~\ref{fig:pendulum front}, is composed of a thin rod with the length $2l$, string with the length $h$, two identical masses $m$ on the sides, a front mirror and a balancing mass to balance the center of mass. 
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=1.2]{\main/images/4 - methods and results/pendulum_top.JPG}}
@@ -82,11 +82,11 @@ The torsional pendulum design, shown in fig.~\ref{fig:pendulum front}, is compos
 \end{figure}
 \FloatBarrier 
 \par\noindent
-The center of mass is balanced using a balancing mass with similar shape and weight as the mirror on the other side, as shown in fig.~\ref{fig:pendulum top}. The balancing mass and the mirror are connected from their centers to the pendulum by a beam with length $w$, thus the overall downward torque with tilt angle $\phi$ is given by:
+The center of mass is balanced using a balancing mass with similar shape and weight as the mirror on the other side, as shown in fig.~\ref{fig:pendulum top}. The balancing mass and the mirror are connected from their centers to the pendulum by a beam with length $w$, thus the overall downward torque $\tau_z$ with tilt angle $\phi$ is given by:
 \begin{equation}
 \tau_z = r_1\cdot m_1 g \cdot cos\phi - r_2\cdot m_2 g \cdot cos \phi\ = g\cdot cos\phi( m_1 r_1  - m_2 (w-r_1) )    \label{eqn:downward torque}
 \end{equation}
-Where $m_1$, $m_2$ are the masses of the mirror and the balancing mass, and $r_1$, $r_2$ are their distance from the pendulum's center of mass respectively. The beam allows to cancel out $\tau_z$ by accurate adjustment of the distance $r_1$, given by: 
+Where $m_1$, $m_2$ are the masses of the mirror and the balancing mass, and $r_1$, $r_2$ are their distance from the pendulum's center of mass respectively. The beam allows to cancel out the torque $\tau_z$ by accurate adjustment of the distance $r_1$, given by: 
 \begin{equation}
  r_1 = \frac{w}{\frac{m_1}{m_2}+1}  \label{eqn:downward torque cancelled}
 \end{equation}
@@ -94,12 +94,14 @@ Where $m_1$, $m_2$ are the masses of the mirror and the balancing mass, and $r_1
 
 \subsubsection{Design constraints}
 \par\noindent
-The chosen pendulum dimensions are designed to achieve large angle sensitivity to the torque caused by a the gravity field (small string torsion coefficient $\kappa$ is needed, see eq.~\ref{eqn:theta average}) while maintaining large angle sensitivity to mass (longer oscillation time period $T$, as shown in eq.~\ref{eqn:theta average}). For a torsional pendulum with moment of inertia $I$ and string torsion coefficient $\kappa$, the period $T$ is given by (eq.~\ref{eqn:undamped_omega}): 
+The chosen pendulum dimensions are designed to achieve large angle sensitivity to the torque caused by a the gravity field (small string torsion coefficient $\kappa$ is needed, see eq.~\ref{eqn:theta average}) while maintaining large angle sensitivity to the measured mass (longer oscillation time period $T$, see eq.~\ref{eqn:theta average}). For a torsional pendulum with moment of inertia $I$ and string torsion coefficient $\kappa$, the oscillation time period $T$ is given by (eq.~\ref{eqn:undamped_omega}): 
 \begin{equation}
 T = 2\pi\sqrt{\frac{I}{\kappa}}  =  2\pi\sqrt{\frac{I}{\frac{G}{h} \frac{\pi d^4}{32}}}  \label{eqn:undamped_motion_equation_4}
 \end{equation}
 \par\noindent
-As shown in eq.~\ref{eqn:undamped_motion_equation_4}, longer string length $h$ with smaller diameter $d$ results in small string torsion coefficient while having a large period. The string is made of tungsten that is both, vacuum compatible (material with low outgassing) and has high tensile strength \cite{tungsten}, and is holding the pendulum robustly inside the vacuum chamber while having small string diameter. 
+According to eq.~\ref{eqn:undamped_motion_equation_4}, longer string length $h$ with smaller diameter $d$ results in small string torsion coefficient while having a large period time.
+\par\noindent
+The string is made of tungsten that is both, vacuum compatible (material with low outgassing) and has high tensile strength \cite{tungsten}, and is holding the pendulum robustly inside the vacuum chamber while having small string diameter. 
 \par\noindent
 In order to minimize the magnetic noise in the measurements, the torsional pendulum is made out of stainless steel 316 (instead of stainless steel 304) which has lower magnetic permeability \cite{SS316}, and the chosen front mirror is made fully of oxygen-free copper (OFC) instead of coated glass thus preventing capacitance. 
 \subsubsection{Technical information}
@@ -125,13 +127,10 @@ The designed elements specifications are:
 && diameter $d=80\cdot10^{-6}[m]$.
 \end{easylist}
 \end{multicols}
-
-
-
 \subsection{Noise reduction}
-The measurement system is placed inside a seismic box which is also a Faraday cage with 76 mm thickness, that can block magnetic fields with frequencies $f \ge 30 [Hz]$ from the environment. Thus, the acoustic box both reduces acoustic waves and magnetic noise from the environment.
+The measurement system is placed inside a acoustic box which is also a Faraday cage with 76 mm thickness, that can block magnetic fields with frequencies $f \ge 30 [Hz]$ from the environment. Thus, the acoustic box both reduces acoustic waves and magnetic noise from the environment.
 \par\noindent
-The vacuum chamber is a second cage that blocks magnetic noise from the electronic system placed inside the acoustic box. The vacuum chambers is made out of approximately 3 mm thick stainless steel, blocking magnetic fields with frequencies $f\ge 20 [KHz]$ and reducing magnetic noise with lower frequencies.
+The vacuum chamber is a second cage that further blocks magnetic noise from the electronic system placed inside the acoustic box. The vacuum chambers is made out of approximately 3 mm thick stainless steel, blocking magnetic fields with frequencies $f\ge 20 [KHz]$ and reducing magnetic noise with lower frequencies.
 \par\noindent
 As shown previously, there are other environment noises affecting the torsional pendulum (eq.~\ref{eqn:Brownian power}, eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:acoustic power}, eq.~\ref{eqn: Stefan–Boltzmann power}). Assuming pressure of $P = 1\cdot 10^{−4} [Hpa]$, gas and environment temperature of $T = 298K$ and pendulum temperature $T_0 = 0K$ (maximal noise power), the power of the other different noises are given by:
 \begin{easylist}
@@ -140,7 +139,7 @@ As shown previously, there are other environment noises affecting the torsional 
 & Brownian motion power $p=1.2\cdot 10^{-22}[W]$.
 & Acoustic waves power $p=1.14\cdot 10^{-28}[W]$.
 \end{easylist}
-The black body radiation and heat flow, are dependent on the temperature difference, thus grow gradually while the torsional pendulum temperature is reduced. While the noise power can be very large, since it arrives with random direction and phase it causes a much smaller driving torque (shown in eq.~\ref{eqn:driven_motion_equation_2}), and can be cancelled out with a directed damping torque. The initial measured oscillations amplitude of the pendulum, caused the remaining noises at room temperature, is $\theta_{max} = 5\cdot10^{-7}[rad]$. 
+The black body radiation and heat flow, are dependent on the temperature difference, thus grow gradually while the torsional pendulum temperature is reduced. Although the noise power can be very large, since it arrives with random direction and phase it causes a much smaller driving torque (shown in eq.~\ref{eqn:driven_motion_equation_2}), and can be cancelled out with a directed damping torque. The initial measured oscillations amplitude of the pendulum, caused the remaining noises at room temperature, is $\theta_{max} = 5\cdot10^{-7}[rad]$. 
 \subsection{results}
 The system measured results compared to the expected results from the equations are given by:
 \begin{multicols}{2}
