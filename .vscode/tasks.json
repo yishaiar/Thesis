@@ -33,7 +33,8 @@
         {
             "label": "compile current chapter",
             "type": "shell",
-            "command": "lualatex chapter; bibtex chapter; ./chapter.pdf",
+            
+            "command": "lualatex chapter; bibtex chapter; ./chapter.pdf; lualatex chapter; lualatex chapter;",
             "problemMatcher": []
         }
 
