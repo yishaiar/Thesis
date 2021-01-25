@@ -1,7 +1,133 @@
 \providecommand{\main}{..}
 \documentclass[\main/master.tex]{subfiles}
 \begin{document}
-\chapter{Summary and conclusion}\label{chp:example-2}
-\doublespacing
-\hspace{5 mm} This another example chapter with a working reference as see in Chapter~\ref{chp:example-1}. There I also made an example of an equation, see Eqn.~\ref{eqn:energy-mass-equivalence-relation}. We also created an example image, see Fig.~\ref{fig:sine-wave}.
+\chapter{PID analysis}\label{chp:example-2}
+As shown previously, there are other environment noises affecting the torsional pendulum (eq.~\ref{eqn:Brownian power}, eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:acoustic power}, eq.~\ref{eqn: Stefan–Boltzmann power}). Assuming pressure of $P = 1\cdot 10^{−4} [Hpa]$, gas and environment temperature of $T = 298K$ and pendulum temperature $T_0 = 0K$ (maximal noise power), the power of the other different noises are given by:
+\begin{easylist}
+& Black body radiation power $p=0.12[W]$ \cite{WOODS201444}.
+& Thermal flow power $p=0.083[W]$.
+& Brownian motion power $p=1.2\cdot 10^{-22}[W]$.
+& Acoustic waves power $p=1.14\cdot 10^{-28}[W]$.
+\end{easylist}
+The black body radiation and heat flow, are dependent on the temperature difference, thus grow gradually while the torsional pendulum temperature is reduced. Although the noise power can be very large, since it arrives with random direction and phase it causes a much smaller driving torque (shown in eq.~\ref{eqn:driven_motion_equation_2}), and can be cancelled out with a directed damping torque. The initial measured oscillations amplitude of the pendulum, caused the remaining noises at room temperature, is $\theta_{max} = 5\cdot10^{-7}[rad]$. 
+\subsection{results}
+The system measured results compared to the expected results from the equations are given by:
+\begin{multicols}{2}
+\raggedcolumns
+\begin{easylist}
+& expected;
+&& $I = 0.487\cdot10^{-3}[kg\cdot m^2]$
+&& $\kappa = 2.1\cdot10^{-6}[\frac{N\cdot m}{rad}] - 2.6\cdot10^{-6} [\frac{N\cdot m}{rad}]$
+&& $T = 96[s] - 86 [s]$
+\end{easylist}
+\columnbreak
+\begin{easylist}
+& measured;
+&& $P=1\cdot 10^{−4} [Hpa] $
+&& $\kappa = 2.7\cdot10^{-6}[\frac{N\cdot m}{rad}]$
+&& $T = 84[s]$
+&& $\theta_{max} = 1\cdot10^{-6}[rad]$
+\end{easylist}
+\end{multicols}
+The expected $\kappa$, $T$ have a range due to uncertainty of the string tensile strength $G$. The amplitude $\theta_{max}$ is an experimental value depended on the amount of noise actually reduced, thus do not have an expected simulated value.
+\section{Proportional–Integral–Derivative (PID) controller}
+\subsection{Control stability}
+The PID feed-back loop is continuously calculating the error value of the measured signal from a defined set point, which is the deviation of the pendulum amplitude from a $SP$ angle $e(t) =SP -\theta(t) $. The PID aims to reach the $SP$ with critical damping of the process (the torsional pendulum) by damping the error to zero. 
+\par\noindent
+In control theory there are two wanted conflicting properties; an accurate response (small overshoot), and small risetime (fast response). Overshoot is the value of output signal (the actual PID response) exceeds the target value (the wanted response), thus the response is not accurate. The overshoot rate of a second order system is given by:
+\begin{equation}
+overshoot =  \frac{output-target}{target} = e ^{\frac{-\xi\pi}{\sqrt{1-\xi^2}}}  \label{eqn:overshoot}
+\end{equation}
+\par\noindent
+Where $\xi$ is the damping ratio of the oscillator define in eq.~\ref{eqn:system damping ratio}. The PID response to error (shown in eq.~\ref{eqn:PID response}) defines how much will the oscillator overshoot the $SP$. A PID control does not guarantee optimal control or stability of the process. When not tuned correctly, it can either overshoot or have a slow response, both resulting with a driven oscillator.
+\par\noindent
+As seen in eq.~\ref{eqn:overshoot} when the PID gains are too high, instead of critical damping there is overdamping, which is causing overshoot. Due to the high gains the overshoot response overshoots again to the other side, causing the system to be an unwanted driven oscillator (shown in eq.~\ref{eqn:driven_motion_equation_2}). A slow response causes phase delay between the signal and the equivalent PID response, resulting  again with a driven oscillator.
+\subsection{Damped oscillator}
+The PID mainly acts as friction, gradually working when the oscillations are at the maximum velocity slowing them down, with a torque $\tau_{PID}$ given by:
+\begin{equation}
+\tau_{PID}(t) = -\gamma\dot{e}(t) =  -\gamma\cdot [\dot{SP} -\dot{\theta}(t)] =-\gamma\cdot [0-\dot{\theta}(t)]  =  \gamma\dot{\theta}(t)  
+\label{eqn:friction_torque_pid}
+\end{equation}
+\par\noindent
+Where $\gamma$ is the PID damping coefficient,and $\dot{e}(t)$ is the the torsional pendulum's oscillations velosity. 
+\par\noindent
+The torsional pendulum is a simple harmonic oscillator with initial oscillations amplitude $\theta_{max}$ and velocity amplitude $\dot{\theta}_{max} =\frac{2\pi}{T} \theta_{max}$ (see eq.~\ref{eqn:undamped_motion_equation_solved}). Accordingly, the PID damping coefficient $\gamma$ is given by:
+\begin{equation}
+\gamma  =  \frac{\tau_{PID}(t)}{\dot{\theta}(t)} = \frac{max(\tau_{PID})}{\dot{\theta}_{max}} =  \frac{max(\tau_{PID})}{\theta_{max}\cdot\frac{2\pi}{T}} =\frac{max(\tau_{PID})}{\theta_{max}}\cdot \frac{ T}{2\pi}          \label{eqn:damped_pid_motion_equation_2}
+\end{equation}
+Where $max(\tau_{PID})$ is the maximal torque exerted by the PID. When damping using the PID the damping time $\tau$ and damping ratio $\xi$ are given by (eq.~\ref{eqn:damping_time}):
+\begin{equation}
+\tau = \frac{T}{2 \pi \xi } =  \frac{2I}{\gamma} = \frac{\theta_{max}}{ max(\tau_{PID})} \cdot \frac{4\pi I}{T}  \label{eqn:damping_time_pid}
+\end{equation}
+The PID damping $\gamma$, the damping time $\tau$ and the damping type defined by $\xi$ depend on the ratio $\theta_{max}/max(\tau_{PID})$. If $\theta_{max}$ is too large compare to the external torque, the PID affect is negligible, causing an extremely underdamped pendulum with an infinite damping time. When the pendulum is critically damped  by $\tau_{critical}$, the damping ratio $\xi$ is given by (eq.~\ref{eqn:critically_damped_motion_equation}):
+\begin{equation}
+\xi = \frac{T^2}{ 8 \pi^2 I }\cdot\frac{ \tau_{critical}}{\theta_{max}} = 1 
+\label{eqn:damping_ratio_pid}
+\end{equation}
+In order to critically damp the torsional pendulum, the PID torque $\tau_{PID}$ needs to be able to exert torques as large as the critical damping torque $max(\tau_{PID}) \geq  \tau_{critical}$, given by:
+\begin{equation}
+max(\tau_{PID}) \geq  \tau_{critical} = \frac{ 8 \pi^2 I }{T^2}\cdot\theta_{max} = \frac{ 8 \pi^2 \cdot 0.487\cdot10^{-3} }{(84)^2}\cdot 1\cdot10^{-6} = 5.45\cdot10^{-12}[N\cdot m]
+\label{eqn:damping_torque_pid}
+\end{equation}
+\par\noindent
+As shown in  eq.~\ref{eqn:damping_torque_pid} the PID maximal torque is given by $max(\tau_{PID}) \geq 5.45\cdot10^{-12}[N\cdot m]$. Since, it is proportional to the oscillations velocity (eq.~\ref{eqn:friction_torque_pid}), it needs a high modulation rate compare to the oscillations period $T$ (to prevent phase delay), and high dynamic range compare to velosity amplitude $\dot{\theta}_{max}$ (to avoid overshoot). 
+%The sufficient modulation speed and range are unknown.
+\subsection{Radiation-pressure torque}
+The PID torque was chosen to be a Radiation-pressure torque. The setup is composed of two light sources with given flux, $\Theta_i(t)$, one in front of a mass on a side of the torsional pendulum. As seen in eq.~\ref{eqn:net_gravitation_torque}, the difference between two torques adds an external net torque. Assuming that both light fields have the same coupling efficiency $\eta$ and are very close to be perpendicular to the surface with negligible incidence angles $\alpha_1\approx\alpha_2\approx 0$, using eq.~\ref{eqn:radiation_force_power}, the radiation-pressure net torque $\tau(t)$ can be calculated by:  
+\begin{equation}
+\tau(t) = l\cdot F_1(t) \cdot cos\alpha_1 - l\cdot F_2(t) \cdot cos\alpha_2\approx l(F_1(t) - F_2(t)) \approx \frac{2l\eta}{{c}} \Delta \Theta(t) \label{eqn:radiation torque}
+\end{equation}
+The radiation-pressure net torque can be controlled by changing the difference between the light sources' flux $\Delta \Theta(t)$. Thus, the maximal net torque $\tau_{max}$ is given by: 
+\begin{equation}
+\tau_{max}  \approx \frac{2l\eta}{{c}} \cdot 2 \Theta_{max} \approx \frac{0.218\cdot \eta}{{3\cdot10^{8}}} \cdot 2 \Theta_{max} \approx 7.27\cdot10^{-10} \cdot \eta\Theta_{max}   \label{eqn:max radiation torque}
+\end{equation}
+Where $\Theta_{max}$ is the is the the light sources' maximal flux with optical setup efficiency $\eta$. 
+\subsection{Laser setup}
+Initially the modulated light sources were composed of a single laser diode coupled in series into two acousto optic modulators (AOM), with special filtered mode using optical fibers. The AOMs divides the single coherent light beam into two beams, with both the total power and the intensity ratio modulated the a response to input voltage, resulting with controlled modulation of the light sources difference.
+\par\noindent
+The apparatus had dynamic range of 1000 steps and modulation speed of $1 sec$. The setup minimized uncertainties of the light intensity since both light sources had a mutual source, partly cancelling internal noises such as thermal and shot noise. 
+\par\noindent
+The apparatus uncertainty due to the non linearity of the AOM response and laser power fluctuations proved to be larger than the uncertainties of the intensity difference. Also, modulation speed (response time) proved to be more important than modulation range. Due to the conclusions, the PID torque was changed to two controlled high power Light emitting diode (LED) sources.
+\subsection{Light emitting diode (LED)}
+The light emitting diode (LED) is a semiconductor light source with high power, and a long lifetime. A forward voltage applied to a p-n junction, causes electron injection which recombine with holes. The recombination releases energy in form of spontaneous emission photons (incoherent light). Due to the electrons life time, the LED could be modulated up to $100MHz$ (fast response, which can minimize the PID phase delay). Given by the Shockley diode equation for p-n junctions, the LED forward voltage $V_l$ is:
+\begin{equation}
+V_l(I_l) \approx n V_T ln10 log_{10} (\frac{I_l}{I_s})\approx constant \label{eqn:led voltage}
+\end{equation}
+Where $I_l$ is the LED current, $I_s$ is the saturation current, $n$ is the emission coefficient, and $V_T$ is the thermal voltage. Since the forward voltage varies as the logarithm of the current, it varies slowly, being approximately constant over wide current range, resulting with large changes in the LED current due to small changes in the circuit supply voltage $V$. In the driving circuit a resistor $R$ is connected in series with the LED to stabilizes the current, The LED flux with circuit of $N$ voltages supplies in parallel is given by:
+\begin{equation}
+\Theta = I_l\cdot V_l  =\frac{N\cdot V-V_l}{R}\cdot V_l\approx \frac{N\cdot V_l\cdot V}{R}\label{eqn:led power}
+\end{equation}
+\par\noindent
+The LED light source has approximately a linear response (see eq.~\ref{eqn:radiation torque}) which can minimize the PID overshoot.
+\par\noindent
+The LED illumination angle varies between $45^0-120^0$. Since emitted light is incoherent it is hard to focus it to a point (not diffraction limited) and it has wide bandwidth spectrum. In order to overcome the LED incoherent profile and large illumination angle, the LED light sources are coupled to light guides (the vacuum chamber viewports were designed to have light guides in front). A light guide is a pipe made of thin filaments causing internal reflections, designed to illuminate small areas, regardless of the spectral characteristics of the light source. The light guide efficiency $\eta$ is mainly dependent on the cross section and length of the lightguide, making it ideal to overcome focusing problems. 
+
+
+\subsection{Arduino microcontroller}
+The modulated light sources are two LED light sources driven by an Arduino microcontroller, causing the PID torque. The Arduino is an inexpensive open-source microcontroller with a serial communication interface and a digital output without digital-to-analog converter (DAC). The Arduino Mega 2560 contains ATmega2560 8-bit controller, a $16 [MHz]$ crystal oscillator (clock) and 15 PWM outputs pins with digital output of $V_d = 5[V]$.
+\begin{figure}[htbp]
+	\centering
+	\fbox{\includegraphics[scale=0.17]{\main/images/4 - methods and results/duty_cycle.png}}
+	\caption[The PWM analog voltage]{The PWM analog voltage}
+	\label{fig:duty_cycle}
+\end{figure}
+\FloatBarrier
+\par\noindent
+The microcontroller can simulate analog output using Pulse Width Modulation (PWM). As shown in fig.~\ref{fig:duty_cycle}, the controller switches the output signal on and off, generating a square wave with period $T$. Pulse width ($PW$) is the time duration in which the signal is on, the controller is able to modulate the $PW$, and thus change the duty cycle which is the ratio of time signal is on compared to off $D(t) = \frac{PW(t)}{T}\cdot 100$. The duty cycle varies between $0-100$, with resolution limited by the controller. The modulation is proportional to the analog average voltage $V_a$ given by: 
+\begin{equation}
+V_a(t) = \frac{ PW(t)\cdot V_d}{ T}  = \frac{V_d}{100}\cdot D(t)   \label{eqn:pwm voltage}
+\end{equation}
+Since the Arduino clock is connected to all PWM pins, they are all synchronized and have the same voltage, frequency and phase, allowing to connect them in parallel. The clock must have at least 120 periods of square waves before it can change to a new duty cycle value, this limits the voltage modulation frequency. Another limitation to the duty cycle change rate is the controller bit-rate. Accordingly, PWM maximal frequency is given by:
+\begin{equation}
+f_{PWM} = \frac{1 }{120T}= \frac{1 }{120 \frac{8-bit }{16MHz}}  \approx 500[Hz]	    \label{eqn:pwm frequency}
+\end{equation}
+
+\subsection{LED circuit}
+The LED circuits are each composed of a blue LED with $V_l\approx 4.5V$, with $N=6$ parallel PWM Arduino pins for the supply voltage (eq.~\ref{eqn:pwm voltage}) and resistor $R = 200\Omega$. Due to coupling efficiency and size difference between the output beam from the lightguide and the pendulum sides, the efficiency of flux hitting the pendulum is estimated $\eta = 0.7$, thus with LED flux given by eq.~\ref{eqn:led power}, the PID torque $\tau_{PID}(t)$ is given by (eq.~\ref{eqn:radiation torque}):
+\begin{equation}
+\tau_{PID}(t) \approx \frac{2l\eta}{{c}} (\Theta_1(t) -\Theta_2(t)) \approx \frac{2l\eta}{{c}} \cdot\frac{N V_l V_d}{100R}(D_1(t) -D_2(t))  \approx   3.4\cdot 10^{-12}(D_1(t) -D_2(t)) 
+\label{eqn:led torque}
+\end{equation}
+\par\noindent
+The torque is controlled by the duty cycle $D(t)$ varying between $0-100$ with 8bit resolution, thus generating torques up to $\tau = 6.8\cdot10^-{10} [N\cdot m]$ with modulation steps of $\Delta\tau = 1.34\cdot10^-{12} [N\cdot m]$ and modulation frequency up to $500[Hz]$ (see eq.~\ref{eqn:pwm frequency}).
 \end{document}
