@@ -134,13 +134,17 @@ The measurement system is placed inside a acoustic box which is also a Faraday c
 \par\noindent
 The vacuum chamber is a second cage that further blocks magnetic noise from the electronic system placed inside the acoustic box. The vacuum chambers is made out of approximately 3 mm thick stainless steel, blocking magnetic fields with frequencies $f\ge 20 [KHz]$ and reducing magnetic noise with lower frequencies.
 \par\noindent
-As shown previously, there are other environment noises affecting the torsional pendulum (eq.~\ref{eqn:Brownian power}, eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:acoustic power}, eq.~\ref{eqn: Stefan–Boltzmann power}). Assuming pressure of $P = 1\cdot 10^{−4} [Hpa]$, gas and environment temperature of $T = 298K$ and pendulum temperature $T_0 = 0K$ (maximal noise power), the power of the other different noises are given by:
+As shown previously, there are other environment noises affecting the torsional pendulum (eq.~\ref{eqn:Brownian power}, eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:acoustic power}, eq.~\ref{eqn: Stefan–Boltzmann power}). Assuming gas and environment temperature of $T = 298K$ and pendulum temperature $T_0 = 0K$ (maximal noise power), the maximal power of the noises are given by:
 \begin{easylist}
-& Black body radiation power $p=0.12[W]$ \cite{WOODS201444}.
+& Black body radiation power $p=0.121[W]$ \cite{WOODS201444}.
 & Thermal flow power $p=0.083[W]$.
-& Brownian motion power $p=1.2\cdot 10^{-22}[W]$.
+& Brownian motion power $p=0.346[W]$.
 & Acoustic waves power $p=1.14\cdot 10^{-28}[W]$.
 \end{easylist}
+Although the noise power can be very large, since it arrives with random direction it can be modelled as a Poisson process with the RMS of the number of gas particles, resulting with an effective pressure dependency of the power. The  effective pressure $P_{RMS}$  is given by:
+\begin{equation}
+P_{RMS} =\sqrt{N}\frac{k_B T}{V}=\sqrt{P}\cdot \sqrt\frac{k_B T}{V}  \kappa\theta    \label{eqn:P_RMS}
+\end{equation}
 The black body radiation and heat flow, are dependent on the temperature difference, thus grow gradually while the torsional pendulum temperature is reduced. Although the noise power can be very large, since it arrives with random direction and phase it causes a much smaller driving torque (shown in eq.~\ref{eqn:driven_motion_equation_2}), and can be cancelled out with a directed damping torque. The initial measured oscillations amplitude of the pendulum, caused the remaining noises at room temperature, is $\theta_{max} = 5\cdot10^{-7}[rad]$. 
 \subsection{results}
 The system measured results compared to the expected results from the equations are given by:

@@ -7,7 +7,7 @@ P = 1E-4*100
 
 
 T = 298.0
-T_0 = 288.0
+T_0 = 0
 N_A = 6.022E23
 R = 8.314
 k=1.38e-23
@@ -31,7 +31,7 @@ t= np.asarray([300,240,180,120,80])
 z= np.polyfit(t,eps,1)
 EPSILON =T_0*z[0]+z[1]
 p =SIGMA  *EPSILON*A*(T**4-T_0**4)
-print(p)
+print('black body',p)
 
 # thermal
 C_V = 0.716E3
@@ -40,7 +40,7 @@ m = M/N_A
 
 M/m
 p = np.sqrt(M/(R*T))*C_V*A*P*(T-T_0)
-print(p)
+print('thermal ',p)
 
 
 # BROWNIAN
@@ -55,7 +55,7 @@ v = np.sqrt(3*R*T/M)
 # ACOUSTIC
 c=1e-22
 p = A*P**2*c
-print(p)
+print('ACOUSTIC',p)
 
 
 
@@ -92,11 +92,3 @@ p = max_tourqe/2*THETA_MAX*OMEGA
 # plt.plot(t1,t1*z[0]+z[1])
 
 
-V=0.1
-T=300
-P =10**(3-np.arange(1300)/100)
-P = 1E4*100
-# N = P*V/(k*T)
-
-P_RMS = np.sqrt(P)*np.sqrt(k*T/V) 
-plt.plot(P,P_RMS)
