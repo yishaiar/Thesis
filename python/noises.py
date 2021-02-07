@@ -4,10 +4,15 @@ import matplotlib.pyplot as plt
 
 A = 1.14E-2
 P = 1E-4*100
+
+
 T = 298.0
 T_0 = 288.0
 N_A = 6.022E23
 R = 8.314
+
+n = 100
+P = P/np.sqrt(n*N_A)
 # mu_298k = 1.85e-5*np.sqrt()
 # bolzman
 SIGMA = 5.67E-8
@@ -24,14 +29,17 @@ C_V = 0.716E3
 M =28.9647e-3
 m = M/N_A
 
+M/m
 p = np.sqrt(M/(R*T))*C_V*A*P*(T-T_0)
 print(p)
 
 
 # BROWNIAN
 
-p = 6/N_A*np.sqrt(P*A*R*T*np.sqrt(3*R*T/M))
-print(p)
+# p = 6/N_A*np.sqrt(P*A*R*T*np.sqrt(3*R*T/M))
+# print(p)
+p = 6*P*A*np.sqrt(3*R*T/M)
+print('BROWNIAN ',p)
 
 v = np.sqrt(3*R*T/M)
 
@@ -74,3 +82,13 @@ p = max_tourqe/2*THETA_MAX*OMEGA
 # plt.plot(t,eps)
 # t1 = np.arange(300)
 # plt.plot(t1,t1*z[0]+z[1])
+
+
+V=1
+T=300
+P =10**(3-np.arange(1300)/100)
+# P = 1E-4*100
+# N = P*V/(k*T)
+
+P_RMS = np.sqrt(P)*np.sqrt(k*T/V) 
+plt.plot(P,P_RMS)
