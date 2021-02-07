@@ -132,7 +132,14 @@ The designed elements specifications are:
 \subsection{Noise reduction}
 As shown previously, there are environment noises affecting the torsional pendulum (eq.~\ref{eqn:Brownian power}, eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:acoustic power}, eq.~\ref{eqn: Stefan–Boltzmann power}). Assuming gas and environment temperature of $T = 298K$ and pendulum temperature $T_0 = 0K$ (maximal noise power), the noise power is very large. 
 \par\noindent
-Since the thermal and Brownian energy arrives by particles with random direction and phase the power can be modelled as a Poisson process with the RMS of the number of gas particles $\sqrt{N}$, resulting with a significantly lower effective power $P_{RMS}$. The noise power is given by:
+Since the thermal and Brownian energy arrives by particles with random direction and phase the power can be modelled as a Poisson process with the RMS of the number of gas particles $\sqrt{N}$, resulting with a significantly lower effective power $P_{RMS}$. 
+\par\noindent
+The average energy of a black body radiation photon is given by $E=2.7 k_B T$, when the pendulum temperature is  $T_0 = 0K$, the black body radiation is given by \cite{WOODS201444}:
+\begin{equation}
+p = \sigma\epsilon(T_0=0) A T^4 = N\cdot E = \frac{\sigma\epsilon(T_0=0) A T^4}{2.7 k_B T}\cdot{2.7 k_B T}  \label{eqn: max Stefan–Boltzmann power}
+\end{equation}
+ although we don't have an accurate estimation of the particles RMS, we estimate a similar reduction of the effective power. 
+The noise power is given by:
 \par\noindent
 \begin{multicols}{2}
 \raggedcolumns
@@ -140,7 +147,7 @@ Since the thermal and Brownian energy arrives by particles with random direction
 & Thermal flow;
 && $p=0.083[W]$.
 && $p_{RMS}=2.4\cdot 10^{-9}[W]$.
-& Black body radiation \cite{WOODS201444};
+& Black body radiation ;
 && $p=0.121[W]$.
 \end{easylist}
 \columnbreak
@@ -152,8 +159,7 @@ Since the thermal and Brownian energy arrives by particles with random direction
 && $p=1.14\cdot 10^{-28}[W]$.
 \end{easylist}
 \end{multicols}
-\par\noindent
-The black body radiation is emitted by photons, although we don't have an accurate estimation of the particles RMS, we estimate a similar reduction of the effective power. The measurement system is placed inside an acoustic box, further reducing the acoustic power.    
+The measurement system is placed inside an acoustic box, further reducing the acoustic power.    
 \par\noindent
 The acoustic box is also a Faraday cage with 76 mm thickness, blocking magnetic fields with frequencies $f \ge 30 [Hz]$ from the environment. The vacuum chamber is a second cage that further blocks magnetic noise from the electronic system placed inside the acoustic box. The vacuum chambers is made out of approximately 3 mm thick stainless steel, blocking magnetic fields with frequencies $f\ge 20 [KHz]$ and reducing magnetic noise with lower frequencies.
 \par\noindent
