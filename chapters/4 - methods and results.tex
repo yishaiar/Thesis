@@ -130,12 +130,24 @@ The designed elements specifications are:
 \end{easylist}
 \end{multicols}
 \subsection{Noise reduction}
-As shown previously, there are environment noises affecting the torsional pendulum (eq.~\ref{eqn:Brownian power}, eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:acoustic power}, eq.~\ref{eqn: Stefan–Boltzmann power}). Assuming gas and environment temperature of $T = 298K$ and pendulum temperature $T_0 = 0K$ (maximal noise power), the maximal power of the noises are given by:
+As shown previously, there are environment noises affecting the torsional pendulum (eq.~\ref{eqn:Brownian power}, eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:acoustic power}, eq.~\ref{eqn: Stefan–Boltzmann power}). Assuming gas and environment temperature of $T = 298K$ and pendulum temperature $T_0 = 0K$ (maximal noise power), the noise power is very large. 
+\par\noindent
+Since the energy arrives by particles with random directions the power can be modelled as a Poisson process with the RMS of the number of particles $\sqrt{N}$, resulting with an effective pressure dependency of the power $P_{RMS}$:
+\begin{equation}
+P_{RMS} =\sqrt{N}\frac{k_B T}{V}=\sqrt{P}\cdot \sqrt\frac{k_B T}{V} = 2.94\cdot10^{-9}\cdot\sqrt{P}      \label{eqn:P_RMS}
+\end{equation}
+are given by:
 \begin{easylist}
-& Black body radiation power $p=0.121[W]$ \cite{WOODS201444}.
-& Thermal flow power $p=0.083[W]$.
-& Brownian motion power $p=0.346[W]$.
-& Acoustic waves power $p=1.14\cdot 10^{-28}[W]$.
+& Black body radiation power \cite{WOODS201444};
+&& $p=0.121[W]$.
+&& $p_{RMS}=0.121[W]$.
+& Thermal flow power;
+&&$p=0.083[W]$.
+&&$p_{RMS}=0.083[W]$.
+& Brownian motion power
+&& $p=0.346[W]$.
+&& Acoustic waves power;
+&& $p=1.14\cdot 10^{-28}[W]$.
 \end{easylist}
 The measurement system is placed inside a acoustic box which is also a Faraday cage with 76 mm thickness, that can block magnetic fields with frequencies $f \ge 30 [Hz]$ from the environment. Thus, the acoustic box both reduces acoustic waves and magnetic noise from the environment.
 \par\noindent
