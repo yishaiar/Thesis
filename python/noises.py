@@ -10,9 +10,18 @@ T = 298.0
 T_0 = 288.0
 N_A = 6.022E23
 R = 8.314
+k=1.38e-23
 
-n = 100
-P = P/np.sqrt(n*N_A)
+
+# vacuum chamber volume
+(67897.67+44301+362902.18 )*1e-9
+V=4.75e-4
+# N = P*V/(k*T)
+# N/N_A
+
+# rms
+P = np.sqrt(P)*np.sqrt(k*T/V) 
+
 # mu_298k = 1.85e-5*np.sqrt()
 # bolzman
 SIGMA = 5.67E-8
@@ -49,7 +58,6 @@ p = A*P**2*c
 print(p)
 
 
-k=1.38e-23
 
 T1=299
 T0=np.arange(T1*100)/100.0
@@ -84,10 +92,10 @@ p = max_tourqe/2*THETA_MAX*OMEGA
 # plt.plot(t1,t1*z[0]+z[1])
 
 
-V=1
+V=0.1
 T=300
 P =10**(3-np.arange(1300)/100)
-# P = 1E-4*100
+P = 1E4*100
 # N = P*V/(k*T)
 
 P_RMS = np.sqrt(P)*np.sqrt(k*T/V) 
