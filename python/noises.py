@@ -4,10 +4,11 @@ import matplotlib.pyplot as plt
 
 A = 1.14E-2
 P = 1E-4*100
+m_1 = 0.0753
 
 
 T = 298.0
-T_0 = 280
+T_0 = 0
 N_A = 6.022E23
 R = 8.314
 k=1.38e-23
@@ -29,7 +30,7 @@ eps= np.asarray([0.0919,0.0798,0.0666,0.051,0.0417])
 t= np.asarray([300,240,180,120,80])
 z= np.polyfit(t,eps,1)
 EPSILON =T_0*z[0]+z[1]
-p =SIGMA  *EPSILON*A*(T**4-T_0**4)
+p =SIGMA  *EPSILON*A*(T**4-T_0**4)/(2.7*k*T)
 print('black body',p)
 p_RMS =np.sqrt(2.7*k*T*(A**2)*SIGMA*EPSILON*(T**4-T_0**4))
 print('black body RMS',p_RMS)
@@ -50,7 +51,9 @@ print('thermal ',p_RMS)
 
 # p = 6/N_A*np.sqrt(P*A*R*T*np.sqrt(3*R*T/M))
 # print(p)
-p = 6*A*RHOE_N*k*T*np.sqrt(3*R*T/M)
+p = 36*(A**2)*(P**2)/m_1*np.sqrt(M/(3*R*T))
+
+# p = 6*A*RHOE_N*k*T*np.sqrt(3*R*T/M)
 print('BROWNIAN ',p)
 p_RMS = 6*A*T*k*np.sqrt(3*N_A*P/M)
 print('BROWNIAN RMS',p_RMS)
