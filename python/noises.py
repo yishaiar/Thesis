@@ -7,7 +7,7 @@ P = 1E-4*100
 
 
 T = 298.0
-T_0 = 0
+T_0 = 280
 N_A = 6.022E23
 R = 8.314
 k=1.38e-23
@@ -31,7 +31,7 @@ z= np.polyfit(t,eps,1)
 EPSILON =T_0*z[0]+z[1]
 p =SIGMA  *EPSILON*A*(T**4-T_0**4)
 print('black body',p)
-p_RMS =np.sqrt(2.7*k*SIGMA*EPSILON *(T**5)*(A**2))
+p_RMS =np.sqrt(2.7*k*T*(A**2)*SIGMA*EPSILON*(T**4-T_0**4))
 print('black body RMS',p_RMS)
 
 # thermal
@@ -42,8 +42,7 @@ m = M/N_A
 M/m
 p = A*RHOE_N*k*T*C_V*(T-T_0)*np.sqrt(M/(R*T))
 print('thermal ',p)
-# RHOE_N = np.sqrt(RHOE_N)
-p_RMS = A*C_V*T*np.sqrt(P*M/N_A)
+p_RMS = A*C_V*(T-T_0)*np.sqrt(P*M/N_A)
 print('thermal ',p_RMS)
 
 
