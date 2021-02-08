@@ -19,8 +19,6 @@ V=4.75e-4
 # N = P*V/(k*T)
 # N/N_A
 
-# rms
-P = np.sqrt(P)*np.sqrt(k*T/V) 
 
 # mu_298k = 1.85e-5*np.sqrt()
 # bolzman
@@ -32,6 +30,8 @@ z= np.polyfit(t,eps,1)
 EPSILON =T_0*z[0]+z[1]
 p =SIGMA  *EPSILON*A*(T**4-T_0**4)
 print('black body',p)
+p_RMS =np.sqrt(2.7*k*SIGMA*EPSILON *(T**5)*(A**2))
+print('black body RMS',p_RMS)
 
 # thermal
 C_V = 0.716E3
@@ -41,6 +41,8 @@ m = M/N_A
 M/m
 p = np.sqrt(M/(R*T))*C_V*A*P*(T-T_0)
 print('thermal ',p)
+p_RMS =A*T*C_V* np.sqrt((M*P)/(N_A*V))
+print('thermal ',p_RMS)
 
 
 # BROWNIAN
@@ -49,6 +51,8 @@ print('thermal ',p)
 # print(p)
 p = 6*P*A*np.sqrt(3*R*T/M)
 print('BROWNIAN ',p)
+p_RMS = 6*A*T*k*np.sqrt(3*N_A*P/(M*V))
+print('BROWNIAN RMS',p_RMS)
 
 v = np.sqrt(3*R*T/M)
 
