@@ -40,9 +40,10 @@ M =28.9647e-3
 m = M/N_A
 
 M/m
-p = np.sqrt(M/(R*T))*C_V*A*P*(T-T_0)
+p = A*RHOE_N*k*T*C_V*(T-T_0)*np.sqrt(M/(R*T))
 print('thermal ',p)
-p_RMS =A*T*C_V* np.sqrt((M*P)/(N_A*V))
+# RHOE_N = np.sqrt(RHOE_N)
+p_RMS = A*C_V*T*np.sqrt(P*M/N_A)
 print('thermal ',p_RMS)
 
 
