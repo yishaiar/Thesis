@@ -132,14 +132,15 @@ The designed elements specifications are:
 \subsection{Noise reduction}
 As shown previously, there are environment noises affecting the torsional pendulum (eq.~\ref{eqn:Brownian power}, eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:acoustic power}, eq.~\ref{eqn: Stefan–Boltzmann power}). Assuming gas and environment temperature of $T = 298K$ and pendulum temperature $T_0 = 0K$ (maximal noise power), the noise power is very large. Since the noise energy arrives by particles with random direction and phase the power can be modelled as a Poisson process with the RMS of the number of particles $\sqrt{N}$, resulting with a significantly lower effective power $P_{RMS}$.
 \par\noindent
+The Brownian effective power is given by:
+\begin{equation}
+p_{RMS} =  6 A \sqrt{\frac{P k_B T}{V}}    \sqrt{\frac{3RT}{M}} =6 A T k_B \sqrt{\frac{3 N_A P}{M V}}      \label{eqn:RMS Brownian power}
+\end{equation}
 The maximal thermal effective power is given by: 
 \par\noindent
 \begin{equation}
-p_{RMS} =  6 A \sqrt{\frac{P k_B T}{V}}    \sqrt{\frac{3RT}{M}} =6 A T k_B \sqrt{\frac{3 N_A P}{V M}}      \label{eqn:Brownian power}
-\end{equation}
-\begin{equation}
 p_{RMS} =  \sqrt{\frac{M}{RT}} c_v  A \sqrt{\frac{P k_B T}{V}}  T = A T c_v\sqrt{\frac{M P}{N_A V }}    
-\label{eqn:heat conduction}
+\label{eqn:RMS heat conduction}
 \end{equation}
 The average energy of a black body radiation photon is given by $E=2.7 k_B T$, the maximal black body radiation effective power is given by \cite{WOODS201444}:
 \begin{equation}
