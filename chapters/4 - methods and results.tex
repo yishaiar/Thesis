@@ -130,11 +130,14 @@ The designed elements specifications are:
 \end{easylist}
 \end{multicols}
 \subsection{Noise reduction}
-As shown previously, there are environment noises affecting the torsional pendulum (eq.~\ref{eqn:Brownian power}, eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:acoustic power}, eq.~\ref{eqn: Stefan–Boltzmann power}). Assuming gas and environment temperature of $T = 298K$ and pendulum temperature $T_0 = 0K$ (maximal noise power), the noise power is very large. Since the noise energy arrives by particles with random direction and phase the power can be modelled as a Poisson process with the RMS of the number of particles, resulting with a significantly lower effective power $P_{RMS}$.
+As shown previously, there are environment noises affecting the torsional pendulum (eq.~\ref{eqn:Brownian power}, eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:acoustic power}, eq.~\ref{eqn: Stefan–Boltzmann power}). Assuming gas and environment temperature of $T = 298K$ and pendulum temperature $T_0 = 0K$ (maximal noise power), the noise power is very large. Since the noise energy arrives by particles with random direction and phase the power can be modelled as a Poisson process with the RMS of the number of particles $\sqrt{N}$, resulting with a significantly lower effective power $P_{RMS}$.
 \par\noindent
-The thermal and Brownian effective power is by the RMS of the number of gas particles $\sqrt{N}$. 
+The maximal thermal effective power is given by: 
 \par\noindent
-The average energy of a black body radiation photon is given by $E=2.7 k_B T$, when the pendulum temperature is  $T_0 = 0K$, the black body radiation effective power is given by \cite{WOODS201444}:
+\begin{equation}
+p_{RMS} =  6 A \sqrt{\frac{PKT}{V}}    \sqrt{\frac{3RT}{M}} =    \label{eqn:Brownian power}
+\end{equation}
+The average energy of a black body radiation photon is given by $E=2.7 k_B T$, the maximal black body radiation effective power is given by \cite{WOODS201444}:
 \begin{equation}
 p_{RMS} = A \cdot\sqrt{N}\cdot E = A\cdot\sqrt{\frac{j}{E}}\cdot E = \sqrt{\frac{\sigma\epsilon  T^4}{2.7 k_B T}}\cdot 2.7 k_B T A = \sqrt{2.7 k_B\sigma\epsilon  T^5 A^2  }   \label{eqn: max Stefan–Boltzmann power}
 \end{equation} 
