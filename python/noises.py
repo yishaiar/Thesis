@@ -49,9 +49,9 @@ print('thermal ',p_RMS)
 
 # p = 6/N_A*np.sqrt(P*A*R*T*np.sqrt(3*R*T/M))
 # print(p)
-p = 6*P*A*np.sqrt(3*R*T/M)
+p = 6*P*A/N_A*np.sqrt(3*R*T/M)
 print('BROWNIAN ',p)
-p_RMS = 6*A*T*k*np.sqrt(3*N_A*P/(M*V))
+p_RMS = 6*A*T*k/N_A*np.sqrt(3*N_A*P/(M*V))
 print('BROWNIAN RMS',p_RMS)
 
 v = np.sqrt(3*R*T/M)
