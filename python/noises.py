@@ -16,6 +16,7 @@ k=1.38e-23
 # vacuum chamber volume
 (67897.67+44301+362902.18 )*1e-9
 V=4.75e-4
+RHOE_N = P/(k*T)
 # N = P*V/(k*T)
 # N/N_A
 
@@ -49,9 +50,9 @@ print('thermal ',p_RMS)
 
 # p = 6/N_A*np.sqrt(P*A*R*T*np.sqrt(3*R*T/M))
 # print(p)
-p = 6*P*A/N_A*np.sqrt(3*R*T/M)
+p = 6*A*RHOE_N*k*T*np.sqrt(3*R*T/M)
 print('BROWNIAN ',p)
-p_RMS = 6*A*T*k/N_A*np.sqrt(3*N_A*P/(M*V))
+p_RMS = 6*A*T*k*np.sqrt(3*N_A*P/M)
 print('BROWNIAN RMS',p_RMS)
 
 v = np.sqrt(3*R*T/M)
