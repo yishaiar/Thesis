@@ -294,11 +294,11 @@ The torque is controlled by the duty cycle $D(t)$ varying between $0-100$ with 8
 \section{Q - factor and results}
 
 \begin{equation}
-W_{PID} = \int_0^T\tau_{PID}(t)\cdot\dot{\theta}(t)dt = \int_0^T\gamma\dot{\theta}\cdot\dot{\theta}(t)dt = \int_0^T\frac{max(\tau_{PID})}{\theta_{max}}\cdot \frac{ T}{2\pi}(\frac{2\pi}{T}\theta_{max})^2 sin(\frac{2\pi}{T}t)dt  = \frac{\tau_{max}\theta_{max}2\pi}{T} \frac{T}{2}
+W_{PID} = \int_0^T\tau_{PID}(t)\cdot\dot{\theta}(t)dt = \int_0^T\gamma\dot{\theta}\cdot\dot{\theta}(t)dt = \int_0^T\frac{max(\tau_{PID})}{\theta_{max}} \frac{ T}{2\pi}(\frac{2\pi}{T}\theta_{max})^2 sin(\frac{2\pi}{T}t)dt  = \frac{\tau_{max}\theta_{max}2\pi}{T} \frac{T}{2}
 \label{eqn:pid work}
 \end{equation}
 \begin{equation}
-W_{PID} = \tau_{max})\theta_{max}\pi
+W_{PID} = \pi\tau_{max}\theta_{max}
 \label{eqn:pid work}
 \end{equation}
 \end{document}
