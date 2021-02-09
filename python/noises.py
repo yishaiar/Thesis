@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 A = 1.14E-2
-P = 1E-4*100
+P = 1E3
 m_1 = 0.0753
 
 
