@@ -52,7 +52,7 @@ print('thermal ',p_RMS)
 
 # p = 6/N_A*np.sqrt(P*A*R*T*np.sqrt(3*R*T/M))
 # print(p)
-p = 36/m_1*(A)**2 *P*k*T/V
+p = 36/m_1*(A*k*T *RHOE_N)**2 
 
 # p = 6*A*RHOE_N*k*T*np.sqrt(3*R*T/M)
 print('BROWNIAN ',p)

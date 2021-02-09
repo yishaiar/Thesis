@@ -129,49 +129,7 @@ The designed elements specifications are:
 && diameter $d=80\cdot10^{-6}[m]$.
 \end{easylist}
 \end{multicols}
-\subsection{Noise reduction}
-As shown previously, there are environment noises affecting the torsional pendulum (eq.~\ref{eqn:Brownian power}, eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:acoustic power}, eq.~\ref{eqn: Stefan–Boltzmann power}). Assuming gas and environment temperature of $T = 298K$ and pendulum temperature $T_0 = 0K$ (maximal noise power), the noise power is very large. Since the noise energy arrives by particles with random direction and phase the power can be modelled as a Poisson process with the RMS of the number of particles, resulting with a significantly lower effective power $P_{RMS}$.
-The RMS of the gas particles number density is $\sqrt{\rho_N} = \sqrt{\frac{P}{k_B T}}$:
-\par\noindent
-The Brownian effective power is given by:
-\begin{equation}
-p_{RMS} =   6 A \sqrt{\frac{P}{k_B T}} k_B T  \sqrt{\frac{3RT}{M}}=   6 A T k_B\sqrt{\frac{3 N_A P }{M}}         \label{eqn:RMS Brownian power}
-\end{equation}
-The maximal thermal effective power is given by: 
-\par\noindent
-\begin{equation}
-p_{RMS} =  A \sqrt{\frac{P}{k_B T}} k_B T c_v  \Delta T \sqrt{\frac{M}{RT}} =  A c_v  \Delta T  \sqrt{\frac{P M }{N_A}}  
-\label{eqn:RMS heat conduction}
-\end{equation}
-The average energy of a black body radiation photon is given by $E=2.7 k_B T$, the maximal black body radiation effective power is given by \cite{WOODS201444}:
-\begin{equation}
-p_{RMS} = A \cdot\sqrt{N}\cdot E = A\cdot\sqrt{\frac{j}{E}}\cdot E = \sqrt{\frac{\sigma\epsilon(T^4-T_0^4)}{2.7 k_B T}}\cdot 2.7 k_B T A = \sqrt{2.7 k_B T A^2\sigma\epsilon (T^4-T_0^4) }   \label{eqn: max Stefan–Boltzmann power}
-\end{equation} 
-The noise power is given by:
-\par\noindent
-\begin{multicols}{2}
-\raggedcolumns
-\begin{easylist}
-& Thermal flow;
-&& $p=0.083[W]$.
-&& $p_{RMS}=5.33\cdot 10^{-11}[W]$.
-& Black body radiation ;
-&& $p=0.121[W]$.
-&& $p_{RMS}=3.9\cdot 10^{-12}[W]$.
-\end{easylist}
-\columnbreak
-\begin{easylist}
-& Brownian motion;
-&& $p=0.346[W]$.
-&& $p_{RMS}=2.2\cdot 10^{-10}[W]$.
-& Acoustic waves;
-&& $p=1.14\cdot 10^{-28}[W]$.
-\end{easylist}
-\end{multicols}
-The measurement system is placed inside an acoustic box, further reducing the acoustic power, and thus can be neglected. 
-The acoustic box is also a Faraday cage with 76 mm thickness, blocking magnetic fields with frequencies $f \ge 30 [Hz]$ from the environment. The vacuum chamber is a second cage that further blocks magnetic noise from the electronic system placed inside the acoustic box. The vacuum chambers is made out of approximately 3 mm thick stainless steel, blocking magnetic fields with frequencies $f\ge 20 [KHz]$ and reducing magnetic noise with lower frequencies.
-\par\noindent
-Since the effective noise power is relatively low  it causes a small driving torque (shown in eq.~\ref{eqn:driven_motion_equation_2}), and can be cancelled out with a damping torque.
+
 \subsection{results}
 The system measured results compared to the expected results from the equations are given by:
 \begin{multicols}{2}
@@ -321,4 +279,48 @@ Q =2\pi\cdot\frac{maximum\ energy\ stored}{energy\ dissipated\ per\ cycle}=2\pi\
  \approx \frac{1.3\cdot 10^{-6} \theta_{max}}{1.0\cdot 10^{-11}}\approx 1.3\cdot 10^{5}\cdot \theta_{max}
 \label{eqn:pid work}
 \end{equation}
+
+\subsection{Noise reduction}
+As shown previously, there are environment noises affecting the torsional pendulum (eq.~\ref{eqn:Brownian power}, eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:acoustic power}, eq.~\ref{eqn: Stefan–Boltzmann power}). Assuming gas and environment temperature of $T = 298K$ and pendulum temperature $T_0 = 0K$ (maximal noise power), the noise power is very large. Since the noise energy arrives by particles with random direction and phase the power can be modelled as a Poisson process with the RMS of the number of particles, resulting with a significantly lower effective power $P_{RMS}$.
+The RMS of the gas particles number density is $\sqrt{\rho_N} = \sqrt{\frac{P}{k_B T}}$:
+\par\noindent
+The Brownian effective power is given by:
+\begin{equation}
+p_{RMS} =   6 A \sqrt{\frac{P}{k_B T}} k_B T  \sqrt{\frac{3RT}{M}}=   6 A T k_B\sqrt{\frac{3 N_A P }{M}}         \label{eqn:RMS Brownian power}
+\end{equation}
+The maximal thermal effective power is given by: 
+\par\noindent
+\begin{equation}
+p_{RMS} =  A \sqrt{\frac{P}{k_B T}} k_B T c_v  \Delta T \sqrt{\frac{M}{RT}} =  A c_v  \Delta T  \sqrt{\frac{P M }{N_A}}  
+\label{eqn:RMS heat conduction}
+\end{equation}
+The average energy of a black body radiation photon is given by $E=2.7 k_B T$, the maximal black body radiation effective power is given by \cite{WOODS201444}:
+\begin{equation}
+p_{RMS} = A \cdot\sqrt{N}\cdot E = A\cdot\sqrt{\frac{j}{E}}\cdot E = \sqrt{\frac{\sigma\epsilon(T^4-T_0^4)}{2.7 k_B T}}\cdot 2.7 k_B T A = \sqrt{2.7 k_B T A^2\sigma\epsilon (T^4-T_0^4) }   \label{eqn: max Stefan–Boltzmann power}
+\end{equation} 
+The noise power is given by:
+\par\noindent
+\begin{multicols}{2}
+\raggedcolumns
+\begin{easylist}
+& Thermal flow;
+&& $p=0.083[W]$.
+&& $p_{RMS}=5.33\cdot 10^{-11}[W]$.
+& Black body radiation ;
+&& $p=0.121[W]$.
+&& $p_{RMS}=3.9\cdot 10^{-12}[W]$.
+\end{easylist}
+\columnbreak
+\begin{easylist}
+& Brownian motion;
+&& $p=0.346[W]$.
+&& $p_{RMS}=2.2\cdot 10^{-10}[W]$.
+& Acoustic waves;
+&& $p=1.14\cdot 10^{-28}[W]$.
+\end{easylist}
+\end{multicols}
+The measurement system is placed inside an acoustic box, further reducing the acoustic power, and thus can be neglected. 
+The acoustic box is also a Faraday cage with 76 mm thickness, blocking magnetic fields with frequencies $f \ge 30 [Hz]$ from the environment. The vacuum chamber is a second cage that further blocks magnetic noise from the electronic system placed inside the acoustic box. The vacuum chambers is made out of approximately 3 mm thick stainless steel, blocking magnetic fields with frequencies $f\ge 20 [KHz]$ and reducing magnetic noise with lower frequencies.
+\par\noindent
+Since the effective noise power is relatively low  it causes a small driving torque (shown in eq.~\ref{eqn:driven_motion_equation_2}), and can be cancelled out with a damping torque.
 \end{document}
