@@ -304,7 +304,7 @@ W_T= \int_0^T\frac{max(\tau_{PID})}{\theta_{max}} \frac{ T}{2\pi}(\frac{2\pi}{T}
 \end{equation}
 
 \begin{equation}
-W_T = \frac{\tau_{max}\theta_{max}2\pi}{T} \frac{T}{2}-p_{noise}\cdot T = \frac{\theta_{max}\cdot\pi\tau_{max}\cdot T -p_{noise}}{T}
+W_T = \frac{\tau_{max}\theta_{max}2\pi}{T} \frac{T}{2}-p_{noise}\cdot T = T\cdot(\frac{\theta_{max}\cdot\pi\tau_{max}}{T} -p_{noise})
 \label{eqn:pid work}
 \end{equation}
 \begin{equation}
@@ -313,8 +313,8 @@ U = \frac{\kappa\theta(t)^2}{2}+\frac{I\dot{\theta}(t)^2}{2} =\frac{\kappa(\thet
 \end{equation}
 
 \begin{equation}
-Q =2\pi\cdot\frac{maximum\ energy\ stored}{energy\ dissipated\ per\ cycle}=2\pi\cdot \frac{U}{W_T}= 2\pi\cdot\frac{\frac{\kappa\theta_{max}^2}{2}}{\frac{\theta_{max}\cdot\pi\tau_{max}\cdot T -p_{noise}}{T}} =
-\pi T\cdot\frac{\kappa\theta_{max}^2}{\theta_{max}\cdot\pi\tau_{max}\cdot T -p_{noise}}
+Q =2\pi\cdot\frac{maximum\ energy\ stored}{energy\ dissipated\ per\ cycle}=2\pi\cdot \frac{U}{W_T}= 2\pi\cdot\frac{\frac{\kappa\theta_{max}^2}{2}}{T\cdot(\frac{\theta_{max}\cdot\pi\tau_{max}}{T} -p_{noise})} =
+\frac{\pi}{T}\cdot\frac{\kappa\theta_{max}^2}{\frac{\theta_{max}\cdot\pi\tau_{max}}{T} -p_{noise}}
 \label{eqn:pid work}
 \end{equation} 
 \begin{equation}
