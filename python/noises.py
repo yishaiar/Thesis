@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 A = 1.14E-2
-P = 1E3
+P = 1E-2
 m_1 = 0.0753
 
 
@@ -52,11 +52,11 @@ print('thermal ',p_RMS)
 
 # p = 6/N_A*np.sqrt(P*A*R*T*np.sqrt(3*R*T/M))
 # print(p)
-p = 36/m_1*(A*k*T *RHOE_N)**2 
+p = 36/m_1*(A)**2 *P*k*T/V
 
 # p = 6*A*RHOE_N*k*T*np.sqrt(3*R*T/M)
 print('BROWNIAN ',p)
-p_RMS = 36/m_1*(A*k*T )**2 *RHOE_N
+p_RMS = 36/m_1*(A*k*T )**2  *RHOE_N
 print('BROWNIAN RMS',p_RMS)
 
 v = np.sqrt(3*R*T/M)
