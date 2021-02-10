@@ -274,9 +274,9 @@ Q = 2\pi\cdot \frac{U_T}{W_T}= 2\pi\cdot\frac{\frac{\kappa\theta_{max}^2}{2}}{T\
 
 When $Q>0.5$ the oscillator is underdamped and when $Q>>0.5$ it is highly underdamped. When $Q = 0.5$ the oscillator is critically damped, and when $Q < 0.5$ there is over damping (in reality the PID is tunable, allowing to produce lower torques than the maximal, keeping the oscillator critically damped). When Q<0 the noise power coupling is larger than the work done by the PID at the cycle, causing the oscillator to be driven. 
 \par\noindent
-It can be seen from eq.~\ref{eqn:Q} that the $Q$ factor is highly depended on the oscillation amplitude of the cycle $\theta_{max}$, even when assuming no environmental noises $p=0$, the amplitudes at which the PID would have an effect on the oscillator $Q\leq 1$ are:  
+It can be seen from eq.~\ref{eqn:Q} that the $Q$ factor is highly depended on the oscillation amplitude size $\theta_{max}$. Even when assuming no environmental noises $p=0$, the amplitudes at which the oscillator is not highly underdamped $Q < 1$ (the PID would have effect on the oscillations) are given by:  
 \begin{equation}
-\frac{\tau_{max}}{\kappa} \approx \frac{6.8\cdot 10^{-10}}{2.7\cdot 10^{-6}} \approx 2.5\cdot 10^{-4} \ geq \theta_{max}(p=0)
+\theta_{max} < \frac{\tau_{max}}{\kappa} \approx \frac{6.8\cdot 10^{-10}}{2.7\cdot 10^{-6}} \approx 2.5\cdot 10^{-4} 
 \label{eqn:low Q}
 \end{equation}
 \section{Noise reduction}
