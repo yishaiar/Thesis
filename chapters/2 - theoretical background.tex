@@ -301,13 +301,13 @@ Eq.~\ref{eqn:heat conduction} shows that the thermal coupling power is proportio
 %https://www.tec-science.com/thermodynamics/heat/thermal-conduction-in-solids/
 
 \subsection{Black body radiation}
-Black body radiation is a phenomenon in which a black body loses heat by thermal radiation to remain in thermal equilibrium at constant temperature $T_0$. The radiation power $p_{emit}$ over all wavelengths is given by the Stefan–Boltzmann law:
+Black body radiation is a phenomenon in which a black body loses heat by thermal radiation to remain in thermal equilibrium at constant temperature $T$. The radiation flux $j$ per unit area $A$ over all wavelengths is given by the Stefan–Boltzmann law:
 \begin{equation}
-p_{emit} = A\epsilon\sigma T_0^4  \label{eqn: Stefan–Boltzmann law}
+j = \epsilon\sigma T_0^4  \label{eqn: Stefan–Boltzmann law}
 \end{equation}
-Where $\sigma$ is the Stefan–Boltzmann constant, and the emissivity $\epsilon$ defines how close the black body to an ideal black body. The differences from the ideal black body is due to the energy levels and vibration modes of the material surface, which are temperature and wavelength dependent resulting with. Emissivity is typically proportional to the temperature with material specific wavelength dependency. The net absorbed power by the black body $p$ is given by: 
+Where $\sigma$ is the Stefan–Boltzmann constant, and the emissivity $\epsilon$ defines how close the black body to an ideal black body. The differences from the ideal black body is due to the energy levels and vibration modes of the material surface, which are temperature and wavelength dependent. Emissivity is typically proportional to the temperature with material specific wavelength dependency. The net absorbed power by the black body $p$ is given by: 
 \begin{equation}
-p =p_{absorb}-p_{emit}= A \epsilon (T,\lambda)\sigma [T^4-T_0^4]  \label{eqn: Stefan–Boltzmann power}
+p =A\cdot(j_{absorb}-j_{emit})= A \epsilon (T,\lambda)\sigma [T^4-T_0^4]  \label{eqn: Stefan–Boltzmann power}
 \end{equation}
 Where $T$ is the environment temperature and $T_0$ is the black body temperature.  
 \subsection{Acoustic wave}
