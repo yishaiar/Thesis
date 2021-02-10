@@ -253,7 +253,7 @@ The torque is controlled by the duty cycle $D(t)$ varying between $0-100$ with 8
 Quality factor ($Q$) is a dimensionless parameter describing how underdamped is the oscillator, it is defined as the ratio of the maximum energy stored in the oscillator to the energy dissipated per cycle of oscillation.
 The energy lost in one cycle is the work done at the cycle, which is the difference between the PID work and the environment noise power $p$ coupled to the oscillator at the cycle, the work $W_T$ is given by:
 \begin{equation}
-W_T = \int_0^T[\tau_{PID}(t)\cdot\dot{\theta}(t) - p]dt = \int_0^T\frac{\tau_{max}}{\theta_{max}} \frac{ T}{2\pi}(\frac{2\pi}{T}\theta_{max})^2 sin(\frac{2\pi}{T}t)dt-p\int_0^T dt 
+W_T = \int_0^T[\tau_{PID}(t)\cdot\dot{\theta}(t) - p]dt = \int_0^T\frac{\tau_{max} }{\theta_{max}} \frac{ T}{2\pi}(\frac{2\pi}{T}\theta_{max})^2 sin(\frac{2\pi}{T}t)dt-p\int_0^T dt 
 \label{eqn:pid work 1}
 \end{equation}
 \begin{equation}

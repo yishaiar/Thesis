@@ -22,7 +22,7 @@ plt.plot(t,xt)
 
 
 # underdamped
-xi = 0.5
+xi = -5e-1
 tao = 1/(xi*omega_0)
 
 a=x0;
@@ -59,4 +59,4 @@ plt.ylabel(r'$\theta$ \ $\theta_{max}$')
 plt.xlabel ('t [s]')
 plt.legend(['Undamped','Underdamped','Critically damped','Overdamped'])
 
-plt.savefig('damp.png')
+# plt.savefig('damp.png')
