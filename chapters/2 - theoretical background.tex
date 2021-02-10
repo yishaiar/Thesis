@@ -242,14 +242,16 @@ Black body radiation is a phenomenon in which a black body loses heat by thermal
 \begin{equation}
 j = \epsilon\sigma T_0^4  \label{eqn: Stefan–Boltzmann law}
 \end{equation}
-Where $\sigma$ is the Stefan–Boltzmann constant, and the emissivity $\epsilon$ defines how close the black body to an ideal black body. The differences from the ideal black body is due to the energy levels and vibration modes of the material surface, which are temperature and wavelength dependent. Emissivity is typically proportional to the temperature with material specific wavelength dependency. 
+Where $\sigma$ is the Stefan–Boltzmann constant, and the emissivity $\epsilon$ defines how close the black body to an ideal black body. The differences from the ideal black body is due to the energy levels and vibration modes of the material surface, which are temperature and wavelength dependent. Kirchhoff's law states that the emissivity equals the absorption of the material.
 \par\noindent
-It can be shown that the mean energy emitted photon by a black body is given by:
-The net absorbed power by the black body $p$ is given by: 
+The net absorbed power $p$ of a black body with temperature $T_0$ is given by: 
 \begin{equation}
-p =A\cdot(j_{absorb}-j_{emit})= A \cdot[\epsilon_1\sigma T^4-(\epsilon\sigma T_0^4+(1-\epsilon)\epsilon_1\sigma T^4)] = A \sigma\epsilon[\epsilon_1 T^4- T_0^4] \approx A \sigma\epsilon[ T^4- T_0^4]  \label{eqn: Stefan–Boltzmann power}
+p = A\cdot(j_{absorb}-j_{emit}-j_{reflect})= A \cdot[\epsilon_1\sigma T^4-\epsilon\sigma T_0^4-(1-\epsilon)\epsilon_1\sigma T^4)] = A \sigma\epsilon[\epsilon_1 T^4- T_0^4] \approx A \sigma\epsilon[ T^4- T_0^4]  \label{eqn: Stefan–Boltzmann power}
 \end{equation}
-Where $T$ is the environment temperature and $T_0$ is the black body temperature. Eq.~\ref{eqn: Stefan–Boltzmann power} shows that the net absorbed power is depended on the temperature difference from the environment.
+Where the environment black bodies are very close to an ideal black body $ \epsilon_1\approx 1$ at temperature $T$. Eq.~\ref{eqn: Stefan–Boltzmann power} shows that the net absorbed power is depended on the temperature difference from the environment.
+It can be shown that the mean energy of a photon emitted by a black body is given by:
+
+
 \subsection{Faraday cage}
 \par\noindent
 Faraday cage is a cage made by continuous covering of a conductive material used to block external electromagnetic fields. The external electrical fields cause an electric charge distribution in the conductive cage without passing inside. Electric current decays exponentially with depth through the material. The material skin depth $\delta$ defines the magnetic field's penetration depth, given by:
