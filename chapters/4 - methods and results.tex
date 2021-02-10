@@ -172,24 +172,24 @@ Where $\gamma$ is the PID damping coefficient,and $\dot{e}(t)$ is the the torsio
 \par\noindent
 The torsional pendulum is a simple harmonic oscillator with initial oscillations amplitude $\theta_{max}$ and velocity amplitude $\dot{\theta}_{max} =\frac{2\pi}{T} \theta_{max}$ (see eq.~\ref{eqn:undamped_motion_equation_solved}). Accordingly, the PID damping coefficient $\gamma$ is given by:
 \begin{equation}
-\gamma  =  \frac{\tau_{PID}(t)}{\dot{\theta}(t)} = \frac{max(\tau_{PID})}{\dot{\theta}_{max}} =  \frac{max(\tau_{PID})}{\theta_{max}\cdot\frac{2\pi}{T}} =\frac{max(\tau_{PID})}{\theta_{max}}\cdot \frac{ T}{2\pi}          \label{eqn:damped_pid_motion_equation_2}
+\gamma  =  \frac{\tau_{PID}(t)}{\dot{\theta}(t)} = \frac{\tau_{max}}{\dot{\theta}_{max}} =  \frac{\tau_{max}}{\theta_{max}\cdot\frac{2\pi}{T}} =\frac{\tau_{max}}{\theta_{max}}\cdot \frac{ T}{2\pi}          \label{eqn:damped_pid_motion_equation_2}
 \end{equation}
-Where $max(\tau_{PID})$ is the maximal torque exerted by the PID. When damping using the PID the damping time $\tau$ and damping ratio $\xi$ are given by (eq.~\ref{eqn:damping_time}):
+Where $\tau_{max}$ is the maximal torque exerted by the PID. When damping using the PID the damping time $\tau$ and damping ratio $\xi$ are given by (eq.~\ref{eqn:damping_time}):
 \begin{equation}
-\tau = \frac{T}{2 \pi \xi } =  \frac{2I}{\gamma} = \frac{\theta_{max}}{ max(\tau_{PID})} \cdot \frac{4\pi I}{T}  \label{eqn:damping_time_pid}
+\tau = \frac{T}{2 \pi \xi } =  \frac{2I}{\gamma} = \frac{\theta_{max}}{ \tau_{max}} \cdot \frac{4\pi I}{T}  \label{eqn:damping_time_pid}
 \end{equation}
-The PID damping $\gamma$, the damping time $\tau$ and the damping type defined by $\xi$ depend on the ratio $\theta_{max}/max(\tau_{PID})$. If $\theta_{max}$ is too large compare to the external torque, the PID affect is negligible, causing an extremely underdamped pendulum with an infinite damping time. When the pendulum is critically damped  by $\tau_{critical}$, the damping ratio $\xi$ is given by (eq.~\ref{eqn:critically_damped_motion_equation}):
+The PID damping $\gamma$, the damping time $\tau$ and the damping type defined by $\xi$ depend on the ratio $\theta_{max}/\tau_{max}$. If $\theta_{max}$ is too large compare to the external torque, the PID affect is negligible, causing an extremely underdamped pendulum with an infinite damping time. When the pendulum is critically damped  by $\tau_{critical}$, the damping ratio $\xi$ is given by (eq.~\ref{eqn:critically_damped_motion_equation}):
 \begin{equation}
 \xi = \frac{T^2}{ 8 \pi^2 I }\cdot\frac{ \tau_{critical}}{\theta_{max}} = 1 
 \label{eqn:damping_ratio_pid}
 \end{equation}
-In order to critically damp the torsional pendulum, the PID torque $\tau_{PID}$ needs to be able to exert torques as large as the critical damping torque $max(\tau_{PID}) \geq  \tau_{critical}$, given by:
+In order to critically damp the torsional pendulum, the PID torque $\tau_{PID}$ needs to be able to exert torques as large as the critical damping torque $\tau_{max} \geq  \tau_{critical}$, given by:
 \begin{equation}
-max(\tau_{PID}) \geq  \tau_{critical} = \frac{ 8 \pi^2 I }{T^2}\cdot\theta_{max} = \frac{ 8 \pi^2 \cdot 0.487\cdot10^{-3} }{(84)^2}\cdot 1\cdot10^{-6} = 5.45\cdot10^{-12}[N\cdot m]
+\tau_{max} \geq  \tau_{critical} = \frac{ 8 \pi^2 I }{T^2}\cdot\theta_{max} = \frac{ 8 \pi^2 \cdot 0.487\cdot10^{-3} }{(84)^2}\cdot 1\cdot10^{-6} = 5.45\cdot10^{-12}[N\cdot m]
 \label{eqn:damping_torque_pid}
 \end{equation}
 \par\noindent
-As shown in  eq.~\ref{eqn:damping_torque_pid} the PID maximal torque is given by $max(\tau_{PID}) \geq 5.45\cdot10^{-12}[N\cdot m]$. Since, it is proportional to the oscillations velocity (eq.~\ref{eqn:friction_torque_pid}), it needs a high modulation rate compare to the oscillations period $T$ (to prevent phase delay), and high dynamic range compare to velosity amplitude $\dot{\theta}_{max}$ (to avoid overshoot). 
+As shown in  eq.~\ref{eqn:damping_torque_pid} the PID maximal torque is given by $\tau_{max} \geq 5.45\cdot10^{-12}[N\cdot m]$. Since, it is proportional to the oscillations velocity (eq.~\ref{eqn:friction_torque_pid}), it needs a high modulation rate compare to the oscillations period $T$ (to prevent phase delay), and high dynamic range compare to velosity amplitude $\dot{\theta}_{max}$ (to avoid overshoot). 
 %The sufficient modulation speed and range are unknown.
 \subsection{Radiation-pressure torque}
 The PID torque was chosen to be a Radiation-pressure torque. The setup is composed of two light sources with given flux, $\Theta_i(t)$, one in front of a mass on a side of the torsional pendulum. As seen in eq.~\ref{eqn:net_gravitation_torque}, the difference between two torques adds an external net torque. Assuming that both light fields have the same coupling efficiency $\eta$ and are very close to be perpendicular to the surface with negligible incidence angles $\alpha_1\approx\alpha_2\approx 0$, using eq.~\ref{eqn:radiation_force_power}, the radiation-pressure net torque $\tau(t)$ can be calculated by:  
@@ -253,7 +253,7 @@ The torque is controlled by the duty cycle $D(t)$ varying between $0-100$ with 8
 Quality factor ($Q$) is a dimensionless parameter describing how underdamped is the oscillator, it is defined as the ratio of the maximum energy stored in the oscillator to the energy dissipated per cycle of oscillation.
 The energy lost in one cycle is the work done at the cycle, which is the difference between the PID work and the environment noise power $p$ coupled to the oscillator at the cycle, the work $W_T$ is given by:
 \begin{equation}
-W_T = \int_0^T[\tau_{PID}(t)\cdot\dot{\theta}(t) - p]dt = \int_0^T\frac{max(\tau_{PID})}{\theta_{max}} \frac{ T}{2\pi}(\frac{2\pi}{T}\theta_{max})^2 sin(\frac{2\pi}{T}t)dt-p\int_0^T dt 
+W_T = \int_0^T[\tau_{PID}(t)\cdot\dot{\theta}(t) - p]dt = \int_0^T\frac{\tau_{max}}{\theta_{max}} \frac{ T}{2\pi}(\frac{2\pi}{T}\theta_{max})^2 sin(\frac{2\pi}{T}t)dt-p\int_0^T dt 
 \label{eqn:pid work 1}
 \end{equation}
 \begin{equation}
