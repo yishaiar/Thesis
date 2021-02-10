@@ -150,8 +150,16 @@ The system measured results compared to the expected results from the equations 
 \end{multicols}
 The expected $\kappa$, $T$ have a range due to uncertainty of the string tensile strength $G$. The amplitude $\theta_{max}$ is an experimental value depended on the amount of noise actually reduced, thus do not have an expected simulated value.
 \section{Torsional pendulum movement and noises}
-As shown previously, there are friction and environment energy sources affecting the torsional pendulum movement (eq.~\ref{eqn:drag force}, eq.~\ref{eqn:Brownian power}, eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:acoustic power}, eq.~\ref{eqn: Stefan–Boltzmann power}). There are 
+As shown previously, there are friction and environment energy sources affecting the torsional pendulum movement (eq.~\ref{eqn:drag force}, eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:acoustic power}, eq.~\ref{eqn: Stefan–Boltzmann power}). There is also momentum exchange due to Brownian motion collisions of gas particles (eq.~\ref{eqn:Brownian power}), and black body radiation photons.  
+\par\noindent
+Due to Brownian motion, gas particles with mass $m_0$ and velosity $v$ collide at an average collision rate of $R= \frac{N}{V} v A$, into cross section $A$ of mass $m_1$. Assuming all collisions are elastic and are at the same direction (the worst case, they do not counter act each other), each particle exchange momentum of $ p = 2 m_0 v$ with $m_1$. Due to the collisions the velosity of $m_1$ is $ u = R\frac{2m_0 v}{m_1}$.
 
+Since the Brownian motion is a Poisson process, the power of the square root of the number of events (number of collisions) $p_{shot} = \sqrt{N} h \nu$.
+ Thus, causing Brownian power $p$, which is given by:
+\begin{equation}
+p = F\cdot u =  R p\cdot u=  \frac{4}{m_1} R^2 m_0^2 v^2 = \frac{4}{m_1} (\frac{N}{V} v A)^2 (\frac{M}{N_A})^2 v^2  =  \frac{36 A^2 P^2 }{m_1} =  \frac{12 APM}{N_Am_1}    \sqrt{\frac{3K N_A T}{M}} 
+\label{eqn:Brownian power}
+\end{equation}
 \section{Proportional–Integral–Derivative (PID) controller}
 \subsection{Control stability}
 The PID feed-back loop is continuously calculating the error value of the measured signal from a defined set point, which is the deviation of the pendulum amplitude from a $SP$ angle $e(t) =SP -\theta(t) $. The PID aims to reach the $SP$ with critical damping of the process (the torsional pendulum) by damping the error to zero. 
@@ -331,14 +339,6 @@ Since the effective noise power is relatively low  it causes a small driving tor
 
 
 
-\par\noindent
-Due to Brownian motion, gas particles with mass $m_0$ and velosity $v$ collide at an average collision rate of $R= \frac{N}{V} v A$, into cross section $A$ of mass $m_1$. Assuming all collisions are elastic and are at the same direction (the worst case, they do not counter act each other), each particle exchange momentum of $ p = 2 m_0 v$ with $m_1$. Due to the collisions the velosity of $m_1$ is $ u = R\frac{2m_0 v}{m_1}$.
 
-Since the Brownian motion is a Poisson process, the power of the square root of the number of events (number of collisions) $p_{shot} = \sqrt{N} h \nu$.
- Thus, causing Brownian power $p$, which is given by:
-\begin{equation}
-p = F\cdot u =  R p\cdot u=  \frac{4}{m_1} R^2 m_0^2 v^2 = \frac{4}{m_1} (\frac{N}{V} v A)^2 (\frac{M}{N_A})^2 v^2  =  \frac{36 A^2 P^2 }{m_1} =  \frac{12 APM}{N_Am_1}    \sqrt{\frac{3K N_A T}{M}} 
-\label{eqn:Brownian power}
-\end{equation}
 
 \end{document}
