@@ -323,4 +323,20 @@ The measurement system is placed inside an acoustic box, further reducing the ac
 The acoustic box is also a Faraday cage with 76 mm thickness, blocking magnetic fields with frequencies $f \ge 30 [Hz]$ from the environment. The vacuum chamber is a second cage that further blocks magnetic noise from the electronic system placed inside the acoustic box. The vacuum chambers is made out of approximately 3 mm thick stainless steel, blocking magnetic fields with frequencies $f\ge 20 [KHz]$ and reducing magnetic noise with lower frequencies.
 \par\noindent
 Since the effective noise power is relatively low  it causes a small driving torque (shown in eq.~\ref{eqn:driven_motion_equation_2}), and can be cancelled out with a damping torque.
+
+
+
+
+
+
+\par\noindent
+Due to Brownian motion, gas particles with mass $m_0$ and velosity $v$ collide at an average collision rate of $R= \frac{N}{V} v A$, into cross section $A$ of mass $m_1$. Assuming all collisions are elastic and are at the same direction (the worst case, they do not counter act each other), each particle exchange momentum of $ p = 2 m_0 v$ with $m_1$. Due to the collisions the velosity of $m_1$ is $ u = R\frac{2m_0 v}{m_1}$.
+
+Since the Brownian motion is a Poisson process, the power of the square root of the number of events (number of collisions) $p_{shot} = \sqrt{N} h \nu$.
+ Thus, causing Brownian power $p$, which is given by:
+\begin{equation}
+p = F\cdot u =  R p\cdot u=  \frac{4}{m_1} R^2 m_0^2 v^2 = \frac{4}{m_1} (\frac{N}{V} v A)^2 (\frac{M}{N_A})^2 v^2  =  \frac{36 A^2 P^2 }{m_1} =  \frac{12 APM}{N_Am_1}    \sqrt{\frac{3K N_A T}{M}} 
+\label{eqn:Brownian power}
+\end{equation}
+
 \end{document}
