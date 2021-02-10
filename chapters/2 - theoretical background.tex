@@ -76,7 +76,7 @@ When $\xi < 1$ the oscillator is underdamped; amplitude of the oscillations decr
 \begin{equation}
 \theta(t) = \theta_{max} e^{-\frac{t}{\tau}}cos(\sqrt{1-\xi^2}\omega_0 t ) =  \theta_{max} e^{-\frac{t}{\tau}}cos(\omega t )    \label{eqn:underdamped_motion_equation}
 \end{equation}
-When the the oscillator is extremely underdamped ($\xi << 1$) the damping and frequency change are negligible, and the oscillations are approximately undamped:
+When the the oscillator is extremely underdamped ($\xi << 1$) the damping exponent and frequency change are negligible, and the oscillations are approximately undamped:
 \begin{equation}
 \theta(t) \approx   \theta_{max} e^{0}cos(\sqrt{1-0^2}\omega_0 t ) \approx \theta_{max}cos(\omega_0 t )   \label{eqn:extremely underdamped_motion_equation}
 \end{equation}
@@ -242,7 +242,10 @@ Black body radiation is a phenomenon in which a black body loses heat by thermal
 \begin{equation}
 j = \epsilon\sigma T_0^4  \label{eqn: Stefan–Boltzmann law}
 \end{equation}
-Where $\sigma$ is the Stefan–Boltzmann constant, and the emissivity $\epsilon$ defines how close the black body to an ideal black body. The differences from the ideal black body is due to the energy levels and vibration modes of the material surface, which are temperature and wavelength dependent. Emissivity is typically proportional to the temperature with material specific wavelength dependency. The net absorbed power by the black body $p$ is given by: 
+Where $\sigma$ is the Stefan–Boltzmann constant, and the emissivity $\epsilon$ defines how close the black body to an ideal black body. The differences from the ideal black body is due to the energy levels and vibration modes of the material surface, which are temperature and wavelength dependent. Emissivity is typically proportional to the temperature with material specific wavelength dependency. 
+\par\noindent
+It can be shown that the mean energy emitted photon by a black body is given by:
+The net absorbed power by the black body $p$ is given by: 
 \begin{equation}
 p =A\cdot(j_{absorb}-j_{emit})= A \epsilon (T_0,\lambda)\sigma [T^4-T_0^4]  \label{eqn: Stefan–Boltzmann power}
 \end{equation}
@@ -296,7 +299,7 @@ F_{drag} = -6\pi\mu r\cdot v = -b\cdot v
 Where $r$ is the radius of the area cross section. For ideal gas both the density and viscosity are pressure dependent, and decrease with pressure. Due to the pressure dependency of the drag force, decreased pressure results with lower drag force.
 
 \subsection{Brownian motion}
-Brownian motion is the pattern of random particles' fluctuations at fluid or gas phases, a random walk with no preferential direction of flow. This pattern happens at thermal equilibrium in a given temperature. The Brownian motion energy is the total kinetic energy of the gas particles $E_k$, which is given by:
+Brownian motion is the pattern of random particles' fluctuations at fluid or gas phases, a random walk with no preferential direction of flow. This pattern happens at thermal equilibrium in a given temperature. Due to the collisions, there is momentum and energy exchange between physical systems. The Brownian motion energy is the total kinetic energy of the gas particles $E_k$, which is given by:
 \begin{equation}
 E_k = N<E_k> = \frac{3}{2} N k_B T = \frac{3}{2} PV
 \label{eqn:total_kinetic}
