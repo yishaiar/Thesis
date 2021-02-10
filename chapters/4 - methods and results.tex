@@ -260,12 +260,12 @@ W_T = \int_0^T[\tau_{PID}(t)\cdot\dot{\theta}(t) - p]dt = \int_0^T\frac{max(\tau
 W_T = \frac{\tau_{max}\theta_{max}2\pi}{T} \frac{T}{2}-p\cdot T = T\cdot(\frac{\theta_{max}\cdot\pi\tau_{max}}{T} -p)
 \label{eqn:pid work}
 \end{equation}
-The maximum cycle stored energy $U_T$ is given by:
+The torsional pendulum maximum stored energy in a given cycle $U_T$ is:
 \begin{equation}
 U_T = \frac{\kappa\cdot\theta(t)^2}{2}+\frac{I\cdot\dot{\theta}(t)^2}{2} =\frac{\kappa(\theta_{max}cos(\omega\cdot 0))^2}{2}+\frac{I(-\omega\theta_{max}sin(\omega\cdot 0))^2}{2} = \frac{\kappa\theta_{max}^2}{2}
 \label{eqn:pendulum energy}
 \end{equation}
-The system Quality factor is:
+The torsional pendulum damped by the PID Quality factor is:
 \begin{equation}
 Q = 2\pi\cdot \frac{U_T}{W_T}= 2\pi\cdot\frac{\frac{\kappa\theta_{max}^2}{2}}{T\cdot(\frac{\theta_{max}\cdot\pi\tau_{max}}{T} -p)} =
 \frac{\pi}{T}\cdot\frac{\kappa\theta_{max}^2}{\frac{\theta_{max}\cdot\pi\tau_{max}}{T} -p}
@@ -276,7 +276,7 @@ When $Q>0.5$ the oscillator is underdamped and when $Q>>0.5$ it is highly underd
 \par\noindent
 It can be seen from eq.~\ref{eqn:Q} that the $Q$ factor is highly depended on the oscillation amplitude size $\theta_{max}$. Even when assuming no environmental noises $p=0$, the amplitudes at which the oscillator is not highly underdamped $Q < 1$ (the PID would have effect on the oscillations) are given by:  
 \begin{equation}
-\theta_{max} < \frac{\tau_{max}}{\kappa} \approx \frac{6.8\cdot 10^{-10}}{2.7\cdot 10^{-6}} \approx 2.5\cdot 10^{-4} 
+\theta_{max} < \frac{\tau_{max}}{\kappa} \approx \frac{6.8\cdot 10^{-10}}{2.7\cdot 10^{-6}} \approx 2.5\cdot 10^{-4} [rad]
 \label{eqn:low Q}
 \end{equation}
 \section{Noise reduction}
