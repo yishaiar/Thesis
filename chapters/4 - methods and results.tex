@@ -250,8 +250,7 @@ The LED circuits are each composed of a blue LED with $V_l\approx 4.5V$, with $N
 \par\noindent
 The torque is controlled by the duty cycle $D(t)$ varying between $0-100$ with 8bit resolution, thus generating torques up to $\tau = 6.8\cdot10^-{10} [N\cdot m]$ with modulation steps of $\Delta\tau = 1.34\cdot10^-{12} [N\cdot m]$ and modulation frequency up to $500[Hz]$ (see eq.~\ref{eqn:pwm frequency}).
 \subsection{Quality factor (Q)}
-Quality factor ($Q$) is a dimensionless parameter describing how underdamped is the oscillator, it is defined as the ratio of the maximum energy stored in the oscillator to the energy lost in one cycle of oscillation, $Q =2\pi\cdot\frac{maximum\ energy\ stored}{energy\ dissipated\ per\ cycle}$.
-\par\noindent
+Quality factor ($Q$) is a dimensionless parameter describing how underdamped is the oscillator, it is defined as the ratio of the maximum energy stored in the oscillator to the energy dissipated per cycle of oscillation.
 The energy lost in one cycle is the work done at the cycle, which is the difference between the PID work and the environment noise power $p_{noise}$ coupled to the oscillator at the cycle, the work $W_T$ is given by:
 \begin{equation}
 W_T = \int_0^T[\tau_{PID}(t)\cdot\dot{\theta}(t) - p_{noise}]dt = \int_0^T\frac{max(\tau_{PID})}{\theta_{max}} \frac{ T}{2\pi}(\frac{2\pi}{T}\theta_{max})^2 sin(\frac{2\pi}{T}t)dt-p_{noise}\int_0^T dt 
@@ -276,7 +275,7 @@ Q = 2\pi\cdot \frac{U_T}{W_T}= 2\pi\cdot\frac{\frac{\kappa\theta_{max}^2}{2}}{T\
  \approx \frac{1.3\cdot 10^{-6} \theta_{max}}{1.0\cdot 10^{-11}}\approx 1.3\cdot 10^{5}\cdot \theta_{max}
 \label{eqn:pid work}
 \end{equation}
-An underdamped system is with $Q>0.5$, critically damped with $Q = 0.5$ and over damped with $Q < 0.5$.
+When $Q>0.5$ the system is underdamped, when the value is very large the system is highly underdamped. When $Q = 0.5$ the system is critically damped, when $Q < 0.5$ the system is over damped (in reality the PID is tunable, allowing to produce lower torques than the maximal, keeping the system critically damped). When Q<0 the noise power IS larger than the work done by the PID causing the system to be driven. 
 \section{Noise reduction}
 As shown previously, there are environment noises affecting the torsional pendulum (eq.~\ref{eqn:Brownian power}, eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:acoustic power}, eq.~\ref{eqn: Stefan–Boltzmann power}). Assuming gas and environment temperature of $T = 298K$ and pendulum temperature $T_0 = 0K$ (maximal noise power), the noise power is very large. Since the noise energy arrives by particles with random direction and phase the power can be modelled as a Poisson process with the RMS of the number of particles, resulting with a significantly lower effective power $P_{RMS}$.
 The RMS of the gas particles number density is $\sqrt{\rho_N} = \sqrt{\frac{P}{k_B T}}$:
