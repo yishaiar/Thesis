@@ -238,7 +238,7 @@ F \approx   2\frac{\eta\cdot \Theta_{source}\cdot cos^2(\alpha)}{{A\cdot c}}A  \
 
 \section{Pressure and environment affects}
 \subsection{Ideal gas}
-An ideal gas is a theoretical gas composed of many randomly moving gas particles that are not having interparticle interactions. The ideal gas law is given by:
+An ideal gas is a theoretical gas composed of many randomly moving gas particles that are not having inter-particle interactions. The ideal gas law is given by:
 \begin{equation}
 PV = nRT = (n N_A) k_B T = N k_B T  \label{eqn:ideal-gasses}
 \end{equation}
@@ -281,12 +281,11 @@ Where $r$ is the radius of the area cross section. For ideal gas both the densit
 \subsection{Brownian motion}
 Brownian motion is the pattern of random particles' fluctuations at fluid or gas phases, a random walk with no preferential direction of flow. This pattern happens at thermal equilibrium in a given temperature. The Brownian motion energy is the total kinetic energy of the gas particles $E_k$, which is given by:
 \begin{equation}
-E_k = N<E_k> = \frac{3}{2} N k_B T = frac{3}{2} PV
+E_k = N<E_k> = \frac{3}{2} N k_B T = \frac{3}{2} PV
 \label{eqn:total_kinetic}
 \end{equation}
 \par\noindent
-Reducing the gas pressure, results in reduction of the Brownian motion energy (eq.~\ref{eqn:total_kinetic}). 
-
+Eq.~\ref{eqn:total_kinetic} shows that the Brownian motion energy is proportional to the gas pressure. 
 \subsection{Thermal energy coupling}
 There is thermal energy coupling from the environment on the sides of the medium, phonons are penetrating and passing energy to gas particles inside the medium. It can be shown that for an ideal gas with specific heat capacity $c_v$, the heat flow propagation distance is $\Delta x ^2  = \frac{1}{3} l^2 $, and the thermal conductivity $\lambda$ is given by:
 \begin{equation}
@@ -295,47 +294,14 @@ There is thermal energy coupling from the environment on the sides of the medium
 
 The thermal coupling power from the environment $p$ is given by Fourier's law of heat conduction:
 \begin{equation}
-p =  \lambda A \frac{\Delta T}{\Delta x} =\frac{l}{3} \frac{MP}{RT} c_v v A \frac{\Delta T}{\sqrt{\frac{1}{3} l^2 }} = \frac{M P c_v  A \Delta T}{\sqrt{3}RT} \sqrt{\frac{3RT}{M}} =    A P c_v \Delta T \sqrt{\frac{M}{RT}}   = A \rho_N k_B T c_v \Delta T \sqrt{\frac{M}{RT}}
+p =  \lambda A \frac{\Delta T}{\Delta x} =\frac{l}{3} \frac{MP}{RT} c_v v A \frac{\Delta T}{\sqrt{\frac{1}{3} l^2 }} = \frac{M P c_v  A \Delta T}{\sqrt{3}RT} \sqrt{\frac{3RT}{M}} =    A P c_v \Delta T \sqrt{\frac{M}{RT}} 
 \label{eqn:heat conduction}
 \end{equation}
 Eq.~\ref{eqn:heat conduction} shows that the thermal coupling power is proportional to the to the temperature difference $\Delta T$ and the gas pressure.
 %https://www.tec-science.com/thermodynamics/heat/thermal-conduction-in-solids/
-\iffalse
-\subsubsection{Classical harmonic oscillators and equipartition of energy}
-The Hamiltonian $H$ of a simple harmonic oscillator is:
-\begin{equation}
-H(p,x) = \frac{p^2}{2m}+\frac{1}{2}\kappa x^2
-\label{eqn:Hamiltonian}
-\end{equation}
-The simple harmonic oscillator has a momentum $p$ and position $x$, which is one degree of freedom. For a classical continuous system with one degree of freedom the partition function $Z$ is:
-\begin{equation}
-Z = \frac{1}{h}\int_{-\infty}^{\infty}exp(-\frac{\kappa x^2}{2}\cdot \beta)dx \int_{-\infty}^{\infty} exp(-\frac{p^2}{2m}\cdot \beta)dp = 
-\frac{1}{h} \sqrt{\frac{2\pi m}{\beta}} \sqrt{\frac{2\pi }{\kappa\beta} } = \frac{1}{\beta\hslash\omega}
-\label{eqn:partition function}
-\end{equation}
-Where $\beta = \frac{1}{k_B T}$ is the thermodynamic beta. the thermodynamic energy of the oscillator is : 
-\begin{equation}
-E = -\frac{\partial}{\partial\beta}lnZ = -\frac{\partial}{\partial\beta}\frac{1}{\beta\hslash\omega} = \frac{1}{\beta}  = k_B T
-\label{eqn:thermodynamic energy}
-\end{equation}
-The mean energy $E$ of an oscillator in equilibrium with a heat bath at temperature $T$, when heat bath is composed of ideal gas:
-\begin{equation}
-E = k_B T = k_B\frac{PV}{N k_B} = \frac{PV}{N}
-\label{eqn:Brownian uncertainty}
-\end{equation}
-According to the equipartition theorem, the average energy per degree of freedom is half the thermal
-energy:
 
-The Brownian motion kinetic energy is proportional to the temperature. The noise of quantum uncertainty due to Brownian motion at a given temperature is: 
-\begin{equation}
-\frac{1}{2}\kappa (\delta\theta)^2= \frac{1}{2}k_BT  \label{eqn:Brownian uncertainty}
-\end{equation}
-\begin{equation}
-\delta\theta = \sqrt{\frac{k_B T}{\kappa}}  \label{eqn:Brownian uncertainty 2}
-\end{equation}
-\fi
 \subsection{Black body radiation}
-Black body radiation is a phenomenon in which a black body loses heat by thermal radiation to remain in thermal equilibrium at constant temperature $T_0$. The radiation flux $j$ per unit area $A$ over all frequencies is given by the Stefan–Boltzmann law:
+Black body radiation is a phenomenon in which a black body loses heat by thermal radiation to remain in thermal equilibrium at constant temperature $T_0$. The radiation power $p$ per unit area $A$ over all frequencies is given by the Stefan–Boltzmann law:
 \begin{equation}
 j = \sigma\epsilon(T_0) T_0^4  \label{eqn: Stefan–Boltzmann law}
 \end{equation}
