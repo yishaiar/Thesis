@@ -237,28 +237,6 @@ F \approx   2\frac{\eta\cdot \Theta_{source}\cdot cos^2(\alpha)}{{A\cdot c}}A  \
 
 
 \section{Environment affects}
-\subsection{Black body radiation}
-Black body radiation is a phenomenon in which a black body loses heat by thermal radiation to remain in thermal equilibrium at constant temperature $T$. The radiation flux $j$ per unit area $A$ over all wavelengths is given by the Stefan–Boltzmann law:
-\begin{equation}
-j = \epsilon\sigma T_0^4  \label{eqn: Stefan–Boltzmann law}
-\end{equation}
-Where $\sigma$ is the Stefan–Boltzmann constant, and the emissivity $\epsilon$ defines how close the black body to an ideal black body. The differences from the ideal black body is due to the energy levels and vibration modes of the material surface, which are temperature and wavelength dependent. Kirchhoff's law states that the emissivity equals the absorption of the material.
-\par\noindent
-The net absorbed power $p$ of a black body with temperature $T_0$ is given by: 
-\begin{equation}
-p = A\cdot(j_{absorb}-j_{emit}-j_{reflect})= A \cdot[\epsilon_1\sigma T^4-\epsilon\sigma T_0^4-(1-\epsilon)\epsilon_1\sigma T^4)] = A \sigma\epsilon[\epsilon_1 T^4- T_0^4] \approx A \sigma\epsilon[ T^4- T_0^4]  \label{eqn: Stefan–Boltzmann power}
-\end{equation}
-Where the environment black bodies are very close to an ideal black body $ \epsilon_1\approx 1$ at temperature $T$. Eq.~\ref{eqn: Stefan–Boltzmann power} shows that the net absorbed power is depended on the temperature difference from the environment.
-It can be shown that the mean energy of a photon emitted by a black body is given by:
-
-
-\subsection{Faraday cage}
-\par\noindent
-Faraday cage is a cage made by continuous covering of a conductive material used to block external electromagnetic fields. The external electrical fields cause an electric charge distribution in the conductive cage without passing inside. Electric current decays exponentially with depth through the material. The material skin depth $\delta$ defines the magnetic field's penetration depth, given by:
-\begin{equation}
-\delta = \sqrt{\frac{2\rho}{(2\pi f)(\mu)} }    \label{eqn:skin depth}
-\end{equation}
-Where $\rho$ is the material electric resistivity, $\mu$ the magnetic permeability and $f$ is the frequency of the magnetic field.
 \subsection{Ideal gas}
 An ideal gas is a theoretical gas composed of many randomly moving gas particles that are not having inter-particle interactions. The ideal gas law is given by:
 \begin{equation}
@@ -355,6 +333,25 @@ Where $A$ is the surface area, and $q_{des}$ is the desorption density, which is
 \par\noindent
 The outgassing is minimized by selecting low vapor-pressure materials such as stainless steel and glass. Since water is a significant source of outgassing, the outgassing is usually minimized by baking the chamber at high temperatures while having the vacuum pump running (bake-out).
 
+\subsection{Black body radiation}
+Black body radiation is a phenomenon in which a black body loses heat by thermal radiation to remain in thermal equilibrium at constant temperature $T$. The radiation flux $j$ per unit area $A$ over all wavelengths is given by the Stefan–Boltzmann law:
+\begin{equation}
+j = \epsilon\sigma T_0^4  \label{eqn: Stefan–Boltzmann law}
+\end{equation}
+Where $\sigma$ is the Stefan–Boltzmann constant, and the emissivity $\epsilon$ defines how close the black body to an ideal black body. The differences from the ideal black body is due to the energy levels and vibration modes of the material surface, which are temperature and wavelength dependent. Kirchhoff's law states that the emissivity equals the absorption of the material.
+\par\noindent
+The net absorbed power $p$ of a black body with temperature $T_0$ is given by: 
+\begin{equation}
+p = A\cdot(j_{absorb}-j_{emit}-j_{reflect})= A \cdot[\epsilon_1\sigma T^4-\epsilon\sigma T_0^4-(1-\epsilon)\epsilon_1\sigma T^4)] = A \sigma\epsilon[\epsilon_1 T^4- T_0^4] \approx A \sigma\epsilon[ T^4- T_0^4]  \label{eqn: Stefan–Boltzmann power}
+\end{equation}
+Where the environment black bodies are very close to an ideal black body $ \epsilon_1\approx 1$ at temperature $T$. Eq.~\ref{eqn: Stefan–Boltzmann power} shows that the net absorbed power is depended on the temperature difference from the environment. Additionally, the black body radiation of the environment causes momentum and energy exchange due to photon collisions, similar to the gas particles Brownian motion. The collisions are only depended on the temperature of the environment black bodies.
+\subsection{Faraday cage}
+\par\noindent
+Faraday cage is a cage made by continuous covering of a conductive material used to block external electromagnetic fields. The external electrical fields cause an electric charge distribution in the conductive cage without passing inside. Electric current decays exponentially with depth through the material. The material skin depth $\delta$ defines the magnetic field's penetration depth, given by:
+\begin{equation}
+\delta = \sqrt{\frac{2\rho}{(2\pi f)(\mu)} }    \label{eqn:skin depth}
+\end{equation}
+Where $\rho$ is the material electric resistivity, $\mu$ the magnetic permeability and $f$ is the frequency of the magnetic field.
 
 
 \section{Proportional–integral–derivative (PID) controller}
