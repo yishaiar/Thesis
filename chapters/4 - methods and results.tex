@@ -250,14 +250,12 @@ The LED circuits are each composed of a blue LED with $V_l\approx 4.5V$, with $N
 \par\noindent
 The torque is controlled by the duty cycle $D(t)$ varying between $0-100$ with 8bit resolution, thus generating torques up to $\tau = 6.8\cdot10^-{10} [N\cdot m]$ with modulation steps of $\Delta\tau = 1.34\cdot10^-{12} [N\cdot m]$ and modulation frequency up to $500[Hz]$ (see eq.~\ref{eqn:pwm frequency}).
 \subsection{Quality factor (Q)}
-Quality factor ($Q$) is a dimensionless parameter describing how underdamped is the oscillator, it is defined as the ratio of the maximum energy stored in the oscillator to the energy lost in one cycle of oscillation, which is the total work done at the cycle. The work done at the cycle is the difference between the PID work and the environment noise power $p_{noise}$ coupled to the oscillator at the cycle, the work $W_T$ is given by:
+Quality factor ($Q$) is a dimensionless parameter describing how underdamped is the oscillator, it is defined as the ratio of the maximum energy stored in the oscillator to the energy lost in one cycle of oscillation, $Q =2\pi\cdot\frac{maximum\ energy\ stored}{energy\ dissipated\ per\ cycle}$.
+\par\noindent
+The energy lost in one cycle is the work done at the cycle, which is the difference between the PID work and the environment noise power $p_{noise}$ coupled to the oscillator at the cycle, the work $W_T$ is given by:
 \begin{equation}
 W_T = \int_0^T[\tau_{PID}(t)\cdot\dot{\theta}(t) - p_{noise}]dt = \int_0^T\frac{max(\tau_{PID})}{\theta_{max}} \frac{ T}{2\pi}(\frac{2\pi}{T}\theta_{max})^2 sin(\frac{2\pi}{T}t)dt-p_{noise}\int_0^T dt 
-\label{eqn:pid work}
-\end{equation}
-\begin{equation}
-W_T= \int_0^T\frac{max(\tau_{PID})}{\theta_{max}} \frac{ T}{2\pi}(\frac{2\pi}{T}\theta_{max})^2 sin(\frac{2\pi}{T}t)dt -p_{noise}\cdot T  
-\label{eqn:pid work}
+\label{eqn:pid work 1}
 \end{equation}
 \begin{equation}
 W_T = \frac{\tau_{max}\theta_{max}2\pi}{T} \frac{T}{2}-p_{noise}\cdot T = T\cdot(\frac{\theta_{max}\cdot\pi\tau_{max}}{T} -p_{noise})
@@ -265,12 +263,12 @@ W_T = \frac{\tau_{max}\theta_{max}2\pi}{T} \frac{T}{2}-p_{noise}\cdot T = T\cdot
 \end{equation}
 The maximum cycle stored energy $U_T$ is given by:
 \begin{equation}
-U_T = \frac{\kappa\theta(t)^2}{2}+\frac{I\dot{\theta}(t)^2}{2} =\frac{\kappa(\theta_{max}cos(\omega\cdot 0))^2}{2}+\frac{I(-\omega\theta_{max}sin(\omega\cdot 0))^2}{2} = \frac{\kappa\theta_{max}^2}{2}
+U_T = \frac{\kappa\cdot\theta(t)^2}{2}+\frac{I\cdot\dot{\theta}(t)^2}{2} =\frac{\kappa(\theta_{max}cos(\omega\cdot 0))^2}{2}+\frac{I(-\omega\theta_{max}sin(\omega\cdot 0))^2}{2} = \frac{\kappa\theta_{max}^2}{2}
 \label{eqn:pendulum energy}
 \end{equation}
 The system Quality factor is:
 \begin{equation}
-Q =2\pi\cdot\frac{maximum\ energy\ stored}{energy\ dissipated\ per\ cycle}=2\pi\cdot \frac{U_T}{W_T}= 2\pi\cdot\frac{\frac{\kappa\theta_{max}^2}{2}}{T\cdot(\frac{\theta_{max}\cdot\pi\tau_{max}}{T} -p_{noise})} =
+Q = 2\pi\cdot \frac{U_T}{W_T}= 2\pi\cdot\frac{\frac{\kappa\theta_{max}^2}{2}}{T\cdot(\frac{\theta_{max}\cdot\pi\tau_{max}}{T} -p_{noise})} =
 \frac{\pi}{T}\cdot\frac{\kappa\theta_{max}^2}{\frac{\theta_{max}\cdot\pi\tau_{max}}{T} -p_{noise}}
 \label{eqn:pid work}
 \end{equation} 
