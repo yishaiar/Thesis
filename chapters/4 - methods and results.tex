@@ -165,14 +165,12 @@ The PID feed-back loop is continuously calculating the error value of the measur
 \par\noindent
 In control theory there are two wanted conflicting properties; an accurate response (small overshoot), and small risetime (fast response). A PID control does not guarantee optimal control or stability of the process. When PID not tuned correctly, it can either overshoot or have a slow response, both resulting with a driven oscillator. The PID response to error (shown in eq.~\ref{eqn:PID response}) defines how much will the oscillator overshoot the $SP$.
 \par\noindent
-Overshoot is when the value of output signal (the actual PID response) exceeds the target value (the wanted response), thus the response is not accurate. The overshoot of a second order system is given by:
+Overshoot is when the value of output signal (the actual response) exceeds the target value (the wanted response), thus the response is not accurate. The overshoot of a second order system is given by:
 \begin{equation}
 overshoot =  \frac{output-target}{target} = e ^{\frac{-\xi\pi}{\sqrt{1-\xi^2}}}  \label{eqn:overshoot}
 \end{equation}
 \par\noindent
-Where $\xi$ is the damping ratio of the oscillator defined in eq.~\ref{eqn:system damping ratio}.  
-\par\noindent
-As seen in eq.~\ref{eqn:overshoot} when the PID gains are too high, instead of critical damping there is overdamping, which is causing overshoot. Due to the high gains the overshoot response overshoots again to the other side, causing the system to be an unwanted driven oscillator (shown in eq.~\ref{eqn:driven_motion_equation_2}). A slow response causes phase delay between the signal and the equivalent PID response, resulting  again with a driven oscillator.
+Where $\xi$ is the damping ratio of the oscillator defined in eq.~\ref{eqn:system damping ratio}. As seen in eq.~\ref{eqn:overshoot} when the PID gains are too high, instead of critical damping there is overdamping, which is causing overshoot. Due to the high gains the overshoot response overshoots again to the other side, causing the system to be an unwanted driven oscillator (shown in eq.~\ref{eqn:driven_motion_equation_2}). A slow response causes phase delay between the signal and the equivalent PID response, resulting  again with a driven oscillator.
 \subsection{Damped oscillator}
 The PID mainly acts as friction, gradually working when the oscillations are at the maximum velocity slowing them down, with a torque $\tau_{PID}$ given by:
 \begin{equation}
@@ -180,7 +178,7 @@ The PID mainly acts as friction, gradually working when the oscillations are at 
 \label{eqn:friction_torque_pid}
 \end{equation}
 \par\noindent
-Where $\gamma$ is the PID damping coefficient,and $\dot{e}(t)$ is the the torsional pendulum's oscillations velosity. 
+Where $\gamma$ is the PID damping coefficient,and $\dot{\theta}(t)$ is the the torsional pendulum's oscillations velosity. 
 \par\noindent
 The torsional pendulum is a simple harmonic oscillator with initial oscillations amplitude $\theta_{max}$ and velocity amplitude $\dot{\theta}_{max} =\frac{2\pi}{T} \theta_{max}$ (see eq.~\ref{eqn:undamped_motion_equation_solved}). Accordingly, the PID damping coefficient $\gamma$ is given by:
 \begin{equation}
