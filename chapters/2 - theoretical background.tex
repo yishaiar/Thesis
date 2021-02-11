@@ -336,13 +336,13 @@ The outgassing is minimized by selecting low vapor-pressure materials such as st
 \subsection{Black body radiation}
 Black body radiation is a phenomenon in which a black body loses heat by thermal radiation to remain in thermal equilibrium at constant temperature $T$. The radiation flux $j$ per unit area $A$ over all wavelengths is given by the Stefan–Boltzmann law:
 \begin{equation}
-j = \epsilon\sigma T_0^4  \label{eqn: Stefan–Boltzmann law}
+j_{emit}= \epsilon\sigma T_0^4  \label{eqn: Stefan–Boltzmann law}
 \end{equation}
-Where $\sigma$ is the Stefan–Boltzmann constant, and the emissivity $\epsilon$ defines how close the black body to an ideal black body ($\epsilon =1$). The differences from the ideal black body is due to the energy levels and vibration modes of the material surface, which are temperature and wavelength dependent. Kirchhoff's law states that the emissivity equals the absorption of the material.
+Where $\sigma$ is the Stefan–Boltzmann constant, and the emissivity $\epsilon$ defines how close the black body to an ideal black body ($\epsilon =1$). The differences from the ideal black body is due to the energy levels and vibration modes of the material surface, which are temperature and wavelength dependent. 
 \par\noindent
-The black body absorbs radiation from black bodies around. For a black body with temperature $T_0$ absorbing radiation of an ideal black body with temperature $T$, the net absorbed power $p$ of is given by: 
+While the black body emits radiation $j_{emit}$, black bodies around also radiate by their temperature $T$, some of the incident radiation $j$ is reflected $j_{reflect}$. The reflectance is given from Kirchhoff's law $r=1-\epsilon$. For black body with temperature $T_0$ with incident radiation of an ideal black body with temperature $T$, the net absorbed power $p$ is: 
 \begin{equation}
-p = A\cdot(j_{absorb}-j_{reflect}-j_{emit})= A \cdot[\sigma T^4-(1-\epsilon)\sigma T^4-\epsilon\sigma T_0^4)] = A \sigma\epsilon[ T^4- T_0^4]   
+p = A\cdot(j-j_{reflect}-j_{emit})= A \cdot[\sigma T^4-(1-\epsilon)\sigma T^4-\epsilon\sigma T_0^4)] = A \sigma\epsilon[ T^4- T_0^4]   
 \label{eqn: Stefan–Boltzmann power}
 \end{equation}
 Eq.~\ref{eqn: Stefan–Boltzmann power} shows that the net absorbed power is depended on the temperature difference from the environment. 
