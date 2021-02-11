@@ -156,28 +156,8 @@ The system measured results compared to the expected results from the equations 
 \end{easylist}
 \end{multicols}
 The expected $\kappa$, $T$ have a range due to uncertainty of the string tensile strength $G$. The equilibrium amplitude $\theta_{max}$ is an experimental value, depended on the amount of noise actually reduced, thus do not have an expected simulated value.
-\subsection{Random motion}
-Due to random motion, $n_p$ particles collide per second into cross section $A$ of mass $m_1$. Random motion can be modelled as a Poisson process, and the effective collision rate is the square root of the number of events $n_{col} = \sqrt{n_p}$. Each particle exchanges momentum $k$ with with $m_1$, resulting with force $F = n_{col}\cdot k$. Due to the collisions the velosity of $m_1$ is $ u = n_{col}\frac{k}{m_1}$. The collisions result with power given by:
-\begin{equation}
-p = F\cdot u =  n_{col}k \cdot n_{col}\frac{k}{m_1} =  n_p\frac{ k^2}{m_1}
-\label{eqn:net power}
-\end{equation}
-Due to Brownian motion, there are $n_p= \frac{N}{V}v A$  gas particle collisions with mass $m_0 = \frac{M}{N_A}$ and average velosity of the gas flow $v$ (eq.~\ref{eqn:flow velocity}) collide into $A$. Assuming all collisions are elastic, each particle exchanges momentum of $ k = 2 m_0 v$. Thus, causing Brownian power $p$, which is given by:
-\begin{equation}
-p =  n_p\frac{ k^2}{m_1} =  \frac{N}{V} v A\frac{ (2 m_0 v)^2}{m_1} = \frac{4AP }{m_1k_B T}(\frac{M}{N_A})^2 (\frac{3 k_B N_A T}{M})^{3/2} =  \frac{12AP }{m_1 } (\frac{3 k_B  T M}{N_A})^{1/2}
-\label{eqn:brownian net power}
-\end{equation}
-Due to environmental black body radiation there are photons colliding into $A$. It can be shown that the mean energy of a black body photon is $E\approx 2.7k_B T$, resulting with $n_p = \frac{j}{E}A$ photon collisions. The incident photons are both absorbed $k_{ab} = \frac{E}{c} $ and reflected $k_{ref} = \frac{2E}{c} $. Thus, causing photon collisions power $p$, which is given by:
 
-\begin{equation}
-p =  n_p\frac{ k^2}{m_1} = \frac{j_{ref}}{E}A\cdot\frac{ (\frac{2E}{c})^2}{m_1} +\frac{j_{ab}}{E}A\cdot\frac{ (\frac{E}{c})^2}{m_1} = \frac{ A 2.7 k_B T}{ c^2 m_1} (4j_{ref}+j_{ab}) =\frac{2.7A k_B}{ c^2 m_1} (4-3\epsilon)\sigma T^5 
-\label{eqn:photon collision power}
-\end{equation}
-\subsection {Noises}
-The measurement system is placed inside an acoustic box, further reducing the acoustic power, and thus can be neglected. 
-The acoustic box is also a Faraday cage with 76 mm thickness, blocking magnetic fields with frequencies $f \ge 30 [Hz]$ from the environment. The vacuum chamber is a second cage that further blocks magnetic noise from the electronic system placed inside the acoustic box. The vacuum chambers is made out of approximately 3 mm thick stainless steel, blocking magnetic fields with frequencies $f\ge 20 [KHz]$ and reducing magnetic noise with lower frequencies.
-\par\noindent
-Since the effective noise power is relatively low  it causes a small driving torque (shown in eq.~\ref{eqn:driven_motion_equation_2}), and can be cancelled out with a damping torque.
+
 
 \section{Proportional–Integral–Derivative (PID) controller}
 \subsection{Control stability}
@@ -352,7 +332,23 @@ The noise power is given by:
 
 
 
+\subsection{Random motion}
+Due to random motion, $n_p$ particles collide per second into cross section $A$ of mass $m_1$. Random motion can be modelled as a Poisson process, and the effective collision rate is the square root of the number of events $n_{col} = \sqrt{n_p}$. Each particle exchanges momentum $k$ with with $m_1$, resulting with force $F = n_{col}\cdot k$. Due to the collisions the velosity of $m_1$ is $ u = n_{col}\frac{k}{m_1}$. The collisions result with power given by:
+\begin{equation}
+p = F\cdot u =  n_{col}k \cdot n_{col}\frac{k}{m_1} =  n_p\frac{ k^2}{m_1}
+\label{eqn:net power}
+\end{equation}
+Due to Brownian motion, there are $n_p= \frac{N}{V}v A$  gas particle collisions with mass $m_0 = \frac{M}{N_A}$ and average velosity of the gas flow $v$ (eq.~\ref{eqn:flow velocity}) collide into $A$. Assuming all collisions are elastic, each particle exchanges momentum of $ k = 2 m_0 v$. Thus, causing Brownian power $p$, which is given by:
+\begin{equation}
+p =  n_p\frac{ k^2}{m_1} =  \frac{N}{V} v A\frac{ (2 m_0 v)^2}{m_1} = \frac{4AP }{m_1k_B T}(\frac{M}{N_A})^2 (\frac{3 k_B N_A T}{M})^{3/2} =  \frac{12AP }{m_1 } (\frac{3 k_B  T M}{N_A})^{1/2}
+\label{eqn:brownian net power}
+\end{equation}
+Due to environmental black body radiation there are photons colliding into $A$. It can be shown that the mean energy of a black body photon is $E\approx 2.7k_B T$, resulting with $n_p = \frac{j}{E}A$ photon collisions. The incident photons are both absorbed $k_{ab} = \frac{E}{c} $ and reflected $k_{ref} = \frac{2E}{c} $. Thus, causing photon collisions power $p$, which is given by:
 
+\begin{equation}
+p =  n_p\frac{ k^2}{m_1} = \frac{j_{ref}}{E}A\cdot\frac{ (\frac{2E}{c})^2}{m_1} +\frac{j_{ab}}{E}A\cdot\frac{ (\frac{E}{c})^2}{m_1} = \frac{ A 2.7 k_B T}{ c^2 m_1} (4j_{ref}+j_{ab}) =\frac{2.7A k_B}{ c^2 m_1} (4-3\epsilon)\sigma T^5 
+\label{eqn:photon collision power}
+\end{equation}
 
 
 
