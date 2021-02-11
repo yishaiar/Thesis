@@ -153,9 +153,15 @@ The expected $\kappa$, $T$ have a range due to uncertainty of the string tensile
 
 
 \section{Torsional pendulum movement and noises}
-Due to random motion, $n$ particles collide per second into cross section $A$ of mass $m_1$. Random motion is a Poisson process, and the effective collision rate is the square root of the number of events $n_{col} = \sqrt{n}$. Each particle exchanges momentum $k$ with with $m_1$, resulting with force $F = n_{col}\cdot k$. Due to the collisions the velosity of $m_1$ is $ u = n_{col}\frac{k}{m_1}$. The collisions result with power given by:
+\subsection{Random motion}
+Due to random motion, $n_p$ particles collide per second into cross section $A$ of mass $m_1$. Random motion is a Poisson process, and the effective collision rate is the square root of the number of events $n_{col} = \sqrt{n_p}$. Each particle exchanges momentum $k$ with with $m_1$, resulting with force $F = n_{col}\cdot k$. Due to the collisions the velosity of $m_1$ is $ u = n_{col}\frac{k}{m_1}$. The collisions result with power given by:
 \begin{equation}
-p = F\cdot u =  n_{col}k \cdot n_{col}\frac{k}{m_1} =  \frac{n_{col}^2 k^2}{m_1}
+p = F\cdot u =  n_{col}k \cdot n_{col}\frac{k}{m_1} =  n_p\frac{ k^2}{m_1}
+\label{eqn:net power}
+\end{equation}
+Due to Brownian motion, $n_p= \frac{N}{V}v A$, gas particles with mass $m_0 = \frac{M}{N_A}$ and average velosity of gas flow $v$ (eq.~\ref{eqn:flow velocity}) collide into $A$. Assuming all collisions are elastic, each particle exchanges momentum of $ k = 2 m_0 v$. Thus, causing Brownian power $p$, which is given by:
+\begin{equation}
+p =  n_p\frac{ k^2}{m_1} =  \frac{N}{V} v A\frac{ (2 m_0 v)^2}{m_1} = \frac{4AN }{m_1V}(\frac{M}{N_A})^2 (\frac{3 k_B N_A T}{M})^{3/2}
 \label{eqn:net power}
 \end{equation}
 \section{Proportional–Integral–Derivative (PID) controller}
