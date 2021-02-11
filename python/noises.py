@@ -100,4 +100,4 @@ p = max_tourqe/2*THETA_MAX*OMEGA
 # t1 = np.arange(300)
 # plt.plot(t1,t1*z[0]+z[1])
 
-
+36*(M*k*300/N_A*3)**.25*(P*A)**1.5*12/m_1

@@ -26,7 +26,7 @@ def plot_q(n =int(1e5+1), p=1e-20):
     plt.yscale('log')
     plt.xscale('log')
 
-plot_q(n =int(1e5+1), p=1e-30)
+plot_q(n =int(1e5+1), p=3.6e-14)
         
 
 
