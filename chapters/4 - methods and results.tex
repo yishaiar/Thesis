@@ -261,7 +261,7 @@ The LED circuits are each composed of a blue LED with $V_l\approx 4.5V$, with $N
 The torque is controlled by the duty cycle $D(t)$ varying between $0-100$ with 8bit resolution, thus generating torques up to $\tau = 6.8\cdot10^-{10} [N\cdot m]$ with modulation steps of $\Delta\tau = 1.34\cdot10^-{12} [N\cdot m]$ and modulation frequency up to $500[Hz]$ (see eq.~\ref{eqn:pwm frequency}).
 \subsection{Quality factor (Q)}
 Quality factor ($Q$) is a dimensionless parameter describing how underdamped is the oscillator, it is defined as the ratio of the maximum energy stored in the oscillator to the energy dissipated per cycle of oscillation.
-The energy lost in one cycle is the work done at the cycle, which is the difference between the PID work and the environment noise power $p$ coupled to the oscillator at the cycle, the work $W_T$ is given by:
+Assuming negligible friction, the energy lost in one cycle is the work done at the cycle, which is the difference between the PID work and the environment noise power $p$ coupled to the oscillator at the cycle (which is independent of time). The work $W_T$ is given by:
 \begin{equation}
 W_T = \int_0^T[\tau_{PID}(t)\cdot\dot{\theta}(t) - p]dt = \int_0^T\frac{\tau_{max} }{\theta_{max}} \frac{ T}{2\pi}(\frac{2\pi}{T}\theta_{max})^2 sin(\frac{2\pi}{T}t)dt-p\int_0^T dt 
 \label{eqn:pid work 1}
@@ -282,7 +282,7 @@ Q = 2\pi\cdot \frac{U_T}{W_T}= 2\pi\cdot\frac{\frac{\kappa\theta_{max}^2}{2}}{T\
 \label{eqn:Q}
 \end{equation} 
 
-When $Q>0.5$ the oscillator is underdamped and when $Q>>0.5$ it is highly underdamped. When $Q = 0.5$ the oscillator is critically damped, and when $Q < 0.5$ there is over damping (in reality the PID is tunable, allowing to produce lower torques than the maximal, keeping the oscillator critically damped). When Q<0 the noise power coupling is larger than the work done by the PID at the cycle, causing the oscillator to be driven. 
+When $Q>0.5$ the oscillator is underdamped and when $Q>>0.5$ it is highly underdamped. When $Q = 0.5$ the oscillator is critically damped, and when $Q < 0.5$ there is over damping. When Q<0 the noise power coupling is larger than the work done by the PID at the cycle, causing the oscillator to be driven. 
 \par\noindent
 It can be seen from eq.~\ref{eqn:Q} that the $Q$ factor is highly depended on the oscillation amplitude size $\theta_{max}$. Even when assuming no environmental noises $p=0$, the amplitudes at which the oscillator is not highly underdamped $Q < 1$ (the PID would have effect on the oscillations) are given by:  
 \begin{equation}
@@ -328,9 +328,6 @@ The noise power is given by:
 && $p=1.14\cdot 10^{-28}[W]$.
 \end{easylist}
 \end{multicols}
-
-
-
 
 \subsection{Random motion}
 Due to random motion, $n_p$ particles collide per second into cross section $A$ of mass $m_1$. Random motion can be modelled as a Poisson process, and the effective collision rate is the square root of the number of events $n_{col} = \sqrt{n_p}$. Each particle exchanges momentum $k$ with with $m_1$, resulting with force $F = n_{col}\cdot k$. Due to the collisions the velosity of $m_1$ is $ u = n_{col}\frac{k}{m_1}$. The collisions result with power given by:
