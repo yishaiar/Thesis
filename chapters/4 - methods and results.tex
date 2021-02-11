@@ -153,6 +153,22 @@ The expected $\kappa$, $T$ have a range due to uncertainty of the string tensile
 \section{Torsional pendulum movement and noises}
 As shown previously, there are friction and environment energy sources affecting the torsional pendulum movement (eq.~\ref{eqn:drag force}, eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:acoustic power}, eq.~\ref{eqn: Stefan–Boltzmann power}). There is also momentum exchange due to Brownian motion collisions of gas particles (eq.~\ref{eqn:Brownian power}), and black body radiation photons.  
 \par\noindent
+Due to random motion, $n$ particles collide per second into cross section $A$ of mass $m_1$. Random motion is a Poisson process, and the effective collision rate is the square root of the number of events $n_{col} = \sqrt{n}$. Each particle exchanges momentum $k$ with with $m_1$, resulting with force $F = n_{col}\cdot k$. Due to the collisions the velosity of $m_1$ is $ u = n_{col}\frac{k}{m_1}$. The collisions result with power given by:
+\begin{equation}
+p = F\cdot u =  n_{col}k \cdot n_{col}\frac{k}{m_1} =  \frac{n_{col}^2 k^2}{m_1}
+\label{eqn:net power}
+\end{equation}
+
+
+Due to random motion, $n$ particles collide per second into cross section $A$ of mass $m_1$. Random motion is a Poisson process, and the effective collision rate is the square root of the number of events $n_{col} = \sqrt{n}$. Each particle exchanges momentum $k$ with with $m_1$, resulting with force $F = n_{col}\cdot k$. Due to the collisions the velosity of $m_1$ is $ u = n_{col}\frac{k}{m_1}$. The collisions result with power given by:
+\begin{equation}
+p = F\cdot u =  n_{col}k \cdot n_{col}\frac{k}{m_1} =  \frac{n_{col}^2 k^2}{m_1}
+\label{eqn:net power}
+\end{equation}
+\iffalse
+$p = $
+due to random time and direction the effective collision rate is the square root of the number of events.
+
 Due to Brownian motion, gas particles with mass $m_0$ and velosity $v$ collide at an average collision rate of $R= \frac{N}{V} v A$, into cross section $A$ of mass $m_1$. Assuming all collisions are elastic, each particle exchanges momentum of $ p = 2 m_0 v$ with $m_1$. Due to the collisions the velosity of $m_1$ is $ u = R\frac{2m_0 v}{m_1}$. Since the Brownian motion is a Poisson process, due to random time and direction the effective collision rate is the square root of the number of events. Thus, causing Brownian power $p$, which is given by:
 \begin{equation}
 p = F\cdot u =  \sqrt{R} p\cdot \sqrt{R}\frac{2m_0 v}{m_1} = (\frac{N}{V} v A)\frac{(2m_0 v)^2}{m_1} = \frac{4}{m_1}(\frac{P}{k_B T}  A)  (\frac{M}{N_A})^2 v^3 
@@ -163,11 +179,20 @@ p = \frac{12PA}{m_1}  (\frac{3M}{R T})^0.5  =
 \label{eqn:Brownian power}
 \end{equation}
 
+\begin{equation}
+p = F\cdot u = (n_ab\frac{E}{c}+2n_ref\frac{E}{c})\cdot u = (n_ab+2n_ref)\frac{Eu}{c} 
+\label{eqn:Brownian power}
+\end{equation}
+\begin{equation}
+n = A\sigma T^4-(1-\epsilon)\sigma T^4-\epsilon\sigma T_0^4)]
+\label{eqn:Brownian power}
+\end{equation}
 
 \begin{equation}
 = \frac{4}{m_1} R^2 m_0^2 v^2 = \frac{4}{m_1} (\frac{N}{V} v A)^2 (\frac{M}{N_A})^2 v^2  =  \frac{36 A^2 P^2 }{m_1} =  \frac{12 APM}{N_Am_1}    \sqrt{\frac{3 R T}{M}} 
 \label{eqn:Brownian power}
 \end{equation}
+\fi
 \section{Proportional–Integral–Derivative (PID) controller}
 \subsection{Control stability}
 The PID feed-back loop is continuously calculating the error value of the measured signal from a defined set point, which is the deviation of the pendulum amplitude from a $SP$ angle $e(t) =SP -\theta(t) $. The PID aims to reach the $SP$ with critical damping of the process (the torsional pendulum) by damping the error to zero. 
