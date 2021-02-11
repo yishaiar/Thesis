@@ -8,6 +8,7 @@ def plot_q(n =int(1e5+1), p=1e-20):
     kappa = 2.7e-6
     T=86
     tau=6.8e-10
+    p=1E-16
     if isinstance(p, float):
         p= np.ones([n])*p
     Q = np.pi/T*( (kappa*(theta**2)) / (theta*np.pi*tau/T-p))
@@ -26,7 +27,7 @@ def plot_q(n =int(1e5+1), p=1e-20):
     plt.yscale('log')
     plt.xscale('log')
 
-plot_q(n =int(1e5+1), p=3.6e-14)
+plot_q(n =int(1e5+1), p=1.58E-15)
         
 
 
