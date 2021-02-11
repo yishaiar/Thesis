@@ -151,6 +151,13 @@ The system measured results compared to the expected results from the equations 
 \end{multicols}
 The expected $\kappa$, $T$ have a range due to uncertainty of the string tensile strength $G$. The amplitude $\theta_{max}$ is an experimental value depended on the amount of noise actually reduced, thus do not have an expected simulated value.
 
+
+\section{Torsional pendulum movement and noises}
+Due to random motion, $n$ particles collide per second into cross section $A$ of mass $m_1$. Random motion is a Poisson process, and the effective collision rate is the square root of the number of events $n_{col} = \sqrt{n}$. Each particle exchanges momentum $k$ with with $m_1$, resulting with force $F = n_{col}\cdot k$. Due to the collisions the velosity of $m_1$ is $ u = n_{col}\frac{k}{m_1}$. The collisions result with power given by:
+\begin{equation}
+p = F\cdot u =  n_{col}k \cdot n_{col}\frac{k}{m_1} =  \frac{n_{col}^2 k^2}{m_1}
+\label{eqn:net power}
+\end{equation}
 \section{Proportional–Integral–Derivative (PID) controller}
 \subsection{Control stability}
 The PID feed-back loop is continuously calculating the error value of the measured signal from a defined set point, which is the deviation of the pendulum amplitude from a $SP$ angle $e(t) =SP -\theta(t) $. The PID aims to reach the $SP$ with critical damping of the process (the torsional pendulum) by damping the error to zero. 
