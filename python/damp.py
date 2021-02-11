@@ -22,12 +22,12 @@ plt.plot(t,xt)
 
 
 # underdamped
-xi = -5e-1
+xi = 5e-4
 tao = 1/(xi*omega_0)
 
 a=x0;
 omega = omega_0*np.sqrt(1-xi**2)
-xt=a*(np.exp(-t/tao))*np.cos(omega*t);
+xt=a*(z=np.exp(-t/tao))*np.cos(omega*t);
 plt.plot(t,xt)
 
 # critical
