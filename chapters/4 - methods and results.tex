@@ -182,7 +182,7 @@ The PID mainly acts as friction, gradually working when the oscillations are at 
 \par\noindent
 Where $\gamma$ is the PID damping coefficient,and $\dot{\theta}(t)$ is the the torsional pendulum's oscillations velosity. 
 \par\noindent
-The torsional pendulum is a simple harmonic oscillator with initial oscillations amplitude $\theta_{max}$ and velocity amplitude $\dot{\theta}_{max} =\frac{2\pi}{T} \theta_{max}$ (see eq.~\ref{eqn:undamped_motion_equation_solved}). Accordingly, the PID damping coefficient $\gamma$ is given by:
+The torsional pendulum is a simple harmonic oscillator with oscillations amplitude $\theta_{max}$ and velocity amplitude $\dot{\theta}_{max} =\frac{2\pi}{T} \theta_{max}$ (see eq.~\ref{eqn:undamped_motion_equation_solved}). Accordingly, the PID damping coefficient $\gamma$ is given by:
 \begin{equation}
 \gamma  =  \frac{\tau_{PID}(t)}{\dot{\theta}(t)} = \frac{\tau_{max}}{\dot{\theta}_{max}} =  \frac{\tau_{max}}{\theta_{max}\cdot\frac{2\pi}{T}} =\frac{\tau_{max}}{\theta_{max}}\cdot \frac{ T}{2\pi}          \label{eqn:damped_pid_motion_equation_2}
 \end{equation}
@@ -197,7 +197,7 @@ The PID damping $\gamma$, the damping time $\tau$ and the damping type defined b
 \end{equation}
 In order to critically damp the torsional pendulum, the PID torque $\tau_{PID}$ needs to be able to exert torques as large as the critical damping torque $\tau_{max} \geq  \tau_{critical}$, given by:
 \begin{equation}
-\tau_{max} \geq  \tau_{critical} = \frac{ 8 \pi^2 I }{T^2}\cdot\theta_{max} = \frac{ 8 \pi^2 \cdot 0.487\cdot10^{-3} }{(84)^2}\cdot 1\cdot10^{-6} = 5.45\cdot10^{-12}[N\cdot m]
+\tau_{max} \geq  \tau_{critical} = \frac{ 8 \pi^2 I }{T^2}\cdot\theta_{max}^{eq} = \frac{ 8 \pi^2 \cdot 0.487\cdot10^{-3} }{(84)^2}\cdot 1\cdot10^{-6} = 5.45\cdot10^{-12}[N\cdot m]
 \label{eqn:damping_torque_pid}
 \end{equation}
 \par\noindent
