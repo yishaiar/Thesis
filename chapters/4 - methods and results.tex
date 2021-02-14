@@ -303,7 +303,13 @@ The torsional pendulum damped by the PID Quality factor is:
 Q = 2\pi\cdot \frac{U_T}{W_T}= 2\pi\cdot\frac{\frac{\kappa\theta_{max}^2}{2}}{T\cdot(\frac{\theta_{max}\cdot\pi\tau_{max}}{T} -p)} =
 \frac{\pi}{T}\cdot\frac{\kappa\theta_{max}^2}{\frac{\theta_{max}\cdot\pi\tau_{max}}{T} -p}
 \label{eqn:Q}
-\end{equation} 
+\end{equation}
+\begin{figure}[htbp]
+	\centering
+	\fbox{\includegraphics[scale=0.17]{\main/images/4 - methods and results/Q factor.png}}
+	\caption[The torsional pendulum Q factor]{The torsional pendulum Q factor}
+	\label{fig:Q factor}
+\end{figure} 
 
 When $Q>0.5$ the oscillator is underdamped and when $Q>>0.5$ it is highly underdamped. When $Q = 0.5$ the oscillator is critically damped, and when $Q < 0.5$ there is over damping. When Q<0 the noise power coupling is larger than the work done by the PID at the cycle, causing the oscillator to be driven. 
 \par\noindent
@@ -312,6 +318,7 @@ It can be seen from eq.~\ref{eqn:Q} that the $Q$ factor is highly depended on th
 \theta_{max} < \frac{\tau_{max}}{\kappa} \approx \frac{6.8\cdot 10^{-10}}{2.7\cdot 10^{-6}} \approx 2.5\cdot 10^{-4} [rad]
 \label{eqn:low Q}
 \end{equation}
+From the actual measured angle one can estimate the noises which are introduced to system.
 
 
 
