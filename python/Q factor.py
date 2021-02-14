@@ -28,10 +28,11 @@ plt.plot(theta,ones*0.5)
 plt.yscale('log')
 plt.xscale('log')
 plt.xlabel(r'$\theta_{max}$')
-plt.ylabel(r'$\theta$')
+plt.ylabel('Q factor')
 plt.legend(['Q factor','Critically damped'])
 
 
+plt.savefig('Q factor.png')
         
 
 
