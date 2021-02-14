@@ -188,7 +188,7 @@ Where $\gamma$ is the PID damping coefficient (eq.~\ref{eqn:damped_motion_equati
 \end{equation}
 Where $\tau_{max}$ is the maximal torque exerted by the PID. When damping using the PID the damping time $\tau$ and damping ratio $\xi$ are given by (eq.~\ref{eqn:damping_time}):
 \begin{equation}
-\tau = \frac{T}{2 \pi \xi } =  \frac{2I}{\gamma} = \frac{\theta_{max}}{ \tau_{max}} \cdot \frac{4\pi I}{T}  \label{eqn:damping_time_pid}
+\xi = \frac{T}{2 \pi \tau } =  \frac{2I}{\gamma} = \frac{\theta_{max}}{ \tau_{max}} \cdot \frac{4\pi I}{T}  \label{eqn:damping_time_pid}
 \end{equation}
 The PID damping $\gamma$, the damping time $\tau$ and the damping type defined by $\xi$ depend on the ratio $\theta_{max}/\tau_{max}$. If $\theta_{max}$ is too large compare to the external torque, the PID affect is negligible, causing an extremely underdamped pendulum with an infinite damping time. When the pendulum is critically damped  by $\tau_{critical}$, the damping ratio $\xi$ is given by (eq.~\ref{eqn:critically_damped_motion_equation}):
 \begin{equation}
