@@ -7,6 +7,7 @@ t=np.linspace(0,time,3000);
 kappa = 2.5839284154826904e-06
 I = 0.000487121
 omega_0 = np.sqrt(kappa/I)
+print (np.pi*2/omega_0)
 
 theta_max = 1
 vo=0; 
