@@ -135,9 +135,11 @@ The friction, Brownian motion, thermal flow and acoustic waves are reduced by ha
 \par\noindent
 The acoustic box is also a Faraday cage with 76 mm thickness, blocking magnetic fields with frequencies $f \ge 30 [Hz]$ from the environment. The vacuum chamber is a second cage that further blocks magnetic noise from the electronic system placed inside the acoustic box. The vacuum chambers is made out of approximately 3 mm thick stainless steel, blocking magnetic fields with frequencies $f\ge 20 [KHz]$ and reducing magnetic noise with lower frequencies.
 \par\noindent
-Initially the pendulum a driven oscillator (eq.~\ref{eqn:driven_motion_equation_2}) driven by small torques, consisted of black body radiation and pressure dependant noises. Gradually the pressure dependant friction (eq.~\ref{eqn:drag force1}) is damping the velosity, until the pendulum reaches an amplitude at which the friction is equal to the driving noises. The equilibrium amplitude is independent of the initial amplitude, but rather the pressure. After at least 8 hours of damping by the friction, the measured value is $\theta_{max}^{eq}\approx 1\cdot10^{-5}[rad]$. As shown in eq.~\ref{eqn:Brownian uncertainty 3}, without noises the fundamental quantum uncertainty at room temperature results with an amplitude of  $\theta_{max}  \approx 4\cdot 10^{-8} [rad] $.
+Initially the pendulum a driven oscillator (eq.~\ref{eqn:driven_motion_equation_2}) driven by small torques, consisted of black body radiation and pressure dependant noises. Gradually the pressure dependant friction (eq.~\ref{eqn:drag force1}) is damping the velosity, until the pendulum reaches an amplitude at which the friction is equal to the driving noises. The equilibrium amplitude is independent of the initial amplitude, but rather the pressure. After at least 8 hours of damping by the friction, the measured value is $\theta_{max}^{eq}\approx 1\cdot10^{-5}[rad]$. From the long damping time it can be shown the friction coefficient is very small, leading to a negligible friction at small amplitudes.
 \par\noindent
-From the long damping time it can be shown the friction coefficient is very small, leading to a negligible friction at small amplitudes. 
+As shown in eq.~\ref{eqn:Brownian uncertainty 3}, without noises the fundamental quantum uncertainty at room temperature results with an amplitude of  $\theta_{max}  \approx 4\cdot 10^{-8} [rad] $, meaning the pendulum noises  
+\par\noindent
+ 
 \par\noindent
 \subsection{results}
 The system measured results compared to the expected results from the equations are given by:
@@ -265,24 +267,12 @@ The torque is controlled by the duty cycle $D(t)$ varying between $0-100$ with 8
 	\centering
 	\fbox{\includegraphics[scale=0.17]{\main/images/4 - methods and results/duty_cycle.png}}
 	\caption[The damped torsional pendulum oscillations]{The damped torsional pendulum oscillations}
-	\label{fig:measured oscillation angle1}
+	\label{fig:measured oscillation angle}
 \end{figure}
-\begin{figure}[htbp]
-	\centering
-	\fbox{\includegraphics[scale=0.17]{\main/images/4 - methods and results/duty_cycle.png}}
-	\caption[The measured oscillation angle]{The measured oscillation angle}
-	\label{fig:measured oscillation angle2}
-\end{figure}
-
-Shown in fig.~\ref{fig:measured oscillation angle1} are the damped torsional pendulum oscillations, using the PID. Since the damping is depended on the amplitude size (eq.~\ref{eqn:pid damping coefficient}), the damping accelerates as the amplitude gets smaller. Due to tourqe power and phase delay, the PID has a lower limit to the damping angle. 
+Shown in fig.~\ref{fig:measured oscillation angle} are the damped torsional pendulum oscillations, using the PID. Since the damping is depended on the amplitude size (eq.~\ref{eqn:pid damping coefficient}), the damping accelerates as the amplitude gets smaller. 
 \par\noindent
-Shown in fig.~\ref{fig:measured oscillation angle2}, are the damped oscillation after the PID reached its limit. The PID is able to keep the small amplitude constant over time, enabling to integrate over the results, and have  gravitational measurements.
-
-The effective temperature of the torsional pendulum is given by (eq.~\ref{eqn:Brownian uncertainty 3}): 
-\begin{equation}
-T(t) = \theta_{max}(t)^2\frac{\kappa}{k_B} \label{eqn:temperature}
-\end{equation}
-
+Due to tourqe power and phase delay, the PID has a lower limit to the damping angle. The PID is able to keep a small amplitude of $\theta_{max}\approx 1\cdot 10^{-7}$ constant over time, enabling to integrate over the results, and have gravitational measurements of..
+\par\noindent
 \subsection{Quality factor (Q)}
 Quality factor ($Q$) is a dimensionless parameter describing how underdamped is the oscillator, it is defined as the ratio of the maximum energy stored in the oscillator to the energy dissipated per cycle of oscillation.
 Assuming negligible friction, the energy lost in one cycle is the work done at the cycle, which is the difference between the PID work and the environment noise power $p$ coupled to the oscillator at the cycle (which is independent of time). The work $W_T$ is given by:
@@ -313,6 +303,10 @@ It can be seen from eq.~\ref{eqn:Q} that the $Q$ factor is highly depended on th
 \theta_{max} < \frac{\tau_{max}}{\kappa} \approx \frac{6.8\cdot 10^{-10}}{2.7\cdot 10^{-6}} \approx 2.5\cdot 10^{-4} [rad]
 \label{eqn:low Q}
 \end{equation}
+
+
+
+
 \section{Noise reduction}
 As shown previously, there are environment noises affecting the torsional pendulum (eq.~\ref{eqn:Brownian power}, eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:acoustic power}, eq.~\ref{eqn: Stefan–Boltzmann power}). Assuming gas and environment temperature of $T = 298K$ and pendulum temperature $T_0 = 0K$ (maximal noise power), the noise power is very large. Since the noise energy arrives by particles with random direction and phase the power can be modelled as a Poisson process with the RMS of the number of particles, resulting with a significantly lower effective power $P_{RMS}$.
 The RMS of the gas particles number density is $\sqrt{\rho_N} = \sqrt{\frac{P}{k_B T}}$:
