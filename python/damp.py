@@ -1,8 +1,8 @@
 
 import numpy as np 
 import matplotlib.pyplot as plt
-
-t=np.linspace(0,200,3000);
+time = 400 #s
+t=np.linspace(0,time,3000);
 
 kappa = 2.5839284154826904e-06
 I = 0.000487121
@@ -22,13 +22,15 @@ plt.plot(t,xt)
 
 
 # underdamped
-xi = 0.1
+xi = 0.15
 tao = 1/(xi*omega_0)
 
 a=x0;
 omega = omega_0*np.sqrt(1-xi**2)
 xt=a*(np.exp(-t/tao))*np.cos(omega*t);
 plt.plot(t,xt)
+
+
 
 # critical
 xi = 1.0
