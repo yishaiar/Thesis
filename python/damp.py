@@ -59,5 +59,5 @@ plt.ylabel(r'$\theta$ \ $\theta_{max}$')
 plt.xlabel ('t [s]')
 plt.legend(['Undamped','Underdamped','Critically damped','Overdamped'])
 
-# plt.savefig('damp.png')
+plt.savefig('damp.png')
 # 
