@@ -184,7 +184,7 @@ The PID mainly acts as friction, gradually working when the oscillations are at 
 \par\noindent
 Where $\gamma$ is the PID damping coefficient (eq.~\ref{eqn:damped_motion_equation}). Accordingly, the PID damping coefficient $\gamma$ is given by:
 \begin{equation}
-\gamma  =  \frac{\tau_{PID}(t)}{\frac{2\pi}{T} \theta_{max}( t) } =\frac{\tau_{max}}{\theta_{max}}\cdot \frac{ T}{2\pi}          \label{eqn:damped_pid_motion_equation_2}
+\gamma  =  \frac{\tau_{PID}(t)}{\frac{2\pi}{T} \theta_{max}( t) } =\frac{\tau_{max}}{\theta_{max}}\cdot \frac{ T}{2\pi}          \label{eqn:pid damping coefficient}
 \end{equation}
 Where $\tau_{max}$ is the maximal torque exerted by the PID. When damping using the PID the damping type, defined by the damping ratio $\xi$, and the damping time $\tau$ are given by (eq.~\ref{eqn:damping_time}):
 \begin{equation}
@@ -264,10 +264,10 @@ The torque is controlled by the duty cycle $D(t)$ varying between $0-100$ with 8
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=0.17]{\main/images/4 - methods and results/duty_cycle.png}}
-	\caption[The measured oscillation angle]{The measured oscillation angle}
+	\caption[The damped torsional pendulum oscillations]{The damped torsional pendulum oscillations}
 	\label{fig:measured oscillation angle1}
 \end{figure}
-The PID setup damping the torsional pendulum oscillation, shown in fig.~\ref{fig:measured oscillation angle1}. Since the damping is depended on the amplitude size (), the PID accelerates as the amplitude gats smaller. 
+Shown in fig.~\ref{fig:measured oscillation angle1} are the damped torsional pendulum oscillations, using the PID. Since the damping is depended on the amplitude size (eq.~\ref{eqn:pid damping coefficient}), the PID accelerates as the amplitude gats smaller. 
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=0.17]{\main/images/4 - methods and results/duty_cycle.png}}
