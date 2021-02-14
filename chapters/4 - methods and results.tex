@@ -284,11 +284,12 @@ Shown in fig.~\ref{fig:measured oscillation angle1} is the minimal average ampli
 \par\noindent
 \subsection{Quality factor (Q)}
 Quality factor ($Q$) is a dimensionless parameter describing how underdamped is the oscillator, it is defined as the ratio of the maximum energy stored in the oscillator to the energy dissipated per cycle of oscillation.
-Assuming negligible friction, the energy lost in one cycle is the work done at the cycle, which is the difference between the PID work and the environment noise power $p$ coupled to the oscillator at the cycle (which is independent of time). The work $W_T$ is given by:
+Assuming negligible friction, the energy lost in one cycle is the work done at the cycle, which is the difference between the PID work and the environment noise power $p$ coupled to the oscillator at the cycle (which is independent of time). The torsional pendulum Quality factor is:
 \begin{equation}
 Q = 2\pi\cdot \frac{U_T}{W_T}= 2\pi\cdot \frac{\frac{\kappa\cdot\theta(t)^2}{2}+\frac{I\cdot\dot{\theta}(t)^2}{2}}{\int_0^T[\tau_{PID}(t)\cdot\dot{\theta}(t) - p]dt} = 2\pi\cdot \frac{\frac{\kappa(\theta_{max}cos(\omega\cdot 0))^2}{2}+\frac{I(-\omega\theta_{max}sin(\omega\cdot 0))^2}{2} }{\int_0^T\frac{\tau_{max} }{\theta_{max}} \frac{ T}{2\pi}(\frac{2\pi}{T}\theta_{max})^2 sin(\frac{2\pi}{T}t)dt-p\int_0^T dt }
 \label{eqn:Q}
 \end{equation}
+\iffalse
 \begin{equation}
 W_T = \int_0^T[\tau_{PID}(t)\cdot\dot{\theta}(t) - p]dt = \int_0^T\frac{\tau_{max} }{\theta_{max}} \frac{ T}{2\pi}(\frac{2\pi}{T}\theta_{max})^2 sin(\frac{2\pi}{T}t)dt-p\int_0^T dt 
 \label{eqn:pid work 1}
@@ -302,7 +303,8 @@ The torsional pendulum maximum stored energy in a given cycle $U_T$ is:
 U_T = \frac{\kappa\cdot\theta(t)^2}{2}+\frac{I\cdot\dot{\theta}(t)^2}{2} =\frac{\kappa(\theta_{max}cos(\omega\cdot 0))^2}{2}+\frac{I(-\omega\theta_{max}sin(\omega\cdot 0))^2}{2} = \frac{\kappa\theta_{max}^2}{2}
 \label{eqn:pendulum energy}
 \end{equation}
-The torsional pendulum damped by the PID Quality factor is:
+
+\fi
 \begin{equation}
 Q = 2\pi\cdot \frac{U_T}{W_T}= 2\pi\cdot\frac{\frac{\kappa\theta_{max}^2}{2}}{T\cdot(\frac{\theta_{max}\cdot\pi\tau_{max}}{T} -p)} =
 \frac{\pi}{T}\cdot\frac{\kappa\theta_{max}^2}{\frac{\theta_{max}\cdot\pi\tau_{max}}{T} -p}
@@ -310,7 +312,7 @@ Q = 2\pi\cdot \frac{U_T}{W_T}= 2\pi\cdot\frac{\frac{\kappa\theta_{max}^2}{2}}{T\
 \end{equation}
 \begin{figure}[htbp]
 	\centering
-	\fbox{\includegraphics[scale=0.17]{\main/images/4 - methods and results/Q factor.png}}
+	\fbox{\includegraphics[scale=0.3]{\main/images/4 - methods and results/Q factor.png}}
 	\caption[The torsional pendulum Q factor]{The torsional pendulum Q factor}
 	\label{fig:Q factor}
 \end{figure} 
