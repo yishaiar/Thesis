@@ -135,7 +135,7 @@ The friction, Brownian motion, thermal flow and acoustic waves are reduced by ha
 \par\noindent
 The acoustic box is also a Faraday cage with 76 mm thickness, blocking magnetic fields with frequencies $f \ge 30 [Hz]$ from the environment. The vacuum chamber is a second cage that further blocks magnetic noise from the electronic system placed inside the acoustic box. The vacuum chambers is made out of approximately 3 mm thick stainless steel, blocking magnetic fields with frequencies $f\ge 20 [KHz]$ and reducing magnetic noise with lower frequencies.
 \par\noindent
-Initially the pendulum a driven oscillator (eq.~\ref{eqn:driven_motion_equation_2}) driven by small torques, consisted of black body radiation and pressure dependant noises. Gradually the pressure dependant friction (eq.~\ref{eqn:drag force1}) is damping the velosity, until the pendulum reaches an amplitude at which the friction is equal to the driving noises. The equilibrium amplitude is independent of the initial amplitude, but rather the pressure. After at least 8 hours of damping by the friction, the measured value is $\theta_{max}^{eq}\approx 1\cdot10^{-6}[rad]$.
+Initially the pendulum a driven oscillator (eq.~\ref{eqn:driven_motion_equation_2}) driven by small torques, consisted of black body radiation and pressure dependant noises. Gradually the pressure dependant friction (eq.~\ref{eqn:drag force1}) is damping the velosity, until the pendulum reaches an amplitude at which the friction is equal to the driving noises. The equilibrium amplitude is independent of the initial amplitude, but rather the pressure. After at least 8 hours of damping by the friction, the measured value is $\theta_{max}^{eq}\approx 1\cdot10^{-5}[rad]$.
 \par\noindent
 From the long damping time it can be shown the friction coefficient is very small, leading to a negligible friction at small amplitudes. 
 \par\noindent
@@ -154,7 +154,7 @@ The system measured results compared to the expected results from the equations 
 & measured;
 && $\kappa = 2.7\cdot10^{-6}[\frac{N\cdot m}{rad}]$
 && $T = 84[s]$
-&& $\theta_{max}^{eq} \approx 1\cdot10^{-6}[rad]$
+&& $\theta_{max}^{eq} \approx 1\cdot10^{-5}[rad]$
 \end{easylist}
 \end{multicols}
 The expected $\kappa$, $T$ have a range due to uncertainty of the string tensile strength $G$. The equilibrium amplitude $\theta_{max}^{eq}$ is an experimental value, depended on the amount of noise actually reduced, thus do not have an expected simulated value.
@@ -194,7 +194,7 @@ The PID damping $\gamma$, the damping time $\tau$ and the damping type defined b
 \par\noindent
 In order to succeed in damping the pendulum, the PID must be able to exert torques which can critically damp the equilibrium amplitude (eq.~\ref{eqn:critically_damped_motion_equation}). The PID maximal torque $\tau_{max} $ is given by:
 \begin{equation}
-\tau_{max} (\xi = 1)\geq\frac{ 8 \pi I }{T^2}\cdot\theta_{max}^{eq} = \frac{  8 \pi \cdot 0.487\cdot10^{-3} }{(84)^2}\cdot 1\cdot10^{-6} = 1.7\cdot10^{-12}[N\cdot m]
+\tau_{max} (\xi = 1)\geq\frac{ 8 \pi I }{T^2}\cdot\theta_{max}^{eq} = \frac{  8 \pi \cdot 0.487\cdot10^{-3} }{(84)^2}\cdot 1\cdot10^{-5} = 1.7\cdot10^{-11}[N\cdot m]
 \label{eqn:damping_torque_pid}
 \end{equation}
 \par\noindent
@@ -274,9 +274,9 @@ The torque is controlled by the duty cycle $D(t)$ varying between $0-100$ with 8
 	\label{fig:measured oscillation angle2}
 \end{figure}
 
-Shown in fig.~\ref{fig:measured oscillation angle1} are the damped torsional pendulum oscillations, using the PID. Since the damping is depended on the amplitude size (eq.~\ref{eqn:pid damping coefficient}), the damping accelerates as the amplitude gets smaller. 
+Shown in fig.~\ref{fig:measured oscillation angle1} are the damped torsional pendulum oscillations, using the PID. Since the damping is depended on the amplitude size (eq.~\ref{eqn:pid damping coefficient}), the damping accelerates as the amplitude gets smaller. Due to tourqe power and phase delay, the PID has a lower limit to the damping angle. 
 \par\noindent
-Due to tourqe power and phase delay, the PID has a lower limit to the damping angle. Shown in fig.~\ref{fig:measured oscillation angle2}, are the damped oscillation after the PID reached its limit. The PID is able to keep the small amplitude constant over time, enabling to integrate over the results, and have  gravitational measurements.
+Shown in fig.~\ref{fig:measured oscillation angle2}, are the damped oscillation after the PID reached its limit. The PID is able to keep the small amplitude constant over time, enabling to integrate over the results, and have  gravitational measurements.
 
 The effective temperature of the torsional pendulum is given by (eq.~\ref{eqn:Brownian uncertainty 3}): 
 \begin{equation}
