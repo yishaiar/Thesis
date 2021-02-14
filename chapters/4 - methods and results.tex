@@ -267,13 +267,15 @@ The torque is controlled by the duty cycle $D(t)$ varying between $0-100$ with 8
 	\caption[The damped torsional pendulum oscillations]{The damped torsional pendulum oscillations}
 	\label{fig:measured oscillation angle1}
 \end{figure}
-Shown in fig.~\ref{fig:measured oscillation angle1} are the damped torsional pendulum oscillations, using the PID. Since the damping is depended on the amplitude size (eq.~\ref{eqn:pid damping coefficient}), the PID accelerates as the amplitude gats smaller. 
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=0.17]{\main/images/4 - methods and results/duty_cycle.png}}
 	\caption[The measured oscillation angle]{The measured oscillation angle}
 	\label{fig:measured oscillation angle2}
 \end{figure}
+
+Shown in fig.~\ref{fig:measured oscillation angle1} are the damped torsional pendulum oscillations, using the PID. Since the damping is depended on the amplitude size (eq.~\ref{eqn:pid damping coefficient}), the damping accelerates as the amplitude gets smaller. 
+\par\noindent
 When the PID reaches its limit, due to power and phase delay. The PID is able to keep a constant small amplitude angle, shown in fig.~\ref{fig:measured oscillation angle2}, enabling to integrate over the results and get even better gravitational measurements.
 
 The effective temperature of the torsional pendulum is given by (eq.~\ref{eqn:Brownian uncertainty 3}): 
