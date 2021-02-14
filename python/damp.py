@@ -22,12 +22,12 @@ plt.plot(t,xt)
 
 
 # underdamped
-xi = 5e-4
+xi = 0.1
 tao = 1/(xi*omega_0)
 
 a=x0;
 omega = omega_0*np.sqrt(1-xi**2)
-xt=a*(z=np.exp(-t/tao))*np.cos(omega*t);
+xt=a*(np.exp(-t/tao))*np.cos(omega*t);
 plt.plot(t,xt)
 
 # critical
@@ -60,3 +60,4 @@ plt.xlabel ('t [s]')
 plt.legend(['Undamped','Underdamped','Critically damped','Overdamped'])
 
 # plt.savefig('damp.png')
+# 
