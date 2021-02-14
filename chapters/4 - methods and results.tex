@@ -198,7 +198,7 @@ In order to succeed in damping the pendulum, the PID must be able to exert torqu
 \label{eqn:damping_torque_pid}
 \end{equation}
 \par\noindent
-As shown in  eq.~\ref{eqn:damping_torque_pid} the PID maximal torque is given by $\tau_{max} \geq 5.45\cdot10^{-12}[N\cdot m]$. Since, it is proportional to the oscillations velocity (eq.~\ref{eqn:friction_torque_pid}), it needs a high modulation rate compare to the oscillations period $T$ (to prevent phase delay), and high dynamic range compare to velosity amplitude $\dot{\theta}_{max}$ (to avoid overshoot). 
+In order to damp the torsional pendulum the PID maximal torque is given by eq.~\ref{eqn:damping_torque_pid}. Since, the torque is proportional to the oscillations velocity (eq.~\ref{eqn:friction_torque_pid}), it needs a high modulation rate compare to the oscillations period $T$ (to prevent phase delay), and high dynamic range compare to velosity amplitude $\dot{\theta}_{max}$ (to avoid overshoot). 
 %The sufficient modulation speed and range are unknown.
 \subsection{Radiation-pressure torque}
 The PID torque was chosen to be a Radiation-pressure torque. The setup is composed of two light sources with given flux, $\Theta_i(t)$, one in front of a mass on a side of the torsional pendulum. As seen in eq.~\ref{eqn:net_gravitation_torque}, the difference between two torques adds an external net torque. Assuming that both light fields have the same coupling efficiency $\eta$ and are very close to be perpendicular to the surface with negligible incidence angles $\alpha_1\approx\alpha_2\approx 0$, using eq.~\ref{eqn:radiation_force_power}, the radiation-pressure net torque $\tau(t)$ can be calculated by:  
