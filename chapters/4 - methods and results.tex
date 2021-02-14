@@ -194,7 +194,7 @@ The PID damping $\gamma$, the damping time $\tau$ and the damping type defined b
 \par\noindent
 In order to succeed in damping the pendulum, the PID must be able to exert torques which can critically damp the equilibrium amplitude (eq.~\ref{eqn:critically_damped_motion_equation}). The PID maximal torque $\tau_{max} $ is given by:
 \begin{equation}
-\tau_{max} (\xi = 1)\geq\frac{ 8 \pi^2 I }{T^2}\cdot\theta_{max}^{eq} = \frac{ 8 \pi^2 \cdot 0.487\cdot10^{-3} }{(84)^2}\cdot 1\cdot10^{-6} = 5.45\cdot10^{-12}[N\cdot m]
+\tau_{max} (\xi = 1)\geq\frac{ 4 \pi I }{T}\cdot\theta_{max}^{eq} = \frac{  4 \pi \cdot 0.487\cdot10^{-3} }{(84)^2}\cdot 1\cdot10^{-6} = 5.45\cdot10^{-12}[N\cdot m]
 \label{eqn:damping_torque_pid}
 \end{equation}
 \par\noindent
