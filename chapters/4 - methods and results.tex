@@ -290,24 +290,8 @@ Assuming negligible friction, the energy lost in one cycle is the work done at t
 Q = 2\pi\cdot \frac{U_T}{W_T}=  \frac{2\pi\cdot(\frac{\kappa\cdot\theta(t)^2}{2}+\frac{I\cdot\dot{\theta}(t)^2}{2})}{\int_0^T[\tau_{PID}(t)\cdot\dot{\theta}(t) - p]dt} =  \frac{\pi\cdot(\kappa\theta_{max}^2cos^2(\omega\cdot 0)+I\omega^2\theta_{max}^2sin^2(\omega\cdot 0) }{\int_0^T\frac{\tau_{max} }{\theta_{max}} \frac{ T}{2\pi}(\frac{2\pi}{T}\theta_{max})^2 sin(\frac{2\pi}{T}t)dt-p\int_0^T dt }
 \label{eqn:Q}
 \end{equation}
-\iffalse
 \begin{equation}
-W_T = \int_0^T[\tau_{PID}(t)\cdot\dot{\theta}(t) - p]dt = \int_0^T\frac{\tau_{max} }{\theta_{max}} \frac{ T}{2\pi}(\frac{2\pi}{T}\theta_{max})^2 sin(\frac{2\pi}{T}t)dt-p\int_0^T dt 
-\label{eqn:pid work 1}
-\end{equation}
-\begin{equation}
-W_T = \frac{\tau_{max}\theta_{max}2\pi}{T} \frac{T}{2}-p\cdot T = T\cdot(\frac{\theta_{max}\cdot\pi\tau_{max}}{T} -p)
-\label{eqn:pid work}
-\end{equation}
-The torsional pendulum maximum stored energy in a given cycle $U_T$ is:
-\begin{equation}
-U_T = \frac{\kappa\cdot\theta(t)^2}{2}+\frac{I\cdot\dot{\theta}(t)^2}{2} =\frac{\kappa(\theta_{max}cos(\omega\cdot 0))^2}{2}+\frac{I(-\omega\theta_{max}sin(\omega\cdot 0))^2}{2} = \frac{\kappa\theta_{max}^2}{2}
-\label{eqn:pendulum energy}
-\end{equation}
-
-\fi
-\begin{equation}
-Q = 2\pi\cdot \frac{U_T}{W_T}= 2\pi\cdot\frac{\frac{\kappa\theta_{max}^2}{2}}{T\cdot(\frac{\theta_{max}\cdot\pi\tau_{max}}{T} -p)} =
+Q =  \frac{\pi\kappa\theta_{max}^2}{T\cdot(\frac{\theta_{max}\cdot\pi\tau_{max}}{T} -p)} =
 \frac{\pi}{T}\cdot\frac{\kappa\theta_{max}^2}{\frac{\theta_{max}\cdot\pi\tau_{max}}{T} -p}
 \label{eqn:Q}
 \end{equation}
