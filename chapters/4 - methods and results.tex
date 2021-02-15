@@ -339,15 +339,19 @@ p = F\cdot u =  n_{col}k \cdot n_{col}\frac{k}{m_1} =  n_p\frac{ k^2}{m_1}
 \end{equation}
 The Brownian motion collision power is given in eq.~\ref{eqn:Brownian power}. Thus, the effective Brownian power $p_{eff}$, is given by:
 \begin{equation}
-p_{eff} =  n_p\frac{ k^2}{m_1} = \frac{p}{n_p} = \frac{\frac{36A^2P^2}{m_1}}{\frac{N}{V}v A}= \frac{12AP}{m_1}\sqrt{\frac{3 k_B T M}{ N_A }}
-\label{eqn:brownian net power}
+p_{eff} =  n_p\frac{ k^2}{m_1} = \frac{p}{n_p} = \frac{\frac{36A^2P^2}{m_1}}{\frac{N}{V}v A} = \frac{12AP}{m_1}\sqrt{\frac{3 k_B T M}{ N_A }}
+\label{eqn:Brownian net power}
 \end{equation}
 Due to environmental black body radiation (see eq.~\ref{eqn: Stefan–Boltzmann power}) there are photons colliding into $A$. It can be shown that the mean energy of a black body photon is $E\approx 2.7k_B T$, resulting with $n_p = \frac{j}{E}A$ photon collisions. The incident photons composed of reflected flux $j_{ref}=(1-\epsilon)\sigma T^4$ with elastic collision and momentum of $k_{ref} = \frac{2E}{c} $, and absorbed flux $j_{ab}=\epsilon\sigma T^4$ with momentum of $k_{ab} = \frac{E}{c}$. Thus, the effective black body radiation power $p_{eff}$, is given by:
 \begin{equation}
 p_{eff} =  n_p\frac{ k^2}{m_1} = \frac{j_{ref}}{E}A\cdot\frac{ (\frac{2E}{c})^2}{m_1} +\frac{j_{ab}}{E}A\cdot\frac{ (\frac{E}{c})^2}{m_1} = \frac{  2.7 A k_B T }{ c^2 m_1} (4j_{ref}+j_{ab}) =\frac{2.7A k_B}{ c^2 m_1} (4-3\epsilon)\sigma T^5 
 \label{eqn:photon collision power}
 \end{equation}
-The equations are not dependent on the torsional pendulum temperature, but rather on the constant temperature of the environment. The 
+The effective noise power dependent on the gas pressure and the environment temperature (room temperature $T$). The effective noise power is given by:
+\begin{equation}
+p_{eff}  = \frac{12AP}{m_1}\sqrt{\frac{3 k_B T M}{ N_A }} + \frac{2.7A k_B}{ c^2 m_1} (4-3\epsilon)\sigma T^5 \approx 4.4\cdot 10^{-23}P +1.4\cdot 10^{-47}T^5 \approx 4.4\cdot 10^{-25}  [W]
+\label{eqn:net power}
+\end{equation} 
 
 
 
