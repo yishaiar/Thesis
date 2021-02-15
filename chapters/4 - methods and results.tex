@@ -204,9 +204,9 @@ The PID torque was chosen to be a Radiation-pressure torque. The setup is compos
 \begin{equation}
 \tau(t) = l\cdot F_1(t) \cdot cos\alpha_1 - l\cdot F_2(t) \cdot cos\alpha_2\approx l(F_1(t) - F_2(t)) \approx \frac{2l\eta}{{c}} \Delta \Theta(t) \label{eqn:radiation torque}
 \end{equation}
-The radiation-pressure net torque is controlled by changing the difference between the light sources' flux $\Delta \Theta(t)$. The maximal tourqe $\tau_{max}$ is at the maximal difference $2 \Theta_{max}$. Thus, the needed flux for critical damping with optical setup efficiency $\eta$ is given by: 
+The radiation-pressure net torque is controlled by changing the difference between the light sources' flux $\Delta \Theta(t)$. The maximal tourqe $\tau_{max}$ is at the maximal difference $\pm \Theta_{max}$. Thus, the needed flux for critical damping with optical setup efficiency $\eta$ is given by: 
 \begin{equation}
-\eta\Theta_{max} \geq \frac{\tau_{max}}{\frac{2\cdot2 l}{c}}\approx \frac{5.45\cdot10^{-11}}{\frac{2\cdot 0.218}{3\cdot10^{8}}}\approx 38 [mW]
+\eta\Theta_{max} \geq \frac{\tau_{max}}{\frac{t2 l}{c}}\approx \frac{5.45\cdot10^{-11}}{\frac{ 0.218}{3\cdot10^{8}}}\approx 19 [mW]
 \label{eqn:max radiation torque}
 \end{equation}
 
@@ -217,7 +217,7 @@ The apparatus had dynamic range of $10000$ steps and modulation speed of $1 sec$
 \par\noindent
 The apparatus uncertainty due to the non linearity of the AOM response and laser power fluctuations proved to be larger than the uncertainties of the intensity difference. Also, modulation speed (response time) proved to be more important than modulation range. Due to the conclusions, the PID torque was changed to two controlled light emitting diode (LED) sources.
 \subsection{Light emitting diode (LED)}
-The light emitting diode (LED) is a semiconductor light source with high power, and a long lifetime. A forward voltage applied to a p-n junction, causes electron injection which recombine with holes. The recombination releases energy in form of spontaneous emission photons (incoherent light). Due to the electrons life time, the LED could be modulated up to $100MHz$. Given by the Shockley diode equation for p-n junctions, the LED forward voltage $V_l$ is:
+The light emitting diode (LED) is a semiconductor light source with high power and long lifetime. A forward voltage applied to a p-n junction, causes electron injection which recombine with holes. The recombination releases energy in form of spontaneous emission photons (incoherent light). Due to the electrons life time, the LED could be modulated up to $100MHz$. Given by the Shockley diode equation for p-n junctions, the LED forward voltage $V_l$ is:
 \begin{equation}
 V_l(I_l) \approx n V_T ln10 log_{10} (\frac{I_l}{I_s})\approx constant \label{eqn:led voltage}
 \end{equation}
@@ -229,7 +229,7 @@ Where $I_l$ is the LED current, $I_s$ is the saturation current, $n$ is the emis
 The LED illumination angle varies between $45^0-120^0$. Since emitted light is incoherent it is hard to focus it to a point (not diffraction limited). In order to overcome the large illumination angle, the LED light sources are coupled to light guides (the vacuum chamber viewports were designed to have light guides in front). A light guide is a pipe made of thin filaments causing internal reflections, designed to illuminate small areas, regardless of the spectral characteristics of the light source. The light guide efficiency $\eta$ is mainly dependent on the cross section and length of the lightguide. 
 
 \subsection{Arduino microcontroller}
-The LED light sources are driven by an Arduino Mega 2560 microcontroller. Arduino is an inexpensive microcontroller with a serial communication interface and analog output using Pulse Width Modulation (PWM). The Arduino Mega 2560 contains ATmega2560 8-bit controller, a $16 [MHz]$ clock and PWM outputs pins with digital output of $V_d = 5[V]$.
+The LED light sources are driven by an Arduino Mega 2560 microcontroller. Arduino is an inexpensive microcontroller with a serial communication interface and analog output using Pulse Width Modulation (PWM). The Arduino Mega 2560 contains a 8-bit controller, $16 [MHz]$ clock and PWM outputs pins with digital output of $V_d = 5[V]$.
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=0.11]{\main/images/4 - methods and results/duty_cycle.png}}
@@ -248,13 +248,13 @@ f_{PWM} = \frac{1 }{120T}= \frac{1 }{120 \frac{8-bit }{16MHz}}  \approx 500[Hz]	
 \end{equation}
 
 \subsection{LED circuit}
-The LED circuits are each composed of a blue LED with $V_l\approx 4.5V$, with $N=6$ parallel PWM Arduino pins for the supply voltage (eq.~\ref{eqn:pwm voltage}) and resistor $R = 200\Omega$. Due to coupling efficiency and size difference between the output beam from the lightguide and the pendulum sides, the efficiency of flux hitting the pendulum is estimated $\eta = 0.7$, thus with LED flux given by eq.~\ref{eqn:led power}, the PID torque $\tau_{PID}(t)$ is given by (eq.~\ref{eqn:radiation torque}):
+The LED circuits are each composed of a blue LED with $V_l\approx 4.5V$, with $N=6$ parallel PWM pins for the supply voltage (eq.~\ref{eqn:pwm voltage}) and resistor $R = 200\Omega$. Due to coupling efficiency and size difference between the output beam from the lightguide and the pendulum sides, the efficiency of flux hitting the pendulum is estimated $\eta = 0.7$, thus with LED flux given by eq.~\ref{eqn:led power}, the PID torque $\tau_{PID}(t)$ is given by (eq.~\ref{eqn:radiation torque}):
 \begin{equation}
 \tau_{PID}(t) \approx \frac{2l\eta}{{c}} (\Theta_1(t) -\Theta_2(t)) \approx \frac{2l\eta}{{c}} \cdot\frac{N V_l V_d}{100R}(D_1(t) -D_2(t))  \approx   3.4\cdot 10^{-12}(D_1(t) -D_2(t)) 
 \label{eqn:led torque}
 \end{equation}
 \par\noindent
-The torque is controlled by the duty cycle $D(t)$ varying between $0-100$ with 8bit resolution, thus generating torques up to $\tau = 6.8\cdot10^-{10} [N\cdot m]$ with modulation steps of $\Delta\tau = 1.34\cdot10^-{12} [N\cdot m]$ and modulation frequency up to $500[Hz]$ (see eq.~\ref{eqn:pwm frequency}). The LED light source has approximately a linear response which minimizing the overshoot, and a fast response minimizing the phase delay.
+The torque is controlled by the duty cycle $D(t)$ varying between $0-100$ with 8bit resolution, thus generating torques up to $\tau = \pm 3.4\cdot10^-{10} [N\cdot m]$ with modulation steps of $\Delta\tau = 1.34\cdot10^-{12} [N\cdot m]$ and modulation frequency up to $500[Hz]$ (see eq.~\ref{eqn:pwm frequency}). The LED light source has approximately a linear response which minimizing the overshoot, and a fast response minimizing the phase delay.
 
 \section{Results and analysis} 
 \subsection{Results}
@@ -292,11 +292,11 @@ Q =  \frac{\pi\kappa\theta_{max}^2}{T\cdot(\frac{\theta_{max}\pi\tau_{max}}{T} -
 \end{equation}
 The damping would effect the motion when the oscillator is not highly underdamped $Q < 1$. It can be seen from eq.~\ref{eqn:Q} that $Q$ is highly depended on the amplitude size $\theta_{max}$. Even when assuming no environmental noises $p=0$, the amplitudes damping can affect the motion are:  
 \begin{equation}
-\theta_{max}(Q<1,p=0) < \frac{\tau_{max}}{\kappa} \approx \frac{6.8\cdot 10^{-10}}{2.7\cdot 10^{-6}} \approx 2.5\cdot 10^{-4} [rad]
+\theta_{max}(Q<1,p=0) < \frac{\tau_{max}}{\kappa} \approx \frac{3.4\cdot 10^{-10}}{2.7\cdot 10^{-6}} \approx 1.25\cdot 10^{-4} [rad]
 \label{eqn:low Q}
 \end{equation}
 
-It can be seen from eq.~\ref{eqn:Q} that when $Q<0$ the coupled noise power is larger than the work done by the PID, causing the oscillator to be driven. When assuming the noise power is the limiting factor of the damping, one can estimate the maximal effective noise coupled to the torsional pendulum from the actual measured damped amplitudes. Shown in fig.~\ref{fig:Q factor} are the amplitude depended Q values, with maximal angle (where $Q>0$) of the actual measured damped amplitudes $\theta_{max}= 2\cdot 10^{-7} - 5\cdot 10^{-8} [rad]$. The equivalent coupled noise is  $p= 1\cdot 10^{-17} - 3\cdot 10^{-18} [W]$.
+It can be seen from eq.~\ref{eqn:Q} that when $Q<0$ the coupled noise power is larger than the work done by the PID, causing the oscillator to be driven. When assuming the noise power is the limiting factor of the damping, one can estimate the maximal effective noise coupled to the torsional pendulum from the actual measured damped amplitudes. Shown in fig.~\ref{fig:Q factor} are the amplitude depended Q values, with maximal angle (where $Q>0$) of the actual measured damped amplitudes $\theta_{max}= 2\cdot 10^{-7} - 5\cdot 10^{-8} [rad]$. The equivalent coupled noise is  $p= 8\cdot 10^{-18} - 1\cdot 10^{-18} [W]$.
 
 \begin{figure}[htbp]
 	\centering

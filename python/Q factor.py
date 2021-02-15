@@ -15,7 +15,7 @@ def Q(p=1E-18, ones = False):
     theta = 2.5*10**(np.arange(n)[::-1]/(n-1)*(initaial - final)+final )
     kappa = 2.7e-6
     T=40
-    tau=6.8e-10
+    tau=3.4e-10
     p=np.ones([n])*p
     
     Q = np.pi/T*( (kappa*(theta**2)) / (theta*np.pi*tau/T-p))
@@ -36,9 +36,9 @@ def Q(p=1E-18, ones = False):
     
     plt.yscale('log')
     plt.xscale('log')
-Q(p=3E-18 )
-Q(p=1E-17,ones=True )
-fonts_define(r'$\theta_{max} [rad]$','Q factor',[r'$Q(p=3E-18)$',r'$Q(p=1E-17)$','Q = 0.5','Q = 1'],font=25)
+Q(p=1.3E-18 )
+Q(p=8E-18,ones=True )
+fonts_define(r'$\theta_{max} [rad]$','Q factor',[r'$Q(p=1E-18)$',r'$Q(p=8E-18)$','Q = 0.5','Q = 1'],font=25)
 
 plt.savefig('Q factor.png')
         
