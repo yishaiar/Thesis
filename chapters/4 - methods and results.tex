@@ -191,13 +191,13 @@ Where $\tau_{max}$ is the maximal torque exerted by the PID. When damping using 
 \begin{equation}
 \xi = \frac{T}{2 \pi \tau } =  \frac{T}{2 \pi  }\frac{\gamma}{2I}  = \frac{ \tau_{max}}{\theta_{max}} \cdot \frac{T^2}{8\pi^2 I}  \label{eqn:damping_time_pid}
 \end{equation}
-The PID damping $\gamma$, the damping time $\tau$ and the damping type depend on the ratio $\theta_{max}/\tau_{max}$. When torque is too small compared to the amplitude, the damping affect is negligible, resulting with a highly underdamped oscillator with infinite damping time. The PID must be able to exert torques which can critically damp the equilibrium amplitude (eq.~\ref{eqn:critically_damped_motion_equation}), the torque $\tau_{max} $ is given by:
+The PID damping $\gamma$, the damping time $\tau$ and the damping type depend on the ratio $\theta_{max}/\tau_{max}$. When torque is too small compared to the amplitude, the damping affect is negligible, resulting with a highly underdamped oscillator with infinite damping time. The PID must be able to exert torques which can critically damp the equilibrium amplitude (eq.~\ref{eqn:critically_damped_motion_equation}), the PID maximal torque $\tau_{max} $ is given by:
 \begin{equation}
 \tau_{max} (\xi = 1)\geq\frac{ 8 \pi^2 I }{T^2}\cdot\theta_{max}^{eq} = \frac{  8 \pi^2 \cdot 0.487\cdot10^{-3} }{(84)^2}\cdot 1\cdot10^{-5} = 5.45\cdot10^{-11}[N\cdot m]
 \label{eqn:damping_torque_pid}
 \end{equation}
 \par\noindent
-In order to damp the torsional pendulum the PID maximal torque is given by eq.~\ref{eqn:damping_torque_pid}. Since, the torque is proportional to the oscillations velocity (eq.~\ref{eqn:friction_torque_pid}), it needs a high modulation rate compare to the oscillations period $T$ (to prevent phase delay), and high dynamic range compare to velosity amplitude $\dot{\theta}_{max}$ (to avoid overshoot). 
+Since, the torque is proportional to the oscillations velocity (eq.~\ref{eqn:friction_torque_pid}), it needs a high modulation rate compare to the oscillations period (to prevent phase delay), and high dynamic range compare to the amplitude (to avoid overshoot). 
 %The sufficient modulation speed and range are unknown.
 \subsection{Radiation-pressure torque}
 The PID torque was chosen to be a Radiation-pressure torque. The setup is composed of two light sources with given flux, $\Theta_i(t)$, each one is in front of a mass on a side of the torsional pendulum. As seen in eq.~\ref{eqn:net_gravitation_torque}, the difference between two torques adds an external net torque. Assuming that both light fields have the same coupling efficiency $\eta$ and are very close to be perpendicular to the surface with negligible incidence angles $\alpha_1\approx\alpha_2\approx 0$, using eq.~\ref{eqn:radiation_force_power}, the radiation-pressure net torque $\tau(t)$ can be calculated by:  
