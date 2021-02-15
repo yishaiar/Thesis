@@ -335,18 +335,16 @@ As shown previously, there are multiple noise sources at the environment. Assumi
 \end{easylist}
 \end{multicols}
 \par\noindent
-Even at room temperature the power from Brownian motion is much larger than estimated previously ($p= 1\cdot 10^{-17} - 3\cdot 10^{-18} [W]$). Which leads to estimate the noise which drives the torsional pendulum only as the effective collision power. Which means the thermal flow does not couple noise into the system, and the noise coupled by the black body radiation is the radiation force caused by the photons colliding into the pendulum. 
-\par\noindent
-Since the noise energy arrives by particles with random direction and phase the power can be modelled as a Poisson process with the square root of the number of collisions, resulting with a significantly lower effective power.
+Even at room temperature the power from Brownian motion is much larger than estimated previously ($p= 1\cdot 10^{-17} - 3\cdot 10^{-18} [W]$). Which leads to estimate the effective driving noise only as the effective collision power. Which means thermal flow does not couple noise into the system, and the noise coupled by the black body radiation is the radiation force caused by the photons colliding into the pendulum. 
 \subsection{Random motion}
 Due to random motion, $n_p$ particles collide per second into cross section $A$ of mass $m_1$. Random motion can be modelled as a Poisson process, and the effective collision rate is the square root of the number of events $n_{col} = \sqrt{n_p}$. Each particle exchanges momentum $k$ with with $m_1$, resulting with force $F = n_{col}\cdot k$. Due to the collisions the velosity of $m_1$ is $ u = n_{col}\frac{k}{m_1}$. The collisions result with power given by:
 \begin{equation}
 p = F\cdot u =  n_{col}k \cdot n_{col}\frac{k}{m_1} =  n_p\frac{ k^2}{m_1}
 \label{eqn:net power}
 \end{equation}
-Due to Brownian motion, there are $n_p= \frac{N}{V}v A$  gas particle collisions with mass $m_0 = \frac{M}{N_A}$ and average velosity of the gas flow $v$ (eq.~\ref{eqn:flow velocity}) collide into $A$. Assuming all collisions are elastic, each particle exchanges momentum of $ k = 2 m_0 v$. Thus, causing Brownian power $p$, which is given by:
+The Brownian motion collision power is given in eq.~\ref{eqn:Brownian power}, the effective Brownian power $p_{effective}$, is given by:
 \begin{equation}
-p =  n_p\frac{ k^2}{m_1} =  \frac{N}{V} v A\frac{ (2 m_0 v)^2}{m_1} = \frac{4AP }{m_1k_B T}(\frac{M}{N_A})^2 (\frac{3 k_B N_A T}{M})^{3/2} =  \frac{12AP }{m_1 } (\frac{3 k_B  T M}{N_A})^{1/2}
+p_{effective} =  n_p\frac{ k^2}{m_1} = \frac{p}{n_p} = \frac{\frac{36A^2P^2}{m_1}}{n_p}
 \label{eqn:brownian net power}
 \end{equation}
 Due to environmental black body radiation there are photons colliding into $A$. It can be shown that the mean energy of a black body photon is $E\approx 2.7k_B T$, resulting with $n_p = \frac{j}{E}A$ photon collisions. The incident photons are both absorbed $k_{ab} = \frac{E}{c} $ and reflected $k_{ref} = \frac{2E}{c} $. Thus, causing photon collisions power $p$, which is given by:
