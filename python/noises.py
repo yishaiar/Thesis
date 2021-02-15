@@ -33,7 +33,7 @@ EPSILON =T_0*z[0]+z[1]
 c=3e8
 p =SIGMA  *EPSILON*A*(T**4-T_0**4)
 print('black body',p)
-p_RMS =np.sqrt(SIGMA  *EPSILON*A*(T**4-T_0**4)*(2.7*k*T)/c**2)
+p_RMS =(2.7*A*k)/(c**2*m_1)*(4-3*EPSILON)*SIGMA*T**5
 print('black body RMS',p_RMS)
 
 # thermal
@@ -55,7 +55,7 @@ p = 36/m_1*(A*P)**2
 
 # p = 6*A*RHOE_N*k*T*np.sqrt(3*R*T/M)
 print('BROWNIAN ',p)
-p_RMS = 36/m_1*(A*k*T )**2  *RHOE_N
+p_RMS = 12*A*P/m_1*np.sqrt(3*k*T*M/N_A)
 print('BROWNIAN RMS',p_RMS)
 
 v = np.sqrt(3*R*T/M)
