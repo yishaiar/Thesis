@@ -230,11 +230,8 @@ Where $I_l$ is the LED current, $I_s$ is the saturation current, $n$ is the emis
 \par\noindent
 The LED illumination angle varies between $45^0-120^0$. Since emitted light is incoherent it is hard to focus it to a point (not diffraction limited). In order to overcome the large illumination angle, the LED light sources are coupled to light guides (the vacuum chamber viewports were designed to have light guides in front). A light guide is a pipe made of thin filaments causing internal reflections, designed to illuminate small areas, regardless of the spectral characteristics of the light source. The light guide efficiency $\eta$ is mainly dependent on the cross section and length of the lightguide. 
 
-
-
-
 \subsection{Arduino microcontroller}
-The modulated light sources are two LED light sources driven by an Arduino microcontroller. The Arduino is an inexpensive open-source microcontroller with a serial communication interface and a digital output without digital-to-analog converter (DAC). The Arduino Mega 2560 contains ATmega2560 8-bit controller, a $16 [MHz]$ crystal oscillator (clock) and 15 PWM outputs pins with digital output of $V_d = 5[V]$.
+The LED light sources are driven by an Arduino Mega 2560 microcontroller. Arduino is an inexpensive microcontroller with a serial communication interface and analog output using Pulse Width Modulation (PWM). The Arduino Mega 2560 contains ATmega2560 8-bit controller, a $16 [MHz]$ clock and PWM outputs pins with digital output of $V_d = 5[V]$.
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=0.11]{\main/images/4 - methods and results/duty_cycle.png}}
@@ -243,7 +240,7 @@ The modulated light sources are two LED light sources driven by an Arduino micro
 \end{figure}
 \FloatBarrier
 \par\noindent
-The microcontroller can simulate analog output using Pulse Width Modulation (PWM). As shown in fig.~\ref{fig:duty_cycle}, the controller switches the output signal on and off, generating a square wave with period $T$. Pulse width ($PW$) is the time duration in which the signal is on, the controller is able to modulate the $PW$, and thus change the duty cycle which is the ratio of time signal is on compared to off $D(t) = \frac{PW(t)}{T}\cdot 100$. The duty cycle varies between $0-100$, with resolution limited by the controller. The modulation is proportional to the analog average voltage $V_a$ given by: 
+As shown in fig.~\ref{fig:duty_cycle}, the controller switches the output signal on and off, generating a square wave with period $T$. Pulse width ($PW$) is the time duration in which the signal is on, the controller is able to modulate the $PW$, and thus change the duty cycle which is the ratio of time signal is on compared to off $D(t) = \frac{PW(t)}{T}\cdot 100$. The PWM is proportional to the analog average voltage $V_a$ given by: 
 \begin{equation}
 V_a(t) = \frac{ PW(t)\cdot V_d}{ T}  = \frac{V_d}{100}\cdot D(t)   \label{eqn:pwm voltage}
 \end{equation}
