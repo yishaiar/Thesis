@@ -1,6 +1,17 @@
 
 import numpy as np 
 import matplotlib.pyplot as plt
+plt.figure(figsize=(20,10))
+
+def fonts_define(xtitle,ytitle,lgd,font=25):
+    plt.xlabel(xtitle, fontsize=font+2)
+    plt.ylabel(ytitle, fontsize=font+2)
+    plt.rc('xtick', labelsize=font) 
+    plt.rc('ytick', labelsize=font)
+    plt.legend(lgd,loc=2, prop={'size': 20})
+
+
+
 time = 400 #s
 t=np.linspace(0,time,3000);
 
@@ -58,9 +69,8 @@ xt=x0/2*(a*np.exp(-t/tao*a_exp)+b*np.exp(-t/tao*b_exp))
 plt.plot(t,xt)
 
 
-plt.ylabel(r'$\theta$ \ $\theta_{max}$')
-plt.xlabel ('t [s]')
-plt.legend(['Undamped','Underdamped','Critically damped','Overdamped'])
+
+fonts_define('time [s]',r'$\theta$ \ $\theta_{max}$',['Undamped','Underdamped','Critically damped','Overdamped'],font=25)
 
 plt.savefig('damp.png')
 # 

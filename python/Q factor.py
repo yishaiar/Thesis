@@ -1,6 +1,13 @@
 import numpy as np
 import matplotlib.pyplot as plt
+plt.figure(figsize=(20,10))
 
+def fonts_define(xtitle,ytitle,lgd,font=25):
+    plt.xlabel(xtitle, fontsize=font+2)
+    plt.ylabel(ytitle, fontsize=font+2)
+    plt.rc('xtick', labelsize=font) 
+    plt.rc('ytick', labelsize=font)
+    plt.legend(lgd,loc=2, prop={'size': 20})
 n =int(1e5+1)
 initaial = -4
 final = -9
@@ -27,10 +34,9 @@ plt.plot(theta,ones*0.5)
 
 plt.yscale('log')
 plt.xscale('log')
-plt.xlabel(r'$\theta_{max}$')
-plt.ylabel('Q factor')
-plt.legend([r'$Q(\theta_{max})$','Q = 0.5'])
 
+
+fonts_define(r'$\theta_{max} [rad]$','Q factor',[r'$Q(\theta_{max})$','Q = 0.5'],font=25)
 
 plt.savefig('Q factor.png')
         

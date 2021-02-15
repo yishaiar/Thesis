@@ -4,6 +4,18 @@ import sys
 from io import StringIO
 import matplotlib.pyplot as plt
 
+
+def fonts_define(xtitle,ytitle,lgd,font=25):
+    plt.figure(figsize=(20,10))
+    plt.xlabel(xtitle, fontsize=font+2)
+    plt.ylabel(ytitle, fontsize=font+2)
+    plt.rc('xtick', labelsize=font) 
+    plt.rc('ytick', labelsize=font)
+    plt.legend(lgd,loc=2, prop={'size': 20})
+fonts_define('time [$\mu$s]','voltage [V]',['Digital voltage','Analog voltage'],font=25)
+
+
+
 f=16e6
 b=2**8
 T = b/f/1E-6
@@ -37,16 +49,10 @@ pw = np.concatenate(([pw[0]], pw))
 # y[x%2 == 0]=x[x%2 == 0]/2
 # y[x%2 != 0] = x[x%2 == 0]/2 +duty
 # y = y*T
-plt.figure(figsize=(20,10))
+
 plt.step(y,V)
 plt.step(y,pw)
-plt.xlabel('time [$\mu$s]', fontsize=27)
-plt.ylabel('voltage [V]', fontsize=27)
 
-plt.legend(['Digital voltage','Analog voltage'],loc=2, prop={'size': 20})
-
-plt.rc('xtick', labelsize=25) 
-plt.rc('ytick', labelsize=25) 
 
 # plt.title ('Duty Cycle 90%')
 plt.savefig('duty_cycle.png')
