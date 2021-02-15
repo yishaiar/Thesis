@@ -347,9 +347,9 @@ Due to environmental black body radiation (see eq.~\ref{eqn: Stefan–Boltzmann 
 p_{eff} =  n_p\frac{ k^2}{m_1} = \frac{j_{ref}}{E}A\cdot\frac{ (\frac{2E}{c})^2}{m_1} +\frac{j_{ab}}{E}A\cdot\frac{ (\frac{E}{c})^2}{m_1} = \frac{  2.7 A k_B T }{ c^2 m_1} (4j_{ref}+j_{ab}) =\frac{2.7A k_B}{ c^2 m_1} (4-3\epsilon)\sigma T^5 
 \label{eqn:photon collision power}
 \end{equation}
-The effective noise power dependent on the gas pressure and the environment temperature (room temperature $T$). The effective noise power is given by:
+The effective noise power composed by Brownian motion, acoustic waves and black body radiation both is pressure dependent and  environment temperature dependent (room temperature $T$). The effective noise power is given by:
 \begin{equation}
-p_{eff}  = \frac{12AP}{m_1}\sqrt{\frac{3 k_B T M}{ N_A }} + \frac{2.7A k_B}{ c^2 m_1} (4-3\epsilon)\sigma T^5 \approx 4.4\cdot 10^{-23}P +1.4\cdot 10^{-47}T^5 \approx 4.4\cdot 10^{-25}  [W]
+p_{eff}  = 1\cdot10^{-22}AP^2 \frac{12AP}{m_1}\sqrt{\frac{3 k_B T M}{ N_A }} + \frac{2.7A k_B}{ c^2 m_1} (4-3\epsilon)\sigma T^5 \approx A (10^{-22}P^2+ 3.8\cdot 10^{-21}P +1.1\cdot 10^{-45}T^5) \approx 4.4\cdot 10^{-25}  [W]
 \label{eqn:net power}
 \end{equation} 
 
