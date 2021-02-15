@@ -287,7 +287,7 @@ Shown in fig.~\ref{fig:measured oscillation angle1} is the minimal average ampli
 Quality factor ($Q$) is a dimensionless parameter describing how underdamped is the oscillator, it is defined as the ratio of the maximum energy $U_T$ stored in the oscillator to the energy dissipated per cycle of oscillation.
 Assuming negligible friction, the energy lost in one cycle is the work done at the cycle $W_T$, which is the difference between the PID work and the environment coupled noise power $p$. The coupled noise power at the cycle is independent of time. The torsional pendulum Quality factor is given by:
 \begin{equation}
-Q = 2\pi\cdot \frac{U_T}{W_T}=  \frac{2\pi\cdot(\frac{\kappa\cdot\theta(t)^2}{2}+\frac{I\cdot\dot{\theta}(t)^2}{2})}{\int_0^T[\tau_{PID}(t)\cdot\dot{\theta}(t) - p]dt} =  \frac{\pi\cdot(\kappa(\theta_{max}cos(\omega\cdot 0))^2+I(-\omega\theta_{max}sin(\omega\cdot 0))^2) }{\int_0^T\frac{\tau_{max} }{\theta_{max}} \frac{ T}{2\pi}(\frac{2\pi}{T}\theta_{max})^2 sin(\frac{2\pi}{T}t)dt-p\int_0^T dt }
+Q = 2\pi\cdot \frac{U_T}{W_T}=  \frac{2\pi\cdot(\frac{\kappa\cdot\theta(t)^2}{2}+\frac{I\cdot\dot{\theta}(t)^2}{2})}{\int_0^T[\tau_{PID}(t)\cdot\dot{\theta}(t) - p]dt} =  \frac{\pi\cdot(\kappa\theta_{max}^2cos^2(\omega\cdot 0)+I\omega^2\theta_{max}^2sin^2(\omega\cdot 0) }{\int_0^T\frac{\tau_{max} }{\theta_{max}} \frac{ T}{2\pi}(\frac{2\pi}{T}\theta_{max})^2 sin(\frac{2\pi}{T}t)dt-p\int_0^T dt }
 \label{eqn:Q}
 \end{equation}
 \iffalse
