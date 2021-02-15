@@ -191,7 +191,7 @@ Where $\tau_{max}$ is the maximal torque exerted by the PID. When damping using 
 \begin{equation}
 \xi = \frac{T}{2 \pi \tau } =  \frac{T}{2 \pi  }\frac{\gamma}{2I}  = \frac{ \tau_{max}}{\theta_{max}} \cdot \frac{T^2}{8\pi^2 I}  \label{eqn:damping_time_pid}
 \end{equation}
-The PID damping $\gamma$, the damping time $\tau$ and the damping type depend on the ratio $\theta_{max}/\tau_{max}$. If $\theta_{max}$ is too large compare to the external torque, the PID affect is negligible, resulting with a highly underdamped oscillator with infinite damping time. 
+The PID damping $\gamma$, the damping time $\tau$ and the damping type depend on the ratio $\theta_{max}/\tau_{max}$. When torque is too small compared to the amplitude, the damping affect is negligible, resulting with a highly underdamped oscillator with infinite damping time. 
 \par\noindent
 In order to succeed in damping the pendulum, the PID must be able to exert torques which can critically damp the equilibrium amplitude (eq.~\ref{eqn:critically_damped_motion_equation}). The PID maximal torque $\tau_{max} $ is given by:
 \begin{equation}
