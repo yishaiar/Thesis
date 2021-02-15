@@ -40,10 +40,13 @@ pw = np.concatenate(([pw[0]], pw))
 plt.figure(figsize=(20,10))
 plt.step(y,V)
 plt.step(y,pw)
-plt.xlabel('time [$\mu$s]')
-plt.ylabel('voltage [V]')
-plt.legend()
+plt.xlabel('time [$\mu$s]', fontsize=27)
+plt.ylabel('voltage [V]', fontsize=27)
+
 plt.legend(['Digital voltage','Analog voltage'],loc=2, prop={'size': 20})
+
+plt.rc('xtick', labelsize=25) 
+plt.rc('ytick', labelsize=25) 
 
 # plt.title ('Duty Cycle 90%')
 plt.savefig('duty_cycle.png')
