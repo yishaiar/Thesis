@@ -285,15 +285,21 @@ Shown in fig.~\ref{fig:measured oscillation angle1} is the minimal average ampli
 \par\noindent
 \subsection{Quality factor (Q)}
 Quality factor ($Q$) is a dimensionless parameter describing how underdamped is the oscillator, it is defined as the ratio of the maximum energy $U_T$ stored in the oscillator to the energy dissipated per cycle of oscillation.
-Assuming negligible friction, the energy lost in one cycle is the work done at the cycle $W_T$, which is the difference between the PID work and the environment coupled noise power $p$. The coupled noise power at the cycle is independent of time. The torsional pendulum Quality factor is given by:
+Assuming negligible friction, the energy lost in one cycle is the work done at the cycle $W_T$, which is the difference between the PID work and the environment coupled noise power $p$. The coupled noise power at the cycle is independent of time. The torsional pendulum Quality factor $Q$ is given by:
 \begin{equation}
 Q = 2\pi\cdot \frac{U_T}{W_T}=  \frac{2\pi\cdot(\frac{\kappa\cdot\theta(t)^2}{2}+\frac{I\cdot\dot{\theta}(t)^2}{2})}{\int_0^T[\tau_{PID}(t)\cdot\dot{\theta}(t) - p]dt} =  \frac{\pi\cdot(\kappa\theta_{max}^2cos^2(\omega\cdot 0)+I\omega^2\theta_{max}^2sin^2(\omega\cdot 0) }{\int_0^T\frac{\tau_{max} }{\theta_{max}} \frac{ T}{2\pi}(\frac{2\pi}{T}\theta_{max})^2 sin(\frac{2\pi}{T}t)dt-p\int_0^T dt }
 \label{eqn:Q}
 \end{equation}
 \begin{equation}
-Q =  \frac{\pi\kappa\theta_{max}^2}{T\cdot(\frac{\theta_{max}\pi\tau_{max}}{T} -p)} \stackrel{p\approx 0}{\approx} \frac{\kappa\theta_{max}}{\tau_{max}}
+Q =  \frac{\pi\kappa\theta_{max}^2}{T\cdot(\frac{\theta_{max}\pi\tau_{max}}{T} -p)} \stackrel{p= 0}{=} \frac{\kappa\theta_{max}}{\tau_{max}}
 \label{eqn:Q}
 \end{equation}
+It can be seen from eq.~\ref{eqn:Q} that $Q$ is highly depended on the amplitude size $\theta_{max}$. Even when assuming no environmental noises $p=0$, the amplitudes at which the oscillator is not highly underdamped $Q < 1$ (the damping would effect the oscillations) are given by:  
+\begin{equation}
+\theta_{max} < \frac{\tau_{max}}{\kappa} \approx \frac{6.8\cdot 10^{-10}}{2.7\cdot 10^{-6}} \approx 2.5\cdot 10^{-4} [rad]
+\label{eqn:low Q}
+\end{equation}
+
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=0.11]{\main/images/4 - methods and results/Q factor.png}}
@@ -301,13 +307,9 @@ Q =  \frac{\pi\kappa\theta_{max}^2}{T\cdot(\frac{\theta_{max}\pi\tau_{max}}{T} -
 	\label{fig:Q factor}
 \end{figure} 
 
-When $Q>0.5$ the oscillator is underdamped and when $Q>>0.5$ it is highly underdamped. When $Q = 0.5$ the oscillator is critically damped, and when $Q < 0.5$ there is over damping. When Q<0 the noise power coupling is larger than the work done by the PID at the cycle, causing the oscillator to be driven. 
+ When $Q = 0.5$ the oscillator is critically damped, and when $Q < 0.5$ there is over damping. When Q<0 the noise power coupling is larger than the work done by the PID at the cycle, causing the oscillator to be driven. 
 \par\noindent
-It can be seen from eq.~\ref{eqn:Q} that the $Q$ factor is highly depended on the oscillation amplitude size $\theta_{max}$. Even when assuming no environmental noises $p=0$, the amplitudes at which the oscillator is not highly underdamped $Q < 1$ (the PID would have effect on the oscillations) are given by:  
-\begin{equation}
-\theta_{max} < \frac{\tau_{max}}{\kappa} \approx \frac{6.8\cdot 10^{-10}}{2.7\cdot 10^{-6}} \approx 2.5\cdot 10^{-4} [rad]
-\label{eqn:low Q}
-\end{equation}
+
 From the actual measured angle one can estimate the noises which are introduced to system.
 
 
