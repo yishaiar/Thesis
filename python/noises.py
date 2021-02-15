@@ -31,7 +31,7 @@ t= np.asarray([300,240,180,120,80])
 z= np.polyfit(t,eps,1)
 EPSILON =T_0*z[0]+z[1]
 c=3e8
-p =SIGMA  *EPSILON*A*(T**4-T_0**4)/(2.7*k*T)*(2.7*k*T)/c
+p =SIGMA  *EPSILON*A*(T**4-T_0**4)
 print('black body',p)
 p_RMS =np.sqrt(SIGMA  *EPSILON*A*(T**4-T_0**4)*(2.7*k*T)/c**2)
 print('black body RMS',p_RMS)
@@ -42,17 +42,16 @@ M =28.9647e-3
 m = M/N_A
 
 M/m
-p = A*RHOE_N*k*T*C_V*(T-T_0)*np.sqrt(M/(R*T))
+p = A*P*C_V*(T-T_0)*np.sqrt(M/(R*T))
 print('thermal ',p)
-p_RMS = A*C_V*(T-T_0)*np.sqrt(P*M/N_A)
-print('thermal ',p_RMS)
+
 
 
 # BROWNIAN
 
 # p = 6/N_A*np.sqrt(P*A*R*T*np.sqrt(3*R*T/M))
 # print(p)
-p = 36/m_1*(A*k*T *RHOE_N)**2 
+p = 36/m_1*(A*P)**2 
 
 # p = 6*A*RHOE_N*k*T*np.sqrt(3*R*T/M)
 print('BROWNIAN ',p)
