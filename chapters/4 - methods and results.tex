@@ -221,7 +221,7 @@ The apparatus had dynamic range of $10000$ steps and modulation speed of $1 sec$
 \par\noindent
 The apparatus uncertainty due to the non linearity of the AOM response and laser power fluctuations proved to be larger than the uncertainties of the intensity difference. Also, modulation speed (response time) proved to be more important than modulation range. Due to the conclusions, the PID torque was changed to two controlled high power Light emitting diode (LED) sources.
 \subsection{Light emitting diode (LED)}
-The light emitting diode (LED) is a semiconductor light source with high power, and a long lifetime. A forward voltage applied to a p-n junction, causes electron injection which recombine with holes. The recombination releases energy in form of spontaneous emission photons (incoherent light). Due to the electrons life time, the LED could be modulated up to $100MHz$ (fast response, which can minimize the PID phase delay). Given by the Shockley diode equation for p-n junctions, the LED forward voltage $V_l$ is:
+The light emitting diode (LED) is a semiconductor light source with high power, and a long lifetime. A forward voltage applied to a p-n junction, causes electron injection which recombine with holes. The recombination releases energy in form of spontaneous emission photons (incoherent light). Due to the electrons life time, the LED could be modulated up to $100MHz$. Given by the Shockley diode equation for p-n junctions, the LED forward voltage $V_l$ is:
 \begin{equation}
 V_l(I_l) \approx n V_T ln10 log_{10} (\frac{I_l}{I_s})\approx constant \label{eqn:led voltage}
 \end{equation}
@@ -259,7 +259,7 @@ The LED circuits are each composed of a blue LED with $V_l\approx 4.5V$, with $N
 \label{eqn:led torque}
 \end{equation}
 \par\noindent
-The torque is controlled by the duty cycle $D(t)$ varying between $0-100$ with 8bit resolution, thus generating torques up to $\tau = 6.8\cdot10^-{10} [N\cdot m]$ with modulation steps of $\Delta\tau = 1.34\cdot10^-{12} [N\cdot m]$ and modulation frequency up to $500[Hz]$ (see eq.~\ref{eqn:pwm frequency}). The LED light source has approximately a linear response (see eq.~\ref{eqn:radiation torque}) which can minimize the PID overshoot.
+The torque is controlled by the duty cycle $D(t)$ varying between $0-100$ with 8bit resolution, thus generating torques up to $\tau = 6.8\cdot10^-{10} [N\cdot m]$ with modulation steps of $\Delta\tau = 1.34\cdot10^-{12} [N\cdot m]$ and modulation frequency up to $500[Hz]$ (see eq.~\ref{eqn:pwm frequency}). The LED light source has approximately a linear response which can minimize the PID overshoot, and a fast response minimizing the PID phase delay.
 
 \section{Results and analysis} 
 \subsection{Results}
