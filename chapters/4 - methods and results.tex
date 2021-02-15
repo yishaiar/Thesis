@@ -295,11 +295,13 @@ Q = 2\pi\cdot \frac{U_T}{W_T}=  \frac{2\pi\cdot(\frac{\kappa\cdot\theta(t)^2}{2}
 Q =  \frac{\pi\kappa\theta_{max}^2}{T\cdot(\frac{\theta_{max}\pi\tau_{max}}{T} -p)} \stackrel{p= 0}{=} \frac{\kappa\theta_{max}}{\tau_{max}}
 \label{eqn:Q}
 \end{equation}
-The damping would effect the oscillations when the oscillator is not highly underdamped $Q < 1$. It can be seen from eq.~\ref{eqn:Q} that $Q$ is highly depended on the amplitude size $\theta_{max}$. Even when assuming no environmental noises $p=0$, the amplitudes at which $Q < 1$ are:  
+The damping would effect the motion when the oscillator is not highly underdamped $Q < 1$. It can be seen from eq.~\ref{eqn:Q} that $Q$ is highly depended on the amplitude size $\theta_{max}$. Even when assuming no environmental noises $p=0$, the amplitudes damping can affect the motion are:  
 \begin{equation}
 \theta_{max}(Q<1,p=0) < \frac{\tau_{max}}{\kappa} \approx \frac{6.8\cdot 10^{-10}}{2.7\cdot 10^{-6}} \approx 2.5\cdot 10^{-4} [rad]
 \label{eqn:low Q}
 \end{equation}
+
+It can be seen from eq.~\ref{eqn:Q} that when $Q<0$ the coupled noise power is larger than the work done by the PID, causing the oscillator to be driven. From the actual measured angle one can estimate the effective noise coupled to the system system.
 
 \begin{figure}[htbp]
 	\centering
@@ -307,12 +309,6 @@ The damping would effect the oscillations when the oscillator is not highly unde
 	\caption[The torsional pendulum Q factor]{The torsional pendulum Q factor}
 	\label{fig:Q factor}
 \end{figure} 
-
- When $Q = 0.5$ the oscillator is critically damped, and when $Q < 0.5$ there is over damping. When Q<0 the noise power coupling is larger than the work done by the PID at the cycle, causing the oscillator to be driven. 
-\par\noindent
-
-From the actual measured angle one can estimate the noises which are introduced to system.
-
 
 
 
