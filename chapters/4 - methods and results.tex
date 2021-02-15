@@ -175,7 +175,7 @@ Overshoot is when the value of output signal (the actual response) exceeds the t
 overshoot =  \frac{output-target}{target} = e ^{\frac{-\xi\pi}{\sqrt{1-\xi^2}}}  \label{eqn:overshoot}
 \end{equation}
 \par\noindent
-Where $\xi$ is the damping ratio of the oscillator defined in eq.~\ref{eqn:system damping ratio}. As seen in eq.~\ref{eqn:overshoot} when the PID gains are too high, instead of critical damping there is overdamping, which is causing overshoot. Due to the high gains the overshoot response overshoots again to the other side, causing the system to be an unwanted driven oscillator (shown in eq.~\ref{eqn:driven_motion_equation_2}). A slow response causes phase delay between the signal and the equivalent PID response, resulting  again with a driven oscillator.
+Where $\xi$ is the damping ratio of the oscillator defined in eq.~\ref{eqn:system damping ratio}. As seen in eq.~\ref{eqn:overshoot} when the PID gains are too high, instead of critical damping there is overdamping, which is causing overshoot. Due to the high gains the overshoot response overshoots again to the other side, causing the system to be an unwanted driven oscillator (shown in eq.~\ref{eqn:driven_motion_equation_2}). A slow response causes phase delay between the signal and the equivalent PID response, resulting again with a driven oscillator.
 \subsection{Damped oscillator}
 The torsional pendulum is a simple harmonic oscillator with oscillations amplitude $\theta_{max}$ and velocity given by $\dot{\theta}(t) =\frac{2\pi}{T} \theta_{max}( t)$ (see eq.~\ref{eqn:undamped_motion_equation_solved}). The PID mainly acts as friction, gradually slowing the oscillations velocity, with a torque $\tau_{PID}$ given by:
 \begin{equation}
@@ -193,7 +193,7 @@ Where $\tau_{max}$ is the maximal torque exerted by the PID. When damping using 
 \end{equation}
 The PID damping $\gamma$, the damping time $\tau$ and the damping type depend on the ratio $\theta_{max}/\tau_{max}$. When torque is too small compared to the amplitude, the damping affect is negligible, resulting with a highly underdamped oscillator with infinite damping time. 
 \par\noindent
-In order to succeed in damping the pendulum, the PID must be able to exert torques which can critically damp the equilibrium amplitude (eq.~\ref{eqn:critically_damped_motion_equation}). The PID maximal torque $\tau_{max} $ is given by:
+The PID must be able to exert torques which can critically damp the equilibrium amplitude (eq.~\ref{eqn:critically_damped_motion_equation}), the torque $\tau_{max} $ is given by:
 \begin{equation}
 \tau_{max} (\xi = 1)\geq\frac{ 8 \pi^2 I }{T^2}\cdot\theta_{max}^{eq} = \frac{  8 \pi^2 \cdot 0.487\cdot10^{-3} }{(84)^2}\cdot 1\cdot10^{-5} = 5.45\cdot10^{-11}[N\cdot m]
 \label{eqn:damping_torque_pid}
