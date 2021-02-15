@@ -207,9 +207,10 @@ The PID torque was chosen to be a Radiation-pressure torque. The setup is compos
 \begin{equation}
 \tau(t) = l\cdot F_1(t) \cdot cos\alpha_1 - l\cdot F_2(t) \cdot cos\alpha_2\approx l(F_1(t) - F_2(t)) \approx \frac{2l\eta}{{c}} \Delta \Theta(t) \label{eqn:radiation torque}
 \end{equation}
-The radiation-pressure net torque can be controlled by changing the difference between the light sources' flux $\Delta \Theta(t)$. Thus, the maximal net torque $\tau_{max}$ is given by: 
+The radiation-pressure net torque can be controlled by changing the difference between the light sources' flux $\Delta \Theta(t)$. With maximal light source flux of $Theta_{max}$, the maximal difference is $2 \Theta_{max}$. Thus, the needed flux $\eta\Theta_{max}$ is given by: 
 \begin{equation}
-\tau_{max}  \approx \frac{2l\eta}{{c}} \cdot 2 \Theta_{max} \approx \frac{0.218\cdot \eta}{{3\cdot10^{8}}} \cdot 2 \Theta_{max} \approx 7.27\cdot10^{-10} \cdot \eta\Theta_{max}   \label{eqn:max radiation torque}
+\eta\Theta_{max} \geq \frac{\tau_{max}}{\frac{c}{4l}}\approx
+  \label{eqn:max radiation torque}
 \end{equation}
 Where $\Theta_{max}$ is the is the the light sources' maximal flux with optical setup efficiency $\eta$. 
 \subsection{Laser setup}
