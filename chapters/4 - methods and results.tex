@@ -214,9 +214,9 @@ The radiation-pressure net torque can be controlled by changing the difference b
 \end{equation}
 
 \subsection{Laser setup}
-Initially the modulated light sources were composed of a single laser diode coupled in series into two acousto optic modulators (AOM), with special filtered mode using optical fibers. The AOMs divides the single coherent light beam into two beams, with both the total power and the intensity ratio modulated the a response to input voltage, resulting with controlled modulation of the light sources difference.
+Initially the modulated light sources were composed of a single laser diode coupled in series into two acousto optic modulators (AOM), with special filtered mode using optical fibers. The AOMs divides the single coherent light beam into two beams, with the intensity ratio modulated, resulting with controlled modulation of the light sources difference.
 \par\noindent
-The apparatus had dynamic range of 1000 steps and modulation speed of $1 sec$. The setup minimized uncertainties of the light intensity since both light sources had a mutual source, partly cancelling internal noises such as thermal and shot noise. 
+The apparatus had dynamic range of $10000$ steps and modulation speed of $1 sec$. The setup minimized uncertainties of the light intensity since both light sources had a mutual source, partly cancelling internal noises such as thermal and shot noise. 
 \par\noindent
 The apparatus uncertainty due to the non linearity of the AOM response and laser power fluctuations proved to be larger than the uncertainties of the intensity difference. Also, modulation speed (response time) proved to be more important than modulation range. Due to the conclusions, the PID torque was changed to two controlled high power Light emitting diode (LED) sources.
 \subsection{Light emitting diode (LED)}
@@ -238,7 +238,7 @@ The LED illumination angle varies between $45^0-120^0$. Since emitted light is i
 The modulated light sources are two LED light sources driven by an Arduino microcontroller, causing the PID torque. The Arduino is an inexpensive open-source microcontroller with a serial communication interface and a digital output without digital-to-analog converter (DAC). The Arduino Mega 2560 contains ATmega2560 8-bit controller, a $16 [MHz]$ crystal oscillator (clock) and 15 PWM outputs pins with digital output of $V_d = 5[V]$.
 \begin{figure}[htbp]
 	\centering
-	\fbox{\includegraphics[scale=0.17]{\main/images/4 - methods and results/duty_cycle.png}}
+	\fbox{\includegraphics[scale=0.11]{\main/images/4 - methods and results/duty_cycle.png}}
 	\caption[The PWM analog voltage]{The PWM analog voltage}
 	\label{fig:duty_cycle}
 \end{figure}
