@@ -310,16 +310,14 @@ It can be seen from eq.~\ref{eqn:Q} that when $Q<0$ the coupled noise power is l
 	\label{fig:Q factor}
 \end{figure} 
 
-\subsection{Noise}
-As shown previously, there are multiple noise sources at the environment (eq.~\ref{eqn:Brownian power}, eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:acoustic power}, eq.~\ref{eqn: Stefan–Boltzmann power}).
-\subsubsection{Brownian motion}
+\subsection{Brownian motion}
 Due to Brownian motion, we estimate $n_p= \frac{N}{V}v A$ gas particles collisions per second into the cross section of the pendulum. Each gas particle is with mass $m_0 = \frac{M}{N_A}$ and mean velosity of the gas flow $v$ (eq.~\ref{eqn:flow velocity}). Assuming all collisions are elastic, the particles exchanges mean momentum of $k=2m_0v$, resulting with force $F = n_p\cdot k$. Due to the collisions the torsional pendulum velosity is $ u = n_p\frac{k}{m_1}$, resulting with power given by:
 \begin{equation}
 p = F\cdot u =  n_p k \cdot n_p\frac{k}{m_1} =\frac{4}{m_1}(\frac{N}{V}v A)^2m_0^2v^2=\frac{4A^2}{m_1}(\frac{P}{k_B T})^2(\frac{M}{N_A})^2 (\frac{3 k_B N_A T}{M})^2 =\frac{36A^2P^2}{m_1} 
 \label{eqn:Brownian power}
 \end{equation}
- Assuming gas and environment temperature of $T = 298K$ and pendulum temperature $T_0 = 0K$ (maximal noise power), the noise power is given by:
-\par\noindent
+\subsection{Noise power}
+As shown previously, there are multiple noise sources at the environment. Assuming gas and environment temperature of $T = 298K$ and pendulum temperature $T_0 = 0K$ (maximal noise power), the noise power is given by:
 \begin{multicols}{2}
 \raggedcolumns
 \begin{easylist}
@@ -336,27 +334,10 @@ p = F\cdot u =  n_p k \cdot n_p\frac{k}{m_1} =\frac{4}{m_1}(\frac{N}{V}v A)^2m_0
 && $p=1.1\cdot 10^{-28}[W]$.
 \end{easylist}
 \end{multicols}
-
-
- Since the noise energy arrives by particles with random direction and phase the power can be modelled as a Poisson process with the RMS of the number of particles, resulting with a significantly lower effective power $P_{RMS}$.
-The RMS of the gas particles number density is $\sqrt{\rho_N} = \sqrt{\frac{P}{k_B T}}$:
 \par\noindent
-The Brownian effective power is given by:
-\begin{equation}
-p_{RMS} =   6 A \sqrt{\frac{P}{k_B T}} k_B T  \sqrt{\frac{3RT}{M}}=   6 A T k_B\sqrt{\frac{3 N_A P }{M}}         \label{eqn:RMS Brownian power}
-\end{equation}
-The maximal thermal effective power is given by: 
+Even at room temperature the power from Brownian motion is much larger than estimated previously ($p= 1\cdot 10^{-17} - 3\cdot 10^{-18} [W]$). Which leads to estimate the noise which drives the torsional pendulum only as the effective collision power. Which means the thermal flow does not couple noise into the system, and the noise coupled by the black body radiation is the radiation force caused by the photons colliding into the pendulum. 
 \par\noindent
-\begin{equation}
-p_{RMS} =  A \sqrt{\frac{P}{k_B T}} k_B T c_v  \Delta T \sqrt{\frac{M}{RT}} =  A c_v  \Delta T  \sqrt{\frac{P M }{N_A}}  
-\label{eqn:RMS heat conduction}
-\end{equation}
-The average energy of a black body radiation photon is given by $E=2.7 k_B T$, the maximal black body radiation effective power is given by \cite{WOODS201444}:
-\begin{equation}
-p_{RMS} = A \cdot\sqrt{N}\cdot E = A\cdot\sqrt{\frac{j}{E}}\cdot E = \sqrt{\frac{\sigma\epsilon(T^4-T_0^4)}{2.7 k_B T}}\cdot 2.7 k_B T A = \sqrt{2.7 k_B T A^2\sigma\epsilon (T^4-T_0^4) }   \label{eqn: max Stefan–Boltzmann power}
-\end{equation} 
-
-
+Since the noise energy arrives by particles with random direction and phase the power can be modelled as a Poisson process with the square root of the number of collisions, resulting with a significantly lower effective power.
 \subsection{Random motion}
 Due to random motion, $n_p$ particles collide per second into cross section $A$ of mass $m_1$. Random motion can be modelled as a Poisson process, and the effective collision rate is the square root of the number of events $n_{col} = \sqrt{n_p}$. Each particle exchanges momentum $k$ with with $m_1$, resulting with force $F = n_{col}\cdot k$. Due to the collisions the velosity of $m_1$ is $ u = n_{col}\frac{k}{m_1}$. The collisions result with power given by:
 \begin{equation}
