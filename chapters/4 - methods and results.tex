@@ -1,6 +1,7 @@
 \providecommand{\main}{..}
 \documentclass[\main/master.tex]{subfiles}
 \begin{document}
+\newspacing
 \chapter{Methods and results}\label{chapter:Methods and results}
 
 \section{System structure}
@@ -257,6 +258,13 @@ The LED circuits are each composed of a blue LED with $V_l\approx 4.5V$, with $N
 The torque is controlled by the duty cycle $D(t)$ varying between $0-100$ with 8bit resolution, thus generating torques up to $\tau = \pm 3.4\cdot10^-{10} [N\cdot m]$ with modulation steps of $\Delta\tau = 1.34\cdot10^-{12} [N\cdot m]$ and modulation frequency up to $500[Hz]$ (see eq.~\ref{eqn:pwm frequency}). The LED light source has approximately a linear response which minimizing the overshoot, and a fast response minimizing the phase delay.
 
 \section{Results and analysis} 
+Shown in fig.~\ref{fig:actual system} is the final experiment setup after assembling.
+\begin{figure}[htbp]
+	\centering
+	\fbox{\includegraphics[scale=0.23]{\main/images/4 - methods and results/actual system_crop.jpg}}
+	\caption[The actual system]{The actual system}
+	\label{fig:actual system}
+\end{figure}
 \subsection{Results}
 
 \begin{figure}[htbp]

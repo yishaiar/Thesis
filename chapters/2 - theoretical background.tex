@@ -2,24 +2,20 @@
 \documentclass[\main/master.tex]{subfiles}
 
 \begin{document}
+\newspacing
 \chapter{Theoretical background}\label{chapter:Theoretical background}
 \section{Torsional pendulum}
 \subsection{Torsional pendulum}
+\par\noindent
+A torsional pendulum, shown in fig.~\ref{fig:torsion_pendulum}, is an oscillator made of a mass hung by a string from a fixed point allowing it to swing freely. When the mass is displaced from the equilibrium angle, the pendulum has a linear restoring torque, rotating the mass back to the equilibrium position.
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=0.2]{\main/images/2 - theoretical background/torsion_pendulum_powerpoint.jpg}}
 	\caption[Torsional pendulum]{A torsional pendulum}
 	\label{fig:torsion_pendulum}
 \end{figure}
-\par\noindent
-A torsional pendulum, shown in fig.~\ref{fig:torsion_pendulum}, is an oscillator made of a mass hung by a string from a fixed point allowing it to swing freely. When the mass is displaced from the equilibrium angle, the pendulum has a linear restoring torque, caused by the twisted string. 
-\par\noindent
-The restoring torque $\tau$, which is proportional to the string torsion coefficient $\kappa$, rotates the mass back to the equilibrium position:
-\begin{equation}
-\tau = -\kappa\cdot\theta     \label{eqn:hook law}
-\end{equation}
-\par\noindent
-Assuming homogeneity of a circular string, the string torsion coefficient $\kappa$ can be estimated by:
+\FloatBarrier
+The restoring torque is given by $\tau = -\kappa\cdot\theta$. The twisted string is causing the tourqe $\tau$, therefore the tourqe is proportional to the string torsion coefficient $\kappa$ and the angle $\theta$. Assuming homogeneity of a circular string, the string torsion coefficient $\kappa$ can be estimated by:
 \begin{equation}
 \kappa = \frac{GJ}{h} = \frac{G}{h} \frac{\pi(\frac{d}{2})^4}{2}  = \frac{G}{h} \frac{\pi d^4}{32}   \label{eqn:torsion_coefficient_homogeneity}
 \end{equation}
