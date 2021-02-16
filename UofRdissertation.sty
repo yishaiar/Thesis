@@ -75,6 +75,29 @@ inner=1.25in]{geometry}
 \setlength\parskip{0.0em plus 0.01em minus 0.01em}
 \setlength\parindent{0pt}
 
+\makeatletter
+\g@addto@macro{\normalsize}{%
+    \setlength{\abovedisplayskip}{0.5pt}
+    \setlength{\abovedisplayshortskip}{0.5pt}
+    \setlength{\belowdisplayskip}{0.5pt}
+    \setlength{\belowdisplayshortskip}{0.5pt}}
+\makeatother
+
+\newcommand{\newsubsection}[1]{
+  \vspace{-1em}
+
+  \subsection{#1}
+  }
+\newcommand{\newsubsubsection}[1]{
+  \vspace{-1em}
+
+  \subsubsection{#1}
+  }
+\newcommand{\newsection}[1]{
+  \vspace{-1.5em}
+
+  \section{#1}
+  }
 \usepackage[compact]{titlesec}
 \usepackage{paralist}
 \newcommand{\newspacing}{
@@ -83,3 +106,4 @@ inner=1.25in]{geometry}
 \titlespacing{\subsection}{0pt}{1ex}{0ex}
 \titlespacing{\subsubsection}{0pt}{0.5ex}{0ex}
 }
+
