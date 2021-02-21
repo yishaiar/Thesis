@@ -209,12 +209,12 @@ The apparatus uncertainty, due to the non linearity of the AOM response and lase
 \subsection{Light emitting diode (LED)}
 The light emitting diode (LED) is a semiconductor light source with high power and long lifetime. A forward voltage applied to a p-n junction, causes electron injection which recombines with holes. The recombination releases energy in form of spontaneous emission photons (incoherent light). Due to the electrons life time, the LED could be modulated up to $100MHz$. The LED forward voltage is given by the Shockley diode equation for p-n junctions, $V_l \approx n V_T ln10 log_{10} (\frac{I_l}{I_s})$, where $I_l$ is the LED current, $I_s$ is the saturation current, $n$ is the emission coefficient, and $V_T$ is the thermal voltage. 
 \par\noindent
-Since $V_l$ varies as the logarithm of the current, it is approximately constant over wide current range. In the driving circuit a resistor $R$ is connected in series with the LED to stabilizes the current. The LED light flux with circuit of $N$ voltages supplies $V$ in parallel is given by:
+Since $V_l$ varies as the logarithm of the current, it is approximately constant over wide current range. In the driving circuit, a resistor $R$ is connected in series with the LED, stabilizing the current. The LED light flux with circuit of $N$ voltage supplies $V$ in parallel, is given by:
 \begin{equation}
 \Theta = I_l\cdot V_l  =\frac{N\cdot V-V_l}{R}\cdot V_l\approx \frac{N\cdot V_l\cdot V}{R}\label{eqn:led power}
 \end{equation}
 \par\noindent
-The LED illumination angle varies between $45^0-120^0$. Since emitted light is incoherent it is hard to focus it to a point (not diffraction limited). In order to overcome the large illumination angle, the LED light sources are coupled to light guides (the vacuum chamber viewports were designed to have light guides in front). A light guide is a pipe made of thin filaments causing internal reflections, designed to illuminate small areas, regardless of the spectral characteristics of the light source. The light guide efficiency $\eta$ is mainly dependent on the cross section and length of the lightguide. 
+The LED illumination angle varies between $45^0-120^0$. Since emitted light is incoherent, it is hard to focus it to a point (not diffraction limited). In order to overcome the large illumination angle, the LED light sources are coupled to light guides (the vacuum chamber viewports were designed to have light guides in front). A light guide is a pipe made of thin filaments causing internal reflections, designed to illuminate small areas, regardless of the spectral characteristics of the light source. The light guide efficiency $\eta$ is dependent mainly on the cross section and length of the lightguide. 
 
 \subsection{Arduino microcontroller}
 \begin{figure}[htbp]
@@ -225,7 +225,7 @@ The LED illumination angle varies between $45^0-120^0$. Since emitted light is i
 \end{figure}
 %\FloatBarrier
 \par\noindent
-The Arduino Mega 2560 is an inexpensive 8-bit microcontroller with $16 [MHz]$ clock and multiple Pulse Width Modulation (PWM) analog outputs, which are using a digital output of $V_d = 5[V]$. As shown in fig.~\ref{fig:duty_cycle}, the controller switches the output signal on and off, generating a square wave with period $T$. Pulse width ($PW$) is the time duration in which the signal is on, the controller is able to modulate the $PW$, and thus change the duty cycle which is the ratio of time signal is on compared to off $D(t) = \frac{PW(t)}{T}\cdot 100$. The PWM is proportional to the analog average voltage $V_a$ given by: 
+The Arduino Mega 2560 is an inexpensive 8-bit microcontroller with $16 [MHz]$ clock and multiple Pulse Width Modulation (PWM) analog outputs, which use a digital output of $V_d = 5[V]$. As shown in fig.~\ref{fig:duty_cycle}, the controller switches the output signal on and off, generating a square wave with period $T$. Pulse width ($PW$) is the time duration in which the signal is on. The controller is able to modulate the $PW$, and thus change the duty cycle which is the ratio of time signal is on compared to off: $D(t) = \frac{PW(t)\cdot 100}{T}$. The PWM is proportional to the analog average voltage $V_a$ given by: 
 \begin{equation}
 V_a(t) = \frac{ PW(t)\cdot V_d}{ T}  = \frac{V_d}{100}\cdot D(t)   \label{eqn:pwm voltage}
 \end{equation}
