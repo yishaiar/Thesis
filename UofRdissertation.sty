@@ -112,3 +112,10 @@ inner=1.25in]{geometry}
 \usepackage{tocloft}
 \setlength{\cftbeforetoctitleskip}{-3em}
 
+\usepackage{natbib}
+\setlength{\bibsep}{0.0pt}
+\let\oldbibliography\thebibliography
+\renewcommand{\thebibliography}[1]{%
+  \oldbibliography{#1}%
+  \setlength{\itemsep}{0pt}%
+}
