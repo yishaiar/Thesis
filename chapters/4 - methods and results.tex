@@ -343,14 +343,15 @@ The Brownian motion collision power is given in eq.~\ref{eqn:Brownian power}. Th
 p_{eff} =  n_p\frac{ k^2}{m_1} = \frac{p}{n_p} = \frac{\frac{36A^2P^2}{m_1}}{\frac{N}{V}v A} = \frac{12AP}{m_1}\sqrt{\frac{3 k_B T M}{ N_A }}
 \label{eqn:Brownian net power}
 \end{equation}
-There are photons colliding into the torsional pendulum due to black body radiation from (see eq.~\ref{eqn: Stefan–Boltzmann power}). It can be shown that the mean energy of a black body photon is $\overline{E}\approx 2.7k_B T$, where $T$ is the environment temperature. The incident photons are composed of reflected flux $j_{ref}=(1-\epsilon)\sigma T^4$ each with elastic collision and momentum of $k_{ref} = \frac{2\overline{E}}{c} $, and absorbed flux $j_{ab}=\epsilon\sigma T^4$ each with momentum of $k_{ab} = \frac{\overline{E}}{c}$. At each flux the number of photon collisions is given by $n_p = \frac{j}{\overline{E}}A$, resulting with effective power $p_{eff}$ given by:
+There are photons colliding into the torsional pendulum due to black body radiation from (see eq.~\ref{eqn: Stefan–Boltzmann power}). It can be shown that the mean energy of a black body photon is $\overline{E}\approx 2.7k_B T$, where $T$ is the environment temperature (room temperature). The incident photons are composed of reflected flux $j_{ref}=(1-\epsilon)\sigma T^4$ each with elastic collision and momentum of $k_{ref} = \frac{2\overline{E}}{c} $, and absorbed flux $j_{ab}=\epsilon\sigma T^4$ each with momentum of $k_{ab} = \frac{\overline{E}}{c}$. At each flux the number of photon collisions is given by $n_p = \frac{j}{\overline{E}}A$, resulting with effective power $p_{eff}$ given by:
 \begin{equation}
 p_{eff} =  n_p\frac{ k^2}{m_1} \approx \frac{j_{ref}}{\overline{E}}A\cdot\frac{ (\frac{2\overline{E}}{c})^2}{m_1} +\frac{j_{ab}}{\overline{E}}A\cdot\frac{ (\frac{\overline{E}}{c})^2}{m_1} = \frac{  2.7 A k_B T }{ c^2 m_1} (4j_{ref}+j_{ab}) =\frac{2.7A k_B}{ c^2 m_1} (4-3\epsilon)\sigma T^5 
 \label{eqn:photon collision power}
 \end{equation}
-The effective noise power composed by Brownian motion, acoustic waves and black body radiation both is pressure dependent and  environment temperature dependent (room temperature $T$). The effective noise power is given by:
+The total noise power (Brownian motion, acoustic waves and black body radiation) is given by:
 \begin{equation}
 p_{eff}  \approx A (10^{-22}P^2+ 3.8\cdot 10^{-21}P +1.1\cdot 10^{-45}T^5) \approx 4.4\cdot 10^{-25}  [W]
 \label{eqn:net power}
-\end{equation} 
+\end{equation}
+resulting with angle of  
 \end{document}
