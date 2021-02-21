@@ -251,17 +251,17 @@ The torque is controlled by the duty cycle $D(t)$ varying between $0-100$ with 8
 	\label{fig:actual system}
 \end{figure}
 \FloatBarrier
-The measurement setup inside the acoustic box after assembling is shown in fig.~\ref{fig:actual system}. Using the PID we are able to damp down the torsional pendulum oscillations, shown in fig.~\ref{fig:measured oscillation angle}. Since the damping is depended on the amplitude size (eq.~\ref{eqn:pid damping coefficient}), the damping accelerates as the amplitude gets smaller. The damping time from amplitude of $\theta_{max} = 60 [\mu rad] $ to $\theta_{max} = 10[\mu rad] $ is $3700[s]$, compares to a damping time of $250[s]$ to reach an amplitude of $\theta_{max} = 0.2[\mu rad]$.
+The measurement setup inside the acoustic box after assembly is shown in fig.~\ref{fig:actual system}. Using the PID we are able to damp down the torsional pendulum oscillations, as demonstrated in fig.~\ref{fig:measured oscillation angle}. Since the damping is depended on the amplitude size (eq.~\ref{eqn:pid damping coefficient}), the damping accelerates as the amplitude gets smaller. The damping time from amplitude of $\theta_{max} = 60 [\mu rad] $ to $\theta_{max} = 10[\mu rad] $ is $3700[s]$, compares to a damping time of $250[s]$ to reach an amplitude of $\theta_{max} = 0.2[\mu rad]$.
 
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=0.2]{\main/images/4 - methods and results/measured oscillation angle.png}}
-	\caption[The damped torsional pendulum oscillations]{The damped torsional pendulum oscillations}
+	\caption[Damped torsional pendulum oscillations]{The damped torsional pendulum oscillations}
 	\label{fig:measured oscillation angle}
 \end{figure}
 \FloatBarrier
 \par\noindent
-Shown in fig.~\ref{fig:measured oscillation angle 1} are the torsional pendulum damped oscillations. The PID is able to damp up to amplitude of $\theta_{max}^{PID}= 0.05[\mu rad]$ with an average amplitude kept by the PID over time of $\overline{\theta_{max}^{PID}} = 0.2 [\mu rad]$. Having a constant amplitude over time, allows to integrate over the results. The damping is limited due to the PID tourqe power, noise, phase delay (from filtering the bouncing mode of the torsional pendulum), and not having the right PID tuning parameters (which are achieved experimentally).
+Shown in fig.~\ref{fig:measured oscillation angle 1} are the torsional pendulum damped oscillations. The PID is able to damp up to an amplitude of $\theta_{max}^{PID}= 0.05[\mu rad]$ with an RMS amplitude kept by the PID over time of $\overline{\theta_{max}^{PID}} = 0.2 [\mu rad]$. Having a constant amplitude over time, allows to integrate over the results. The damping is limited due to the PID tourqe power, noise, phase delay (from filtering the bouncing mode of the torsional pendulum), or not having the right PID tuning parameters (which are achieved experimentally).
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[scale=0.2]{\main/images/4 - methods and results/measured oscillation angle1.png}}
@@ -322,7 +322,7 @@ Assuming gas and environment temperature of $T = 298K$ and torsional pendulum te
 \end{easylist}
 \end{multicols}
 \par\noindent
-Even at room temperature the power from Brownian motion is much larger than estimated previously ($p= 8\cdot 10^{-18} - 1\cdot 10^{-18} [W]$). Which leads to estimate the effective driving noise only as the effective collision power and not the total energy power coupled to the system. 
+Even at room temperature the power from Brownian motion is much larger than estimated previously ($p= 8\cdot 10^{-18} - 1\cdot 10^{-18} [W]$). This leads to estimate the effective driving noise only as the effective collision power and not the total energy power coupled to the system. 
 \par\noindent
 Thus, the thermal flow does not couple noise into the system, and the effective noise power is composed of Brownian motion, acoustic waves and black body radiation. The Brownian motion and black body radiation are both treated as random processes, where the noise coupled by black body radiation is a radiation force caused by the photons colliding into the torsional pendulum. 
 \subsubsection{Random motion}
