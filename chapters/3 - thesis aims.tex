@@ -28,17 +28,13 @@ Having a lower amplitude enlarges the SNR and the measurement sensitivity, which
 \par\noindent
 Thus, the PID measured error  changes to $e(t) = \delta\theta(t) + \theta_g(t)$, the PID is compensating for the new error with mainly a proportional gain $K_P$, and the response $u[e(t)]$ becomes mainly an inverse torque:
 \begin{equation}
-\tau_{PID} = u[e(t)] \approx K_P\theta_g(t) \approx \kappa \overline{\theta}_g 
+\tau_{PID} = u[e(t)] \approx K_P(t)\theta_g(t) 
 \label{eqn:PID_response}
 \end{equation}
-Assuming the mass is oscillating at a low frequency, when integrating over short periods the angle is constant in time:
+Assuming the mass is oscillating at a low frequency, when integrating over short periods the angle is constant in time and the average gravitational angle is given by:
 \begin{equation}
-U = \int u(t) dt = K_P\overline{\theta}_g\Delta t 
+\overline{\theta}_g = \frac{\int u[e(t)] dt}{\int K_P(t) dt}
 \label{eqn:PID_measurement_eqn}
-\end{equation}
-Where $U$ is the sum of the PID response, and $\Delta t$ is the integration time. The gravitational angle is:
-\begin{equation}
-\overline{\theta}_g = \frac{U}{K_P\Delta t}      \label{eqn:pid_gravitation_torque}
 \end{equation}
 \par\noindent
 According to eq.~\ref{eqn:theta average_2}, by accurate angle measurement, the gravitational field could be estimated. According to eq.~\ref{eqn:pid_gravitation_torque}, the measurement system allows fast response. 
@@ -47,69 +43,6 @@ According to eq.~\ref{eqn:theta average_2}, by accurate angle measurement, the g
  
  
  
-
-
-
-
-
-
-
-
-
-The Cavendish experiment for gravitational measurement, is constructed using a torsional pendulum with a front mirror. The pendulum angle displacement causes a mirror tilt. Optical measurement of angle displacement is made with a quadrant detector using interferometric technique \cite{howell2019}.
-\par\noindent
-The fundamental measurement limitations are the basic energy level quantum uncertainty and the measurement system shot noise. The basic energy level quantum uncertainty is:
-\begin{equation}
-\delta\theta= \sqrt{\frac{\hslash\omega}{2\kappa}} \approx 10^{-16} [rad]    \label{eqn:basic uncertainty}
-\end{equation}
-\par\noindent
-The corresponding shot noise limit for the interferometer is calculated as:
-\begin{equation}
-\delta\theta = \frac{1}{4\sqrt{2}\pi}\frac{\lambda}{L\sqrt{N}} \approx
-10^{-14} [\frac{rad}{Hz}]    \label{eqn:shot limit}
-\end{equation}
-\par\noindent
-When the gravitational force is measured using a torsional pendulum, there is also technical noise, greater than the fundamental noise. There is temperature dependent quantum uncertainty due to thermal energy, at room temperature ($T = 300[k]$) the uncertainty is given by:
-\begin{equation}
-\delta\theta = \sqrt{\frac{k_B T}{\kappa}} \approx 4\cdot 10^{-8} [rad] \label{eqn:Brownian uncertainty 3}
-\end{equation}
-There are also black body radiation, Brownian motion, heat flow and acoustic waves affecting the torsional pendulum. As shown previously (eq.~\ref{eqn:Brownian power}, eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:acoustic power}, eq.~\ref{eqn:drag force}), Brownian motion energy coupling, thermal coupling, acoustic waves and friction are pressure dependent
-\par\noindent 
-Reducing the the noise enables higher sensitivity. As shown previously (eq.~\ref{eqn:Brownian power}, eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:acoustic power}, eq.~\ref{eqn:drag force}), Brownian motion energy coupling, thermal coupling, acoustic waves and friction are pressure dependent and are considerably reduced by maintaining low pressure. Therefore, the torsional pendulum is placed inside a vacuum chamber. The noise reduction results with smaller oscillations amplitude.
-\par\noindent
-The reduction of the amplitude enables to actively damp down the remaining noises and cool down the pendulum temperature. The cooling system is built using two LED light sources, each placed in front of a pendulum side mass. The led sources are fast modulated using a simple Arduino microcontroller. The modulated light is causing a small external radiation torque, which damps down the oscillations.
-\par\noindent
-Damping is made using a PID feedback loop. The tilt angle is measured, and an equivalent feedback external source is applied. The feedback damps the noises, without pre-knowledge of the existing noises, effectively reducing the pendulum's temperature (eq.~\ref{eqn:Brownian uncertainty 3}). Having a lower effective temperature enlarges the SNR and the measurement sensitivity, which enables measuring smaller tilt angles.
-\par\noindent
-With PID tuned correct the damped pendulum is at critical damping and oscillations become smaller. The measured error $e(t) = \delta\theta(t)$ and the PID damping response $u(t)$ (eq.~\ref{eqn:PID response}) are both minimized. 
-\par\noindent
-Introducing a new mass adds a constant new torque to the system $\tau_g$ (eq.~\ref{eqn:net_gravitation_torque_approx}), accordingly the average tilt angle becomes $\overline{\theta}_g$ (eq.~\ref{eqn:theta average}):
-\begin{equation}
-\overline{\theta}_g  \approx \frac{3GT^2cos\theta sin\theta}{4\pi^2 } \cdot \frac{M}{r_0^3}   \label{eqn:theta average_2}
-\end{equation}
-\par\noindent
-The angle is proportional to the square of the period's length $T$, the pendulum length $l$ and the masses $m$ are dropped out, which indicates that short and light weight sensors work well as larger ones, as long as their periods are the same. Thus, changing the PID measured error $e(t) = \delta\theta(t) + \theta_g(t)$. The PID is compensating for the new error with mainly a proportional gain $K_P$, and the response $u(t)$ becomes mainly an inverse torque:
-\begin{equation}
-\tau_{PID} = u(t) = u[e(t)] \approx K_P\theta_g(t) \approx \tau_{g} \approx \kappa \overline{\theta}_g 
-\label{eqn:PID_response}
-\end{equation}
-Assuming the mass is oscillating at a low frequency, when integrating over short periods the angle is constant in time:
-\begin{equation}
-U = \int u(t) dt = K_P\overline{\theta}_g\Delta t 
-\label{eqn:PID_measurement_eqn}
-\end{equation}
-Where $U$ is the sum of the PID response, and $\Delta t$ is the integration time. The gravitational angle is:
-\begin{equation}
-\overline{\theta}_g = \frac{U}{K_P\Delta t}      \label{eqn:pid_gravitation_torque}
-\end{equation}
-\par\noindent
-According to eq.~\ref{eqn:theta average_2}, by accurate angle measurement, the gravitational field could be estimated. According to eq.~\ref{eqn:pid_gravitation_torque}, the measurement system allows fast response. 
-
- 
- 
- 
- 
-
 
 
 
