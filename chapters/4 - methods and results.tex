@@ -230,7 +230,7 @@ The LED illumination angle varies between $45^0-120^0$. Since emitted light is i
 	\caption[The PWM analog voltage]{The PWM analog voltage}
 	\label{fig:duty_cycle}
 \end{figure}
-\FloatBarrier
+%\FloatBarrier
 \par\noindent
 The Arduino Mega 2560 is an inexpensive 8-bit microcontroller with $16 [MHz]$ clock and multiple Pulse Width Modulation (PWM) analog outputs, which are using a digital output of $V_d = 5[V]$. As shown in fig.~\ref{fig:duty_cycle}, the controller switches the output signal on and off, generating a square wave with period $T$. Pulse width ($PW$) is the time duration in which the signal is on, the controller is able to modulate the $PW$, and thus change the duty cycle which is the ratio of time signal is on compared to off $D(t) = \frac{PW(t)}{T}\cdot 100$. The PWM is proportional to the analog average voltage $V_a$ given by: 
 \begin{equation}
