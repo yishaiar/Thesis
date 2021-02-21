@@ -34,8 +34,7 @@
 \let\ps@plain\ps@uofrthesis  % override "plain" page style which is used by default in the table of contents and elsewhere with our custom style
 
 
-% Bibliography Style
-\bibliographystyle{unsrt}	
+
 
 % University of Rochester requires at least 1.25 inch margins on all sides
 \usepackage[letterpaper,top=1.25in,
@@ -112,10 +111,12 @@ inner=1.25in]{geometry}
 \usepackage{tocloft}
 \setlength{\cftbeforetoctitleskip}{-3em}
 
+
+% Bibliography Style
+\bibliographystyle{unsrt}	
 \usepackage{natbib}
 \usepackage{etoolbox}
 
-\bibliographystyle{unsrtnat}
 \renewcommand\bibpreamble{\vspace{-0.8\baselineskip}} % choose a suitable vert. skip
 \setlength{\bibsep}{0pt} % no extra vert. space between bib items
 \renewcommand{\refname}{\large 6. References}
