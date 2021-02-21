@@ -28,24 +28,16 @@ Having a lower amplitude enlarges the SNR and the measurement sensitivity, which
 \par\noindent
 Thus, the PID measured error  changes to $e(t) = \delta\theta(t) + \theta_g(t)$, the PID is compensating for the new error with mainly a proportional gain $K_P$, and the response $u[e(t)]$ becomes mainly an inverse torque:
 \begin{equation}
-\tau_{PID} = u[e(t)] \approx K_P(t)\theta_g(t) 
+\tau_{PID} = u[e(t)] \approx K_P\theta_g(t) 
 \label{eqn:PID_response}
 \end{equation}
 Assuming the mass is oscillating at a low frequency, when integrating over short periods the angle is constant in time and the average gravitational angle is given by:
 \begin{equation}
-\overline{\theta}_g = \frac{\int u[e(t)] dt}{\int K_P(t) dt}
+\overline{\theta}_g = \frac{\int u[e(t)] dt}{\int K_P dt}
 \label{eqn:PID_measurement_eqn}
 \end{equation}
 \par\noindent
 According to eq.~\ref{eqn:theta average_2}, by accurate angle measurement, the gravitational field could be estimated. According to eq.~\ref{eqn:pid_gravitation_torque}, the measurement system allows fast response. 
-
- 
- 
- 
- 
-
-
-
 
 \end{document}
 
