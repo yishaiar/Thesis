@@ -4,9 +4,9 @@
 \chapter{summary and conclusion}\label{chp:summary and conclusion}
 The purpose of this study was to find if it is possible to improve gravitational measurement sensitivity by damping down the torsional pendulum oscillations. The way to achieve this was by building a Cavendish apparatus using a torsional pendulum inside a vacuum chamber, and designing a PID damping feedback loop, adjusted to the torsional pendulum characteristics. From the measured results we than estimating the actual noise coupled into the torsional pendulum, and the fundamental limitations of the PID damping ability.
 \par\noindent
-As shown in previous chapter, with environment at room temperature the fundamental limitation to the PID damping is the Brownian motion quantum uncertainty. The fundamental oscillations limit is $\theta_{max}^{PID}\approx 2\cdot 10^{-14}$. As shown in eq.~\ref{eqn:Brownian uncertainty 3}, the PID damping is effectively cooling down the torsional pendulum temperature, allowing to cool it down to less than $T=0.1[K]$
+The observed damping amplitudes were up to the fundamental limit of the measurement (eq.~\ref{eqn:Brownian uncertainty 3}). As shown in previous chapter, with environment at room temperature and medium vacuum ($P=10^{-2}[Pa]$) the fundamental limitation to the PID damping is the Brownian motion quantum uncertainty. The fundamental oscillations amplitude limit is $\theta_{max}^{PID}\approx 2\cdot 10^{-14}$. When reaching that amplitude, the PID damping is effectively cooling down the torsional pendulum temperature and lowering the fundamental limit of the measurement (eq.~\ref{eqn:Brownian uncertainty 3}). The damping allows to cool the torsional pendulum down to less than $T=0.1[K]$.
 \par\noindent
-
+From the study we think that PID damping might not be the best control algorithm, due to its linear approximation nature. The next stage would include a non linear approximation of the torsional pendulum motion, such as artificial neural network. 
 
 
 field physics. The way to achieve this was an analogy between the atom in a strong field prob-
