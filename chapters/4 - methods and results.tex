@@ -257,6 +257,7 @@ The torque is controlled by the duty cycle $D(t)$ varying between $0-100$ with 8
 	\caption[The measurement setup]{The measurement setup}
 	\label{fig:actual system}
 \end{figure}
+\FloatBarrier
 The measurement setup inside the acoustic box after assembling is shown in fig.~\ref{fig:actual system}. Using the PID we are able to damp down the torsional pendulum oscillations, shown in fig.~\ref{fig:measured oscillation angle}. Since the damping is depended on the amplitude size (eq.~\ref{eqn:pid damping coefficient}), the damping accelerates as the amplitude gets smaller. The damping time from amplitude of $\theta_{max} = 60 [\mu rad] $ to $\theta_{max} = 10[\mu rad] $ is $3700[s]$, compares to a damping time of $250[s]$ to reach an amplitude of $\theta_{max} = 0.2[\mu rad]$.
 
 \begin{figure}[htbp]
@@ -265,6 +266,7 @@ The measurement setup inside the acoustic box after assembling is shown in fig.~
 	\caption[The damped torsional pendulum oscillations]{The damped torsional pendulum oscillations}
 	\label{fig:measured oscillation angle}
 \end{figure}
+\FloatBarrier
 \par\noindent
 Shown in fig.~\ref{fig:measured oscillation angle 1} are the torsional pendulum damped oscillations. The PID is able to damp up to amplitude of $\theta_{max}^{PID}= 0.05[\mu rad]$ with an average amplitude kept by the PID over time of $\overline{\theta_{max}^{PID}} = 0.2 [\mu rad]$. Having a constant amplitude over time, allows to integrate over the results. The damping is limited due to the PID tourqe power, noise, phase delay (from filtering the bouncing mode of the torsional pendulum), and not having the right PID tuning parameters (which are achieved experimentally).
 \begin{figure}[htbp]
@@ -273,6 +275,7 @@ Shown in fig.~\ref{fig:measured oscillation angle 1} are the torsional pendulum 
 	\caption[The torsional pendulum minimal damped angle]{The torsional pendulum minimal damped angle}
 	\label{fig:measured oscillation angle 1}
 \end{figure}
+\FloatBarrier
 
 \subsection{Quality factor (Q)}
 Quality factor ($Q$) is a dimensionless parameter describing how underdamped is the oscillator, it is defined as the ratio of the maximum energy $U$ stored in the oscillator to the energy dissipated per cycle of oscillation. When $Q > 0.5$ the oscillator is underdamped, $Q = 0.5$ critically damped and over damped when $Q < 0.5$.
