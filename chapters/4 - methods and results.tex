@@ -304,14 +304,14 @@ It can be seen from eq.~\ref{eqn:Q} that when $Q<0$ the coupled noise power is l
 	\label{fig:Q factor}
 \end{figure} 
 
-\subsection{Brownian motion}
-Due to Brownian motion, we estimate $n_p= \frac{N}{V}v A$ gas particles collisions per second into the cross section of the torsional pendulum. Each gas particle is with mass $m_0 = \frac{M}{N_A}$ and mean velosity of the gas flow $v$ (eq.~\ref{eqn:flow velocity}). Assuming all collisions are elastic, the particles exchanges mean momentum of $k=2m_0v$, resulting with force $F = n_p\cdot k$. Due to the collisions, the velosity of the torsional pendulum with mass $m_1$ is $ u = n_p\frac{k}{m_1}$, resulting with power given by:
+\subsection{Noise power}
+Due to Brownian motion, we estimate $n_p= \frac{N}{V}v A$ gas particles collisions per second into the cross section of the torsional pendulum. Each gas particle is with mass $m_0 = \frac{M}{N_A}$ and mean velosity of the gas flow $v$ (eq.~\ref{eqn:flow velocity}). Assuming all collisions are elastic, the particles exchanges mean momentum of $k=2m_0v$, resulting with force $F = n_p\cdot k$. Due to the collisions, the velosity of the torsional pendulum with mass $m_1$ is $ u =\frac{ n_pk}{m_1}$, resulting with power $p$ given by:
 \begin{equation}
 p = F\cdot u =  n_p k \cdot n_p\frac{k}{m_1} =\frac{4}{m_1}(\frac{N}{V}v A)^2m_0^2v^2=\frac{4A^2}{m_1}(\frac{P}{k_B T})^2(\frac{M}{N_A})^2 (\frac{3 k_B N_A T}{M})^2 =\frac{36A^2P^2}{m_1} 
 \label{eqn:Brownian power}
 \end{equation}
-\subsection{Noise power}
-As shown previously, there are multiple noise sources at the environment. Assuming gas and environment temperature of $T = 298K$ and torsional pendulum temperature $T_0 = 0K$ (maximal noise power), the noise power is given by:
+
+Assuming gas and environment temperature of $T = 298K$ and torsional pendulum temperature $T_0 = 0K$ (maximal noise power), the noise power is given by:
 \begin{multicols}{2}
 \raggedcolumns
 \begin{easylist}
@@ -329,8 +329,8 @@ As shown previously, there are multiple noise sources at the environment. Assumi
 \end{easylist}
 \end{multicols}
 \par\noindent
-Even at room temperature the power from Brownian motion is much larger than estimated previously ($p= 8\cdot 10^{-18} - 1\cdot 10^{-18} [W]$). Which leads to estimate the effective driving noise only as the effective collision power.Thus, the thermal flow does not couple noise into the system, and the noise coupled by the black body radiation is the radiation force caused by the photons colliding into the torsional pendulum. 
-\subsection{Random motion}
+Even at room temperature the power from Brownian motion is much larger than estimated previously ($p= 8\cdot 10^{-18} - 1\cdot 10^{-18} [W]$). Which leads to estimate the effective driving noise only as the effective collision power. Thus, the thermal flow does not couple noise into the system, and the noise coupled by the black body radiation is the radiation force caused by the photons colliding into the torsional pendulum. 
+\subsubsection{Random motion}
 Due to random motion, $n_p$ particles collide per second into cross section $A$ of mass $m_1$. Random motion can be modelled as a Poisson process, and the effective collision rate is the square root of the number of events $n_{col} = \sqrt{n_p}$. Each particle exchanges momentum $k$ with with $m_1$, resulting with force $F = n_{col}\cdot k$. Due to the collisions the velosity of $m_1$ is $ u = n_{col}\frac{k}{m_1}$. The collisions result with power given by:
 \begin{equation}
 p = F\cdot u =  n_{col}k \cdot n_{col}\frac{k}{m_1} =  n_p\frac{ k^2}{m_1}
