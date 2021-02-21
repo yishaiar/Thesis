@@ -182,15 +182,15 @@ where $\tau_{max}$ is the maximal torque exerted by the PID. When damping using 
 \begin{equation}
 \xi = \frac{T}{2 \pi \tau } =  \frac{T}{2 \pi  }\frac{\gamma}{2I}  = \frac{ \tau_{max}}{\theta_{max}} \cdot \frac{T^2}{8\pi^2 I}  \label{eqn:damping_time_pid}
 \end{equation}
-The PID damping $\gamma$, the damping time $\tau$, and the damping type, depend on the ratio $\frac{\theta_{max}}{\tau_{max}}$. When torque is too small compared to the amplitude, the damping affect is negligible, resulting with a highly underdamped oscillator with infinite damping time. The PID must be able to exert torques which can critically damp the equilibrium amplitude (eq.~\ref{eqn:critically_damped_motion_equation}), the PID maximal torque $\tau_{max} $ is given by:
+The PID damping $\gamma$, the damping time $\tau$, and the damping type, depend on the ratio $\frac{\theta_{max}}{\tau_{max}}$. When torque is too small compared to the amplitude, the damping affect is negligible, resulting in a highly underdamped oscillator with infinite damping time. The PID must be able to exert torques which can critically damp the equilibrium amplitude (eq.~\ref{eqn:critically_damped_motion_equation}). The PID maximal torque $\tau_{max} $ is given by:
 \begin{equation}
 \tau_{max} (\xi = 1)\geq\frac{ 8 \pi^2 I }{T^2}\cdot\theta_{max}^{eq} = \frac{  8 \pi^2 \cdot 0.487\cdot10^{-3} }{(84)^2}\cdot 1\cdot10^{-5} = 5.45\cdot10^{-11}[N\cdot m]
 \label{eqn:damping_torque_pid}
 \end{equation}
 \par\noindent
-Since, the torque is proportional to the oscillations velocity (eq.~\ref{eqn:friction_torque_pid}), it needs a high modulation frequency compare to the oscillations frequency (to prevent phase delay), and high modulation range compare to the amplitude (to avoid overshoot). 
+Since, the torque is proportional to the oscillations velocity (eq.~\ref{eqn:friction_torque_pid}), it needs a high modulation frequency compared to the oscillations frequency (to prevent phase delay), and high modulation range compared to the amplitude (to avoid overshoot). 
 \subsection{Radiation-pressure torque}
-The PID torque was chosen to be a Radiation-pressure torque. The setup is composed of two light sources in front of the two torsional pendulum sides, each with flux modulated in time differently $\Theta_i(t)$. As seen in eq.~\ref{eqn:net_gravitation_torque}, the difference between two torques adds an external net torque. Assuming both light fields are very close to be perpendicular to the surface with negligible incidence angles $\alpha_1\approx\alpha_2\approx 0$ and have the same coupling efficiency $\eta$, using eq.~\ref{eqn:radiation_force_power}, the radiation-pressure net torque $\tau(t)$ is:  
+The PID torque was chosen to be a radiation-pressure torque. The setup is composed of two light sources in front of the two torsional pendulum sides, each with flux modulated in time differently $\Theta_i(t)$. As seen in eq.~\ref{eqn:net_gravitation_torque}, the difference between two torques adds an external net torque. Assuming both light fields are very close to being perpendicular to the surface with negligible incidence angles $\alpha_1\approx\alpha_2\approx 0$ and have the same coupling efficiency $\eta$, using eq.~\ref{eqn:radiation_force_power}, the radiation-pressure net torque $\tau(t)$ is:  
 \begin{equation}
 \tau(t) = l\cdot F_1(t) \cdot cos\alpha_1 - l\cdot F_2(t) \cdot cos\alpha_2\approx l(F_1(t) - F_2(t)) \approx \frac{2l\eta}{{c}} \Delta \Theta(t) \label{eqn:radiation torque}
 \end{equation}
@@ -201,13 +201,13 @@ The radiation-pressure net torque is controlled by changing the difference betwe
 \end{equation}
 
 \subsection{Laser setup}
-Initially the modulated light sources were composed of a single laser diode coupled in series into two acousto optic modulators (AOM), with special filtered mode using optical fibers. The AOMs divides the single coherent light beam into two beams, with the intensity ratio modulated, resulting with controlled modulation of the light sources difference.
+Initially, the modulated light sources were composed of a single laser diode coupled in series into two acousto optic modulators (AOM), with special filtered mode using optical fibers. The AOMs divide the single coherent light beam into two beams, with the intensity ratio modulated, resulting in controlled modulation of the difference between the light sources.
 \par\noindent
-The apparatus had dynamic range of $10000$ steps and modulation  frequency of $1 [Hz]$. The setup minimized uncertainties of the light intensity since both light sources had a mutual source, partly cancelling internal noises such as thermal and shot noise. 
+The apparatus had modulation range of $10000$ steps and modulation frequency of $1 [Hz]$. The setup minimized uncertainties of the light intensity, since both light sources had a mutual source, partially cancelling internal noises, such as thermal and shot noise. 
 \par\noindent
-The apparatus uncertainty due to the non linearity of the AOM response and laser power fluctuations proved to be larger than the uncertainties of the intensity difference. Also, modulation frequency proved to be more important than modulation range. Due to the conclusions, the PID torque was changed to two controlled light emitting diode (LED) sources.
+The apparatus uncertainty, due to the non linearity of the AOM response and laser power fluctuations, proved to be larger than the uncertainties of the intensity difference. Also, modulation frequency proved to be more important than modulation range. Due to the conclusions, the PID torque was changed to two controlled light emitting diode (LED) sources.
 \subsection{Light emitting diode (LED)}
-The light emitting diode (LED) is a semiconductor light source with high power and long lifetime. A forward voltage applied to a p-n junction, causes electron injection which recombine with holes. The recombination releases energy in form of spontaneous emission photons (incoherent light). Due to the electrons life time, the LED could be modulated up to $100MHz$. The LED forward voltage is given by the Shockley diode equation for p-n junctions, $V_l \approx n V_T ln10 log_{10} (\frac{I_l}{I_s})$. Where $I_l$ is the LED current, $I_s$ is the saturation current, $n$ is the emission coefficient, and $V_T$ is the thermal voltage. 
+The light emitting diode (LED) is a semiconductor light source with high power and long lifetime. A forward voltage applied to a p-n junction, causes electron injection which recombines with holes. The recombination releases energy in form of spontaneous emission photons (incoherent light). Due to the electrons life time, the LED could be modulated up to $100MHz$. The LED forward voltage is given by the Shockley diode equation for p-n junctions, $V_l \approx n V_T ln10 log_{10} (\frac{I_l}{I_s})$, where $I_l$ is the LED current, $I_s$ is the saturation current, $n$ is the emission coefficient, and $V_T$ is the thermal voltage. 
 \par\noindent
 Since $V_l$ varies as the logarithm of the current, it is approximately constant over wide current range. In the driving circuit a resistor $R$ is connected in series with the LED to stabilizes the current. The LED light flux with circuit of $N$ voltages supplies $V$ in parallel is given by:
 \begin{equation}
