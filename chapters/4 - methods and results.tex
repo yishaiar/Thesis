@@ -16,9 +16,9 @@
 \par\noindent
 The experiment setup, shown in fig.~\ref{fig:setup}, is composed of a torsion pendulum placed inside a vacuum chamber, a tilt angle measurement system and a feedback system. The experiment setup is placed inside an acoustic box, which is not shown in the figure. The angle is measured by a laser beam deflected by the pendulum's front mirror and detected by a quadrant detector. The detector is connected to a computer by an oscilloscope through a signal amplifier. The light reflected from the pendulum mirror is reflected by a piezo driven mirror, which is tuned so that the reflected light would strike the detector's center (the PID needs a reference for error calculations). 
 \par\noindent
-The feedback system is composed of two LED light sources, modulated in real time by an Arduino micro-controller which is controlled by the PID feed-back loop in the computer. The LED light sources are each coupled to a side mass of the pendulum. The light is passed through the vacuum chamber by having transparent windows (viewports) on the sides of the chamber. 
+The feedback system is composed of two LED light sources, modulated in real time by an Arduino micro-controller which is controlled by the PID feed-back loop in the computer. The LED light sources are each coupled to a side mass of the pendulum. The light is passed through the vacuum chamber through transparent windows (viewports) on the sides of the chamber. 
 \par\noindent
-The vacuum chamber is connected to a vacuum engine, which is pumping out gas and lowering the pressure. When the desired pressure is achieved, the vacuum engine is disconnected using the valve and turned off, and the acoustic box is sealed. When the oscillations settle down to a level which could be affected by the weak torques caused by radiation pressure, the angle is read in real time by the PID algorithm, and radiation-pressure torque is exerted by the LED's flux for damping down the pendulum noises.
+The vacuum chamber is connected to a vacuum engine, which pumps out gas and lowers the pressure. When the desired pressure is achieved, the vacuum engine is disconnected using the valve and turned off, and the acoustic box is sealed. When the oscillations settle down to a level which could be affected by the weak torques caused by radiation pressure, the angle is read in real time by the PID algorithm, and radiation-pressure torque is exerted by the LED's flux for damping down the pendulum noises.
 \subsubsection{Design of the system}
 \begin{figure}[htbp]
 	\centering
@@ -28,7 +28,7 @@ The vacuum chamber is connected to a vacuum engine, which is pumping out gas and
 \end{figure}
 \FloatBarrier
 \par\noindent
-The design of torsional pendulum and vacuum chamber, shown in fig.~\ref{fig:Total chamber}, was carried out using the software Solid Works. The torsional pendulum was manufactured by the university workshop, and the vacuum chamber was manufactured at HTC Vacuum. The assembling was performed at the HUJI lab. The system had undergone changes, and the final design of the system is presented. 
+The design of torsional pendulum and vacuum chamber, shown in fig.~\ref{fig:Total chamber}, was carried out using the software Solid Works. The torsional pendulum was manufactured by the university workshop, and the vacuum chamber was manufactured at HTC Vacuum. The assembling and the experiments were performed at the lab. The system had undergone multiple changes, and the final design of the system is hereby presented. 
 \par\noindent
 As shown previously (eq.~\ref{eqn:drag force2}, eq.~\ref{eqn:total Brownian energy}, eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:acoustic power}), friction, Brownian motion energy, thermal power and acoustic waves are pressure dependent and are considerably reduced by maintaining low pressure. Therefore, the torsional pendulum is placed inside a vacuum chamber. Magnetic noise is reduced by choosing low magnetic permeability materials, avoiding capacitance and using a Faraday cage. 
 \par\noindent
@@ -41,22 +41,18 @@ The vacuum chamber is placed inside an acoustic box, further reducing acoustic w
 	\label{fig:chamber front}
 \end{figure}
 \FloatBarrier
-
 \par\noindent
-The vacuum chamber, shown in fig.~\ref{fig:chamber front}, is composed of two cylindrical tubes placed one over the other with three view ports in front and light guides. The chamber is connected to a vacuum engine and gauge. The vacuum engine is connected to the chamber through a valve. The measurements are conducted when the valve is closed and the engine is off, to prevent rotation noise.
-
+The vacuum chamber, shown in fig.~\ref{fig:chamber front}, is composed of two cylindrical tubes placed one over the other, with light guides and three viewports in front. The chamber is connected to a vacuum engine and gauge. The vacuum engine is connected to the chamber through a valve. The measurements are conducted when the valve is closed and the engine is off, to prevent rotation noise.
 \subsubsection{Chamber viewports}
 \par\noindent
 The lower tube has three viewports. The central viewport is located in front of the pendulum's front mirror. The central viewport has a $68.3 [mm]$ view diameter where the mirror is located $82 [mm]$ away, giving a measurement FOV of about $39^0$ degrees. The other two small viewports are located in front of the pendulum's side masses and they are used for damping down the pendulum noises. They are connected to the chamber through light guides. The view ports are transparent for light in the $550-1100 [nm]$ range, with about 98$\%$ power transmittance in this range. 
-
-
 \subsubsection{Vacuum maintenance}
 \par\noindent
-Due to the measurement sensitivity, the vacuum engine pumping must be off during measurement. Accordingly, the main limitations to the maintenance of low pressure are the leakage $Q_L$ from the outside (eq.~\ref{eqn:leak rate}) and the outgassing $Q_{des}$ inside the chamber (eq.~\ref{eqn:desorption rate}), thus increasing of the pressure at a constant rate over time. Due to the pendulum's shape and size, the vacuum chamber has large volume (high leak rate) and large surface area (high outgassing rate). 
+Due to the measurement sensitivity, the vacuum engine pumping must be off during measurement. Accordingly, the main limitations to the maintenance of low pressure are the leakage $Q_L$ from the outside (eq.~\ref{eqn:leak rate}) and the outgassing $Q_{des}$ inside the chamber (eq.~\ref{eqn:desorption rate}), thus increasing the pressure at a constant rate over time. Due to the pendulum's shape and size, the vacuum chamber has large volume (high leak rate) and large surface area (high outgassing rate). 
 \par\noindent
 In order to minimize the pressure increase rate, the vacuum chamber is built using CF components which are designed for ultra high vacuum, and minimize the leak rate. Also, to reduce outgassing, the torsional pendulum and vacuum chamber were baked-out at $120 C^0$ for a week, using resistive wire. 
 \par\noindent
-The chamber volume is $V = 4.75\cdot 10^{-4}[m^3]$, and the measured pressure at the experiments after cooling down is $P \approx 1\cdot 10^{−2} [pa]$ for a month without pumping with the vacuum engine.
+The chamber volume is $V = 4.75\cdot 10^{-4}[m^3]$, and the measured pressure during the experiments is $P \approx 1\cdot 10^{−2} [pa]$ after cooling down, for a month without pumping with the vacuum engine.
 \subsection{Torsional pendulum design}
  
 \begin{figure}[htbp]
@@ -80,7 +76,7 @@ The center of mass is balanced using a balancing mass with similar shape and wei
 \begin{equation}
 \tau_z = r_1\cdot m_1 g \cdot cos\phi - r_2\cdot m_2 g \cdot cos \phi\ = g\cdot cos\phi( m_1 r_1  - m_2 (w-r_1) )    \label{eqn:downward torque}
 \end{equation}
-Where $m_1$, $m_2$ are the masses of the mirror and the balancing mass, and $r_1$, $r_2$ are their distance from the pendulum's center of mass respectively. The beam allows to cancel out the torque $\tau_z$ by accurate adjustment of the distance $r_1$, given by: 
+where $m_1$, $m_2$ are the masses of the mirror and the balancing mass, and $r_1$, $r_2$ are their distance from the pendulum's center of mass respectively. The beam allows to cancel out the torque $\tau_z$ by accurate adjustment of the distance $r_1$, given by: 
 \begin{equation}
  r_1 = \frac{w}{\frac{m_1}{m_2}+1}  \label{eqn:downward torque cancelled}
 \end{equation}
@@ -91,54 +87,53 @@ Where $m_1$, $m_2$ are the masses of the mirror and the balancing mass, and $r_1
 	\caption[The pendulum mount]{The pendulum mount}
 	\label{fig:mount}
 \end{figure}
-
 \par\noindent
 The adjustable mount, shown in fig.~\ref{fig:Total chamber}, is used for adjusting the height, distance and angle of the torsional pendulum. The torsional pendulum string is held by the adjustable mount from the upper tube of the vacuum, placing it accurately in front of the viewports. 
 
 \subsubsection{Design constraints}
 \par\noindent
-The chosen pendulum dimensions are designed to achieve large angle sensitivity to the torque caused by a the gravity field (small string torsion coefficient $\kappa$ is needed, see eq.~\ref{eqn:theta average}) while maintaining large angle sensitivity to the measured mass (longer oscillation time period $T$, see eq.~\ref{eqn:theta average}). For a torsional pendulum with moment of inertia $I$ and string torsion coefficient $\kappa$, the oscillation time period $T$ is given by (eq.~\ref{eqn:undamped_omega}): 
+The chosen pendulum dimensions are designed to achieve large angle sensitivity to the torque caused by the gravity field (small string torsion coefficient $\kappa$ is needed, see eq.~\ref{eqn:theta average}) while maintaining large angle sensitivity to the measured mass (longer oscillation time period $T$, see eq.~\ref{eqn:theta average}). For a torsional pendulum with moment of inertia $I$ and string torsion coefficient $\kappa$, the oscillation time period $T$ is given by (eq.~\ref{eqn:undamped_omega}): 
 \begin{equation}
 T = 2\pi\sqrt{\frac{I}{\kappa}}  =  2\pi\sqrt{\frac{I}{\frac{G}{h} \frac{\pi d^4}{32}}}  \label{eqn:undamped_motion_equation_4}
 \end{equation}
 \par\noindent
-According to eq.~\ref{eqn:undamped_motion_equation_4}, longer string length $h$ with smaller diameter $d$ results in small string torsion coefficient while having a large period time.
+According to eq.~\ref{eqn:undamped_motion_equation_4}, longer string length $h$ with smaller diameter $d$, results in small string torsion coefficient while having a large period time.
 \par\noindent
-The string is made of tungsten that is both, vacuum compatible (material with low outgassing) and has high tensile strength \cite{tungsten}, and is holding the pendulum robustly inside the vacuum chamber while having small string diameter. 
+The string is made of tungsten that is both vacuum compatible (material with low outgassing) and has high tensile strength, holding the pendulum robustly inside the vacuum chamber while maintaining small string diameter. 
 \par\noindent
-In order to minimize the magnetic noise in the measurements, the torsional pendulum is made out of stainless steel 316 (instead of stainless steel 304) which has lower magnetic permeability \cite{SS316}, and the chosen front mirror is made fully of oxygen-free copper (OFC) instead of coated glass thus preventing capacitance. 
+In order to minimize the magnetic noise in the measurements, the torsional pendulum is made out of stainless steel 316 (instead of stainless steel 304) which has lower magnetic permeability \cite{SS316}, and the chosen front mirror is made fully of oxygen-free copper (OFC) instead of coated glass, thus preventing capacitance. 
 \subsubsection{Technical information}
 The designed elements specifications are:
 \begin{multicols}{2}
 \raggedcolumns
 \begin{easylist}
 & Torsional beam;
-&& Stainless steel 316.
-&& length $2l=0.218 [m]$.
-&& cross section $A =1.14\cdot10^{-2}[m^2]$.
-&& mass weight $20.5\cdot10^{-3} [kg]$.
-&& total weight $m_1=150\cdot10^{-3} [kg]$.
+&& Stainless steel 316
+&& length $2l=0.218 [m]$
+&& cross section $A =1.14\cdot10^{-2}[m^2]$
+&& mass weight $20.5\cdot10^{-3} [kg]$
+&& total weight $m_1=150\cdot10^{-3} [kg]$
 %& Mirror;
-%&& OFC, gold coated.
-%&& diameter of 1 inch.
+%&& OFC, gold coated
+%&& diameter of 1 inch
 \end{easylist}
 \columnbreak
 \begin{easylist}
 & Tungsten string;
 && 99.95\% pure Tungsten
-&& shear modulus $G = 130-160 [Gpa]$.
-&& length $h= 0.249 [m]$.
-&& diameter $d=80\cdot10^{-6}[m]$.
+&& shear modulus $G = 130-160 [Gpa]$ \cite{tungsten}
+&& length $h= 0.249 [m]$
+&& diameter $d=80\cdot10^{-6}[m]$
 \end{easylist}
 \end{multicols}
 \subsection{Torsional motion}
-Friction (eq.~\ref{eqn:drag force2}), Brownian motion (eq.~\ref{eqn:total Brownian energy}), thermal flow (eq.~\ref{eqn:heat conduction}) and acoustic waves (eq.~\ref{eqn:acoustic power}) are pressure dependent, and are reduced by having a lower pressure. The measurement system is placed inside an acoustic box, further reducing the acoustic power and also reducing magnetic noise as a Faraday cage (eq.~\ref{eqn:skin depth}). 
+Friction (eq.~\ref{eqn:drag force2}), Brownian motion (eq.~\ref{eqn:total Brownian energy}), thermal flow (eq.~\ref{eqn:heat conduction}) and acoustic waves (eq.~\ref{eqn:acoustic power}) are pressure dependent, and are reduced by the lowered pressure. The measurement system is placed inside an acoustic box, further reducing the acoustic power and also reducing magnetic noise as a Faraday cage (eq.~\ref{eqn:skin depth}). 
 \par\noindent
-The acoustic box is a Faraday cage with 76 mm thickness, blocking magnetic fields with frequencies $f \ge 30 [Hz]$ from the environment. The vacuum chamber is a second cage that further blocks magnetic noise from the electronic system placed inside the acoustic box. The vacuum chambers is made out of approximately 3 mm thick stainless steel, blocking magnetic fields with frequencies $f\ge 20 [KHz]$ and reducing magnetic noise with lower frequencies.
+The acoustic box is a Faraday cage with 76 mm thickness, blocking magnetic fields with frequencies $f \ge 30 [Hz]$ from the environment. The vacuum chamber is a second cage that further blocks magnetic noise from the electronic system placed inside the acoustic box. The vacuum chamber is made out of approximately 3 mm thick stainless steel, blocking magnetic fields with frequencies $f\ge 20 [KHz]$ and reducing magnetic noise with lower frequencies.
 \par\noindent
-Initially the pendulum a driven oscillator (eq.~\ref{eqn:driven_motion_equation_2}) driven by small torques, consisted of black body radiation and the pressure dependent noises. Gradually the pressure dependent friction is damping the velosity, until the pendulum reaches an amplitude at which the friction is equal to the driving noises. The equilibrium amplitude is independent of the initial amplitude, but rather the pressure and temperature. Due to the low pressure the damping of the friction is very slow. After 8 hours of damping, the torsional pendulum reaches equilibrium with a measured amplitude of $\theta_{max}^{eq}\approx 1\cdot10^{-5}[rad]$ (the same result is achieved also after a week). From the long damping time it can be shown that the friction coefficient is very small, allowing to neglect the friction at small amplitudes.
+Initially the torsional pendulum is a driven oscillator (eq.~\ref{eqn:driven_motion_equation_2}) driven by small torques, consisted of black body radiation and the above pressure dependent noises. Gradually, the pressure dependent friction damps down the velosity, until the pendulum reaches an amplitude at which the friction is equal to the driving noises. The equilibrium amplitude is independent of the initial amplitude, but dependent on the pressure and temperature. Due to the low pressure, the damping of the friction is very slow. After 8 hours of damping, the torsional pendulum reaches equilibrium with a measured amplitude of $\theta_{max}^{eq}\approx 1\cdot10^{-5}[rad]$ (the same result is achieved also after a week). From the long damping time it can be shown that the friction coefficient is very small, allowing to neglect the friction at small amplitudes.
 \par\noindent
-Except for the torsional mode (in which we are interested) there is also a bouncing mode with a period of $T_b\approx 2\pi\sqrt{\frac{h}{g}}\approx 1[s]$. The bouncing mode is masking the measurement, and filtered out in real time.  
+Except for the torsional mode (in which we are interested) there is also a bouncing mode with a period of $T_b\approx 2\pi\sqrt{\frac{h}{g}}\approx 1[s]$. The bouncing mode masks the measurement, and is filtered out in real time.  
 \par\noindent
 \subsection{results}
 The system measured results compared to the expected results from the equations are given by:
@@ -158,22 +153,20 @@ The system measured results compared to the expected results from the equations 
 && $\theta_{max}^{eq} \approx 1\cdot10^{-5}[rad]$
 \end{easylist}
 \end{multicols}
-The expected $\kappa$, $T$ have a range due to uncertainty of the string tensile strength $G$. The equilibrium amplitude $\theta_{max}^{eq}$ is an experimental value, depended on the amount of noise actually reduced, thus do not have an expected simulated value.
-
-
+The expected $\kappa$, $T$ have a range due to uncertainty of the string tensile strength $G$. The equilibrium amplitude $\theta_{max}^{eq}$ is an experimental value, dependent on the amount of noise actually reduced, thus it does not have an expected simulated value.
 
 \section{Proportional–Integral–Derivative (PID) controller}
 \subsection{Control stability}
-The PID feed-back loop is continuously calculating the error value of the measured signal from a defined set point, which is the deviation of the pendulum amplitude from a $SP$ angle $e(t) =SP -\theta(t) $. The PID aims to reach the $SP$ with critical damping of the process (the torsional pendulum) by damping the error to zero. 
+The PID feed-back loop continuously calculates the error value of the measured signal from a defined set point, which is the deviation of the pendulum amplitude from a $SP$ angle $e(t) =SP -\theta(t) $. The PID aims to reach the $SP$ with critical damping of the process (the torsional pendulum) by damping the error to zero. 
 \par\noindent
-In control theory there are two wanted conflicting properties; an accurate response (small overshoot), and small risetime (fast response). A PID control does not guarantee optimal control or stability of the process. When PID not tuned correctly, it can either overshoot or have a slow response, both resulting with a driven oscillator. The PID response to error (shown in eq.~\ref{eqn:PID response}) defines how much will the oscillator overshoot the $SP$.
+In control theory there are two desired conflicting properties; an accurate response (small overshoot), and small risetime (fast response). A PID control does not guarantee optimal control or stability of the process. When PID is not tuned correctly, it can either overshoot or have a slow response, both resulting in a driven oscillator. The PID response to error (shown in eq.~\ref{eqn:PID response}) defines how much will the oscillator overshoot the $SP$.
 \par\noindent
-Overshoot is when the value of output signal (the actual response) exceeds the target value (the wanted response), thus the response is not accurate. The overshoot of a second order system is given by:
+Overshoot is when the value of output signal (the actual response) exceeds the target value (the desired response), thus the response is not accurate. The overshoot of a second order system is given by:
 \begin{equation}
 overshoot =  \frac{output-target}{target} = e ^{\frac{-\xi\pi}{\sqrt{1-\xi^2}}}  \label{eqn:overshoot}
 \end{equation}
 \par\noindent
-Where $\xi$ is the damping ratio of the oscillator defined in eq.~\ref{eqn:system damping ratio}. As seen in eq.~\ref{eqn:overshoot} when the PID gains are too high, instead of critical damping there is overdamping, which is causing overshoot. Due to the high gains the overshoot response overshoots again to the other side, causing the system to be an unwanted driven oscillator (shown in eq.~\ref{eqn:driven_motion_equation_2}). A slow response causes phase delay between the signal and the equivalent PID response, resulting again with a driven oscillator.
+where $\xi$ is the damping ratio of the oscillator defined in eq.~\ref{eqn:system damping ratio}. As seen in eq.~\ref{eqn:overshoot} when the PID gains are too high, instead of critical damping there is overdamping, which causes overshoot. Due to the high gains the overshoot response overshoots again to the other side, causing the system to be an undesired driven oscillator (shown in eq.~\ref{eqn:driven_motion_equation_2}). A slow response causes phase delay between the signal and the equivalent PID response, resulting again in a driven oscillator.
 \subsection{Damped oscillator}
 The torsional pendulum is a simple harmonic oscillator with oscillations amplitude $\theta_{max}$ and velocity given by $\dot{\theta}(t) =\frac{2\pi}{T} \theta_{max}( t)$ (see eq.~\ref{eqn:undamped_motion_equation_solved}). The PID mainly acts as friction, gradually slowing the oscillations velocity, with a torque $\tau_{PID}$ given by:
 \begin{equation}
@@ -185,11 +178,11 @@ Accordingly, the PID damping coefficient $\gamma$ is given by (eq.~\ref{eqn:damp
 \begin{equation}
 \gamma  =  \frac{\tau_{PID}(t)}{\frac{2\pi}{T} \theta_{max}( t) } =\frac{\tau_{max}}{\theta_{max}}\cdot \frac{ T}{2\pi}          \label{eqn:pid damping coefficient}
 \end{equation}
-Where $\tau_{max}$ is the maximal torque exerted by the PID. When damping using the PID the damping type, defined by the damping ratio $\xi$, and the damping time $\tau$ are given by (eq.~\ref{eqn:damping_time}):
+where $\tau_{max}$ is the maximal torque exerted by the PID. When damping using the PID, the damping type, defined by the damping ratio $\xi$, and the damping time $\tau$, are given by (eq.~\ref{eqn:damping_time}):
 \begin{equation}
 \xi = \frac{T}{2 \pi \tau } =  \frac{T}{2 \pi  }\frac{\gamma}{2I}  = \frac{ \tau_{max}}{\theta_{max}} \cdot \frac{T^2}{8\pi^2 I}  \label{eqn:damping_time_pid}
 \end{equation}
-The PID damping $\gamma$, the damping time $\tau$ and the damping type depend on the ratio $\theta_{max}/\tau_{max}$. When torque is too small compared to the amplitude, the damping affect is negligible, resulting with a highly underdamped oscillator with infinite damping time. The PID must be able to exert torques which can critically damp the equilibrium amplitude (eq.~\ref{eqn:critically_damped_motion_equation}), the PID maximal torque $\tau_{max} $ is given by:
+The PID damping $\gamma$, the damping time $\tau$, and the damping type, depend on the ratio $\frac{\theta_{max}}{\tau_{max}}$. When torque is too small compared to the amplitude, the damping affect is negligible, resulting with a highly underdamped oscillator with infinite damping time. The PID must be able to exert torques which can critically damp the equilibrium amplitude (eq.~\ref{eqn:critically_damped_motion_equation}), the PID maximal torque $\tau_{max} $ is given by:
 \begin{equation}
 \tau_{max} (\xi = 1)\geq\frac{ 8 \pi^2 I }{T^2}\cdot\theta_{max}^{eq} = \frac{  8 \pi^2 \cdot 0.487\cdot10^{-3} }{(84)^2}\cdot 1\cdot10^{-5} = 5.45\cdot10^{-11}[N\cdot m]
 \label{eqn:damping_torque_pid}
@@ -305,7 +298,7 @@ It can be seen from eq.~\ref{eqn:Q} that when $Q<0$ the coupled noise power is l
 \end{figure} 
 
 \subsection{Noise power}
-Due to Brownian motion, we estimate $n_p= \frac{N}{V}v A$ gas particles collisions per second into the cross section of the torsional pendulum. Each gas particle is with mass $m_0 = \frac{M}{N_A}$ and mean velosity of the gas flow $v$ (eq.~\ref{eqn:flow velocity}). Assuming all collisions are elastic, the particles exchanges mean momentum of $k=2m_0v$, resulting with force $F = n_p\cdot k$. Due to the collisions, the velosity of the torsional pendulum with mass $m_1$ is $ u =\frac{ n_pk}{m_1}$, resulting with power $p$ given by:
+Due to Brownian motion, we estimate $n_p= \frac{N}{V}v A$ gas particles collisions per second into the cross section of the torsional pendulum. Each gas particle is with mass $m_0 = \frac{M}{N_A}$ and mean velosity of the gas flow $v$ (eq.~\ref{eqn:flow velocity}). Assuming all collisions are elastic, the particles exchanges mean momentum of $k=2m_0v$, resulting with force $F = n_p\cdot k$. Due to the collisions, the velosity of the torsional pendulum with mass $m_1$ is $ u =\frac{ n_p k}{m_1}$, resulting with power $p$ given by:
 \begin{equation}
 p = F\cdot u =  n_p k \cdot n_p\frac{k}{m_1} =\frac{4}{m_1}(\frac{N}{V}v A)^2m_0^2v^2=\frac{4A^2}{m_1}(\frac{P}{k_B T})^2(\frac{M}{N_A})^2 (\frac{3 k_B N_A T}{M})^2 =\frac{36A^2P^2}{m_1} 
 \label{eqn:Brownian power}
