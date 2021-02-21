@@ -36,14 +36,12 @@
 
 
 \cleardoublepage
-\def\@makeschapterhead#1{%                                                                                              
-  \vspace*{50\p@}%                                                                                                      
-  {\parindent \z@ \raggedright
-    \normalfont
-    \interlinepenalty\@M
-    \Huge \bfseries  #1\par\nobreak                                                                                     
-    \vskip 40\p@                                                                                                        
-  }}
+
+\makeatletter
+    \patchcmd{\@makeschapterhead}{\vskip40}{\vskip10}{}{} % change 10 to something else, if you prefer
+\makeatother
+
+\bibliographystyle{plainnat}
 
 \addcontentsline{toc}{chapter}{Bibliography}  
 \bibliography{citations}
