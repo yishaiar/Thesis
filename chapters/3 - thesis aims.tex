@@ -3,24 +3,24 @@
 \begin{document}
 \chapter{Thesis aims}\label{chapter:Thesis aims}
 
-The Cavendish experiment, is constructed using a torsional pendulum with a front mirror. The angle displacement causes a mirror tilt. Optical measurement of angle displacement is made with a quadrant detector using interferometric technique.
+The Cavendish experiment, is constructed using a torsional pendulum with a front mirror. The angle displacement causes a mirror tilt. Optical measurement of angle displacement is made with a quadrant detector using interferometric technique. When the gravitational force is measured using a torsional pendulum, the noise causes uncertainty, limiting the measurement sensitivity. The technical noise is greater than the fundamental noise, meaning that reducing the noise enables higher sensitivity.
 \par\noindent
-The measurement is limited by the basic energy level quantum uncertainty and measurement system shot noise. The basic energy level quantum uncertainty is \cite{howell2019}:
+The measurement is fundamentally limited by quantum uncertainty and the measurement system shot noise. The basic energy level quantum uncertainty is \cite{howell2019}:
 \begin{equation}
 \delta\theta= \sqrt{\frac{\hslash\omega}{2\kappa}} \approx 10^{-16} [rad]    \label{eqn:basic uncertainty}
 \end{equation}
 \par\noindent
-The corresponding shot noise limit for the interferometer is calculated as :
+Assuming above basic energy level the quantum uncertainty due to thermal energy is temperature dependent, at room temperature the uncertainty is given by:
+\begin{equation}
+\delta\theta = \sqrt{\frac{k_B T}{\kappa}} \approx 4\cdot 10^{-8} [rad] \label{eqn:Brownian uncertainty 3}
+\end{equation}
+The shot noise limit for the interferometer is calculated as:
 \begin{equation}
 \delta\theta = \frac{1}{4\sqrt{2}\pi}\frac{\lambda}{L\sqrt{N}} \approx
 10^{-14} [\frac{rad}{Hz}]    \label{eqn:shot limit}
 \end{equation}
-Assuming above basic energy level the quantum uncertainty due to thermal energy is temperature dependent, at room temperature the noise is given by :
-\begin{equation}
-\delta\theta = \sqrt{\frac{k_B T}{\kappa}} \approx 4\cdot 10^{-8} [rad] \label{eqn:Brownian uncertainty 3}
-\end{equation}
 \par\noindent
-When the gravitational force is measured using a torsional pendulum, there are noise limitations to the measurement sensitivity. The technical noise is greater than the fundamental noise, meaning that reducing the noise enables higher sensitivity. As shown previously (eq.~\ref{eqn:total Brownian energy}, eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:acoustic power}, eq.~\ref{eqn:drag force1}), Brownian motion energy coupling, thermal coupling, acoustic waves and friction are pressure dependent and are considerably reduced by maintaining low pressure. Therefore, the torsional pendulum is placed inside a vacuum chamber. The noise reduction results with smaller oscillations amplitude.
+  As shown previously (eq.~\ref{eqn:total Brownian energy}, eq.~\ref{eqn:heat conduction}, eq.~\ref{eqn:acoustic power}, eq.~\ref{eqn:drag force1}), Brownian motion energy coupling, thermal coupling, acoustic waves and friction are pressure dependent and are considerably reduced by maintaining low pressure. Therefore, the torsional pendulum is placed inside a vacuum chamber. The noise reduction results with smaller oscillations amplitude.
 \par\noindent
 The reduction of the amplitude enables to have active damping of the remaining noises. The damping system is built using two modulated light sources, each placed in front of a pendulum side mass. The modulated light is causing a small external radiation torque, which damps down the oscillations. Damping is made using a PID feedback loop, a tilt angle is measured, and an equivalent feedback external source is applied. With PID tuned correct the damped pendulum is at critical damping and oscillations become smaller. The measured error to $e(t) = \delta\theta(t)$ and the PID damping response $u(t)$ (eq.~\ref{eqn:PID response}) are both minimized. 
 \par\noindent
