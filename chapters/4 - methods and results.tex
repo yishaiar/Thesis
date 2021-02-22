@@ -283,7 +283,7 @@ Assuming the equivalent coupled noise power at the cycle is independent of time 
 Q(\theta_{max},p) =  \frac{\pi\cdot(\kappa\theta_{max}^2cos^2(\omega\cdot 0)+I\omega^2\theta_{max}^2sin^2(\omega\cdot 0) }{\frac{\tau_{max} }{\theta_{max}} \frac{ T}{2\pi}(\frac{2\pi}{T}\theta_{max})^2\int_0^T sin(\frac{2\pi}{T}t)dt-p\int_0^T dt }  =  \frac{\pi\kappa\theta_{max}^2}{T\cdot(\frac{\theta_{max}\pi\tau_{max}}{T} -p)} 
 \label{eqn:Q}
 \end{equation}
-The damping would have a non negligible effect on the motion when the oscillator is not highly underdamped $Q < 1$. It can be seen from eq.~\ref{eqn:Q} that $Q$ is highly depended on the amplitude size, even when assuming no coupled noises ($p=0$), the amplitudes with which the damping affects the motion are limited to being smaller than:  
+The damping would have a non negligible effect on the motion when the oscillator is not highly underdamped $Q < 1$. It can be seen from eq.~\ref{eqn:Q} that $Q$ is highly depended on the amplitude size, resulting with a maximal size of the oscillations amplitude the PID is able to have a non negligible effect. Even when assuming no coupled noises ($p=0$), the amplitudes with which the damping affects the motion are limited to being smaller than:  
 \begin{equation}
 \theta_{max}(Q<1,p=0) < \frac{\tau_{max}}{\kappa} \approx \frac{3.4\cdot 10^{-10}}{2.7\cdot 10^{-6}} \approx 125 [\mu rad]
 \label{eqn:low Q}
