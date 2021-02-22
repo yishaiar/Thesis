@@ -278,13 +278,12 @@ Assuming negligible air friction, the energy lost in one cycle  $W_T$ is the wor
 Q = 2\pi\cdot \frac{U}{W_T}=  \frac{2\pi\cdot(\frac{\kappa\cdot\theta(t)^2}{2}+\frac{I\cdot\dot{\theta}(t)^2}{2})}{\int_0^T[\tau_{PID}(t)\cdot\dot{\theta}(t) - p]dt} = \frac{\pi\cdot(\kappa\theta_{max}^2cos^2(\frac{2\pi}{T}\cdot t)+I\omega^2\theta_{max}^2sin^2(\frac{2\pi}{T}\cdot t) }{\int_0^T[\frac{\tau_{max} }{\theta_{max}} \frac{ T}{2\pi}(\frac{2\pi}{T}\theta_{max})^2 sin(\frac{2\pi}{T}t)dt-p] dt }
 \label{eqn:Q}
 \end{equation}
-The energy stored in the oscillator is at ()
 Assuming the equivalent coupled noise power at the cycle is independent of time (mainly temperature and pressure dependent), the torsional pendulum quality factor $Q$ is given by:
 \begin{equation}
-Q(\theta_{max},p) =  \frac{\pi\cdot(\kappa\theta_{max}^2cos^2(\omega\cdot 0)+I\omega^2\theta_{max}^2sin^2(\omega\cdot 0) }{\frac{\tau_{max} }{\theta_{max}} \frac{ T}{2\pi}(\frac{2\pi}{T}\theta_{max})^2\int_0^T sin(\frac{2\pi}{T}t)dt-p\int_0^T dt }  =  \frac{\pi\kappa\theta_{max}^2}{T\cdot(\frac{\theta_{max}\pi\tau_{max}}{T} -p)} \stackrel{p= 0}{=} \frac{\kappa\theta_{max}}{\tau_{max}}
+Q(\theta_{max},p) =  \frac{\pi\cdot(\kappa\theta_{max}^2cos^2(\omega\cdot 0)+I\omega^2\theta_{max}^2sin^2(\omega\cdot 0) }{\frac{\tau_{max} }{\theta_{max}} \frac{ T}{2\pi}(\frac{2\pi}{T}\theta_{max})^2\int_0^T sin(\frac{2\pi}{T}t)dt-p\int_0^T dt }  =  \frac{\pi\kappa\theta_{max}^2}{T\cdot(\frac{\theta_{max}\pi\tau_{max}}{T} -p)} 
 \label{eqn:Q}
 \end{equation}
-The damping would have a non negligible effect on the motion when the oscillator is not highly underdamped $Q < 1$. It can be seen from eq.~\ref{eqn:Q} that $Q$ is highly depended on the amplitude size, even when assuming no environmental noises ($p=0$), the amplitudes with which the damping affects the motion are:  
+The damping would have a non negligible effect on the motion when the oscillator is not highly underdamped $Q < 1$. It can be seen from eq.~\ref{eqn:Q} that $Q$ is highly depended on the amplitude size, even when assuming no coupled noises ($p=0$), the amplitudes with which the damping affects the motion are:  
 \begin{equation}
 \theta_{max}(Q<1,p=0) < \frac{\tau_{max}}{\kappa} \approx \frac{3.4\cdot 10^{-10}}{2.7\cdot 10^{-6}} \approx 125 [\mu rad]
 \label{eqn:low Q}
