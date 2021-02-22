@@ -14,7 +14,7 @@
 \end{figure}
 \FloatBarrier
 \par\noindent
-The experiment setup, shown in fig.~\ref{fig:setup}, is composed of a torsion pendulum placed inside a vacuum chamber, a tilt angle measurement system and a feedback system. The experiment setup is placed inside an acoustic box, which is not shown in the figure. The angle is measured by a laser beam deflected by the pendulum's front mirror and detected by a quadrant detector. The detector is connected to a computer by an oscilloscope through a signal amplifier. The light reflected from the pendulum mirror is reflected by a piezo driven mirror, which is tuned so that the reflected light would strike the detector's center (the PID needs a reference for error calculations). 
+The experiment setup, shown in fig.~\ref{fig:setup}, is composed of a torsional pendulum placed inside a vacuum chamber, a tilt angle measurement system and a feedback system. The experiment setup is placed inside an acoustic box, which is not shown in the figure. The angle is measured by a laser beam deflected by the pendulum's front mirror and detected by a quadrant detector. The detector is connected to a computer by an oscilloscope through a signal amplifier. The light reflected from the pendulum mirror is reflected by a piezo driven mirror, which is tuned so that the reflected light would strike the detector's center (the PID needs a reference for error calculations). 
 \par\noindent
 The feedback system is composed of two LED light sources, modulated in real time by an Arduino micro-controller which is controlled by the PID feed-back loop in the computer. The LED light sources are each coupled to a side mass of the pendulum. The light is passed through the vacuum chamber through transparent windows (viewports) on the sides of the chamber. 
 \par\noindent
@@ -342,6 +342,6 @@ There are photons colliding into the torsional pendulum due to black body radiat
 p_{eff}  \approx \frac{j_{ref}}{\overline{E}}A\cdot\frac{ (\frac{2\overline{E}}{c})^2}{m_1} +\frac{j_{ab}}{\overline{E}}A\cdot\frac{ (\frac{\overline{E}}{c})^2}{m_1} = \frac{  2.7 A k_B T }{ c^2 m_1} (4j_{ref}+j_{ab}) =\frac{2.7A k_B}{ c^2 m_1} (4-3\epsilon)\sigma T^5 \approx 1.1\cdot 10^{-45}AT^5
 \label{eqn:photon collision power}
 \end{equation}
-The coupled noise coupled to the torsional pendulum is composed of Brownian motion, acoustic waves and black body radiation. When the environment is with out distinguishable acoustic noises at low pressure with room temperature, the main noise is due to Brownian motion $p_{eff}\approx 4.4\cdot 10^{-25}  [W]$. Thus, with a possible damped angle of $\theta_{max}^{PID}\approx 2\cdot 10^{-14}$ (achieved from calculating the Brownian noise effect on the Q factor).
+The coupled noise coupled to the torsional pendulum is composed of Brownian motion, acoustic waves and black body radiation. When the environment is with out distinguishable acoustic noises at low pressure with room temperature, the coupled noise is mainly due to Brownian motion $p_{eff}\approx 4.4\cdot 10^{-25}  [W]$. Thus, in the right conditions it might be possible to reach a damped amplitude of $\theta_{max}^{PID}\approx 2\cdot 10^{-14}$ (achieved from calculating the Brownian noise effect on the Q factor).
 
 \end{document}
