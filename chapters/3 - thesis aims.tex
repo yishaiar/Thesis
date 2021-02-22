@@ -10,12 +10,12 @@ The measurement is limited by the basic energy level quantum uncertainty and mea
 \delta\theta= \sqrt{\frac{\hslash\omega}{2\kappa}} \approx 10^{-16} [rad]    \label{eqn:basic uncertainty}
 \end{equation}
 \par\noindent
-The corresponding shot noise limit for the interferometer is calculated as \cite{howell2019}:
+The corresponding shot noise limit for the interferometer is calculated as :
 \begin{equation}
 \delta\theta = \frac{1}{4\sqrt{2}\pi}\frac{\lambda}{L\sqrt{N}} \approx
 10^{-14} [\frac{rad}{Hz}]    \label{eqn:shot limit}
 \end{equation}
-Assuming above basic energy level the quantum uncertainty due to thermal energy is temperature dependent, at room temperature ($T = 300[k]$) the noise is given by \cite{howell2019}:
+Assuming above basic energy level the quantum uncertainty due to thermal energy is temperature dependent, at room temperature the noise is given by :
 \begin{equation}
 \delta\theta = \sqrt{\frac{k_B T}{\kappa}} \approx 4\cdot 10^{-8} [rad] \label{eqn:Brownian uncertainty 3}
 \end{equation}
@@ -24,11 +24,11 @@ When the gravitational force is measured using a torsional pendulum, there are n
 \par\noindent
 The reduction of the amplitude enables to have active damping of the remaining noises. The damping system is built using two modulated light sources, each placed in front of a pendulum side mass. The modulated light is causing a small external radiation torque, which damps down the oscillations. Damping is made using a PID feedback loop, a tilt angle is measured, and an equivalent feedback external source is applied. With PID tuned correct the damped pendulum is at critical damping and oscillations become smaller. The measured error to $e(t) = \delta\theta(t)$ and the PID damping response $u(t)$ (eq.~\ref{eqn:PID response}) are both minimized. 
 \par\noindent
-Having a lower amplitude enlarges the SNR and the measurement sensitivity, which enables measuring smaller tilt angles. When amplitude is smaller than the fundamental limit (eq.~\ref{eqn:Brownian uncertainty 3}), the PID is effectively reducing the torsional pendulum's temperature. Introducing a new mass adds a constant new torque to the system $\tau_g$ (eq.~\ref{eqn:net_gravitation_torque_approx}), accordingly the average tilt angle becomes $\overline{\theta}_g$ (eq.~\ref{eqn:theta average}). The angle is proportional to the square of the period's length, the torsional pendulum's length and the mass are dropped out, indicating that short and light weight sensors work well as larger ones, as long as their periods are the same. 
+Having a lower amplitude enlarges the SNR and the measurement sensitivity, which enables measuring smaller tilt angles. When amplitude is smaller than the fundamental limit (eq.~\ref{eqn:Brownian uncertainty 3}), the PID is effectively reducing the torsional pendulum's temperature. Introducing a new mass adds a constant new torque to the system $\tau_g$ (eq.~\ref{eqn:net_gravitation_torque_approx}), accordingly the average tilt angle becomes $\overline{\theta}_g$ (eq.~\ref{eqn:theta average}). The average tilt angle is proportional to the square of the period's length, the torsional pendulum's length and the mass are dropped out, indicating that short and light weight sensors work well as larger ones, as long as their periods are the same. 
 \par\noindent
 Thus, the PID measured error  changes to $e(t) = \delta\theta(t) + \theta_g(t)$, the PID is compensating for the new error with mainly a proportional gain $K_P$, and the response $u[e(t)]$ becomes mainly an inverse torque:
 \begin{equation}
-\tau_{PID} = u[e(t)] \approx K_P\theta_g(t) 
+\tau_{PID}(t) = u[e(t)] \approx K_P\theta_g(t) 
 \label{eqn:PID_response}
 \end{equation}
 Assuming the mass is oscillating at a low frequency, when integrating over short periods the angle is constant in time and the average gravitational angle is given by:
@@ -37,7 +37,7 @@ Assuming the mass is oscillating at a low frequency, when integrating over short
 \label{eqn:PID_measurement_angle}
 \end{equation}
 \par\noindent
-According to eq.~\ref{eqn:theta average}, by accurate angle measurement, the gravitational field could be estimated. According to eq.~\ref{eqn:PID_measurement_angle}, the measurement system allows fast response. 
+According to eq.~\ref{eqn:theta average}, by accurate angle measurement, the gravitational field could be estimated. According to eq.~\ref{eqn:PID_measurement_angle}, the measurement system allows fast response (short integration time). 
 
 \end{document}
 
