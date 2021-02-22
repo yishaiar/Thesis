@@ -273,9 +273,9 @@ Shown in fig.~\ref{fig:measured oscillation angle 1} are the torsional pendulum 
 \subsection{Quality factor (Q)}
 The quality factor ($Q$) is a dimensionless parameter describing how underdamped is the oscillator, it is defined as the ratio of the maximum energy $U$ stored in the oscillator to the energy dissipated per cycle of oscillation. When $Q > 0.5$ the oscillator is underdamped, $Q = 0.5$ critically damped and over damped when $Q < 0.5$.
 \par\noindent
-Assuming negligible air friction, the energy lost in one cycle  $W_T$ is the work done at the cycle, which is the difference between the PID work and the environment coupled noise power $p$. 
+Assuming negligible air friction, the energy lost in one cycle  $W_T$ is the work done at the cycle, which is the difference between the PID work and the environment coupled noise power $p$. The sum of the kinetic and potential energy is the energy stored in the torsional pendulum, and the quality factor $Q$ is given by:
 \begin{equation}
-Q = 2\pi\cdot \frac{U}{W_T}=  \frac{2\pi\cdot(\frac{\kappa\cdot\theta(t)^2}{2}+\frac{I\cdot\dot{\theta}(t)^2}{2})}{\int_0^T[\tau_{PID}(t)\cdot\dot{\theta}(t) - p]dt} 
+Q = 2\pi\cdot \frac{U}{W_T}=  \frac{2\pi\cdot(\frac{\kappa\cdot\theta(t)^2}{2}+\frac{I\cdot\dot{\theta}(t)^2}{2})}{\int_0^T[\tau_{PID}(t)\cdot\dot{\theta}(t) - p]dt} = \frac{\pi\cdot(\kappa\theta_{max}^2cos^2(\frac{2\pi}{T}\cdot t)+I\omega^2\theta_{max}^2sin^2(\frac{2\pi}{T}\cdot t) }{\int_0^T\frac{\tau_{max} }{\theta_{max}} \frac{ T}{2\pi}(\frac{2\pi}{T}\theta_{max})^2 sin(\frac{2\pi}{T}t)dt-p\int_0^T dt }
 \label{eqn:Q}
 \end{equation}
 Assuming the equivalent coupled noise power at the cycle is independent of time (mainly temperature and pressure dependent), the torsional pendulum quality factor $Q$ is given by:
