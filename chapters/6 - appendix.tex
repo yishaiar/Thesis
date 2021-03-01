@@ -3,23 +3,62 @@
 \begin{document}
 \newspacing
 \chapter{Appendix}\label{chapter:Appendix}
-
+the noise is driving at the resonance frequency (noise profile irrelevant). 
 \begin{equation}
-f(\theta_{max},t) = \theta  = \theta_{max} sin(\omega t)
+f(\theta_{max},t) = \theta(t)  = \theta_g+\theta_{max} sin(\omega t)
+\label{eqn:rms}
+\end{equation}
+after time integration:
+\begin{equation}
+\theta_{av}=E[\theta(t)]=\frac{1}{\pi}\int_0^{\pi}\theta_g+\theta_{max} sin(\omega t) dt=\theta_g+\frac{2 \theta_{max}}{\pi}  
+\label{eqn:av}
+\end{equation}
+the average oscillates in time - we want to find variance $V$:
+\begin{equation}
+f(\theta_{av},t) =  \theta_{av} sin(\omega t) =\phi(t)
 \label{eqn:rms}
 \end{equation}
 
-
-
-
+without measuring gravity $\theta_g$:
 \begin{equation}
-x=E[\theta(t)]=\frac{1}{\pi}\int_0^{\pi}\theta_{max} sin(\omega t) dt=\frac{2 \theta_{max}}{\pi}  = \phi
+E[\phi(t)^2]=\frac{1}{\pi}\int_0^{\pi}\theta_{av}^2 sin^2(\omega t) dt = \frac{\theta_{av}^2}{2} =  \frac{\frac{(2 \theta_{max}}{\pi})^2}{2} = \frac{2\cdot \theta_{max}^2}{\pi^2} 
 \label{eqn:av}
 \end{equation}
 
 \begin{equation}
-x=E[\theta(t)]=\frac{1}{\pi}\int_0^{\pi}\theta_{max} sin(\omega t) dt=\frac{2 \theta_{max}}{\pi}  = \phi
+E^2[\phi(t)]=(\frac{1}{\pi}\int_0^{\pi}\theta_{av} sin(\omega t) dt)^2 =(\frac{2 \theta_{av}}{\pi})^2  = \frac{8 E[\phi(t)^2]}{\pi^2}
 \label{eqn:av}
 \end{equation}
+
+
+\begin{equation}
+V[\phi(t)] = E[\phi(t)^2] - E^2[\phi(t)] = 0.189E [\phi(t)^2] = 3.8\cdot 10^{-2} \theta_{max}^2
+\end{equation}
+
+
+
+\begin{equation}
+E[\phi(t)^2]=\frac{1}{\pi}\int_0^{\pi}\theta_{av}^2 sin^2(\omega t) dt = \frac{\theta_{av}^2}{2} =  \frac{(\theta_g+\frac{2 \theta_{max}}{\pi} )^2}{2} = \frac{\theta_g^2}{2} +\frac{2 \theta_g\theta_{max}}{\pi}+\frac{2\cdot \theta_{max}^2}{\pi^2} 
+\label{eqn:av}
+\end{equation}
+
+\begin{equation}
+E^2[\phi(t)]=(\frac{1}{\pi}\int_0^{\pi}\theta_{av} sin(\omega t) dt)^2 =(\frac{2 \theta_{av}}{\pi})^2  = \frac{8 E[\phi(t)^2]}{\pi^2}
+\label{eqn:av}
+\end{equation}
+
+
+\begin{equation}
+V[\phi(t)] = E[\phi(t)^2] - E^2[\phi(t)] =0.189 E [\phi(t)^2] = 0.189 (\frac{\theta_g^2}{2} +\frac{2 \theta_g\theta_{max}}{\pi}+\frac{2\cdot \theta_{max}^2}{\pi^2} )
+\end{equation}
+ since ($\theta_g<<\theta_{max}$):
+\begin{equation}
+V[\phi(t)] \approx 0.189\cdot \frac{2\cdot \theta_{max}^2}{\pi^2} =  3.8\cdot 10^{-2} \theta_{max}^2
+\end{equation}
+gravity measurement results with:
+\begin{equation}
+\overline{\theta}  \approx \frac{3GT^2cos\theta sin\theta}{4\pi^2 } \cdot \frac{M}{r_0^3} \pm 3.8\cdot 10^{-2} \theta_{max}^2 \label{eqn:theta average}
+\end{equation} 
+
 
 \end{document}
