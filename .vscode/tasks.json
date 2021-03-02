@@ -6,7 +6,7 @@
         {
             "label": "compile_upload_full",
             "type": "shell",
-            "command": "lualatex master; bibtex master; ./master.pdf; lualatex master; lualatex master; git add --all; git commit --all -m 'auto';git push --all --force",
+            "command": "lualatex Presentation; bibtex Presentation; ./Presentation.pdf; lualatex master; bibtex master; ./master.pdf; lualatex master; lualatex master; git add --all; git commit --all -m 'auto';git push --all --force",
             // --force
             //"command": "lualatex master; bibtex master; ./master.pdf; lualatex master; lualatex master",
             "group": {
@@ -29,7 +29,7 @@
         {
             "label": "clear_all_aux",
             "type": "shell",
-            "command": "del *.aux; del *.log; del *.bbl; del *.log; del *.toc; del *.lof; del *.blg; del *.out;",
+            "command": "del *.aux; del *.log; del *.bbl; del *.log; del *.toc; del *.lof; del *.blg; del *.out; del *.nav; del *.snm;",
             "problemMatcher": []
         },
         {
@@ -44,7 +44,7 @@
             "label": "git-pull_build ",
             "type": "shell",
             //"command": "lualatex master; bibtex master; ./master.pdf; lualatex master; lualatex master;lualatex chapter; bibtex chapter; ./chapter.pdf",
-            "command": "git pull -f; lualatex master; bibtex master; ./master.pdf; lualatex master; lualatex master;lualatex chapter; bibtex chapter; ./chapter.pdf",
+            "command": "git pull -f; lualatex Presentation; bibtex Presentation; ./Presentation.pdf; lualatex master; bibtex master; ./master.pdf; lualatex master; lualatex master;",
             
             "runOptions": {
                 "runOn": "folderOpen"
