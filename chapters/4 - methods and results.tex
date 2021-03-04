@@ -153,7 +153,7 @@ The system measured results compared to the expected results from the equations 
 && $\theta_{max}^{eq} \approx 10 [\mu rad]$
 \end{easylist}
 \end{multicols}
-The expected $\kappa$, $T$ have a range due to uncertainty of the string tensile strength $G$ and . The measured $\kappa$ is estimated from $I$ and the measured period $T$ by eq.~\ref{eqn:undamped_motion_equation_4} . The equilibrium amplitude $\theta_{max}^{eq}$ is an experimental value, dependent on the amount of noise actually reduced, thus it does not have an expected simulated value.
+The expected $\kappa$, $T$ have a range due to uncertainty of the string tensile strength $G$. The measured $\kappa$ is estimated from eq.~\ref{eqn:undamped_motion_equation_4} Bwith the measured period $T$. The equilibrium amplitude $\theta_{max}^{eq}$ is an experimental value, dependent on the amount of noise actually reduced, thus it does not have an expected simulated value.
 
 \section{Proportional–Integral–Derivative (PID) controller}
 \subsection{Control stability}
@@ -182,9 +182,9 @@ where $\tau_{max}$ is the maximal torque exerted by the PID. When damping using 
 \begin{equation}
 \xi = \frac{T}{2 \pi \tau } =  \frac{T}{2 \pi  }\frac{\gamma}{2I}  = \frac{ \tau_{max}}{\theta_{max}} \cdot \frac{T^2}{8\pi^2 I}  \label{eqn:damping_time_pid}
 \end{equation}
-The PID damping $\gamma$, the damping time $\tau$, and the damping type, depend on the ratio $\frac{\theta_{max}}{\tau_{max}}$. When torque is too small compared to the amplitude, the damping affect is negligible, resulting in a highly underdamped oscillator with infinite damping time. The PID must be able to exert torques which can critically damp the equilibrium amplitude (eq.~\ref{eqn:critically_damped_motion_equation}). The PID maximal torque $\tau_{max} $ is given by:
+The damping coefficient $\gamma$, the damping time $\tau$, and the damping type, depend on the ratio $\frac{\theta_{max}}{\tau_{max}}$. When torque is too small compared to the amplitude, the damping affect is negligible, resulting in a highly underdamped oscillator ($\xi << 1$) with infinite damping time (eq.~\ref{eqn:underdamped_motion_equation}). The PID must be able to exert torques which can damp the equilibrium amplitude ($\xi \geq 0.01 $). The needed PID torque $\tau_{max} $ is given by:
 \begin{equation}
-\tau_{max} (\xi = 1)\geq\frac{ 8 \pi^2 I }{T^2}\cdot\theta_{max}^{eq} = \frac{  8 \pi^2 \cdot 0.487\cdot10^{-3} }{(84)^2}\cdot 1\cdot10^{-5} = 5.45\cdot10^{-11}[N\cdot m]
+\tau_{max} (\xi \geq 0.01)\geq\tau_{max} (\xi = 0.01)=\frac{ 8 \pi^2 I }{T^2}\cdot\theta_{max}^{eq} = \frac{  8 \pi^2 \cdot 0.487\cdot10^{-3} }{(84)^2}\cdot 1\cdot10^{-5} = 5.45\cdot10^{-11}[N\cdot m]
 \label{eqn:damping_torque_pid}
 \end{equation}
 \par\noindent
