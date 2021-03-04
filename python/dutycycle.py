@@ -5,12 +5,12 @@ import matplotlib.pyplot as plt
 
 def fonts_define(xtitle,ytitle,lgd,font=25):
     plt.figure(figsize=(20,10))
-    plt.xlabel(xtitle, fontsize=font+2)
-    plt.ylabel(ytitle, fontsize=font+2)
+    plt.xlabel(xtitle, fontsize=font)
+    plt.ylabel(ytitle, fontsize=font)
     plt.rc('xtick', labelsize=font) 
     plt.rc('ytick', labelsize=font)
-    plt.legend(lgd,loc=2, prop={'size': 20})
-fonts_define('time [$\mu$s]','voltage [V]',['Digital voltage','Analog voltage'],font=25)
+    plt.legend(lgd,loc=2, prop={'size': font})
+fonts_define('time [$\mu$s]','voltage [V]',['Digital voltage','Analog voltage'],font=40)
 
 
 
