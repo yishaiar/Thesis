@@ -182,9 +182,9 @@ where $\tau_{max}$ is the maximal torque exerted by the PID. When damping using 
 \begin{equation}
 \xi = \frac{T}{2 \pi \tau } =  \frac{T}{2 \pi  }\frac{\gamma}{2I}  = \frac{ \tau_{max}}{\theta_{max}} \cdot \frac{T^2}{8\pi^2 I}  \label{eqn:damping_time_pid}
 \end{equation}
-The damping coefficient $\gamma$, the damping time $\tau$, and the damping type, depend on the ratio $\frac{\theta_{max}}{\tau_{max}}$. When torque is too small compared to the amplitude, the damping affect is negligible, resulting in a highly underdamped oscillator ($\xi << 1$) with infinite damping time (eq.~\ref{eqn:underdamped_motion_equation}). The PID must be able to exert torques which can damp the equilibrium amplitude ($\xi \geq 10^{-2} $). The needed PID torque $\tau_{max} $ is given by:
+The damping coefficient $\gamma$, the damping time $\tau$, and the damping type, depend on the ratio $\frac{\theta_{max}}{\tau_{max}}$. When torque is too small compared to the amplitude, the damping affect is negligible, resulting in a highly underdamped oscillator ($\xi << 1$) with infinite damping time (eq.~\ref{eqn:underdamped_motion_equation}). The PID must be able to exert torques which would not result in a negligible damping at the equilibrium amplitude ($\xi \geq 10^{-2} $). The needed PID torque $\tau_{max} $ is given by:
 \begin{equation}
-\tau_{max} \geq\tau_{max} (\xi =10^{-2})=10^{-2}\cdot\theta_{max}^{eq}\frac{ 8 \pi^2 I }{T^2} = \frac{  8 \pi^2 \cdot 0.487\cdot10^{-3} }{(84)^2}\cdot 1\cdot10^{-5} = 5.45\cdot10^{-11}[N\cdot m]
+\tau_{max} (\xi =10^{-2})\geq 10^{-2}\cdot\theta_{max}^{eq}\frac{ 8 \pi^2 I }{T^2} \approx  5\cdot 10^{-13}[N\cdot m]
 \label{eqn:damping_torque_pid}
 \end{equation}
 \par\noindent
