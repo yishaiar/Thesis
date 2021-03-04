@@ -12,7 +12,7 @@ def fonts_define(xtitle,ytitle,lgd,font=25):
 
 
 
-time = 400 #s
+time = 40000 #s
 t=np.linspace(0,time,3000);
 
 kappa = 2.5839284154826904e-06
@@ -34,7 +34,7 @@ plt.plot(t,xt)
 
 
 # underdamped
-xi = 0.15
+xi = 0.01
 tao = 1/(xi*omega_0)
 
 a=x0;
@@ -72,5 +72,5 @@ plt.plot(t,xt)
 
 fonts_define('time [s]',r'$\theta$ \ $\theta_{max}$',['Undamped','Underdamped','Critically damped','Overdamped'],font=40)
 
-plt.savefig('damp.png')
+# plt.savefig('damp.png')
 # 
