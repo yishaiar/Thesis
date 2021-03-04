@@ -6,9 +6,9 @@
         {
             "label": "compile_upload_full",
             "type": "shell",
-            "command": "lualatex Presentation; bibtex Presentation; ./Presentation.pdf; lualatex master; bibtex master; ./master.pdf; lualatex master; lualatex master; git add --all; git commit --all -m 'auto';git push --all --force",
+            //"command": "lualatex Presentation; bibtex Presentation; ./Presentation.pdf; lualatex master; bibtex master; ./master.pdf; lualatex master; lualatex master; git add --all; git commit --all -m 'auto';git push --all --force",
             // --force
-            //"command": "lualatex master; bibtex master; ./master.pdf; lualatex master; lualatex master",
+            "command": "lualatex master; bibtex master; ./master.pdf; lualatex master; lualatex master",
             "group": {
                 "kind": "build",
                 "isDefault": true
