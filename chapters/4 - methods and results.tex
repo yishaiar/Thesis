@@ -187,10 +187,8 @@ The damping coefficient $\gamma$, the damping time $\tau$, and the damping type,
 \tau_{max} (\xi ,\theta_{max})=\xi\cdot\theta_{max}\frac{ 8 \pi^2 I }{T^2} \approx  5\cdot 10^{-6} \xi\theta_{max}[N\cdot m]
 \label{eqn:damping_torque_pid}
 \end{equation}
-The PID must be able to exert torques which would not result in a negligible damping at the initial equilibrium amplitude $\tau_{max} (\xi\geq 0.1 ,\theta_{max}^{eq})\geq 1[pico-N\cdot m] $. 
- 
+As the tourqe is getting larger compared to the amplitude (due to oscillations getting smaller), the damping process is getting closer to being able to critically damp the oscillator, meaning larger $\tau_{max}$ would result with better PID damping process. The PID must be able to exert torques which would not result in a negligible damping at the initial equilibrium amplitude $\tau_{max} (\xi\geq 0.1 ,\theta_{max}^{eq})\geq 1[pico-N\cdot m] $. 
 \par\noindent
-As the tourqe is getting larger compared to the amplitude (due to oscillations getting smaller), the damping process is getting closer to being able to critically damp the oscillator.
 Since, the torque is proportional to the oscillations velocity (eq.~\ref{eqn:friction_torque_pid}), it needs a high modulation frequency compared to the oscillations frequency (to prevent phase delay), and high modulation range compared to the amplitude (to avoid overshoot). 
 \subsection{Radiation-pressure torque}
 The PID torque was chosen to be a radiation-pressure torque. The setup is composed of two light sources in front of the two torsional pendulum sides, each with flux modulated in time differently $\Theta_i(t)$. As seen in eq.~\ref{eqn:net_gravitation_torque}, the difference between two torques adds an external net torque. Assuming both light fields are very close to being perpendicular to the surface with negligible incidence angles $\alpha_1\approx\alpha_2\approx 0$ and have the same coupling efficiency $\eta$, using eq.~\ref{eqn:radiation_force_power}, the radiation-pressure net torque $\tau(t)$ is:  
