@@ -146,7 +146,7 @@ The field caused by a test mass $M$ at a specific point is calculated by measuri
 \end{figure}
 \FloatBarrier
 \par\noindent
-The Cavendish apparatus, shown in fig.~\ref{fig:Cavendish apparatus}, measures the gravitational force between masses. The apparatus is constructed by a torsional pendulum and a nearby test mass $M$, creating a net torque on the pendulum. 
+The Cavendish apparatus, shown in fig.~\ref{fig:Cavendish apparatus}, measures the gravitational force of test mass $M$ on masses $m$. The apparatus is constructed by a torsional pendulum and a nearby test mass $M$, which creates a net torque on the pendulum. 
 \par\noindent
 The pendulum can be assumed to consist of two masses $m$ connected by a rigid, massless thin rod, with length of $2l$, and a pivot point at distance $l$ from each mass. The moment of inertia $I$ of a torsional pendulum oscillating around the pivot is given by:
 \begin{equation}
@@ -171,7 +171,7 @@ According to eq.~\ref{eqn:net_gravitation_torque}, the net torque is proportiona
 \end{equation}
 Where $\theta$ is the tilt angle of the torsional pendulum and approximately $\theta_1 \approx \theta_2 = \theta$.
 \subsubsection{Simple harmonic oscillator}
-Assuming no friction or other damping force (simple harmonic motion) when a test mass $M$ is introduced, there are two sources of torque in the system; the net torque caused by the gravitational force $\tau_g$ (eq.~\ref{eqn:net_gravitation_torque_approx}), and a restoring torque at the opposite direction caused by the wire torsion (eq.~\ref{eqn:hook law}):
+Assuming no friction or other damping force (simple harmonic motion) when a test mass $M$ is introduced, there are two sources of torque in the system; the net torque caused by the gravitational force $\tau_g$ (eq.~\ref{eqn:net_gravitation_torque_approx}), and a restoring torque in the opposite direction caused by the wire torsion (eq.~\ref{eqn:undamped_motion_equation}):
 \begin{equation}
 \tau = \tau_g - \kappa\theta = \tau_g - (I\omega_0^2)\theta    \label{eqn:gravitation_torque}
 \end{equation}
@@ -188,12 +188,14 @@ According to eq.~\ref{eqn:theta average}, by accurate angle measurement, the gra
  
 
 \subsection{Gravity sensing}
-The field at a specific point is the superposition of multiple fields, caused by any mass in space $M$ acting on the mass $m$ located at that point. Measuring the gravitational field caused by a specific test mass $M$ accurately with known mass $m$, the test mass $M$ weight or its distance could be estimated. In order to filter out the other gravitational fields caused by masses around, one measures the difference from a baseline state.
+The field at a specific point is the superposition of multiple fields, caused by any mass in space $M$ acting on the mass $m$ located at that point. Measuring the gravitational field caused by a specific test mass $M$ accurately with known mass $m$, the mass $M$ or its distance could be estimated. In order to filter out the other gravitational fields caused by masses around, one measures the difference from a baseline state.
+\iffalse
 \par\noindent
 Usually the measurement is based on measuring oscillation frequency. The test mass oscillates in different frequencies. The masses around that do not move, are filtered out.
+\fi
 \par\noindent
 The sensor's tilt angle caused by the gravitational field is measured at each frequency, measuring the energy spectral density $[\frac{rad}{\sqrt{Hz}}]$ of the sensor.
-In the measurement system different noises have different frequencies. By integrating over long periods, measurement noises are reduced. The signal to noise ratio (SNR) is the limiting factor for the sensitivity of a measuring system. In higher frequencies the integration is faster, causing less noises and higher SNR.
+In the measurement system different noises have different frequencies. By integrating over long periods, measurement noises are reduced. The signal to noise ratio (SNR) is the limiting factor for the sensitivity of a measuring system. At higher frequencies the integration is faster, reducing more noises and having higher SNR.
 The dependency of the SNR on frequency causes difficulties when measuring gravitational fields at low frequencies.
 \par\noindent
 This limitation is a significant challenge while designing gravimetric sensors for low frequencies.
@@ -207,7 +209,7 @@ An optical measurement system with coherent light can not measure a signal small
 \begin{equation}
 SNR = \frac{p_{signal}}{p_{shot}} =\frac{N h \nu}{\sqrt{N} h \nu} = \sqrt{N}    \label{eqn:shot_noise}
 \end{equation}
-However, while other system noises are higher than the shot noise limit, reducing noises and averaging the time integration can provide higher accuracy and better measurement results. 
+%However, while other system noises are higher than the shot noise limit, reducing noises and averaging the time integration can provide higher accuracy and better measurement results. 
 \section{Radiation-pressure}
 Radiation-pressure is the pressure of a light beam on the surface due to momentum exchange with the electromagnetic field. The momentum exchange may occur with light at any wavelength which is absorbed, reflected, or emitted by the surface. The pressure causes a force on the surface, although this force is usually insignificant.  
 \par\noindent

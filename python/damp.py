@@ -4,11 +4,11 @@ import matplotlib.pyplot as plt
 plt.figure(figsize=(20,10))
 
 def fonts_define(xtitle,ytitle,lgd,font=25):
-    plt.xlabel(xtitle, fontsize=font+2)
-    plt.ylabel(ytitle, fontsize=font+2)
+    plt.xlabel(xtitle, fontsize=font)
+    plt.ylabel(ytitle, fontsize=font)
     plt.rc('xtick', labelsize=font) 
     plt.rc('ytick', labelsize=font)
-    plt.legend(lgd,loc=2, prop={'size': 20})
+    plt.legend(lgd,loc=1, prop={'size': font})
 
 
 
@@ -70,7 +70,7 @@ plt.plot(t,xt)
 
 
 
-fonts_define('time [s]',r'$\theta$ \ $\theta_{max}$',['Undamped','Underdamped','Critically damped','Overdamped'],font=25)
+fonts_define('time [s]',r'$\theta$ \ $\theta_{max}$',['Undamped','Underdamped','Critically damped','Overdamped'],font=40)
 
 plt.savefig('damp.png')
 # 

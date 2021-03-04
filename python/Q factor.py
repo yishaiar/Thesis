@@ -36,9 +36,9 @@ def Q(p=1E-18, ones = False):
     
     plt.yscale('log')
     plt.xscale('log')
-# Q(p=1.3E-18 )
-# Q(p=8E-18,ones=True )
-Q(p=4.4E-25,ones=True )
+Q(p=1.3E-18 )
+Q(p=8E-18,ones=True )
+# Q(p=4.4E-25,ones=True )
 
 fonts_define(r'$\theta_{max} [rad]$','Q factor',[r'$Q(p=1E-18)$',r'$Q(p=8E-18)$','Q = 0.5','Q = 1'],font=25)
 

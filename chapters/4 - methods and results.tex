@@ -8,7 +8,7 @@
 \subsection{Experiment setup}
 \begin{figure}[htbp]
 	\centering
-	\fbox{\includegraphics[scale=0.2]{\main/images/4 - methods and results/setup.png}}
+	\fbox{\includegraphics[scale=0.35]{\main/images/4 - methods and results/setup cropped.png}}
 	\caption[The experiment setup]{The experiment setup}
 	\label{fig:setup}
 \end{figure}
@@ -101,7 +101,7 @@ According to eq.~\ref{eqn:undamped_motion_equation_4}, longer string length $h$ 
 \par\noindent
 The string is made of tungsten that is both vacuum compatible (material with low outgassing) and has high tensile strength, holding the pendulum robustly inside the vacuum chamber while maintaining small string diameter. 
 \par\noindent
-In order to minimize the magnetic noise in the measurements, the torsional pendulum is made out of stainless steel 316 (instead of stainless steel 304) which has lower magnetic permeability \cite{SS316}, and the chosen front mirror is made fully of oxygen-free copper (OFC) instead of coated glass, thus preventing capacitance. 
+In order to minimize the magnetic noise in the measurements, the torsional pendulum is made out of stainless steel 316 (instead of stainless steel 304) which has low magnetic permeability \cite{SS316}, and the chosen front mirror is made fully of oxygen-free copper (OFC) instead of coated glass, thus preventing charges. 
 \subsubsection{Technical information}
 The designed elements specifications are:
 \begin{multicols}{2}
@@ -127,13 +127,13 @@ The designed elements specifications are:
 \end{easylist}
 \end{multicols}
 \subsection{Torsional motion}
-Friction and the pressure dependent noises (Brownian motion, thermal flow and acoustic waves) are reduced by the lowered pressure. The measurement system is placed inside an acoustic box, further reducing the acoustic power and also reducing magnetic noise as a Faraday cage (eq.~\ref{eqn:skin depth}). 
+Friction and the pressure-dependent noises (Brownian motion, thermal flow and acoustic waves) are reduced by the lowered pressure. The measurement system is placed inside an acoustic box, further reducing the acoustic power and also reducing magnetic noise as a Faraday cage (eq.~\ref{eqn:skin depth}). 
 \par\noindent
 The acoustic box is a Faraday cage with 76 mm thickness, blocking magnetic fields with frequencies $f \ge 30 [Hz]$ from the environment. The vacuum chamber is a second cage that further blocks magnetic noise from the electronic system placed inside the acoustic box. The vacuum chamber is made out of approximately 3 mm thick stainless steel, blocking magnetic fields with frequencies $f\ge 20 [KHz]$ and reducing magnetic noise with lower frequencies.
 \par\noindent
-Initially the torsional pendulum is a driven oscillator (eq.~\ref{eqn:driven_motion_equation_2}) driven by small torques, consisted of black body radiation and the pressure dependent noises. Gradually, the pressure dependent friction damps down the velosity, until the pendulum reaches an amplitude at which the friction is equal to the driving noises. The equilibrium amplitude is independent of the initial amplitude, but dependent on the pressure and temperature. Due to the low pressure, the damping of the friction is very slow. After 8 hours of damping, the torsional pendulum reaches equilibrium with a measured amplitude of $\theta_{max}^{eq}\approx 1\cdot10^{-5}[rad]$ (the same result is achieved also after a week). From the long damping time it can be shown that the friction coefficient is very small, allowing to neglect the friction at small amplitudes.
+Initially the torsional pendulum is a driven oscillator (eq.~\ref{eqn:driven_motion_equation_2}) driven by small torques, consisting of black body radiation and the pressure-dependent noises. Gradually, the pressure-dependent friction damps down the velosity, until the pendulum reaches an amplitude at which the friction is equal to the driving noises. The equilibrium amplitude is independent of the initial amplitude, but dependent on the pressure and temperature. Due to the low pressure, the damping of the friction is very slow. After 8 hours of damping, the torsional pendulum reaches equilibrium with a measured amplitude of $\theta_{max}^{eq}\approx 10 [\mu rad]$ (the same result is achieved also after a week). From the long damping time it can be shown that the friction coefficient is very small, allowing to neglect the friction at small amplitudes.
 \par\noindent
-Except for the torsional mode (in which we are interested) there is also a bouncing mode with a period of $T_b\approx 2\pi\sqrt{\frac{h}{g}}\approx 1[s]$. The bouncing mode masks the measurement, and is filtered out in real time.  
+Except for the torsional mode (in which we are interested) there is also a bouncing mode with a period of $T_b\approx 2\pi\sqrt{\frac{h}{g}}\approx 1[s]$. The bouncing mode masks the measurement, and is filtered out in real time, using a low-pass filter.  
 \par\noindent
 \subsection{results}
 The system measured results compared to the expected results from the equations are given by:
@@ -141,16 +141,16 @@ The system measured results compared to the expected results from the equations 
 \raggedcolumns
 \begin{easylist}
 & expected;
-&& $I = 0.487\cdot10^{-3}[kg\cdot m^2]$
-&& $\kappa = 2.1\cdot10^{-6}[\frac{N\cdot m}{rad}] - 2.6\cdot10^{-6} [\frac{N\cdot m}{rad}]$
-&& $T = 96[s] - 86 [s]$
+&& $I = 0.487\cdot10^{-3}[kg\cdot m^2]$ (see eq.~\ref{eqn:skin depth})
+&& $\kappa = 2.1\cdot10^{-6}[\frac{N\cdot m}{rad}] - 2.6\cdot10^{-6} [\frac{N\cdot m}{rad}]$ (see eq.~\ref{eqn:skin depth})
+&& $T = 96[s] - 86 [s]$ (see eq.~\ref{eqn:skin depth})
 \end{easylist}
 \columnbreak
 \begin{easylist}
 & measured;
-&& $\kappa = 2.7\cdot10^{-6}[\frac{N\cdot m}{rad}]$
 && $T = 84[s]$
-&& $\theta_{max}^{eq} \approx 1\cdot10^{-5}[rad]$
+&& $\kappa = 2.7\cdot10^{-6}[\frac{N\cdot m}{rad}]$
+&& $\theta_{max}^{eq} \approx 10 [\mu rad]$
 \end{easylist}
 \end{multicols}
 The expected $\kappa$, $T$ have a range due to uncertainty of the string tensile strength $G$. The equilibrium amplitude $\theta_{max}^{eq}$ is an experimental value, dependent on the amount of noise actually reduced, thus it does not have an expected simulated value.
@@ -201,20 +201,20 @@ The radiation-pressure net torque is controlled by changing the difference betwe
 \end{equation}
 
 \subsection{Laser setup}
-Initially, the modulated light sources were composed of a single laser diode coupled in series into two acousto optic modulators (AOM), with special filtered mode using optical fibers. The AOMs divide the single coherent light beam into two beams, with the intensity ratio modulated, resulting in controlled modulation of the difference between the light sources.
+Initially, the modulated light sources were composed of a single laser diode coupled in series into two acousto optic modulators (AOM), with special filtered mode using optical fibers. The AOMs divided the single coherent light beam into two beams, with the intensity ratio modulated, resulting in controlled modulation of the difference between the light sources.
 \par\noindent
 The apparatus had modulation range of $10000$ steps and modulation frequency of $1 [Hz]$. The setup minimized uncertainties of the light intensity, since both light sources had a mutual source, partially cancelling internal noises, such as thermal and shot noise. 
 \par\noindent
 The apparatus uncertainty, due to the non linearity of the AOM response and laser power fluctuations, proved to be larger than the uncertainties of the intensity difference. Also, modulation frequency proved to be more important than modulation range. Due to the conclusions, the PID torque was changed to two controlled light emitting diode (LED) sources.
 \subsection{Light emitting diode (LED)}
-The light emitting diode (LED) is a semiconductor light source with high power and long lifetime. A forward voltage applied to a p-n junction, causes electron injection which recombines with holes. The recombination releases energy in form of spontaneous emission photons (incoherent light). Due to the electrons life time, the LED could be modulated up to $100MHz$. The LED forward voltage is given by the Shockley diode equation for p-n junctions, $V_l \approx n V_T ln10 log_{10} (\frac{I_l}{I_s})$, where $I_l$ is the LED current, $I_s$ is the saturation current, $n$ is the emission coefficient, and $V_T$ is the thermal voltage. 
+The light emitting diode (LED) is a semiconductor light source with high power and long lifetime. A forward voltage applied to a p-n junction, causes electron injection which recombines with holes. The recombination releases energy in form of spontaneously emitted photons (incoherent light). Due to the electrons' life time inside, the LED can be modulated up to $100MHz$. The LED forward voltage is given by the Shockley diode equation for p-n junctions, $V_l \approx n V_T ln10 log_{10} (\frac{I_l}{I_s})$, where $I_l$ is the LED current, $I_s$ is the saturation current, $n$ is the emission coefficient, and $V_T$ is the thermal voltage. 
 \par\noindent
 Since $V_l$ varies as the logarithm of the current, it is approximately constant over wide current range. In the driving circuit, a resistor $R$ is connected in series with the LED, stabilizing the current. The LED light flux with circuit of $N$ voltage supplies $V$ in parallel, is given by:
 \begin{equation}
 \Theta = I_l\cdot V_l  =\frac{N\cdot V-V_l}{R}\cdot V_l\approx \frac{N\cdot V_l\cdot V}{R}\label{eqn:led power}
 \end{equation}
 \par\noindent
-The LED illumination angle varies between $45^0-120^0$. Since emitted light is incoherent, it is hard to focus it to a point (not diffraction limited). In order to overcome the large illumination angle, the LED light sources are coupled to light guides (the vacuum chamber viewports were designed to have light guides in front). A light guide is a pipe made of thin filaments causing internal reflections, designed to illuminate small areas, regardless of the spectral characteristics of the light source. The light guide efficiency $\eta$ is dependent mainly on the cross section and length of the lightguide. 
+The LED illumination angle varies between $45^0-120^0$. Since emitted light is incoherent, it is hard to focus it to a point (not diffraction limited). In order to overcome the large illumination angle, the LED light sources are coupled to light guides (the vacuum chamber viewports were designed to have light guides in front). A light guide is a pipe made of thin filaments causing internal reflections, designed to illuminate small areas, regardless of the spectral characteristics of the light source. The light guide efficiency $\eta$ is dependent mainly on its cross section. 
 
 \subsection{Arduino microcontroller}
 \begin{figure}[htbp]
@@ -235,13 +235,13 @@ f_{PWM} = \frac{1 }{120T}= \frac{1 }{120 \frac{8-bit }{16MHz}}  \approx 500[Hz]	
 \end{equation}
 
 \subsection{LED circuit}
-The LED circuits are each composed of a blue LED with $V_l\approx 4.5V$, with $N=6$ parallel PWM pins for the supply voltage (eq.~\ref{eqn:pwm voltage}) and resistor $R = 200\Omega$. Due to coupling efficiency and size difference between the output beam from the lightguide and the pendulum sides, the efficiency of flux hitting the pendulum is estimated $\eta = 0.7$. Thus with LED flux given by eq.~\ref{eqn:led power}, the PID torque $\tau_{PID}(t)$ is given by (eq.~\ref{eqn:radiation torque}):
+The LED circuits are each composed of a blue LED with $V_l\approx 5V$, with $N=6$ parallel PWM pins for the supply voltage (eq.~\ref{eqn:pwm voltage}) and resistor $R = 200\Omega$. Due to coupling efficiency and size difference between the output beam from the lightguide and the pendulum sides, the efficiency of flux hitting the pendulum is estimated $\eta \approx 0.05$ (it is also later calculated from the damping coefficient of the results, see eq.~\ref{eqn:pid damping coefficient}). Thus with LED flux given by eq.~\ref{eqn:led power}, the PID torque $\tau_{PID}(t)$ is given by (eq.~\ref{eqn:radiation torque}):
 \begin{equation}
-\tau_{PID}(t) \approx \frac{2l\eta}{{c}} (\Theta_1(t) -\Theta_2(t)) \approx \frac{2l\eta}{{c}} \cdot\frac{N V_l V_d}{100R}(D_1(t) -D_2(t))  \approx   3.4\cdot 10^{-12}(D_1(t) -D_2(t)) 
+\tau_{PID}(t) \approx \frac{2l\eta}{{c}} (\Theta_1(t) -\Theta_2(t)) \approx \frac{2l\eta}{{c}} \cdot\frac{N V_l V_d}{100R}(D_1(t) -D_2(t))  \approx   3\cdot 10^{-13}(D_1(t) -D_2(t)) 
 \label{eqn:led torque}
 \end{equation}
 \par\noindent
-The torque is controlled by the duty cycle $D(t)$ varying between $0-100$ with 8bit resolution, thus generating torques up to $\tau = \pm 0.34 [nano-N\cdot m]$ with modulation steps of $\Delta\tau = 1.34 [pico-N\cdot m]$ and modulation frequency of $f \leq 500[Hz]$ (see eq.~\ref{eqn:pwm frequency}). The LED light source has an approximately linear response which minimizes the overshoot, and a fast response which minimizes the phase delay.
+The torque is controlled by the duty cycle $D(t)$ varying between $0-100$ with 8bit resolution, thus generating torques up to $\tau = \pm 30 [pico-N\cdot m]$ with modulation steps of $\Delta\tau = 0.15 [pico-N\cdot m]$ and modulation frequency of $f \leq 500[Hz]$ (see eq.~\ref{eqn:pwm frequency}). The LED light source has an approximately linear response which minimizes the overshoot, and a fast response which minimizes the phase delay.
 \newpage
 \section{Results} 
 \begin{figure}[htbp]
@@ -272,7 +272,7 @@ Shown in fig.~\ref{fig:measured oscillation angle 1} are the torsional pendulum 
 
 
 \subsection{Quality factor (Q)}
-The quality factor ($Q$) is a dimensionless parameter describing how underdamped is the oscillator, it is defined as the ratio of the maximum energy $U$ stored in the oscillator to the energy dissipated per cycle of oscillation. When $Q > 0.5$ the oscillator is underdamped, $Q = 0.5$ critically damped and over damped when $Q < 0.5$.
+The quality factor ($Q$) is a dimensionless parameter describing how underdamped the oscillator is. It is defined as the ratio of the maximum energy $U$ stored in the oscillator to the energy dissipated per cycle of oscillation. When $Q > 0.5$ the oscillator is underdamped, $Q = 0.5$ critically damped and over damped when $Q < 0.5$.
 \par\noindent
 Assuming negligible air friction, the energy lost in one cycle  $W_T$ is the work done at the cycle, which is the difference between the PID work and the environment coupled noise power $p$. The maximum energy per cycle stored in the damped torsional pendulum can be approximated to the energy stored in the torsional pendulum while having harmonic motion with the same amplitude. The torsional pendulum quality factor $Q$ is given by:
 \begin{equation}
@@ -284,9 +284,9 @@ Assuming the equivalent coupled noise power at the cycle is independent of time 
 Q(\theta_{max},p) =  \frac{\pi\cdot(\kappa\theta_{max}^2cos^2(0)+I\omega^2\theta_{max}^2sin^2( 0) }{\frac{\tau_{max} }{\theta_{max}} \frac{ T}{2\pi}(\frac{2\pi}{T}\theta_{max})^2\int_0^T sin(\frac{2\pi}{T}t)dt-p\int_0^T dt }  =  \frac{\pi\kappa\theta_{max}^2}{T\cdot(\frac{\theta_{max}\pi\tau_{max}}{T} -p)} 
 \label{eqn:Q}
 \end{equation}
-The damping would have a non negligible effect on the motion when the oscillator is not highly underdamped $Q < 1$. It can be seen from eq.~\ref{eqn:Q} that $Q$ is highly depended on the amplitude size, resulting with a maximal size of the oscillations amplitude the PID is able to have a non negligible effect. Even when assuming no coupled noises ($p=0$), the amplitudes with which the damping affects the motion are limited to being smaller than:  
+The damping would have a non negligible effect on the motion when the oscillator is not highly underdamped $Q < 1$. It can be seen from eq.~\ref{eqn:Q} that $Q$ is highly dependent on the amplitude size, resulting with a maximal size of the oscillations amplitude the PID is able to have a non negligible effect. Even when assuming no coupled noises ($p=0$), the amplitudes with which the damping affects the motion are limited to being smaller than:  
 \begin{equation}
-\theta_{max}(Q<1,p=0) < \frac{\tau_{max}}{\kappa} \approx \frac{3.4\cdot 10^{-10}}{2.7\cdot 10^{-6}} \approx 125 [\mu rad]
+\theta_{max}(Q<1,p=0) < \frac{\tau_{max}}{\kappa} \approx \frac{30\cdot 10^{-12}}{2.7\cdot 10^{-6}} \approx 10 [\mu rad]
 \label{eqn:low Q}
 \end{equation}
 
@@ -300,7 +300,7 @@ It can be seen from eq.~\ref{eqn:Q} that when $Q<0$ the coupled noise power is l
 \end{figure} 
 
 \subsection{Noise power}
-Due to Brownian motion, we estimate $n_p= \frac{N}{V}v A$ gas particles collisions per second into the cross section of the torsional pendulum. Each gas particle is with mass $m_0 = \frac{M}{N_A}$ and mean velosity of the gas flow $v$ (eq.~\ref{eqn:flow velocity}). Assuming all collisions are elastic, the particles exchanges mean momentum of $k=2m_0v$, resulting with force $F = n_p\cdot k$. Due to the collisions, the velosity of the torsional pendulum with mass $m_1$ is $ u =\frac{ n_p k}{m_1}$, resulting with power $p$ given by:
+Due to Brownian motion, we estimate $n_p= \frac{N}{V}v A$ gas particles collisions per second into the cross section of the torsional pendulum. Each gas particle is with mass $m_0 = \frac{M}{N_A}$ and mean velosity of the gas flow $v$ (eq.~\ref{eqn:flow velocity}). Assuming all collisions are elastic, the particles exchange mean momentum of $k=2m_0v$, resulting in a force $F = n_p\cdot k$. Due to the collisions, the velosity of the torsional pendulum with mass $m_1$ is $ u =\frac{ n_p k}{m_1}$, resulting in a power, $p$, given by:
 \begin{equation}
 p = F\cdot u =  n_p k \cdot n_p\frac{k}{m_1} =\frac{4}{m_1}(\frac{N}{V}v A)^2m_0^2v^2=\frac{4A^2}{m_1}(\frac{P}{k_B T})^2(\frac{M}{N_A})^2 (\frac{3 k_B N_A T}{M})^2 =\frac{36A^2P^2}{m_1} 
 \label{eqn:Brownian power}
@@ -328,7 +328,7 @@ Even at room temperature the power from Brownian motion is much larger than esti
 \par\noindent
 Thus, the thermal flow does not couple noise into the system, and the effective noise power is composed of Brownian motion, acoustic waves and black body radiation. The Brownian motion and black body radiation are both treated as random processes, where the noise coupled by black body radiation is a radiation force caused by the photons colliding into the torsional pendulum. 
 \subsubsection{Random motion}
-Due to random motion, $n_p$ particles collide per second into cross section $A$ of the torsional pendulum. Random motion can be modelled as a Poisson process, and the effective collision rate is the square root of the number of events $n_{col} = \sqrt{n_p}$. Each particle exchanges momentum $k$, resulting with force $F = n_{col}\cdot k$. Due to the collisions the velosity the torsional pendulum is $ u = \frac{n_{col}k}{m_1}$, resulting with power $p_{eff}$ given by:
+Due to random motion, $n_p$ particles collide per second into cross section $A$ of the torsional pendulum. Random motion can be modelled as a Poisson process, and the effective collision rate is the square root of the number of events $n_{col} = \sqrt{n_p}$. Each particle exchanges momentum $k$, resulting in a force $F = n_{col}\cdot k$. Due to the collisions the velosity the torsional pendulum is $ u = \frac{n_{col}k}{m_1}$, resulting with power $p_{eff}$ given by:
 \begin{equation}
 p_{eff} = F\cdot u =  n_{col}k \cdot n_{col}\frac{k}{m_1} =  n_p\frac{ k^2}{m_1}
 \label{eqn:net power}
@@ -338,12 +338,12 @@ The Brownian motion collision power is given in eq.~\ref{eqn:Brownian power}. Th
 p_{eff} =  n_p\frac{ k^2}{m_1} = \frac{p}{n_p} = \frac{\frac{36A^2P^2}{m_1}}{\frac{N}{V}v A} = \frac{12AP}{m_1}\sqrt{\frac{3 k_B T M}{ N_A }}\approx 3.8\cdot 10^{-21}AP
 \label{eqn:Brownian net power}
 \end{equation}
-There are photons colliding into the torsional pendulum due to black body radiation from (see eq.~\ref{eqn: Stefan–Boltzmann power}). It can be shown that the mean energy of a black body photon is $\overline{E}\approx 2.7k_B T$, where $T$ is the environment temperature (room temperature). The incident photons are composed of reflected flux $j_{ref}=(1-\epsilon)\sigma T^4$ each with elastic collision and momentum of $k_{ref} = \frac{2\overline{E}}{c} $, and absorbed flux $j_{ab}=\epsilon\sigma T^4$ each with momentum of $k_{ab} = \frac{\overline{E}}{c}$. At each flux the number of photon collisions is given by $n_p = \frac{j}{\overline{E}}A$, resulting with effective power $p_{eff}$ given by:
+There are photons colliding into the torsional pendulum due to black body radiation from (see eq.~\ref{eqn: Stefan–Boltzmann power}). It can be shown that the mean energy of a black body photon is $\overline{E}\approx 2.7k_B T$, where $T$ is the environment temperature (room temperature). The incident photons are composed of reflected flux $j_{ref}=(1-\epsilon)\sigma T^4$ each with elastic collision and momentum of $k_{ref} = \frac{2\overline{E}}{c} $, and absorbed flux $j_{ab}=\epsilon\sigma T^4$ each with momentum of $k_{ab} = \frac{\overline{E}}{c}$. At each flux the number of photon collisions is given by $n_p = \frac{j}{\overline{E}}A$, resulting in an effective power $p_{eff}$ given by:
 \begin{equation}
 p_{eff}  \approx \frac{j_{ref}}{\overline{E}}A\cdot\frac{ (\frac{2\overline{E}}{c})^2}{m_1} +\frac{j_{ab}}{\overline{E}}A\cdot\frac{ (\frac{\overline{E}}{c})^2}{m_1} = \frac{  2.7 A k_B T }{ c^2 m_1} (4j_{ref}+j_{ab}) =\frac{2.7A k_B}{ c^2 m_1} (4-3\epsilon)\sigma T^5 \approx 1.1\cdot 10^{-45}AT^5
 \label{eqn:photon collision power}
 \end{equation}
-The coupled noise coupled to the torsional pendulum is composed of Brownian motion, acoustic waves and black body radiation. When the environment is at room temperature with low pressure, and with out distinguishable acoustic noises, the coupled noise is mainly composed of Brownian motion collisions $p_{eff}\approx 4.4\cdot 10^{-25}  [W]$. Thus, with the right conditions it might be possible to reach a damped amplitude of $\theta_{max}^{PID}\approx 2\cdot 10^{-14}$ (achieved from calculating the Brownian noise effect on the Q factor).
+The noise coupled to the torsional pendulum is composed of Brownian motion, acoustic waves and black body radiation. When the environment is at room temperature with low pressure, and without distinguishable acoustic noises, the coupled noise is mainly composed of Brownian motion collisions $p_{eff}\approx 4.4\cdot 10^{-25}  [W]$. Thus, with the right conditions it might be possible to reach a damped amplitude of $\theta_{max}^{PID}\approx 2\cdot 10^{-14}$ (achieved from calculating the Brownian noise effect on the Q factor).
 
 \subsection{Gravitational measurements}
 The PID damping process is damping the torsional pendulum amplitude. When the PID damping process is damping the torsional pendulum amplitude below the temperature quantum uncertainty (eq.~\ref{eqn:Brownian uncertainty 3}), the torsional pendulum temperature is effectively lowered by the damping process.
