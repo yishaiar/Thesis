@@ -12,7 +12,7 @@ def fonts_define(xtitle,ytitle,lgd,font=25):
 
 
 
-time = 40000 #s
+time = 400 #s
 t=np.linspace(0,time,3000);
 
 kappa = 2.5839284154826904e-06
@@ -34,7 +34,7 @@ plt.plot(t,xt)
 
 
 # underdamped
-xi = 0.01
+xi = 0.1
 tao = 1/(xi*omega_0)
 
 a=x0;

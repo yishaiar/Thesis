@@ -3,19 +3,19 @@ import matplotlib.pyplot as plt
 plt.figure(figsize=(20,10))
 
 def fonts_define(xtitle,ytitle,lgd,font=25):
-    plt.xlabel(xtitle, fontsize=font+2)
-    plt.ylabel(ytitle, fontsize=font+2)
+    plt.xlabel(xtitle, fontsize=font)
+    plt.ylabel(ytitle, fontsize=font)
     plt.rc('xtick', labelsize=font) 
     plt.rc('ytick', labelsize=font)
-    plt.legend(lgd,loc=2, prop={'size': 20})
+    plt.legend(lgd,loc=2, prop={'size': font})
 def Q(p=1E-18, ones = False):
     n =int(1e5+1)
-    initaial = -4
-    final = -20
+    initaial = -5
+    final = -9
     theta = 2.5*10**(np.arange(n)[::-1]/(n-1)*(initaial - final)+final )
     kappa = 2.7e-6
     T=40
-    tau=3.4e-10
+    tau=30e-12
     p=np.ones([n])*p
     
     Q = np.pi/T*( (kappa*(theta**2)) / (theta*np.pi*tau/T-p))
@@ -36,11 +36,11 @@ def Q(p=1E-18, ones = False):
     
     plt.yscale('log')
     plt.xscale('log')
-Q(p=1.3E-18 )
-Q(p=8E-18,ones=True )
+Q(p=7E-19 )
+Q(p=1.2E-19,ones=True )
 # Q(p=4.4E-25,ones=True )
 
-fonts_define(r'$\theta_{max} [rad]$','Q factor',[r'$Q(p=1E-18)$',r'$Q(p=8E-18)$','Q = 0.5','Q = 1'],font=25)
+fonts_define(r'$\theta_{max} [rad]$','Q factor',[r'$Q(p=1E-19)$',r'$Q(p=7E-19)$','Q = 0.5','Q = 1'],font=40)
 
 plt.savefig('Q factor.png')
         
