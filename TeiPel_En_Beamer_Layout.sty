@@ -1,16 +1,4 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%                                    							
-%% 	LaTeX Style File for typesetting TEI-Pel thesis presentations
-%% 	Created by John Liaperdos, October 2014 - April 2015 
-%%	[ioannis.liaperdos@gmail.com]
-%%   
-%%  version 1.0 (English)
-%%
-%%  Last update: 22/06/2017
-%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Disclaimer: Use at your own risk
+
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{TeiPel_En_Beamer_Layout}[22/06/2017 TeiPel Beamer Layout Package (English version)]
@@ -58,8 +46,8 @@
     \IfSubStr{#1}{newlogo}%
     	{%
         	\definecolor{teipel_red}{RGB}{85, 85, 57}
-            \edef\teilogoeps{teipel_new_logo.eps}
-			\edef\teilogopng{teipel_new_logo.eps}
+            \edef\teilogoeps{HUJI logo.PNG}
+			\edef\teilogopng{HUJI logo.PNG}
         }%
         {%
         	\definecolor{teipel_red}{RGB}{190,65,65}
@@ -112,7 +100,9 @@
 		    \tableofcontents[currentsection,currentsubsection] 
 		  }
 		}
+	
     % Add draft watermark
+	\iffalse
     \IfSubStr{#1}{draft}%
     	{%
         	\usepackage{tikz}%
@@ -122,12 +112,13 @@
             	\end{tikzpicture}%
             }%
         }{}
+	\fi
 }
 
-\newcommand{\supervisor}[3]{
+\newcommand{\supervisor}[2]{
 	\subtitle{\textsc{Thesis}}
 	\logo{\begin{tabular}{c} \includegraphics[height=0.7cm,keepaspectratio]{\teilogopng} \\ \color{teipel_red}\scalebox{1.7}{\insertframenumber/\inserttotalframenumber} \end{tabular}}
-	\institute{\textsc{University}\\{School} \\ Department\\[5pt]{\includegraphics[height=1.5cm,keepaspectratio]{\teilogoeps}}\\[5pt] \scalebox{0.9}{#1: #2, #3}}
+	\institute{\textsc{The Hebrew University of Jerusalem}\\{School of exact science} \\ Department of Applied Physics\\[5pt]{\includegraphics[height=1.5cm,keepaspectratio]{\teilogoeps}}\\[5pt] \scalebox{0.9}{#1: #2}}
 }
 
 \newcommand{\presentationDate}[1]{
