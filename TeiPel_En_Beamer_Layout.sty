@@ -93,14 +93,16 @@
 		\setbeamertemplate{navigation symbols}{}		
 	% Comment to completely cover next transparencies %%
 		\setbeamercovered{transparent=30}
+	
 	% Table of contents before each Section
+	\iffalse
 		\AtBeginSubsection[]{
 		  \frame<beamer>{ 
 		    \frametitle{Contents}   
 		    \tableofcontents[currentsection,currentsubsection] 
 		  }
 		}
-	
+		\fi
     % Add draft watermark
 	\iffalse
     \IfSubStr{#1}{draft}%
