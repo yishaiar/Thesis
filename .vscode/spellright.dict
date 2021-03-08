@@ -61,3 +61,6 @@ stackrel
 newspacing
 newpage
 vec
+keepaspectratio
+textwidth
+framesubtitle

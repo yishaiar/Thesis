@@ -53,13 +53,10 @@
     \end{center}
 	\begin{itemize}
 
-		\item Torsional pendulum is an oscillator made of a mass hung by a string. 
+		\item Torsional pendulum is an angular harmonic oscillator made of a mass hung by a string. 
+		\item The restoring torque causes sinusoidal oscillations.
 		\pause
-		\item When the mass is displaced from equilibrium angle, there is a linear restoring torque $\tau = -\kappa\cdot\theta$.
-		\pause
-		\item The torsional pendulum is an angular harmonic oscillator.
-		\pause
-		\item The restoring torque causes sinusoidal oscillations around the equilibrium angle: $\theta(t) = \theta_{max}cos(\omega_0 t )$
+		\item Damped oscillator if there is a damping torque opposite to the velocity.
 		
 	\end{itemize}
 \end{frame}
@@ -287,6 +284,32 @@
 \end{frame}
 
 \section{Methods and results}
+\begin{frame}{Gravitational measurement}
+	\begin{itemize}
+		
+		
+		\item When amplitude is smaller than the fundamental limit, the PID is effectively reducing the pendulum's temperature. 
+		\pause
+		\item Introducing a new mass adds a constant new torque to the system $\tau_g$. The PID error changes to $e(t) = \delta\theta(t) + \theta_g(t)$.
+		\item The PID is compensating for the new error, the response becomes mainly an inverse torque: $\tau_{PID}(t) \approx K_P\theta_g(t)$. 
+		\item When integrating over short periods the gravitational angle is constant: $\overline{\theta}_g =  \frac{\int \tau_{PID}(t) dt}{ K_P \Delta t} $
+		\pause
+		\item The measurement system allows fast response (short integration time) with increased measurement sensitivity.
+		
+	\end{itemize}
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{Summary and conclusion}
 \begin{frame}{Gravitational measurement}
