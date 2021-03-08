@@ -140,7 +140,7 @@ The system measured results compared to the expected results from the equations 
 \begin{multicols}{2}
 \raggedcolumns
 \begin{easylist}
-& expected;
+& calculated;
 && $I = 0.487\cdot10^{-3}[kg\cdot m^2]$ (see eq.~\ref{eqn:moment_inertia})
 && $T = 96[s] - 86 [s]$ (see eq.~\ref{eqn:undamped_motion_equation_4})
 && $\kappa = 2.1\cdot10^{-6}[\frac{N\cdot m}{rad}] - 2.6\cdot10^{-6} [\frac{N\cdot m}{rad}]$ 
@@ -148,9 +148,10 @@ The system measured results compared to the expected results from the equations 
 \columnbreak
 \begin{easylist}
 & measured;
+&& $\theta_{max}^{eq} \approx 10 [\mu rad]$
 && $T = 84[s]$
 && $\kappa = 2.7\cdot10^{-6}[\frac{N\cdot m}{rad}]$
-&& $\theta_{max}^{eq} \approx 10 [\mu rad]$
+
 \end{easylist}
 \end{multicols}
 The expected $\kappa$, $T$ have a range due to uncertainty of the string tensile strength $G$. The measured $\kappa$ is estimated from eq.~\ref{eqn:undamped_motion_equation_4} Bwith the measured period $T$. The equilibrium amplitude $\theta_{max}^{eq}$ is an experimental value, dependent on the amount of noise actually reduced, thus it does not have an expected simulated value.
@@ -166,7 +167,7 @@ Overshoot is when the value of output signal (the actual response) exceeds the t
 overshoot =  \frac{output-target}{target} = e ^{\frac{-\xi\pi}{\sqrt{1-\xi^2}}}  \label{eqn:overshoot}
 \end{equation}
 \par\noindent
-where $\xi$ is the damping ratio of the oscillator defined in eq.~\ref{eqn:system damping ratio}. As seen in eq.~\ref{eqn:overshoot} when the PID gains are too high, instead of critical damping there is overdamping, which causes overshoot. Due to the high gains the overshoot response overshoots again to the other side, causing the system to be an undesired driven oscillator (shown in eq.~\ref{eqn:driven_motion_equation_2}). A slow response causes phase delay between the signal and the equivalent PID response, resulting again in a driven oscillator.
+where $\xi$ is the damping ratio of the oscillator defined in eq.~\ref{eqn:system damping ratio}. As seen in eq.~\ref{eqn:overshoot} when the PID gains are too high, instead of critical damping there is overshoot. Due to the high gains the overshoot response overshoots again to the other side, causing the system to be an undesired driven oscillator (shown in eq.~\ref{eqn:driven_motion_equation_2}). A slow response causes phase delay between the signal and the equivalent PID response, resulting again in a driven oscillator.
 \subsection{Damped oscillator}
 The torsional pendulum is a simple harmonic oscillator with oscillations amplitude $\theta_{max}$ and velocity given by $\dot{\theta}(t) =\frac{2\pi}{T} \theta_{max}( t)$ (see eq.~\ref{eqn:undamped_motion_equation_solved}). The PID mainly acts as friction, gradually slowing the oscillations velocity, with a torque $\tau_{PID}$ given by:
 \begin{equation}
@@ -206,7 +207,7 @@ Initially, the modulated light sources were composed of a single laser diode cou
 \par\noindent
 The apparatus had modulation range of $10000$ steps and modulation frequency of $1 [Hz]$. The setup minimized uncertainties of the light intensity, since both light sources had a mutual source, partially cancelling internal noises, such as thermal and shot noise. 
 \par\noindent
-The apparatus uncertainty, due to the non linearity of the AOM response and laser power fluctuations, proved to be larger than the uncertainties of the intensity difference. Also, modulation frequency proved to be more important than modulation range. Due to the conclusions, the PID torque was changed to two controlled light emitting diode (LED) sources.
+The apparatus uncertainty, due to the non linearity of the AOM response and laser power fluctuations, proved to be larger than the uncertainties of the intensity difference. Also, modulation rate proved to be more important than modulation range. Due to the conclusions, the PID torque was changed to two controlled light emitting diode (LED) sources.
 \subsection{Light emitting diode (LED)}
 The light emitting diode (LED) is a semiconductor light source with high power and long lifetime. A forward voltage applied to a p-n junction, causes electron injection which recombines with holes. The recombination releases energy in form of spontaneously emitted photons (incoherent light). Due to the electrons' life time inside, the LED can be modulated up to $100MHz$. The LED forward voltage is given by the Shockley diode equation for p-n junctions, $V_l \approx n V_T ln10 log_{10} (\frac{I_l}{I_s})$, where $I_l$ is the LED current, $I_s$ is the saturation current, $n$ is the emission coefficient, and $V_T$ is the thermal voltage. 
 \par\noindent
