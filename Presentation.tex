@@ -226,10 +226,11 @@
 		\includegraphics[width=0.6\textwidth,keepaspectratio]{pid_diagram_powerpoint.jpg}
     \end{center}
 	\begin{itemize}	
-		\item Each response is assigned to a tunable gain. the PID output is a weighted sum of the response terms.
+		\item Each response is assigned to a tunable gain. 
+		\item The output is a weighted sum of the response terms.
 		\item $u(t) = K_P e(t)+K_I\int_{0}^{t}e(\tau)d\tau+K_D\frac{de(t)}{dt}$
 		\pause
-		\item Over time the PID controller attempts to minimize the error by adjusting the output.
+		\item Over time controller minimizes the error by adjusting the output.
 	\end{itemize}
 \end{frame}
 \begin{frame}{Radiation-pressure}
