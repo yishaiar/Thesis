@@ -211,32 +211,6 @@
 	\end{itemize}
 \end{frame}
 % frame 4
-\begin{frame}{Proportional–integral–derivative (PID) controller}
-	\begin{center}		
-		\includegraphics[width=0.6\textwidth,keepaspectratio]{pid_diagram_powerpoint.jpg}
-    \end{center}
-	\begin{itemize}	
-		\item PID controller is a feedback based control system, for time continuous control of a process.
-		\item The controller continuously calculates error from set point. 
-		\pause
-		\item The control is based on a proportional, integral and derivative response to the error (P-I-D).
-	\end{itemize}
-\end{frame}
-% frame 5
-\begin{frame}{PID response}
-	\begin{center}		
-		\includegraphics[width=0.6\textwidth,keepaspectratio]{pid_diagram_powerpoint.jpg}
-    \end{center}
-	\begin{itemize}
-	
-		\item Each response is modulated by a tunable gain. 
-		\item The output is a weighted sum of the response terms.
-		%\item $u(t) = K_P e(t)+K_I\int_{0}^{t}e(\tau)d\tau+K_D\frac{de(t)}{dt}$
-		\pause
-		\item The feedback applies an external correction to the process.	
-		\item Over time error is minimized (damped motion).
-	\end{itemize}
-\end{frame}
 \begin{frame}{Radiation tourqe}
 	\begin{center}		
 		\includegraphics[width=0.4\textwidth,keepaspectratio]{total_chamber.png}
@@ -252,25 +226,43 @@
 		
 	\end{itemize}
 \end{frame}
-\begin{frame}{Damping tourqe }
-	\begin{itemize}
-		 
-		\item Difference between two light sources adds an external net torque.
-		
-		\item The radiation-pressure net torque is controlled by changing the difference between the light sources' flux
-		
-		
-		\item The PID external correction is made by generating radiation net torque.
+% frame 5
+\begin{frame}{Proportional–integral–derivative (PID) controller}
+	\begin{center}		
+		\includegraphics[width=0.6\textwidth,keepaspectratio]{pid_diagram_powerpoint.jpg}
+    \end{center}
+	\begin{itemize}	
+		\item PID controller is a feedback based control system, for time continuous control of a process.
+		\item The controller continuously calculates error from set point. 
+		\pause
+		\item The control is based on a proportional, integral and derivative response to the error (P-I-D).
 	\end{itemize}
 \end{frame}
+% frame 6
+\begin{frame}{PID response}
+	\begin{center}		
+		\includegraphics[width=0.6\textwidth,keepaspectratio]{pid_diagram_powerpoint.jpg}
+    \end{center}
+	\begin{itemize}
+	
+		\item Each response is modulated by a tunable gain. 
+		\item The output is a weighted sum of the response terms.
+		%\item $u(t) = K_P e(t)+K_I\int_{0}^{t}e(\tau)d\tau+K_D\frac{de(t)}{dt}$
+		\pause
+		\item The feedback applies an external correction to the process.	
+		\item Over time error is minimized (damped motion).
+	\end{itemize}
+\end{frame}
+
 \section{Thesis aims}
 \begin{frame}{Cavendish experiment}
 	\begin{itemize}
 		
-		\item The Cavendish experiment, is constructed using a torsional pendulum with a front mirror. Optical measurement of angle displacement is made with a quadrant detector.
-		\item The measurement sensitivity is limited by noise. The technical noise is greater than the fundamental noise. Reducing the noise enables higher sensitivity.
+		\item Optical angle measurement is made with a quadrant detector.
+		\item The measurement sensitivity is limited by noise. 
+		\item Reducing the noise enables higher sensitivity.
 		\pause
-		\item The measurement is fundamentally limited by quantum uncertainty and the measurement system shot noise. 
+		\item Measurement is fundamentally limited by quantum uncertainty and shot noise. 
 		
 	\end{itemize}
 \end{frame}
