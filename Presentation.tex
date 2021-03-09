@@ -174,11 +174,15 @@
 \subsection{Noises and damping}
 % frame 1
 \begin{frame}{Environmental noises}
+	\begin{center}		
+		\includegraphics[width=0.6\textwidth,keepaspectratio]{pid_diagram_powerpoint.jpg}
+    \end{center}
 	\begin{itemize}
 		\item An ideal gas has negligible inter-particle interactions.
 		\item Interaction results with pressure-dependent friction and noises (Brownian motion, acoustic waves, thermal flow).  
 		\item Noise from environmental black body radiation.
 		\item Unknown Magnetic noise from electronics.
+		\item Reduced noise by placing system inside a vacuum chamber and acoustic box. 
 			
 	\end{itemize}
 \end{frame}
@@ -219,7 +223,7 @@
 		\item The control is based on a proportional, integral and derivative response to the error (P-I-D).
 	\end{itemize}
 \end{frame}
-% frame 3
+% frame 5
 \begin{frame}{PID response}
 	\begin{center}		
 		\includegraphics[width=0.6\textwidth,keepaspectratio]{pid_diagram_powerpoint.jpg}
@@ -241,14 +245,18 @@
 		\item The force depend on the relative angle, surface reflectance and absorbance and the incident light power.
 		\pause
 		\item With light perpendicular to a reflective surface $F  \approx\frac{2\eta\Theta}{{c}} $.
+		\item Force is modulated by light power modulation.
 		
 	\end{itemize}
 \end{frame}
 \begin{frame}{Damping tourqe }
 	\begin{itemize}
+		\item difference between two light sources in front of the two torsional pendulum sides.
+		\item the difference between two torques adds an external net torque
+		\item The radiation-pressure net torque is controlled by changing the difference between the light sources' flux
 		
 		
-		\item The apparatus PID external correction is made by generating Radiation-pressure force.
+		\item The PID external correction is made by generating Radiation-pressure force.
 	\end{itemize}
 \end{frame}
 \section{Thesis aims}
