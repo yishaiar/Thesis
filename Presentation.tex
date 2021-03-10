@@ -434,18 +434,6 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Arduino microcontroller}
-	\begin{center}		
-		\includegraphics[width=0.5\textwidth,keepaspectratio]{duty_cycle.png}
-	\end{center}
-	\begin{itemize}		
-		\item Inexpensive 8-bit microcontroller with Pulse Width Modulation (PWM) analog outputs.
-		\item Fast switching of digital signal results with analog signal.
-		\item Analog signal depended on duty-cycle: $V(t) =  \frac{V_d}{100}\cdot D(t)$.
-		\item Modulation limited by bit-rate and clock frequency.
-	\end{itemize}
-\end{frame}
-
 
 \begin{frame}{Light emitting diode (LED)}
 	\begin{center}		
@@ -458,6 +446,39 @@
 		\item The LED light sources are coupled into light guides.
 	\end{itemize}
 \end{frame}
+
+\begin{frame}{Arduino microcontroller}
+	\begin{center}		
+		\includegraphics[width=0.5\textwidth,keepaspectratio]{duty_cycle.png}
+	\end{center}
+	\begin{itemize}		
+		\item Inexpensive 8-bit microcontroller with Pulse Width Modulation (PWM) analog outputs.
+		\item Fast switching of digital signal results with analog signal.
+		\item Analog signal depended on duty-cycle: $V(t) =  \frac{V_d}{100}\cdot D(t)$.
+		\item Modulation limited by bit-rate and clock frequency: $f_{PWM} \approx 500[Hz]$.
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{LED circuit}
+	\begin{center}		
+		\includegraphics[width=0.5\textwidth,keepaspectratio]{duty_cycle.png}
+	\end{center}
+	\begin{itemize}		
+		\item Circuit composed of a high power blue LED with modulated by PWM pins.
+		\item LED has an approximately linear response which minimizes the overshoot.
+		\item fast PWM frequency minimizes the phase delay.
+		\item $\tau_{PID}(t)  \approx   3\cdot 10^{-13}(D_1(t) -D_2(t)) $
+	\end{itemize}
+\end{frame}
+
+
+
+
+
+
+
+
 
 
 
