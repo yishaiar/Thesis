@@ -171,13 +171,13 @@ where $\xi$ is the damping ratio of the oscillator defined in eq.~\ref{eqn:syste
 \subsection{Damped oscillator}
 The torsional pendulum is a simple harmonic oscillator with oscillations amplitude $\theta_{max}$ and velocity given by $\dot{\theta}(t) =\frac{2\pi}{T} \theta_{max}( t)$ (see eq.~\ref{eqn:undamped_motion_equation_solved}). The PID mainly acts as friction, gradually slowing the oscillations velocity, with a torque $\tau_{PID}$ given by:
 \begin{equation}
-\tau_{PID}(t) = -\gamma\dot{e}(t) =  -\gamma\cdot [\dot{SP} -\dot{\theta}(t)] =-\gamma\cdot [0-\dot{\theta}(t)]  =  \gamma\dot{\theta}(t) =  \gamma\frac{2\pi}{T} \theta_{max}( t) 
+\tau_{PID}(t) = -\gamma\dot{e}(t) =  -\gamma\cdot [\dot{SP} -\dot{\theta}(t)] =-\gamma\cdot [0-\dot{\theta}(t)]  =  \gamma\dot{\theta}(t) =  \gamma\frac{2\pi}{T} \theta( t) 
 \label{eqn:friction_torque_pid}
 \end{equation}
 \par\noindent
 Accordingly, the PID damping coefficient $\gamma$ is given by (eq.~\ref{eqn:damped_motion_equation}):
 \begin{equation}
-\gamma  =  \frac{\tau_{PID}(t)}{\frac{2\pi}{T} \theta_{max}( t) } =\frac{\tau_{max}}{\theta_{max}}\cdot \frac{ T}{2\pi}          \label{eqn:pid damping coefficient}
+\gamma  =  \frac{\tau_{PID}(t)}{\frac{2\pi}{T} \theta( t) } =\frac{\tau_{max}}{\theta_{max}}\cdot \frac{ T}{2\pi}          \label{eqn:pid damping coefficient}
 \end{equation}
 where $\tau_{max}$ is the maximal torque exerted by the PID. When damping using the PID, the damping type, defined by the damping ratio $\xi$, and the damping time $\tau$, are given by (eq.~\ref{eqn:damping_time}):
 \begin{equation}

@@ -305,6 +305,7 @@
 
 \section{Methods and results}
 \subsection{System structure}
+% frame 1
 \begin{frame}{Experiment setup}
 	\begin{center}		
 			\includegraphics[width=0.3\textwidth,keepaspectratio]{setup cropped.png}
@@ -319,7 +320,7 @@
 	\end{itemize}
 	
 \end{frame}
-
+% frame 2
 \begin{frame}{Setup design}
 	\begin{center}		
 			\includegraphics[width=0.45\textwidth,keepaspectratio]{total_chamber.png}
@@ -336,7 +337,7 @@
 \end{frame}
 
 
-
+% frame 3
 \begin{frame}{Vacuum chamber}
 	\begin{center}		
 		\includegraphics[width=0.4\textwidth,keepaspectratio]{chamber_front_names.PNG}
@@ -354,7 +355,7 @@
 \end{frame}
 
 
-
+% frame 4
 \begin{frame}{Torsional pendulum}
 	\begin{center}		
 		\includegraphics[width=0.4\textwidth,keepaspectratio]{pendulum_front_names.png}
@@ -370,7 +371,30 @@
 	
 \end{frame}
 
-% frame 4
+
+\subsection{Proportional–Integral–Derivative (PID) controller}
+% frame 1
+
+
+\begin{frame}{Control stability}
+	\begin{center}		
+		\includegraphics[width=0.4\textwidth,keepaspectratio]{total_chamber.png}
+	\end{center}
+	\begin{itemize}		
+		\item PID aims reaching critical damping of process, when tuned correct.
+		\pause
+		\item When not tuned correct; either overshoot or slow response, both result with driven oscillator.
+		\item Mainly acts as friction, gradually slowing the oscillations velocity.
+		\pause
+		\item $\tau_{PID}(t) =  \gamma\dot{\theta}(t) =  \gamma\frac{2\pi}{T} \theta( t)$
+		\item $\gamma  =\frac{\tau_{max}}{\theta_{max}}\cdot \frac{ T}{2\pi}   $
+		
+	\end{itemize}
+\end{frame}
+
+
+
+
 \begin{frame}{\hypertarget{frame:Radiation tourqe}{Radiation tourqe}}
 	\begin{center}		
 		\includegraphics[width=0.4\textwidth,keepaspectratio]{total_chamber.png}
@@ -378,7 +402,7 @@
 	\begin{itemize}		
 		\item Vacuum chamber is designed with two transparent windows with modulated light sources in front.
 		\pause
-		\item Incident light beam causes force on the surface, due to momentum exchange with the electromagnetic field.
+		\item light sources result with a modulated net tourqe.
 		%\item The force depend on the relative angle, surface reflectance and absorbance and the incident light power.
 		\pause
 		\item With light perpendicular to a reflective surface $F  \approx\frac{2\eta\Theta}{{c}} $.
