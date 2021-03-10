@@ -384,9 +384,19 @@
 		\item When PID tuned correct; critical damping of process.
 
 		\item Overshoot or slow response; result with driven oscillator.
-		\item High modulation frequency (preventing phase delay).
-		\item High modulation range (avoid overshoot).
-		\pause
+		\item High modulation frequency; prevent phase delay.
+		\item High modulation range; avoid overshoot.
+		
+		
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Damped oscillator}
+	\begin{center}		
+		\includegraphics[width=0.4\textwidth,keepaspectratio]{total_chamber.png}
+	\end{center}
+	\begin{itemize}		
+		
 		\item Mainly acts as friction, gradually slowing velocity.
 		\item $\tau_{PID}(t) =  \gamma\dot{\theta}(t) =  \gamma\frac{2\pi}{T} \theta( t) \rightarrow \gamma  =\frac{\tau_{max}}{\theta_{max}}\cdot \frac{ T}{2\pi} $
 		\pause
@@ -394,6 +404,7 @@
 		
 	\end{itemize}
 \end{frame}
+
 
 
 
