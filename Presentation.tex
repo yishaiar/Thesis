@@ -487,7 +487,7 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Results}
+\begin{frame}{Quality factor}
 	\begin{center}		
 		\includegraphics[width=0.5\textwidth,keepaspectratio]{Q factor.png}
 	\end{center}
@@ -495,12 +495,26 @@
 		\item Quality factor describes how damped the oscillator.
 		\item Ratio of the energy stored to dissipated per cycle.
 		\item Noise and amplitude depended: $Q =  \frac{\pi\kappa\theta_{max}^2}{T\cdot(\frac{\theta_{max}\pi\tau_{max}}{T} -p)} $
-		\item Energy dissipated is the difference of PID work and coupled noise power.
 		\item when $Q<0$; coupled noise larger than damping, causing a driven oscillator.
-						
+		\item when $Q<0$; coupled noise larger than damping, causing a driven oscillator.
+		Coupled noise estimation from the measured damped amplitude: $p \rightarrow \frac{ \theta_{max}^{PID}\pi\tau_{max}}{T}$, resulting with $Q(\theta_{max}^{PID},p)	\rightarrow 0$. 				
 	\end{itemize}
 \end{frame}
 
+\begin{frame}{Quality factor}
+	\begin{center}		
+		\includegraphics[width=0.5\textwidth,keepaspectratio]{Q factor.png}
+	\end{center}
+	\begin{itemize}	
+		\item Quality factor describes how damped the oscillator.
+		\item Ratio of the energy stored to dissipated per cycle.
+		\item Noise and amplitude depended: $Q =  \frac{\pi\kappa\theta_{max}^2}{T\cdot(\frac{\theta_{max}\pi\tau_{max}}{T} -p)} $
+		\item when $Q<0$; coupled noise larger than damping, causing a driven oscillator.
+		Coupled noise estimation from the measured damped amplitude: $p \rightarrow \frac{ \theta_{max}^{PID}\pi\tau_{max}}{T}$, resulting with $Q(\theta_{max}^{PID},p)	\rightarrow 0$. 
+
+						
+	\end{itemize}
+\end{frame}
 
 
 
