@@ -474,8 +474,8 @@
 \end{frame}
 
 
-
-\begin{frame}{LED circuit}
+\subsection{Results}
+\begin{frame}{Results}
 	\begin{center}		
 		\includegraphics[width=0.5\textwidth,keepaspectratio]{measured oscillation angle.png}
 	\end{center}
@@ -483,13 +483,22 @@
 		\item PID is able to damp up to an amplitude of $0.05[\mu rad]$.
 		\item RMS amplitude kept by the PID over time of $ 0.2 [\mu rad]$.	
 		\item Amplitude-depended damping; damping time of $3700[s]$ for $ 60 [\mu rad] \rightarrow 10[\mu rad] $, compared to $250[s]$ to reach $ 0.2[\mu rad]$.
-		
-		
-		
+						
 	\end{itemize}
 \end{frame}
 
-
+\begin{frame}{Results}
+	\begin{center}		
+		\includegraphics[width=0.5\textwidth,keepaspectratio]{Q factor.png}
+	\end{center}
+	\begin{itemize}	
+		\item Quality factor is a parameter describing how damped the oscillator.
+		\item Ratio of the maximum energy stored to the energy dissipated per cycle.
+		\item The difference of PID work and coupled environment noise power.
+		\item when $Q<0$; coupled noise larger than damping, causing a driven oscillator.
+						
+	\end{itemize}
+\end{frame}
 
 
 
