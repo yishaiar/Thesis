@@ -481,14 +481,24 @@
 
 
 \subsection{Results}
-\begin{frame}{Results}
+\begin{frame}{Damping}
 	\begin{center}		
 		\includegraphics[width=0.5\textwidth,keepaspectratio]{measured oscillation angle.png}
 	\end{center}
 	\begin{itemize}	
+		
+		\item Amplitude-depended damping; damping time of $3700[s]$ for $ 60 [\mu rad] \rightarrow 10[\mu rad] $, compared to $250[s]$ to reach $ 0.2[\mu rad]$.
+						
+	\end{itemize}
+\end{frame}
+\begin{frame}{Time integration}
+	\begin{center}		
+		\includegraphics[width=0.5\textwidth,keepaspectratio]{measured oscillation angle1.png}
+	\end{center}
+	\begin{itemize}	
 		\item PID is able to damp up to an amplitude of $0.05[\mu rad]$.
 		\item RMS amplitude kept by the PID over time of $ 0.2 [\mu rad]$.	
-		\item Amplitude-depended damping; damping time of $3700[s]$ for $ 60 [\mu rad] \rightarrow 10[\mu rad] $, compared to $250[s]$ to reach $ 0.2[\mu rad]$.
+		
 						
 	\end{itemize}
 \end{frame}
@@ -516,7 +526,7 @@
 					
 	\end{itemize}
 \end{frame}
-\begin{frame}{Damped angle}
+\begin{frame}{Damping limit}
 	
 	\begin{itemize}	 
 		\item Damping is limited by Brownian motion $p\approx 10^{-25}  [W]$.
@@ -524,7 +534,7 @@
 		\item That is achieved when damping process lowers the pendulum's temperature.  				
 	\end{itemize}
 \end{frame}
-\begin{frame}{Damped angle}
+\begin{frame}{Measurement resolution}
 	
 	\begin{itemize}	 
 		\item Gravimetric measurement is conducted by measuring the equilibrium angle.
