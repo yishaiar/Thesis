@@ -466,7 +466,7 @@
 \end{frame}
 
 
-\begin{frame}{LED circuit}
+\begin{frame}{Driving circuit}
 	\begin{center}		
 		\includegraphics[width=0.5\textwidth,keepaspectratio]{duty_cycle.png}
 	\end{center}
@@ -511,20 +511,13 @@
 		\includegraphics[width=0.5\textwidth,keepaspectratio]{Q factor.png}
 	\end{center}
 	\begin{itemize}	
-		\item Quality factor describes how damped the oscillator.
-		\item Ratio of the energy stored to dissipated per cycle.
-		\item Noise and amplitude depended: $Q =  \frac{\pi\kappa\theta_{max}^2}{T\cdot(\frac{\theta_{max}\pi\tau_{max}}{T} -p)} $.
-		\item When $Q<0$; coupled noise larger than damping.
-		\item Measurement coupled noise estimation: $p \rightarrow \frac{ \theta_{max}^{PID}\pi\tau_{max}}{T}$. 				
+		\item Estimated noise much smaller than each of previously calculated noises.
+		\item Only net collision power affects the motion uncertainty.
+		\item Noise power composed of Brownian motion, acoustic waves and black body radiation. 
+		\item Brownian motion and black body radiation are both treated as random particle collision processes. 
+		\item Damping is limited by Brownian motion $p\approx 10^{-25}  [W]$. 				
 	\end{itemize}
 \end{frame}
-
-\subsection{Noise power}
-Due to Brownian motion, we estimate $n_p= \frac{N}{V}v A$ gas particles collisions per second into the cross section of the torsional pendulum. Each gas particle is with mass $m_0 = \frac{M}{N_A}$ and mean velosity of the gas flow $v$ (eq.~\ref{eqn:flow velocity}). Assuming all collisions are elastic, the particles exchange mean momentum of $k=2m_0v$, resulting in a force $F = n_p\cdot k$. Due to the collisions, the velosity of the torsional pendulum with mass $m_1$ is $ u =\frac{ n_p k}{m_1}$, resulting in a power, $p$, given by:
-\begin{equation}
-p = F\cdot u =  n_p k \cdot n_p\frac{k}{m_1} =\frac{4}{m_1}(\frac{N}{V}v A)^2m_0^2v^2=\frac{4A^2}{m_1}(\frac{P}{k_B T})^2(\frac{M}{N_A})^2 (\frac{3 k_B N_A T}{M})^2 =\frac{36A^2P^2}{m_1} 
-\label{eqn:Brownian power}
-\end{equation}
 
 
 
