@@ -297,9 +297,9 @@
 		
 		
 		\pause
-		\item Introducing a new mass adds a constant new torque to the system $\tau_g$. The PID error changes to $e(t) = \delta\theta(t) + \theta_g(t)$.
+		\item Introducing a new mass adds a constant new torque $\tau_g$. 
 		\item The PID is compensating for the new error, the response becomes mainly an inverse torque: $\tau_{PID}(t) \approx K_P\theta_g(t)$. 
-		\item When integrating over short periods the gravitational angle is constant: $\overline{\theta}_g =  \frac{\int \tau_{PID}(t) dt}{ K_P \Delta t} $
+		\item When integrating over short periods the gravitational angle is constant: $\overline{\theta}_g =  \frac{\int \tau_{PID}(t) dt}{ K_P \Delta t} $ allowing short integration time.
 		\pause
 		\item The measurement system allows fast response (short integration time) with increased measurement sensitivity.
 		
