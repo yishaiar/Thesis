@@ -263,6 +263,7 @@
 \end{frame}
 
 \section{Measurement}
+% frame 1
 \begin{frame}{Experiment noises}
 	\begin{center}		
 		\includegraphics[width=0.3\textwidth,keepaspectratio]{actual system_crop.jpg}
@@ -270,21 +271,21 @@
 	\begin{itemize}
 		
 		\item Angle measurement is optical.
-		\item The measurement sensitivity is limited by noise. 
-		\item Reducing the noise enables higher sensitivity.
+		\item Fundamental limits are: thermal uncertainty, shot noise. 
+		\item When amplitude is smaller than the thermal limit, PID is effectively lowering the temperature; $\delta\theta = \sqrt{\frac{k_B T}{\kappa}}$. 
+		\item Reducing the uncertainty (noise) enables higher sensitivity.
 		\pause
-		\item Fundamental limits are: quantum uncertainty, shot noise. 
 		
 	\end{itemize}
 \end{frame}
-
+% frame 2 - skip
 \begin{frame}{Experiment noises}
 	\begin{itemize}
+		\framesubtitle{Friction}
 		
 		\item Assuming above basic energy level the quantum uncertainty due to thermal energy is temperature dependent: $\delta\theta = \sqrt{\frac{k_B T}{\kappa}} \approx 4\cdot 10^{-8} [rad]$.
 		\item The shot noise limit is: $\delta\theta \approx 10^{-14} [\frac{rad}{Hz}] $.
 		\pause
-		\item The torsional pendulum is placed inside a vacuum chamber reducing pressure-dependent noise. 
 		\item The noise reduction allows active damping of the remaining noises using a PID controller. 
 		\item With PID tuned correctly the damped pendulum is at critical damping and oscillations become smaller.
 
@@ -296,7 +297,6 @@
 	\begin{itemize}
 		
 		
-		\item When amplitude is smaller than the fundamental limit, the PID is effectively reducing the pendulum's temperature. 
 		\pause
 		\item Introducing a new mass adds a constant new torque to the system $\tau_g$. The PID error changes to $e(t) = \delta\theta(t) + \theta_g(t)$.
 		\item The PID is compensating for the new error, the response becomes mainly an inverse torque: $\tau_{PID}(t) \approx K_P\theta_g(t)$. 
