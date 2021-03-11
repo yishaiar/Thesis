@@ -279,20 +279,22 @@
 	\end{itemize}
 \end{frame}
 
+\begin{frame}{\hypertarget{frame:LED PWM circuit}{LED PWM circuit}}
 
-\begin{frame}{Light emitting diode (LED)}
 	\begin{center}		
-		\includegraphics[width=0.2\textwidth,keepaspectratio]{FOV.jpg}
+		\includegraphics[width=0.55\textwidth,keepaspectratio]{duty_cycle.png}
 	\end{center}
 	\begin{itemize}		
-		\item Light source with high power and long lifetime.
-		\item LED can be modulated up to $100MHz$ (electrons' lifetime).
-		\item Illumination angle of $45^0-120^0$ making it hard to focus.
-		\item The LED light sources are coupled into light guides.
+		\item LED coupled into a light guide (FOV of $45^0-120^0$).
+		\item Linear response minimizes overshoot; $\tau(t)  \propto [D_1(t) -D_2(t)] $.
+		\item Fast frequency minimizes phase delay; $f_{PWM} \approx 500[Hz]$.
+		
 	\end{itemize}
+	\hyperlink{frame:LED PWM circuit 1}{>>} 
 \end{frame}
 
-\begin{frame}{Arduino microcontroller}
+\begin{frame}{\hypertarget{frame:LED PWM circuit 1}{LED PWM circuit}}
+	framesubtitle{Arduino microcontroller}
 	\begin{center}		
 		\includegraphics[width=0.55\textwidth,keepaspectratio]{duty_cycle.png}
 	\end{center}
@@ -302,21 +304,10 @@
 		\item Analog signal depended on duty-cycle: $V(t) =  \frac{V_d}{100}\cdot D(t)$.
 		\item Modulation limited by clock frequency: $f_{PWM} \approx 500[Hz]$.
 	\end{itemize}
+	\hyperlink{frame:LED PWM circuit}{<<} 
 \end{frame}
 
 
-\begin{frame}{LED PWM circuit}
-	\begin{center}		
-		\includegraphics[width=0.55\textwidth,keepaspectratio]{duty_cycle.png}
-	\end{center}
-	\begin{itemize}		
-		\item LED coupled into a light guide (FOV of $45^0-120^0$).
-		\item Linear response minimizes overshoot; $\tau(t)  \propto [D_1(t) -D_2(t)] $.
-		\item Fast frequency minimizes phase delay; $f_{PWM} \approx 500[Hz]$.
-		
-		
-	\end{itemize}
-\end{frame}
 
 
 \subsection{Results}
