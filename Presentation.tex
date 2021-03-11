@@ -243,7 +243,6 @@
 		\includegraphics[width=0.5\textwidth,keepaspectratio]{damp.png}
 	\end{center}
 	\begin{itemize}		
-		\item When PID tuned correct; critical damping of process.
 
 		\item Overshoot or slow response; result with driven oscillator.
 		\item High modulation frequency; prevent phase delay.
@@ -258,10 +257,10 @@
 		\includegraphics[width=0.5\textwidth,keepaspectratio]{underdamp.png}
 	\end{center}
 	\begin{itemize}		
-		
+		\item When PID tuned correct; critical damping of process.
 		\item Mainly acts as friction, gradually slowing velocity.
 		\item $\tau_{PID}(t) =  \gamma\dot{\theta}(t) =  \gamma\frac{2\pi}{T} \theta( t) \rightarrow \gamma  =\frac{\tau_{max}}{\theta_{max}}\cdot \frac{ T}{2\pi} $
-		\item If torque too small compared to amplitude; negligible damping affect with infinite damping time. 
+		\item Torque too small; negligible damping. 
 		
 	\end{itemize}
 \end{frame}
