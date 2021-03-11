@@ -131,7 +131,7 @@
 		\includegraphics[width=0.6\textwidth,keepaspectratio]{pid_diagram_powerpoint.jpg}
     \end{center}
 	\begin{itemize}	
-		\item PID controller is a feedback based control system, for time continuous control of a process (pendulum motion).
+		\item PID controller is a feedback based control system, for time continuous control of a process (damped pendulum motion).
 		\item The control is a weighted sum of proportional, integral and derivative response to error (P-I-D).
 		\item Feedback applies an external correction to the process: $\tau(t)$.	
 	\end{itemize}
@@ -147,7 +147,6 @@
 		\item The controller continuously calculates error from set point. 
 		\item Each response is modulated by a tunable gain. 
 		\item Output: $u(t) = K_P e(t)+K_I\int_{0}^{t}e(\tau)d\tau+K_D\frac{de(t)}{dt}$		
-		\item Over time error is minimized (damped motion).
 	\end{itemize}
 	\hyperlink{frame:Proportional–integral–derivative (PID) controller}{<<} 
 \end{frame}
