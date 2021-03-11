@@ -319,8 +319,21 @@
 						
 	\end{itemize}
 \end{frame}
+\begin{frame}{\hypertarget{frame:Quality factor}{Quality factor}}
+	\begin{center}		
+		\includegraphics[width=0.5\textwidth,keepaspectratio]{Q factor.png}
+	\end{center}
+	\begin{itemize}	
+		\item Quality factor describes how damped the oscillator.
+		\item Noise and amplitude depended: $Q =  \frac{\pi\kappa\theta_{max}^2}{T\cdot(\frac{\theta_{max}\pi\tau_{max}}{T} -p)} $.
+		\item When $Q<0$; coupled noise larger than damping.
+		\item Measurement coupled noise estimation: $p \rightarrow \frac{ \theta_{max}^{PID}\pi\tau_{max}}{T}$. 				
+	\end{itemize}
+	\hyperlink{frame:Quality factor 1}{>>} 
+\end{frame}
 
-\begin{frame}{Quality factor}
+\begin{frame}{\hypertarget{frame:Quality factor 1}{Quality factor}}
+	\framesubtitle{Calculation}
 	\begin{center}		
 		\includegraphics[width=0.5\textwidth,keepaspectratio]{Q factor.png}
 	\end{center}
@@ -328,9 +341,10 @@
 		\item Quality factor describes how damped the oscillator.
 		\item Ratio of the energy stored to dissipated per cycle.
 		\item Noise and amplitude depended: $Q =  \frac{\pi\kappa\theta_{max}^2}{T\cdot(\frac{\theta_{max}\pi\tau_{max}}{T} -p)} $.
-		\item When $Q<0$; coupled noise larger than damping.
-		\item Measurement coupled noise estimation: $p \rightarrow \frac{ \theta_{max}^{PID}\pi\tau_{max}}{T}$. 				
+					
 	\end{itemize}
+	\hyperlink{frame:Quality factor}{<<} 
+
 \end{frame}
 
 \begin{frame}{Effective noise}
