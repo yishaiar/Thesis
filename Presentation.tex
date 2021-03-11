@@ -78,48 +78,38 @@
 \section{Theoretical background}
 \subsection{Torsional pendulum}
 % frame 1
-\begin{frame}{Harmonic oscillator}
+\begin{frame}{\hypertarget{frame:Harmonic oscillator}{Harmonic oscillator}}
 	\begin{center}		
-		\includegraphics[width=0.4\textwidth,keepaspectratio]{torsion_pendulum_powerpoint.jpg}
+		\includegraphics[width=0.55\textwidth,keepaspectratio]{damp.png}
     \end{center}
 	\begin{itemize}
 
 		\item Torsional pendulum is an angular harmonic oscillator with a restoring torque, made of a mass hung by a string. 
 		\item Undamped oscillator; harmonic oscillations without decay.
 		\item Damped oscillator; there is also a damping torque $\tau = -b\dot{\theta}$.
+		\item Damped motion; underdamped, critically damped and overdamped.
+		\item Driven oscillator; there is also a time-dependent torque $\tau(t)$.
 		
 	\end{itemize}
+	\hyperlink{frame:Damped oscillator}{>>}
 \end{frame}
 % frame 2
-\begin{frame}{Damped oscillator}
+\begin{frame}{\hypertarget{frame:Damped oscillator}{Damped oscillator}}
+
 	\begin{center}		
 		\includegraphics[width=0.55\textwidth,keepaspectratio]{damp.png}
     \end{center}
-	\begin{itemize}
-		
-		\item Underdamped; oscillations amplitude decreases in time while oscillating with a lower frequency.
-		\item Critically damped; exponential decay to equilibrium.
-		\item Overdamped; exponential decay with longer damping time. 
-		\pause
-		\item Driven oscillator; there is also a time-dependent torque $\tau(t)$.
-	\end{itemize}
-	\hyperlink{frame:Gravitational field}{>>} 
-\end{frame}
-
-% frame 3 - skip
-\begin{frame}{Damped oscillator}
-	\framesubtitle{Damped equation}
-	\begin{center}		
-		\includegraphics[width=0.5\textwidth,keepaspectratio]{damp.png}
-    \end{center}
 	\begin{itemize}	
-		\item The pendulum is a damped oscillator if there is a damping torque opposite to the angular velocity $\tau = -b\dot{\theta}$.
 		\item The damped motion is given by $\ddot{\theta} + 2\xi\omega_0\dot{\theta} + \omega_0^2\theta = 0$.
 		\item The damping ratio, $\xi$, determines the oscillator's motion: underdamped, critically damped or overdamped.
+		\item Underdamped; oscillations amplitude decreases in time.
+		\item Critically damped; exponential decay to equilibrium.
+		\item Overdamped; exponential decay with longer damping time. 		
 	\end{itemize}
-	
-	
+	\hyperlink{frame:Harmonic oscillator}{>>} 
 \end{frame}
+
+
 
 
 % frame 2
