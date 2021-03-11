@@ -176,7 +176,7 @@
 	\end{center}
 	\begin{itemize}		
 		\item PID mainly acts as friction, gradually slowing velocity.
-		\item $\tau_{PID}(t) =  \gamma\dot{\theta}(t) =  \gamma\frac{2\pi}{T} \theta( t) \rightarrow \gamma  =\frac{\tau_{max}}{\theta_{max}}\cdot \frac{ T}{2\pi} $
+		\item $\tau(t) =  \gamma\dot{\theta}(t) =  \gamma\frac{2\pi}{T} \theta( t) \rightarrow \gamma  =\frac{\tau_{max}}{\theta_{max}}\cdot \frac{ T}{2\pi} $
 		\item When PID tuned correct; critical damping of process.
 		\item Overshoot or slow response; result with driven oscillator.
 		\item Torque small compared to amplitude; negligible damping. 
@@ -200,7 +200,20 @@
 \section{Methods and results}
 \subsection{System structure}
 % frame 1
+\begin{frame}{Experiment setup}
+	\begin{center}		
+			\includegraphics[width=0.3\textwidth,keepaspectratio]{setup cropped.png}
+	\end{center}
+	\begin{itemize}
 
+		\item Torsional pendulum is placed inside a vacuum chamber. 
+		\item Angle measured by signal amplifier.
+		\item PID modulates two LED light sources in real time.
+		\item LED are driven by Arduino controller; using PWM.
+	
+	\end{itemize}
+	
+\end{frame}
 
 % frame 3
 \begin{frame}{Vacuum chamber}
@@ -232,41 +245,6 @@
 	
 \end{frame}
 
-\begin{frame}{Experiment setup}
-	\begin{center}		
-			\includegraphics[width=0.3\textwidth,keepaspectratio]{setup cropped.png}
-	\end{center}
-	\begin{itemize}
-
-		\item Torsional pendulum is placed inside a vacuum chamber. 
-		\item 
-		\item PID modulates two LED light sources in real time.
-		\item LED are driven by Arduino controller; using PWM.
-	
-	\end{itemize}
-	
-\end{frame}
-\subsection{Proportional–Integral–Derivative (PID) controller}
-% frame 1
-
-
-\begin{frame}{Control stability}
-	\begin{center}		
-		\includegraphics[width=0.5\textwidth,keepaspectratio]{damp.png}
-	\end{center}
-	\begin{itemize}		
-
-		
-		\item High modulation frequency; prevent phase delay.
-		\item High modulation range; avoid overshoot.
-		
-		
-	\end{itemize}
-\end{frame}
-
-
-
-
 \begin{frame}{Previous laser setup}
 	\begin{center}		
 		\includegraphics[width=0.2\textwidth,keepaspectratio]{aom.png}
@@ -289,12 +267,10 @@
 		\item Linear response minimizes overshoot; $\tau(t)  \propto [D_1(t) -D_2(t)] $.
 		\item Fast frequency minimizes phase delay; $f_{PWM} \approx 500[Hz]$.
 		
+		
 	\end{itemize}
 	\hyperlink{frame:LED PWM circuit 1}{>>} 
 \end{frame}
-
-
-
 
 
 \subsection{Results}
