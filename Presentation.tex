@@ -146,9 +146,7 @@
 	\begin{itemize}
 		\item The controller continuously calculates error from set point. 
 		\item Each response is modulated by a tunable gain. 
-		\item The output is a weighted sum of the response terms.
-		%\item $u(t) = K_P e(t)+K_I\int_{0}^{t}e(\tau)d\tau+K_D\frac{de(t)}{dt}$
-		
+		\item Output: $u(t) = K_P e(t)+K_I\int_{0}^{t}e(\tau)d\tau+K_D\frac{de(t)}{dt}$		
 		\item Over time error is minimized (damped motion).
 	\end{itemize}
 	\hyperlink{frame:Proportional–integral–derivative (PID) controller}{<<} 
