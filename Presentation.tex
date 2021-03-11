@@ -73,7 +73,6 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{Torsional pendulum}
 % frame 2
 \begin{frame}{\hypertarget{frame:Harmonic oscillator}{Harmonic oscillator}}
 	\begin{center}		
@@ -106,39 +105,23 @@
 \end{frame}
 
 
-
-
 \subsection{Noises and damping}
 % frame 1
-\begin{frame}{Environmental noises}
+\begin{frame}{\hypertarget{frame:Environmental noises}{Environmental noises}}
 	\begin{center}		
 		\includegraphics[width=0.4\textwidth,keepaspectratio]{total_chamber.png}
     \end{center}
 	\begin{itemize}
 		
-		\item Environment cause pressure-dependent friction and noises (Brownian motion, acoustic waves, thermal flow).  
+		\item Environment gas cause pressure-dependent friction and noises (Brownian motion, acoustic waves, thermal flow).  
 		\item Noise from environmental black body radiation.
 		\item Unknown Magnetic noise from electronics.
-		\pause
 		\item System placed inside a vacuum chamber and acoustic box. 
 			
 	\end{itemize}
-	\hyperlink{frame:Proportional–integral–derivative (PID) controller}{>>} 
+	\hyperlink{frame:Environmental noises 1}{>>} 
 \end{frame}
-% frame 2 - skip
-\begin{frame}{Environmental noises}
-	\framesubtitle{Pressure and temperature dependent noises}
-	\begin{itemize}
-		\item An ideal gas has negligible inter-particle interactions.
-		\item Brownian motion cause random collisions. 
-		\item The kinetic energy of the gas particles: $ N<E_k> = \frac{3}{2} PV$.
-		\item Acoustic waves are propagating with power of $10^{-22}AP^2$.
-		\item Heat flow is the exchange of thermal energy between physical systems. The net power is: $p= A P c_v \Delta T \sqrt{\frac{M}{RT}} $.
-		\item Net power from black body radiation is $p= A \sigma\epsilon[ T^4- T_0^4]$.
-		
-	\end{itemize}
-	\hyperlink{frame:Proportional–integral–derivative (PID) controller}{>>} 
-\end{frame}
+
 % frame 3 - skip
 \begin{frame}{Environmental noises}
 	\framesubtitle{Friction}
@@ -711,6 +694,21 @@
 	\end{itemize}
 	\hyperlink{frame:Cavendish apparatus}{<<} 
 
+\end{frame}
+
+% frame 2 - skip
+\begin{frame}{\hypertarget{frame:Environmental noises 1}{Environmental noises}}
+	\framesubtitle{Pressure and temperature dependent noises}
+	\begin{itemize}
+		\item An ideal gas has negligible inter-particle interactions.
+		\item Brownian motion cause random collisions. 
+		\item The kinetic energy of the gas particles: $ N<E_k> = \frac{3}{2} PV$.
+		\item Acoustic waves are propagating with power of $10^{-22}AP^2$.
+		\item Heat flow is the exchange of thermal energy between physical systems. The net power is: $p= A P c_v \Delta T \sqrt{\frac{M}{RT}} $.
+		\item Net power from black body radiation is $p= A \sigma\epsilon[ T^4- T_0^4]$.
+		
+	\end{itemize}
+	\hyperlink{frame:Environmental noises}{>>} 
 \end{frame}
 
 \end{document}
