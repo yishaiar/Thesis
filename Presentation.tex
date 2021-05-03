@@ -207,7 +207,7 @@
     \end{center}
 	\begin{itemize}
 		
-		\item Introducing a new mass adds a constant torque $\tau_g$. 
+		\item Introducing a new mass adds a new net torque $\tau_g$. 
 		\item The PID is compensating for the new error; response becomes mainly an inverse torque: $\tau_{PID}(t) \approx K_P\theta_g(t)$. 
 		\item When integrating over short periods: $\overline{\theta}_g =  \frac{\int \tau_{PID}(t) dt}{ K_P \Delta t} $. 	
 		\item Lower uncertainty and short integration time.
