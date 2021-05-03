@@ -178,7 +178,9 @@
 	\begin{itemize}	
 		\item PID controller is a feedback based control system, for time continuous control of a process (damped motion).
 		\item The control is a weighted sum of proportional, integral and derivative response to error from defined set point (P-I-D).
-		\item Feedback applies an external correction to the process: $\tau(t)$.	
+		\item Feedback applies an external correction to the process: $\tau(t)$.
+		\item When PID tuned correct; critical damping of process.
+
 	\end{itemize}
 	\hyperlink{frame:Proportional–integral–derivative (PID) controller 1}{>>} 
 \end{frame}
@@ -192,7 +194,6 @@
 	\begin{itemize}		
 		\item PID mainly acts as friction, gradually slowing velocity.
 		\item $\tau(t) =  \gamma\dot{\theta}(t) =  \gamma\frac{2\pi}{T} \theta( t) \rightarrow \gamma  =\frac{\tau_{max}}{\theta_{max}}\cdot \frac{ T}{2\pi} $
-		\item When PID tuned correct; critical damping of process.
 		\item Overshoot or slow response; result with driven oscillator.
 		\item Torque small compared to amplitude; negligible damping. 
 		
