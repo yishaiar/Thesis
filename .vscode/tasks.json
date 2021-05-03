@@ -44,7 +44,7 @@
             "label": "git-pull_build ",
             "type": "shell",
             //"command": "lualatex master; bibtex master; ./master.pdf; lualatex master; lualatex master;lualatex chapter; bibtex chapter; ./chapter.pdf",
-            "command": "git pull -f; lualatex Presentation; bibtex Presentation; ./Presentation.pdf; lualatex master; bibtex master; ./master.pdf; lualatex master; lualatex master;",
+            "command": "git pull -f; lualatex Presentation; bibtex Presentation; ./Presentation.pdf; ",
             
             "runOptions": {
                 "runOn": "folderOpen"
