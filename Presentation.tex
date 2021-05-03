@@ -187,8 +187,8 @@
 	\end{center}
 	\begin{itemize}		
 		\item LED coupled into a light guide; reducing field of view.
+		\item Low modulation range of 8-bit steps.
 		\item Linear response minimizes overshoot; $\tau(t)  \propto [D_1(t) -D_2(t)] $.
-		\item Low modulation range of 8-bit duty-cycle.
 		\item Fast frequency minimizes phase delay; $f \approx 500[Hz]$.
 		
 		
@@ -197,42 +197,7 @@
 \end{frame}
 
 
-\subsection{Noises and damping}
-% frame 1
-\begin{frame}{\hypertarget{frame:Environmental noises}{Environmental noises}}
-	\begin{center}		
-		\includegraphics[width=0.4\textwidth,keepaspectratio]{total_chamber.png}
-    \end{center}
-	\begin{itemize}
-		
-		\item Environment gas cause pressure-dependent friction and noises (Brownian motion, acoustic waves, thermal flow).  
-		\item Environmental black body radiation energy.
-		\item Unknown Magnetic noise from the setup electronics.
-		\item System placed inside a vacuum chamber and acoustic box. 
-			
-	\end{itemize}
-	\hyperlink{frame:Environmental noises 1}{>>} 
-\end{frame}
-
-
-% frame 1
-\begin{frame}{\hypertarget{frame:Measurement uncertainty}{Measurement uncertainty}}
-	\begin{center}		
-		\includegraphics[width=0.4\textwidth,keepaspectratio]{pendulum_front.png}
-    \end{center}
-	\begin{itemize}
-		
-		\item Angle is measured using a mirror and quadrant detector.
-		\item Fundamental limits are: thermal uncertainty, shot noise. 
-		\item Reducing the uncertainty enables higher sensitivity.
-		\item Damping effectively lowers the temperature; $\delta\theta = \sqrt{\frac{k_B T}{\kappa}}$. 
-		\item Resulting with lower temperature quantum uncertainty. 
-
-		
-	\end{itemize}
-	\hyperlink{frame:Measurement uncertainty 1}{>>} 
-\end{frame}
-
+\subsection{Damping and measurement}
 % frame 2
 \begin{frame}{\hypertarget{frame:Proportional–integral–derivative (PID) controller}{Proportional–integral–derivative (PID) controller}}
 	\begin{center}		
@@ -274,6 +239,52 @@
 		\item Lower uncertainty and short integration time.
 	\end{itemize}
 \end{frame}
+
+
+
+
+
+
+
+
+
+\subsection{Noises}
+
+% frame 1
+\begin{frame}{\hypertarget{frame:Environmental noises}{Environmental noises}}
+	\begin{center}		
+		\includegraphics[width=0.4\textwidth,keepaspectratio]{total_chamber.png}
+    \end{center}
+	\begin{itemize}
+		
+		\item Environment gas cause pressure-dependent friction and noises (Brownian motion, acoustic waves, thermal flow).  
+		\item Environmental black body radiation energy.
+		\item Unknown Magnetic noise from the setup electronics.
+		\item System placed inside a vacuum chamber and acoustic box. 
+			
+	\end{itemize}
+	\hyperlink{frame:Environmental noises 1}{>>} 
+\end{frame}
+
+
+% frame 1
+\begin{frame}{\hypertarget{frame:Measurement uncertainty}{Measurement uncertainty}}
+	\begin{center}		
+		\includegraphics[width=0.4\textwidth,keepaspectratio]{pendulum_front.png}
+    \end{center}
+	\begin{itemize}
+		
+		\item Angle is measured using a mirror and quadrant detector.
+		\item Fundamental limits are: thermal uncertainty, shot noise. 
+		\item Reducing the uncertainty enables higher sensitivity.
+		\item Damping effectively lowers the temperature; $\delta\theta = \sqrt{\frac{k_B T}{\kappa}}$. 
+		\item Resulting with lower temperature quantum uncertainty. 
+
+		
+	\end{itemize}
+	\hyperlink{frame:Measurement uncertainty 1}{>>} 
+\end{frame}
+
 
 
 
