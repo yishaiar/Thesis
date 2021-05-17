@@ -1,5 +1,5 @@
 
-\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{unicode}{hypertree}
 \PassOptionsToPackage{naturalnames}{hyperref}
 \documentclass{beamer} 
 %\usepackage{babel}
@@ -127,7 +127,7 @@
 \end{frame}
 \section{Methods and results}
 % frame 1
-\begin{frame}{\hypertarget{frame:Radiation tourqe}{Radiation tourqe}}
+\begin{frame}{\hypertarget{frame:Radiation torque}{Radiation torque}}
 	\begin{center}		
 		\includegraphics[width=0.32\textwidth,keepaspectratio]{radiation.PNG}
     \end{center}
@@ -136,11 +136,11 @@
 	\begin{itemize}		
 		
 		\item Incident light beam causes force on the surface, due to momentum exchange with the electromagnetic field.
-		\item Two light sources hitting the sides of the pendulum result with power-depended net tourqe.
+		\item Two light sources hitting the sides of the pendulum result with power-depended net torque.
 		\item Power modulation is controlled by a feedback loop.
 		
 	\end{itemize}
-	\hyperlink{frame:Radiation tourqe 1}{>>} 
+	\hyperlink{frame:Radiation torque 1}{>>} 
 \end{frame}
 \subsection{System structure}
 
@@ -151,7 +151,7 @@
 	\begin{itemize}
 		\item Torsional pendulum is placed inside a vacuum chamber and an acoustic box; reducing environmental coupled noises.
 		\item A PID feedback algorithm modulates two light sources in real-time; tilt angle measured with a laser hitting a mirror.
-		\item Pendulum damped by external radiation pressure tourqe.
+		\item Pendulum damped by external radiation pressure torque.
 	
 	\end{itemize}
 	
@@ -204,7 +204,7 @@
 		\item PID is a feedback based control system, for continuous control of a process to a defined set point (damped motion).
 		\item When tuned correct; critical damping of process.
 		\item The control is a weighted sum of proportional, integral and derivative response to error from defined set point (P-I-D).
-		\item Feedback applies correction by modulating the tourqe $\tau(t)$.
+		\item Feedback applies correction by modulating the torque $\tau(t)$.
 
 
 	\end{itemize}
@@ -246,7 +246,7 @@
 		\includegraphics[width=0.9\textwidth,keepaspectratio]{aom2.png}
 	\end{center}
 	\begin{itemize}		
-		\item Laser coupled in series into two acousto optic modulators; divided into two controlled beams with mutual source.
+		\item Laser coupled in series into two acousto-optic modulators; divided into two controlled beams with mutual source.
 		\item High modulation range of 13-bit.
 		\item Non linear response caused uncertainty and overshoot.
 		\item Slow frequency caused phase delay; $f \approx 1 [Hz]$.
@@ -648,7 +648,7 @@
 \end{frame}
 
 
-\begin{frame}{\hypertarget{frame:Radiation tourqe 1}{Radiation tourqe}}
+\begin{frame}{\hypertarget{frame:Radiation torque 1}{Radiation torque}}
 \framesubtitle{Radiation pressure}
 	\begin{center}		
 		\includegraphics[width=0.2\textwidth,keepaspectratio]{radiation.PNG}
@@ -661,7 +661,7 @@
 		\item With light perpendicular to a reflective surface $F  \approx\frac{2\eta\Theta}{{c}} $.
 		
 	\end{itemize}
-	\hyperlink{frame:Radiation tourqe}{<<} 
+	\hyperlink{frame:Radiation torque}{<<} 
 \end{frame}
 
 % frame 2 - skip
