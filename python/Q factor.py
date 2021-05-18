@@ -31,7 +31,7 @@ def Q(p=1E-18, ones = False):
         ones = np.ones(theta.shape[0])
         
         plt.plot(theta,ones*0.5)
-        plt.plot(theta,ones*1)
+        # plt.plot(theta,ones*0)
     # plt.plot(theta,ones*1e-9)
     
     plt.yscale('log')
@@ -40,7 +40,7 @@ Q(p=7E-19 )
 Q(p=1.2E-19,ones=True )
 # Q(p=4.4E-25,ones=True )
 
-fonts_define(r'$\theta_{max} [rad]$','Q factor',[r'$Q(p=1E-19[W])$',r'$Q(p=7E-19[W])$','Q = 0.5','Q = 1'],font=40)
+fonts_define(r'$\theta_{max} [rad]$','Q factor',[r'$Q(p=1E-19[W])$',r'$Q(p=7E-19[W])$','Critical:Q = 0.5'],font=40)
 
 plt.savefig('Q factor.png')
         
