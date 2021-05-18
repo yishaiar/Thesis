@@ -40,7 +40,7 @@ Q(p=7E-19 )
 Q(p=1.2E-19,ones=True )
 # Q(p=4.4E-25,ones=True )
 
-fonts_define(r'$\theta_{max} [rad]$','Q factor',[r'$Q(p=1E-19)$',r'$Q(p=7E-19)$','Q = 0.5','Q = 1'],font=40)
+fonts_define(r'$\theta_{max} [rad]$','Q factor',[r'$Q(p=1E-19[W])$',r'$Q(p=7E-19[W])$','Q = 0.5','Q = 1'],font=40)
 
 plt.savefig('Q factor.png')
         
