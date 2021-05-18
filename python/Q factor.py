@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-plt.figure(figsize=(20,10))
+plt.figure(figsize=(30,15))
 
 def fonts_define(xtitle,ytitle,lgd,font=25):
     plt.xlabel(xtitle, fontsize=font)
