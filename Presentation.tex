@@ -332,12 +332,11 @@
 		\includegraphics[width=0.4\textwidth,keepaspectratio]{actual system_crop.jpg}
     \end{center}
 	\begin{itemize}
-		
+		\item Ideal gas model with negligible inter-particle interactions
 		\item Environment gas cause pressure-dependent friction and noises (Brownian motion, acoustic waves, thermal flow).  
 		\item Environmental black body radiation energy.
 		\item Unknown Magnetic noise from the setup electronics.
 		%\item Estimated noise much smaller than calculated noise.	
-		\item \textcolor{red}{Calculated noise from equations; $0.1[W]$.}			
 
 			
 	\end{itemize}
@@ -345,6 +344,22 @@
 \end{frame}
 
 
+% frame 2 - skip
+\begin{frame}{\hypertarget{frame:Environmental noises 1}{Environmental noises}}
+	\framesubtitle{Pressure and temperature dependent noises}
+	\begin{itemize}
+		\item At $298[K]$ with pressure of $0.01[PA]$;
+
+		\item Brownian motion random collisions; $\frac{36A^2P^2}{m_1}=6.2\cdot 10^{-6}[W]$. 
+		\item Black body radiation; $A \sigma\epsilon[ T^4- T_0^4]=0.121[W]$.
+		\item Acoustic waves propagation; $10^{-22}AP^2=1.1\cdot 10^{-28}[W]$.
+		\item Heat flow between systems; $A P c_v \Delta T \sqrt{\frac{M}{RT}} =0.083[W]$.
+		\item \textcolor{red}{Calculated noise power; $0.13[W]$.}			
+
+		
+	\end{itemize}
+	\hyperlink{frame:Environmental noises}{<<} 
+\end{frame}
 
 
 \begin{frame}{\hypertarget{frame:The driving power}{The driving power}}
@@ -564,22 +579,6 @@
 	\hyperlink{frame:Environmental noises}{<<} 
 \end{frame}
 
-% frame 2 - skip
-\begin{frame}{\hypertarget{frame:Environmental noises 1}{Environmental noises}}
-	\framesubtitle{Pressure and temperature dependent noises}
-	\begin{itemize}
-		\item Ideal gas model with negligible inter-particle interactions; at $298[K]$ with pressure of $0.01[PA]$;
-
-		\item Brownian motion random collisions; $\frac{36A^2P^2}{m_1}=6.2\cdot 10^{-6}[W]$. 
-		\item Black body radiation; $A \sigma\epsilon[ T^4- T_0^4]=0.121[W]$.
-		\item Acoustic waves propagation; $10^{-22}AP^2=1.1\cdot 10^{-28}[W]$.
-		\item Heat flow between systems; $A P c_v \Delta T \sqrt{\frac{M}{RT}} =0.083[W]$.
-		\item Calculated noise power: $p=0.13 [W]$.
-
-		
-	\end{itemize}
-	\hyperlink{frame:Environmental noises}{<<} 
-\end{frame}
 
 
 \begin{frame}{\hypertarget{frame:The driving power 1}{The driving power}}
