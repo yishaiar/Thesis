@@ -38,3 +38,6 @@ hslash
 inputenc
 textlatin
 textcolor
+selectfont
+fontsize
+normalsize
