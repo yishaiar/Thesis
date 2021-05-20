@@ -100,3 +100,16 @@ p = max_tourqe/2*THETA_MAX*OMEGA
 # plt.plot(t1,t1*z[0]+z[1])
 
 36*(M*k*300/N_A*3)**.25*(P*A)**1.5*12/m_1
+
+
+# RESOLUTION LIMIT ONE SIDED
+theta = 5e-8
+
+
+r=0.1
+T=84
+L = 0.218
+G=6.67E-11
+
+M = (12*np.pi**2*L)/(G*T**2)*r**2*theta
+print(M*1000)
